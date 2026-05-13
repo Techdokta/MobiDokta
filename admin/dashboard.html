@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | MobiDokta Admin</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <div class="admin-layout">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+      <div class="sidebar-logo">
+        <a href="../index.html" class="logo"><span class="cross">+</span> MobiDokta</a>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#overview" class="sidebar-link active" data-section="overview"><i data-lucide="layout-dashboard" class="icon-sm"></i> Overview</a>
+        <a href="#bookings" class="sidebar-link" data-section="bookings"><i data-lucide="calendar-days" class="icon-sm"></i> Bookings</a>
+        <a href="#payments" class="sidebar-link" data-section="payments"><i data-lucide="credit-card" class="icon-sm"></i> Payments</a>
+        <a href="#customers" class="sidebar-link" data-section="customers"><i data-lucide="users" class="icon-sm"></i> Customers</a>
+        <a href="#feedback" class="sidebar-link" data-section="feedback"><i data-lucide="star" class="icon-sm"></i> Feedback</a>
+        <div class="sidebar-divider"></div>
+        <a href="#audit" class="sidebar-link" data-section="audit"><i data-lucide="file-text" class="icon-sm"></i> Audit Log</a>
+        <a href="#" class="sidebar-link sidebar-logout" id="logout-btn"><i data-lucide="log-out" class="icon-sm"></i> Logout</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+      <div class="admin-header">
+        <h1 id="page-title">Overview</h1>
+        <div class="admin-user">
+          <span>Admin</span>
+          <div class="admin-avatar">A</div>
+        </div>
+      </div>
+
+      <!-- ═══════ OVERVIEW PANEL ═══════ -->
+      <div class="admin-panel active" id="panel-overview">
+        <div class="stats-grid" id="overview-stats"></div>
+
+        <div class="chart-container">
+          <div class="chart-header">
+            <h3>Revenue — Last 7 Days</h3>
+            <span class="badge badge-green" id="revenue-trend"></span>
+          </div>
+          <div class="chart-bars" id="revenue-chart"></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-8);">
+          <div class="chart-container">
+            <div class="chart-header"><h3>Revenue by Gateway</h3></div>
+            <div id="gateway-breakdown"></div>
+          </div>
+          <div class="chart-container">
+            <div class="chart-header"><h3>Popular Services</h3></div>
+            <div id="service-breakdown"></div>
+          </div>
+        </div>
+
+        <div class="table-container">
+          <div class="table-header">
+            <h3>Recent Bookings</h3>
+            <a href="#bookings" class="btn btn-ghost btn-sm" onclick="switchSection('bookings')">View All →</a>
+          </div>
+          <table class="data-table">
+            <thead><tr><th>Ref</th><th>Customer</th><th>Service</th><th>Date</th><th>Status</th></tr></thead>
+            <tbody id="recent-bookings"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ═══════ BOOKINGS PANEL ═══════ -->
+      <div class="admin-panel" id="panel-bookings">
+        <div class="flex-between" style="margin-bottom:var(--space-8);">
+          <div class="admin-tabs">
+            <button class="admin-tab active" data-filter="all">All</button>
+            <button class="admin-tab" data-filter="confirmed">Confirmed</button>
+            <button class="admin-tab" data-filter="pending">Pending</button>
+            <button class="admin-tab" data-filter="cancelled">Cancelled</button>
+          </div>
+          <div class="search-bar">
+            <i data-lucide="search" class="icon-sm" style="color:var(--text-tertiary)"></i>
+            <input type="text" placeholder="Search bookings..." id="booking-search">
+          </div>
+        </div>
+        <div class="table-container">
+          <table class="data-table">
+            <thead><tr><th>Ref</th><th>Customer</th><th>Device</th><th>Service</th><th>Date</th><th>Time</th><th>Location</th><th>Status</th><th>Actions</th></tr></thead>
+            <tbody id="bookings-table"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ═══════ PAYMENTS PANEL ═══════ -->
+      <div class="admin-panel" id="panel-payments">
+        <div class="stats-grid" id="payment-stats"></div>
+        <div class="table-container">
+          <div class="table-header">
+            <h3>Transaction History</h3>
+          </div>
+          <table class="data-table">
+            <thead><tr><th>ID</th><th>Customer</th><th>Amount</th><th>Gateway</th><th>Status</th><th>Date</th></tr></thead>
+            <tbody id="payments-table"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ═══════ CUSTOMERS PANEL ═══════ -->
+      <div class="admin-panel" id="panel-customers">
+        <div class="flex-between" style="margin-bottom:var(--space-8);">
+          <span class="badge badge-accent" id="customer-count"></span>
+          <div class="search-bar">
+            <i data-lucide="search" class="icon-sm" style="color:var(--text-tertiary)"></i>
+            <input type="text" placeholder="Search customers..." id="customer-search">
+          </div>
+        </div>
+        <div class="table-container">
+          <table class="data-table">
+            <thead><tr><th>Name</th><th>Phone</th><th>Email</th><th>Bookings</th><th>Total Spent</th><th>Since</th></tr></thead>
+            <tbody id="customers-table"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ═══════ FEEDBACK PANEL ═══════ -->
+      <div class="admin-panel" id="panel-feedback">
+        <div class="stats-grid" id="feedback-stats"></div>
+        <div class="table-container">
+          <div class="table-header">
+            <h3>Customer Reviews</h3>
+            <a href="https://g.page/mobidokta/review" target="_blank" class="btn btn-ghost btn-sm">Open Google Business →</a>
+          </div>
+          <table class="data-table">
+            <thead><tr><th>Customer</th><th>Rating</th><th>NPS</th><th>Comment</th><th>Date</th></tr></thead>
+            <tbody id="feedback-table"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ═══════ AUDIT LOG PANEL ═══════ -->
+      <div class="admin-panel" id="panel-audit">
+        <div class="table-container">
+          <div class="table-header">
+            <h3>Audit Trail</h3>
+            <span class="badge badge-accent">Secure Logging</span>
+          </div>
+          <table class="data-table">
+            <thead><tr><th>Timestamp</th><th>User</th><th>Action</th></tr></thead>
+            <tbody id="audit-table"></tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="../js/data-store.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/admin.js"></script>
+</body>
+</html>
+

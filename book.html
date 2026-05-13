@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a TechDokta | MobiDokta</title>
+  <meta name="description" content="Book a repair consultation with a certified MobiDokta TechDokta. Select your device, choose a service, pick a date and time.">
+  <link rel="stylesheet" href="./css/global.css">
+  <link rel="stylesheet" href="./css/booking.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="logo"><span class="cross">+</span>MobiDokta</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="book.html" class="active">Book</a>
+      <a href="support.html">Support</a>
+      <a href="community.html">Community</a>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  </nav>
+
+  <main class="booking-page">
+    <div class="container">
+      <div class="section-header" style="padding-top:7rem;">
+        <div class="badge badge-accent">Book Your Visit</div>
+        <h1>Schedule a <span class="text-gradient">consultation</span></h1>
+        <p>Follow the steps below to book your device in for treatment.</p>
+      </div>
+
+      <!-- Progress Steps -->
+      <div class="progress-bar">
+        <div class="progress-step active" data-step="1"><span class="step-num">1</span><span class="step-label">Device</span></div>
+        <div class="progress-line"></div>
+        <div class="progress-step" data-step="2"><span class="step-num">2</span><span class="step-label">Service</span></div>
+        <div class="progress-line"></div>
+        <div class="progress-step" data-step="3"><span class="step-num">3</span><span class="step-label">Date & Time</span></div>
+        <div class="progress-line"></div>
+        <div class="progress-step" data-step="4"><span class="step-num">4</span><span class="step-label">Confirm</span></div>
+      </div>
+
+      <!-- Step 1: Device Selection -->
+      <div class="booking-step active" id="step-1">
+        <h2>Select Your Device</h2>
+        <div class="brand-grid">
+          <div class="brand-card" data-brand="Apple">
+            <div class="brand-icon flex-center" style="height: 48px;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" style="height:38px; filter:invert(1) invert(69%) sepia(35%) saturate(3062%) hue-rotate(320deg) brightness(101%) contrast(100%);">
+            </div>
+            <span class="brand-name">Apple</span>
+          </div>
+          <div class="brand-card" data-brand="Samsung">
+            <div class="brand-icon flex-center" style="height: 48px;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Samsung" style="height:22px; filter:invert(1) sepia(100%) saturate(500%) hue-rotate(200deg) brightness(100%) contrast(100%);">
+            </div>
+            <span class="brand-name">Samsung</span>
+          </div>
+          <div class="brand-card" data-brand="Huawei">
+            <div class="brand-icon flex-center" style="height: 48px;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Huawei_logo.svg" alt="Huawei" style="height:32px; filter:invert(1) sepia(100%) saturate(700%) hue-rotate(330deg) brightness(95%) contrast(100%);">
+            </div>
+            <span class="brand-name">Huawei</span>
+          </div>
+          <div class="brand-card" data-brand="MacBook">
+            <div class="brand-icon flex-center" style="height: 48px;">
+              <i data-lucide="laptop" class="icon-xl" style="color:var(--text-primary); width:36px; height:36px;"></i>
+            </div>
+            <span class="brand-name">MacBook & PC</span>
+          </div>
+          <div class="brand-card" data-brand="Console">
+            <div class="brand-icon flex-center" style="height: 48px;">
+              <i data-lucide="gamepad-2" class="icon-xl" style="color:var(--text-primary); width:36px; height:36px;"></i>
+            </div>
+            <span class="brand-name">Consoles</span>
+          </div>
+        </div>
+        <div class="form-group" id="model-group" style="display:none;">
+          <label class="form-label">Device Model</label>
+          <select class="form-select" id="device-model">
+            <option value="">Choose your model...</option>
+          </select>
+          <div id="manual-model-container" style="display:none; margin-top:var(--space-3);">
+            <input type="text" id="manual-model-input" class="form-input" placeholder="Enter your full device model...">
+            <button type="button" class="btn btn-primary btn-sm" id="manual-proceed-btn" style="margin-top:var(--space-3); width:100%;">Proceed to Solutions →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2: Service Selection -->
+      <div class="booking-step" id="step-2">
+        <div class="split-layout" style="align-items: flex-start; gap: var(--space-8);">
+          <div>
+            <h2>Choose Procedures</h2>
+            <div class="service-grid" id="service-grid">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+          
+          <div class="cart-panel glass" id="cart-panel">
+            <h3>Your Selection</h3>
+            <div id="cart-items">
+              <p style="color:var(--text-tertiary);font-size:var(--text-sm);">No services selected yet.</p>
+            <div class="cart-total">
+              <span>Total</span>
+              <span id="cart-total-price">R0</span>
+            </div>
+            <div class="cart-total" style="border-top:none; padding-top:4px; margin-top:0;">
+              <span style="font-size:var(--text-sm); color:var(--text-tertiary);">40% Deposit to Secure Booking</span>
+              <span id="cart-deposit-price" style="color:var(--accent); font-size:16px;">R0</span>
+            </div>
+            <p style="font-size:var(--text-xs);color:var(--text-tertiary);margin-top:var(--space-4);">*Prices are estimates based on standard parts.</p>
+          </div>
+        </div>
+
+        <div id="duration-section" style="display:none;margin-top:var(--space-xl);">
+          <label class="form-label">Estimated Duration</label>
+          <div class="duration-selector">
+            <button class="duration-btn" data-duration="30">30 min</button>
+            <button class="duration-btn" data-duration="60">1 hour</button>
+            <button class="duration-btn" data-duration="90">1.5 hours</button>
+            <button class="duration-btn" data-duration="120">2 hours</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3: Date & Time -->
+      <div class="booking-step" id="step-3">
+        <h2>Pick a Date & Time</h2>
+        <div class="datetime-container">
+          <div class="calendar-panel glass">
+            <div class="cal-header">
+              <button class="cal-nav" id="cal-prev">‹</button>
+              <h3 id="cal-month-year"></h3>
+              <button class="cal-nav" id="cal-next">›</button>
+            </div>
+            <div class="cal-grid cal-days-header">
+              <span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span>
+            </div>
+            <div class="cal-grid" id="cal-days"></div>
+          </div>
+          <div class="slots-panel glass" id="slots-panel" style="display:none;">
+            <h3>Available Slots — <span id="slot-date-label" class="text-glow"></span></h3>
+            <div class="slots-list" id="slots-list"></div>
+            <div class="form-group" style="margin-top:var(--space-lg);">
+              <label class="form-label">Clinic Location</label>
+              <select class="form-select" id="clinic-select">
+                <option value="Sandton Central">Sandton Central</option>
+                <option value="Pretoria East">Pretoria East</option>
+                <option value="Menlyn">Menlyn</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4: Confirm & Pay -->
+      <div class="booking-step" id="step-4">
+        <h2>Confirm & Pay</h2>
+        <div class="confirm-container">
+          <div class="summary-card glass">
+            <h3>Booking Summary</h3>
+            <div class="summary-row"><span>Device</span><span id="sum-device">—</span></div>
+            <div class="summary-row" style="flex-direction:column;align-items:flex-start;gap:8px;">
+              <span>Selected Services</span>
+              <div id="sum-services-list" style="width:100%;"></div>
+            </div>
+            <div class="summary-row"><span>Date</span><span id="sum-date">—</span></div>
+            <div class="summary-row"><span>Time</span><span id="sum-time">—</span></div>
+            <div class="summary-row"><span>Location</span><span id="sum-location">—</span></div>
+            <div class="summary-row total"><span>Total Estimated Cost</span><span id="sum-cost" class="text-glow">—</span></div>
+            <div class="summary-row" style="margin-top:0; padding-top:4px;">
+              <span style="font-size:var(--text-sm); color:var(--text-tertiary);">40% Deposit Required to Secure Booking</span>
+              <span id="sum-deposit" style="color:var(--accent); font-size:16px;">—</span>
+            </div>
+          </div>
+          <div class="details-form glass">
+            <h3>Your Details</h3>
+            
+            <div class="form-group">
+              <label class="form-label">Describe the Issue <span style="color:var(--text-tertiary);font-weight:normal;font-size:12px;">(Optional)</span></label>
+              <textarea class="form-input" id="cust-issue" rows="3" placeholder="E.g. Screen is shattered, battery drains fast..." style="resize:vertical; width:100%; font-family:inherit;"></textarea>
+            </div>
+            
+            <div class="form-group" style="margin-bottom:var(--space-6);">
+              <label class="form-label">Attach Pictures <span style="color:var(--text-tertiary);font-weight:normal;font-size:12px;">(Accelerates preparation)</span></label>
+              <input type="file" id="cust-pictures" multiple accept="image/*" class="form-input" style="padding:10px; cursor:pointer;" title="Upload pictures of the damage">
+              <small style="color:var(--text-tertiary);font-size:11px;display:block;margin-top:4px;">Select multiple images if needed.</small>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-input" id="cust-name" placeholder="e.g. Thabo Molefe">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone Number</label>
+              <input type="tel" class="form-input" id="cust-phone" placeholder="e.g. 071 234 5678">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-input" id="cust-email" placeholder="e.g. thabo@gmail.com">
+            </div>
+            <div class="form-group" style="display:flex;align-items:flex-start;gap:10px;">
+              <input type="checkbox" id="consent-check" style="margin-top:4px;">
+              <label for="consent-check" style="font-size:var(--text-sm);color:var(--text-secondary);">I agree to the <a href="community.html" style="color:var(--cta);">Terms & Conditions</a> and <a href="community.html" style="color:var(--cta);">Privacy Policy</a>.</label>
+            </div>
+
+            <!-- Payment Method Selection -->
+            <div style="margin-top: var(--space-6); border-top: 1px solid var(--border); padding-top: var(--space-6);">
+              <h4 style="margin-bottom: var(--space-4); color: var(--text-primary);">Choose Payment Method</h4>
+              
+              <!-- Manual EFT Option -->
+              <div id="eft-panel" style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-6); margin-bottom: var(--space-4);">
+                <h4 style="display: flex; align-items: center; gap: 8px; margin-bottom: var(--space-4); color: var(--text-primary);"><i data-lucide="landmark" class="icon" style="color: var(--green);"></i> Manual EFT / Bank Transfer</h4>
+                <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-4); margin-bottom: var(--space-4);">
+                  <table style="width: 100%; font-size: var(--text-sm);">
+                    <tr><td style="padding: 4px 0; color: var(--text-tertiary); width: 40%;">Bank</td><td style="padding: 4px 0; font-weight: 600; color: var(--text-primary);">Capitec</td></tr>
+                    <tr><td style="padding: 4px 0; color: var(--text-tertiary);">Account Name</td><td style="padding: 4px 0; font-weight: 600; color: var(--text-primary);">Mobidokta</td></tr>
+                    <tr><td style="padding: 4px 0; color: var(--text-tertiary);">Account Number</td><td style="padding: 4px 0; font-weight: 600; color: var(--text-primary);">2523032305</td></tr>
+                    <tr><td style="padding: 4px 0; color: var(--text-tertiary);">SWIFT/BIC</td><td style="padding: 4px 0; font-weight: 600; color: var(--text-primary);">CABLZAJJ</td></tr>
+                    <tr><td style="padding: 4px 0; color: var(--text-tertiary);">Reference</td><td style="padding: 4px 0; font-weight: 600; color: var(--green);" id="eft-ref">Your phone number</td></tr>
+                  </table>
+                </div>
+                <p style="font-size: var(--text-xs); color: var(--text-tertiary); margin-bottom: var(--space-4);">Transfer the 40% deposit amount shown above. Use your phone number as reference. Once paid, click below to confirm.</p>
+                <button class="btn btn-secondary btn-block" id="eft-confirm-btn" disabled style="border-radius: var(--radius-md);">
+                  <i data-lucide="check-circle" class="icon-sm"></i> I've Made the EFT Payment
+                </button>
+              </div>
+
+              <!-- Paystack Button -->
+              <button class="btn btn-primary btn-block btn-lg" id="paystack-pay-btn" disabled style="border-radius: var(--radius-md); background: #0BA4DB; border: none; margin-top: var(--space-4);">
+                <i data-lucide="credit-card" class="icon-sm"></i> Pay Securely with Paystack
+              </button>
+              <p style="text-align: center; font-size: var(--text-xs); color: var(--text-tertiary); margin-top: var(--space-2);">Card, Bank Transfer, USSD, or QR Code via Paystack's secure gateway.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <div class="step-nav">
+        <button class="btn btn-ghost" id="prev-btn" style="display:none;">← Back</button>
+        <button class="btn btn-primary" id="next-btn" disabled>Next Step →</button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- WhatsApp FAB -->
+  <a href="https://wa.me/27781541350" target="_blank" class="whatsapp-fab" title="Chat on WhatsApp"><i data-lucide="message-circle" class="icon-lg"></i></a>
+
+  <!-- Paystack SDK -->
+  <script src="https://js.paystack.co/v2/inline.js"></script>
+
+  <script src="./js/data-store.js"></script>
+  <script src="./js/app.js"></script>
+  <!-- External DB APIs -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./js/config.js"></script>
+  <script src="./js/db.js"></script>
+  <script src="./js/booking.js"></script>
+  
+  <script>
+    /* ─── Paystack + EFT Payment Logic ─── */
+    (function() {
+      const consentCheck = document.getElementById('consent-check');
+      const paystackBtn = document.getElementById('paystack-pay-btn');
+      const eftBtn = document.getElementById('eft-confirm-btn');
+
+      // Enable/disable buttons based on consent
+      if (consentCheck) {
+        consentCheck.addEventListener('change', function() {
+          paystackBtn.disabled = !this.checked;
+          eftBtn.disabled = !this.checked;
+        });
+      }
+
+      // EFT Confirm
+      if (eftBtn) {
+        eftBtn.addEventListener('click', function() {
+          const name = document.getElementById('cust-name').value.trim();
+          const phone = document.getElementById('cust-phone').value.trim();
+          const email = document.getElementById('cust-email').value.trim();
+
+          if (!name || !phone || !email) {
+            MobiApp.toast('Please fill in all your details.', 'error');
+            return;
+          }
+
+          MobiApp.toast('EFT payment noted! We will verify and confirm your booking within 1 hour.', 'success', 6000);
+          eftBtn.textContent = '✓ Payment Noted — Awaiting Verification';
+          eftBtn.disabled = true;
+          eftBtn.style.background = 'var(--green-subtle)';
+          eftBtn.style.color = 'var(--green)';
+          eftBtn.style.borderColor = 'var(--green)';
+        });
+      }
+
+      // Paystack Pay
+      if (paystackBtn) {
+        paystackBtn.addEventListener('click', function() {
+          const email = document.getElementById('cust-email').value.trim();
+          const name = document.getElementById('cust-name').value.trim();
+          const phone = document.getElementById('cust-phone').value.trim();
+
+          if (!name || !phone || !email) {
+            MobiApp.toast('Please fill in all your details (email required for Paystack).', 'error');
+            return;
+          }
+
+          // Get deposit amount from the summary
+          const depositEl = document.getElementById('sum-deposit');
+          const depositText = depositEl ? depositEl.textContent.replace(/[^0-9]/g, '') : '0';
+          const amountInKobo = parseInt(depositText) * 100; // Paystack uses kobo (cents)
+
+          if (amountInKobo <= 0) {
+            MobiApp.toast('Please select services first.', 'warning');
+            return;
+          }
+
+          // ── PAYSTACK POPUP ──
+          // Replace 'pk_test_xxxxxxxxxxxxxxx' with your live Paystack public key
+          const handler = PaystackPop.setup({
+            key: 'pk_test_xxxxxxxxxxxxxxx', // TODO: Replace with your Paystack public key
+            email: email,
+            amount: amountInKobo,
+            currency: 'ZAR',
+            ref: 'MD-' + Date.now().toString(36).toUpperCase(),
+            metadata: {
+              custom_fields: [
+                { display_name: "Customer Name", variable_name: "customer_name", value: name },
+                { display_name: "Phone", variable_name: "phone", value: phone }
+              ]
+            },
+            onClose: function() {
+              MobiApp.toast('Payment window closed. You can try again.', 'info');
+            },
+            callback: function(response) {
+              MobiApp.toast('Payment successful! Reference: ' + response.reference, 'success', 6000);
+              paystackBtn.textContent = '✓ Payment Complete — ' + response.reference;
+              paystackBtn.disabled = true;
+              paystackBtn.style.background = 'var(--green)';
+            }
+          });
+          handler.openIframe();
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
+

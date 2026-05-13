@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Share Your Feedback | MobiDokta</title>
+  <meta name="description" content="Rate your MobiDokta experience and help us improve our tech hospital service.">
+  <link rel="stylesheet" href="./css/global.css">
+  <link rel="stylesheet" href="./css/feedback.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="logo"><span class="cross">+</span>MobiDokta</a>
+    <div class="nav-links">
+      <div class="nav-dropdown">
+        <a href="index.html#services" class="dropdown-trigger">Repairs <i data-lucide="chevron-down" class="icon-xs"></i></a>
+        <div class="dropdown-menu">
+          <a href="apple.html"><i data-lucide="apple" class="icon-sm"></i> Apple Repairs</a>
+          <a href="android.html"><i data-lucide="smartphone" class="icon-sm"></i> Android Repairs</a>
+        </div>
+      </div>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="journey.html">Our Journey</a>
+      <a href="book.html">Book</a>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  </nav>
+
+  <main class="feedback-page">
+    <div class="container">
+      <div class="section-header" style="padding-top:7rem;">
+        <div class="badge badge-purple">Your Voice Matters</div>
+        <h1>Share your <span class="text-gradient">experience</span></h1>
+        <p>Help us improve our Tech Hospital by sharing your feedback.</p>
+      </div>
+
+      <div class="feedback-layout">
+        <!-- Rating Form -->
+        <div class="feedback-form glass" id="feedback-form">
+          <!-- Star Rating -->
+          <div class="rating-section">
+            <h3>How was your experience?</h3>
+            <div class="star-rating" id="star-rating">
+              <span class="star" data-rating="1">★</span>
+              <span class="star" data-rating="2">★</span>
+              <span class="star" data-rating="3">★</span>
+              <span class="star" data-rating="4">★</span>
+              <span class="star" data-rating="5">★</span>
+            </div>
+            <p class="rating-label" id="rating-label">Select a rating</p>
+          </div>
+
+          <!-- NPS -->
+          <div class="nps-section">
+            <h3>How likely are you to recommend MobiDokta?</h3>
+            <p class="nps-subtitle">0 = Not at all likely · 10 = Extremely likely</p>
+            <div class="nps-scale" id="nps-scale">
+              <button class="nps-btn" data-nps="0">0</button>
+              <button class="nps-btn" data-nps="1">1</button>
+              <button class="nps-btn" data-nps="2">2</button>
+              <button class="nps-btn" data-nps="3">3</button>
+              <button class="nps-btn" data-nps="4">4</button>
+              <button class="nps-btn" data-nps="5">5</button>
+              <button class="nps-btn" data-nps="6">6</button>
+              <button class="nps-btn" data-nps="7">7</button>
+              <button class="nps-btn" data-nps="8">8</button>
+              <button class="nps-btn" data-nps="9">9</button>
+              <button class="nps-btn" data-nps="10">10</button>
+            </div>
+          </div>
+
+          <!-- Category Tags -->
+          <div class="category-section">
+            <h3>What went well?</h3>
+            <div class="tag-grid">
+              <span class="feedback-tag" data-tag="Fast Service"><i data-lucide="zap" class="icon-sm"></i> Fast Service</span>
+              <span class="feedback-tag" data-tag="Friendly Staff"><i data-lucide="smile" class="icon-sm"></i> Friendly Staff</span>
+              <span class="feedback-tag" data-tag="Fair Pricing"><i data-lucide="banknote" class="icon-sm"></i> Fair Pricing</span>
+              <span class="feedback-tag" data-tag="Quality Parts"><i data-lucide="wrench" class="icon-sm"></i> Quality Parts</span>
+              <span class="feedback-tag" data-tag="Easy Booking"><i data-lucide="calendar" class="icon-sm"></i> Easy Booking</span>
+              <span class="feedback-tag" data-tag="Great Communication"><i data-lucide="smartphone" class="icon-sm"></i> Great Communication</span>
+            </div>
+          </div>
+
+          <!-- Comment -->
+          <div class="form-group">
+            <label class="form-label">Any suggestions for improvement?</label>
+            <textarea class="form-textarea" id="fb-comment" placeholder="Tell us what we could do better..."></textarea>
+          </div>
+
+          <!-- Customer Info -->
+          <div class="form-group">
+            <label class="form-label">Your Name (optional)</label>
+            <input type="text" class="form-input" id="fb-name" placeholder="e.g. Thabo M.">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Booking Reference (optional)</label>
+            <input type="text" class="form-input" id="fb-ref" placeholder="e.g. MD-ABC123">
+          </div>
+
+          <button class="btn btn-primary btn-block btn-lg" id="submit-fb-btn">Submit Feedback</button>
+        </div>
+
+        <!-- Stats Sidebar -->
+        <div class="feedback-stats">
+          <div class="stat-card glass">
+            <div class="stat-value text-gradient" id="avg-rating">—</div>
+            <div class="stat-label">Average Rating</div>
+            <div class="mini-stars" id="avg-stars"></div>
+          </div>
+          <div class="stat-card glass">
+            <div class="stat-value" id="nps-score" style="color:var(--green);">—</div>
+            <div class="stat-label">Net Promoter Score</div>
+          </div>
+          <div class="stat-card glass">
+            <div class="stat-value" id="total-reviews">—</div>
+            <div class="stat-label">Total Reviews</div>
+          </div>
+          <a href="https://g.page/mobidokta/review" target="_blank" class="btn btn-secondary btn-block" style="margin-top:var(--space-4);">
+            <i data-lucide="star" class="icon-sm"></i> Rate us on Google
+          </a>
+        </div>
+      </div>
+
+      <!-- Thank You (hidden initially) -->
+      <div class="thank-you glass hidden" id="thank-you">
+        <div class="success-icon"><i data-lucide="party-popper" style="width:64px;height:64px;color:var(--accent)"></i></div>
+        <h2>Thank You!</h2>
+        <p>Your feedback has been submitted and will help us improve our service.</p>
+        <div class="flex gap-4" style="justify-content:center;flex-wrap:wrap;margin-top:var(--space-8);">
+          <a href="https://g.page/mobidokta/review" target="_blank" class="btn btn-primary"><i data-lucide="star" class="icon-sm"></i> Also Review on Google</a>
+          <a href="index.html" class="btn btn-ghost">← Back to Home</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <a href="https://wa.me/27781541350" target="_blank" class="whatsapp-fab" title="Chat on WhatsApp"><i data-lucide="message-circle" class="icon-lg"></i></a>
+
+  <script src="./js/data-store.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./js/feedback.js"></script>
+</body>
+</html>
+

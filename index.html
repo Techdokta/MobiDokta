@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MobiDokta | The Private Hospital for Tech — Device Repair in Gauteng</title>
+  <meta name="description"
+    content="MobiDokta — The Private Hospital for Tech. OEM Original & Eco Grade repairs for Apple, Samsung & Huawei. Same-day service, full price transparency. Randhart, Alberton. 078 154 1350.">
+  <link rel="stylesheet" href="./css/global.css">
+  <link rel="stylesheet" href="./css/index-inline.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    /* ─── Global Animation & Gradients ─── */
+    .headline-xl, h1, h2 {
+      background: linear-gradient(110deg, var(--text-primary) 30%, #444 50%, var(--text-primary) 70%);
+      background-size: 200% auto;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmerText 5s linear infinite;
+    }
+    
+    @keyframes shimmerText {
+      to { background-position: 200% center; }
+    }
+
+    /* ─── Hero (Parallax & Glassmorphism) ─── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: var(--space-24) var(--space-8) var(--space-16);
+      position: relative;
+      background-image: url('./img/hero_iphone_repair_1777918767023.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed; /* Parallax effect */
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: var(--glass-bg);
+      -webkit-backdrop-filter: blur(5px);
+      backdrop-filter: blur(5px);
+    }
+
+    .hero-inner {
+      max-width: 800px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ─── Glassmorphism Panels ─── */
+    .glass-panel {
+      background: var(--glass-bg);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid var(--border);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+      border-radius: var(--radius-2xl);
+      padding: var(--space-12);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: var(--space-4);
+      animation: fadeInUp 0.6s var(--ease-out);
+    }
+
+    .hero-badge .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulse 2s infinite;
+    }
+
+    .hero h1 {
+      font-size: var(--text-6xl);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      margin-bottom: var(--space-6);
+      animation: fadeInUp 0.7s var(--ease-out) 0.1s both;
+    }
+
+    .hero p {
+      font-size: var(--text-xl);
+      color: var(--text-secondary);
+      max-width: 520px;
+      margin: 0 auto var(--space-10);
+      line-height: 1.6;
+      animation: fadeInUp 0.7s var(--ease-out) 0.2s both;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: var(--space-4);
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: var(--space-12);
+      animation: fadeInUp 0.7s var(--ease-out) 0.3s both;
+    }
+
+    /* Lead Capture Quick Form */
+    .lead-capture {
+      max-width: 480px;
+      margin: 0 auto;
+      animation: fadeInUp 0.7s var(--ease-out) 0.4s both;
+    }
+
+    .lead-form {
+      display: flex;
+      gap: var(--space-2);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-full);
+      padding: 5px;
+      transition: all var(--duration-base);
+    }
+
+    .lead-form:focus-within {
+      border-color: var(--cta);
+      box-shadow: 0 0 0 4px var(--cta-glow);
+    }
+
+    .lead-form input {
+      flex: 1;
+      border: none;
+      background: none;
+      padding: 12px 18px;
+      color: var(--text-primary);
+      font-size: var(--text-sm);
+      outline: none;
+    }
+
+    .lead-form input::placeholder {
+      color: var(--text-tertiary);
+    }
+
+    .lead-form button {
+      padding: 12px 24px;
+      border-radius: var(--radius-full);
+      background: var(--cta);
+      color: white;
+      font-weight: 600;
+      font-size: var(--text-sm);
+      border: none;
+      cursor: pointer;
+      transition: all var(--duration-base);
+      white-space: nowrap;
+    }
+
+    .lead-form button:hover {
+      background: var(--cta-hover);
+    }
+
+    .lead-hint {
+      font-size: var(--text-xs);
+      color: var(--text-tertiary);
+      margin-top: var(--space-3);
+    }
+
+    /* ─── Trust Bar ─── */
+    .trust-bar {
+      padding: var(--space-12) 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .trust-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-12);
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      color: var(--text-tertiary);
+      font-size: var(--text-sm);
+      font-weight: 500;
+    }
+
+    .trust-item strong {
+      color: var(--text-secondary);
+    }
+
+    .trust-number {
+      font-size: var(--text-2xl);
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+    }
+
+    /* ─── Services ─── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-6);
+    }
+
+    .service-card {
+      padding: var(--space-10) var(--space-8);
+      text-align: left;
+      border-radius: var(--radius-xl);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      border-color: rgba(0,0,0,0.1);
+    }
+    
+    .service-card img {
+      transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    
+    .service-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--cta));
+      opacity: 0;
+      transition: opacity var(--duration-base);
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-icon {
+      font-size: 2rem;
+      margin-bottom: var(--space-4);
+      display: block;
+    }
+
+    .service-card h3 {
+      font-size: var(--text-lg);
+      margin-bottom: var(--space-2);
+      font-weight: 700;
+    }
+
+    .service-card p {
+      color: var(--text-tertiary);
+      font-size: var(--text-sm);
+      line-height: 1.5;
+      margin-bottom: var(--space-4);
+    }
+
+    .service-price {
+      color: var(--green);
+      font-weight: 700;
+      font-size: var(--text-base);
+    }
+    
+    /* ─── Premium Button Overrides ─── */
+    .btn {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 50%; height: 100%;
+      background: linear-gradient(to right, transparent, rgba(255,255,255,0.15), transparent);
+      transform: skewX(-20deg);
+      transition: all 0.5s ease;
+      z-index: 1;
+    }
+    
+    .btn:hover::before {
+      left: 150%;
+    }
+    
+    .btn-primary:hover {
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      transform: translateY(-2px);
+    }
+    
+    /* ─── Premium Table Rows ─── */
+    .data-table tr {
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .data-table tr:hover {
+      background: #ffffff;
+      transform: scale(1.02);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      z-index: 10;
+    }
+
+    /* ─── Process Steps ─── */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-8);
+    }
+
+    .process-step {
+      text-align: center;
+      position: relative;
+    }
+
+    .process-num {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-full);
+      background: var(--bg-card);
+      border: 1.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: var(--text-lg);
+      margin: 0 auto var(--space-5);
+      color: var(--accent);
+      transition: all var(--duration-base);
+    }
+
+    .process-step:hover .process-num {
+      border-color: var(--accent);
+      background: var(--accent-subtle);
+    }
+
+    .process-step h3 {
+      font-size: var(--text-base);
+      margin-bottom: var(--space-2);
+      font-weight: 700;
+    }
+
+    .process-step p {
+      color: var(--text-tertiary);
+      font-size: var(--text-sm);
+    }
+
+    /* ─── Testimonials ─── */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-6);
+    }
+
+    .testimonial {
+      padding: var(--space-8);
+      border-radius: var(--radius-xl);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    
+    .testimonial:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    @keyframes liveMotion {
+      0% { transform: scale(1) translate(0, 0); }
+      50% { transform: scale(1.05) translate(-1%, -1%); }
+      100% { transform: scale(1.1) translate(1%, 1%); }
+    }
+    
+    .live-motion-img {
+      animation: liveMotion 20s infinite alternate ease-in-out;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .portfolio-masonry {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-6);
+      margin-top: var(--space-8);
+    }
+    
+    .masonry-item {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .masonry-img-wrapper {
+      height: 250px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .masonry-content {
+      padding: var(--space-6);
+    }
+
+    .testimonial-stars {
+      color: var(--gold);
+      font-size: var(--text-sm);
+      letter-spacing: 2px;
+      margin-bottom: var(--space-4);
+    }
+
+    .testimonial-text {
+      color: var(--text-secondary);
+      font-size: var(--text-sm);
+      line-height: 1.7;
+      flex: 1;
+      margin-bottom: var(--space-6);
+    }
+
+    .testimonial-author {
+      font-weight: 600;
+      font-size: var(--text-sm);
+    }
+
+    .testimonial-detail {
+      color: var(--text-tertiary);
+      font-size: var(--text-xs);
+      margin-top: 2px;
+    }
+
+    /* ─── Clinics ─── */
+    .clinics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-6);
+    }
+
+    .clinic-card {
+      padding: var(--space-8);
+      border-radius: var(--radius-xl);
+      text-align: center;
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    
+    .clinic-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .clinic-card h3 {
+      font-size: var(--text-lg);
+      margin-bottom: 4px;
+    }
+
+    .clinic-type {
+      color: var(--text-tertiary);
+      font-size: var(--text-sm);
+      margin-bottom: var(--space-3);
+    }
+
+    .clinic-address {
+      color: var(--text-tertiary);
+      font-size: var(--text-xs);
+      margin-bottom: var(--space-5);
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 14px;
+      border-radius: var(--radius-full);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      background: var(--green-subtle);
+      color: var(--green);
+      border: 1px solid rgba(52, 211, 153, 0.15);
+    }
+
+    /* ─── CTA Banner ─── */
+    .cta-section {
+      padding: var(--space-24) 0;
+    }
+
+    .cta-card {
+      text-align: center;
+      padding: var(--space-16) var(--space-8);
+      border-radius: var(--radius-2xl);
+      background: linear-gradient(160deg, var(--bg-card) 0%, rgba(45, 212, 191, 0.04) 100%);
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.5s ease;
+    }
+    
+    .cta-card:hover {
+      box-shadow: 0 25px 50px rgba(0,0,0,0.06);
+      transform: scale(1.01);
+    }
+
+    .cta-card h2 {
+      font-size: var(--text-4xl);
+      margin-bottom: var(--space-4);
+    }
+
+    .cta-card p {
+      color: var(--text-secondary);
+      margin-bottom: var(--space-8);
+      font-size: var(--text-lg);
+    }
+
+    /* ─── Live Counter ─── */
+    .live-counter {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      background: var(--green-subtle);
+      border: 1px solid rgba(52, 211, 153, 0.15);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      color: var(--green);
+      margin-bottom: var(--space-4);
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 1024px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: var(--space-24) var(--space-6) var(--space-16);
+        min-height: initial;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .clinics-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-row {
+        gap: var(--space-6);
+      }
+
+      .lead-form {
+        flex-direction: column;
+        border-radius: var(--radius-lg);
+      }
+
+      .lead-form button {
+        border-radius: var(--radius-md);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ─── Navbar ─── -->
+  <nav class="navbar inline-style-76cad585">
+    <a href="index.html" class="logo inline-style-b25d56ee"><i data-lucide="stethoscope" class="icon-lg inline-style-63dc2591"></i>MobiDokta</a>
+    <div class="nav-links">
+      <div class="nav-dropdown">
+        <a href="#services" class="dropdown-trigger">Repairs</a>
+        <div class="dropdown-menu">
+          <a href="apple.html">Apple</a>
+          <a href="android.html">Android</a>
+          <a href="computers.html">Laptops & PCs</a>
+        </div>
+      </div>
+      <a href="#portfolio">See Our Work</a>
+      <a href="#founder">Competency</a>
+      <a href="support.html">Support</a>
+      <a href="service-request.html">Request Service</a>
+      <a href="community.html">Community Hub</a>
+      <a href="book.html">Book Now</a>
+    </div>
+    <div class="inline-style-cea36d1f">
+      <button id="theme-toggle" class="btn btn-ghost inline-style-4ebf6539" aria-label="Toggle Dark Mode">
+        <i data-lucide="moon" class="icon-sm"></i>
+      </button>
+      <a href="book.html" class="btn btn-primary btn-sm nav-btn-desktop">Get Started</a>
+      <button class="nav-toggle" aria-label="Menu"><i data-lucide="menu" class="icon"></i></button>
+    </div>
+  </nav>
+
+  <!-- ─── Hero ─── -->
+  <header class="hero">
+    <div class="container hero-inner">
+      <div class="glass-panel" data-animate>
+        <div class="inline-style-b395bbdf">The Private Hospital for Tech</div>
+        <h1 class="headline-xl inline-style-b8940467">We Fix.<br><span class="inline-style-35042dad">You Love.</span></h1>
+        <p class="body-lg inline-style-bfdc96c2">
+          Professional repair services for your essential devices.
+        </p>
+        <p class="inline-style-bbe2e301">Same-day service · All models · Randhart, Alberton</p>
+        <div class="hero-ctas inline-style-c1eb5044">
+          <a href="book.html" class="btn btn-primary btn-lg inline-style-4f1cc58a">Book a Repair</a>
+          <a href="tel:+27781541350" class="btn btn-secondary btn-lg inline-style-d846dbb0">
+            <i data-lucide="phone" class="icon-sm"></i> 078 154 1350
+          </a>
+        </div>
+        <div class="inline-style-97dbdef4">
+          <div class="inline-style-b131259d">
+            <i data-lucide="shield-check" class="icon inline-style-b25d56ee"></i>
+            <span class="inline-style-d8e8fe58">Genuine Parts</span>
+          </div>
+          <div class="inline-style-b131259d">
+            <i data-lucide="user-check" class="icon inline-style-b25d56ee"></i>
+            <span class="inline-style-d8e8fe58">Expert Technicians</span>
+          </div>
+          <div class="inline-style-b131259d">
+            <i data-lucide="clock" class="icon inline-style-b25d56ee"></i>
+            <span class="inline-style-d8e8fe58">Fast Turnaround</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ─── Partners & Certification ─── -->
+  <div class="trust-bar glass-panel inline-style-f3bea2ad">
+    <div class="container">
+      <div class="trust-row inline-style-1bcf4c48">
+        <div class="trust-item inline-style-9c451b59"><i data-lucide="check-circle" class="icon inline-style-b25d56ee"></i> OEM Original Grade</div>
+        <div class="trust-item inline-style-9c451b59"><i data-lucide="layers" class="icon inline-style-b25d56ee"></i> Eco Grade Available</div>
+        <div class="trust-item inline-style-9c451b59"><i data-lucide="clock" class="icon inline-style-b25d56ee"></i> Same-Day Service</div>
+        <div class="trust-item inline-style-9c451b59"><i data-lucide="shield" class="icon inline-style-b25d56ee"></i> Full Warranty Included</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── Services ─── -->
+  <section id="services" class="section">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <div class="badge badge-accent">Services</div>
+        <h2>Expert procedures for every device.</h2>
+        <p>From critical interventions to routine checkups, our TechDoktas handle it all with surgical precision.</p>
+      </div>
+
+      <div class="split-layout inline-style-b338ff7c">
+        <div data-animate>
+          <div class="badge badge-white">Core Competency</div>
+          <h2 class="inline-style-a0667f03">Precision is in our DNA.</h2>
+          <p class="body-lg">We don't just "fix" phones; we restore them. Every screw, every cable, and every gasket is
+            meticulously accounted for. Our TechDoktas are specialists in micro-soldering and high-fidelity screen
+            transplants.</p>
+          <div class="flex gap-4 inline-style-edcf313d">
+            <a href="apple.html" class="btn btn-secondary btn-sm">Apple</a>
+            <a href="android.html" class="btn btn-secondary btn-sm">Android</a>
+            <a href="computers.html" class="btn btn-secondary btn-sm">Laptops/PCs</a>
+          </div>
+        </div>
+        <div data-animate>
+          <img
+            src="C:\Users\asite\.gemini\antigravity\brain\2b952035-88c1-44d9-a5d1-f18d4fc576ce\iphone_repair_portfolio_1775596160719.png"
+            class="split-image" alt="Precision Repair">
+        </div>
+      </div>
+
+      <div class="services-grid inline-style-ebf135c6">
+        <div class="card service-card inline-style-678049f7" data-animate>
+          <img src="./img/service_screen_repair_1777918954167.png" alt="Screen Repair" class="inline-style-ee486f44" />
+          <div class="inline-style-75ab1518">
+            <h3 class="inline-style-eb0fc9a0">Screen Repair</h3>
+            <p class="inline-style-15b11a67">Cracked or broken screen? We'll make it look brand new.</p>
+            <span class="service-price inline-style-5ae5deac">From R999</span>
+          </div>
+        </div>
+        
+        <div class="card service-card inline-style-678049f7" data-animate>
+          <img src="./img/service_battery_repair_1777919392273.png" alt="Battery Replacement" class="inline-style-ee486f44" />
+          <div class="inline-style-75ab1518">
+            <h3 class="inline-style-eb0fc9a0">Battery Replacement</h3>
+            <p class="inline-style-15b11a67">Fast battery drain? Get long-lasting power again.</p>
+            <span class="service-price inline-style-5ae5deac">From R799</span>
+          </div>
+        </div>
+
+        <div class="card service-card inline-style-678049f7" data-animate>
+          <img src="./img/service_camera_repair_1777929661856.png" alt="Camera Repair" class="inline-style-ee486f44" />
+          <div class="inline-style-75ab1518">
+            <h3 class="inline-style-eb0fc9a0">Camera Repair</h3>
+            <p class="inline-style-15b11a67">Blurry photos or faulty camera? We've got you covered.</p>
+            <span class="service-price inline-style-5ae5deac">From R1,399</span>
+          </div>
+        </div>
+
+        <div class="card service-card inline-style-678049f7" data-animate>
+          <img src="./img/service_water_damage_1777929723849.png" alt="Water Damage Repair" class="inline-style-ee486f44" />
+          <div class="inline-style-75ab1518">
+            <h3 class="inline-style-eb0fc9a0">Water Damage</h3>
+            <p class="inline-style-15b11a67">Water accident? We'll recover and restore it.</p>
+            <span class="service-price inline-style-5ae5deac">From R1,499</span>
+          </div>
+        </div>
+
+        <div class="card service-card inline-style-678049f7" data-animate>
+          <div class="inline-style-17ff31e7">
+            <i data-lucide="video" class="inline-style-d94f61fc"></i>
+          </div>
+          <div class="inline-style-75ab1518">
+            <h3 class="inline-style-eb0fc9a0">TeleHealth Consult</h3>
+            <p class="inline-style-15b11a67">Video call with an engineer for remote diagnosis and advice.</p>
+            <span class="service-price inline-style-5ae5deac">From R199</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Process (Parallax) ─── -->
+  <section id="process" class="section inline-style-0481f7b5">
+    
+    <!-- Dark/Frosted Overlay for readability -->
+    <div class="inline-style-185dd0e7"></div>
+
+    <div class="container inline-style-c962d74f">
+      <div class="glass-panel inline-style-0ebc9d12">
+        <div class="section-header inline-style-766c0d76">
+          <div class="badge badge-accent">How it works</div>
+          <h2>Why Choose MobiDokta?</h2>
+          <p>From diagnosis to discharge — simple, fast, transparent.</p>
+        </div>
+        
+        <div class="inline-style-8c1c7b38">
+          <div class="inline-style-5f909099">
+            <i data-lucide="wrench" class="icon-lg inline-style-7668b268"></i>
+            <div>
+              <h4 class="inline-style-7eb8d1cd">Certified Technicians</h4>
+              <p class="inline-style-a9d576c4">Skilled experts with years of experience handling delicate components.</p>
+            </div>
+          </div>
+          <div class="inline-style-5f909099">
+            <i data-lucide="shield-check" class="icon-lg inline-style-7668b268"></i>
+            <div>
+              <h4 class="inline-style-7eb8d1cd">Genuine Apple Parts</h4>
+              <p class="inline-style-a9d576c4">We use only original quality components for optimal performance.</p>
+            </div>
+          </div>
+          <div class="inline-style-5f909099">
+            <i data-lucide="zap" class="icon-lg inline-style-7668b268"></i>
+            <div>
+              <h4 class="inline-style-7eb8d1cd">Fast & Reliable</h4>
+              <p class="inline-style-a9d576c4">Efficient repair processes to get your device back to you quickly.</p>
+            </div>
+          </div>
+          <div class="inline-style-5f909099">
+            <i data-lucide="award" class="icon-lg inline-style-7668b268"></i>
+            <div>
+              <h4 class="inline-style-7eb8d1cd">Warranty Included</h4>
+              <p class="inline-style-a9d576c4">All repairs come with a comprehensive service warranty.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Founder & Competency ─── -->
+  <section id="founder" class="section inline-style-c42974cb">
+    <div class="container">
+      <div class="split-layout inline-style-d0da858a">
+        <div class="founder-visual inline-style-28f03f8c">
+          <img src="./img/hero_iphone_repair_1777918767023.png" alt="Engineering Precision" class="inline-style-c23ce026">
+          <div class="inline-style-356af567">
+            <div class="inline-style-2b367b3e">
+              <i data-lucide="cpu" class="icon-lg inline-style-fd8403a3"></i>
+              <span class="inline-style-75c9b9f9">Engineering-Grade Precision</span>
+            </div>
+          </div>
+        </div>
+        <div class="founder-content inline-style-199a237d">
+          <div class="badge badge-accent">Leadership & Competency</div>
+          <h2 class="inline-style-c706a57d">Led by Engineering Expertise.</h2>
+          <p class="body-lg inline-style-a40f3218">
+            MobiDokta was founded on a bedrock of rigorous technical excellence. This isn't just a repair shop; it's a precision engineering facility built to handle the most delicate micro-electronics with surgical care.
+          </p>
+          
+          <div class="inline-style-dfda7ad9">
+            <div class="card inline-style-3ef2bf4a">
+              <h4 class="inline-style-97d1efe0"><i data-lucide="graduation-cap" class="icon inline-style-6eb4b668"></i> Mechatronics Engineering</h4>
+              <p class="inline-style-03200ac4">Our founder holds a background in Mechatronics Engineering, bridging the gap between intricate hardware mechanics and complex software logic.</p>
+            </div>
+            <div class="card inline-style-3ef2bf4a">
+              <h4 class="inline-style-97d1efe0"><i data-lucide="award" class="icon inline-style-6eb4b668"></i> Siemens Certified</h4>
+              <p class="inline-style-03200ac4">Internationally recognized Siemens certifications validate a high level of practical technical skill and industrial-grade software competency.</p>
+            </div>
+            <div class="card inline-style-3ef2bf4a">
+              <h4 class="inline-style-97d1efe0"><i data-lucide="binary" class="icon inline-style-6eb4b668"></i> Software & Hardware Mastery</h4>
+              <p class="inline-style-03200ac4">From board-level micro-soldering to advanced OS recovery, every procedure is executed with a highly skilled, engineering-first approach.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Portfolio & Client Love ─── -->
+  <section id="portfolio" class="section inline-style-9c7c5842">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <div class="badge badge-accent">Past Work & Client Love</div>
+        <h2>Cured & Discharged Cases.</h2>
+        <p>A glimpse into the surgical precision of our TechDoktas and what our clients have to say.</p>
+      </div>
+      
+      <div class="portfolio-masonry">
+        <!-- Portfolio 1 -->
+        <div class="masonry-item" data-animate>
+          <div class="masonry-img-wrapper">
+            <img src="./img/iphone_repair_portfolio_1775596160719.png" class="live-motion-img" alt="iPhone Repair">
+          </div>
+          <div class="masonry-content">
+            <h4 class="inline-style-bdbd7084">iPhone 15 Pro Max</h4>
+            <p class="inline-style-a9d576c4">Full Screen & Frame Transplant</p>
+          </div>
+        </div>
+
+        <!-- Testimonial 1 -->
+        <div class="masonry-item inline-style-9843bbec" data-animate>
+          <div class="masonry-content">
+            <div class="inline-style-51dcf0f5">★★★★★</div>
+            <p class="inline-style-a7730a7f">"My Samsung screen was shattered on a Friday. Booked online, dropped off at Randhart Saturday morning, and collected it same day. Incredible service."</p>
+            <h4 class="inline-style-63bdb941">Thabo M.</h4>
+            <span class="inline-style-26e58c81">Samsung Galaxy S24 Ultra</span>
+          </div>
+        </div>
+
+        <!-- Portfolio 2 -->
+        <div class="masonry-item" data-animate>
+          <div class="masonry-img-wrapper">
+            <img src="./img/macbook_repair_portfolio_1775596634015.png" class="live-motion-img" alt="MacBook Cleanup">
+          </div>
+          <div class="masonry-content">
+            <h4 class="inline-style-bdbd7084">MacBook Pro 16"</h4>
+            <p class="inline-style-a9d576c4">Thermal ICU & Internal Sanitization</p>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="masonry-item inline-style-9843bbec" data-animate>
+          <div class="masonry-content">
+            <div class="inline-style-51dcf0f5">★★★★★</div>
+            <p class="inline-style-a7730a7f">"Water damage on my iPhone 15 Pro. Other shops said it was dead. MobiDokta brought it back to life. Lifesavers, literally."</p>
+            <h4 class="inline-style-63bdb941">Naledi K.</h4>
+            <span class="inline-style-26e58c81">iPhone 15 Pro</span>
+          </div>
+        </div>
+        
+        <!-- Portfolio 3 -->
+        <div class="masonry-item" data-animate>
+          <div class="masonry-img-wrapper">
+            <img src="./img/safe_delivery_box_journey_1775596658221.png" class="live-motion-img" alt="Safe Packaging">
+          </div>
+          <div class="masonry-content">
+            <h4 class="inline-style-bdbd7084">Logistics Excellence</h4>
+            <p class="inline-style-a9d576c4">Premium Anti-Shock Packaging</p>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="masonry-item inline-style-9843bbec" data-animate>
+          <div class="masonry-content">
+            <div class="inline-style-51dcf0f5">★★★★★</div>
+            <p class="inline-style-a7730a7f">"The booking system is so smooth and I loved getting WhatsApp updates throughout. Best tech repair experience I've had in SA."</p>
+            <h4 class="inline-style-63bdb941">Sipho D.</h4>
+            <span class="inline-style-26e58c81">Huawei P60 Pro</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Request A Techie™ ─── -->
+  <section id="coverage" class="section inline-style-37fcd681">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <div class="badge badge-accent">Request A Techie™</div>
+        <h2>We come to you.</h2>
+        <p>House call & delivery pricing across Gauteng and nationwide.</p>
+      </div>
+      <div class="table-container inline-style-d7d42c86" data-animate>
+        <table class="data-table inline-style-199b6f0e">
+          <thead>
+            <tr>
+              <th class="inline-style-ed67469d">Service Area</th>
+              <th class="inline-style-ed67469d">Call-Out Fee</th>
+              <th class="inline-style-ed67469d">Coverage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="inline-style-6bdafe8f">Walk-in · Randhart Studio</td>
+              <td class="inline-style-a4860fc3">Free</td>
+              <td class="inline-style-943ed25c">By Appointment Only · Book Online at least 1hr before</td>
+            </tr>
+            <tr>
+              <td class="inline-style-6bdafe8f">Alberton & Surrounds</td>
+              <td class="inline-style-4182e6b8">R299</td>
+              <td class="inline-style-943ed25c">Randhart, Brackenhurst, Meyersdal, New Redruth</td>
+            </tr>
+            <tr>
+              <td class="inline-style-6bdafe8f">Johannesburg (city limits)</td>
+              <td class="inline-style-4182e6b8">R399</td>
+              <td class="inline-style-943ed25c">JHB South, Sandton, Midrand, CBD</td>
+            </tr>
+            <tr>
+              <td class="inline-style-6bdafe8f">Greater Gauteng</td>
+              <td class="inline-style-4182e6b8">R499</td>
+              <td class="inline-style-943ed25c">Pretoria, East/West Rand, Kempton Park</td>
+            </tr>
+            <tr>
+              <td class="inline-style-6bdafe8f">Public Meetup</td>
+              <td class="inline-style-4182e6b8">R399</td>
+              <td class="inline-style-943ed25c">Personally chosen public mall or cafe for exchange pickup</td>
+            </tr>
+            <tr>
+              <td class="inline-style-6bdafe8f">Nationwide Courier</td>
+              <td class="inline-style-4182e6b8">R89 - R199</td>
+              <td class="inline-style-943ed25c">Depending on courier (RAM, Courier Guy) and area</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="inline-style-50842ea3">Payment due on completion. Courier repairs require EFT before return shipping.</p>
+    </div>
+  </section>
+
+  <!-- ─── Private Studio Location ─── -->
+  <section id="location" class="section inline-style-c42974cb">
+    <div class="container">
+      <div class="split-layout inline-style-d0da858a">
+        <div class="location-content inline-style-ed489eb6">
+          <div class="badge badge-accent">The Private Studio</div>
+          <h2 class="inline-style-c706a57d">A secure, digitally-native hub for high-precision repairs.</h2>
+          <p class="body-lg inline-style-a40f3218">
+            By operating from a private diagnostic studio rather than an expensive commercial storefront, we cut out massive overhead costs—allowing us to invest heavily in top-tier micro-soldering equipment, OEM parts, and pass the savings directly to you.
+          </p>
+          
+          <div class="inline-style-94ad791c">
+            <div class="inline-style-d573b2ca">
+              <i data-lucide="shield-check" class="icon-lg inline-style-d6b13fc0"></i>
+              <div>
+                <h4 class="inline-style-92cc2c56">Secure & Private Drop-Off</h4>
+                <p class="inline-style-a9d576c4">Bypass the middleman. Hand your device directly to the lead technician in a secure, 24/7 CCTV-monitored environment.</p>
+              </div>
+            </div>
+            <div class="inline-style-d573b2ca">
+              <i data-lucide="file-check-2" class="icon-lg inline-style-d6b13fc0"></i>
+              <div>
+                <h4 class="inline-style-92cc2c56">Fully Verified & Legal</h4>
+                <p class="inline-style-a9d576c4">Backed by HyperMartX Tech (Pty) Ltd (K2025/218955/07) and registered on the Central Supplier Database (MAAA1688961).</p>
+              </div>
+            </div>
+            <div class="inline-style-d573b2ca">
+              <i data-lucide="map-pin" class="icon-lg inline-style-7668b268"></i>
+              <div>
+                <h4 class="inline-style-92cc2c56">Convenient Access</h4>
+                <p class="inline-style-a9d576c4">Located at 20 Selwyn Cres, Randhart, Alberton. Prefer not to travel? We offer House Calls and Courier options.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="location-visual inline-style-0a2ffc38">
+          <iframe title="Google Maps Location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3577.132772084801!2d28.11154097454833!3d-26.289795477023954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e951ab51bd16a41%3A0x9dde6603bb96fc87!2s20%20Selwyn%20Cres%2C%20Randhart%2C%20Alberton%2C%201449!5e0!3m2!1sen!2sza!4v1777923676609!5m2!1sen!2sza" width="100%" height="450" class="inline-style-e65fbc7a" allowfullscreen="" loading="lazy" ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Payment Methods ─── -->
+  <section class="section-sm inline-style-c42974cb">
+    <div class="container inline-style-cdd8ca06">
+      <p class="inline-style-fb705b3b">Payment Methods Accepted</p>
+      <div class="inline-style-c8b44741">
+        <span class="inline-style-650e1230"><i data-lucide="banknote" class="icon-sm"></i> Cash</span>
+        <span class="inline-style-650e1230"><i data-lucide="credit-card" class="icon-sm"></i> Visa / Mastercard</span>
+        <span class="inline-style-650e1230"><i data-lucide="smartphone" class="icon-sm"></i> SnapScan</span>
+        <span class="inline-style-650e1230"><i data-lucide="scan-line" class="icon-sm"></i> Zapper</span>
+        <span class="inline-style-650e1230"><i data-lucide="landmark" class="icon-sm"></i> EFT / Bank Transfer</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA ─── -->
+  <section class="cta-section inline-style-37fcd681">
+    <div class="container">
+      <div class="cta-card inline-style-a30e48e4" data-animate>
+        <h2 class="inline-style-b990194c">Ready to get your device fixed?</h2>
+        <p class="inline-style-37110241">Repairs with Precision. Service with Soul.</p>
+        <p class="inline-style-1a01a5e0">Book your repair today or request a techie to come to you.</p>
+        <div class="inline-style-b8951ee8">
+          <a href="book.html" class="btn btn-primary btn-lg inline-style-89eb9d85">Book a Repair</a>
+          <a href="tel:+27781541350" class="btn btn-ghost btn-lg inline-style-89eb9d85">Call 078 154 1350</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ─── -->
+  <footer class="footer inline-style-c42974cb">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo inline-style-982adbde"><i data-lucide="stethoscope" class="icon-lg inline-style-63dc2591"></i>MobiDokta</a>
+          <p class="inline-style-bbb073a2">The Private Hospital for Tech. Repairs with Precision. Service with Soul.</p>
+          <p class="inline-style-0aaeeb9c">HyperMartX Tech (Pty) Ltd · K2025/218955/07</p>
+          <div class="inline-style-5f909099">
+            <a href="#" title="Facebook" class="inline-style-1558ef53"><i data-lucide="facebook" class="icon"></i></a>
+            <a href="#" title="Instagram" class="inline-style-1558ef53"><i data-lucide="instagram" class="icon"></i></a>
+            <a href="https://wa.me/27781541350" target="_blank" rel="noopener" title="WhatsApp" class="inline-style-1558ef53"><i data-lucide="message-circle" class="icon"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="inline-style-5ae5deac">Quick Links</h4>
+          <a href="#">Home</a>
+          <a href="#services">Services</a>
+          <a href="#coverage">Request A Techie</a>
+          <a href="support.html">Support</a>
+          <a href="book.html">Book Now</a>
+        </div>
+        <div class="footer-col">
+          <h4 class="inline-style-5ae5deac">Repairs</h4>
+          <a href="apple.html">Apple Devices</a>
+          <a href="android.html">Android Devices</a>
+          <a href="computers.html">Laptops & PCs</a>
+        </div>
+        <div class="footer-col">
+          <h4 class="inline-style-5ae5deac">Contact Us</h4>
+          <p class="inline-style-58c130ed"><i data-lucide="map-pin" class="icon-sm inline-style-b51ec4a3"></i> Randhart, Alberton, Gauteng</p>
+          <p class="inline-style-7888f605"><i data-lucide="phone" class="icon-sm"></i> 078 154 1350</p>
+          <p class="inline-style-7888f605"><i data-lucide="phone" class="icon-sm"></i> 063 753 8553</p>
+          <p class="inline-style-7888f605"><i data-lucide="mail" class="icon-sm"></i> infomobidokta@gmail.com</p>
+          <p class="inline-style-94a26105">Mon–Fri 08:00–18:00 · Sat 09:00–17:00</p>
+        </div>
+      </div>
+      <div class="footer-bottom inline-style-a7d2df7a">
+        <p>&copy; 2026 MobiDokta. All rights reserved.</p>
+        <p class="inline-style-1b88f4ba">HyperMartX Tech (Pty) Ltd · CIPC K2025/218955/07 · CSD MAAA1688961</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Mobile CTA -->
+  <div class="sticky-cta">
+    <a href="book.html" class="btn btn-primary">Book a Repair — 078 154 1350</a>
+  </div>
+
+  <!-- WhatsApp FAB -->
+  <a href="https://wa.me/27781541350" target="_blank" rel="noopener" class="whatsapp-fab" title="Chat on WhatsApp"><i
+      data-lucide="message-circle" class="icon-lg"></i></a>
+
+  <!-- Side Navigation & Overlay -->
+  <div class="nav-overlay"></div>
+  <aside class="side-nav">
+    <div class="inline-style-662d0ca9">
+      <span class="inline-style-d60ee865"><i data-lucide="stethoscope" class="icon-sm"></i> MobiDokta</span>
+      <button class="nav-close" aria-label="Close Menu"><i data-lucide="x" class="icon"></i></button>
+    </div>
+    <a href="#services"><i data-lucide="tool" class="icon-sm"></i> Repairs</a>
+    <a href="#portfolio"><i data-lucide="image" class="icon-sm"></i> See Our Work</a>
+    <a href="#founder"><i data-lucide="award" class="icon-sm"></i> Competency</a>
+    <a href="support.html"><i data-lucide="help-circle" class="icon-sm"></i> Support</a>
+    <a href="service-request.html"><i data-lucide="file-plus" class="icon-sm"></i> Request Service</a>
+    <a href="community.html"><i data-lucide="users" class="icon-sm"></i> Community Hub</a>
+    <a href="book.html" class="inline-style-fd9334c1"><i data-lucide="calendar" class="icon-sm"></i> Book Now</a>
+    
+    <div class="inline-style-d35d2a58">
+      <button id="theme-toggle-mobile" class="btn btn-secondary btn-block inline-style-02b9305a">
+        <i data-lucide="moon" class="icon-sm theme-icon"></i> Toggle Dark Mode
+      </button>
+    </div>
+  </aside>
+
+  <script src="./js/data-store.js"></script>
+  <script src="./js/app.js"></script>
+  <script>
+    // Initialize Lucide icons
+    if (typeof lucide !== 'undefined') { lucide.createIcons(); }
+  </script>
+</body>
+
+</html>

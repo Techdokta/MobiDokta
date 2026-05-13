@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Premium Android Repairs | Samsung, Huawei, Xiaomi | MobiDokta</title>
+  <link rel="stylesheet" href="./css/global.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .brand-hero { padding: var(--space-24) 0; }
+    .brand-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-8); padding-bottom: var(--space-20); }
+    .feature-card { text-align: center; padding: var(--space-8); background: var(--bg-card); border-radius: var(--radius-xl); border: 1px solid var(--border); }
+    .feature-card i { color: var(--accent); margin-bottom: var(--space-4); }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="logo"><span class="cross">+</span>MobiDokta</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="book.html">Book</a>
+      <a href="apple.html">Apple</a>
+      <a href="android.html" class="active">Android</a>
+      <a href="computers.html">Laptops & PCs</a>
+      <a href="support.html">Support</a>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  </nav>
+
+  <header class="brand-hero">
+    <div class="container split-layout">
+      <div>
+        <div class="badge badge-accent">Android Specialists</div>
+        <h1 style="margin-top:var(--space-4);"><span class="text-gradient">Advanced Care</span> for all Android brands.</h1>
+        <p class="body-lg" style="margin-top:var(--space-6);">Expert repairs for Samsung, Huawei, Xiaomi, and more. From screen transplants to component-level micro-soldering.</p>
+        <div class="flex gap-4" style="margin-top:var(--space-10);">
+          <a href="book.html?brand=Android" class="btn btn-primary btn-lg">Book Android Repair</a>
+          <a href="#prices" class="btn btn-secondary btn-lg">View Price List</a>
+        </div>
+      </div>
+      <div>
+         <img src="C:\Users\asite\.gemini\antigravity\brain\2b952035-88c1-44d9-a5d1-f18d4fc576ce\android_repair_hero_1775596823664.png" class="split-image" alt="Android Repair">
+      </div>
+    </div>
+  </header>
+
+  <section class="section" style="background:var(--bg-secondary);">
+    <div class="container">
+      <div class="brand-features">
+        <div class="feature-card" data-animate>
+          <i data-lucide="zap" class="icon-xl"></i>
+          <h3>Quick Turnaround</h3>
+          <p class="body-sm">Most screen and battery repairs completed same-day in under 60 minutes.</p>
+        </div>
+        <div class="feature-card" data-animate>
+          <i data-lucide="microchip" class="icon-xl"></i>
+          <h3>OEM Standards</h3>
+          <p class="body-sm">We use original or certified third-party parts for high-fidelity repairs.</p>
+        </div>
+        <div class="feature-card" data-animate>
+          <i data-lucide="award" class="icon-xl"></i>
+          <h3>90-Day All-Repair Warranty</h3>
+          <p class="body-sm">All repairs come with the same MobiDokta lifetime confidence guarantee.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prices Section -->
+  <section id="prices" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Android <span class="text-gradient">Pricing</span></h2>
+        <p>Fair pricing for every model and brand.</p>
+      </div>
+      <div class="table-container glass" style="max-width:900px;margin:0 auto; overflow-x: auto;">
+        <h3 style="margin-bottom:var(--space-4);">Samsung Galaxy Screen Repairs (AMOLED)</h3>
+        <table class="data-table">
+          <thead><tr><th>Device / Model</th><th>Price</th><th>ETA</th><th>Complexity</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td>Galaxy S24 Ultra</td><td>R6,500</td><td>60-90 min</td><td>Advanced</td><td><a href="book.html?brand=Samsung&model=Galaxy S24 Ultra&svc=oem" class="btn btn-primary" style="padding:4px 10px; font-size:12px;">Book</a></td></tr>
+            <tr><td>Galaxy S23 Ultra</td><td>R5,000</td><td>60-90 min</td><td>Advanced</td><td><a href="book.html?brand=Samsung&model=Galaxy S23 Ultra&svc=oem" class="btn btn-primary" style="padding:4px 10px; font-size:12px;">Book</a></td></tr>
+            <tr><td>Galaxy S22 Ultra</td><td>R4,300</td><td>60 min</td><td>Standard</td><td><a href="book.html?brand=Samsung&model=Galaxy S22 Ultra&svc=oem" class="btn btn-primary" style="padding:4px 10px; font-size:12px;">Book</a></td></tr>
+            <tr><td>Galaxy Z Fold 5</td><td>R6,500</td><td>90-120 min</td><td>Specialist</td><td><a href="book.html?brand=Samsung&model=Galaxy Z Fold 5&svc=oem" class="btn btn-primary" style="padding:4px 10px; font-size:12px;">Book</a></td></tr>
+            <tr><td>Galaxy Z Fold 4</td><td>R5,500</td><td>90-120 min</td><td>Specialist</td><td><a href="book.html?brand=Samsung&model=Galaxy Z Fold 4&svc=oem" class="btn btn-primary" style="padding:4px 10px; font-size:12px;">Book</a></td></tr>
+            <tr><td>Galaxy Z Flip 5</td><td>R4,600</td><td>60-90 min</td><td>Advanced</td><td><a href="book.html?brand=Samsung&model=Galaxy Z Flip 5&svc=oem" class="btn btn-primary" style="padding:4px 10px; font-size:12px;">Book</a></td></tr>
+            <tr><td>Galaxy Z Flip 4</td><td>R3,900</td><td>60-90 min</td><td>Advanced</td><td><a href="book.html?brand=Samsung&model=Galaxy Z Flip 4&svc=oem" class="btn btn-primary" style="padding:4px 10px; font-size:12px;">Book</a></td></tr>
+            <tr><td>Galaxy A54</td><td>R1,799</td><td>45 min</td><td>Standard</td><td><a href="book.html?brand=Samsung&model=Galaxy A54&svc=oem" class="btn btn-primary" style="padding:4px 10px; font-size:12px;">Book</a></td></tr>
+            <tr><td>Galaxy A53</td><td>R1,699</td><td>45 min</td><td>Standard</td><td><a href="book.html?brand=Samsung&model=Galaxy A53&svc=oem" class="btn btn-primary" style="padding:4px 10px; font-size:12px;">Book</a></td></tr>
+            <tr><td>Galaxy A34</td><td>R1,799</td><td>45 min</td><td>Standard</td><td><a href="book.html?brand=Samsung&model=Galaxy A34&svc=oem" class="btn btn-primary" style="padding:4px 10px; font-size:12px;">Book</a></td></tr>
+            <tr><td>Galaxy A24</td><td>R1,099</td><td>30-45 min</td><td>Quick Fix</td><td><a href="book.html?brand=Samsung&model=Galaxy A24&svc=oem" class="btn btn-primary" style="padding:4px 10px; font-size:12px;">Book</a></td></tr>
+            <tr><td>Galaxy A14</td><td>R1,099</td><td>30-45 min</td><td>Quick Fix</td><td><a href="book.html?brand=Samsung&model=Galaxy A14&svc=oem" class="btn btn-primary" style="padding:4px 10px; font-size:12px;">Book</a></td></tr>
+            <tr><td>Galaxy A05</td><td>R650</td><td>30 min</td><td>Quick Fix</td><td><a href="book.html?brand=Samsung&model=Galaxy A05&svc=oem" class="btn btn-primary" style="padding:4px 10px; font-size:12px;">Book</a></td></tr>
+          </tbody>
+        </table>
+
+        <h3 style="margin:var(--space-8) 0 var(--space-4);">Samsung Other Repairs</h3>
+        <table class="data-table">
+          <thead><tr><th>Service</th><th>Price Range</th><th>ETA</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td>Battery Replacement</td><td>R450 – R1,500</td><td>30-45 min</td><td><a href="book.html?brand=Samsung&svc=batt" class="btn btn-primary" style="padding:4px 10px; font-size:12px;">Book</a></td></tr>
+            <tr><td>Charging Port Repair</td><td>R500 – R1,000</td><td>30-45 min</td><td><a href="book.html?brand=Samsung&svc=Charging Port" class="btn btn-primary" style="padding:4px 10px; font-size:12px;">Book</a></td></tr>
+            <tr><td>Back Glass Repair</td><td>R600 – R2,500</td><td>45-60 min</td><td><a href="book.html?brand=Samsung&svc=Back Glass" class="btn btn-primary" style="padding:4px 10px; font-size:12px;">Book</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="logo">MobiDokta</div>
+          <p class="body-sm">Gauteng's premier Android tech hospital.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="tel:+27781541350">+27 78 154 1350</a>
+          <a href="mailto:infomobidokta@gmail.com">infomobidokta@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/app.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Premium Computer & Console Repairs | MobiDokta</title>
+  <link rel="stylesheet" href="./css/global.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .brand-hero { padding: var(--space-24) 0; }
+    .brand-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-8); padding-bottom: var(--space-20); }
+    .feature-card { text-align: center; padding: var(--space-8); background: var(--bg-card); border-radius: var(--radius-xl); border: 1px solid var(--border); }
+    .feature-card i { color: var(--accent); margin-bottom: var(--space-4); }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="logo"><span class="cross">+</span>MobiDokta</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="book.html">Book</a>
+      <a href="apple.html">Apple</a>
+      <a href="computers.html" class="active">Laptops & PCs</a>
+      <a href="support.html">Support</a>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  </nav>
+
+  <header class="brand-hero">
+    <div class="container split-layout">
+      <div>
+        <div class="badge badge-accent">Computer Specialists</div>
+        <h1 style="margin-top:var(--space-4);"><span class="text-gradient">Advanced Care</span> for Laptops & Consoles.</h1>
+        <p class="body-lg" style="margin-top:var(--space-6);">Expert repairs for MacBooks, Windows laptops, and gaming consoles (PS5, Xbox). From thermal treatments to board-level micro-soldering.</p>
+        <div class="flex gap-4" style="margin-top:var(--space-10);">
+          <a href="book.html?brand=MacBook" class="btn btn-primary btn-lg">Book a Repair</a>
+          <a href="#prices" class="btn btn-secondary btn-lg">View Price List</a>
+        </div>
+      </div>
+      <div>
+         <img src="C:\Users\asite\.gemini\antigravity\brain\2b952035-88c1-44d9-a5d1-f18d4fc576ce\macbook_repair_portfolio_1775596634015.png" class="split-image" alt="MacBook Repair">
+      </div>
+    </div>
+  </header>
+
+  <section class="section" style="background:var(--bg-secondary);">
+    <div class="container">
+      <div class="brand-features">
+        <div class="feature-card" data-animate>
+          <i data-lucide="zap" class="icon-xl"></i>
+          <h3>Quick Turnaround</h3>
+          <p class="body-sm">Most screen and battery repairs completed same-day in under 60 minutes.</p>
+        </div>
+        <div class="feature-card" data-animate>
+          <i data-lucide="microchip" class="icon-xl"></i>
+          <h3>OEM Standards</h3>
+          <p class="body-sm">We use original or certified third-party parts for high-fidelity repairs.</p>
+        </div>
+        <div class="feature-card" data-animate>
+          <i data-lucide="award" class="icon-xl"></i>
+          <h3>90-Day All-Repair Warranty</h3>
+          <p class="body-sm">All repairs come with the same MobiDokta lifetime confidence guarantee.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prices Section -->
+  <section id="prices" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Computer & Console <span class="text-gradient">Pricing</span></h2>
+        <p>Fair, standardized pricing for larger devices.</p>
+      </div>
+      <div class="table-container glass" style="max-width:900px;margin:0 auto; overflow-x: auto;">
+        <h3 style="margin-bottom:var(--space-4);">MacBook & Laptops</h3>
+        <table class="data-table">
+          <thead><tr><th>Service</th><th>Base Price</th><th>ETA</th></tr></thead>
+          <tbody>
+            <tr><td>Screen Fix (LCD/IPS/OLED)</td><td>from R1,800</td><td>60 min</td></tr>
+            <tr><td>Battery ICU (Replacement)</td><td>from R1,200</td><td>45 min</td></tr>
+            <tr><td>Thermal ICU (Paste + Fan Clean)</td><td>R400</td><td>45 min</td></tr>
+            <tr><td>Diagnostic Check</td><td>Free</td><td>30 min</td></tr>
+          </tbody>
+        </table>
+
+        <h3 style="margin:var(--space-8) 0 var(--space-4);">Consoles (PS5 / Xbox)</h3>
+        <table class="data-table">
+          <thead><tr><th>Service</th><th>Price</th><th>ETA</th></tr></thead>
+          <tbody>
+            <tr><td>HDMI Port Surgery</td><td>R1,250</td><td>90-120 min</td></tr>
+            <tr><td>Deep Clean + Thermal Paste</td><td>R650</td><td>60-90 min</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="logo">MobiDokta</div>
+          <p class="body-sm">Gauteng's premier computer & console hospital.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="tel:+27781541350">+27 78 154 1350</a>
+          <a href="mailto:infomobidokta@gmail.com">infomobidokta@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/app.js"></script>
+</body>
+</html>
+

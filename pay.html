@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pay Securely | MobiDokta</title>
+  <meta name="description" content="Pay securely for your MobiDokta repair via Yoco, Peach Payments, or Ozow EFT.">
+  <link rel="stylesheet" href="./css/global.css">
+  <link rel="stylesheet" href="./css/payment.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="logo"><span class="cross">+</span>MobiDokta</a>
+    <div class="nav-links">
+      <div class="nav-dropdown">
+        <a href="index.html#services" class="dropdown-trigger">Repairs <i data-lucide="chevron-down" class="icon-xs"></i></a>
+        <div class="dropdown-menu">
+          <a href="apple.html"><i data-lucide="apple" class="icon-sm"></i> Apple Repairs</a>
+          <a href="android.html"><i data-lucide="smartphone" class="icon-sm"></i> Android Repairs</a>
+        </div>
+      </div>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="journey.html">Our Journey</a>
+      <a href="book.html">Book</a>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  </nav>
+
+  <main class="payment-page">
+    <div class="container">
+      <div class="section-header" style="padding-top:7rem;">
+        <div class="badge badge-green">Secure Payment</div>
+        <h1>Complete your <span class="text-gradient">payment</span></h1>
+        <p>Choose your preferred payment method below.</p>
+      </div>
+
+      <div class="payment-layout">
+        <!-- Order Summary Sidebar -->
+        <div class="order-summary glass">
+          <h3>Order Summary</h3>
+          <div class="order-row"><span>Booking Ref</span><span id="pay-ref">—</span></div>
+          <div class="order-row" style="flex-direction:column;align-items:flex-start;gap:4px;">
+            <span>Selected Services</span>
+            <span id="pay-service" style="font-size:var(--text-xs);color:var(--text-secondary);text-align:left;">—</span>
+          </div>
+          <div class="order-row"><span>Device</span><span id="pay-device">—</span></div>
+          <div class="order-row total"><span>Total</span><span id="pay-total" class="text-glow">R0</span></div>
+          <div class="security-notice">
+            <i data-lucide="lock-keyhole" class="icon-sm" style="color:var(--text-tertiary)"></i>
+            <span>256-bit SSL encrypted. Your payment details are never stored on our servers.</span>
+          </div>
+        </div>
+
+        <!-- Payment Methods -->
+        <div class="payment-methods">
+          <div class="gateway-tabs">
+            <button class="gateway-tab active" data-gateway="yoco">
+              <div class="gateway-icon"><i data-lucide="credit-card" class="icon"></i></div>
+              <span>Yoco</span>
+              <small>Card Payment</small>
+            </button>
+            <button class="gateway-tab" data-gateway="peach">
+              <div class="gateway-icon"><i data-lucide="package" class="icon"></i></div>
+              <span>Peach</span>
+              <small>Card / 3D Secure</small>
+            </button>
+            <button class="gateway-tab" data-gateway="ozow">
+              <div class="gateway-icon"><i data-lucide="landmark" class="icon"></i></div>
+              <span>Ozow</span>
+              <small>Instant EFT</small>
+            </button>
+          </div>
+
+          <!-- Yoco Form -->
+          <div class="gateway-panel active glass" id="panel-yoco">
+            <h3>Pay with Yoco</h3>
+            <p class="gateway-desc">Secure card payment powered by Yoco.</p>
+            <div class="card-form">
+              <div class="form-group">
+                <label class="form-label">Cardholder Name</label>
+                <input type="text" class="form-input" id="yoco-name" placeholder="Name on card">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Card Number</label>
+                <input type="text" class="form-input card-number-input" id="yoco-card" placeholder="4242 4242 4242 4242" maxlength="19">
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Expiry</label>
+                  <input type="text" class="form-input" id="yoco-expiry" placeholder="MM/YY" maxlength="5">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">CVV</label>
+                  <input type="text" class="form-input" id="yoco-cvv" placeholder="123" maxlength="4">
+                </div>
+              </div>
+              <button class="btn btn-success btn-block btn-lg" id="yoco-pay-btn">Pay Now</button>
+            </div>
+          </div>
+
+          <!-- Peach Form -->
+          <div class="gateway-panel glass" id="panel-peach">
+            <h3>Pay with Peach Payments</h3>
+            <p class="gateway-desc">3D Secure card payment with Peach Payments.</p>
+            <div class="card-form">
+              <div class="form-group">
+                <label class="form-label">Cardholder Name</label>
+                <input type="text" class="form-input" id="peach-name" placeholder="Name on card">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Card Number</label>
+                <input type="text" class="form-input card-number-input" id="peach-card" placeholder="5200 0000 0000 0000" maxlength="19">
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Expiry</label>
+                  <input type="text" class="form-input" id="peach-expiry" placeholder="MM/YY" maxlength="5">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">CVV</label>
+                  <input type="text" class="form-input" id="peach-cvv" placeholder="123" maxlength="4">
+                </div>
+              </div>
+              <button class="btn btn-success btn-block btn-lg" id="peach-pay-btn">Pay Securely</button>
+            </div>
+          </div>
+
+          <!-- Ozow Panel -->
+          <div class="gateway-panel glass" id="panel-ozow">
+            <h3>Pay with Ozow</h3>
+            <p class="gateway-desc">Instant EFT — pay directly from your bank account.</p>
+            <div class="bank-grid">
+              <div class="bank-card" data-bank="FNB"><i data-lucide="landmark" class="icon-sm"></i> FNB</div>
+              <div class="bank-card" data-bank="Standard Bank"><i data-lucide="landmark" class="icon-sm"></i> Standard Bank</div>
+              <div class="bank-card" data-bank="Nedbank"><i data-lucide="landmark" class="icon-sm"></i> Nedbank</div>
+              <div class="bank-card" data-bank="ABSA"><i data-lucide="landmark" class="icon-sm"></i> ABSA</div>
+              <div class="bank-card" data-bank="Capitec"><i data-lucide="landmark" class="icon-sm"></i> Capitec</div>
+              <div class="bank-card" data-bank="Investec"><i data-lucide="landmark" class="icon-sm"></i> Investec</div>
+            </div>
+            <button class="btn btn-success btn-block btn-lg" id="ozow-pay-btn" disabled>Continue to Bank →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUCCESS SCREEN (hidden initially) -->
+      <div class="payment-success glass hidden" id="payment-success">
+        <div class="success-icon"><i data-lucide="check-circle-2" style="width:64px;height:64px;color:var(--green)"></i></div>
+        <h2>Payment <span class="text-glow">Successful</span></h2>
+        <p>Your repair is confirmed and your TechDokta is ready!</p>
+        <div class="success-details">
+          <div class="order-row"><span>Reference</span><span id="success-ref">—</span></div>
+          <div class="order-row"><span>Amount Paid</span><span id="success-amount" class="text-green">—</span></div>
+          <div class="order-row"><span>Gateway</span><span id="success-gateway">—</span></div>
+        </div>
+        <p style="color:var(--text-muted);font-size:var(--text-sm);margin:var(--space-lg) 0;">Confirmation sent via SMS, WhatsApp & Email.</p>
+        <div class="flex gap-md" style="justify-content:center;flex-wrap:wrap;">
+          <button class="btn btn-primary" id="download-invoice-btn"><i data-lucide="file-text" class="icon-sm"></i> Download Invoice</button>
+          <a href="index.html" class="btn btn-ghost">← Back to Home</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <a href="https://wa.me/27781541350" target="_blank" class="whatsapp-fab" title="Chat on WhatsApp"><i data-lucide="message-circle" class="icon-lg"></i></a>
+
+  <script src="./js/data-store.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./js/payment.js"></script>
+</body>
+</html>
+
