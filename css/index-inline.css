@@ -15,7 +15,7 @@
 .inline-style-ebf135c6 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 .inline-style-678049f7 { padding: 0; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-sm); background: var(--bg-card); }
 .inline-style-5ae5deac { color: var(--text-primary); font-weight: 600; }
-.inline-style-0481f7b5 { background-image: url('./img/exploded_iphone_render_1777918938671.png'); background-size: cover; background-position: center; background-attachment: fixed; position: relative; }
+.inline-style-0481f7b5 { background-image: url('./img/bg-process.png'); background-size: cover; background-position: center; background-attachment: fixed; position: relative; }
 .inline-style-c962d74f { position: relative; z-index: 2; }
 .inline-style-0ebc9d12 { max-width: 800px; margin: 0 auto; background: var(--glass-bg); }
 .inline-style-766c0d76 { margin-bottom: var(--space-8); }

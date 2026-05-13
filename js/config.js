@@ -11,8 +11,8 @@
 
 const MOBI_CONFIG = {
   // Supabase Database Config
-  SUPABASE_URL: 'YOUR_SUPABASE_PROJECT_URL_HERE',
-  SUPABASE_ANON_KEY: 'YOUR_SUPABASE_ANON_KEY_HERE',
+  SUPABASE_URL: 'https://sdtulqzaxourrugtdosc.supabase.co',
+  SUPABASE_ANON_KEY: 'sb_publishable_KdZxSbssnHkZ7M_Ok7prTA_nT7cFW33',
   
   // Example payment gateways mappings for later
   DEPOSIT_PERCENTAGE: 0.40
