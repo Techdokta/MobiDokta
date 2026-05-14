@@ -29,6 +29,7 @@
     { id: 'tech-at-door', icon: 'home', name: 'Request A Techie™', desc: 'On-site home repair call-out', price: 149, duration: 0 },
     
     // Remote / Practical
+    { id: 'teletech-consult', icon: 'video', name: 'TeleTech Consultation', desc: 'Remote video call with a senior engineer for diagnosis.', price: 199, duration: 30 },
     { id: 'practical-solution', icon: 'life-buoy', name: 'Free Practical Solutions', desc: 'Remote advice & remote troubleshooting via WhatsApp', price: 0, duration: 15 }
   ];
 
@@ -344,6 +345,23 @@
     
     const depositEl = document.getElementById('cart-deposit-price');
     if(depositEl) depositEl.textContent = 'R' + depositAmount.toLocaleString();
+
+    // Auto-location logic for TeleTech
+    const clinicSelect = document.getElementById('clinic-select');
+    if (clinicSelect) {
+      const hasRemote = booking.cart.some(item => item.id === 'teletech-consult' || item.id === 'practical-solution');
+      if (hasRemote) {
+        clinicSelect.value = 'Online / TeleTech';
+        booking.location = 'Online / TeleTech';
+        clinicSelect.disabled = true;
+      } else {
+        clinicSelect.disabled = false;
+        if (clinicSelect.value === 'Online / TeleTech') {
+          clinicSelect.value = 'Sandton Central'; // Revert back
+          booking.location = 'Sandton Central';
+        }
+      }
+    }
   }
   
   // Initialize dynamic icons
