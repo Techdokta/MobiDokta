@@ -498,11 +498,11 @@
   const confirmBtn = document.getElementById('confirm-booking-btn');
 
   function validateConfirmForm() {
-    const valid = nameInput.value.trim().length >= 2
-      && MobiApp.isValidPhone(phoneInput.value)
-      && MobiApp.isValidEmail(emailInput.value)
-      && consentCheck.checked;
-    confirmBtn.disabled = !valid;
+    const valid = nameInput && nameInput.value.trim().length >= 2
+      && phoneInput && MobiApp.isValidPhone(phoneInput.value)
+      && emailInput && MobiApp.isValidEmail(emailInput.value)
+      && consentCheck && consentCheck.checked;
+    if (confirmBtn) confirmBtn.disabled = !valid;
   }
 
   [nameInput, phoneInput, emailInput, consentCheck].forEach(el => {
@@ -510,9 +510,10 @@
     el.addEventListener('change', validateConfirmForm);
   });
 
-  confirmBtn.addEventListener('click', async () => {
-    confirmBtn.disabled = true;
-    confirmBtn.textContent = "Securing Booking...";
+  if (confirmBtn) {
+    confirmBtn.addEventListener('click', async () => {
+      confirmBtn.disabled = true;
+      confirmBtn.textContent = "Securing Booking...";
 
     const name = MobiApp.sanitize(nameInput.value.trim());
     const phone = MobiApp.sanitize(phoneInput.value.trim());
@@ -573,4 +574,5 @@
       MobiApp.toast('Free diagnostic — no payment needed!', 'info');
     }
   });
+  }
 })();

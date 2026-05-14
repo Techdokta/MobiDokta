@@ -3,11 +3,11 @@
 // Initialize Supabase Client
 const supabaseUrl = window.MOBI_CONFIG.SUPABASE_URL;
 const supabaseKey = window.MOBI_CONFIG.SUPABASE_ANON_KEY;
-let supabase = null;
+let dbClient = null;
 
 if (supabaseUrl !== 'YOUR_SUPABASE_PROJECT_URL_HERE') {
   // @supabase/supabase-js is loaded natively in book.html via CDN
-  supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+  dbClient = window.supabase.createClient(supabaseUrl, supabaseKey);
   console.log("Supabase Connection Initialized.");
 } else {
   console.warn("Supabase credentials missing. Running in local/demo mode. Bookings will NOT be saved to the database.");
@@ -19,10 +19,10 @@ if (supabaseUrl !== 'YOUR_SUPABASE_PROJECT_URL_HERE') {
  * @returns {Promise<boolean>} Success status
  */
 async function insertBookingToDB(bookingData) {
-  if (!supabase) return false;
+  if (!dbClient) return false;
   
   try {
-    const { data, error } = await supabase
+    const { data, error } = await dbClient
       .from('bookings')
       .insert([
         {
