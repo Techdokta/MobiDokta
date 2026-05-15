@@ -8,20 +8,20 @@
 
   const baseServices = [
     // ── Apple Services ──
-    { id: 'iphone-oem', icon: 'smartphone', name: 'Screen Transplant (OEM)', desc: 'Factory-quality OEM Original Grade', price: 6500, duration: 60, brand: 'Apple', dynType: 'oem' },
-    { id: 'iphone-eco', icon: 'smartphone', name: 'Screen Transplant (Eco)', desc: 'Quality Aftermarket Eco Grade', price: 3700, duration: 60, brand: 'Apple', dynType: 'eco' },
-    { id: 'iphone-battery', icon: 'battery-full', name: 'Battery Resuscitation', desc: 'Health restored to 100%', price: 1399, duration: 45, brand: 'Apple', dynType: 'batt' },
-    { id: 'iphone-soft', icon: 'cpu', name: 'Software / OS Repair', desc: 'iOS recovery & firmware flash', price: 650, duration: 45, brand: 'Apple' },
+    { id: 'iphone-oem', icon: 'smartphone', name: 'Screen Transplant (OEM)', desc: 'Factory-quality OEM Original Grade', price: 6500, duration: 30, brand: 'Apple', dynType: 'oem' },
+    { id: 'iphone-eco', icon: 'smartphone', name: 'Screen Transplant (Eco)', desc: 'Quality Aftermarket Eco Grade', price: 3700, duration: 30, brand: 'Apple', dynType: 'eco' },
+    { id: 'iphone-battery', icon: 'battery-full', name: 'Battery Resuscitation', desc: 'Health restored to 100%', price: 1399, duration: 30, brand: 'Apple', dynType: 'batt' },
+    { id: 'iphone-soft', icon: 'cpu', name: 'Software / OS Repair', desc: 'iOS recovery & firmware flash', price: 650, duration: 30, brand: 'Apple' },
 
     // ── Samsung Services ──
-    { id: 'samsung-screen', icon: 'smartphone', name: 'AMOLED Specialist Screen', desc: 'AMOLED restoration surgery', price: 6500, duration: 90, brand: 'Samsung', dynType: 'oem' },
-    { id: 'samsung-battery', icon: 'battery-full', name: 'Battery Resuscitation', desc: 'Health restored to 100%', price: 1499, duration: 60, brand: 'Samsung', dynType: 'batt' },
-    { id: 'samsung-soft', icon: 'cpu', name: 'Software / OS Repair', desc: 'Android recovery & flash', price: 650, duration: 45, brand: 'Samsung' },
+    { id: 'samsung-screen', icon: 'smartphone', name: 'AMOLED Specialist Screen', desc: 'AMOLED restoration surgery', price: 6500, duration: 30, brand: 'Samsung', dynType: 'oem' },
+    { id: 'samsung-battery', icon: 'battery-full', name: 'Battery Resuscitation', desc: 'Health restored to 100%', price: 1499, duration: 30, brand: 'Samsung', dynType: 'batt' },
+    { id: 'samsung-soft', icon: 'cpu', name: 'Software / OS Repair', desc: 'Android recovery & flash', price: 650, duration: 30, brand: 'Samsung' },
 
     // ── Huawei Services ──
-    { id: 'huawei-screen', icon: 'smartphone', name: 'Screen Transplant (OEM)', desc: 'Factory-quality OEM Screen', price: 4500, duration: 90, brand: 'Huawei', dynType: 'oem' },
-    { id: 'huawei-battery', icon: 'battery-full', name: 'Battery Resuscitation', desc: 'Health restored to 100%', price: 1299, duration: 60, brand: 'Huawei', dynType: 'batt' },
-    { id: 'huawei-soft', icon: 'cpu', name: 'Software / OS Repair', desc: 'HarmonyOS/Android recovery', price: 650, duration: 45, brand: 'Huawei' },
+    { id: 'huawei-screen', icon: 'smartphone', name: 'Screen Transplant (OEM)', desc: 'Factory-quality OEM Screen', price: 4500, duration: 30, brand: 'Huawei', dynType: 'oem' },
+    { id: 'huawei-battery', icon: 'battery-full', name: 'Battery Resuscitation', desc: 'Health restored to 100%', price: 1299, duration: 30, brand: 'Huawei', dynType: 'batt' },
+    { id: 'huawei-soft', icon: 'cpu', name: 'Software / OS Repair', desc: 'HarmonyOS/Android recovery', price: 650, duration: 30, brand: 'Huawei' },
 
     // MacBook & Laptops
     { id: 'laptop-screen', icon: 'laptop', name: 'Laptop Screen Fix', desc: 'LCD, IPS & OLED specialists', price: 1800, duration: 60, brand: 'Laptop' },
@@ -537,6 +537,14 @@
       confirmBtn.disabled = true;
       confirmBtn.textContent = "Securing Booking...";
 
+    // Security: Honeypot check
+    const faxInput = document.getElementById('cust-fax');
+    if (faxInput && faxInput.value.trim() !== '') {
+      console.warn("Automated submission detected.");
+      confirmBtn.textContent = "Error";
+      return;
+    }
+
     const name = MobiApp.sanitize(nameInput.value.trim());
     const phone = MobiApp.sanitize(phoneInput.value.trim());
     const email = MobiApp.sanitize(emailInput.value.trim());
@@ -582,13 +590,13 @@
       await window.insertBookingToDB(dbPayload);
     }
 
-    MobiApp.toast('Booking secured! Ref: ' + savedBooking.id, 'success', 4000);
+    MobiApp.toast('Booking secured! Your invoice will be emailed shortly.', 'success', 6000);
 
-    // Redirect to payment gateway for the 40% Deposit
+    // Redirect to home page
     if (booking.totalPrice > 0) {
       setTimeout(() => {
-        window.location.href = 'pay.html?booking=' + savedBooking.id + '&amount=' + booking.depositAmount;
-      }, 1500);
+        window.location.href = 'index.html?booking_success=true';
+      }, 3000);
     } else {
       setTimeout(() => {
         window.location.href = 'support.html'; // Free solutions path
