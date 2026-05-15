@@ -7,15 +7,21 @@
   let booking = { brand: null, model: null, cart: [], totalPrice: 0, totalDuration: 0, date: null, time: null, location: 'Sandton Central' };
 
   const baseServices = [
-    // iPhone Screen Repairs (OEM Tier)
+    // ── Apple Services ──
     { id: 'iphone-oem', icon: 'smartphone', name: 'Screen Transplant (OEM)', desc: 'Factory-quality OEM Original Grade', price: 6500, duration: 60, brand: 'Apple', dynType: 'oem' },
     { id: 'iphone-eco', icon: 'smartphone', name: 'Screen Transplant (Eco)', desc: 'Quality Aftermarket Eco Grade', price: 3700, duration: 60, brand: 'Apple', dynType: 'eco' },
-    
-    // iPhone Battery
     { id: 'iphone-battery', icon: 'battery-full', name: 'Battery Resuscitation', desc: 'Health restored to 100%', price: 1399, duration: 45, brand: 'Apple', dynType: 'batt' },
+    { id: 'iphone-soft', icon: 'cpu', name: 'Software / OS Repair', desc: 'iOS recovery & firmware flash', price: 650, duration: 45, brand: 'Apple' },
 
-    // Samsung Screen
-    { id: 'samsung-screen', icon: 'smartphone', name: 'AMOLED Specialist Screen', desc: 'AMOLED restoration surgery', price: 6500, duration: 90, brand: 'Samsung' },
+    // ── Samsung Services ──
+    { id: 'samsung-screen', icon: 'smartphone', name: 'AMOLED Specialist Screen', desc: 'AMOLED restoration surgery', price: 6500, duration: 90, brand: 'Samsung', dynType: 'oem' },
+    { id: 'samsung-battery', icon: 'battery-full', name: 'Battery Resuscitation', desc: 'Health restored to 100%', price: 1499, duration: 60, brand: 'Samsung', dynType: 'batt' },
+    { id: 'samsung-soft', icon: 'cpu', name: 'Software / OS Repair', desc: 'Android recovery & flash', price: 650, duration: 45, brand: 'Samsung' },
+
+    // ── Huawei Services ──
+    { id: 'huawei-screen', icon: 'smartphone', name: 'Screen Transplant (OEM)', desc: 'Factory-quality OEM Screen', price: 4500, duration: 90, brand: 'Huawei', dynType: 'oem' },
+    { id: 'huawei-battery', icon: 'battery-full', name: 'Battery Resuscitation', desc: 'Health restored to 100%', price: 1299, duration: 60, brand: 'Huawei', dynType: 'batt' },
+    { id: 'huawei-soft', icon: 'cpu', name: 'Software / OS Repair', desc: 'HarmonyOS/Android recovery', price: 650, duration: 45, brand: 'Huawei' },
 
     // MacBook & Laptops
     { id: 'laptop-screen', icon: 'laptop', name: 'Laptop Screen Fix', desc: 'LCD, IPS & OLED specialists', price: 1800, duration: 60, brand: 'Laptop' },
@@ -269,12 +275,12 @@
     });
 
     activeServices.forEach(svc => {
-      // Hide brand-specific services mismatching the selected brand
-      if (svc.brand && (svc.brand !== booking.brand && svc.brand !== 'Laptop' && svc.brand !== 'Console')) {
-        // Except if user picked Macbook/Console but the service is generic
-        if (!(booking.brand === 'MacBook' && svc.brand === 'Laptop') && !(booking.brand === 'Console' && svc.brand === 'Console')) {
-          if(booking.brand !== 'Console' && booking.brand !== 'MacBook' && (svc.brand === 'Laptop' || svc.brand === 'Console')) {} else return;
-        }
+      // Determine expected service brand tag
+      const expectedBrand = booking.brand === 'MacBook' ? 'Laptop' : booking.brand;
+      
+      // If service has a brand tag, it MUST match the selected brand exactly
+      if (svc.brand && svc.brand !== expectedBrand) {
+        return;
       }
 
       const el = document.createElement('div');
@@ -290,6 +296,22 @@
         <div class="svc-duration">~${svc.duration} min</div>
       `;
       el.addEventListener('click', () => {
+        if (svc.id === 'tech-at-door') {
+          const idx = booking.cart.findIndex(s => s.id.startsWith('tech-at-door'));
+          if (idx > -1) {
+            booking.cart.splice(idx, 1);
+            el.classList.remove('selected');
+            updateCartUI();
+            validateStep();
+            return;
+          }
+          const modal = document.getElementById('techie-modal');
+          if (modal) modal.classList.add('active');
+          window.currentTechieTrigger = el;
+          window.currentTechieSvc = svc;
+          return;
+        }
+
         const idx = booking.cart.findIndex(s => s.id === svc.id);
         if (idx > -1) {
           booking.cart.splice(idx, 1);
@@ -575,4 +597,67 @@
     }
   });
   }
+
+  /* ─── Techie Modal Logic ─── */
+  const techieModal = document.getElementById('techie-modal');
+  const closeTechieBtn = document.getElementById('close-techie-modal');
+  
+  if (closeTechieBtn) {
+    closeTechieBtn.addEventListener('click', () => {
+      if (techieModal) techieModal.classList.remove('active');
+    });
+  }
+
+  document.querySelectorAll('.techie-option').forEach(opt => {
+    opt.addEventListener('click', () => {
+      const isCourier = opt.classList.contains('courier-option');
+      let svc = { ...window.currentTechieSvc };
+      
+      if (isCourier) {
+        const courierName = opt.dataset.courier;
+        svc.id = 'tech-at-door-courier-' + courierName.replace(/\s+/g, '-').toLowerCase();
+        svc.name = 'Courier: ' + courierName;
+        svc.desc = 'Arranging secure transit. Pricing confirmed upon dispatch.';
+        svc.price = 0; // TBD
+        
+        const clinicSelect = document.getElementById('clinic-select');
+        if (clinicSelect) {
+           let courierOpt = Array.from(clinicSelect.options).find(o => o.value === 'Courier Collection');
+           if (!courierOpt) {
+             clinicSelect.innerHTML += `<option value="Courier Collection">Courier Collection</option>`;
+           }
+           clinicSelect.value = 'Courier Collection';
+           booking.location = 'Courier Collection';
+        }
+      } else {
+        const area = opt.dataset.area;
+        const price = parseInt(opt.dataset.price);
+        
+        svc.id = 'tech-at-door-' + area.replace(/\s+/g, '-').toLowerCase();
+        svc.name = 'On-site: ' + area;
+        svc.price = price;
+        svc.desc = price === 0 ? 'Safety & distance evaluation pending.' : 'Call-out fee for ' + area;
+        
+        const clinicSelect = document.getElementById('clinic-select');
+        if (clinicSelect) {
+           let areaOpt = Array.from(clinicSelect.options).find(o => o.value === 'On-Site Call-Out');
+           if (!areaOpt) {
+             clinicSelect.innerHTML += `<option value="On-Site Call-Out">On-Site Call-Out</option>`;
+           }
+           clinicSelect.value = 'On-Site Call-Out';
+           booking.location = 'On-Site Call-Out';
+        }
+      }
+
+      booking.cart.push(svc);
+      if (window.currentTechieTrigger) {
+        window.currentTechieTrigger.classList.add('selected');
+      }
+      
+      if (techieModal) techieModal.classList.remove('active');
+      updateCartUI();
+      validateStep();
+    });
+  });
+
 })();

@@ -47,19 +47,19 @@
         <div class="brand-grid">
           <div class="brand-card" data-brand="Apple">
             <div class="brand-icon flex-center" style="height: 48px;">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" style="height:38px; filter:invert(1) invert(69%) sepia(35%) saturate(3062%) hue-rotate(320deg) brightness(101%) contrast(100%);">
+              <img src="https://cdn.simpleicons.org/apple/000000" alt="Apple" style="height:32px; filter:var(--icon-filter, none);">
             </div>
             <span class="brand-name">Apple</span>
           </div>
           <div class="brand-card" data-brand="Samsung">
             <div class="brand-icon flex-center" style="height: 48px;">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Samsung" style="height:22px; filter:invert(1) sepia(100%) saturate(500%) hue-rotate(200deg) brightness(100%) contrast(100%);">
+              <img src="https://cdn.simpleicons.org/samsung/000000" alt="Samsung" style="height:18px; filter:var(--icon-filter, none);">
             </div>
             <span class="brand-name">Samsung</span>
           </div>
           <div class="brand-card" data-brand="Huawei">
             <div class="brand-icon flex-center" style="height: 48px;">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Huawei_logo.svg" alt="Huawei" style="height:32px; filter:invert(1) sepia(100%) saturate(700%) hue-rotate(330deg) brightness(95%) contrast(100%);">
+              <img src="https://cdn.simpleicons.org/huawei/000000" alt="Huawei" style="height:32px; filter:var(--icon-filter, none);">
             </div>
             <span class="brand-name">Huawei</span>
           </div>
@@ -92,7 +92,10 @@
       <div class="booking-step" id="step-2">
         <div class="split-layout" style="align-items: flex-start; gap: var(--space-8);">
           <div>
-            <h2>Choose Procedures</h2>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:var(--space-8);">
+              <h2 style="margin:0;">Choose Procedures</h2>
+              <button class="btn btn-ghost btn-sm" onclick="document.getElementById('prev-btn').click();" style="border-radius:var(--radius-full);"><i data-lucide="arrow-left" class="icon-sm"></i> Change Device</button>
+            </div>
             <div class="service-grid" id="service-grid">
               <!-- Populated by JS -->
             </div>
@@ -102,6 +105,7 @@
             <h3>Your Selection</h3>
             <div id="cart-items">
               <p style="color:var(--text-tertiary);font-size:var(--text-sm);">No services selected yet.</p>
+            </div>
             <div class="cart-total">
               <span>Total</span>
               <span id="cart-total-price">R0</span>
@@ -248,8 +252,80 @@
     </div>
   </main>
 
+  <!-- Request a Techie Modal -->
+  <div id="techie-modal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Request A Techie™</h3>
+        <button class="modal-close" id="close-techie-modal" aria-label="Close modal" title="Close"><i data-lucide="x" class="icon"></i></button>
+      </div>
+      <p style="color:var(--text-secondary);font-size:var(--text-sm);margin-bottom:var(--space-6);">Please select your location for the call-out, or choose a trusted courier option.</p>
+      
+      <div class="techie-options-list">
+        <div class="techie-option" data-area="Alberton / Randhart" data-price="149">
+          <div>
+            <span class="t-name">Alberton, Randhart & Meyersdal</span>
+            <span class="t-desc">Fast-response local call-out</span>
+          </div>
+          <span class="t-price">R149</span>
+        </div>
+        <div class="techie-option" data-area="Sandton & Surrounds" data-price="199">
+          <div>
+            <span class="t-name">Sandton & Surrounds</span>
+            <span class="t-desc">Premium on-site dispatch</span>
+          </div>
+          <span class="t-price">R199</span>
+        </div>
+        <div class="techie-option" data-area="Pretoria East" data-price="299">
+          <div>
+            <span class="t-name">Pretoria East</span>
+            <span class="t-desc">Extended zone call-out</span>
+          </div>
+          <span class="t-price">R299</span>
+        </div>
+        <div class="techie-option" data-area="Other Area (Eval Needed)" data-price="0">
+          <div>
+            <span class="t-name">Other Area / Custom Location</span>
+            <span class="t-desc">Pending safety & distance evaluation</span>
+          </div>
+          <span class="t-price" style="color:var(--text-primary);">TBD</span>
+        </div>
+
+        <h4 style="margin:var(--space-6) 0 var(--space-3); font-size:var(--text-sm); color:var(--text-primary);">Send via Trusted Courier</h4>
+        <div class="techie-option courier-option" data-courier="The Courier Guy">
+          <div>
+            <span class="t-name">The Courier Guy</span>
+            <span class="t-desc">Nationwide secure shipping</span>
+          </div>
+          <span class="t-price" style="color:var(--text-primary);">Select</span>
+        </div>
+        <div class="techie-option courier-option" data-courier="Uber-Courier">
+          <div>
+            <span class="t-name">Uber-Courier (Local Only)</span>
+            <span class="t-desc">Fast, same-day local collection</span>
+          </div>
+          <span class="t-price" style="color:var(--text-primary);">Select</span>
+        </div>
+        <div class="techie-option courier-option" data-courier="RAM Hand-to-Hand">
+          <div>
+            <span class="t-name">RAM Hand-to-Hand</span>
+            <span class="t-desc">High-value insured transit</span>
+          </div>
+          <span class="t-price" style="color:var(--text-primary);">Select</span>
+        </div>
+        <div class="techie-option courier-option" data-courier="Aramex">
+          <div>
+            <span class="t-name">Aramex</span>
+            <span class="t-desc">Drop-box or direct collection</span>
+          </div>
+          <span class="t-price" style="color:var(--text-primary);">Select</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- WhatsApp FAB -->
-  <a href="https://wa.me/27781541350" target="_blank" class="whatsapp-fab" title="Chat on WhatsApp"><i data-lucide="message-circle" class="icon-lg"></i></a>
+  <a href="https://wa.me/27781541350" target="_blank" rel="noopener noreferrer" class="whatsapp-fab" title="Chat on WhatsApp"><i data-lucide="message-circle" class="icon-lg"></i></a>
 
   <!-- Paystack SDK -->
   <script src="https://js.paystack.co/v2/inline.js"></script>

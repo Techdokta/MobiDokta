@@ -44,6 +44,8 @@
   --glass-bg: rgba(255, 255, 255, 0.72);
   --glass-border: rgba(0, 0, 0, 0.06);
 
+  --icon-filter: none;
+
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
   --shadow-md: 0 4px 14px rgba(0,0,0,0.06);
   --shadow-lg: 0 10px 40px rgba(0,0,0,0.08);
@@ -125,11 +127,13 @@
 
   --glass-bg: rgba(0, 0, 0, 0.72);
   --glass-border: rgba(255, 255, 255, 0.1);
+
+  --icon-filter: invert(1);
 }
 
 /* ─── Reset ─── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 body {
   font-family: var(--font);
   background: var(--bg-primary);
@@ -219,8 +223,8 @@ h1, h2, h3, h4, h5, h6 {
 /* ─── Glass Effect (subtle, not heavy) ─── */
 .glass {
   background: var(--glass-bg);
-  backdrop-filter: blur(20px) saturate(1.2);
-  -webkit-backdrop-filter: blur(20px) saturate(1.2);
+  -webkit-backdrop-filter: blur(10px) saturate(1.2);
+  backdrop-filter: blur(10px) saturate(1.2);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-lg);
 }
@@ -396,8 +400,8 @@ h1, h2, h3, h4, h5, h6 {
   height: 56px;
   z-index: 1000;
   background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(20px) saturate(1.8);
-  -webkit-backdrop-filter: blur(20px) saturate(1.8);
+  -webkit-backdrop-filter: blur(10px) saturate(1.8);
+  backdrop-filter: blur(10px) saturate(1.8);
   border-bottom: 1px solid var(--glass-border);
 }
 
@@ -671,8 +675,8 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
   padding: 12px 16px;
   background: rgba(0,0,0,0.92);
-  backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   border-top: 1px solid var(--border);
   z-index: 998;
 }
@@ -790,8 +794,8 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
   background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
   z-index: 1050;
   opacity: 0;
   visibility: hidden;
@@ -808,8 +812,8 @@ h1, h2, h3, h4, h5, h6 {
   width: 300px;
   max-width: 85vw;
   background: var(--bg-card);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  backdrop-filter: blur(12px) saturate(180%);
   border-left: 1px solid var(--border);
   z-index: 1100;
   padding: var(--space-8) var(--space-6);
@@ -839,7 +843,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .table-container {
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
 }
 
 /* ─── Responsive ─── */
@@ -871,5 +874,87 @@ h1, h2, h3, h4, h5, h6 {
   :root {
     --text-6xl: 2.25rem;
     --text-5xl: 1.85rem;
+  }
+}
+
+/* ─── Client Reviews Styles ─── */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-8);
+  margin-top: var(--space-12);
+}
+
+.review-card {
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(10px) saturate(1.2);
+  backdrop-filter: blur(10px) saturate(1.2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  transition: transform var(--duration-base) var(--ease), box-shadow var(--duration-base) var(--ease);
+}
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+.review-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+}
+.review-author {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.review-rating {
+  margin-left: auto;
+  color: var(--gold);
+  font-size: var(--text-sm);
+}
+.review-text {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-top: var(--space-4);
+}
+
+
+/* ─── Compliance Banner ─── */
+.compliance-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  padding: var(--space-4) 0;
+  display: none;
+  animation: slideUp 0.5s var(--ease-out) forwards;
+}
+.compliance-banner.show {
+  display: block;
+}
+.compliance-banner .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+.compliance-banner p {
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .compliance-banner .container {
+    flex-direction: column;
+    text-align: center;
   }
 }
