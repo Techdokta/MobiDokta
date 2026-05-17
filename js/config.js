@@ -14,6 +14,9 @@ const MOBI_CONFIG = {
   SUPABASE_URL: 'https://sdtulqzaxourrugtdosc.supabase.co',
   SUPABASE_ANON_KEY: 'sb_publishable_KdZxSbssnHkZ7M_Ok7prTA_nT7cFW33',
   
+  // Automation Webhook (n8n, Make, Zapier) to generate Invoice & Email
+  N8N_WEBHOOK_URL: '', // Paste your n8n webhook URL here
+  
   // Example payment gateways mappings for later
   DEPOSIT_PERCENTAGE: 0.40
 };

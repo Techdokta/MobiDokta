@@ -47,6 +47,20 @@ async function insertBookingToDB(bookingData) {
       return false;
     }
     
+    // Trigger Automation Webhook (e.g., n8n) for Emails/Invoices
+    if (window.MOBI_CONFIG && window.MOBI_CONFIG.N8N_WEBHOOK_URL) {
+      try {
+        await fetch(window.MOBI_CONFIG.N8N_WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ event: 'new_booking', data: bookingData })
+        });
+        console.log("Webhook triggered successfully.");
+      } catch (webhookErr) {
+        console.error("Webhook Error (Invoice/Email may not have sent):", webhookErr);
+      }
+    }
+    
     return true;
   } catch (err) {
     console.error("Database connection failed:", err);

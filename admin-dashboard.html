@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MobiDokta Admin Dashboard</title>
+    <link rel="stylesheet" href="css/global.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <style>
+        :root {
+            --primary: #0088ff;
+            --primary-dark: #0066cc;
+            --success: #00e676;
+            --warning: #ffb300;
+            --danger: #ff3b30;
+            --gray-50: #1c1e26;
+            --gray-100: #181a20;
+            --gray-200: #2a2d36;
+            --gray-300: #3b3e4a;
+            --gray-600: #8a8d98;
+            --gray-800: #d1d5db;
+            --gray-900: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0d0e12;
+            color: var(--gray-800);
+            line-height: 1.6;
+        }
+
+        /* Login Screen */
+        .login-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        }
+
+        .login-box {
+            background: var(--gray-100);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .login-box h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--gray-900);
+        }
+
+        .login-box p {
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+            font-size: 0.875rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 0.375rem;
+            color: var(--gray-700);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.625rem 0.875rem;
+            border: 1px solid var(--gray-300);
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            background: var(--gray-50);
+            color: var(--gray-900);
+            transition: border-color 0.15s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.625rem 1.25rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.15s;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            width: 100%;
+        }
+
+        .btn-primary:hover { background: var(--primary-dark); }
+        .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+
+        .btn-sm {
+            padding: 0.375rem 0.75rem;
+            font-size: 0.75rem;
+        }
+
+        .btn-success { background: var(--success); color: white; }
+        .btn-warning { background: var(--warning); color: white; }
+        .btn-danger { background: var(--danger); color: white; }
+
+        /* Dashboard Layout */
+        .dashboard {
+            display: none;
+            min-height: 100vh;
+        }
+
+        .dashboard.active { display: block; }
+
+        .topbar {
+            background: var(--gray-100);
+            border-bottom: 1px solid var(--gray-200);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .topbar h1 {
+            font-size: 1.25rem;
+            color: var(--gray-900);
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .user-info span {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+
+        .main-content {
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--gray-100);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border: 1px solid var(--gray-200);
+        }
+
+        .stat-card h3 {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: var(--gray-900);
+        }
+
+        .stat-delta {
+            font-size: 0.75rem;
+            margin-top: 0.25rem;
+        }
+
+        .stat-delta.positive { color: var(--success); }
+        .stat-delta.negative { color: var(--danger); }
+
+        /* Filters & Search */
+        .filters-bar {
+            background: var(--gray-100);
+            padding: 1rem 1.5rem;
+            border-radius: 0.75rem;
+            border: 1px solid var(--gray-200);
+            margin-bottom: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .search-box {
+            position: relative;
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.5rem 0.75rem 0.5rem 2.5rem;
+            border: 1px solid var(--gray-300);
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .search-box::before {
+            content: "🔍";
+            position: absolute;
+            left: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.875rem;
+        }
+
+        .filter-select {
+            padding: 0.5rem 0.75rem;
+            border: 1px solid var(--gray-300);
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            background: var(--gray-100);
+        }
+
+        /* Table */
+        .table-container {
+            background: var(--gray-100);
+            border-radius: 0.75rem;
+            border: 1px solid var(--gray-200);
+            overflow: hidden;
+        }
+
+        .table-header {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--gray-200);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .table-header h2 {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .live-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+            font-size: 0.75rem;
+            color: var(--success);
+            font-weight: 500;
+        }
+
+        .live-indicator::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+        }
+
+        thead {
+            background: var(--gray-50);
+        }
+
+        th {
+            padding: 0.875rem 1.5rem;
+            text-align: left;
+            font-weight: 600;
+            color: var(--gray-600);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        th:hover { background: var(--gray-100); }
+
+        td {
+            padding: 1rem 1.5rem;
+            border-top: 1px solid var(--gray-100);
+            vertical-align: top;
+        }
+
+        tr:hover { background: var(--gray-50); }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: capitalize;
+        }
+
+        .status-pending { background: #fef3c7; color: #92400e; }
+        .status-confirmed { background: #dbeafe; color: #1e40af; }
+        .status-in_progress { background: #e0e7ff; color: #3730a3; }
+        .status-completed { background: #d1fae5; color: #065f46; }
+        .status-cancelled { background: #fee2e2; color: #991b1b; }
+
+        .customer-cell {
+            max-width: 200px;
+        }
+
+        .customer-name {
+            font-weight: 500;
+            color: var(--gray-900);
+        }
+
+        .customer-meta {
+            font-size: 0.75rem;
+            color: var(--gray-600);
+            margin-top: 0.25rem;
+        }
+
+        .device-cell {
+            max-width: 180px;
+        }
+
+        .device-name {
+            font-weight: 500;
+        }
+
+        .device-issue {
+            font-size: 0.75rem;
+            color: var(--gray-600);
+            margin-top: 0.25rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .price-cell {
+            text-align: right;
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+
+        .price-deposit {
+            font-size: 0.75rem;
+            color: var(--gray-600);
+            font-weight: 400;
+        }
+
+        .actions-cell {
+            white-space: nowrap;
+        }
+
+        .actions-cell .btn {
+            margin-right: 0.25rem;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 200;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .modal-overlay.active { display: flex; }
+
+        .modal {
+            background: var(--gray-100);
+            border-radius: 0.75rem;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--gray-200);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            font-size: 1.125rem;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray-600);
+            line-height: 1;
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .detail-row:last-child { border-bottom: none; }
+
+        .detail-label {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+
+        .detail-value {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--gray-900);
+            text-align: right;
+            max-width: 60%;
+        }
+
+        /* Toast Notifications */
+        .toast-container {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 300;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .toast {
+            background: var(--gray-100);
+            border-left: 4px solid var(--primary);
+            padding: 1rem 1.25rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            min-width: 300px;
+            animation: slideIn 0.3s ease;
+        }
+
+        .toast.success { border-left-color: var(--success); }
+        .toast.error { border-left-color: var(--danger); }
+        .toast.warning { border-left-color: var(--warning); }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Loading States */
+        .skeleton {
+            background: linear-gradient(90deg, var(--gray-100) 25%, var(--gray-200) 50%, var(--gray-100) 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: 0.25rem;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: var(--gray-600);
+        }
+
+        .empty-state h3 {
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+            color: var(--gray-800);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-content { padding: 1rem; }
+            .topbar { padding: 1rem; }
+            .filters-bar { flex-direction: column; align-items: stretch; }
+            .search-box { min-width: auto; }
+            table { font-size: 0.75rem; }
+            th, td { padding: 0.75rem; }
+            .actions-cell .btn { margin-bottom: 0.25rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Login Screen -->
+<div id="login-screen" class="login-container">
+    <div class="login-box">
+        <h1>🔧 MobiDokta Admin</h1>
+        <p>Sign in to manage repair bookings</p>
+        <form id="login-form">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required placeholder="admin@mobidokta.co.za">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required placeholder="••••••••">
+            </div>
+            <button type="submit" class="btn btn-primary" id="login-btn">
+                Sign In
+            </button>
+        </form>
+        <p style="margin-top: 1rem; font-size: 0.75rem; text-align: center;">
+            Protected by Row Level Security • PostgreSQL RLS
+        </p>
+    </div>
+</div>
+
+<!-- Dashboard -->
+<div id="dashboard" class="dashboard">
+    <div class="topbar">
+        <h1>🔧 MobiDokta Dashboard</h1>
+        <div class="user-info">
+            <span id="user-email">Loading...</span>
+            <button class="btn btn-sm btn-danger" onclick="app.logout()">Logout</button>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <!-- Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Bookings</h3>
+                <div class="stat-value" id="stat-total">-</div>
+                <div class="stat-delta positive">All time</div>
+            </div>
+            <div class="stat-card">
+                <h3>Pending</h3>
+                <div class="stat-value" id="stat-pending">-</div>
+                <div class="stat-delta warning">Needs action</div>
+            </div>
+            <div class="stat-card">
+                <h3>Today's Revenue</h3>
+                <div class="stat-value" id="stat-revenue">-</div>
+                <div class="stat-delta positive" id="stat-revenue-delta">From deposits</div>
+            </div>
+            <div class="stat-card">
+                <h3>In Progress</h3>
+                <div class="stat-value" id="stat-inprogress">-</div>
+                <div class="stat-delta">Active repairs</div>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters-bar">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search by name, email, phone, or device...">
+            </div>
+            <select class="filter-select" id="status-filter">
+                <option value="">All Statuses</option>
+                <option value="pending">Pending</option>
+                <option value="confirmed">Confirmed</option>
+                <option value="in_progress">In Progress</option>
+                <option value="completed">Completed</option>
+                <option value="cancelled">Cancelled</option>
+            </select>
+            <select class="filter-select" id="date-filter">
+                <option value="all">All Time</option>
+                <option value="today">Today</option>
+                <option value="week">This Week</option>
+                <option value="month">This Month</option>
+            </select>
+            <button class="btn btn-primary btn-sm" onclick="app.refreshData()">🔄 Refresh</button>
+        </div>
+
+        <!-- Table -->
+        <div class="table-container">
+            <div class="table-header">
+                <h2>Repair Bookings</h2>
+                <div class="live-indicator">Live Updates</div>
+            </div>
+            <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th onclick="app.sortBy('created_at')">Date ↕</th>
+                            <th>Customer</th>
+                            <th>Device</th>
+                            <th>Services</th>
+                            <th onclick="app.sortBy('total_price')">Price ↕</th>
+                            <th onclick="app.sortBy('status')">Status ↕</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bookings-table">
+                        <tr>
+                            <td colspan="7" class="empty-state">
+                                <h3>Loading bookings...</h3>
+                                <p>Connecting to Supabase securely</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Detail Modal -->
+<div id="detail-modal" class="modal-overlay">
+    <div class="modal">
+        <div class="modal-header">
+            <h3>Booking Details</h3>
+            <button class="modal-close" onclick="app.closeModal()">&times;</button>
+        </div>
+        <div class="modal-body" id="modal-content">
+            <!-- Populated by JS -->
+        </div>
+    </div>
+</div>
+
+<!-- Toast Container -->
+<div class="toast-container" id="toast-container"></div>
+
+<script>
+// ==========================================
+// MOBIDOKTA ADMIN DASHBOARD
+// Production-grade admin interface with RLS
+// ==========================================
+
+class AdminDashboard {
+    constructor() {
+        // Initialize Supabase client (uses authenticated session)
+        this.supabase = window.supabase.createClient(
+            window.MOBI_CONFIG.SUPABASE_URL,
+            window.MOBI_CONFIG.SUPABASE_ANON_KEY
+        );
+
+        this.bookings = [];
+        this.filteredBookings = [];
+        this.sortField = 'created_at';
+        this.sortAsc = false;
+        this.realtimeSubscription = null;
+
+        this.init();
+    }
+
+    async init() {
+        // Check existing session
+        const { data: { session } } = await this.supabase.auth.getSession();
+
+        if (session) {
+            document.getElementById('user-email').textContent = session.user.email;
+            this.showDashboard();
+            this.loadData();
+            this.setupRealtime();
+        } else {
+            this.showLogin();
+        }
+
+        // Setup event listeners
+        this.setupEventListeners();
+    }
+
+    setupEventListeners() {
+        // Login form
+        document.getElementById('login-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            this.handleLogin();
+        });
+
+        // Search
+        document.getElementById('search-input').addEventListener('input', (e) => {
+            this.filterBookings(e.target.value, document.getElementById('status-filter').value);
+        });
+
+        // Status filter
+        document.getElementById('status-filter').addEventListener('change', (e) => {
+            this.filterBookings(document.getElementById('search-input').value, e.target.value);
+        });
+
+        // Date filter
+        document.getElementById('date-filter').addEventListener('change', () => {
+            this.loadData();
+        });
+
+        // Close modal on overlay click
+        document.getElementById('detail-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'detail-modal') this.closeModal();
+        });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') this.closeModal();
+            if (e.key === 'r' && e.ctrlKey) {
+                e.preventDefault();
+                this.refreshData();
+            }
+        });
+    }
+
+    async handleLogin() {
+        const btn = document.getElementById('login-btn');
+        btn.disabled = true;
+        btn.textContent = 'Signing in...';
+
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        try {
+            const { data, error } = await this.supabase.auth.signInWithPassword({
+                email,
+                password
+            });
+
+            if (error) throw error;
+            
+            document.getElementById('user-email').textContent = data.session.user.email;
+            this.showToast('Signed in successfully', 'success');
+            this.showDashboard();
+            this.loadData();
+            this.setupRealtime();
+
+        } catch (err) {
+            console.error('Login error:', err);
+            this.showToast(err.message || 'Invalid credentials', 'error');
+        } finally {
+            btn.disabled = false;
+            btn.textContent = 'Sign In';
+        }
+    }
+
+    async logout() {
+        await this.supabase.auth.signOut();
+
+        if (this.realtimeSubscription) {
+            this.realtimeSubscription.unsubscribe();
+        }
+
+        this.showLogin();
+        this.showToast('Signed out', 'success');
+    }
+
+    showLogin() {
+        document.getElementById('login-screen').style.display = 'flex';
+        document.getElementById('dashboard').classList.remove('active');
+    }
+
+    showDashboard() {
+        document.getElementById('login-screen').style.display = 'none';
+        document.getElementById('dashboard').classList.add('active');
+    }
+
+    async loadData() {
+        try {
+            // Build query based on date filter
+            let query = this.supabase
+                .from('bookings')
+                .select('*');
+
+            const dateFilter = document.getElementById('date-filter').value;
+            const now = new Date();
+
+            if (dateFilter === 'today') {
+                const today = now.toISOString().split('T')[0];
+                query = query.eq('date', today);
+            } else if (dateFilter === 'week') {
+                const weekAgo = new Date(now - 7 * 24 * 60 * 60 * 1000).toISOString();
+                query = query.gte('created_at', weekAgo);
+            } else if (dateFilter === 'month') {
+                const monthAgo = new Date(now - 30 * 24 * 60 * 60 * 1000).toISOString();
+                query = query.gte('created_at', monthAgo);
+            }
+
+            const { data, error } = await query.order('created_at', { ascending: false });
+
+            if (error) {
+                if (error.code === '42501') {
+                    this.showToast('Permission denied. Are you an admin?', 'error');
+                    this.logout();
+                    return;
+                }
+                throw error;
+            }
+
+            this.bookings = data || [];
+            this.filteredBookings = [...this.bookings];
+            this.updateStats();
+            this.renderTable();
+
+        } catch (err) {
+            console.error('Load data error:', err);
+            this.showToast('Failed to load bookings: ' + err.message, 'error');
+        }
+    }
+
+    setupRealtime() {
+        // Subscribe to realtime changes
+        this.realtimeSubscription = this.supabase
+            .channel('bookings-changes')
+            .on('postgres_changes', 
+                { event: '*', schema: 'public', table: 'bookings' },
+                (payload) => {
+                    console.log('Realtime update:', payload);
+                    this.handleRealtimeChange(payload);
+                }
+            )
+            .subscribe();
+    }
+
+    handleRealtimeChange(payload) {
+        const { eventType, new: newRecord, old: oldRecord } = payload;
+
+        if (eventType === 'INSERT') {
+            this.bookings.unshift(newRecord);
+            this.showToast(`New booking from ${newRecord.customer_name}`, 'success');
+        } else if (eventType === 'UPDATE') {
+            const idx = this.bookings.findIndex(b => b.id === oldRecord.id);
+            if (idx !== -1) {
+                this.bookings[idx] = newRecord;
+                if (newRecord.status !== oldRecord.status) {
+                    this.showToast(
+                        `Booking #${String(newRecord.id).slice(0,8)} updated to ${newRecord.status}`,
+                        'warning'
+                    );
+                }
+            }
+        } else if (eventType === 'DELETE') {
+            this.bookings = this.bookings.filter(b => b.id !== oldRecord.id);
+        }
+
+        this.filterBookings(
+            document.getElementById('search-input').value,
+            document.getElementById('status-filter').value
+        );
+        this.updateStats();
+    }
+
+    filterBookings(searchTerm, statusFilter) {
+        let filtered = [...this.bookings];
+
+        // Status filter
+        if (statusFilter) {
+            filtered = filtered.filter(b => b.status === statusFilter);
+        }
+
+        // Search filter
+        if (searchTerm) {
+            const term = searchTerm.toLowerCase();
+            filtered = filtered.filter(b => 
+                b.customer_name?.toLowerCase().includes(term) ||
+                b.customer_email?.toLowerCase().includes(term) ||
+                b.customer_phone?.includes(term) ||
+                b.brand?.toLowerCase().includes(term) ||
+                b.model?.toLowerCase().includes(term) ||
+                b.issue?.toLowerCase().includes(term)
+            );
+        }
+
+        // Sort
+        filtered.sort((a, b) => {
+            let aVal = a[this.sortField];
+            let bVal = b[this.sortField];
+
+            if (this.sortField === 'created_at' || this.sortField === 'date') {
+                aVal = new Date(aVal);
+                bVal = new Date(bVal);
+            }
+
+            if (aVal < bVal) return this.sortAsc ? -1 : 1;
+            if (aVal > bVal) return this.sortAsc ? 1 : -1;
+            return 0;
+        });
+
+        this.filteredBookings = filtered;
+        this.renderTable();
+    }
+
+    sortBy(field) {
+        if (this.sortField === field) {
+            this.sortAsc = !this.sortAsc;
+        } else {
+            this.sortField = field;
+            this.sortAsc = true;
+        }
+
+        this.filterBookings(
+            document.getElementById('search-input').value,
+            document.getElementById('status-filter').value
+        );
+    }
+
+    updateStats() {
+        const total = this.bookings.length;
+        const pending = this.bookings.filter(b => b.status === 'pending').length;
+        const inProgress = this.bookings.filter(b => b.status === 'in_progress').length;
+
+        const today = new Date().toISOString().split('T')[0];
+        const todayRevenue = this.bookings
+            .filter(b => b.date === today)
+            .reduce((sum, b) => sum + (parseFloat(b.deposit_amount) || 0), 0);
+
+        document.getElementById('stat-total').textContent = total;
+        document.getElementById('stat-pending').textContent = pending;
+        document.getElementById('stat-inprogress').textContent = inProgress;
+        document.getElementById('stat-revenue').textContent = `R${todayRevenue.toFixed(2)}`;
+    }
+
+    renderTable() {
+        const tbody = document.getElementById('bookings-table');
+
+        if (this.filteredBookings.length === 0) {
+            tbody.innerHTML = `
+                <tr>
+                    <td colspan="7" class="empty-state">
+                        <h3>No bookings found</h3>
+                        <p>Try adjusting your filters or search terms</p>
+                    </td>
+                </tr>
+            `;
+            return;
+        }
+
+        tbody.innerHTML = this.filteredBookings.map(booking => {
+            const date = new Date(booking.created_at);
+            const dateStr = date.toLocaleDateString('en-ZA', { 
+                day: '2-digit', month: 'short', year: 'numeric' 
+            });
+            const timeStr = date.toLocaleTimeString('en-ZA', { 
+                hour: '2-digit', minute: '2-digit' 
+            });
+
+            const services = Array.isArray(booking.services) 
+                ? booking.services 
+                : JSON.parse(booking.services || '[]');
+
+            const servicesList = services.length > 0 
+                ? services.slice(0, 2).join(', ') + (services.length > 2 ? ` +${services.length - 2}` : '')
+                : 'No services';
+
+            return `
+                <tr data-id="${booking.id}">
+                    <td>
+                        <div style="font-weight: 500;">${dateStr}</div>
+                        <div style="font-size: 0.75rem; color: var(--gray-600);">${timeStr}</div>
+                    </td>
+                    <td class="customer-cell">
+                        <div class="customer-name">${this.escapeHtml(booking.customer_name)}</div>
+                        <div class="customer-meta">${this.escapeHtml(booking.customer_email)}<br>${booking.customer_phone}</div>
+                    </td>
+                    <td class="device-cell">
+                        <div class="device-name">${this.escapeHtml(booking.brand)} ${this.escapeHtml(booking.model)}</div>
+                        <div class="device-issue">${this.escapeHtml(booking.issue || 'No issue specified')}</div>
+                    </td>
+                    <td>
+                        <div style="font-size: 0.875rem;">${this.escapeHtml(servicesList)}</div>
+                        <div style="font-size: 0.75rem; color: var(--gray-600);">${booking.date} @ ${booking.time}</div>
+                    </td>
+                    <td class="price-cell">
+                        <div>R${parseFloat(booking.total_price || 0).toFixed(2)}</div>
+                        <div class="price-deposit">Deposit: R${parseFloat(booking.deposit_amount || 0).toFixed(2)}</div>
+                    </td>
+                    <td>
+                        <span class="status-badge status-${booking.status}">
+                            ${booking.status.replace('_', ' ')}
+                        </span>
+                    </td>
+                    <td class="actions-cell">
+                        <button class="btn btn-sm btn-primary" onclick="app.viewDetails('${booking.id}')">View</button>
+                        <button class="btn btn-sm btn-success" onclick="app.updateStatus('${booking.id}', 'confirmed')" 
+                            ${booking.status !== 'pending' ? 'disabled' : ''}>Confirm</button>
+                        <button class="btn btn-sm btn-warning" onclick="app.updateStatus('${booking.id}', 'in_progress')"
+                            ${booking.status !== 'confirmed' ? 'disabled' : ''}>Start</button>
+                        <button class="btn btn-sm" style="background: var(--gray-600); color: white;" 
+                            onclick="app.updateStatus('${booking.id}', 'completed')"
+                            ${booking.status !== 'in_progress' ? 'disabled' : ''}>Complete</button>
+                    </td>
+                </tr>
+            `;
+        }).join('');
+    }
+
+    viewDetails(id) {
+        const booking = this.bookings.find(b => b.id === id);
+        if (!booking) return;
+
+        const services = Array.isArray(booking.services) 
+            ? booking.services 
+            : JSON.parse(booking.services || '[]');
+
+        const modalContent = document.getElementById('modal-content');
+        modalContent.innerHTML = `
+            <div class="detail-row">
+                <span class="detail-label">Booking ID</span>
+                <span class="detail-value" style="font-family: monospace;">${booking.id}</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Status</span>
+                <span class="detail-value">
+                    <span class="status-badge status-${booking.status}">${booking.status.replace('_', ' ')}</span>
+                </span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Customer</span>
+                <span class="detail-value">${this.escapeHtml(booking.customer_name)}<br>${this.escapeHtml(booking.customer_email)}<br>${booking.customer_phone}</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Device</span>
+                <span class="detail-value">${this.escapeHtml(booking.brand)} ${this.escapeHtml(booking.model)}</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Issue</span>
+                <span class="detail-value">${this.escapeHtml(booking.issue || 'Not specified')}</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Services</span>
+                <span class="detail-value">${services.map(s => this.escapeHtml(s)).join('<br>')}</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Appointment</span>
+                <span class="detail-value">${booking.date} at ${booking.time}<br>${this.escapeHtml(booking.location)}</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Total Price</span>
+                <span class="detail-value">R${parseFloat(booking.total_price).toFixed(2)}</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Deposit Required</span>
+                <span class="detail-value">R${parseFloat(booking.deposit_amount).toFixed(2)}</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Created</span>
+                <span class="detail-value">${new Date(booking.created_at).toLocaleString('en-ZA')}</span>
+            </div>
+            ${booking.admin_notes ? `
+            <div class="detail-row">
+                <span class="detail-label">Admin Notes</span>
+                <span class="detail-value">${this.escapeHtml(booking.admin_notes)}</span>
+            </div>
+            ` : ''}
+            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--gray-200);">
+                <label style="display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 0.5rem;">Update Status</label>
+                <div style="display: flex; gap: 0.5rem;">
+                    ${['pending','confirmed','in_progress','completed','cancelled'].map(s => `
+                        <button class="btn btn-sm ${booking.status === s ? 'btn-primary' : ''}" 
+                            style="${booking.status === s ? '' : 'background: var(--gray-100); color: var(--gray-700);'}"
+                            onclick="app.updateStatus('${booking.id}', '${s}')">
+                            ${s.replace('_', ' ')}
+                        </button>
+                    `).join('')}
+                </div>
+            </div>
+            <div style="margin-top: 1rem;">
+                <label style="display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 0.5rem;">Admin Notes</label>
+                <textarea id="admin-notes-input" rows="3" style="width: 100%; padding: 0.5rem; border: 1px solid var(--gray-300); border-radius: 0.5rem; font-family: inherit;">${this.escapeHtml(booking.admin_notes || '')}</textarea>
+                <button class="btn btn-primary btn-sm" style="margin-top: 0.5rem;" onclick="app.saveNotes('${booking.id}')">Save Notes</button>
+            </div>
+        `;
+
+        document.getElementById('detail-modal').classList.add('active');
+    }
+
+    closeModal() {
+        document.getElementById('detail-modal').classList.remove('active');
+    }
+
+    async updateStatus(id, newStatus) {
+        try {
+            const { error } = await this.supabase
+                .from('bookings')
+                .update({ status: newStatus, updated_at: new Date().toISOString() })
+                .eq('id', id);
+
+            if (error) throw error;
+
+            this.showToast(`Status updated to ${newStatus}`, 'success');
+
+            // If modal is open, refresh it
+            if (document.getElementById('detail-modal').classList.contains('active')) {
+                this.viewDetails(id);
+            }
+
+        } catch (err) {
+            console.error('Update status error:', err);
+            this.showToast('Failed to update status: ' + err.message, 'error');
+        }
+    }
+
+    async saveNotes(id) {
+        const notes = document.getElementById('admin-notes-input').value;
+
+        try {
+            const { error } = await this.supabase
+                .from('bookings')
+                .update({ admin_notes: notes, updated_at: new Date().toISOString() })
+                .eq('id', id);
+
+            if (error) throw error;
+
+            this.showToast('Notes saved', 'success');
+
+        } catch (err) {
+            this.showToast('Failed to save notes: ' + err.message, 'error');
+        }
+    }
+
+    refreshData() {
+        this.loadData();
+        this.showToast('Data refreshed', 'success');
+    }
+
+    showToast(message, type = 'info') {
+        const container = document.getElementById('toast-container');
+        const toast = document.createElement('div');
+        toast.className = `toast ${type}`;
+        toast.innerHTML = `
+            <div style="font-weight: 600; margin-bottom: 0.25rem;">${type.charAt(0).toUpperCase() + type.slice(1)}</div>
+            <div style="font-size: 0.875rem;">${message}</div>
+        `;
+
+        container.appendChild(toast);
+
+        setTimeout(() => {
+            toast.style.opacity = '0';
+            toast.style.transform = 'translateX(100%)';
+            toast.style.transition = 'all 0.3s ease';
+            setTimeout(() => toast.remove(), 300);
+        }, 4000);
+    }
+
+    escapeHtml(text) {
+        if (!text) return '';
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+}
+
+// Initialize app
+const app = new AdminDashboard();
+</script>
+</body>
+</html>
