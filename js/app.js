@@ -202,11 +202,25 @@ const MobiApp = {
     if (mobileToggle) mobileToggle.addEventListener('click', toggleTheme);
   },
 
+  /* ─── Admin Keyboard Shortcut ─── */
+  initAdminShortcut() {
+    document.addEventListener('keydown', (e) => {
+      // Ctrl + Alt + A or Ctrl + Shift + L redirects to admin dashboard
+      if ((e.ctrlKey && e.altKey && e.key.toLowerCase() === 'a') || 
+          (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'l')) {
+        e.preventDefault();
+        MobiApp.toast('🔒 Accessing Staff Portal...', 'warning', 1500);
+        setTimeout(() => window.location.href = 'admin-dashboard.html', 800);
+      }
+    });
+  },
+
   /* ─── Init Everything ─── */
   init() {
     this.initTheme();
     this.initNav();
     this.initScrollAnimations();
+    this.initAdminShortcut();
     
     // Initialize Lucide Icons if core library is present
     if (window.lucide) {
