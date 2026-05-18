@@ -1,0 +1,113 @@
+{
+  "reviews": [
+    {
+      "name": "Cebo Mlotshwa",
+      "avatar": "https://lh3.googleusercontent.com/a-/AOh14GhCebo",
+      "rating": 5,
+      "text": "Well one thing I can say Mobidokta is best and they take pride in what they do and they excell in their job and another thing when it comes to Tech you can't outbeat them",
+      "platform": "Google"
+    },
+    {
+      "name": "Dimpho Komane",
+      "avatar": "https://lh3.googleusercontent.com/a-/AOh14Gk7c2I",
+      "rating": 5,
+      "text": "I had such a great experience with MobiDokta! They fixed my laptop quickly and professionally, and the whole process was…",
+      "platform": "Google"
+    },
+    {
+      "name": "Fezeka Dlakela",
+      "avatar": "https://lh3.googleusercontent.com/a-/AOh14Gx9L4U",
+      "rating": 5,
+      "text": "Very reliable and affordable ❤️ you get what you paid for and more",
+      "platform": "Google"
+    }
+  ],
+  "portfolio": [
+    {
+      "title": "iPhone 15 Pro Max",
+      "image": "./img/portfolio-iphone.png",
+      "description": "Full Screen & Frame Transplant",
+      "type": "image"
+    },
+    {
+      "title": "MacBook Pro 16\"",
+      "image": "./img/portfolio-macbook.png",
+      "description": "Thermal ICU & Internal Sanitization",
+      "type": "image"
+    }
+  ],
+  "laptopServices": [
+    {
+      "title": "Battery Replacement",
+      "icon": "battery-charging",
+      "description": "Swollen or degraded battery replacement for MacBooks and Windows laptops.",
+      "price": "From R999"
+    },
+    {
+      "title": "Keyboard & Trackpad",
+      "icon": "keyboard",
+      "description": "Sticky keys or unresponsive trackpads fixed with precision.",
+      "price": "From R850"
+    },
+    {
+      "title": "Thermal Paste & Dust Clean",
+      "icon": "fan",
+      "description": "Overheating issues resolved with deep internal sanitization and thermal repasting.",
+      "price": "From R650"
+    },
+    {
+      "title": "OS Recovery & Formatting",
+      "icon": "hard-drive",
+      "description": "Corrupted OS, blue screens, and full system wipes/reinstalls.",
+      "price": "From R450"
+    }
+  ],
+  "faq": [
+    {
+      "question": "How does your Courier & Delivery service work?",
+      "answer": "We offer a fully insured, nationwide courier service via RAM and The Courier Guy. Simply book online, and we will dispatch a courier to collect your damaged device from your home or office. Once the repair is completed and quality-tested, we package it in premium anti-shock material and courier it right back to you. You are updated via WhatsApp at every step of the journey."
+    },
+    {
+      "question": "What is a 'House Call' protocol and how do I use it?",
+      "answer": "Our 'Request A Techie' house call service means our engineers come directly to you. Whether you're at home, the office, or a public cafe anywhere in Gauteng, we dispatch a certified technician to perform the repair on-site in front of you. This guarantees complete data privacy and zero downtime for your busy schedule."
+    },
+    {
+      "question": "My phone fell in water! What should I do right now?",
+      "answer": "Do NOT turn it on. Do NOT plug it into a charger. Do NOT put it in rice, as rice dust accelerates internal corrosion. Immediately power off the device if possible, dry the exterior with a towel, and bring it to our studio immediately. We perform a professional chemical ultrasonic cleaning to remove minerals and save your motherboard from short-circuiting."
+    },
+    {
+      "question": "Does my repair come with a warranty or cover?",
+      "answer": "Absolutely. Because we use OEM (Original Equipment Manufacturer) grade and premium eco-grade parts, every repair comes with a comprehensive warranty. Screen and battery replacements typically carry a 6 to 12-month warranty covering any manufacturing defects or functional failures."
+    },
+    {
+      "question": "Can I upgrade or trade in my old or broken device?",
+      "answer": "Yes! We have an instant buyback and upgrade program. Bring in your damaged or outdated iPhone, MacBook, or Samsung, and our technicians will evaluate its history and hardware condition. We will offer you an instant cash buyout or credit towards a newer, high-performance pre-owned model."
+    },
+    {
+      "question": "Will I lose my photos and data during the repair?",
+      "answer": "For 95% of hardware repairs (like screens, batteries, or cameras), your data remains 100% untouched and secure. However, for severe motherboard repairs or OS recoveries, data loss is a risk. We always strongly advise backing up to iCloud, Google Drive, or a PC before initiating any repair."
+    }
+  ],
+  "education": [
+    {
+      "title": "Top 10 Red Flags When Buying Pre-Owned Devices",
+      "image": "./img/edu-buying-guide.jpg",
+      "description": "Don't get scammed buying second-hand. Always check: 1. Battery Health (avoid below 80%), 2. True Tone functionality, 3. Face ID/Touch ID, 4. Water damage indicators in the SIM tray, 5. Original screen response, 6. Clean IMEI (not blacklisted), 7. Camera focus, 8. Speaker clarity, 9. Charging port grip, and 10. iCloud unlock status."
+    },
+    {
+      "title": "5 Bad Habits That Damage & Slow Down Your Phone",
+      "image": "./img/edu-bad-habits.jpg",
+      "description": "Using cheap, non-MFi certified gas-station chargers permanently fries your motherboard's power chip. Exposing your phone to bathroom steam causes slow internal corrosion. Ignoring storage limits causes severe OS lag. Stop these habits today to instantly extend your device's lifespan and performance!"
+    },
+    {
+      "title": "Which Devices Get Repaired the Most? (2026 Report)",
+      "image": "./img/edu-repair-report.jpg",
+      "description": "In 2026, the devices we see most frequently in our repair studio are entry-level Androids with cracked LCDs and older iPhones (iPhone 11 & 12) needing battery replacements. High-end devices like the iPhone 15 Pro and Galaxy S24 Ultra feature Ceramic Shield and Gorilla Glass Armor, making them the strongest and least prone to screen shattering."
+    },
+    {
+      "title": "Best Performing Devices to Buy in 2026",
+      "image": "./img/edu-best-devices.jpg",
+      "description": "Looking to upgrade? The iPhone 16 Pro Max and Samsung Galaxy S25 Ultra currently dominate the market in processing power, camera capabilities, and overall structural durability. For laptops, the Apple Silicon MacBook Pro M3 series remains unparalleled in battery efficiency and thermal performance."
+    }
+  ]
+}

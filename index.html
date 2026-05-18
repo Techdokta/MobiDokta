@@ -11,7 +11,7 @@
     <meta name="geo.placename" content="Alberton, Randhart" />
     <meta name="geo.position" content="-26.289795;28.111540" />
     <meta name="ICBM" content="-26.289795, 28.111540" />
-    <meta name="keywords" content="repair Alberton, tech repair Randhart, mechatronics engineering certification, Siemens certified repair, micro-soldering, buyback damaged iphone, same day repair" />>
+    <meta name="keywords" content="repair Alberton, tech repair Randhart, mechatronics engineering certification, Siemens certified repair, micro-soldering, buyback damaged iphone, same day repair" />
 
   <link rel="stylesheet" href="./css/global.css">
   <link rel="stylesheet" href="./css/index-inline.css">
@@ -198,10 +198,10 @@
     }
 
     .hero-glass-card {
-      background: rgba(255, 255, 255, 0.55);
+      background: var(--glass-bg);
       backdrop-filter: blur(10px) saturate(160%);
       -webkit-backdrop-filter: blur(10px) saturate(160%);
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      border: 1px solid var(--border);
       border-radius: 32px;
       padding: var(--space-12) var(--space-8);
       box-shadow: 0 40px 100px rgba(0, 0, 0, 0.08);
@@ -700,8 +700,14 @@
 
     @media (max-width: 768px) {
       .hero {
-        padding: var(--space-24) var(--space-6) var(--space-16);
-        min-height: initial;
+        padding: calc(var(--space-24) + 2rem) var(--space-4) var(--space-16);
+        min-height: 100vh;
+        background-attachment: scroll;
+        background-position: center top;
+      }
+
+      .hero-glass-card {
+        padding: var(--space-8) var(--space-4);
       }
 
       .services-grid {
@@ -846,13 +852,13 @@
           </div>
         </div>
         <div data-animate>
-          <img src="./img/portfolio-iphone.png" class="split-image" alt="Precision Repair">
+          <img src="./img/idx-precision-repair.jpg" class="split-image" alt="Precision Repair">
         </div>
       </div>
 
       <div class="services-grid inline-style-ebf135c6">
         <div class="card service-card inline-style-678049f7" data-animate>
-          <img src="./img/service-screen.png" alt="Screen Repair" class="inline-style-ee486f44" />
+          <img src="./img/idx-svc-screen.jpg" alt="Screen Repair" class="inline-style-ee486f44" />
           <div class="inline-style-75ab1518">
             <h3 class="inline-style-eb0fc9a0">Screen Repair</h3>
             <p class="inline-style-15b11a67">Cracked or broken screen? We'll make it look brand new.</p>
@@ -861,7 +867,7 @@
         </div>
 
         <div class="card service-card inline-style-678049f7" data-animate>
-          <img src="./img/service-battery.png" alt="Battery Replacement" class="inline-style-ee486f44" />
+          <img src="./img/idx-svc-battery.jpg" alt="Battery Replacement" class="inline-style-ee486f44" />
           <div class="inline-style-75ab1518">
             <h3 class="inline-style-eb0fc9a0">Battery Replacement</h3>
             <p class="inline-style-15b11a67">Fast battery drain? Get long-lasting power again.</p>
@@ -870,7 +876,7 @@
         </div>
 
         <div class="card service-card inline-style-678049f7" data-animate>
-          <img src="./img/service-camera.png" alt="Camera Repair" class="inline-style-ee486f44" />
+          <img src="./img/idx-svc-camera.jpg" alt="Camera Repair" class="inline-style-ee486f44" />
           <div class="inline-style-75ab1518">
             <h3 class="inline-style-eb0fc9a0">Camera Repair</h3>
             <p class="inline-style-15b11a67">Blurry photos or faulty camera? We've got you covered.</p>
@@ -879,7 +885,7 @@
         </div>
 
         <div class="card service-card inline-style-678049f7" data-animate>
-          <img src="./img/service-water.png" alt="Water Damage Repair" class="inline-style-ee486f44" />
+          <img src="./img/idx-svc-water.jpg" alt="Water Damage Repair" class="inline-style-ee486f44" />
           <div class="inline-style-75ab1518">
             <h3 class="inline-style-eb0fc9a0">Water Damage</h3>
             <p class="inline-style-15b11a67">Water accident? We'll recover and restore it.</p>
@@ -897,6 +903,20 @@
             <span class="service-price inline-style-5ae5deac">From R199</span>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Laptop Services (Dynamic) ─── -->
+  <section id="laptop-services" class="section">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <div class="badge badge-accent">Laptops & PCs</div>
+        <h2>Professional Computer Repair.</h2>
+        <p>Expert diagnostics and repairs for all MacBooks and Windows machines.</p>
+      </div>
+      <div class="services-grid inline-style-ebf135c6" id="laptop-services-content">
+        <!-- Content will be injected here via content-loader.js -->
       </div>
     </div>
   </section>
@@ -955,7 +975,7 @@
     <div class="container">
       <div class="split-layout inline-style-d0da858a">
         <div class="founder-visual inline-style-28f03f8c">
-          <img src="./img/hero-main.png" alt="Engineering Precision" class="inline-style-c23ce026">
+          <img src="./img/idx-founder.jpg" alt="Engineering Precision" class="inline-style-c23ce026">
           <div class="inline-style-356af567">
             <div class="inline-style-2b367b3e">
               <i data-lucide="cpu" class="icon-lg inline-style-fd8403a3"></i>
@@ -1009,7 +1029,7 @@
         <!-- Portfolio 1 -->
         <div class="masonry-item" data-animate>
           <div class="masonry-img-wrapper">
-            <img src="./img/portfolio-iphone.png" class="live-motion-img" alt="iPhone Repair">
+            <img src="./img/idx-port-iphone.jpg" class="live-motion-img" alt="iPhone Repair">
           </div>
           <div class="masonry-content">
             <h4 class="inline-style-bdbd7084">iPhone 15 Pro Max</h4>
@@ -1031,7 +1051,7 @@
         <!-- Portfolio 2 -->
         <div class="masonry-item" data-animate>
           <div class="masonry-img-wrapper">
-            <img src="./img/portfolio-macbook.png" class="live-motion-img" alt="MacBook Cleanup">
+            <img src="./img/idx-port-macbook.jpg" class="live-motion-img" alt="MacBook Cleanup">
           </div>
           <div class="masonry-content">
             <h4 class="inline-style-bdbd7084">MacBook Pro 16"</h4>
@@ -1053,7 +1073,7 @@
         <!-- Portfolio 3 -->
         <div class="masonry-item" data-animate>
           <div class="masonry-img-wrapper">
-            <img src="./img/hero-journey.png" class="live-motion-img" alt="Safe Packaging">
+            <img src="./img/idx-port-logistics.jpg" class="live-motion-img" alt="Safe Packaging">
           </div>
           <div class="masonry-content">
             <h4 class="inline-style-bdbd7084">Logistics Excellence</h4>
@@ -1084,49 +1104,112 @@
       <p>Real feedback from our happy clients – no fabricated testimonials.</p>
     </div>
     <div class="reviews-grid">
-      <div class="review-card glass-panel">
+      <div class="review-card glass-panel" onclick="window.open('https://g.page/r/CVBsFGUXU7hzEBM/review', '_blank')" style="cursor: pointer;" title="View on Google">
         <div class="review-header">
           <img src="https://lh3.googleusercontent.com/a-/AOh14GhCebo" alt="Cebo Mlotshwa" class="review-avatar" />
-          <div class="review-author">Cebo Mlotshwa</div>
+          <div class="review-meta">
+            <div class="review-author">Cebo Mlotshwa</div>
+            <div class="review-platform">
+              <span>Google Review</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12"><path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z"/><path fill="#34A853" d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z"/><path fill="#4285F4" d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z"/><path fill="#FBBC05" d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z"/></svg>
+            </div>
+          </div>
           <div class="review-rating">★★★★★</div>
         </div>
         <p class="review-text">Well one thing I can say Mobidokta is best and they take pride in what they do and they excell in their job and another thing when it comes to Tech you can't outbeat them</p>
       </div>
-      <div class="review-card glass-panel">
+      <div class="review-card glass-panel" onclick="window.open('https://g.page/r/CVBsFGUXU7hzEBM/review', '_blank')" style="cursor: pointer;" title="View on Google">
         <div class="review-header">
           <img src="https://lh3.googleusercontent.com/a-/AOh14Gk7c2I" alt="Dimpho Komane" class="review-avatar" />
-          <div class="review-author">Dimpho Komane</div>
+          <div class="review-meta">
+            <div class="review-author">Dimpho Komane</div>
+            <div class="review-platform">
+              <span>Google Review</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12"><path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z"/><path fill="#34A853" d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z"/><path fill="#4285F4" d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z"/><path fill="#FBBC05" d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z"/></svg>
+            </div>
+          </div>
           <div class="review-rating">★★★★★</div>
         </div>
         <p class="review-text">I had such a great experience with MobiDokta! They fixed my laptop quickly and professionally, and the whole process was…</p>
       </div>
-      <div class="review-card glass-panel">
+      <div class="review-card glass-panel" onclick="window.open('https://g.page/r/CVBsFGUXU7hzEBM/review', '_blank')" style="cursor: pointer;" title="View on Google">
         <div class="review-header">
           <img src="https://lh3.googleusercontent.com/a-/AOh14Gx9L4U" alt="Fezeka Dlakela" class="review-avatar" />
-          <div class="review-author">Fezeka Dlakela</div>
+          <div class="review-meta">
+            <div class="review-author">Fezeka Dlakela</div>
+            <div class="review-platform">
+              <span>Google Review</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12"><path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z"/><path fill="#34A853" d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z"/><path fill="#4285F4" d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z"/><path fill="#FBBC05" d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z"/></svg>
+            </div>
+          </div>
           <div class="review-rating">★★★★★</div>
         </div>
         <p class="review-text">Very reliable and affordable ❤️ you get what you paid for and more</p>
       </div>
-      <div class="review-card glass-panel">
+      <div class="review-card glass-panel" onclick="window.open('https://g.page/r/CVBsFGUXU7hzEBM/review', '_blank')" style="cursor: pointer;" title="View on Google">
         <div class="review-header">
           <img src="https://lh3.googleusercontent.com/a-/AOh14GzVtK8" alt="Tshepang Makhubedu" class="review-avatar" />
-          <div class="review-author">Tshepang Makhubedu</div>
+          <div class="review-meta">
+            <div class="review-author">Tshepang Makhubedu</div>
+            <div class="review-platform">
+              <span>Google Review</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12"><path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z"/><path fill="#34A853" d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z"/><path fill="#4285F4" d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z"/><path fill="#FBBC05" d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z"/></svg>
+            </div>
+          </div>
           <div class="review-rating">★★★★★</div>
         </div>
         <p class="review-text">The service is amazing, I'd recommend it to anyone 🔥🤝🏿</p>
       </div>
-      <div class="review-card glass-panel">
+      <div class="review-card glass-panel" onclick="window.open('https://g.page/r/CVBsFGUXU7hzEBM/review', '_blank')" style="cursor: pointer;" title="View on Google">
         <div class="review-header">
           <img src="https://lh3.googleusercontent.com/a-/AOh14Gz6Q9M" alt="Rethabile Maliha" class="review-avatar" />
-          <div class="review-author">Rethabile Maliha</div>
+          <div class="review-meta">
+            <div class="review-author">Rethabile Maliha</div>
+            <div class="review-platform">
+              <span>Google Review</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12"><path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z"/><path fill="#34A853" d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z"/><path fill="#4285F4" d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z"/><path fill="#FBBC05" d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z"/></svg>
+            </div>
+          </div>
           <div class="review-rating">★★★★★</div>
         </div>
         <p class="review-text">Excellent service and very reliable. I was assisted within 3 hours ☺️ I would definitely recommend</p>
       </div>
     </div>
+    <div style="text-align: center; margin-top: var(--space-12);" data-animate>
+      <a href="https://g.page/r/CVBsFGUXU7hzEBM/review" target="_blank" rel="noopener" class="btn btn-secondary">
+        View all on Google <i data-lucide="external-link" class="icon-sm" style="margin-left: 8px;"></i>
+      </a>
+    </div>
   </div>
 </section>
+
+  <!-- ─── FAQ ─── -->
+  <section id="faq" class="section">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <div class="badge badge-accent">FAQ</div>
+        <h2>Frequently Asked Questions.</h2>
+        <p>Quick answers to the most common questions about our services.</p>
+      </div>
+      <div class="faq-list" id="faq-content">
+        <!-- Populated by content-loader.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Education Hub ─── -->
+  <section id="education" class="section inline-style-37fcd681">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <div class="badge badge-accent">Education Hub</div>
+        <h2>Know Your Device.</h2>
+        <p>Practical guides, diagrams, and tips to help you identify and prevent common device issues.</p>
+      </div>
+      <div class="education-grid" id="education-content">
+        <!-- Populated by content-loader.js -->
+      </div>
+    </div>
+  </section>
 
   <!-- ─── Request A Techie™ ─── -->
   <section id="coverage" class="section inline-style-37fcd681">
@@ -1372,9 +1455,12 @@
       <button class="nav-close" aria-label="Close Menu"><i data-lucide="x" class="icon"></i></button>
     </div>
     <a href="#services"><i data-lucide="tool" class="icon-sm"></i> Repairs</a>
+    <a href="#laptop-services"><i data-lucide="laptop" class="icon-sm"></i> Laptops & PCs</a>
     <a href="#portfolio"><i data-lucide="image" class="icon-sm"></i> See Our Work</a>
     <a href="#founder"><i data-lucide="award" class="icon-sm"></i> Competency</a>
-    <a href="support.html"><i data-lucide="help-circle" class="icon-sm"></i> Support</a>
+    <a href="#faq"><i data-lucide="help-circle" class="icon-sm"></i> FAQ</a>
+    <a href="#education"><i data-lucide="book-open" class="icon-sm"></i> Education Hub</a>
+    <a href="support.html"><i data-lucide="life-buoy" class="icon-sm"></i> Support</a>
     <a href="service-request.html"><i data-lucide="file-plus" class="icon-sm"></i> Request Service</a>
     <a href="community.html"><i data-lucide="users" class="icon-sm"></i> Community Hub</a>
     <a href="book.html" class="inline-style-fd9334c1"><i data-lucide="calendar" class="icon-sm"></i> Book Now</a>
@@ -1388,6 +1474,7 @@
 
   <script src="./js/data-store.js"></script>
   <script src="./js/app.js"></script>
+  <script src="./js/content-loader.js"></script>
   <script>
     // Initialize Lucide icons
     if (typeof lucide !== 'undefined') { lucide.createIcons(); }

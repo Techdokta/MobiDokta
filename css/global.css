@@ -863,11 +863,37 @@ h1, h2, h3, h4, h5, h6 {
   .nav-toggle { display: flex; }
   .nav-btn-desktop { display: none; }
   .footer-grid { grid-template-columns: 1fr; gap: var(--space-8); }
+  .split-layout { grid-template-columns: 1fr; gap: var(--space-8); }
   .footer-bottom { flex-direction: column; gap: var(--space-4); text-align: center; }
   .trust-badges { flex-wrap: wrap; justify-content: center; }
   .container { padding: 0 var(--space-6); }
   .sticky-cta { display: block; }
   .whatsapp-fab { bottom: 80px; }
+
+  /* Mobile Slideshow for Portfolio & Reviews */
+  .portfolio-masonry,
+  .reviews-grid {
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    gap: var(--space-4) !important;
+    padding: var(--space-2) var(--space-6) var(--space-6) !important;
+    margin-left: calc(-1 * var(--space-6)) !important;
+    margin-right: calc(-1 * var(--space-6)) !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+  }
+  .portfolio-masonry::-webkit-scrollbar,
+  .reviews-grid::-webkit-scrollbar {
+    display: none !important;
+  }
+  .masonry-item,
+  .review-card {
+    flex: 0 0 82% !important;
+    width: 82% !important;
+    max-width: 320px !important;
+    scroll-snap-align: center !important;
+  }
 }
 
 @media (max-width: 480px) {
@@ -912,9 +938,23 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: var(--radius-full);
   object-fit: cover;
 }
+.review-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
 .review-author {
   font-weight: 600;
   color: var(--text-primary);
+  font-size: var(--text-sm);
+  line-height: 1.2;
+}
+.review-platform {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 .review-rating {
   margin-left: auto;
@@ -928,6 +968,109 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: var(--space-4);
 }
 
+
+/* ─── FAQ Accordion ─── */
+.faq-list {
+  max-width: 800px;
+  margin: var(--space-8) auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: box-shadow var(--duration-base) var(--ease);
+}
+.faq-item:hover {
+  box-shadow: var(--shadow-sm);
+}
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-6) var(--space-8);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: var(--text-base);
+  color: var(--text-primary);
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+  transition: background var(--duration-base) var(--ease);
+}
+.faq-question:hover {
+  background: var(--bg-secondary);
+}
+.faq-question .faq-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--text-tertiary);
+  transition: transform 0.3s var(--ease);
+}
+.faq-item.open .faq-question .faq-icon {
+  transform: rotate(45deg);
+  color: var(--accent);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s var(--ease), padding 0.3s var(--ease);
+  padding: 0 var(--space-8);
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+}
+.faq-item.open .faq-answer {
+  max-height: 300px;
+  padding: 0 var(--space-8) var(--space-6);
+}
+
+
+/* ─── Education Hub ─── */
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-8);
+  margin-top: var(--space-8);
+}
+.edu-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--duration-base) var(--ease), box-shadow var(--duration-base) var(--ease);
+}
+.edu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.edu-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid var(--border);
+}
+.edu-card-body {
+  padding: var(--space-6);
+}
+.edu-card-body h4 {
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+}
+.edu-card-body p {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
 
 /* ─── Compliance Banner ─── */
 .compliance-banner {
