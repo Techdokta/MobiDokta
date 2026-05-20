@@ -609,9 +609,25 @@
       location: booking.location + (booking.address ? ` - ${booking.address}` : '')
     });
 
-    // Save to Supabase Cloud Database!
+    // Save to Supabase Cloud Database; capture id so we can attach photos.
+    let dbBookingId = null;
     if (window.insertBookingToDB) {
-      await window.insertBookingToDB(dbPayload);
+      dbBookingId = await window.insertBookingToDB(dbPayload);
+    }
+
+    // Upload any damage photos the customer attached. Non-blocking on failure —
+    // the booking still succeeds even if uploads fail; admin will see the row without photos.
+    const picsInput = document.getElementById('cust-pictures');
+    const picFiles = picsInput && picsInput.files ? Array.from(picsInput.files) : [];
+    if (dbBookingId && picFiles.length > 0 && window.uploadBookingAttachments) {
+      try {
+        const uploaded = await window.uploadBookingAttachments(dbBookingId, picFiles);
+        if (uploaded.length < picFiles.length) {
+          MobiApp.toast(`${uploaded.length} of ${picFiles.length} photos uploaded. Others were too large or not images.`, 'info', 5000);
+        }
+      } catch (e) {
+        console.error('Attachment upload error:', e);
+      }
     }
 
     MobiApp.toast('Booking secured. Your invoice is on the way.', 'success', 5000);

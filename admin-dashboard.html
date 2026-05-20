@@ -478,6 +478,40 @@
             max-width: 60%;
         }
 
+        .attachments-block {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--gray-200);
+        }
+        .attachments-block-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            color: var(--gray-900);
+        }
+        .attachments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 0.5rem;
+        }
+        .attachment-thumb {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            background: var(--gray-200);
+            border: 1px solid var(--gray-300);
+            cursor: pointer;
+            transition: transform 0.15s;
+        }
+        .attachment-thumb:hover { transform: scale(1.02); }
+        .attachment-thumb.loading { opacity: 0.5; }
+        .attachments-empty {
+            font-size: 0.75rem;
+            color: var(--gray-600);
+        }
+
         /* Toast Notifications */
         .toast-container {
             position: fixed;
@@ -1094,6 +1128,13 @@ class AdminDashboard {
                 <span class="detail-value">${this.escapeHtml(booking.admin_notes)}</span>
             </div>
             ` : ''}
+            <div class="attachments-block">
+                <span class="attachments-block-label">Customer Photos (${(booking.attachment_paths || []).length})</span>
+                ${(booking.attachment_paths || []).length === 0
+                    ? '<p class="attachments-empty">No photos attached.</p>'
+                    : `<div class="attachments-grid" id="attachments-grid">${booking.attachment_paths.map((p, i) => `<img class="attachment-thumb loading" data-path="${this.escapeHtml(p)}" alt="Attachment ${i + 1}" loading="lazy">`).join('')}</div>`
+                }
+            </div>
             <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--gray-200);">
                 <label style="display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 0.5rem;">Update Status</label>
                 <div style="display: flex; gap: 0.5rem;">
@@ -1114,6 +1155,32 @@ class AdminDashboard {
         `;
 
         document.getElementById('detail-modal').classList.add('active');
+        this.loadAttachmentThumbnails(booking);
+    }
+
+    async loadAttachmentThumbnails(booking) {
+        const paths = booking.attachment_paths || [];
+        if (paths.length === 0) return;
+        const imgs = document.querySelectorAll('#attachments-grid .attachment-thumb');
+        for (const img of imgs) {
+            const path = img.dataset.path;
+            try {
+                const { data, error } = await this.supabase.storage
+                    .from('booking-attachments')
+                    .createSignedUrl(path, 3600);
+                if (error) {
+                    img.classList.remove('loading');
+                    img.alt = 'Failed to load';
+                    continue;
+                }
+                img.src = data.signedUrl;
+                img.onclick = () => window.open(data.signedUrl, '_blank', 'noopener');
+                img.onload = () => img.classList.remove('loading');
+            } catch (err) {
+                console.error('Signed URL failed:', err);
+                img.classList.remove('loading');
+            }
+        }
     }
 
     closeModal() {
