@@ -80,16 +80,16 @@ const MobiApp = {
       warning: '<i data-lucide="alert-triangle" class="icon-sm"></i>' 
     };
     const colors = {
-      success: 'rgba(52,211,153,0.12)',
-      error: 'rgba(248,113,113,0.12)',
-      info: 'rgba(45,212,191,0.12)',
-      warning: 'rgba(251,146,60,0.12)'
+      success: 'rgba(52,211,153,0.95)',
+      error: 'rgba(248,113,113,0.95)',
+      info: 'rgba(45,212,191,0.95)',
+      warning: 'rgba(251,146,60,0.95)'
     };
     const borderColors = {
-      success: 'rgba(52,211,153,0.3)',
-      error: 'rgba(248,113,113,0.3)',
-      info: 'rgba(45,212,191,0.3)',
-      warning: 'rgba(251,146,60,0.3)'
+      success: 'rgba(52,211,153,0.6)',
+      error: 'rgba(248,113,113,0.6)',
+      info: 'rgba(45,212,191,0.6)',
+      warning: 'rgba(251,146,60,0.6)'
     };
 
     const toast = document.createElement('div');

@@ -614,20 +614,42 @@
       await window.insertBookingToDB(dbPayload);
     }
 
-    MobiApp.toast('Booking secured! Your invoice will be emailed shortly.', 'success', 6000);
+    MobiApp.toast('Booking secured. Your invoice is on the way.', 'success', 5000);
 
-    // Redirect to home page
     if (booking.totalPrice > 0) {
-      setTimeout(() => {
-        window.location.href = 'index.html?booking_success=true';
-      }, 3000);
+      showSuccessStep(savedBooking, booking);
     } else {
-      setTimeout(() => {
-        window.location.href = 'support.html'; // Free solutions path
-      }, 1500);
-      MobiApp.toast('Free diagnostic — no payment needed!', 'info');
+      MobiApp.toast('Free diagnostic — no payment needed.', 'info');
+      setTimeout(() => { window.location.href = 'support.html'; }, 1500);
     }
   });
+  }
+
+  function showSuccessStep(saved, b) {
+    document.querySelectorAll('.booking-step').forEach(s => s.classList.remove('active'));
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) progressBar.style.display = 'none';
+    const stepNav = document.querySelector('.step-nav');
+    if (stepNav) stepNav.style.display = 'none';
+
+    const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+    const fmt = (n) => 'R' + (Number(n) || 0).toLocaleString('en-ZA');
+
+    set('success-ref', saved.id);
+    set('success-device', (`${b.brand || ''} ${b.model || ''}`).trim() || '—');
+    set('success-services', b.cart.map(i => i.name).join(', ') || '—');
+    set('success-when', `${b.date} at ${b.time}`);
+    set('success-location', b.location + (b.address ? ` — ${b.address}` : ''));
+    set('success-total', fmt(b.totalPrice));
+    set('success-deposit', fmt(b.depositAmount));
+    set('success-eft-ref', saved.id);
+
+    const successStep = document.getElementById('step-success');
+    if (successStep) {
+      successStep.classList.add('active');
+      successStep.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    if (window.lucide) lucide.createIcons();
   }
 
   /* ─── Techie Modal Logic ─── */

@@ -252,6 +252,7 @@
             border-radius: 0.75rem;
             border: 1px solid var(--gray-200);
             overflow: hidden;
+            overflow-x: auto;
         }
 
         .table-header {
@@ -265,6 +266,7 @@
         .table-header h2 {
             font-size: 1rem;
             font-weight: 600;
+            color: var(--gray-900);
         }
 
         .live-indicator {
@@ -386,10 +388,24 @@
 
         .actions-cell {
             white-space: nowrap;
+            min-width: 110px;
         }
 
         .actions-cell .btn {
-            margin-right: 0.25rem;
+            display: block;
+            width: 100%;
+            margin: 0 0 0.25rem 0;
+            font-size: 0.75rem;
+            padding: 0.4rem 0.625rem;
+        }
+
+        .actions-cell .btn:last-child {
+            margin-bottom: 0;
+        }
+
+        .actions-cell .btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
         }
 
         /* Modal */
@@ -625,7 +641,7 @@
                             <th onclick="app.sortBy('created_at')">Date ↕</th>
                             <th>Customer</th>
                             <th>Device</th>
-                            <th>Services</th>
+                            <th>Appointment</th>
                             <th onclick="app.sortBy('total_price')">Price ↕</th>
                             <th onclick="app.sortBy('status')">Status ↕</th>
                             <th>Actions</th>
@@ -978,7 +994,7 @@ class AdminDashboard {
                 : 'No services';
 
             return `
-                <tr data-id="${booking.id}">
+                <tr data-id="${booking.id}" onclick="app.viewDetails('${booking.id}')" style="cursor: pointer;" title="Click to view full booking details">
                     <td>
                         <div style="font-weight: 500;">${dateStr}</div>
                         <div style="font-size: 0.75rem; color: var(--gray-600);">${timeStr}</div>
@@ -993,7 +1009,8 @@ class AdminDashboard {
                     </td>
                     <td>
                         <div style="font-size: 0.875rem;">${this.escapeHtml(servicesList)}</div>
-                        <div style="font-size: 0.75rem; color: var(--gray-600);">${booking.date} @ ${booking.time}</div>
+                        <div style="font-size: 0.75rem; color: var(--gray-600); margin-top: 0.25rem;">${booking.date} @ ${booking.time}</div>
+                        <div style="font-size: 0.75rem; color: var(--success); margin-top: 0.25rem; font-weight: 500;">${this.escapeHtml(booking.location || 'Location not set')}</div>
                     </td>
                     <td class="price-cell">
                         <div>R${parseFloat(booking.total_price || 0).toFixed(2)}</div>
@@ -1004,13 +1021,13 @@ class AdminDashboard {
                             ${booking.status.replace('_', ' ')}
                         </span>
                     </td>
-                    <td class="actions-cell">
+                    <td class="actions-cell" onclick="event.stopPropagation()">
                         <button class="btn btn-sm btn-primary" onclick="app.viewDetails('${booking.id}')">View</button>
-                        <button class="btn btn-sm btn-success" onclick="app.updateStatus('${booking.id}', 'confirmed')" 
+                        <button class="btn btn-sm btn-success" onclick="app.updateStatus('${booking.id}', 'confirmed')"
                             ${booking.status !== 'pending' ? 'disabled' : ''}>Confirm</button>
                         <button class="btn btn-sm btn-warning" onclick="app.updateStatus('${booking.id}', 'in_progress')"
                             ${booking.status !== 'confirmed' ? 'disabled' : ''}>Start</button>
-                        <button class="btn btn-sm" style="background: var(--gray-600); color: white;" 
+                        <button class="btn btn-sm" style="background: var(--gray-600); color: white;"
                             onclick="app.updateStatus('${booking.id}', 'completed')"
                             ${booking.status !== 'in_progress' ? 'disabled' : ''}>Complete</button>
                     </td>

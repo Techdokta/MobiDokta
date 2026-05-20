@@ -254,6 +254,47 @@
         </div>
       </div>
 
+      <!-- Step Success: Booking Confirmation -->
+      <div class="booking-step" id="step-success">
+        <div class="glass" style="max-width: 640px; margin: 0 auto; padding: var(--space-10) var(--space-8); text-align: center;">
+          <div style="display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; border-radius: var(--radius-full); background: var(--green-subtle); margin-bottom: var(--space-6);">
+            <i data-lucide="check-circle-2" style="width: 40px; height: 40px; color: var(--green);"></i>
+          </div>
+          <h2 style="margin-bottom: var(--space-3);">Booking Confirmed</h2>
+          <p style="color: var(--text-secondary); margin-bottom: var(--space-8);">Your repair is booked. We will email your invoice shortly and message you on WhatsApp to confirm collection or drop-off.</p>
+
+          <div style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-5); margin-bottom: var(--space-6);">
+            <div style="font-size: var(--text-xs); color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: var(--space-2);">Booking Reference</div>
+            <div id="success-ref" style="font-family: 'SF Mono', Menlo, monospace; font-size: var(--text-xl); font-weight: 700; color: var(--text-primary); letter-spacing: 0.05em;">&mdash;</div>
+          </div>
+
+          <div style="text-align: left; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-5) var(--space-6); margin-bottom: var(--space-6);">
+            <div class="summary-row"><span>Device</span><span id="success-device">&mdash;</span></div>
+            <div class="summary-row"><span>Services</span><span id="success-services" style="text-align: right; max-width: 60%;">&mdash;</span></div>
+            <div class="summary-row"><span>Date &amp; Time</span><span id="success-when">&mdash;</span></div>
+            <div class="summary-row"><span>Location</span><span id="success-location" style="text-align: right; max-width: 60%;">&mdash;</span></div>
+            <div class="summary-row total"><span>Total Estimated</span><span id="success-total">&mdash;</span></div>
+            <div class="summary-row" style="border-bottom: none;"><span>40% Deposit Due</span><span id="success-deposit" style="color: var(--green); font-weight: 700;">&mdash;</span></div>
+          </div>
+
+          <div style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-5) var(--space-6); margin-bottom: var(--space-8); text-align: left;">
+            <h4 style="font-size: var(--text-sm); margin-bottom: var(--space-3); color: var(--text-primary); display: flex; align-items: center; gap: 8px;"><i data-lucide="landmark" class="icon-sm" style="color: var(--green);"></i> Pay your deposit via Manual EFT</h4>
+            <table style="width: 100%; font-size: var(--text-sm);">
+              <tr><td style="padding: 4px 0; color: var(--text-tertiary); width: 40%;">Bank</td><td style="padding: 4px 0; font-weight: 600; color: var(--text-primary);">Capitec</td></tr>
+              <tr><td style="padding: 4px 0; color: var(--text-tertiary);">Account Name</td><td style="padding: 4px 0; font-weight: 600; color: var(--text-primary);">Mobidokta</td></tr>
+              <tr><td style="padding: 4px 0; color: var(--text-tertiary);">Account Number</td><td style="padding: 4px 0; font-weight: 600; color: var(--text-primary);">2523032305</td></tr>
+              <tr><td style="padding: 4px 0; color: var(--text-tertiary);">Reference</td><td style="padding: 4px 0; font-weight: 700; color: var(--green); font-family: 'SF Mono', Menlo, monospace;" id="success-eft-ref">&mdash;</td></tr>
+            </table>
+            <p style="font-size: var(--text-xs); color: var(--text-tertiary); margin-top: var(--space-3);">Use the booking reference above when making payment so we can match your deposit to your booking.</p>
+          </div>
+
+          <div style="display: flex; gap: var(--space-3); justify-content: center; flex-wrap: wrap;">
+            <a href="index.html" class="btn btn-secondary"><i data-lucide="home" class="icon-sm"></i> Back to Home</a>
+            <a href="https://wa.me/27781541350" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i data-lucide="message-circle" class="icon-sm"></i> Message us on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
       <!-- Navigation Buttons -->
       <div class="step-nav">
         <button class="btn btn-ghost" id="prev-btn" style="display:none;">← Back</button>
