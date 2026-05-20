@@ -1,0 +1,68 @@
+{
+  "gallery": [
+    {
+      "src": "./img/gallery/repairs/repair-1.jpg",
+      "title": "Logic Board Micro‑Soldering",
+      "tag": "ICU Repair",
+      "category": "repairs",
+      "type": "image",
+      "description": "Surgical precision soldering on a complex motherboard under microscope."
+    },
+    {
+      "src": "./img/gallery/repairs/repair-2.jpg",
+      "title": "iPhone Screen Transplant",
+      "tag": "ICU Repair",
+      "category": "repairs",
+      "type": "image",
+      "description": "Restoring a completely shattered high‑end OLED screen with OEM parts."
+    },
+    {
+      "src": "./img/gallery/repairs/repair-3.jpg",
+      "title": "PlayStation 5 Thermal ICU",
+      "tag": "ICU Repair",
+      "category": "repairs",
+      "type": "image",
+      "description": "Liquid metal re‑application and internal sanitization for overheating prevention."
+    },
+    {
+      "src": "./img/gallery/road/road-1.jpg",
+      "title": "Express Courier Fleet",
+      "tag": "On the Road",
+      "category": "road",
+      "type": "image",
+      "description": "Our branded vehicles deploying for door‑to‑door device collection in Gauteng."
+    },
+    {
+      "src": "./img/gallery/road/road-2.jpg",
+      "title": "Corporate Collection in Sandton",
+      "tag": "On the Road",
+      "category": "road",
+      "type": "image",
+      "description": "Collecting devices directly from business clients for rapid office‑to‑lab courier service."
+    },
+    {
+      "src": "./img/gallery/handovers/client-1.jpg",
+      "title": "Successful Discharge Case",
+      "tag": "Handover",
+      "category": "handovers",
+      "type": "image",
+      "description": "Returning a cured device to a smiling client with a 6‑month warranty certificate."
+    },
+    {
+      "src": "./img/gallery/handovers/client-2.jpg",
+      "title": "MobiDokta Giving Back",
+      "tag": "Community Outreach",
+      "category": "handovers",
+      "type": "image",
+      "description": "Team presenting refurbished laptops to students during a local educational giveaway."
+    },
+    {
+      "src": "./img/gallery/handovers/client-3.jpg",
+      "title": "Client Love & Feedback",
+      "tag": "Testimonial Proof",
+      "category": "handovers",
+      "type": "image",
+      "description": "WhatsApp messages showing client delight at same‑day emergency repairs."
+    }
+  ]
+}

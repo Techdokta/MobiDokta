@@ -230,7 +230,7 @@
         }
 
         .search-box::before {
-            content: "🔍";
+            content: "";
             position: absolute;
             left: 0.75rem;
             top: 50%;
@@ -534,7 +534,7 @@
 <!-- Login Screen -->
 <div id="login-screen" class="login-container">
     <div class="login-box">
-        <h1>🔧 MobiDokta Admin</h1>
+        <h1>MobiDokta Admin</h1>
         <p>Sign in to manage repair bookings</p>
         <form id="login-form">
             <div class="form-group">
@@ -558,7 +558,7 @@
 <!-- Dashboard -->
 <div id="dashboard" class="dashboard">
     <div class="topbar">
-        <h1>🔧 MobiDokta Dashboard</h1>
+        <h1>MobiDokta Dashboard</h1>
         <div class="user-info">
             <span id="user-email">Loading...</span>
             <button class="btn btn-sm btn-danger" onclick="app.logout()">Logout</button>
@@ -609,7 +609,7 @@
                 <option value="week">This Week</option>
                 <option value="month">This Month</option>
             </select>
-            <button class="btn btn-primary btn-sm" onclick="app.refreshData()">🔄 Refresh</button>
+            <button class="btn btn-primary btn-sm" onclick="app.refreshData()">Refresh</button>
         </div>
 
         <!-- Table -->

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MobiDokta Image Gallery Audit Tool</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #09090b;
+      --panel: rgba(22, 22, 29, 0.6);
+      --border: rgba(255, 255, 255, 0.08);
+      --text-primary: #f4f4f5;
+      --text-secondary: #a1a1aa;
+      --accent: #3b82f6;
+      --accent-glow: rgba(59, 130, 246, 0.35);
+      --success: #10b981;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-primary);
+      font-family: 'Outfit', sans-serif;
+      padding: 3rem 1.5rem;
+      min-height: 100vh;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.05) 0%, transparent 40%);
+      background-attachment: fixed;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #fff 0%, #a1a1aa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+      letter-spacing: -0.05em;
+    }
+
+    header p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.35rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: rgba(59, 130, 246, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      border-left: 4px solid var(--accent);
+      padding-left: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(59, 130, 246, 0.3);
+      box-shadow: 0 10px 30px -10px var(--accent-glow);
+    }
+
+    .img-container {
+      width: 100%;
+      height: 240px;
+      background: #18181b;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .img-container img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.5s ease;
+    }
+
+    .card:hover .img-container img {
+      transform: scale(1.05);
+    }
+
+    .info {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      flex-grow: 1;
+    }
+
+    .filename {
+      font-size: 0.95rem;
+      font-weight: 600;
+      word-break: break-all;
+      color: var(--text-primary);
+    }
+
+    .meta {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    .mapping-box {
+      margin-top: auto;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .mapping-label {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .mapping-select {
+      width: 100%;
+      background: #18181b;
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      padding: 0.6rem;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.85rem;
+      outline: none;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+
+    .mapping-select:focus {
+      border-color: var(--accent);
+    }
+
+    .copy-cmd {
+      font-family: monospace;
+      font-size: 0.75rem;
+      background: #09090b;
+      padding: 0.5rem;
+      border-radius: 6px;
+      margin-top: 0.5rem;
+      display: none;
+      word-break: break-all;
+      border: 1px solid rgba(255,255,255,0.05);
+      color: #38bdf8;
+    }
+
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .stat-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+      backdrop-filter: blur(12px);
+    }
+
+    .stat-val {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-lbl {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .btn-container {
+      text-align: center;
+      margin-top: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .btn {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 14px var(--accent-glow);
+      transition: all 0.2s;
+    }
+
+    .btn:hover {
+      background: #2563eb;
+      transform: translateY(-2px);
+    }
+
+    .commands-panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-top: 4rem;
+      backdrop-filter: blur(12px);
+    }
+
+    .commands-panel h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .commands-textarea {
+      width: 100%;
+      height: 150px;
+      background: #09090b;
+      color: #38bdf8;
+      font-family: monospace;
+      font-size: 0.85rem;
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      resize: none;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge">MobiDokta Tech Hub</div>
+      <h1>Image Asset Audit & Mapper</h1>
+      <p>This utility helps you review the unnamed UUID/JPEG images in your <code>img/</code> directory, identify what they are, and generate the renaming commands to link them to your website.</p>
+    </header>
+
+    <div class="stats-bar">
+      <div class="stat-card">
+        <div class="stat-val">15</div>
+        <div class="stat-lbl">Unnamed Assets</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">10</div>
+        <div class="stat-lbl">Missing References</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">11</div>
+        <div class="stat-lbl">Valid References</div>
+      </div>
+    </div>
+
+    <h2 class="section-title">Step 1: Inspect and Map Unnamed Images</h2>
+    <div class="gallery-grid" id="unnamed-gallery">
+      <!-- Cards will be populated by JS -->
+    </div>
+
+    <div class="commands-panel">
+      <h3>Generated Rename Commands (PowerShell)</h3>
+      <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">Map the images above using the dropdowns, then copy the PowerShell script below and run it in your terminal to rename all files at once.</p>
+      <textarea class="commands-textarea" id="commands-output" readonly># Map images above to see generated commands here...</textarea>
+    </div>
+  </div>
+
+  <script>
+    const images = [
+      { name: "099c6e1f-0e37-4eb9-b174-685afd7ab0e9.jpeg", size: "1024 x 1536", bytes: "148 KB" },
+      { name: "20e15cce-b6f5-4fe4-8a43-acd9b1fbaf1d.jpeg", size: "591 x 1280", bytes: "67 KB" },
+      { name: "28f2db1e-601b-48d6-b3f4-c41e7768e097.jpeg", size: "1122 x 1402", bytes: "155 KB" },
+      { name: "73602ea5-e7f5-4e24-9fbc-3a002c40d07e.jpeg", size: "960 x 1280", bytes: "142 KB" },
+      { name: "84ddcda1-6df6-42f9-99cc-90fd55d7eadd.jpeg", size: "1122 x 1402", bytes: "151 KB" },
+      { name: "a768c82e-4e85-4b00-82e9-e3ec1f447f33.jpeg", size: "1254 x 1254", bytes: "163 KB" },
+      { name: "aa2ba97d-e586-4d26-800a-f21b42cfb3f5.jpeg", size: "526 x 646", bytes: "38 KB" },
+      { name: "b9202678-a621-461c-9831-286819b8e7e7.jpeg", size: "1254 x 1254", bytes: "164 KB" },
+      { name: "c4d31253-9379-4177-a79b-6c504a83a6a1.jpeg", size: "1122 x 1402", bytes: "149 KB" },
+      { name: "da4b78d9-a2c5-4750-8067-9af347fe899b.jpeg", size: "1254 x 1254", bytes: "163 KB" },
+      { name: "da762384-81f1-454b-b423-56d649ea42fb.jpeg", size: "1024 x 1536", bytes: "149 KB" },
+      { name: "e39a1822-a663-41c4-858a-00e85e84d90a.jpeg", size: "1024 x 1280", bytes: "124 KB" },
+      { name: "f0a93f15-f9e5-4940-bddc-f17f4ae318df.jpeg", size: "1122 x 1402", bytes: "149 KB" },
+      { name: "IMG_5875.jpeg", size: "760 x 996", bytes: "62 KB" },
+      { name: "IMG_5879.jpeg", size: "1200 x 1200", bytes: "186 KB" }
+    ];
+
+    const targets = [
+      { val: "", text: "-- Select Target Image Purpose --" },
+      { val: "idx-precision-repair.jpg", text: "Home: Precision is in our DNA (idx-precision-repair.jpg)" },
+      { val: "idx-founder.jpg", text: "Home: Founder/Competency Avatar (idx-founder.jpg)" },
+      { val: "comm-security.jpg", text: "Community: Data Security Article (comm-security.jpg)" },
+      { val: "edu-buying-guide.jpg", text: "Education: Buying Pre-Owned Devices (edu-buying-guide.jpg)" },
+      { val: "edu-bad-habits.jpg", text: "Education: 5 Bad Habits (edu-bad-habits.jpg)" },
+      { val: "edu-best-devices.jpg", text: "Education: Best Performing Devices (edu-best-devices.jpg)" },
+      { val: "idx-svc-screen.jpg", text: "Home: Screen Repair Service (idx-svc-screen.jpg) *Note: service-screen.png exists" },
+      { val: "idx-svc-camera.jpg", text: "Home: Camera Repair Service (idx-svc-camera.jpg) *Note: service-camera.png exists" },
+      { val: "idx-svc-water.jpg", text: "Home: Water Damage Service (idx-svc-water.jpg) *Note: service-water.png exists" },
+      { val: "idx-port-iphone.jpg", text: "Home: iPhone Case Study (idx-port-iphone.jpg) *Note: portfolio-iphone.png exists" }
+    ];
+
+    const gallery = document.getElementById('unnamed-gallery');
+    const mappings = {};
+
+    images.forEach((img, idx) => {
+      const card = document.createElement('div');
+      card.className = 'card';
+
+      // Dropdown options
+      let selectOptions = targets.map(t => `<option value="${t.val}">${t.text}</option>`).join('');
+
+      card.innerHTML = `
+        <div class="img-container">
+          <img src="./img/${img.name}" alt="${img.name}" onerror="this.src='https://placehold.co/400x300/18181b/a1a1aa?text=Image+Not+Found'">
+        </div>
+        <div class="info">
+          <div class="filename">${img.name}</div>
+          <div class="meta">
+            <span>Dim: ${img.size}</span>
+            <span>Size: ${img.bytes}</span>
+          </div>
+          <div class="mapping-box">
+            <span class="mapping-label">Map To Target</span>
+            <select class="mapping-select" data-filename="${img.name}">
+              ${selectOptions}
+            </select>
+            <div class="copy-cmd" id="cmd-${idx}"></div>
+          </div>
+        </div>
+      `;
+      gallery.appendChild(card);
+    });
+
+    // Update commands on change
+    document.querySelectorAll('.mapping-select').forEach(select => {
+      select.addEventListener('change', (e) => {
+        const file = e.target.dataset.filename;
+        const target = e.target.value;
+        if (target) {
+          mappings[file] = target;
+        } else {
+          delete mappings[file];
+        }
+        updateCommands();
+      });
+    });
+
+    function updateCommands() {
+      const output = document.getElementById('commands-output');
+      if (Object.keys(mappings).length === 0) {
+        output.value = "# Map images above to see generated commands here...";
+        return;
+      }
+
+      let script = "# Run this in PowerShell to rename your mapped image assets:\n";
+      for (const [src, dest] of Object.entries(mappings)) {
+        script += `Rename-Item -Path ".\\img\\${src}" -NewName "${dest}"\n`;
+      }
+      output.value = script;
+    }
+  </script>
+</body>
+</html>

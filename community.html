@@ -208,6 +208,45 @@
     </div>
   </section>
 
+  <!-- ─── MobiDokta in Action / Proof of Precision Showcase Gallery ─── -->
+  <section id="showcase-gallery" class="section" style="background: var(--bg-primary);">
+    <div class="container">
+      <div class="section-header" data-animate style="text-align: center; margin-bottom: var(--space-12);">
+        <div class="badge badge-accent">Proof of Precision</div>
+        <h2 style="font-size: var(--text-4xl); margin-bottom: var(--space-4);">MobiDokta in Action.</h2>
+        <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto; line-height: 1.7;">Real-world evidence of our active presence and technical expertise across Gauteng. Select a category below to scroll through our surgical operations, courier deliveries, client interactions, and giveaways.</p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="gallery-tabs" data-animate>
+        <button class="gallery-tab active" data-filter="all">All Photos</button>
+        <button class="gallery-tab" data-filter="repairs">Repairs in ICU</button>
+        <button class="gallery-tab" data-filter="road">On the Road</button>
+        <button class="gallery-tab" data-filter="handovers">Handovers &amp; Community</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <!-- Populate by dropping images into img/gallery/repairs/, img/gallery/road/, img/gallery/handovers/ then adding a .gallery-item block per photo with the matching data-category. -->
+      <div class="gallery-grid-wrapper" data-animate>
+        <div class="gallery-grid-content" id="gallery-grid"></div>
+        <p id="gallery-empty" style="text-align: center; color: var(--text-tertiary); font-size: var(--text-sm); padding: var(--space-12) 0;">Case photography is being curated. Documented work will appear here as cases close.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div class="gallery-lightbox" id="gallery-lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+      <img id="lightbox-img" src="" alt="Zoomed view">
+      <div class="lightbox-caption">
+        <span class="lightbox-tag" id="lightbox-tag">Tag</span>
+        <h3 id="lightbox-title">Title</h3>
+        <p id="lightbox-desc">Description</p>
+      </div>
+    </div>
+  </div>
+
   <!-- ─── FAQ ─── -->
   <section class="section" style="background: var(--bg-secondary);">
     <div class="container-narrow">
@@ -335,7 +374,7 @@
         </div>
       </div>
       <div class="footer-bottom" style="flex-direction: column; gap: var(--space-2); text-align: center;">
-        <p>&copy; 2026 MobiDokta. All rights reserved.</p>
+        <p>&copy; 2026 MobiDokta. All rights reserved. | Built by <a href="https://asitechnologies.co.za" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">ASI Imperium Technologies</a></p>
       </div>
     </div>
   </footer>
