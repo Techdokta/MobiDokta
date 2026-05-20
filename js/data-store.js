@@ -175,7 +175,7 @@ const MobiStore = {
       { name: 'Software Recovery', price: 499, duration: 45 }
     ];
     const brands = ['Apple','Samsung','Huawei'];
-    const locations = ['Sandton Central','Pretoria East','Menlyn'];
+    const locations = ['Alberton Randhart Home Studio', 'Tele', 'Public Meetup'];
     const gateways = ['yoco','peach','ozow'];
 
     for (let i = 0; i < 8; i++) {

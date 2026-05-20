@@ -148,13 +148,24 @@
             <h3>Available Slots — <span id="slot-date-label" class="text-glow"></span></h3>
             <div class="slots-list" id="slots-list"></div>
             <div class="form-group" style="margin-top:var(--space-lg);">
-              <label class="form-label">Clinic Location</label>
+              <label class="form-label">Service Location</label>
               <select class="form-select" id="clinic-select">
-                <option value="Sandton Central">Sandton Central</option>
-                <option value="Pretoria East">Pretoria East</option>
-                <option value="Menlyn">Menlyn</option>
-                <option value="Online / TeleTech">Online / TeleTech (Video Call)</option>
+                <option value="Alberton Randhart Home Studio">Alberton Randhart Home Studio</option>
+                <option value="Tele">Tele (Online / Video Call)</option>
+                <option value="Public Meetup">Public Meetup (Alberton & surrounding areas)</option>
+                <option value="House Call">House Call</option>
+                <option value="Office Call">Office Call</option>
+                <option value="Residence Call">Residence Call</option>
+                <option value="Courier Option">Courier Option</option>
               </select>
+              <div id="address-container" style="display:none; margin-top:var(--space-md);">
+                <label class="form-label" style="margin-top:var(--space-3);">Specify Address/Location</label>
+                <input type="text" class="form-input" id="client-address" placeholder="Enter full address or meetup location">
+                <small id="safety-warning" style="color:var(--text-tertiary);font-size:11px;display:none;margin-top:4px; align-items:flex-start; gap:4px;">
+                  <i data-lucide="alert-triangle" class="icon-sm" style="color:var(--danger); flex-shrink:0;"></i> 
+                  <span><strong>Note:</strong> Certain areas are prohibited for House/Residence Calls due to Safety Risks. We will evaluate the location upon submission.</span>
+                </small>
+              </div>
             </div>
           </div>
         </div>

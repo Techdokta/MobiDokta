@@ -4,7 +4,7 @@
 
 (function() {
   let currentStep = 1;
-  let booking = { brand: null, model: null, cart: [], totalPrice: 0, totalDuration: 0, date: null, time: null, location: 'Sandton Central' };
+  let booking = { brand: null, model: null, cart: [], totalPrice: 0, totalDuration: 0, date: null, time: null, location: 'Alberton Randhart Home Studio', address: '' };
 
   const baseServices = [
     // ── Apple Services ──
@@ -373,16 +373,15 @@
     if (clinicSelect) {
       const hasRemote = booking.cart.some(item => item.id === 'teletech-consult' || item.id === 'practical-solution');
       if (hasRemote) {
-        clinicSelect.value = 'Online / TeleTech';
-        booking.location = 'Online / TeleTech';
+        clinicSelect.value = 'Tele';
         clinicSelect.disabled = true;
       } else {
         clinicSelect.disabled = false;
-        if (clinicSelect.value === 'Online / TeleTech') {
-          clinicSelect.value = 'Sandton Central'; // Revert back
-          booking.location = 'Sandton Central';
+        if (clinicSelect.value === 'Tele') {
+          clinicSelect.value = 'Alberton Randhart Home Studio'; // Revert back
         }
       }
+      clinicSelect.dispatchEvent(new Event('change'));
     }
   }
   
@@ -483,10 +482,31 @@
     });
   }
 
-  document.getElementById('clinic-select').addEventListener('change', function() {
-    booking.location = this.value;
-  });
+  const clinicSelect = document.getElementById('clinic-select');
+  const addressContainer = document.getElementById('address-container');
+  const clientAddress = document.getElementById('client-address');
+  const safetyWarning = document.getElementById('safety-warning');
 
+  if (clinicSelect) {
+    clinicSelect.addEventListener('change', function() {
+      booking.location = this.value;
+      const requiresAddress = ['Public Meetup', 'House Call', 'Office Call', 'Residence Call', 'Courier Option', 'Courier Collection', 'On-Site Call-Out'].includes(this.value);
+      const requiresWarning = ['House Call', 'Residence Call', 'On-Site Call-Out'].includes(this.value);
+      
+      if (addressContainer) {
+        addressContainer.style.display = requiresAddress ? 'block' : 'none';
+      }
+      if (safetyWarning) {
+        safetyWarning.style.display = requiresWarning ? 'flex' : 'none';
+      }
+    });
+  }
+
+  if (clientAddress) {
+    clientAddress.addEventListener('input', function() {
+      booking.address = this.value.trim();
+    });
+  }
   /* ─── Step 4: Summary & Confirm ─── */
   function populateSummary() {
     document.getElementById('sum-device').textContent = booking.brand + ' ' + (booking.model || '');
@@ -505,7 +525,11 @@
 
     document.getElementById('sum-date').textContent = MobiApp.formatDate(booking.date);
     document.getElementById('sum-time').textContent = booking.time;
-    document.getElementById('sum-location').textContent = booking.location;
+    let fullLocation = booking.location;
+    if (booking.address) {
+      fullLocation += ` (${booking.address})`;
+    }
+    document.getElementById('sum-location').textContent = fullLocation;
     document.getElementById('sum-cost').textContent = booking.totalPrice === 0 ? 'FREE' : MobiApp.formatRand(booking.totalPrice);
     
     const sumDepositEl = document.getElementById('sum-deposit');
@@ -564,7 +588,7 @@
       depositAmount: booking.depositAmount,
       date: booking.date,
       time: booking.time,
-      location: booking.location,
+      location: booking.location + (booking.address ? ` - ${booking.address}` : ''),
       custName: name,
       custPhone: phone,
       custEmail: email
@@ -582,7 +606,7 @@
       duration: booking.totalDuration,
       date: booking.date,
       time: booking.time,
-      location: booking.location
+      location: booking.location + (booking.address ? ` - ${booking.address}` : '')
     });
 
     // Save to Supabase Cloud Database!
@@ -635,7 +659,7 @@
              clinicSelect.innerHTML += `<option value="Courier Collection">Courier Collection</option>`;
            }
            clinicSelect.value = 'Courier Collection';
-           booking.location = 'Courier Collection';
+           clinicSelect.dispatchEvent(new Event('change'));
         }
       } else {
         const area = opt.dataset.area;
@@ -653,7 +677,7 @@
              clinicSelect.innerHTML += `<option value="On-Site Call-Out">On-Site Call-Out</option>`;
            }
            clinicSelect.value = 'On-Site Call-Out';
-           booking.location = 'On-Site Call-Out';
+           clinicSelect.dispatchEvent(new Event('change'));
         }
       }
 

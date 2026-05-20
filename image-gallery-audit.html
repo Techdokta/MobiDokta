@@ -50,6 +50,7 @@
       font-weight: 800;
       background: linear-gradient(135deg, #fff 0%, #a1a1aa 100%);
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-bottom: 1rem;
       letter-spacing: -0.05em;
@@ -98,8 +99,8 @@
       border: 1px solid var(--border);
       border-radius: 16px;
       overflow: hidden;
-      backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       display: flex;
       flex-direction: column;
@@ -215,6 +216,7 @@
       padding: 1.5rem;
       border-radius: 12px;
       text-align: center;
+      -webkit-backdrop-filter: blur(12px);
       backdrop-filter: blur(12px);
     }
 
@@ -262,6 +264,7 @@
       border-radius: 16px;
       padding: 2rem;
       margin-top: 4rem;
+      -webkit-backdrop-filter: blur(12px);
       backdrop-filter: blur(12px);
     }
 
@@ -319,7 +322,7 @@
     <div class="commands-panel">
       <h3>Generated Rename Commands (PowerShell)</h3>
       <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">Map the images above using the dropdowns, then copy the PowerShell script below and run it in your terminal to rename all files at once.</p>
-      <textarea class="commands-textarea" id="commands-output" readonly># Map images above to see generated commands here...</textarea>
+      <textarea class="commands-textarea" id="commands-output" title="Generated Output" readonly># Map images above to see generated commands here...</textarea>
     </div>
   </div>
 

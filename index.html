@@ -24,8 +24,8 @@
     h2 {
       background: linear-gradient(110deg, var(--text-primary) 30%, #444 50%, var(--text-primary) 70%);
       background-size: 200% auto;
-      background-clip: text;
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: shimmerText 5s linear infinite;
     }
@@ -200,8 +200,8 @@
 
     .hero-glass-card {
       background: var(--glass-bg);
-      backdrop-filter: blur(10px) saturate(160%);
       -webkit-backdrop-filter: blur(10px) saturate(160%);
+      backdrop-filter: blur(10px) saturate(160%);
       border: 1px solid var(--border);
       border-radius: 32px;
       padding: var(--space-12) var(--space-8);
@@ -978,7 +978,7 @@
     <div class="container">
       <div class="split-layout inline-style-d0da858a">
         <div class="founder-visual inline-style-28f03f8c">
-          <img src="./img/idx-founder.jpg" alt="Engineering Precision" class="inline-style-c23ce026">
+          <img src="./img/Founder%20Picture.jpg" alt="MobiDokta founder" class="inline-style-c23ce026">
           <div class="inline-style-356af567">
             <div class="inline-style-2b367b3e">
               <i data-lucide="cpu" class="icon-lg inline-style-fd8403a3"></i>
@@ -1032,7 +1032,7 @@
         <!-- Portfolio 1 -->
         <div class="masonry-item" data-animate>
           <div class="masonry-img-wrapper">
-            <img src="./img/portfolio-iphone.png" class="live-motion-img" alt="iPhone Repair">
+            <img src="./img/Before%20iphone%2015%20promax%20damaged.jpg" class="live-motion-img" alt="iPhone 15 Pro Max with shattered screen before repair">
           </div>
           <div class="masonry-content">
             <h4 class="inline-style-bdbd7084">iPhone 15 Pro Max</h4>
@@ -1253,98 +1253,16 @@
       <!-- Category Filter Tabs -->
       <div class="gallery-tabs" data-animate>
         <button class="gallery-tab active" data-filter="all">All Photos</button>
-        <button class="gallery-tab" data-filter="repairs">🔬 Repairs in ICU</button>
-        <button class="gallery-tab" data-filter="road">🚗 On the Road</button>
-        <button class="gallery-tab" data-filter="handovers">🤝 Handovers & Community</button>
+        <button class="gallery-tab" data-filter="repairs">Repairs in ICU</button>
+        <button class="gallery-tab" data-filter="road">On the Road</button>
+        <button class="gallery-tab" data-filter="handovers">Handovers &amp; Community</button>
       </div>
 
       <!-- Gallery Grid -->
+      <!-- Populate by dropping images into img/gallery/repairs/, img/gallery/road/, img/gallery/handovers/ then adding a .gallery-item block per photo with the matching data-category. -->
       <div class="gallery-grid-wrapper" data-animate>
-        <div class="gallery-grid-content" id="gallery-grid">
-          <!-- Repair Images -->
-          <div class="gallery-item" data-category="repairs" onclick="openLightbox(this)">
-            <img src="./img/gallery/repair-1.jpg" alt="Board Micro-Soldering in Alberton"
-              onerror="this.src='./img/idx-svc-screen.jpg'">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-tag">ICU Repair</span>
-              <h4 class="gallery-item-title">Logic Board Micro-Soldering</h4>
-              <p class="gallery-item-desc">Surgical precision soldering on a complex motherboard under microscope.</p>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="repairs" onclick="openLightbox(this)">
-            <img src="./img/gallery/repair-2.jpg" alt="iPhone Screen Replacement"
-              onerror="this.src='./img/idx-svc-camera.jpg'">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-tag">ICU Repair</span>
-              <h4 class="gallery-item-title">iPhone Screen Transplant</h4>
-              <p class="gallery-item-desc">Restoring a completely shattered high-end OLED screen with OEM replacement
-                parts.</p>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="repairs" onclick="openLightbox(this)">
-            <img src="./img/gallery/repair-3.jpg" alt="Console Deep Cleaning & Liquid Metal Application"
-              onerror="this.src='./img/idx-port-macbook.jpg'">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-tag">ICU Repair</span>
-              <h4 class="gallery-item-title">PlayStation 5 Thermal ICU</h4>
-              <p class="gallery-item-desc">Liquid metal re-application and internal sanitization for overheating
-                prevention.</p>
-            </div>
-          </div>
-
-          <!-- Road/Logistics Images -->
-          <div class="gallery-item" data-category="road" onclick="openLightbox(this)">
-            <img src="./img/gallery/road-1.jpg" alt="MobiDokta Branded Vehicle Courier Dispatch"
-              onerror="this.src='./img/idx-port-logistics.jpg'">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-tag">On the Road</span>
-              <h4 class="gallery-item-title">Express Courier Fleet</h4>
-              <p class="gallery-item-desc">Our branded vehicles deploying for door-to-door device collection in Gauteng.
-              </p>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="road" onclick="openLightbox(this)">
-            <img src="./img/gallery/road-2.jpg" alt="Courier Pick-up in Sandton Offices"
-              onerror="this.src='./img/hero-journey.png'">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-tag">On the Road</span>
-              <h4 class="gallery-item-title">Corporate Collection in Sandton</h4>
-              <p class="gallery-item-desc">Collecting devices directly from business clients for rapid office-to-lab
-                courier service.</p>
-            </div>
-          </div>
-
-          <!-- Handover/Client Interactions/Giveaways Images -->
-          <div class="gallery-item" data-category="handovers" onclick="openLightbox(this)">
-            <img src="./img/gallery/client-1.jpg" alt="Happy Device Handover to Customer"
-              onerror="this.src='./img/comm-iphone16.jpg'">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-tag">Handover</span>
-              <h4 class="gallery-item-title">Successful Discharge Case</h4>
-              <p class="gallery-item-desc">Returning a cured device to a smiling client with a 6-month warranty
-                certificate.</p>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="handovers" onclick="openLightbox(this)">
-            <img src="./img/gallery/client-2.jpg" alt="Corporate School Device Donation & Giveaway"
-              onerror="this.src='./img/comm-battery.jpg'">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-tag">Community Outreach</span>
-              <h4 class="gallery-item-title">MobiDokta Giving Back</h4>
-              <p class="gallery-item-desc">Our team presenting refurbished laptops to students during a local
-                educational giveaway.</p>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="handovers" onclick="openLightbox(this)">
-            <img src="./img/gallery/client-3.jpg" alt="Customer Text Message Praise Overlay"
-              onerror="this.src='./img/comm-security.jpg'">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-tag">Testimonial Proof</span>
-              <h4 class="gallery-item-title">Client Love & Feedback</h4>
-              <p class="gallery-item-desc">WhatsApp messages showing client delight at same-day emergency repairs.</p>
-            </div>
-          </div>
-        </div>
+        <div class="gallery-grid-content" id="gallery-grid"></div>
+        <p id="gallery-empty" style="text-align: center; color: var(--text-tertiary); font-size: var(--text-sm); padding: var(--space-12) 0;">Case photography is being curated. Documented work will appear here as cases close.</p>
       </div>
     </div>
   </section>
