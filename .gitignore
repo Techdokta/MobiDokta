@@ -2,3 +2,10 @@ node_modules/
 .DS_Store
 .env
 .vercel/
+# Claude Code internal memory — never commit
+.claude/
+# Internal strategy and client documents — not part of the deployable website
+BrasByMaMloo_System_Blueprint.md
+mobidokta_launch_audit.md
+# Dev/audit tooling not meant for production
+image-gallery-audit.html

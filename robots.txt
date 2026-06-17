@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /admin-dashboard.html
+
+Sitemap: https://www.mobidokta.co.za/sitemap.xml
