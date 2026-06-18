@@ -182,33 +182,28 @@
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "5",
-      "reviewCount": "3",
+      "reviewCount": "14",
       "bestRating": "5",
       "worstRating": "1"
     },
     "review": [
-      {
-        "@type": "Review",
-        "reviewRating": {"@type": "Rating", "ratingValue": "5"},
-        "author": {"@type": "Person", "name": "Cebo Mlotshwa"},
-        "reviewBody": "Well one thing I can say Mobidokta is best and they take pride in what they do and they excell in their job and another thing when it comes to Tech you can't outbeat them"
-      },
-      {
-        "@type": "Review",
-        "reviewRating": {"@type": "Rating", "ratingValue": "5"},
-        "author": {"@type": "Person", "name": "Dimpho Komane"},
-        "reviewBody": "I had such a great experience with MobiDokta! They fixed my laptop quickly and professionally, and the whole process was seamless."
-      },
-      {
-        "@type": "Review",
-        "reviewRating": {"@type": "Rating", "ratingValue": "5"},
-        "author": {"@type": "Person", "name": "Fezeka Dlakela"},
-        "reviewBody": "Very reliable and affordable. You get what you paid for and more."
-      }
+      {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5"},"author":{"@type":"Person","name":"Lesedi Mothoa"},"reviewBody":"They know their story. My phone feels brand new."},
+      {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5"},"author":{"@type":"Person","name":"Abongwe Jali"},"reviewBody":"I received excellent service throughout the entire repair process. From the day I handed over my device to the day it was returned, everything was seamless."},
+      {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5"},"author":{"@type":"Person","name":"Mahlako Chegofatso Makgoba"},"reviewBody":"They deliver the best service with continuous updates so that you know everything happening to your device. Honestly there's no better tech doctors like them, thus far am 1000% satisfied with their services."},
+      {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5"},"author":{"@type":"Person","name":"Unakho Genu"},"reviewBody":"Excellent services and very reliable. Would definitely recommend!"},
+      {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5"},"author":{"@type":"Person","name":"Lethukuthula Mahaye"},"reviewBody":"5-star experience at MobiDokta."},
+      {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5"},"author":{"@type":"Person","name":"Briana Dineo"},"reviewBody":"Their service is so splendid and trustworthy. Good communication and understanding — they went the extra mile for my battery replacement."},
+      {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5"},"author":{"@type":"Person","name":"Siyabonga Ntuli"},"reviewBody":"I have a very great experience with their services."},
+      {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5"},"author":{"@type":"Person","name":"Nesty Maleka"},"reviewBody":"I got my phone's screen well fixed and they don't take time."},
+      {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5"},"author":{"@type":"Person","name":"Lesiba Mahapa"},"reviewBody":"Fantastic work by MobiDokta."},
+      {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5"},"author":{"@type":"Person","name":"Cebo Mlotshwa"},"reviewBody":"Well one thing I can say Mobidokta is best and they take pride in what they do and they excell in their job and another thing when it comes to Tech you can't outbeat them."},
+      {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5"},"author":{"@type":"Person","name":"Dimpho Komane"},"reviewBody":"I had such a great experience with MobiDokta! They fixed my laptop quickly and professionally, and the whole process was seamless."},
+      {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5"},"author":{"@type":"Person","name":"Fezeka Dlakela"},"reviewBody":"Very reliable and affordable. You get what you paid for and more."},
+      {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5"},"author":{"@type":"Person","name":"Tshepang Makhubedu"},"reviewBody":"The service is amazing, I'd recommend it to anyone."},
+      {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5"},"author":{"@type":"Person","name":"Rethabile Maliha"},"reviewBody":"Excellent service and very reliable. I was assisted within 3 hours. I would definitely recommend."}
     ],
     "sameAs": [
-      "https://g.page/mobidokta",
-      "https://www.google.com/maps?cid=mobidokta"
+      "https://g.page/r/CVBsFGUXU7hzEAE/review"
     ]
   }
   </script>
@@ -1357,143 +1352,175 @@
   </section>
 
   <!-- ─── Client Reviews ─── -->
-  <section id="client-reviews" class="section">
+  <section id="client-reviews" class="section" style="overflow:hidden;padding-bottom:0;">
+    <style>
+      .grev-summary{display:flex;align-items:center;justify-content:center;gap:24px;margin-bottom:var(--space-10);flex-wrap:wrap;}
+      .grev-score{font-size:clamp(3rem,8vw,4.5rem);font-weight:900;line-height:1;color:var(--text-primary);}
+      .grev-stars-lg{color:#FBBC05;font-size:1.4rem;letter-spacing:2px;margin-top:2px;}
+      .grev-total{font-size:var(--text-sm);color:var(--text-secondary);margin-top:4px;}
+      .grev-divider{width:1px;height:60px;background:var(--border);}
+      .reviews-marquee{width:100%;overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent,black 6%,black 94%,transparent);mask-image:linear-gradient(to right,transparent,black 6%,black 94%,transparent);margin-bottom:0;}
+      .reviews-marquee-track{display:flex;gap:16px;width:max-content;animation:grev-scroll 55s linear infinite;}
+      .reviews-marquee:hover .reviews-marquee-track{animation-play-state:paused;}
+      @keyframes grev-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+      .grev-card{flex-shrink:0;width:300px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--space-5) var(--space-6);cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;text-decoration:none;display:block;}
+      .grev-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
+      .grev-card-header{display:flex;align-items:center;gap:10px;margin-bottom:var(--space-3);}
+      .grev-avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;color:#fff;flex-shrink:0;font-family:var(--font-heading,sans-serif);}
+      .grev-name{font-weight:600;font-size:13px;color:var(--text-primary);line-height:1.3;}
+      .grev-time{font-size:11px;color:var(--text-tertiary);margin-top:2px;}
+      .grev-g{margin-left:auto;flex-shrink:0;}
+      .grev-stars{color:#FBBC05;font-size:13px;letter-spacing:1px;margin-bottom:var(--space-2);}
+      .grev-text{font-size:13px;color:var(--text-secondary);line-height:1.6;margin:0;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;}
+      .reviews-cta-strip{display:flex;align-items:center;justify-content:center;gap:var(--space-12);flex-wrap:wrap;padding:var(--space-12) 0 var(--space-16);}
+      .qr-block{display:flex;flex-direction:column;align-items:center;gap:var(--space-2);text-align:center;}
+      .qr-img{width:96px;height:96px;border-radius:var(--radius-lg);border:1px solid var(--border);object-fit:contain;background:#fff;padding:4px;}
+      .qr-label{font-size:11px;color:var(--text-tertiary);max-width:100px;line-height:1.4;}
+      .grev-cta-btns{display:flex;flex-direction:column;gap:var(--space-3);}
+      @media(max-width:640px){.grev-card{width:260px}.grev-divider{display:none}.grev-summary{gap:16px}}
+    </style>
+
     <div class="container">
       <div class="section-header" data-animate>
         <div class="badge badge-accent">Reviews</div>
         <h2>What Our Customers Say</h2>
-        <p>Real feedback from our happy clients – no fabricated testimonials.</p>
+        <p>Real feedback from our clients — verified on Google.</p>
       </div>
-      <div class="reviews-grid">
-        <div class="review-card glass-panel" onclick="window.open('https://g.page/r/CVBsFGUXU7hzEBM/review', '_blank')"
-          style="cursor: pointer;" title="View on Google">
-          <div class="review-header">
-            <img src="https://lh3.googleusercontent.com/a-/AOh14GhCebo" alt="Cebo Mlotshwa" class="review-avatar" />
-            <div class="review-meta">
-              <div class="review-author">Cebo Mlotshwa</div>
-              <div class="review-platform">
-                <span>Google Review</span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12">
-                  <path fill="#EA4335"
-                    d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z" />
-                  <path fill="#34A853"
-                    d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z" />
-                  <path fill="#4285F4"
-                    d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z" />
-                  <path fill="#FBBC05"
-                    d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z" />
-                </svg>
-              </div>
-            </div>
-            <div class="review-rating">★★★★★</div>
-          </div>
-          <p class="review-text">Well one thing I can say Mobidokta is best and they take pride in what they do and they
-            excell in their job and another thing when it comes to Tech you can't outbeat them</p>
+
+      <!-- Google rating summary -->
+      <div class="grev-summary" data-animate>
+        <div style="text-align:center;">
+          <div class="grev-score">5.0</div>
+          <div class="grev-stars-lg">★★★★★</div>
+          <div class="grev-total">14 Google reviews</div>
         </div>
-        <div class="review-card glass-panel" onclick="window.open('https://g.page/r/CVBsFGUXU7hzEBM/review', '_blank')"
-          style="cursor: pointer;" title="View on Google">
-          <div class="review-header">
-            <img src="https://lh3.googleusercontent.com/a-/AOh14Gk7c2I" alt="Dimpho Komane" class="review-avatar" />
-            <div class="review-meta">
-              <div class="review-author">Dimpho Komane</div>
-              <div class="review-platform">
-                <span>Google Review</span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12">
-                  <path fill="#EA4335"
-                    d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z" />
-                  <path fill="#34A853"
-                    d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z" />
-                  <path fill="#4285F4"
-                    d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z" />
-                  <path fill="#FBBC05"
-                    d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z" />
-                </svg>
-              </div>
-            </div>
-            <div class="review-rating">★★★★★</div>
+        <div class="grev-divider"></div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" aria-label="Google"><path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z"/><path fill="#34A853" d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z"/><path fill="#4285F4" d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z"/><path fill="#FBBC05" d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z"/></svg>
+          <div>
+            <div style="font-weight:700;font-size:14px;color:var(--text-primary);">Google Reviews</div>
+            <div style="font-size:12px;color:var(--text-secondary);">Verified business listing</div>
           </div>
-          <p class="review-text">I had such a great experience with MobiDokta! They fixed my laptop quickly and
-            professionally, and the whole process was…</p>
-        </div>
-        <div class="review-card glass-panel" onclick="window.open('https://g.page/r/CVBsFGUXU7hzEBM/review', '_blank')"
-          style="cursor: pointer;" title="View on Google">
-          <div class="review-header">
-            <img src="https://lh3.googleusercontent.com/a-/AOh14Gx9L4U" alt="Fezeka Dlakela" class="review-avatar" />
-            <div class="review-meta">
-              <div class="review-author">Fezeka Dlakela</div>
-              <div class="review-platform">
-                <span>Google Review</span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12">
-                  <path fill="#EA4335"
-                    d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z" />
-                  <path fill="#34A853"
-                    d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z" />
-                  <path fill="#4285F4"
-                    d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z" />
-                  <path fill="#FBBC05"
-                    d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z" />
-                </svg>
-              </div>
-            </div>
-            <div class="review-rating">★★★★★</div>
-          </div>
-          <p class="review-text">Very reliable and affordable ❤️ you get what you paid for and more</p>
-        </div>
-        <div class="review-card glass-panel" onclick="window.open('https://g.page/r/CVBsFGUXU7hzEBM/review', '_blank')"
-          style="cursor: pointer;" title="View on Google">
-          <div class="review-header">
-            <img src="https://lh3.googleusercontent.com/a-/AOh14GzVtK8" alt="Tshepang Makhubedu"
-              class="review-avatar" />
-            <div class="review-meta">
-              <div class="review-author">Tshepang Makhubedu</div>
-              <div class="review-platform">
-                <span>Google Review</span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12">
-                  <path fill="#EA4335"
-                    d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z" />
-                  <path fill="#34A853"
-                    d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z" />
-                  <path fill="#4285F4"
-                    d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z" />
-                  <path fill="#FBBC05"
-                    d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z" />
-                </svg>
-              </div>
-            </div>
-            <div class="review-rating">★★★★★</div>
-          </div>
-          <p class="review-text">The service is amazing, I'd recommend it to anyone 🔥🤝🏿</p>
-        </div>
-        <div class="review-card glass-panel" onclick="window.open('https://g.page/r/CVBsFGUXU7hzEBM/review', '_blank')"
-          style="cursor: pointer;" title="View on Google">
-          <div class="review-header">
-            <img src="https://lh3.googleusercontent.com/a-/AOh14Gz6Q9M" alt="Rethabile Maliha" class="review-avatar" />
-            <div class="review-meta">
-              <div class="review-author">Rethabile Maliha</div>
-              <div class="review-platform">
-                <span>Google Review</span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12">
-                  <path fill="#EA4335"
-                    d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z" />
-                  <path fill="#34A853"
-                    d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z" />
-                  <path fill="#4285F4"
-                    d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z" />
-                  <path fill="#FBBC05"
-                    d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z" />
-                </svg>
-              </div>
-            </div>
-            <div class="review-rating">★★★★★</div>
-          </div>
-          <p class="review-text">Excellent service and very reliable. I was assisted within 3 hours ☺️ I would
-            definitely recommend</p>
         </div>
       </div>
-      <div style="text-align: center; margin-top: var(--space-12);" data-animate>
-        <a href="https://g.page/r/CVBsFGUXU7hzEBM/review" target="_blank" rel="noopener" class="btn btn-secondary">
-          View all on Google <i data-lucide="external-link" class="icon-sm" style="margin-left: 8px;"></i>
+    </div>
+
+    <!-- Auto-scrolling review marquee -->
+    <div class="reviews-marquee" role="region" aria-label="Customer reviews carousel">
+      <div class="reviews-marquee-track">
+
+        <!-- ── Set 1 ── -->
+        <a class="grev-card" href="https://g.page/r/CVBsFGUXU7hzEAE/review" target="_blank" rel="noopener" title="View on Google">
+          <div class="grev-card-header"><div class="grev-avatar" style="background:#4285F4;">LM</div><div><div class="grev-name">Lesedi Mothoa</div><div class="grev-time">4 days ago</div></div><svg class="grev-g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z"/><path fill="#34A853" d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z"/><path fill="#4285F4" d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z"/><path fill="#FBBC05" d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z"/></svg></div>
+          <div class="grev-stars">★★★★★</div>
+          <p class="grev-text">They know their story. My phone feels brand new 🔥</p>
         </a>
+
+        <a class="grev-card" href="https://g.page/r/CVBsFGUXU7hzEAE/review" target="_blank" rel="noopener" title="View on Google">
+          <div class="grev-card-header"><div class="grev-avatar" style="background:#EA4335;">AJ</div><div><div class="grev-name">Abongwe Jali</div><div class="grev-time">4 days ago</div></div><svg class="grev-g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z"/><path fill="#34A853" d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z"/><path fill="#4285F4" d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z"/><path fill="#FBBC05" d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z"/></svg></div>
+          <div class="grev-stars">★★★★★</div>
+          <p class="grev-text">I received excellent service throughout the entire repair process. From the day I handed over my device to the day it was returned, everything was seamless.</p>
+        </a>
+
+        <a class="grev-card" href="https://g.page/r/CVBsFGUXU7hzEAE/review" target="_blank" rel="noopener" title="View on Google">
+          <div class="grev-card-header"><div class="grev-avatar" style="background:#34A853;">MM</div><div><div class="grev-name">Mahlako Chegofatso Makgoba</div><div class="grev-time">4 days ago</div></div><svg class="grev-g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z"/><path fill="#34A853" d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z"/><path fill="#4285F4" d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z"/><path fill="#FBBC05" d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z"/></svg></div>
+          <div class="grev-stars">★★★★★</div>
+          <p class="grev-text">They deliver the best service with continuous updates so that you know everything happening to your device. Honestly there's no better tech doctors like them — 1000% satisfied with their services.</p>
+        </a>
+
+        <a class="grev-card" href="https://g.page/r/CVBsFGUXU7hzEAE/review" target="_blank" rel="noopener" title="View on Google">
+          <div class="grev-card-header"><div class="grev-avatar" style="background:#FBBC05;color:#1a1a1a;">UG</div><div><div class="grev-name">Unakho Genu</div><div class="grev-time">4 days ago</div></div><svg class="grev-g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z"/><path fill="#34A853" d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z"/><path fill="#4285F4" d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z"/><path fill="#FBBC05" d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z"/></svg></div>
+          <div class="grev-stars">★★★★★</div>
+          <p class="grev-text">Excellent services & very reliable. 😝 Would definitely recommend!!</p>
+        </a>
+
+        <a class="grev-card" href="https://g.page/r/CVBsFGUXU7hzEAE/review" target="_blank" rel="noopener" title="View on Google">
+          <div class="grev-card-header"><div class="grev-avatar" style="background:#4285F4;">BD</div><div><div class="grev-name">Briana Dineo</div><div class="grev-time">4 days ago</div></div><svg class="grev-g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z"/><path fill="#34A853" d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z"/><path fill="#4285F4" d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z"/><path fill="#FBBC05" d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z"/></svg></div>
+          <div class="grev-stars">★★★★★</div>
+          <p class="grev-text">Their service is so splendid and trustworthy. Good communication and understanding — they even went the extra mile for my battery replacement.</p>
+        </a>
+
+        <a class="grev-card" href="https://g.page/r/CVBsFGUXU7hzEAE/review" target="_blank" rel="noopener" title="View on Google">
+          <div class="grev-card-header"><div class="grev-avatar" style="background:#8B5CF6;">SN</div><div><div class="grev-name">Siyabonga Ntuli</div><div class="grev-time">4 days ago</div></div><svg class="grev-g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z"/><path fill="#34A853" d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z"/><path fill="#4285F4" d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z"/><path fill="#FBBC05" d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z"/></svg></div>
+          <div class="grev-stars">★★★★★</div>
+          <p class="grev-text">I have a very great experience with their services.</p>
+        </a>
+
+        <a class="grev-card" href="https://g.page/r/CVBsFGUXU7hzEAE/review" target="_blank" rel="noopener" title="View on Google">
+          <div class="grev-card-header"><div class="grev-avatar" style="background:#34A853;">NM</div><div><div class="grev-name">Nesty Maleka</div><div class="grev-time">4 days ago</div></div><svg class="grev-g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z"/><path fill="#34A853" d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z"/><path fill="#4285F4" d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z"/><path fill="#FBBC05" d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z"/></svg></div>
+          <div class="grev-stars">★★★★★</div>
+          <p class="grev-text">I got my phone's screen well fixed and they don't take time.</p>
+        </a>
+
+        <a class="grev-card" href="https://g.page/r/CVBsFGUXU7hzEAE/review" target="_blank" rel="noopener" title="View on Google">
+          <div class="grev-card-header"><div class="grev-avatar" style="background:#4285F4;">LM</div><div><div class="grev-name">Lesiba Mahapa</div><div class="grev-time">4 weeks ago</div></div><svg class="grev-g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z"/><path fill="#34A853" d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z"/><path fill="#4285F4" d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z"/><path fill="#FBBC05" d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z"/></svg></div>
+          <div class="grev-stars">★★★★★</div>
+          <p class="grev-text">Fantastic work by MobiDokta.</p>
+        </a>
+
+        <a class="grev-card" href="https://g.page/r/CVBsFGUXU7hzEAE/review" target="_blank" rel="noopener" title="View on Google">
+          <div class="grev-card-header"><div class="grev-avatar" style="background:#EA4335;">CM</div><div><div class="grev-name">Cebo Mlotshwa</div><div class="grev-time">5 weeks ago</div></div><svg class="grev-g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z"/><path fill="#34A853" d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z"/><path fill="#4285F4" d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z"/><path fill="#FBBC05" d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z"/></svg></div>
+          <div class="grev-stars">★★★★★</div>
+          <p class="grev-text">Well one thing I can say Mobidokta is best and they take pride in what they do and they excell in their job — when it comes to Tech you can't outbeat them.</p>
+        </a>
+
+        <a class="grev-card" href="https://g.page/r/CVBsFGUXU7hzEAE/review" target="_blank" rel="noopener" title="View on Google">
+          <div class="grev-card-header"><div class="grev-avatar" style="background:#FBBC05;color:#1a1a1a;">DK</div><div><div class="grev-name">Dimpho Komane</div><div class="grev-time">6 weeks ago</div></div><svg class="grev-g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z"/><path fill="#34A853" d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z"/><path fill="#4285F4" d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z"/><path fill="#FBBC05" d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z"/></svg></div>
+          <div class="grev-stars">★★★★★</div>
+          <p class="grev-text">I had such a great experience with MobiDokta! They fixed my laptop quickly and professionally, and the whole process was seamless.</p>
+        </a>
+
+        <a class="grev-card" href="https://g.page/r/CVBsFGUXU7hzEAE/review" target="_blank" rel="noopener" title="View on Google">
+          <div class="grev-card-header"><div class="grev-avatar" style="background:#FF6D00;">FD</div><div><div class="grev-name">Fezeka Dlakela</div><div class="grev-time">6 weeks ago</div></div><svg class="grev-g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z"/><path fill="#34A853" d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z"/><path fill="#4285F4" d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z"/><path fill="#FBBC05" d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z"/></svg></div>
+          <div class="grev-stars">★★★★★</div>
+          <p class="grev-text">Very reliable and affordable 🥹❤️ you get what you paid for and more.</p>
+        </a>
+
+        <a class="grev-card" href="https://g.page/r/CVBsFGUXU7hzEAE/review" target="_blank" rel="noopener" title="View on Google">
+          <div class="grev-card-header"><div class="grev-avatar" style="background:#8B5CF6;">TM</div><div><div class="grev-name">Tshepang Makhubedu</div><div class="grev-time">6 weeks ago</div></div><svg class="grev-g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z"/><path fill="#34A853" d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z"/><path fill="#4285F4" d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z"/><path fill="#FBBC05" d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z"/></svg></div>
+          <div class="grev-stars">★★★★★</div>
+          <p class="grev-text">The service is amazing, I'd recommend it to anyone 🔥🤝🏿</p>
+        </a>
+
+        <a class="grev-card" href="https://g.page/r/CVBsFGUXU7hzEAE/review" target="_blank" rel="noopener" title="View on Google">
+          <div class="grev-card-header"><div class="grev-avatar" style="background:#34A853;">RM</div><div><div class="grev-name">Rethabile Maliha</div><div class="grev-time">15 weeks ago</div></div><svg class="grev-g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z"/><path fill="#34A853" d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z"/><path fill="#4285F4" d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z"/><path fill="#FBBC05" d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z"/></svg></div>
+          <div class="grev-stars">★★★★★</div>
+          <p class="grev-text">Excellent service and very reliable. I was assisted within 3 hours ☺️ I would definitely recommend.</p>
+        </a>
+
+        <!-- ── Set 2 (duplicate for seamless loop) ── -->
+        <a class="grev-card" href="https://g.page/r/CVBsFGUXU7hzEAE/review" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="grev-card-header"><div class="grev-avatar" style="background:#4285F4;">LM</div><div><div class="grev-name">Lesedi Mothoa</div><div class="grev-time">4 days ago</div></div><svg class="grev-g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z"/><path fill="#34A853" d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z"/><path fill="#4285F4" d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z"/><path fill="#FBBC05" d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z"/></svg></div><div class="grev-stars">★★★★★</div><p class="grev-text">They know their story. My phone feels brand new 🔥</p></a>
+        <a class="grev-card" href="https://g.page/r/CVBsFGUXU7hzEAE/review" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="grev-card-header"><div class="grev-avatar" style="background:#EA4335;">AJ</div><div><div class="grev-name">Abongwe Jali</div><div class="grev-time">4 days ago</div></div><svg class="grev-g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z"/><path fill="#34A853" d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z"/><path fill="#4285F4" d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z"/><path fill="#FBBC05" d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z"/></svg></div><div class="grev-stars">★★★★★</div><p class="grev-text">I received excellent service throughout the entire repair process. From the day I handed over my device to the day it was returned, everything was seamless.</p></a>
+        <a class="grev-card" href="https://g.page/r/CVBsFGUXU7hzEAE/review" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="grev-card-header"><div class="grev-avatar" style="background:#34A853;">MM</div><div><div class="grev-name">Mahlako Chegofatso Makgoba</div><div class="grev-time">4 days ago</div></div><svg class="grev-g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z"/><path fill="#34A853" d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z"/><path fill="#4285F4" d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z"/><path fill="#FBBC05" d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z"/></svg></div><div class="grev-stars">★★★★★</div><p class="grev-text">They deliver the best service with continuous updates so that you know everything happening to your device — 1000% satisfied.</p></a>
+        <a class="grev-card" href="https://g.page/r/CVBsFGUXU7hzEAE/review" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="grev-card-header"><div class="grev-avatar" style="background:#FBBC05;color:#1a1a1a;">UG</div><div><div class="grev-name">Unakho Genu</div><div class="grev-time">4 days ago</div></div><svg class="grev-g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z"/><path fill="#34A853" d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z"/><path fill="#4285F4" d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z"/><path fill="#FBBC05" d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z"/></svg></div><div class="grev-stars">★★★★★</div><p class="grev-text">Excellent services & very reliable. 😝 Would definitely recommend!!</p></a>
+        <a class="grev-card" href="https://g.page/r/CVBsFGUXU7hzEAE/review" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="grev-card-header"><div class="grev-avatar" style="background:#4285F4;">BD</div><div><div class="grev-name">Briana Dineo</div><div class="grev-time">4 days ago</div></div><svg class="grev-g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z"/><path fill="#34A853" d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z"/><path fill="#4285F4" d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z"/><path fill="#FBBC05" d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z"/></svg></div><div class="grev-stars">★★★★★</div><p class="grev-text">Their service is so splendid and trustworthy. Good communication and understanding — they went the extra mile for my battery replacement.</p></a>
+        <a class="grev-card" href="https://g.page/r/CVBsFGUXU7hzEAE/review" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="grev-card-header"><div class="grev-avatar" style="background:#8B5CF6;">SN</div><div><div class="grev-name">Siyabonga Ntuli</div><div class="grev-time">4 days ago</div></div><svg class="grev-g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z"/><path fill="#34A853" d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z"/><path fill="#4285F4" d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z"/><path fill="#FBBC05" d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z"/></svg></div><div class="grev-stars">★★★★★</div><p class="grev-text">I have a very great experience with their services.</p></a>
+        <a class="grev-card" href="https://g.page/r/CVBsFGUXU7hzEAE/review" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="grev-card-header"><div class="grev-avatar" style="background:#34A853;">NM</div><div><div class="grev-name">Nesty Maleka</div><div class="grev-time">4 days ago</div></div><svg class="grev-g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z"/><path fill="#34A853" d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z"/><path fill="#4285F4" d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z"/><path fill="#FBBC05" d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z"/></svg></div><div class="grev-stars">★★★★★</div><p class="grev-text">I got my phone's screen well fixed and they don't take time.</p></a>
+        <a class="grev-card" href="https://g.page/r/CVBsFGUXU7hzEAE/review" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="grev-card-header"><div class="grev-avatar" style="background:#4285F4;">LM</div><div><div class="grev-name">Lesiba Mahapa</div><div class="grev-time">4 weeks ago</div></div><svg class="grev-g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z"/><path fill="#34A853" d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z"/><path fill="#4285F4" d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z"/><path fill="#FBBC05" d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z"/></svg></div><div class="grev-stars">★★★★★</div><p class="grev-text">Fantastic work by MobiDokta.</p></a>
+        <a class="grev-card" href="https://g.page/r/CVBsFGUXU7hzEAE/review" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="grev-card-header"><div class="grev-avatar" style="background:#EA4335;">CM</div><div><div class="grev-name">Cebo Mlotshwa</div><div class="grev-time">5 weeks ago</div></div><svg class="grev-g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z"/><path fill="#34A853" d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z"/><path fill="#4285F4" d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z"/><path fill="#FBBC05" d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z"/></svg></div><div class="grev-stars">★★★★★</div><p class="grev-text">Well one thing I can say Mobidokta is best and they take pride in what they do and they excell in their job — when it comes to Tech you can't outbeat them.</p></a>
+        <a class="grev-card" href="https://g.page/r/CVBsFGUXU7hzEAE/review" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="grev-card-header"><div class="grev-avatar" style="background:#FBBC05;color:#1a1a1a;">DK</div><div><div class="grev-name">Dimpho Komane</div><div class="grev-time">6 weeks ago</div></div><svg class="grev-g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z"/><path fill="#34A853" d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z"/><path fill="#4285F4" d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z"/><path fill="#FBBC05" d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z"/></svg></div><div class="grev-stars">★★★★★</div><p class="grev-text">I had such a great experience with MobiDokta! They fixed my laptop quickly and professionally, and the whole process was seamless.</p></a>
+        <a class="grev-card" href="https://g.page/r/CVBsFGUXU7hzEAE/review" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="grev-card-header"><div class="grev-avatar" style="background:#FF6D00;">FD</div><div><div class="grev-name">Fezeka Dlakela</div><div class="grev-time">6 weeks ago</div></div><svg class="grev-g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z"/><path fill="#34A853" d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z"/><path fill="#4285F4" d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z"/><path fill="#FBBC05" d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z"/></svg></div><div class="grev-stars">★★★★★</div><p class="grev-text">Very reliable and affordable 🥹❤️ you get what you paid for and more.</p></a>
+        <a class="grev-card" href="https://g.page/r/CVBsFGUXU7hzEAE/review" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="grev-card-header"><div class="grev-avatar" style="background:#8B5CF6;">TM</div><div><div class="grev-name">Tshepang Makhubedu</div><div class="grev-time">6 weeks ago</div></div><svg class="grev-g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z"/><path fill="#34A853" d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z"/><path fill="#4285F4" d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z"/><path fill="#FBBC05" d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z"/></svg></div><div class="grev-stars">★★★★★</div><p class="grev-text">The service is amazing, I'd recommend it to anyone 🔥🤝🏿</p></a>
+        <a class="grev-card" href="https://g.page/r/CVBsFGUXU7hzEAE/review" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><div class="grev-card-header"><div class="grev-avatar" style="background:#34A853;">RM</div><div><div class="grev-name">Rethabile Maliha</div><div class="grev-time">15 weeks ago</div></div><svg class="grev-g" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582l3.51-3.51C17.642 1.091 14.982 0 12 0 7.354 0 3.307 2.68 1.286 6.56l3.98 3.205z"/><path fill="#34A853" d="M16.04 15.345c-1.07.728-2.455 1.164-4.04 1.164-2.955 0-5.464-1.99-6.355-4.673L1.605 15.01C3.659 19.127 7.9 22 12.873 22c2.945 0 5.627-1.018 7.627-2.764l-4.46-3.891z"/><path fill="#4285F4" d="M23.864 12.273c0-.79-.07-1.545-.19-2.273H12v4.51h6.664a5.718 5.718 0 0 1-2.482 3.745l4.46 3.891c2.609-2.41 4.11-5.955 4.11-9.873z"/><path fill="#FBBC05" d="M5.645 11.836A7.002 7.002 0 0 1 5.25 12c0-.573.08-1.127.23-1.655l-3.98-3.205A11.954 11.954 0 0 0 1 12c0 1.764.382 3.445 1.064 4.964l3.581-3.127z"/></svg></div><div class="grev-stars">★★★★★</div><p class="grev-text">Excellent service and very reliable. I was assisted within 3 hours ☺️ I would definitely recommend.</p></a>
+
+      </div>
+    </div>
+
+    <!-- CTA strip: QR code + buttons -->
+    <div class="container">
+      <div class="reviews-cta-strip" data-animate>
+        <div class="qr-block">
+          <img src="./img/google-reviews-qr.png" alt="Scan to leave a Google review for MobiDokta" class="qr-img" loading="lazy" width="96" height="96">
+          <p class="qr-label">Scan to verify or leave a review on Google</p>
+        </div>
+        <div class="grev-cta-btns">
+          <a href="https://g.page/r/CVBsFGUXU7hzEAE/review" target="_blank" rel="noopener" class="btn btn-primary">
+            Leave us a review <i data-lucide="star" class="icon-sm" style="margin-left:6px;"></i>
+          </a>
+          <a href="https://g.page/r/CVBsFGUXU7hzEAE/review" target="_blank" rel="noopener" class="btn btn-secondary">
+            View all 14 reviews on Google <i data-lucide="external-link" class="icon-sm" style="margin-left:6px;"></i>
+          </a>
+        </div>
       </div>
     </div>
   </section>
