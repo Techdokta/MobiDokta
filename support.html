@@ -34,6 +34,7 @@
   <meta name="twitter:description" content="Answers about repairs, warranties, water damage, courier pickup at MobiDokta, Danville, Pretoria." />
   <meta name="twitter:image" content="https://www.mobidokta.co.za/img/og-cover.png" />
   <link rel="stylesheet" href="./css/global.css">
+  <link rel="stylesheet" href="./css/utilities.css">
   <link rel="preconnect" href="https://unpkg.com" crossorigin />
   <script src="https://unpkg.com/lucide@latest" defer></script>
   <script type="application/ld+json">
@@ -80,12 +81,13 @@
     .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8); }
     .faq-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: var(--space-8); }
     .faq-card h3 { color: var(--accent); margin-bottom: var(--space-4); display: flex; align-items: center; gap: 10px; }
-  </style>
+
+    .cta-section-card { background: var(--bg-card); border-top: 1px solid var(--border); }  </style>
 </head>
 <body>
 
   <nav class="navbar">
-    <a href="index.html" class="logo"><img src="./assets/mobidokta-logo.png" alt="MobiDokta — Engineering Grade IT Repairs &amp; Service" style="height:54px;width:auto;display:block;" loading="eager"></a>
+    <a href="index.html" class="logo"><img src="./assets/mobidokta-logo.png" alt="MobiDokta — Engineering Grade IT Repairs &amp; Service" class="logo-nav" loading="eager"></a>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="book.html">Book</a>
@@ -111,38 +113,38 @@
         <div class="faq-card" data-animate>
           <h3><i data-lucide="calendar"></i> Booking & Scheduling</h3>
           <p><strong>How do I book a repair?</strong><br>Use our <a href="book.html">Online Booking Wizard</a> to select your device, services, and preferred time slot. You'll receive instant confirmation via WhatsApp.</p>
-          <p style="margin-top:15px;"><strong>Can I cancel my appointment?</strong><br>Yes, you can cancel up to 4 hours before your slot via the link in your confirmation message or by calling us.</p>
+          <p class="mt-15"><strong>Can I cancel my appointment?</strong><br>Yes, you can cancel up to 4 hours before your slot via the link in your confirmation message or by calling us.</p>
         </div>
 
         <!-- Category: Logistics -->
         <div class="faq-card" data-animate>
           <h3><i data-lucide="truck"></i> Collections & Deliveries</h3>
           <p><strong>Where do you collect from?</strong><br>Walk in at Shop 6, Madeira Isles, 262 Klitsgras St, Danville, Pretoria (free). Courier collection: Pretoria & Surrounds R299 · Johannesburg R399 · Greater Gauteng R499.</p>
-          <p style="margin-top:15px;"><strong>How long does a repair take?</strong><br>Most mobile device repairs are completed in under 30 minutes with our express guarantee. Check our <a href="apple.html">Apple</a> or <a href="android.html">Android</a> pages for specific ETAs.</p>
+          <p class="mt-15"><strong>How long does a repair take?</strong><br>Most mobile device repairs are completed in under 30 minutes with our express guarantee. Check our <a href="apple.html">Apple</a> or <a href="android.html">Android</a> pages for specific ETAs.</p>
         </div>
 
         <!-- Category: Payments -->
         <div class="faq-card" data-animate>
           <h3><i data-lucide="credit-card"></i> Payments & Billing</h3>
           <p><strong>When do I pay?</strong><br>For collections, you pay once the repair is complete and verified. For walk-ins, payment is required before device discharge.</p>
-          <p style="margin-top:15px;"><strong>What payment methods do you accept?</strong><br>We accept Cash, Visa/Mastercard, SnapScan, Zapper, and Instant EFT (Ozow/Peach Payments). Payment is due on completion.</p>
+          <p class="mt-15"><strong>What payment methods do you accept?</strong><br>We accept Cash, Visa/Mastercard, SnapScan, Zapper, and Instant EFT (Ozow/Peach Payments). Payment is due on completion.</p>
         </div>
 
         <!-- Category: Warranty -->
         <div class="faq-card" data-animate>
           <p><strong>Do you offer a warranty?</strong><br>Yes! Every MobiDokta repair comes with a <strong>6-Month All-Repair Warranty</strong> on both premiums parts and surgical workmanship.</p>
-          <p style="margin-top:15px;"><strong>Are the parts original?</strong><br>We use original OEM parts where available, or the highest-grade premium alternatives that meet or exceed manufacturer specifications.</p>
+          <p class="mt-15"><strong>Are the parts original?</strong><br>We use original OEM parts where available, or the highest-grade premium alternatives that meet or exceed manufacturer specifications.</p>
         </div>
 
       </div>
     </div>
   </section>
 
-  <section class="cta-section" style="background:var(--bg-card);border-top:1px solid var(--border);">
+  <section class="cta-section cta-section-card">
     <div class="container-narrow text-center">
       <h2>Still have questions?</h2>
       <p>Our support team is standing by to assist with your technical needs.</p>
-      <div class="flex gap-4" style="justify-content:center;margin-top:var(--space-8);">
+      <div class="flex gap-4" class="flex-jc-center-mt8">
         <a href="https://wa.me/27781541350" class="btn btn-primary btn-lg"><i data-lucide="message-circle" class="icon-sm"></i> WhatsApp Support</a>
         <a href="mailto:support@mobidokta.co.za" class="btn btn-secondary btn-lg">Email us</a>
       </div>
@@ -153,7 +155,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <div class="logo"><img src="./assets/mobidokta-logo.png" alt="MobiDokta" style="height:58px;width:auto;display:block;margin-bottom:4px;" loading="lazy"></div>
+          <div class="logo"><img src="./assets/mobidokta-logo.png" alt="MobiDokta" class="logo-footer" loading="lazy"></div>
           <p class="body-sm">The hospital for your mobile devices.</p>
         </div>
         <div class="footer-col">
@@ -162,8 +164,8 @@
           <a href="legal/terms.html">Terms & Conditions</a>
         </div>
       </div>
-      <div class="footer-bottom" style="margin-top: var(--space-6); border-top: 1px solid var(--border); padding-top: var(--space-4); text-align: center; font-size: var(--text-sm); color: var(--text-secondary);">
-        <p>&copy; 2026 MobiDokta. All rights reserved. | Built by <a href="https://asitechnologies.co.za" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">ASI Imperium Technologies</a></p>
+      <div class="footer-bottom" class="footer-bar">
+        <p>&copy; 2026 MobiDokta. All rights reserved. | Built by <a href="https://asitechnologies.co.za" target="_blank" rel="noopener noreferrer" class="c-inherit-underline">ASI Imperium Technologies</a></p>
       </div>
     </div>
   </footer>

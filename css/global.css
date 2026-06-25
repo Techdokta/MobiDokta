@@ -399,10 +399,10 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0 5%;
   height: 56px;
   z-index: 1000;
-  background: rgba(8, 8, 8, 0.96) !important;
-  -webkit-backdrop-filter: blur(20px) saturate(2);
-  backdrop-filter: blur(20px) saturate(2);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-backdrop-filter: blur(10px) saturate(1.8);
+  backdrop-filter: blur(10px) saturate(1.8);
+  border-bottom: 1px solid var(--glass-border);
 }
 
 .logo {

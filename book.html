@@ -34,6 +34,7 @@
   <meta name="twitter:description" content="Book same-day iPhone, Samsung or MacBook repair at Madeira Isles, Danville, Pretoria. Instant WhatsApp confirmation." />
   <meta name="twitter:image" content="https://www.mobidokta.co.za/img/og-cover.png" />
   <link rel="stylesheet" href="./css/global.css">
+  <link rel="stylesheet" href="./css/utilities.css">
   <link rel="stylesheet" href="./css/booking.css">
   <link rel="preconnect" href="https://unpkg.com" crossorigin />
   <script src="https://unpkg.com/lucide@latest" defer></script>
@@ -41,7 +42,7 @@
 <body>
 
   <nav class="navbar">
-    <a href="index.html" class="logo"><img src="./assets/mobidokta-logo.png" alt="MobiDokta — Engineering Grade IT Repairs &amp; Service" style="height:54px;width:auto;display:block;" loading="eager"></a>
+    <a href="index.html" class="logo"><img src="./assets/mobidokta-logo.png" alt="MobiDokta — Engineering Grade IT Repairs &amp; Service" class="logo-nav" loading="eager"></a>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="book.html" class="active">Book</a>
@@ -53,7 +54,7 @@
 
   <main class="booking-page">
     <div class="container">
-      <div class="section-header" style="padding-top:7rem;">
+      <div class="section-header" class="pt-hero">
         <div class="badge badge-accent">Book Your Visit</div>
         <h1>Schedule a <span class="text-gradient">consultation</span></h1>
         <p>Follow the steps below to book your device in for treatment.</p>
@@ -75,55 +76,55 @@
         <h2>Select Your Device</h2>
         <div class="brand-grid">
           <div class="brand-card" data-brand="Apple">
-            <div class="brand-icon flex-center" style="height: 48px;">
-              <img src="https://cdn.simpleicons.org/apple/000000" alt="Apple" style="height:32px; filter:var(--icon-filter, none);">
+            <div class="brand-icon flex-center" class="icon-48">
+              <img src="https://cdn.simpleicons.org/apple/000000" alt="Apple" class="icon-32-filter">
             </div>
             <span class="brand-name">Apple</span>
           </div>
           <div class="brand-card" data-brand="Samsung">
-            <div class="brand-icon flex-center" style="height: 48px;">
-              <img src="https://cdn.simpleicons.org/samsung/000000" alt="Samsung" style="height:18px; filter:var(--icon-filter, none);">
+            <div class="brand-icon flex-center" class="icon-48">
+              <img src="https://cdn.simpleicons.org/samsung/000000" alt="Samsung" class="icon-18-filter">
             </div>
             <span class="brand-name">Samsung</span>
           </div>
           <div class="brand-card" data-brand="Huawei">
-            <div class="brand-icon flex-center" style="height: 48px;">
-              <img src="https://cdn.simpleicons.org/huawei/000000" alt="Huawei" style="height:32px; filter:var(--icon-filter, none);">
+            <div class="brand-icon flex-center" class="icon-48">
+              <img src="https://cdn.simpleicons.org/huawei/000000" alt="Huawei" class="icon-32-filter">
             </div>
             <span class="brand-name">Huawei</span>
           </div>
           <div class="brand-card" data-brand="MacBook">
-            <div class="brand-icon flex-center" style="height: 48px;">
-              <i data-lucide="laptop" class="icon-xl" style="color:var(--text-primary); width:36px; height:36px;"></i>
+            <div class="brand-icon flex-center" class="icon-48">
+              <i data-lucide="laptop" class="icon-xl" class="icon-primary-36"></i>
             </div>
             <span class="brand-name">MacBook & PC</span>
           </div>
           <div class="brand-card" data-brand="Console">
-            <div class="brand-icon flex-center" style="height: 48px;">
-              <i data-lucide="gamepad-2" class="icon-xl" style="color:var(--text-primary); width:36px; height:36px;"></i>
+            <div class="brand-icon flex-center" class="icon-48">
+              <i data-lucide="gamepad-2" class="icon-xl" class="icon-primary-36"></i>
             </div>
             <span class="brand-name">Consoles</span>
           </div>
         </div>
-        <div class="form-group" id="model-group" style="display:none;">
+        <div class="form-group" id="model-group" class="d-none">
           <label class="form-label">Device Model</label>
           <select class="form-select" id="device-model">
             <option value="">Choose your model...</option>
           </select>
-          <div id="manual-model-container" style="display:none; margin-top:var(--space-3);">
+          <div id="manual-model-container">
             <input type="text" id="manual-model-input" class="form-input" placeholder="Enter your full device model...">
-            <button type="button" class="btn btn-primary btn-sm" id="manual-proceed-btn" style="margin-top:var(--space-3); width:100%;">Proceed to Solutions →</button>
+            <button type="button" class="btn btn-primary btn-sm" id="manual-proceed-btn">Proceed to Solutions →</button>
           </div>
         </div>
       </div>
 
       <!-- Step 2: Service Selection -->
       <div class="booking-step" id="step-2">
-        <div class="split-layout" style="align-items: flex-start; gap: var(--space-8);">
+        <div class="split-layout bk-svc-split">
           <div>
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:var(--space-8);">
-              <h2 style="margin:0;">Choose Procedures</h2>
-              <button class="btn btn-ghost btn-sm" onclick="document.getElementById('prev-btn').click();" style="border-radius:var(--radius-full);"><i data-lucide="arrow-left" class="icon-sm"></i> Change Device</button>
+            <div class="bk-svc-hdr">
+              <h2 class="m-0">Choose Procedures</h2>
+              <button class="btn btn-ghost btn-sm" onclick="document.getElementById('prev-btn').click();" class="rounded-full"><i data-lucide="arrow-left" class="icon-sm"></i> Change Device</button>
             </div>
             <div class="service-grid" id="service-grid">
               <!-- Populated by JS -->
@@ -133,21 +134,21 @@
           <div class="cart-panel glass" id="cart-panel">
             <h3>Your Selection</h3>
             <div id="cart-items">
-              <p style="color:var(--text-tertiary);font-size:var(--text-sm);">No services selected yet.</p>
+              <p class="fs-sm-c-tertiary">No services selected yet.</p>
             </div>
             <div class="cart-total">
               <span>Total</span>
               <span id="cart-total-price">R0</span>
             </div>
-            <div class="cart-total" style="border-top:none; padding-top:4px; margin-top:0;">
-              <span style="font-size:var(--text-sm); color:var(--text-tertiary);">40% Deposit to Secure Booking</span>
-              <span id="cart-deposit-price" style="color:var(--accent); font-size:16px;">R0</span>
+            <div class="cart-total cart-deposit">
+              <span class="fs-sm-c-tertiary">40% Deposit to Secure Booking</span>
+              <span id="cart-deposit-price" class="icon-accent-16">R0</span>
             </div>
-            <p style="font-size:var(--text-xs);color:var(--text-tertiary);margin-top:var(--space-4);">*Prices are estimates based on standard parts.</p>
+            <p class="bk-cart-note">*Prices are estimates based on standard parts.</p>
           </div>
         </div>
 
-        <div id="duration-section" style="display:none;margin-top:var(--space-xl);">
+        <div id="duration-section">
           <label class="form-label">Estimated Duration</label>
           <div class="duration-selector">
             <button class="duration-btn" data-duration="30">30 min</button>
@@ -173,10 +174,10 @@
             </div>
             <div class="cal-grid" id="cal-days"></div>
           </div>
-          <div class="slots-panel glass" id="slots-panel" style="display:none;">
+          <div class="slots-panel glass" id="slots-panel" class="d-none">
             <h3>Available Slots — <span id="slot-date-label" class="text-glow"></span></h3>
             <div class="slots-list" id="slots-list"></div>
-            <div class="form-group" style="margin-top:var(--space-lg);">
+            <div class="form-group mt-lg">
               <label class="form-label">Service Location</label>
               <select class="form-select" id="clinic-select">
                 <option value="Danville Studio (Madeira Isles, Pretoria)">Danville Studio — Shop 6, Madeira Isles, Pretoria</option>
@@ -187,11 +188,11 @@
                 <option value="Residence Call">Residence Call</option>
                 <option value="Courier Option">Courier Option</option>
               </select>
-              <div id="address-container" style="display:none; margin-top:var(--space-md);">
-                <label class="form-label" style="margin-top:var(--space-3);">Specify Address/Location</label>
+              <div id="address-container">
+                <label class="form-label mt-3">Specify Address/Location</label>
                 <input type="text" class="form-input" id="client-address" placeholder="Enter full address or meetup location">
-                <small id="safety-warning" style="color:var(--text-tertiary);font-size:11px;display:none;margin-top:4px; align-items:flex-start; gap:4px;">
-                  <i data-lucide="alert-triangle" class="icon-sm" style="color:var(--danger); flex-shrink:0;"></i> 
+                <small id="safety-warning">
+                  <i data-lucide="alert-triangle" class="icon-sm danger-icon"></i> 
                   <span><strong>Note:</strong> Certain areas are prohibited for House/Residence Calls due to Safety Risks. We will evaluate the location upon submission.</span>
                 </small>
               </div>
@@ -207,35 +208,35 @@
           <div class="summary-card glass">
             <h3>Booking Summary</h3>
             <div class="summary-row"><span>Device</span><span id="sum-device">—</span></div>
-            <div class="summary-row" style="flex-direction:column;align-items:flex-start;gap:8px;">
+            <div class="summary-row summary-row-col">
               <span>Selected Services</span>
-              <div id="sum-services-list" style="width:100%;"></div>
+              <div id="sum-services-list" class="w-full"></div>
             </div>
             <div class="summary-row"><span>Date</span><span id="sum-date">—</span></div>
             <div class="summary-row"><span>Time</span><span id="sum-time">—</span></div>
             <div class="summary-row"><span>Location</span><span id="sum-location">—</span></div>
             <div class="summary-row total"><span>Total Estimated Cost</span><span id="sum-cost" class="text-glow">—</span></div>
-            <div class="summary-row" style="margin-top:0; padding-top:4px;">
-              <span style="font-size:var(--text-sm); color:var(--text-tertiary);">40% Deposit Required to Secure Booking</span>
-              <span id="sum-deposit" style="color:var(--accent); font-size:16px;">—</span>
+            <div class="summary-row summary-deposit">
+              <span class="fs-sm-c-tertiary">40% Deposit Required to Secure Booking</span>
+              <span id="sum-deposit" class="icon-accent-16">—</span>
             </div>
           </div>
           <div class="details-form glass">
             <h3>Your Details</h3>
             
             <div class="form-group">
-              <label class="form-label">Describe the Issue <span style="color:var(--text-tertiary);font-weight:normal;font-size:12px;">(Optional)</span></label>
-              <textarea class="form-input" id="cust-issue" rows="3" placeholder="E.g. Screen is shattered, battery drains fast..." style="resize:vertical; width:100%; font-family:inherit;"></textarea>
+              <label class="form-label">Describe the Issue <span class="fs-13-c-tertiary">(Optional)</span></label>
+              <textarea class="form-input" id="cust-issue" rows="3" placeholder="E.g. Screen is shattered, battery drains fast..." class="bk-textarea"></textarea>
             </div>
             
-            <div class="form-group" style="margin-bottom:var(--space-6);">
-              <label class="form-label">Attach Pictures <span style="color:var(--text-tertiary);font-weight:normal;font-size:12px;">(Accelerates preparation)</span></label>
-              <input type="file" id="cust-pictures" multiple accept="image/jpeg,image/png,image/webp,image/heic,image/heif" class="form-input" style="padding:10px; cursor:pointer;" title="Upload pictures of the damage">
-              <small style="color:var(--text-tertiary);font-size:11px;display:block;margin-top:4px;">JPEG, PNG, WEBP or HEIC. Up to 5&nbsp;MB per image. Photos are stored privately and only visible to our technicians.</small>
+            <div class="form-group" class="mb-6">
+              <label class="form-label">Attach Pictures <span class="fs-13-c-tertiary">(Accelerates preparation)</span></label>
+              <input type="file" id="cust-pictures" multiple accept="image/jpeg,image/png,image/webp,image/heic,image/heif" class="form-input" class="bk-file-input" title="Upload pictures of the damage">
+              <small class="bk-file-note">JPEG, PNG, WEBP or HEIC. Up to 5&nbsp;MB per image. Photos are stored privately and only visible to our technicians.</small>
             </div>
 
             <!-- Honeypot Field (Security) -->
-            <div class="form-group" style="display:none;" aria-hidden="true">
+            <div class="form-group" class="d-none" aria-hidden="true">
               <label class="form-label">Fax Number</label>
               <input type="text" class="form-input" id="cust-fax" tabindex="-1" autocomplete="off">
             </div>
@@ -252,29 +253,29 @@
               <label class="form-label">Email Address</label>
               <input type="email" class="form-input" id="cust-email" placeholder="e.g. thabo@gmail.com">
             </div>
-            <div class="form-group" style="display:flex;align-items:flex-start;gap:10px;">
-              <input type="checkbox" id="consent-check" style="margin-top:4px;">
-              <label for="consent-check" style="font-size:var(--text-sm);color:var(--text-secondary);">I agree to the <a href="community.html" style="color:var(--cta);">Terms & Conditions</a> and <a href="community.html" style="color:var(--cta);">Privacy Policy</a>.</label>
+            <div class="form-group consent-row">
+              <input type="checkbox" id="consent-check" class="mt-4px">
+              <label for="consent-check" class="bk-consent-lbl">I agree to the <a href="community.html" class="c-cta">Terms & Conditions</a> and <a href="community.html" class="c-cta">Privacy Policy</a>.</label>
             </div>
 
             <!-- Payment & Invoice Selection -->
-            <div style="margin-top: var(--space-6); border-top: 1px solid var(--border); padding-top: var(--space-6);">
-              <h4 style="margin-bottom: var(--space-4); color: var(--text-primary);">Confirm & Request Invoice</h4>
+            <div class="bk-pay-section">
+              <h4 class="bk-pay-hdr">Confirm & Request Invoice</h4>
               
               <!-- Manual EFT Option -->
-              <div id="eft-panel" style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-6); margin-bottom: var(--space-4);">
-                <h4 style="display: flex; align-items: center; gap: 8px; margin-bottom: var(--space-4); color: var(--text-primary);"><i data-lucide="landmark" class="icon" style="color: var(--green);"></i> Manual EFT / Bank Transfer</h4>
-                <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-4); margin-bottom: var(--space-4);">
-                  <table style="width: 100%; font-size: var(--text-sm);">
-                    <tr><td style="padding: 4px 0; color: var(--text-tertiary); width: 40%;">Bank</td><td style="padding: 4px 0; font-weight: 600; color: var(--text-primary);">Capitec</td></tr>
-                    <tr><td style="padding: 4px 0; color: var(--text-tertiary);">Account Name</td><td style="padding: 4px 0; font-weight: 600; color: var(--text-primary);">Mobidokta</td></tr>
-                    <tr><td style="padding: 4px 0; color: var(--text-tertiary);">Account Number</td><td style="padding: 4px 0; font-weight: 600; color: var(--text-primary);">2523032305</td></tr>
-                    <tr><td style="padding: 4px 0; color: var(--text-tertiary);">SWIFT/BIC</td><td style="padding: 4px 0; font-weight: 600; color: var(--text-primary);">CABLZAJJ</td></tr>
-                    <tr><td style="padding: 4px 0; color: var(--text-tertiary);">Reference</td><td style="padding: 4px 0; font-weight: 600; color: var(--green);" id="eft-ref">Your phone number</td></tr>
+              <div id="eft-panel">
+                <h4><i data-lucide="landmark" class="icon" class="c-green"></i> Manual EFT / Bank Transfer</h4>
+                <div class="bk-bank-card">
+                  <table class="field-full">
+                    <tr><td class="field-row-val-w">Bank</td><td class="field-row-key">Capitec</td></tr>
+                    <tr><td class="field-row-val">Account Name</td><td class="field-row-key">Mobidokta</td></tr>
+                    <tr><td class="field-row-val">Account Number</td><td class="field-row-key">2523032305</td></tr>
+                    <tr><td class="field-row-val">SWIFT/BIC</td><td class="field-row-key">CABLZAJJ</td></tr>
+                    <tr><td class="field-row-val">Reference</td><td class="bk-eft-ref" id="eft-ref">Your phone number</td></tr>
                   </table>
                 </div>
-                <p style="font-size: var(--text-xs); color: var(--text-tertiary); margin-bottom: var(--space-4);">Once you submit, we will generate and email your official invoice. You can pay the 40% deposit securely via Manual EFT using the details above.</p>
-                <button class="btn btn-secondary btn-block" id="confirm-booking-btn" disabled style="border-radius: var(--radius-md);">
+                <p class="bk-eft-note">Once you submit, we will generate and email your official invoice. You can pay the 40% deposit securely via Manual EFT using the details above.</p>
+                <button class="btn btn-secondary btn-block" id="confirm-booking-btn" disabled>
                   <i data-lucide="file-text" class="icon-sm"></i> Submit Booking & Request Invoice
                 </button>
               </div>
@@ -285,39 +286,39 @@
 
       <!-- Step Success: Booking Confirmation -->
       <div class="booking-step" id="step-success">
-        <div class="glass" style="max-width: 640px; margin: 0 auto; padding: var(--space-10) var(--space-8); text-align: center;">
-          <div style="display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; border-radius: var(--radius-full); background: var(--green-subtle); margin-bottom: var(--space-6);">
-            <i data-lucide="check-circle-2" style="width: 40px; height: 40px; color: var(--green);"></i>
+        <div class="glass success-wrap">
+          <div class="success-icon">
+            <i data-lucide="check-circle-2" class="icon-w40-green"></i>
           </div>
-          <h2 style="margin-bottom: var(--space-3);">Booking Confirmed</h2>
-          <p style="color: var(--text-secondary); margin-bottom: var(--space-8);">Your repair is booked. We will email your invoice shortly and message you on WhatsApp to confirm collection or drop-off.</p>
+          <h2 class="mb-3">Booking Confirmed</h2>
+          <p class="success-msg">Your repair is booked. We will email your invoice shortly and message you on WhatsApp to confirm collection or drop-off.</p>
 
-          <div style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-5); margin-bottom: var(--space-6);">
-            <div style="font-size: var(--text-xs); color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: var(--space-2);">Booking Reference</div>
-            <div id="success-ref" style="font-family: 'SF Mono', Menlo, monospace; font-size: var(--text-xl); font-weight: 700; color: var(--text-primary); letter-spacing: 0.05em;">&mdash;</div>
+          <div class="success-ref-box">
+            <div class="success-ref-lbl">Booking Reference</div>
+            <div id="success-ref">&mdash;</div>
           </div>
 
-          <div style="text-align: left; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-5) var(--space-6); margin-bottom: var(--space-6);">
+          <div class="success-det-box">
             <div class="summary-row"><span>Device</span><span id="success-device">&mdash;</span></div>
-            <div class="summary-row"><span>Services</span><span id="success-services" style="text-align: right; max-width: 60%;">&mdash;</span></div>
+            <div class="summary-row"><span>Services</span><span id="success-services" class="text-right-60">&mdash;</span></div>
             <div class="summary-row"><span>Date &amp; Time</span><span id="success-when">&mdash;</span></div>
-            <div class="summary-row"><span>Location</span><span id="success-location" style="text-align: right; max-width: 60%;">&mdash;</span></div>
+            <div class="summary-row"><span>Location</span><span id="success-location" class="text-right-60">&mdash;</span></div>
             <div class="summary-row total"><span>Total Estimated</span><span id="success-total">&mdash;</span></div>
-            <div class="summary-row" style="border-bottom: none;"><span>40% Deposit Due</span><span id="success-deposit" style="color: var(--green); font-weight: 700;">&mdash;</span></div>
+            <div class="summary-row no-border-b"><span>40% Deposit Due</span><span id="success-deposit" class="success-deposit">&mdash;</span></div>
           </div>
 
-          <div style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-5) var(--space-6); margin-bottom: var(--space-8); text-align: left;">
-            <h4 style="font-size: var(--text-sm); margin-bottom: var(--space-3); color: var(--text-primary); display: flex; align-items: center; gap: 8px;"><i data-lucide="landmark" class="icon-sm" style="color: var(--green);"></i> Pay your deposit via Manual EFT</h4>
-            <table style="width: 100%; font-size: var(--text-sm);">
-              <tr><td style="padding: 4px 0; color: var(--text-tertiary); width: 40%;">Bank</td><td style="padding: 4px 0; font-weight: 600; color: var(--text-primary);">Capitec</td></tr>
-              <tr><td style="padding: 4px 0; color: var(--text-tertiary);">Account Name</td><td style="padding: 4px 0; font-weight: 600; color: var(--text-primary);">Mobidokta</td></tr>
-              <tr><td style="padding: 4px 0; color: var(--text-tertiary);">Account Number</td><td style="padding: 4px 0; font-weight: 600; color: var(--text-primary);">2523032305</td></tr>
-              <tr><td style="padding: 4px 0; color: var(--text-tertiary);">Reference</td><td style="padding: 4px 0; font-weight: 700; color: var(--green); font-family: 'SF Mono', Menlo, monospace;" id="success-eft-ref">&mdash;</td></tr>
+          <div class="success-eft-box">
+            <h4 class="success-eft-hdr"><i data-lucide="landmark" class="icon-sm" class="c-green"></i> Pay your deposit via Manual EFT</h4>
+            <table class="field-full">
+              <tr><td class="field-row-val-w">Bank</td><td class="field-row-key">Capitec</td></tr>
+              <tr><td class="field-row-val">Account Name</td><td class="field-row-key">Mobidokta</td></tr>
+              <tr><td class="field-row-val">Account Number</td><td class="field-row-key">2523032305</td></tr>
+              <tr><td class="field-row-val">Reference</td><td id="success-eft-ref">&mdash;</td></tr>
             </table>
-            <p style="font-size: var(--text-xs); color: var(--text-tertiary); margin-top: var(--space-3);">Use the booking reference above when making payment so we can match your deposit to your booking.</p>
+            <p class="success-eft-note">Use the booking reference above when making payment so we can match your deposit to your booking.</p>
           </div>
 
-          <div style="display: flex; gap: var(--space-3); justify-content: center; flex-wrap: wrap;">
+          <div class="success-btns">
             <a href="index.html" class="btn btn-secondary"><i data-lucide="home" class="icon-sm"></i> Back to Home</a>
             <a href="https://wa.me/27781541350" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i data-lucide="message-circle" class="icon-sm"></i> Message us on WhatsApp</a>
           </div>
@@ -326,7 +327,7 @@
 
       <!-- Navigation Buttons -->
       <div class="step-nav">
-        <button class="btn btn-ghost" id="prev-btn" style="display:none;">← Back</button>
+        <button class="btn btn-ghost" id="prev-btn" class="d-none">← Back</button>
         <button class="btn btn-primary" id="next-btn" disabled>Next Step →</button>
       </div>
 
@@ -340,7 +341,7 @@
         <h3>Request A Techie™</h3>
         <button class="modal-close" id="close-techie-modal" aria-label="Close modal" title="Close"><i data-lucide="x" class="icon"></i></button>
       </div>
-      <p style="color:var(--text-secondary);font-size:var(--text-sm);margin-bottom:var(--space-6);">Please select your location for the call-out, or choose a trusted courier option.</p>
+      <p class="modal-intro">Please select your location for the call-out, or choose a trusted courier option.</p>
       
       <div class="techie-options-list">
         <div class="techie-option" data-area="Pretoria & Surrounds" data-price="299">
@@ -369,37 +370,37 @@
             <span class="t-name">Other Area / Custom Location</span>
             <span class="t-desc">Pending safety & distance evaluation</span>
           </div>
-          <span class="t-price" style="color:var(--text-primary);">TBD</span>
+          <span class="t-price" class="c-primary">TBD</span>
         </div>
 
-        <h4 style="margin:var(--space-6) 0 var(--space-3); font-size:var(--text-sm); color:var(--text-primary);">Send via Trusted Courier</h4>
+        <h4 class="bk-courier-hdr">Send via Trusted Courier</h4>
         <div class="techie-option courier-option" data-courier="The Courier Guy">
           <div>
             <span class="t-name">The Courier Guy</span>
             <span class="t-desc">Nationwide secure shipping</span>
           </div>
-          <span class="t-price" style="color:var(--text-primary);">Select</span>
+          <span class="t-price" class="c-primary">Select</span>
         </div>
         <div class="techie-option courier-option" data-courier="Uber-Courier">
           <div>
             <span class="t-name">Uber-Courier (Local Only)</span>
             <span class="t-desc">Fast, same-day local collection</span>
           </div>
-          <span class="t-price" style="color:var(--text-primary);">Select</span>
+          <span class="t-price" class="c-primary">Select</span>
         </div>
         <div class="techie-option courier-option" data-courier="RAM Hand-to-Hand">
           <div>
             <span class="t-name">RAM Hand-to-Hand</span>
             <span class="t-desc">High-value insured transit</span>
           </div>
-          <span class="t-price" style="color:var(--text-primary);">Select</span>
+          <span class="t-price" class="c-primary">Select</span>
         </div>
         <div class="techie-option courier-option" data-courier="Aramex">
           <div>
             <span class="t-name">Aramex</span>
             <span class="t-desc">Drop-box or direct collection</span>
           </div>
-          <span class="t-price" style="color:var(--text-primary);">Select</span>
+          <span class="t-price" class="c-primary">Select</span>
         </div>
       </div>
     </div>

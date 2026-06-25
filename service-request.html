@@ -23,6 +23,7 @@
   <title>Service Request | MobiDokta</title>
   <meta name="description" content="Submit a free-form service request to MobiDokta. Describe your issue, upload photos, and let our engineers assess your device.">
   <link rel="stylesheet" href="./css/global.css">
+  <link rel="stylesheet" href="./css/utilities.css">
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     .request-hero {
@@ -141,21 +142,30 @@
       .request-hero { padding: var(--space-24) var(--space-4) var(--space-12); }
       .form-card { padding: var(--space-6); }
     }
-  </style>
+    .upload-icon { width: 40px; height: 40px; color: var(--text-tertiary); margin-bottom: 12px; }
+    .upload-title { font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
+    .upload-hint { font-size: var(--text-xs); color: var(--text-tertiary); }
+    .lbl-optional { color: var(--text-tertiary); font-weight: normal; }
+    .flex-gap-3-wrap { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+    .submit-btn-lg { border-radius: var(--radius-lg); padding: 18px; }
+    .submit-note { text-align: center; color: var(--text-tertiary); font-size: var(--text-xs); margin-top: var(--space-4); }
+    #request-success { display: none; }
+    .success-circle { width: 80px; height: 80px; border-radius: 50%; background: var(--green-subtle); display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-6); }
+    .success-note { color: var(--text-secondary); font-size: var(--text-sm); margin-bottom: var(--space-8); }  </style>
 </head>
 <body>
 
   <!-- Navbar -->
   <nav class="navbar">
-    <a href="index.html" class="logo" style="color: var(--text-primary);"><img src="./assets/mobidokta-logo.png" alt="MobiDokta — Engineering Grade IT Repairs &amp; Service" style="height:54px;width:auto;display:block;" loading="eager"></a>
+    <a href="index.html" class="logo" class="c-primary"><img src="./assets/mobidokta-logo.png" alt="MobiDokta — Engineering Grade IT Repairs &amp; Service" class="logo-nav" loading="eager"></a>
     <div class="nav-links">
       <a href="index.html#services">Repairs</a>
       <a href="index.html#portfolio">See Our Work</a>
       <a href="service-request.html" class="active">Request Service</a>
       <a href="book.html">Book Now</a>
     </div>
-    <div style="display: flex; align-items: center; gap: var(--space-4);">
-      <button id="theme-toggle" class="btn btn-ghost" style="padding: 8px; border-radius: var(--radius-full); border: none;" aria-label="Toggle Dark Mode">
+    <div class="flex-center-gap-4">
+      <button id="theme-toggle" class="btn btn-ghost" class="icon-btn" aria-label="Toggle Dark Mode">
         <i data-lucide="moon" class="icon-sm"></i>
       </button>
       <a href="book.html" class="btn btn-primary btn-sm nav-btn-desktop">Get Started</a>
@@ -166,16 +176,16 @@
   <!-- Side Navigation & Overlay -->
   <div class="nav-overlay"></div>
   <aside class="side-nav">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-6);">
-      <span style="font-weight: 800; font-size: var(--text-lg);"><img src="./assets/mobidokta-logo.png" alt="MobiDokta — Engineering Grade IT Repairs &amp; Service" style="height:54px;width:auto;display:block;" loading="eager"></span>
+    <div class="flex-between-mb6">
+      <span class="fs-lg-bold"><img src="./assets/mobidokta-logo.png" alt="MobiDokta — Engineering Grade IT Repairs &amp; Service" class="logo-nav" loading="eager"></span>
       <button class="nav-close" aria-label="Close Menu"><i data-lucide="x" class="icon"></i></button>
     </div>
     <a href="index.html#services"><i data-lucide="tool" class="icon-sm"></i> Repairs</a>
-    <a href="service-request.html" style="color: var(--green);"><i data-lucide="file-plus" class="icon-sm"></i> Request Service</a>
+    <a href="service-request.html" class="c-green"><i data-lucide="file-plus" class="icon-sm"></i> Request Service</a>
     <a href="book.html"><i data-lucide="calendar" class="icon-sm"></i> Book Now</a>
     <a href="community.html"><i data-lucide="users" class="icon-sm"></i> Community Hub</a>
-    <div style="margin-top: auto; padding-top: var(--space-6); border-top: 1px solid var(--border);">
-      <button id="theme-toggle-mobile" class="btn btn-secondary btn-block" style="justify-content: flex-start;">
+    <div class="mt-auto-pt6">
+      <button id="theme-toggle-mobile" class="btn btn-secondary btn-block" class="flex-jc-start">
         <i data-lucide="moon" class="icon-sm theme-icon"></i> Toggle Dark Mode
       </button>
     </div>
@@ -185,7 +195,7 @@
   <header class="request-hero">
     <div class="container-narrow">
       <div class="badge badge-accent">Manual Service Request</div>
-      <h1 class="headline-xl" style="margin-bottom: var(--space-4);">Tell Us What's Wrong.<br><span style="color: var(--text-tertiary);">Your Way.</span></h1>
+      <h1 class="headline-xl" class="mb-4">Tell Us What's Wrong.<br><span class="c-tertiary">Your Way.</span></h1>
       <p class="body-lg">No rigid forms. No guessing. Describe your issue in your own words, attach photos or videos, and our engineers will assess and quote you directly.</p>
     </div>
   </header>
@@ -197,7 +207,7 @@
       <div id="request-form-panel">
         <!-- Section 1: What's wrong? -->
         <div class="form-card">
-          <h3><i data-lucide="message-square-text" class="icon-lg" style="color: var(--accent);"></i> Describe the Issue</h3>
+          <h3><i data-lucide="message-square-text" class="icon-lg" class="c-accent"></i> Describe the Issue</h3>
           <div class="form-group">
             <label class="form-label">What happened? What's broken? What do you need?</label>
             <textarea class="form-textarea" id="req-description" placeholder="E.g. My iPhone 14 Pro screen cracked after a drop. The touch still works but there's a green line on the right side. I also think the battery has been draining fast lately..."></textarea>
@@ -221,11 +231,11 @@
 
         <!-- Section 2: Photos & Videos -->
         <div class="form-card">
-          <h3><i data-lucide="camera" class="icon-lg" style="color: var(--accent);"></i> Attach Photos or Videos</h3>
+          <h3><i data-lucide="camera" class="icon-lg" class="c-accent"></i> Attach Photos or Videos</h3>
           <div class="upload-zone" id="upload-zone">
-            <i data-lucide="upload-cloud" style="width: 40px; height: 40px; color: var(--text-tertiary); margin-bottom: 12px;"></i>
-            <p style="font-weight: 600; color: var(--text-primary); margin-bottom: 4px;">Tap or click to upload</p>
-            <p style="font-size: var(--text-xs); color: var(--text-tertiary);">Images, screenshots, or short videos of the damage. Multiple files accepted.</p>
+            <i data-lucide="upload-cloud" class="upload-icon"></i>
+            <p class="upload-title">Tap or click to upload</p>
+            <p class="upload-hint">Images, screenshots, or short videos of the damage. Multiple files accepted.</p>
             <input type="file" id="req-files" multiple accept="image/*,video/*">
           </div>
           <div class="upload-preview" id="upload-preview"></div>
@@ -233,7 +243,7 @@
 
         <!-- Section 3: Your Info -->
         <div class="form-card">
-          <h3><i data-lucide="user" class="icon-lg" style="color: var(--accent);"></i> Your Contact Details</h3>
+          <h3><i data-lucide="user" class="icon-lg" class="c-accent"></i> Your Contact Details</h3>
           <div class="form-group">
             <label class="form-label">Full Name</label>
             <input type="text" class="form-input" id="req-name" placeholder="e.g. Thabo Molefe">
@@ -243,12 +253,12 @@
             <input type="tel" class="form-input" id="req-phone" placeholder="e.g. 078 154 1350">
           </div>
           <div class="form-group">
-            <label class="form-label">Email Address <span style="color: var(--text-tertiary); font-weight: normal;">(Optional)</span></label>
+            <label class="form-label">Email Address <span class="lbl-optional">(Optional)</span></label>
             <input type="email" class="form-input" id="req-email" placeholder="e.g. thabo@gmail.com">
           </div>
           <div class="form-group">
             <label class="form-label">Preferred Contact Method</label>
-            <div style="display: flex; gap: var(--space-3); flex-wrap: wrap;">
+            <div class="flex-gap-3-wrap">
               <button class="service-type-btn selected" data-contact="WhatsApp">WhatsApp</button>
               <button class="service-type-btn" data-contact="Phone Call">Phone Call</button>
               <button class="service-type-btn" data-contact="Email">Email</button>
@@ -257,23 +267,23 @@
         </div>
 
         <!-- Submit -->
-        <button class="btn btn-primary btn-lg btn-block" id="submit-request" style="border-radius: var(--radius-lg); padding: 18px;">
+        <button class="btn btn-primary btn-lg btn-block" id="submit-request" class="submit-btn-lg">
           <i data-lucide="send" class="icon-sm"></i> Submit Service Request
         </button>
-        <p style="text-align: center; color: var(--text-tertiary); font-size: var(--text-xs); margin-top: var(--space-4);">
+        <p class="submit-note">
           We'll review your request and get back to you within 1-2 hours during business hours via your preferred contact method.
         </p>
       </div>
 
       <!-- Success State -->
-      <div id="request-success" class="form-card success-panel" style="display: none;">
-        <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--green-subtle); display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-6);">
-          <i data-lucide="check-circle" style="width: 40px; height: 40px; color: var(--green);"></i>
+      <div id="request-success" class="form-card success-panel" class="d-none">
+        <div class="success-circle">
+          <i data-lucide="check-circle" class="icon-w40-green"></i>
         </div>
-        <h2 style="margin-bottom: var(--space-4);">Request Submitted!</h2>
-        <p class="body-lg" style="margin-bottom: var(--space-6);">Our engineering team has received your service request. We'll assess your case and contact you with a detailed quote.</p>
-        <p style="color: var(--text-secondary); font-size: var(--text-sm); margin-bottom: var(--space-8);">Reference: <strong id="req-ref"></strong></p>
-        <a href="index.html" class="btn btn-primary btn-lg" style="border-radius: var(--radius-full);">Back to Home</a>
+        <h2 class="mb-4">Request Submitted!</h2>
+        <p class="body-lg" class="mb-6">Our engineering team has received your service request. We'll assess your case and contact you with a detailed quote.</p>
+        <p class="success-note">Reference: <strong id="req-ref"></strong></p>
+        <a href="index.html" class="btn btn-primary btn-lg" class="rounded-full">Back to Home</a>
       </div>
 
     </div>

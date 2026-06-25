@@ -22,6 +22,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dashboard | MobiDokta Admin</title>
   <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/utilities.css">
   <link rel="stylesheet" href="../css/admin.css">
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
@@ -31,7 +32,7 @@
     <!-- Sidebar -->
     <aside class="admin-sidebar">
       <div class="sidebar-logo">
-        <a href="../index.html" class="logo"><img src="../assets/mobidokta-logo.png" alt="MobiDokta — Engineering Grade IT Repairs &amp; Service" style="height:54px;width:auto;display:block;" loading="eager"></a>
+        <a href="../index.html" class="logo"><img src="../assets/mobidokta-logo.png" alt="MobiDokta — Engineering Grade IT Repairs &amp; Service" class="logo-nav" loading="eager"></a>
       </div>
       <nav class="sidebar-nav">
         <a href="#overview" class="sidebar-link active" data-section="overview"><i data-lucide="layout-dashboard" class="icon-sm"></i> Overview</a>
@@ -67,7 +68,7 @@
           <div class="chart-bars" id="revenue-chart"></div>
         </div>
 
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-8);">
+        <div class="grid-2col">
           <div class="chart-container">
             <div class="chart-header"><h3>Revenue by Gateway</h3></div>
             <div id="gateway-breakdown"></div>
@@ -92,7 +93,7 @@
 
       <!-- ═══════ BOOKINGS PANEL ═══════ -->
       <div class="admin-panel" id="panel-bookings">
-        <div class="flex-between" style="margin-bottom:var(--space-8);">
+        <div class="flex-between" class="mb-8">
           <div class="admin-tabs">
             <button class="admin-tab active" data-filter="all">All</button>
             <button class="admin-tab" data-filter="confirmed">Confirmed</button>
@@ -100,7 +101,7 @@
             <button class="admin-tab" data-filter="cancelled">Cancelled</button>
           </div>
           <div class="search-bar">
-            <i data-lucide="search" class="icon-sm" style="color:var(--text-tertiary)"></i>
+            <i data-lucide="search" class="icon-sm" class="c-tertiary"></i>
             <input type="text" placeholder="Search bookings..." id="booking-search">
           </div>
         </div>
@@ -128,10 +129,10 @@
 
       <!-- ═══════ CUSTOMERS PANEL ═══════ -->
       <div class="admin-panel" id="panel-customers">
-        <div class="flex-between" style="margin-bottom:var(--space-8);">
+        <div class="flex-between" class="mb-8">
           <span class="badge badge-accent" id="customer-count"></span>
           <div class="search-bar">
-            <i data-lucide="search" class="icon-sm" style="color:var(--text-tertiary)"></i>
+            <i data-lucide="search" class="icon-sm" class="c-tertiary"></i>
             <input type="text" placeholder="Search customers..." id="customer-search">
           </div>
         </div>

@@ -23,13 +23,18 @@
   <title>Share Your Feedback | MobiDokta</title>
   <meta name="description" content="Rate your MobiDokta experience and help us improve our tech hospital service.">
   <link rel="stylesheet" href="./css/global.css">
+  <link rel="stylesheet" href="./css/utilities.css">
   <link rel="stylesheet" href="./css/feedback.css">
   <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    .flex-center-wrap-mt8 { justify-content: center; flex-wrap: wrap; margin-top: var(--space-8); }
+  </style>
 </head>
 <body>
 
   <nav class="navbar">
-    <a href="index.html" class="logo"><img src="./assets/mobidokta-logo.png" alt="MobiDokta — Engineering Grade IT Repairs &amp; Service" style="height:54px;width:auto;display:block;" loading="eager"></a>
+    <a href="index.html" class="logo"><img src="./assets/mobidokta-logo.png" alt="MobiDokta — Engineering Grade IT Repairs &amp; Service" class="logo-nav" loading="eager"></a>
     <div class="nav-links">
       <div class="nav-dropdown">
         <a href="index.html#services" class="dropdown-trigger">Repairs <i data-lucide="chevron-down" class="icon-xs"></i></a>
@@ -47,7 +52,7 @@
 
   <main class="feedback-page">
     <div class="container">
-      <div class="section-header" style="padding-top:7rem;">
+      <div class="section-header" class="pt-hero">
         <div class="badge badge-purple">Your Voice Matters</div>
         <h1>Share your <span class="text-gradient">experience</span></h1>
         <p>Help us improve our Tech Hospital by sharing your feedback.</p>
@@ -128,14 +133,14 @@
             <div class="mini-stars" id="avg-stars"></div>
           </div>
           <div class="stat-card glass">
-            <div class="stat-value" id="nps-score" style="color:var(--green);">—</div>
+            <div class="stat-value" id="nps-score" class="c-green">—</div>
             <div class="stat-label">Net Promoter Score</div>
           </div>
           <div class="stat-card glass">
             <div class="stat-value" id="total-reviews">—</div>
             <div class="stat-label">Total Reviews</div>
           </div>
-          <a href="https://g.page/mobidokta/review" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-block" style="margin-top:var(--space-4);">
+          <a href="https://g.page/mobidokta/review" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-block" class="mt-4">
             <i data-lucide="star" class="icon-sm"></i> Rate us on Google
           </a>
         </div>
@@ -143,10 +148,10 @@
 
       <!-- Thank You (hidden initially) -->
       <div class="thank-you glass hidden" id="thank-you">
-        <div class="success-icon"><i data-lucide="party-popper" style="width:64px;height:64px;color:var(--accent)"></i></div>
+        <div class="success-icon"><i data-lucide="party-popper" class="icon-64-accent"></i></div>
         <h2>Thank You!</h2>
         <p>Your feedback has been submitted and will help us improve our service.</p>
-        <div class="flex gap-4" style="justify-content:center;flex-wrap:wrap;margin-top:var(--space-8);">
+        <div class="flex gap-4 flex-center-wrap-mt8">
           <a href="https://g.page/mobidokta/review" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i data-lucide="star" class="icon-sm"></i> Also Review on Google</a>
           <a href="index.html" class="btn btn-ghost">← Back to Home</a>
         </div>

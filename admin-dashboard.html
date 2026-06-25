@@ -22,6 +22,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MobiDokta Admin Dashboard</title>
     <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="./css/utilities.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="js/config.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
@@ -594,7 +595,23 @@
             th, td { padding: 0.75rem; }
             .actions-cell .btn { margin-bottom: 0.25rem; }
         }
-    </style>
+
+    /* Admin inline-style replacements */
+    .adm-login-note { margin-top: 1rem; font-size: 0.75rem; text-align: center; }
+    .adm-ov-x { overflow-x: auto; }
+    .cur-pointer { cursor: pointer; }
+    .adm-date { font-weight: 500; }
+    .adm-time { font-size: 0.75rem; color: var(--gray-600); }
+    .adm-time-mt { font-size: 0.75rem; color: var(--gray-600); margin-top: 0.25rem; }
+    .adm-loc { font-size: 0.75rem; color: var(--success); margin-top: 0.25rem; font-weight: 500; }
+    .adm-gray-btn { background: var(--gray-600); color: white; }
+    .adm-mono { font-family: monospace; }
+    .adm-status-div { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--gray-200); }
+    .adm-flex-gap { display: flex; gap: 0.5rem; }
+    .adm-notes-wrap { margin-top: 1rem; }
+    .adm-textarea { width: 100%; padding: 0.5rem; border: 1px solid var(--gray-300); border-radius: 0.5rem; font-family: inherit; }
+    .adm-save-btn { margin-top: 0.5rem; }
+    .adm-type-hdr { font-weight: 600; margin-bottom: 0.25rem; }    </style>
 </head>
 <body>
 
@@ -616,7 +633,7 @@
                 Sign In
             </button>
         </form>
-        <p style="margin-top: 1rem; font-size: 0.75rem; text-align: center;">
+        <p class="adm-login-note">
             Protected by Row Level Security • PostgreSQL RLS
         </p>
     </div>
@@ -685,7 +702,7 @@
                 <h2>Repair Bookings</h2>
                 <div class="live-indicator">Live Updates</div>
             </div>
-            <div style="overflow-x: auto;">
+            <div class="adm-ov-x">
                 <table>
                     <thead>
                         <tr>
@@ -1045,10 +1062,10 @@ class AdminDashboard {
                 : 'No services';
 
             return `
-                <tr data-id="${booking.id}" onclick="app.viewDetails('${booking.id}')" style="cursor: pointer;" title="Click to view full booking details">
+                <tr data-id="${booking.id}" onclick="app.viewDetails('${booking.id}')" class="cur-pointer" title="Click to view full booking details">
                     <td>
-                        <div style="font-weight: 500;">${dateStr}</div>
-                        <div style="font-size: 0.75rem; color: var(--gray-600);">${timeStr}</div>
+                        <div class="adm-date">${dateStr}</div>
+                        <div class="adm-time">${timeStr}</div>
                     </td>
                     <td class="customer-cell">
                         <div class="customer-name">${this.escapeHtml(booking.customer_name)}</div>
@@ -1059,9 +1076,9 @@ class AdminDashboard {
                         <div class="device-issue">${this.escapeHtml(booking.issue || 'No issue specified')}</div>
                     </td>
                     <td>
-                        <div style="font-size: 0.875rem;">${this.escapeHtml(servicesList)}</div>
-                        <div style="font-size: 0.75rem; color: var(--gray-600); margin-top: 0.25rem;">${booking.date} @ ${booking.time}</div>
-                        <div style="font-size: 0.75rem; color: var(--success); margin-top: 0.25rem; font-weight: 500;">${this.escapeHtml(booking.location || 'Location not set')}</div>
+                        <div class="fs-sm">${this.escapeHtml(servicesList)}</div>
+                        <div class="adm-time-mt">${booking.date} @ ${booking.time}</div>
+                        <div class="adm-loc">${this.escapeHtml(booking.location || 'Location not set')}</div>
                     </td>
                     <td class="price-cell">
                         <div>R${parseFloat(booking.total_price || 0).toFixed(2)}</div>
@@ -1078,7 +1095,7 @@ class AdminDashboard {
                             ${booking.status !== 'pending' ? 'disabled' : ''}>Confirm</button>
                         <button class="btn btn-sm btn-warning" onclick="app.updateStatus('${booking.id}', 'in_progress')"
                             ${booking.status !== 'confirmed' ? 'disabled' : ''}>Start</button>
-                        <button class="btn btn-sm" style="background: var(--gray-600); color: white;"
+                        <button class="btn btn-sm adm-gray-btn"
                             onclick="app.updateStatus('${booking.id}', 'completed')"
                             ${booking.status !== 'in_progress' ? 'disabled' : ''}>Complete</button>
                     </td>
@@ -1099,7 +1116,7 @@ class AdminDashboard {
         modalContent.innerHTML = `
             <div class="detail-row">
                 <span class="detail-label">Booking ID</span>
-                <span class="detail-value" style="font-family: monospace;">${booking.id}</span>
+                <span class="detail-value adm-mono">${booking.id}</span>
             </div>
             <div class="detail-row">
                 <span class="detail-label">Status</span>
@@ -1152,9 +1169,9 @@ class AdminDashboard {
                     : `<div class="attachments-grid" id="attachments-grid">${booking.attachment_paths.map((p, i) => `<img class="attachment-thumb loading" data-path="${this.escapeHtml(p)}" alt="Attachment ${i + 1}" loading="lazy">`).join('')}</div>`
                 }
             </div>
-            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--gray-200);">
-                <label style="display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 0.5rem;">Update Status</label>
-                <div style="display: flex; gap: 0.5rem;">
+            <div class="adm-status-div">
+                <label class="field-label">Update Status</label>
+                <div class="adm-flex-gap">
                     ${['pending','confirmed','in_progress','completed','cancelled'].map(s => `
                         <button class="btn btn-sm ${booking.status === s ? 'btn-primary' : ''}" 
                             style="${booking.status === s ? '' : 'background: var(--gray-100); color: var(--gray-700);'}"
@@ -1164,10 +1181,10 @@ class AdminDashboard {
                     `).join('')}
                 </div>
             </div>
-            <div style="margin-top: 1rem;">
-                <label style="display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 0.5rem;">Admin Notes</label>
-                <textarea id="admin-notes-input" rows="3" style="width: 100%; padding: 0.5rem; border: 1px solid var(--gray-300); border-radius: 0.5rem; font-family: inherit;">${this.escapeHtml(booking.admin_notes || '')}</textarea>
-                <button class="btn btn-primary btn-sm" style="margin-top: 0.5rem;" onclick="app.saveNotes('${booking.id}')">Save Notes</button>
+            <div class="adm-notes-wrap">
+                <label class="field-label">Admin Notes</label>
+                <textarea id="admin-notes-input" rows="3" class="adm-textarea">${this.escapeHtml(booking.admin_notes || '')}</textarea>
+                <button class="btn btn-primary btn-sm adm-save-btn" onclick="app.saveNotes('${booking.id}')">Save Notes</button>
             </div>
         `;
 
@@ -1254,8 +1271,8 @@ class AdminDashboard {
         const toast = document.createElement('div');
         toast.className = `toast ${type}`;
         toast.innerHTML = `
-            <div style="font-weight: 600; margin-bottom: 0.25rem;">${type.charAt(0).toUpperCase() + type.slice(1)}</div>
-            <div style="font-size: 0.875rem;">${message}</div>
+            <div class="adm-type-hdr">${type.charAt(0).toUpperCase() + type.slice(1)}</div>
+            <div class="fs-sm">${message}</div>
         `;
 
         container.appendChild(toast);

@@ -339,3 +339,141 @@
 .techie-option .t-name { font-weight: 600; font-size: var(--text-sm); display: block; margin-bottom: 2px;}
 .techie-option .t-desc { font-size: var(--text-xs); color: var(--text-tertiary); }
 .techie-option .t-price { font-weight: 700; color: var(--green); font-size: var(--text-sm); }
+
+/* ── Step 2 layout ── */
+.bk-svc-split.split-layout { align-items: flex-start; gap: var(--space-8); }
+.bk-svc-hdr { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-8); }
+
+/* ── Cart panel ── */
+.cart-deposit { border-top: none; padding-top: 4px; margin-top: 0; }
+.bk-cart-note { font-size: var(--text-xs); color: var(--text-tertiary); margin-top: var(--space-4); }
+
+/* ── Step 3 hidden containers (shown by JS) ── */
+#manual-model-container { display: none; margin-top: var(--space-3); }
+#manual-proceed-btn    { margin-top: var(--space-3); width: 100%; }
+#duration-section      { display: none; margin-top: var(--space-xl); }
+#address-container     { display: none; margin-top: var(--space-md); }
+#address-container label { margin-top: var(--space-3); }
+#safety-warning {
+  color: var(--text-tertiary);
+  font-size: 11px;
+  display: none;
+  margin-top: 4px;
+  align-items: flex-start;
+  gap: 4px;
+}
+#safety-warning i { color: var(--danger); flex-shrink: 0; }
+.danger-icon { color: var(--danger); flex-shrink: 0; }
+
+/* ── Summary rows ── */
+.summary-row-col { flex-direction: column; align-items: flex-start; gap: 8px; }
+.summary-deposit { margin-top: 0; padding-top: 4px; border-bottom: 0; }
+.no-border-b     { border-bottom: none; }
+
+/* ── Step 4 form elements ── */
+.bk-textarea   { resize: vertical; width: 100%; font-family: inherit; }
+.bk-file-input { padding: 10px; cursor: pointer; }
+.bk-file-note  { color: var(--text-tertiary); font-size: 11px; display: block; margin-top: 4px; }
+.consent-row   { display: flex; align-items: flex-start; gap: 10px; }
+.mt-4px        { margin-top: 4px; }
+.bk-consent-lbl { font-size: var(--text-sm); color: var(--text-secondary); }
+.bk-pay-section { margin-top: var(--space-6); border-top: 1px solid var(--border); padding-top: var(--space-6); }
+.bk-pay-hdr    { margin-bottom: var(--space-4); color: var(--text-primary); }
+
+/* ── EFT payment panel ── */
+#eft-panel {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  margin-bottom: var(--space-4);
+}
+#eft-panel h4 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: var(--space-4);
+  color: var(--text-primary);
+}
+#confirm-booking-btn { border-radius: var(--radius-md); }
+.bk-bank-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+.bk-eft-ref  { padding: 4px 0; font-weight: 600; color: var(--green); }
+.bk-eft-note { font-size: var(--text-xs); color: var(--text-tertiary); margin-bottom: var(--space-4); }
+
+/* ── Step Success ── */
+.success-wrap {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: var(--space-10) var(--space-8);
+  text-align: center;
+}
+.success-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-full);
+  background: var(--green-subtle);
+  margin-bottom: var(--space-6);
+}
+.mb-3        { margin-bottom: var(--space-3); }
+.success-msg { color: var(--text-secondary); margin-bottom: var(--space-8); }
+.success-ref-box {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  margin-bottom: var(--space-6);
+}
+.success-ref-lbl {
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-2);
+}
+#success-ref {
+  font-family: 'SF Mono', Menlo, monospace;
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.05em;
+}
+.success-det-box {
+  text-align: left;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-6);
+  margin-bottom: var(--space-6);
+}
+.success-deposit { color: var(--green); font-weight: 700; }
+.success-eft-box {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-6);
+  margin-bottom: var(--space-8);
+  text-align: left;
+}
+.success-eft-hdr {
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-3);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+#success-eft-ref { padding: 4px 0; font-weight: 700; color: var(--green); font-family: 'SF Mono', Menlo, monospace; }
+.success-eft-note { font-size: var(--text-xs); color: var(--text-tertiary); margin-top: var(--space-3); }
+.success-btns { display: flex; gap: var(--space-3); justify-content: center; flex-wrap: wrap; }
+
+/* ── Techie Modal ── */
+.modal-intro     { color: var(--text-secondary); font-size: var(--text-sm); margin-bottom: var(--space-6); }
+.bk-courier-hdr { margin: var(--space-6) 0 var(--space-3); font-size: var(--text-sm); color: var(--text-primary); }

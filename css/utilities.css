@@ -1,0 +1,164 @@
+﻿/* ============================================================
+   MobiDokta Utility Classes
+   Replaces repeated inline styles across all HTML pages.
+   ============================================================ */
+
+/* ── Button sizes ── */
+.btn-xs { padding: 4px 10px; font-size: 12px; }
+
+/* ── Logo images ── */
+.logo-nav    { height: 54px; width: auto; display: block; }
+.logo-footer { height: 58px; width: auto; display: block; margin-bottom: 4px; }
+
+/* ── Spacing ── */
+.mt-4   { margin-top: var(--space-4); }
+.mt-6   { margin-top: var(--space-6); }
+.mt-8   { margin-top: var(--space-8); }
+.mt-10  { margin-top: var(--space-10); }
+.mt-15  { margin-top: 15px; }
+.mb-4   { margin-bottom: var(--space-4); }
+.mb-6   { margin-bottom: var(--space-6); }
+.mb-8   { margin-bottom: var(--space-8); }
+.my-4   { margin: var(--space-4) 0; }
+.my-8-4 { margin: var(--space-8) 0 var(--space-4); }
+.mx-auto{ margin: 0 auto; }
+.m-0    { margin: 0; }
+.ml-6   { margin-left: 6px; }
+.mt-auto-pt6 { margin-top: auto; padding-top: var(--space-6); border-top: 1px solid var(--border); }
+
+/* ── Padding ── */
+.pt-hero { padding-top: 7rem; }
+.p-0     { padding: 0; }
+
+/* ── Backgrounds ── */
+.bg-secondary { background: var(--bg-secondary); }
+.bg-card      { background: var(--bg-card); }
+
+/* ── Text colours & sizes ── */
+.c-primary    { color: var(--text-primary); }
+.c-secondary  { color: var(--text-secondary); }
+.c-tertiary   { color: var(--text-tertiary); }
+.c-accent     { color: var(--accent); }
+.c-cta        { color: var(--cta); }
+.c-green      { color: var(--green); }
+.c-inherit    { color: inherit; }
+.fs-12        { font-size: 12px; }
+.fs-13        { font-size: 13px; }
+.fs-sm        { font-size: var(--text-sm); }
+.fw-600       { font-weight: 600; }
+.fw-800       { font-weight: 800; }
+.underline    { text-decoration: underline; }
+.c-inherit-underline { color: inherit; text-decoration: underline; }
+
+/* ── Display / flex ── */
+.d-none    { display: none; }
+.d-block   { display: block; }
+.flex-between      { display: flex; align-items: center; justify-content: space-between; }
+.flex-between-wrap { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.flex-center-gap-4 { display: flex; align-items: center; gap: var(--space-4); }
+.flex-center-gap-12{ display: flex; align-items: center; gap: 12px; }
+.flex-jc-start     { justify-content: flex-start; }
+.flex-jc-center-mt8{ justify-content: center; margin-top: var(--space-8); }
+
+/* ── Table utilities ── */
+.table-wrap     { max-width: 900px; margin: 0 auto; overflow-x: auto; }
+.sticky-th      { position: sticky; top: 0; background: var(--bg-card); }
+
+/* ── Form field helpers ── */
+.field-label    { display: block; font-size: var(--text-sm); font-weight: 500; margin-bottom: 0.5rem; }
+.field-row-key  { padding: 4px 0; font-weight: 600; color: var(--text-primary); }
+.field-row-val  { padding: 4px 0; color: var(--text-tertiary); }
+.field-row-val-w{ padding: 4px 0; color: var(--text-tertiary); width: 40%; }
+.field-full     { width: 100%; font-size: var(--text-sm); }
+
+/* ── Icon helpers ── */
+.icon-32-filter { height: 32px; filter: var(--icon-filter, none); }
+.icon-48        { height: 48px; }
+.icon-w40-green { width: 40px; height: 40px; color: var(--green); }
+.icon-accent-16 { color: var(--accent); font-size: 16px; }
+.icon-primary-36{ color: var(--text-primary); width: 36px; height: 36px; }
+.icon-btn       { padding: 8px; border-radius: var(--radius-full); border: none; }
+
+/* ── Card / section helpers ── */
+.card-footer-bar {
+  margin-top: var(--space-4);
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-4);
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+.empty-state {
+  text-align: center;
+  color: var(--text-tertiary);
+  font-size: var(--text-sm);
+  padding: var(--space-12) 0;
+}
+
+/* ── Google review avatar colours ── */
+.av-blue   { background: #4285F4; }
+.av-red    { background: #EA4335; }
+.av-yellow { background: #FBBC05; color: #1a1a1a; }
+.av-purple { background: #8B5CF6; }
+.av-green  { background: #34A853; }
+.av-orange { background: #FF6D00; }
+
+/* ── Review dots ── */
+.rev-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--border); flex-shrink: 0; }
+
+/* ── Footer bar ── */
+.footer-bar {
+  margin-top: var(--space-6);
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-4);
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+/* ── Grid helpers ── */
+.grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8); }
+
+/* ── Dark section divider (used inside dark cards/panels) ── */
+.dark-divider-top {
+  margin-top: var(--space-3xl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* ── Booking summary row ── */
+.summary-key   { margin-top: var(--space-4); padding: 0; color: var(--text-primary); }
+.ml-md         { margin-left: var(--space-md, var(--space-4)); }
+
+/* ── Misc ── */
+.text-right-60  { text-align: right; max-width: 60%; }
+.text-center-sm { text-align: center; font-size: var(--text-sm); color: var(--text-secondary); padding: var(--space-6) 0; }
+.flex-between-mb6 { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-6); }
+.c-primary-bold { color: var(--text-primary); font-weight: 600; }
+.ml-6px         { margin-left: 6px; }
+.mt-3           { margin-top: var(--space-3); }
+.mt-12          { margin-top: var(--space-12); }
+.mt-lg          { margin-top: var(--space-lg); }
+.mt-xl          { margin-top: var(--space-xl); }
+.icon-18-filter { height: 18px; filter: var(--icon-filter, none); }
+.mb-2           { margin-bottom: var(--space-2); }
+.bg-primary-sec { background: var(--bg-primary); }
+.rounded-full   { border-radius: var(--radius-full); }
+.rounded-md     { border-radius: var(--radius-md); }
+.w-full         { width: 100%; }
+.text-center    { text-align: center; }
+.text-left      { text-align: left; }
+.c-secondary    { color: var(--text-secondary); }
+.fs-sm-c-tertiary { font-size: var(--text-sm); color: var(--text-tertiary); }
+.fs-13-c-tertiary { color: var(--text-tertiary); font-weight: normal; font-size: 12px; }
+.fs-13-c-secondary{ font-size: 13px; color: var(--text-secondary); }
+.fs-lg-bold     { font-weight: 800; font-size: var(--text-lg); }
+
+/* ── Added for final inline style cleanup ── */
+.fw-500         { font-weight: 500; }
+.cur-pointer    { cursor: pointer; }
+.ov-x-auto      { overflow-x: auto; }
+.icon-64-green  { width: 64px; height: 64px; color: var(--green); }
+.icon-64-accent { width: 64px; height: 64px; color: var(--accent); }
+.ftr-tagline-dim{ color: var(--text-tertiary); font-size: var(--text-sm); max-width: 280px; line-height: 1.6; }
+.flex-center-wrap { justify-content: center; flex-wrap: wrap; }

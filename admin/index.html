@@ -22,6 +22,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin Login | MobiDokta</title>
   <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/utilities.css">
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     .login-page {
@@ -95,7 +96,7 @@
 
   <div class="login-page">
     <div class="login-card glass">
-      <div class="logo"><img src="../assets/mobidokta-logo.png" alt="MobiDokta — Engineering Grade IT Repairs &amp; Service" style="height:54px;width:auto;display:block;" loading="eager"></div>
+      <div class="logo"><img src="../assets/mobidokta-logo.png" alt="MobiDokta — Engineering Grade IT Repairs &amp; Service" class="logo-nav" loading="eager"></div>
       <h2>Admin Portal</h2>
       <p class="subtitle">Enter your credentials to access the dashboard</p>
 
@@ -115,7 +116,7 @@
 
       <!-- Step 2: 2FA -->
       <div class="two-fa-section" id="twofa-step">
-        <h3 style="margin-bottom:var(--space-2);">2-Factor Authentication</h3>
+        <h3 class="mb-2">2-Factor Authentication</h3>
         <p class="subtitle">Enter the 4-digit code sent to your device</p>
         <div class="pin-inputs">
           <input type="text" class="pin-input" maxlength="1" data-pin="0" />

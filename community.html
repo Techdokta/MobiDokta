@@ -34,6 +34,7 @@
   <meta name="twitter:description" content="Tips, guides and compliance info from MobiDokta, Danville, Pretoria." />
   <meta name="twitter:image" content="https://www.mobidokta.co.za/img/og-cover.png" />
   <link rel="stylesheet" href="./css/global.css">
+  <link rel="stylesheet" href="./css/utilities.css">
   <link rel="preconnect" href="https://unpkg.com" crossorigin />
   <script src="https://unpkg.com/lucide@latest" defer></script>
   <style>
@@ -138,13 +139,24 @@
       background: var(--bg-hover);
       border-color: var(--text-tertiary);
     }
-  </style>
+    /* Gallery section */
+    .gal-hdr { text-align: center; margin-bottom: var(--space-12); }
+    .gal-title { font-size: var(--text-4xl); margin-bottom: var(--space-4); }
+    .gal-subtitle { color: var(--text-secondary); max-width: 600px; margin: 0 auto; line-height: 1.7; }
+    /* Footer extended */
+    .ftr-logo-link { color: var(--text-primary); margin-bottom: var(--space-4); display: flex; }
+    .ftr-tagline { color: var(--text-secondary); font-size: var(--text-sm); max-width: 280px; margin-bottom: var(--space-3); }
+    .ftr-reg { color: var(--text-tertiary); font-size: var(--text-xs); margin-bottom: var(--space-6); }
+    .ftr-addr { color: var(--text-secondary); font-size: var(--text-sm); display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
+    .ftr-addr-icon { flex-shrink: 0; margin-top: 2px; }
+    .ftr-phone { color: var(--text-secondary); font-size: var(--text-sm); display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+    .ftr-bottom-col { flex-direction: column; gap: var(--space-2); text-align: center; }  </style>
 </head>
 <body>
 
   <!-- ─── Navbar ─── -->
   <nav class="navbar">
-    <a href="index.html" class="logo" style="color: var(--text-primary);"><img src="./assets/mobidokta-logo.png" alt="MobiDokta — Engineering Grade IT Repairs &amp; Service" style="height:54px;width:auto;display:block;" loading="eager"></a>
+    <a href="index.html" class="logo" class="c-primary"><img src="./assets/mobidokta-logo.png" alt="MobiDokta — Engineering Grade IT Repairs &amp; Service" class="logo-nav" loading="eager"></a>
     <div class="nav-links">
       <div class="nav-dropdown">
         <a href="index.html#services" class="dropdown-trigger">Repairs</a>
@@ -160,8 +172,8 @@
       <a href="community.html" class="active">Community Hub</a>
       <a href="book.html">Book Now</a>
     </div>
-    <div style="display: flex; align-items: center; gap: var(--space-4);">
-      <button id="theme-toggle" class="btn btn-ghost" style="padding: 8px; border-radius: var(--radius-full); border: none;" aria-label="Toggle Dark Mode">
+    <div class="flex-center-gap-4">
+      <button id="theme-toggle" class="btn btn-ghost" class="icon-btn" aria-label="Toggle Dark Mode">
         <i data-lucide="moon" class="icon-sm"></i>
       </button>
       <a href="book.html" class="btn btn-primary btn-sm nav-btn-desktop">Get Started</a>
@@ -172,19 +184,19 @@
   <!-- Side Navigation & Overlay -->
   <div class="nav-overlay"></div>
   <aside class="side-nav">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-6);">
-      <span style="font-weight: 800; font-size: var(--text-lg);"><img src="./assets/mobidokta-logo.png" alt="MobiDokta — Engineering Grade IT Repairs &amp; Service" style="height:54px;width:auto;display:block;" loading="eager"></span>
+    <div class="flex-between-mb6">
+      <span class="fs-lg-bold"><img src="./assets/mobidokta-logo.png" alt="MobiDokta — Engineering Grade IT Repairs &amp; Service" class="logo-nav" loading="eager"></span>
       <button class="nav-close" aria-label="Close Menu"><i data-lucide="x" class="icon"></i></button>
     </div>
     <a href="index.html#services"><i data-lucide="tool" class="icon-sm"></i> Repairs</a>
     <a href="index.html#portfolio"><i data-lucide="image" class="icon-sm"></i> See Our Work</a>
     <a href="index.html#founder"><i data-lucide="award" class="icon-sm"></i> Competency</a>
     <a href="support.html"><i data-lucide="help-circle" class="icon-sm"></i> Support</a>
-    <a href="community.html" style="color: var(--green);"><i data-lucide="users" class="icon-sm"></i> Community Hub</a>
-    <a href="book.html" style="color: var(--cta);"><i data-lucide="calendar" class="icon-sm"></i> Book Now</a>
+    <a href="community.html" class="c-green"><i data-lucide="users" class="icon-sm"></i> Community Hub</a>
+    <a href="book.html" class="c-cta"><i data-lucide="calendar" class="icon-sm"></i> Book Now</a>
     
-    <div style="margin-top: auto; padding-top: var(--space-6); border-top: 1px solid var(--border);">
-      <button id="theme-toggle-mobile" class="btn btn-secondary btn-block" style="justify-content: flex-start;">
+    <div class="mt-auto-pt6">
+      <button id="theme-toggle-mobile" class="btn btn-secondary btn-block" class="flex-jc-start">
         <i data-lucide="moon" class="icon-sm theme-icon"></i> Toggle Dark Mode
       </button>
     </div>
@@ -194,7 +206,7 @@
   <header class="community-hero">
     <div class="container-narrow">
       <div class="badge badge-accent">Knowledge Base & Legal</div>
-      <h1 class="headline-xl" style="margin-bottom: var(--space-4);">Transparency.<br><span style="color: var(--text-tertiary);">Trust. Security.</span></h1>
+      <h1 class="headline-xl" class="mb-4">Transparency.<br><span class="c-tertiary">Trust. Security.</span></h1>
       <p class="body-lg">Explore technical insights from our engineers, find answers to common questions, and review our strict legal and compliance policies.</p>
     </div>
   </header>
@@ -202,7 +214,7 @@
   <!-- ─── Tips & Developments ─── -->
   <section class="section">
     <div class="container">
-      <div class="section-header" style="text-align: left;">
+      <div class="section-header" class="text-left">
         <h2>Insights & Engineering Tips</h2>
         <p>Expert advice to extend the lifespan of your devices.</p>
       </div>
@@ -213,7 +225,7 @@
             <span class="news-tag">Hardware</span>
             <h3>Is the iPhone 16 more repairable?</h3>
             <p class="body-sm">Our engineers dive into the modular design of Apple's latest flagship and what it means for your future screen swaps.</p>
-            <a href="#" class="btn btn-ghost btn-sm" style="margin-top:var(--space-4); padding:0; color:var(--text-primary);">Read Analysis →</a>
+            <a href="#" class="btn btn-ghost btn-sm" class="summary-key">Read Analysis →</a>
           </div>
         </article>
         <article class="news-card" data-animate>
@@ -222,7 +234,7 @@
             <span class="news-tag">Battery Health</span>
             <h3>Extend your device's lifespan.</h3>
             <p class="body-sm">Learn the "20-80 Rule" for lithium-ion battery health and other technical tips to keep your mobile hardware young.</p>
-            <a href="#" class="btn btn-ghost btn-sm" style="margin-top:var(--space-4); padding:0; color:var(--text-primary);">Get Tips →</a>
+            <a href="#" class="btn btn-ghost btn-sm" class="summary-key">Get Tips →</a>
           </div>
         </article>
         <article class="news-card" data-animate>
@@ -231,7 +243,7 @@
             <span class="news-tag">Security</span>
             <h3>Protect your data privacy.</h3>
             <p class="body-sm">MobiDokta's guide to securing your personal information and performing encrypted backups before a major hardware repair.</p>
-            <a href="#" class="btn btn-ghost btn-sm" style="margin-top:var(--space-4); padding:0; color:var(--text-primary);">Stay Safe →</a>
+            <a href="#" class="btn btn-ghost btn-sm" class="summary-key">Stay Safe →</a>
           </div>
         </article>
       </div>
@@ -239,12 +251,12 @@
   </section>
 
   <!-- ─── MobiDokta in Action / Proof of Precision Showcase Gallery ─── -->
-  <section id="showcase-gallery" class="section" style="background: var(--bg-primary);">
+  <section id="showcase-gallery" class="section" class="bg-primary-sec">
     <div class="container">
-      <div class="section-header" data-animate style="text-align: center; margin-bottom: var(--space-12);">
+      <div class="section-header gal-hdr" data-animate>
         <div class="badge badge-accent">Proof of Precision</div>
-        <h2 style="font-size: var(--text-4xl); margin-bottom: var(--space-4);">MobiDokta in Action.</h2>
-        <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto; line-height: 1.7;">Real-world evidence of our active presence and technical expertise across Gauteng. Select a category below to scroll through our surgical operations, courier deliveries, client interactions, and giveaways.</p>
+        <h2 class="gal-title">MobiDokta in Action.</h2>
+        <p class="gal-subtitle">Real-world evidence of our active presence and technical expertise across Gauteng. Select a category below to scroll through our surgical operations, courier deliveries, client interactions, and giveaways.</p>
       </div>
 
       <!-- Category Filter Tabs -->
@@ -259,7 +271,7 @@
       <!-- Populate by dropping images into img/gallery/repairs/, img/gallery/road/, img/gallery/handovers/ then adding a .gallery-item block per photo with the matching data-category. -->
       <div class="gallery-grid-wrapper" data-animate>
         <div class="gallery-grid-content" id="gallery-grid"></div>
-        <p id="gallery-empty" style="text-align: center; color: var(--text-tertiary); font-size: var(--text-sm); padding: var(--space-12) 0;">Case photography is being curated. Documented work will appear here as cases close.</p>
+        <p id="gallery-empty" class="empty-state">Case photography is being curated. Documented work will appear here as cases close.</p>
       </div>
     </div>
   </section>
@@ -278,7 +290,7 @@
   </div>
 
   <!-- ─── FAQ ─── -->
-  <section class="section" style="background: var(--bg-secondary);">
+  <section class="section" class="bg-secondary">
     <div class="container-narrow">
       <div class="section-header">
         <div class="badge badge-accent">FAQ</div>
@@ -326,13 +338,13 @@
 
       <!-- POPIA -->
       <div class="legal-doc">
-        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <i data-lucide="shield-check" class="icon-xl" style="color: var(--green);"></i>
-            <h3 style="margin: 0;">POPIA Privacy Policy</h3>
+        <div class="flex-between-wrap">
+          <div class="flex-center-gap-12">
+            <i data-lucide="shield-check" class="icon-xl" class="c-green"></i>
+            <h3 class="m-0">POPIA Privacy Policy</h3>
           </div>
         </div>
-        <p style="margin-top: var(--space-4);">In compliance with the Protection of Personal Information Act (POPIA) of South Africa, MobiDokta is committed to protecting your privacy and ensuring that your personal information is collected and used properly, lawfully, and transparently.</p>
+        <p class="mt-4">In compliance with the Protection of Personal Information Act (POPIA) of South Africa, MobiDokta is committed to protecting your privacy and ensuring that your personal information is collected and used properly, lawfully, and transparently.</p>
         <h4>Data Collection & Usage</h4>
         <ul>
           <li>We collect only necessary information (Name, Contact Number, Email, Device IMEI/Serial) required to fulfill our repair contract with you.</li>
@@ -346,13 +358,13 @@
 
       <!-- PAIA -->
       <div class="legal-doc">
-        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <i data-lucide="file-text" class="icon-xl" style="color: var(--text-primary);"></i>
-            <h3 style="margin: 0;">PAIA Manual</h3>
+        <div class="flex-between-wrap">
+          <div class="flex-center-gap-12">
+            <i data-lucide="file-text" class="icon-xl" class="c-primary"></i>
+            <h3 class="m-0">PAIA Manual</h3>
           </div>
         </div>
-        <p style="margin-top: var(--space-4);">Prepared in accordance with Section 51 of the Promotion of Access to Information Act No. 2 of 2000 (PAIA). This manual provides an outline of the types of records and the personal information held by HyperMartX Tech (Pty) Ltd trading as MobiDokta.</p>
+        <p class="mt-4">Prepared in accordance with Section 51 of the Promotion of Access to Information Act No. 2 of 2000 (PAIA). This manual provides an outline of the types of records and the personal information held by HyperMartX Tech (Pty) Ltd trading as MobiDokta.</p>
         <p>Requests for access to records must be made via the prescribed forms outlined in the manual. Applicable fees may apply as per the legislative framework.</p>
         <a href="#" class="doc-download" onclick="alert('PDF Document placeholder. Replace with actual file link.')">
           <i data-lucide="download" class="icon"></i> Download PAIA Manual (PDF)
@@ -361,13 +373,13 @@
 
       <!-- Ts and Cs -->
       <div class="legal-doc">
-        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <i data-lucide="scale" class="icon-xl" style="color: var(--text-primary);"></i>
-            <h3 style="margin: 0;">Terms & Conditions of Service</h3>
+        <div class="flex-between-wrap">
+          <div class="flex-center-gap-12">
+            <i data-lucide="scale" class="icon-xl" class="c-primary"></i>
+            <h3 class="m-0">Terms & Conditions of Service</h3>
           </div>
         </div>
-        <p style="margin-top: var(--space-4);">By booking a repair or utilizing MobiDokta's services, you agree to our comprehensive Terms and Conditions. These rules are designed to protect both the client and the company.</p>
+        <p class="mt-4">By booking a repair or utilizing MobiDokta's services, you agree to our comprehensive Terms and Conditions. These rules are designed to protect both the client and the company.</p>
         <h4>Key Provisions</h4>
         <ul>
           <li><strong>Liability:</strong> While we treat every device with engineering-grade care, MobiDokta is not liable for data loss. Clients must back up devices prior to service.</li>
@@ -384,27 +396,27 @@
   </section>
 
   <!-- ─── Footer ─── -->
-  <footer class="footer" style="background: var(--bg-primary);">
+  <footer class="footer" class="bg-primary-sec">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <a href="index.html" class="logo" style="color: var(--text-primary); margin-bottom: var(--space-4); display: flex;"><img src="./assets/mobidokta-logo.png" alt="MobiDokta — Engineering Grade IT Repairs &amp; Service" style="height:54px;width:auto;display:block;" loading="eager"></a>
-          <p style="color: var(--text-secondary); font-size: var(--text-sm); max-width: 280px; margin-bottom: var(--space-3);">The Private Hospital for Tech. Repairs with Precision. Service with Soul.</p>
-          <p style="color: var(--text-tertiary); font-size: var(--text-xs); margin-bottom: var(--space-6);">HyperMartX Tech (Pty) Ltd · K2025/218955/07</p>
+          <a href="index.html" class="logo ftr-logo-link"><img src="./assets/mobidokta-logo.png" alt="MobiDokta — Engineering Grade IT Repairs &amp; Service" class="logo-nav" loading="eager"></a>
+          <p class="ftr-tagline">The Private Hospital for Tech. Repairs with Precision. Service with Soul.</p>
+          <p class="ftr-reg">HyperMartX Tech (Pty) Ltd · K2025/218955/07</p>
         </div>
         <div class="footer-col">
-          <h4 style="color: var(--text-primary); font-weight: 600;">Legal & Hub</h4>
+          <h4 class="c-primary-bold">Legal & Hub</h4>
           <a href="community.html">FAQ & Legal</a>
           <a href="support.html">Support</a>
         </div>
         <div class="footer-col">
-          <h4 style="color: var(--text-primary); font-weight: 600;">Contact Us</h4>
-          <p style="color: var(--text-secondary); font-size: var(--text-sm); display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px;"><i data-lucide="map-pin" class="icon-sm" style="flex-shrink:0; margin-top: 2px;"></i> Shop 6, Madeira Isles, 262 Klitsgras St, Danville, Pretoria</p>
-          <p style="color: var(--text-secondary); font-size: var(--text-sm); display: flex; align-items: center; gap: 8px; margin-bottom: 8px;"><i data-lucide="phone" class="icon-sm"></i> 078 154 1350</p>
+          <h4 class="c-primary-bold">Contact Us</h4>
+          <p class="ftr-addr"><i data-lucide="map-pin" class="icon-sm" class="ftr-addr-icon"></i> Shop 6, Madeira Isles, 262 Klitsgras St, Danville, Pretoria</p>
+          <p class="ftr-phone"><i data-lucide="phone" class="icon-sm"></i> 078 154 1350</p>
         </div>
       </div>
-      <div class="footer-bottom" style="flex-direction: column; gap: var(--space-2); text-align: center;">
-        <p>&copy; 2026 MobiDokta. All rights reserved. | Built by <a href="https://asitechnologies.co.za" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">ASI Imperium Technologies</a></p>
+      <div class="footer-bottom ftr-bottom-col">
+        <p>&copy; 2026 MobiDokta. All rights reserved. | Built by <a href="https://asitechnologies.co.za" target="_blank" rel="noopener noreferrer" class="c-inherit-underline">ASI Imperium Technologies</a></p>
       </div>
     </div>
   </footer>
