@@ -998,7 +998,171 @@
     /* Admin portal link */
     .admin-link-dim { opacity: 0.5; transition: opacity 0.2s; }
     .admin-link-dim:hover { opacity: 1; }
-    .lock-icon { width: 12px; height: 12px; display: inline-block; vertical-align: middle; }  </style>
+    .lock-icon { width: 12px; height: 12px; display: inline-block; vertical-align: middle; }
+
+    /* ═══════════════════════════════════════════════════
+       CINEMATIC SLIDESHOW HERO — full-viewport, mobile-first
+    ═══════════════════════════════════════════════════ */
+    .hero-slideshow {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      height: 100svh;
+      min-height: 600px;
+      overflow: hidden;
+      background: #0a0a0a;
+    }
+    .hero-slideshow .slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1.2s ease-in-out;
+      display: flex;
+      align-items: flex-end;
+    }
+    .hero-slideshow .slide.active { opacity: 1; }
+    .slide-1 { background-image: url('./img/hero-main.png'); }
+    .slide-2 { background-image: url('./img/hero-android.png'); background-position: center top; }
+    .slide-3 { background-image: url('./img/idx-port-macbook.jpg'); }
+    .slide-4 { background-image: url('./img/idx-svc-water.jpg'); }
+    .slide-5 { background-image: url('./img/idx-svc-battery.jpg'); }
+    .slide-scrim {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.92) 0%,
+        rgba(0,0,0,0.45) 48%,
+        rgba(0,0,0,0.08) 100%
+      );
+    }
+    .slide-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 0 var(--space-8) 5.5rem;
+      max-width: 860px;
+    }
+    .slide-chip {
+      display: block;
+      width: fit-content;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid rgba(255,121,40,0.45);
+      background: rgba(255,121,40,0.1);
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      margin-bottom: var(--space-4);
+    }
+    .slide-title {
+      font-size: clamp(2.8rem, 7.5vw, 5rem) !important;
+      font-weight: 900 !important;
+      line-height: 0.95 !important;
+      letter-spacing: -0.035em !important;
+      color: #fff !important;
+      background: none !important;
+      -webkit-text-fill-color: #fff !important;
+      -webkit-background-clip: unset !important;
+      background-clip: unset !important;
+      animation: none !important;
+      margin-bottom: var(--space-5) !important;
+    }
+    .slide-detail {
+      font-size: var(--text-lg);
+      color: rgba(255,255,255,0.7);
+      margin-bottom: var(--space-8);
+      font-weight: 500;
+      line-height: 1.5;
+    }
+    .slide-detail strong { color: #fff; font-weight: 700; }
+    .slide-actions {
+      display: flex;
+      gap: var(--space-3);
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .btn-slide-book {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #fff !important;
+      font-weight: 700;
+      font-size: var(--text-base);
+      padding: 15px 30px;
+      border-radius: var(--radius-full);
+      text-decoration: none !important;
+      transition: background 0.2s, transform 0.2s;
+      white-space: nowrap;
+    }
+    .btn-slide-book:hover { background: #c95e00; transform: translateY(-2px); }
+    .btn-slide-ghost {
+      display: inline-flex;
+      align-items: center;
+      color: rgba(255,255,255,0.8) !important;
+      font-weight: 600;
+      font-size: var(--text-sm);
+      padding: 15px 22px;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(255,255,255,0.22);
+      text-decoration: none !important;
+      transition: all 0.2s;
+      white-space: nowrap;
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+    }
+    .btn-slide-ghost:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.45); }
+    .slide-pbar {
+      position: absolute;
+      bottom: 0; left: 0;
+      height: 3px; width: 0;
+      background: var(--accent);
+      z-index: 30;
+      transition: width 5s linear;
+    }
+    .slideshow-dots {
+      position: absolute;
+      bottom: 28px; right: var(--space-8);
+      display: flex; gap: 8px;
+      z-index: 30; align-items: center;
+    }
+    .slideshow-dots button {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255,255,255,0.3);
+      padding: 0; cursor: pointer;
+      transition: all 0.35s;
+    }
+    .slideshow-dots button.active {
+      width: 24px;
+      border-radius: 4px;
+      background: var(--accent);
+    }
+    .slide-counter {
+      position: absolute;
+      top: calc(var(--space-24) + 10px);
+      right: var(--space-8);
+      font-size: 11px; font-weight: 700;
+      color: rgba(255,255,255,0.45);
+      z-index: 30; letter-spacing: 0.1em;
+      font-variant-numeric: tabular-nums;
+    }
+    @media (max-width: 768px) {
+      .hero-slideshow { min-height: 560px; }
+      .slide-inner { padding: 0 var(--space-5) 4.5rem; }
+      .slide-detail { font-size: var(--text-base); }
+      .slideshow-dots { right: var(--space-5); bottom: 24px; }
+      .slide-counter { right: var(--space-5); }
+      .btn-slide-book { padding: 14px 24px; font-size: var(--text-sm); }
+      .btn-slide-ghost { padding: 14px 18px; font-size: var(--text-sm); }
+    }
+  </style>
 </head>
 
 <body>
@@ -1031,44 +1195,93 @@
     </div>
   </nav>
 
-  <!-- ─── Hero ─── -->
-  <header class="hero">
-    <div class="container hero-inner">
-      <div class="hero-container">
-        <div class="hero-glass-card">
-          <span class="hero-label">The Private Hospital for Tech</span>
-          <h1 class="hero-title">We Fix.<br>You Love.</h1>
-          <p class="hero-subtitle">Professional repair services for your essential devices.</p>
+  <!-- ─── Hero Slideshow ─── -->
+  <header class="hero-slideshow" id="hero">
 
-          <div class="hero-location-info">
-            Same-day service · All models · Danville, Pretoria
-          </div>
-
-          <a href="service-request.html?type=teleconsult" class="btn-hero-tertiary">
-            <i data-lucide="video" class="icon-sm"></i> Tele‑Consult
-          </a>
-
-          <div class="hero-trust-row">
-            <div class="hero-trust-item">
-              <i data-lucide="shield-check" class="icon-sm"></i> Genuine Parts
-            </div>
-            <div class="hero-trust-item">
-              <i data-lucide="user-check" class="icon-sm"></i> Expert Technicians
-            </div>
-            <div class="hero-trust-item">
-              <i data-lucide="clock" class="icon-sm"></i> Fast Turnaround
-            </div>
-          </div>
-        </div>
-
-        <!-- SEO/Conversion: Sell damaged devices -->
-        <div class="sell-cta" data-animate>
-          <i data-lucide="refresh-cw" class="icon-sm" class="c-green"></i>
-          Sell your damaged iPhone or MacBook? <a href="service-request.html?type=buyback">Get a cash offer instantly
-            →</a>
+    <!-- Slide 1 · iPhone & Apple -->
+    <div class="slide slide-1 active">
+      <div class="slide-scrim"></div>
+      <div class="slide-pbar"></div>
+      <div class="slide-inner">
+        <span class="slide-chip">iPhone · iPad · Apple Watch</span>
+        <h1 class="slide-title">Your iPhone.<br>Fixed today.</h1>
+        <p class="slide-detail">OEM-grade repair · 6-month warranty · from <strong>R960</strong></p>
+        <div class="slide-actions">
+          <a href="book.html?brand=Apple" class="btn-slide-book">Book iPhone Repair →</a>
+          <a href="apple.html#prices" class="btn-slide-ghost">See prices</a>
         </div>
       </div>
     </div>
+
+    <!-- Slide 2 · Samsung & Android -->
+    <div class="slide slide-2">
+      <div class="slide-scrim"></div>
+      <div class="slide-pbar"></div>
+      <div class="slide-inner">
+        <span class="slide-chip">Samsung · Huawei · Xiaomi · All Android</span>
+        <h1 class="slide-title">Galaxy. Restored.<br>Same day.</h1>
+        <p class="slide-detail">AMOLED screen transplants · OEM &amp; Eco grade · from <strong>R280</strong></p>
+        <div class="slide-actions">
+          <a href="book.html?brand=Android" class="btn-slide-book">Book Android Repair →</a>
+          <a href="android.html#prices" class="btn-slide-ghost">See prices</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 · MacBook & Laptops -->
+    <div class="slide slide-3">
+      <div class="slide-scrim"></div>
+      <div class="slide-pbar"></div>
+      <div class="slide-inner">
+        <span class="slide-chip">MacBook · Laptop · iMac · Software</span>
+        <h1 class="slide-title">Your Mac.<br>Back to full health.</h1>
+        <p class="slide-detail">Screen · battery · SSD · virus removal · from <strong>R100</strong></p>
+        <div class="slide-actions">
+          <a href="book.html?brand=MacBook" class="btn-slide-book">Book Computer Repair →</a>
+          <a href="computers.html#prices" class="btn-slide-ghost">See prices</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 4 · Water Damage -->
+    <div class="slide slide-4">
+      <div class="slide-scrim"></div>
+      <div class="slide-pbar"></div>
+      <div class="slide-inner">
+        <span class="slide-chip">Water Damage · Liquid Rescue</span>
+        <h1 class="slide-title">Dropped in water?<br>Don't panic.</h1>
+        <p class="slide-detail">Professional liquid rescue · most devices saved · from <strong>R280</strong></p>
+        <div class="slide-actions">
+          <a href="book.html?svc=Water Damage" class="btn-slide-book">Get Water Rescue →</a>
+          <a href="support.html" class="btn-slide-ghost">What to do now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 5 · Battery -->
+    <div class="slide slide-5">
+      <div class="slide-scrim"></div>
+      <div class="slide-pbar"></div>
+      <div class="slide-inner">
+        <span class="slide-chip">Battery · All Brands · All Models</span>
+        <h1 class="slide-title">All-day battery life,<br>restored.</h1>
+        <p class="slide-detail">iPhone · Samsung · MacBook · Laptop · from <strong>R280</strong></p>
+        <div class="slide-actions">
+          <a href="book.html?svc=Battery" class="btn-slide-book">Book Battery Swap →</a>
+          <a href="apple.html#prices" class="btn-slide-ghost">See prices</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="slideshow-dots" role="tablist" aria-label="Service slides">
+      <button class="active" data-slide="0" aria-label="iPhone repairs" role="tab"></button>
+      <button data-slide="1" aria-label="Android repairs" role="tab"></button>
+      <button data-slide="2" aria-label="Computer repairs" role="tab"></button>
+      <button data-slide="3" aria-label="Water damage rescue" role="tab"></button>
+      <button data-slide="4" aria-label="Battery replacement" role="tab"></button>
+    </div>
+    <span class="slide-counter" id="slide-counter" aria-live="polite">1 / 5</span>
 
   </header>
 
@@ -1898,6 +2111,63 @@
   </script>
   <script src="./js/cookie-consent.js"></script>
   <script src="./js/activity-toasts.js" defer></script>
+  <script>
+    /* ── Cinematic hero slideshow ── */
+    (function () {
+      var ss     = document.getElementById('hero');
+      if (!ss) return;
+      var slides = Array.from(ss.querySelectorAll('.slide'));
+      var dots   = Array.from(ss.querySelectorAll('.slideshow-dots button'));
+      var ctr    = document.getElementById('slide-counter');
+      var cur    = 0, timer;
+
+      function activate(n) {
+        var prev = cur;
+        /* freeze old progress bar immediately */
+        var oldBar = slides[prev].querySelector('.slide-pbar');
+        if (oldBar) { oldBar.style.transition = 'none'; oldBar.style.width = '0'; }
+        slides[prev].classList.remove('active');
+        dots[prev].classList.remove('active');
+
+        cur = ((n % slides.length) + slides.length) % slides.length;
+        slides[cur].classList.add('active');
+        dots[cur].classList.add('active');
+        if (ctr) ctr.textContent = (cur + 1) + ' / ' + slides.length;
+
+        /* restart progress bar via forced reflow */
+        var bar = slides[cur].querySelector('.slide-pbar');
+        if (bar) {
+          bar.style.transition = 'none';
+          bar.style.width = '0';
+          void bar.offsetWidth; /* force reflow */
+          bar.style.transition = '';
+          bar.style.width = '100%';
+        }
+      }
+
+      function start() { timer = setInterval(function () { activate(cur + 1); }, 5000); }
+      function stop()  { clearInterval(timer); }
+
+      dots.forEach(function (btn, i) {
+        btn.addEventListener('click', function () { stop(); activate(i); start(); });
+      });
+
+      /* Touch swipe */
+      var tx = 0;
+      ss.addEventListener('touchstart', function (e) { tx = e.changedTouches[0].clientX; }, { passive: true });
+      ss.addEventListener('touchend',   function (e) {
+        var dx = e.changedTouches[0].clientX - tx;
+        if (Math.abs(dx) > 45) { stop(); activate(dx < 0 ? cur + 1 : cur - 1); start(); }
+      }, { passive: true });
+
+      /* Pause on hover (desktop) */
+      ss.addEventListener('mouseenter', stop);
+      ss.addEventListener('mouseleave', start);
+
+      activate(0);
+      start();
+    }());
+  </script>
 </body>
 
 </html>
