@@ -68,7 +68,9 @@
     .apple-badge { display: inline-flex; align-items: center; gap: 12px; margin-top: var(--space-8); padding: 10px 20px; border: 1px solid rgba(255,255,255,0.12); border-radius: 50px; background: rgba(255,255,255,0.04); backdrop-filter: blur(6px); }
     .apple-badge-icon { color: var(--accent); flex-shrink: 0; }
     .apple-badge-text { font-size: 13px; font-weight: 600; color: var(--text-primary); letter-spacing: 0.02em; }
-    .price-table-wrap { max-width: 900px; margin: 0 auto; overflow-x: auto; max-height: 450px; }  </style>
+    .price-table-wrap { max-width: 960px; margin: 0 auto; overflow-x: auto; }
+    .stu-note { padding: 10px 14px; border-left: 3px solid var(--accent); background: var(--bg-secondary); border-radius: var(--radius-sm); }
+  </style>
 </head>
 <body>
 
@@ -139,96 +141,89 @@
     <div class="container">
       <div class="section-header">
         <h2>Transparent <span class="text-gradient">Pricing</span></h2>
-        <p>No hidden fees. What you see is what you pay.</p>
+        <p>All prices incl. VAT &amp; labour. Student prices shown — bring any valid student card. First diagnosis always free.</p>
       </div>
       <div class="table-container glass price-table-wrap">
-        <h3 class="mb-4">iPhone Screen Repairs (OEM vs Eco)</h3>
+
+        <h3 class="mb-4">iPhone 14, 15 &amp; 16</h3>
+        <p class="body-sm c-tertiary mb-4">OEM = original-grade, longest-lasting (most clients choose this) &nbsp;·&nbsp; Eco = quality aftermarket, ~40% less &nbsp;·&nbsp; Both carry the 6-month warranty.</p>
         <table class="data-table">
-          <thead><tr><th class="sticky-th">Device / Model</th><th class="sticky-th">OEM Original</th><th class="sticky-th">Eco Grade</th><th class="sticky-th">ETA</th><th class="sticky-th">Action</th></tr></thead>
+          <thead><tr><th>Model</th><th>Screen — OEM</th><th>Screen — Eco</th><th>Battery</th><th>Back Glass</th><th>Port</th><th>Book</th></tr></thead>
           <tbody>
-            <tr><td>iPhone 16 Pro Max</td><td>R6,500</td><td>R3,700</td><td>45-60 min</td><td><a href="book.html?brand=Apple&model=iPhone 16 Pro Max&svc=oem" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 16 Pro</td><td>R5,200</td><td>R3,520</td><td>45-60 min</td><td><a href="book.html?brand=Apple&model=iPhone 16 Pro&svc=oem" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 16 Plus</td><td>R4,900</td><td>R2,980</td><td>45-60 min</td><td><a href="book.html?brand=Apple&model=iPhone 16 Plus&svc=oem" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 16</td><td>R4,800</td><td>R2,880</td><td>45-60 min</td><td><a href="book.html?brand=Apple&model=iPhone 16&svc=oem" class="btn btn-primary btn-xs">Book</a></td></tr>
-            
-            <tr><td>iPhone 15 Pro Max</td><td>R5,200</td><td>R3,400</td><td>45-60 min</td><td><a href="book.html?brand=Apple&model=iPhone 15 Pro Max&svc=oem" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 15 Pro</td><td>R5,200</td><td>R3,400</td><td>45-60 min</td><td><a href="book.html?brand=Apple&model=iPhone 15 Pro&svc=oem" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 15 Plus</td><td>R4,700</td><td>R2,300</td><td>45-60 min</td><td><a href="book.html?brand=Apple&model=iPhone 15 Plus&svc=oem" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 15</td><td>R4,600</td><td>R2,200</td><td>45-60 min</td><td><a href="book.html?brand=Apple&model=iPhone 15&svc=oem" class="btn btn-primary btn-xs">Book</a></td></tr>
-            
-            <tr><td>iPhone 14 Pro Max</td><td>R4,999</td><td>R2,999</td><td>45-60 min</td><td><a href="book.html?brand=Apple&model=iPhone 14 Pro Max&svc=oem" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 14 Pro</td><td>R4,999</td><td>R2,999</td><td>45-60 min</td><td><a href="book.html?brand=Apple&model=iPhone 14 Pro&svc=oem" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 14 Plus</td><td>R3,500</td><td>R2,100</td><td>45-60 min</td><td><a href="book.html?brand=Apple&model=iPhone 14 Plus&svc=oem" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 14</td><td>R3,400</td><td>R2,000</td><td>45-60 min</td><td><a href="book.html?brand=Apple&model=iPhone 14&svc=oem" class="btn btn-primary btn-xs">Book</a></td></tr>
-            
-            <tr><td>iPhone 13 Pro Max</td><td>R3,899</td><td>R2,399</td><td>30-45 min</td><td><a href="book.html?brand=Apple&model=iPhone 13 Pro Max&svc=oem" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 13 Pro</td><td>R3,899</td><td>R2,399</td><td>30-45 min</td><td><a href="book.html?brand=Apple&model=iPhone 13 Pro&svc=oem" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 13</td><td>R2,999</td><td>R1,800</td><td>30-45 min</td><td><a href="book.html?brand=Apple&model=iPhone 13&svc=oem" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 13 Mini</td><td>R2,899</td><td>R1,750</td><td>30-45 min</td><td><a href="book.html?brand=Apple&model=iPhone 13 Mini&svc=oem" class="btn btn-primary btn-xs">Book</a></td></tr>
-            
-            <tr><td>iPhone 12 Pro Max</td><td>R3,499</td><td>R1,899</td><td>30-45 min</td><td><a href="book.html?brand=Apple&model=iPhone 12 Pro Max&svc=oem" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 12 Pro</td><td>R3,399</td><td>R1,499</td><td>30-45 min</td><td><a href="book.html?brand=Apple&model=iPhone 12 Pro&svc=oem" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 12</td><td>R3,299</td><td>R1,449</td><td>30-45 min</td><td><a href="book.html?brand=Apple&model=iPhone 12&svc=oem" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 12 Mini</td><td>R2,999</td><td>R1,399</td><td>30-45 min</td><td><a href="book.html?brand=Apple&model=iPhone 12 Mini&svc=oem" class="btn btn-primary btn-xs">Book</a></td></tr>
-            
-            <tr><td>iPhone 11 Pro Max</td><td>R2,499</td><td>R1,499</td><td>30-45 min</td><td><a href="book.html?brand=Apple&model=iPhone 11 Pro Max&svc=oem" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 11 Pro</td><td>R2,299</td><td>R1,199</td><td>30-45 min</td><td><a href="book.html?brand=Apple&model=iPhone 11 Pro&svc=oem" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 11</td><td>R1,999</td><td>R1,139</td><td>30-45 min</td><td><a href="book.html?brand=Apple&model=iPhone 11&svc=oem" class="btn btn-primary btn-xs">Book</a></td></tr>
-            
-            <tr><td>iPhone XS Max</td><td>R2,199</td><td>R1,349</td><td>30-45 min</td><td><a href="book.html?brand=Apple&model=iPhone XS Max&svc=oem" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone XS</td><td>R1,999</td><td>R999</td><td>30-45 min</td><td><a href="book.html?brand=Apple&model=iPhone XS&svc=oem" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone X</td><td>R1,899</td><td>R899</td><td>30-45 min</td><td><a href="book.html?brand=Apple&model=iPhone X&svc=oem" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone XR</td><td>R1,699</td><td>R999</td><td>30-45 min</td><td><a href="book.html?brand=Apple&model=iPhone XR&svc=oem" class="btn btn-primary btn-xs">Book</a></td></tr>
-            
-            <tr><td>iPhone 8 Plus</td><td>R1,299</td><td>R899</td><td>20-30 min</td><td><a href="book.html?brand=Apple&model=iPhone 8 Plus&svc=oem" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 8</td><td>R1,199</td><td>R799</td><td>20-30 min</td><td><a href="book.html?brand=Apple&model=iPhone 8&svc=oem" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone SE</td><td>R1,199</td><td>R799</td><td>20-30 min</td><td><a href="book.html?brand=Apple&model=iPhone SE&svc=oem" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>iPhone 16 Pro Max</td><td>R5,200</td><td>R2,960</td><td>R1,520</td><td>R3,600</td><td>R960</td><td><a href="book.html?brand=Apple&model=iPhone 16 Pro Max" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>iPhone 16 Pro</td><td>R4,160</td><td>R2,820</td><td>R1,120</td><td>R3,440</td><td>R880</td><td><a href="book.html?brand=Apple&model=iPhone 16 Pro" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>iPhone 16 Plus</td><td>R3,840</td><td>R2,300</td><td>R1,120</td><td>R3,200</td><td>R800</td><td><a href="book.html?brand=Apple&model=iPhone 16 Plus" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>iPhone 16</td><td>R3,840</td><td>R2,300</td><td>R1,120</td><td>R3,200</td><td>R800</td><td><a href="book.html?brand=Apple&model=iPhone 16" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>iPhone 15 Pro Max</td><td>R4,160</td><td>R2,720</td><td>R1,200</td><td>R3,440</td><td>R880</td><td><a href="book.html?brand=Apple&model=iPhone 15 Pro Max" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>iPhone 15 Pro</td><td>R3,760</td><td>R2,160</td><td>R1,120</td><td>R3,200</td><td>R800</td><td><a href="book.html?brand=Apple&model=iPhone 15 Pro" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>iPhone 15 Plus</td><td>R3,600</td><td>R2,080</td><td>R1,120</td><td>R3,040</td><td>R720</td><td><a href="book.html?brand=Apple&model=iPhone 15 Plus" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>iPhone 15</td><td>R3,600</td><td>R2,080</td><td>R1,040</td><td>R3,040</td><td>R720</td><td><a href="book.html?brand=Apple&model=iPhone 15" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>iPhone 14 Pro Max</td><td>R4,000</td><td>R2,400</td><td>R1,120</td><td>R3,040</td><td>R800</td><td><a href="book.html?brand=Apple&model=iPhone 14 Pro Max" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>iPhone 14 Pro</td><td>R3,600</td><td>R2,160</td><td>R960</td><td>R2,640</td><td>R720</td><td><a href="book.html?brand=Apple&model=iPhone 14 Pro" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>iPhone 14 Plus</td><td>R3,200</td><td>R2,240</td><td>R960</td><td>R2,240</td><td>R680</td><td><a href="book.html?brand=Apple&model=iPhone 14 Plus" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>iPhone 14</td><td>R3,200</td><td>R2,240</td><td>R880</td><td>R2,080</td><td>R640</td><td><a href="book.html?brand=Apple&model=iPhone 14" class="btn btn-primary btn-xs">Book</a></td></tr>
           </tbody>
         </table>
-        
-        <h3 class="my-8-4">iPhone Battery Replacements</h3>
+
+        <h3 class="my-8-4">iPhone 11, 12, 13 &amp; Earlier</h3>
         <table class="data-table">
-          <thead><tr><th>Device / Model</th><th>Price</th><th>ETA</th><th>Status</th><th>Action</th></tr></thead>
+          <thead><tr><th>Model</th><th>Screen — OEM</th><th>Screen — Eco</th><th>Battery</th><th>Back Glass</th><th>Port</th><th>Book</th></tr></thead>
           <tbody>
-            <tr><td>iPhone 16 Pro Max</td><td>R1,899</td><td>35-55 min</td><td>In Stock</td><td><a href="book.html?brand=Apple&model=iPhone 16 Pro Max&svc=batt" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 16 Pro</td><td>R1,799</td><td>35-55 min</td><td>In Stock</td><td><a href="book.html?brand=Apple&model=iPhone 16 Pro&svc=batt" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 16 Plus</td><td>R1,699</td><td>35-55 min</td><td>In Stock</td><td><a href="book.html?brand=Apple&model=iPhone 16 Plus&svc=batt" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 16</td><td>R1,599</td><td>35-55 min</td><td>In Stock</td><td><a href="book.html?brand=Apple&model=iPhone 16&svc=batt" class="btn btn-primary btn-xs">Book</a></td></tr>
-            
-            <tr><td>iPhone 15 Pro Max</td><td>R1,549</td><td>35-55 min</td><td>In Stock</td><td><a href="book.html?brand=Apple&model=iPhone 15 Pro Max&svc=batt" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 15 Pro</td><td>R1,449</td><td>35-55 min</td><td>In Stock</td><td><a href="book.html?brand=Apple&model=iPhone 15 Pro&svc=batt" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 15 Plus</td><td>R1,399</td><td>35-55 min</td><td>In Stock</td><td><a href="book.html?brand=Apple&model=iPhone 15 Plus&svc=batt" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 15</td><td>R1,299</td><td>35-55 min</td><td>In Stock</td><td><a href="book.html?brand=Apple&model=iPhone 15&svc=batt" class="btn btn-primary btn-xs">Book</a></td></tr>
-            
-            <tr><td>iPhone 14 Pro Max</td><td>R1,349</td><td>30-45 min</td><td>In Stock</td><td><a href="book.html?brand=Apple&model=iPhone 14 Pro Max&svc=batt" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 14 Pro</td><td>R1,249</td><td>30-45 min</td><td>In Stock</td><td><a href="book.html?brand=Apple&model=iPhone 14 Pro&svc=batt" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 14 Plus</td><td>R1,199</td><td>30-45 min</td><td>In Stock</td><td><a href="book.html?brand=Apple&model=iPhone 14 Plus&svc=batt" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 14</td><td>R1,099</td><td>30-45 min</td><td>In Stock</td><td><a href="book.html?brand=Apple&model=iPhone 14&svc=batt" class="btn btn-primary btn-xs">Book</a></td></tr>
-            
-            <tr><td>iPhone 13 Pro Max</td><td>R1,149</td><td>30 min</td><td>In Stock</td><td><a href="book.html?brand=Apple&model=iPhone 13 Pro Max&svc=batt" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 13 Pro</td><td>R1,049</td><td>30 min</td><td>In Stock</td><td><a href="book.html?brand=Apple&model=iPhone 13 Pro&svc=batt" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 13</td><td>R949</td><td>30 min</td><td>In Stock</td><td><a href="book.html?brand=Apple&model=iPhone 13&svc=batt" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 13 Mini</td><td>R849</td><td>30 min</td><td>In Stock</td><td><a href="book.html?brand=Apple&model=iPhone 13 Mini&svc=batt" class="btn btn-primary btn-xs">Book</a></td></tr>
-            
-            <tr><td>iPhone 12 Pro Max</td><td>R999</td><td>30 min</td><td>In Stock</td><td><a href="book.html?brand=Apple&model=iPhone 12 Pro Max&svc=batt" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 12 Pro</td><td>R899</td><td>30 min</td><td>In Stock</td><td><a href="book.html?brand=Apple&model=iPhone 12 Pro&svc=batt" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 12</td><td>R849</td><td>30 min</td><td>In Stock</td><td><a href="book.html?brand=Apple&model=iPhone 12&svc=batt" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 12 Mini</td><td>R799</td><td>30 min</td><td>In Stock</td><td><a href="book.html?brand=Apple&model=iPhone 12 Mini&svc=batt" class="btn btn-primary btn-xs">Book</a></td></tr>
-            
-            <tr><td>iPhone 11 Pro Max</td><td>R899</td><td>25 min</td><td>In Stock</td><td><a href="book.html?brand=Apple&model=iPhone 11 Pro Max&svc=batt" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 11 Pro</td><td>R849</td><td>25 min</td><td>In Stock</td><td><a href="book.html?brand=Apple&model=iPhone 11 Pro&svc=batt" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 11</td><td>R799</td><td>25 min</td><td>In Stock</td><td><a href="book.html?brand=Apple&model=iPhone 11&svc=batt" class="btn btn-primary btn-xs">Book</a></td></tr>
-            
-            <tr><td>iPhone XS Max</td><td>R849</td><td>25 min</td><td>In Stock</td><td><a href="book.html?brand=Apple&model=iPhone XS Max&svc=batt" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone XS</td><td>R799</td><td>25 min</td><td>In Stock</td><td><a href="book.html?brand=Apple&model=iPhone XS&svc=batt" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone X</td><td>R749</td><td>25 min</td><td>In Stock</td><td><a href="book.html?brand=Apple&model=iPhone X&svc=batt" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone XR</td><td>R799</td><td>25 min</td><td>In Stock</td><td><a href="book.html?brand=Apple&model=iPhone XR&svc=batt" class="btn btn-primary btn-xs">Book</a></td></tr>
-            
-            <tr><td>iPhone 8 Plus</td><td>R649</td><td>20 min</td><td>In Stock</td><td><a href="book.html?brand=Apple&model=iPhone 8 Plus&svc=batt" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone 8</td><td>R599</td><td>20 min</td><td>In Stock</td><td><a href="book.html?brand=Apple&model=iPhone 8&svc=batt" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>iPhone SE</td><td>R599</td><td>20 min</td><td>In Stock</td><td><a href="book.html?brand=Apple&model=iPhone SE&svc=batt" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>iPhone 13 Pro Max</td><td>R3,120</td><td>R1,920</td><td>R840</td><td>R2,320</td><td>R720</td><td><a href="book.html?brand=Apple&model=iPhone 13 Pro Max" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>iPhone 13 Pro</td><td>R2,960</td><td>R1,700</td><td>R800</td><td>R2,320</td><td>R680</td><td><a href="book.html?brand=Apple&model=iPhone 13 Pro" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>iPhone 13 / 13 mini</td><td>R2,640</td><td>R1,340</td><td>R800</td><td>R1,760</td><td>R640</td><td><a href="book.html?brand=Apple&model=iPhone 13" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>iPhone 12 Pro Max</td><td>R3,040</td><td>R1,360</td><td>R800</td><td>R2,320</td><td>R680</td><td><a href="book.html?brand=Apple&model=iPhone 12 Pro Max" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>iPhone 12 Pro</td><td>R2,640</td><td>R1,160</td><td>R680</td><td>R1,760</td><td>R640</td><td><a href="book.html?brand=Apple&model=iPhone 12 Pro" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>iPhone 12 / 12 mini</td><td>R2,640</td><td>R1,160</td><td>R680</td><td>R1,760</td><td>R600</td><td><a href="book.html?brand=Apple&model=iPhone 12" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>iPhone 11 Pro Max</td><td>R2,000</td><td>R1,200</td><td>R720</td><td>R1,520</td><td>R640</td><td><a href="book.html?brand=Apple&model=iPhone 11 Pro Max" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>iPhone 11 Pro</td><td>R1,760</td><td>R1,040</td><td>R680</td><td>R1,520</td><td>R600</td><td><a href="book.html?brand=Apple&model=iPhone 11 Pro" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>iPhone 11</td><td>R1,600</td><td>R910</td><td>R640</td><td>R1,200</td><td>R560</td><td><a href="book.html?brand=Apple&model=iPhone 11" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>iPhone XS Max</td><td>R1,680</td><td>R860</td><td>R600</td><td>R1,200</td><td>R560</td><td><a href="book.html?brand=Apple&model=iPhone XS Max" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>iPhone X / XS</td><td>R1,440</td><td>R770</td><td>R600</td><td>R1,120</td><td>R560</td><td><a href="book.html?brand=Apple&model=iPhone X" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>iPhone XR</td><td>R1,480</td><td>R720</td><td>R640</td><td>R1,120</td><td>R560</td><td><a href="book.html?brand=Apple&model=iPhone XR" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>iPhone 8 Plus</td><td>R1,120</td><td>R680</td><td>R560</td><td>R1,040</td><td>R520</td><td><a href="book.html?brand=Apple&model=iPhone 8 Plus" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>iPhone 8 / SE</td><td>R960</td><td>R640</td><td>R480</td><td>R960</td><td>R520</td><td><a href="book.html?brand=Apple&model=iPhone 8" class="btn btn-primary btn-xs">Book</a></td></tr>
           </tbody>
         </table>
+
+        <h3 class="my-8-4">Apple Watch</h3>
+        <p class="body-sm c-tertiary mb-4">Glass-only = cracked glass but screen still lights up (OLED re-glassed) &nbsp;·&nbsp; Full display = screen black, dead or lined &nbsp;·&nbsp; +R200 on screen repairs for 44/45/49mm cases.</p>
+        <table class="data-table">
+          <thead><tr><th>Model (Case Size)</th><th>Glass-Only</th><th>Full Display</th><th>Battery</th><th>Crown</th><th>Coil / Sensor</th><th>Book</th></tr></thead>
+          <tbody>
+            <tr><td>Watch Series 1 (38/42mm)</td><td>R720</td><td>R1,040</td><td>R400</td><td>R480</td><td>R640</td><td><a href="book.html?brand=Apple&model=Apple Watch Series 1" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Watch Series 2 (38/42mm)</td><td>R1,040</td><td>R1,600</td><td>R400</td><td>R480</td><td>R680</td><td><a href="book.html?brand=Apple&model=Apple Watch Series 2" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Watch Series 3 (38/42mm)</td><td>R1,120</td><td>R1,760</td><td>R400</td><td>R480</td><td>R720</td><td><a href="book.html?brand=Apple&model=Apple Watch Series 3" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Watch Series 4 (40/44mm)</td><td>R1,360</td><td>R2,160</td><td>R480</td><td>R640</td><td>R960</td><td><a href="book.html?brand=Apple&model=Apple Watch Series 4" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Watch Series 5 (40/44mm)</td><td>R1,680</td><td>R2,320</td><td>R480</td><td>R720</td><td>R1,120</td><td><a href="book.html?brand=Apple&model=Apple Watch Series 5" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Watch SE — 1st gen (40/44mm)</td><td>R1,760</td><td>R2,240</td><td>R480</td><td>R880</td><td>R1,120</td><td><a href="book.html?brand=Apple&model=Apple Watch SE 1" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Watch Series 6 (40/44mm)</td><td>R1,760</td><td>R2,480</td><td>R480</td><td>R880</td><td>R1,360</td><td><a href="book.html?brand=Apple&model=Apple Watch Series 6" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Watch SE — 2nd gen (40/44mm)</td><td>R1,760</td><td>R2,320</td><td>R480</td><td>R880</td><td>R1,200</td><td><a href="book.html?brand=Apple&model=Apple Watch SE 2" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Watch Series 7 (41/45mm)</td><td>R1,840</td><td>R2,800</td><td>R480</td><td>R960</td><td>R1,520</td><td><a href="book.html?brand=Apple&model=Apple Watch Series 7" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Watch Series 8 (41/45mm)</td><td>R2,000</td><td>R2,960</td><td>R560</td><td>R1,120</td><td>R1,760</td><td><a href="book.html?brand=Apple&model=Apple Watch Series 8" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Watch Series 9 (41/45mm)</td><td>R2,160</td><td>R3,120</td><td>R560</td><td>R1,200</td><td>R1,920</td><td><a href="book.html?brand=Apple&model=Apple Watch Series 9" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Watch Series 10 (42/46mm)</td><td>R2,320</td><td>R3,360</td><td>R640</td><td>R1,280</td><td>R2,000</td><td><a href="book.html?brand=Apple&model=Apple Watch Series 10" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Watch Ultra (49mm)</td><td>R2,400</td><td>R3,840</td><td>R720</td><td>R1,440</td><td>R2,160</td><td><a href="book.html?brand=Apple&model=Apple Watch Ultra" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Watch Ultra 2 (49mm)</td><td>R2,560</td><td>R4,000</td><td>R800</td><td>R1,520</td><td>R2,320</td><td><a href="book.html?brand=Apple&model=Apple Watch Ultra 2" class="btn btn-primary btn-xs">Book</a></td></tr>
+          </tbody>
+        </table>
+
+        <h3 class="my-8-4">iPad</h3>
+        <p class="body-sm c-tertiary mb-4">Screen = full display / digitizer assembly. On some models a cracked-glass-only repair is cheaper — we always check the lighter fix first. Both carry the 6-month warranty.</p>
+        <table class="data-table">
+          <thead><tr><th>Model</th><th>Screen</th><th>Battery</th><th>Charging Port</th><th>Book</th></tr></thead>
+          <tbody>
+            <tr><td>iPad Pro 12.9" (M2)</td><td>R4,400</td><td>R960</td><td>R880</td><td><a href="book.html?brand=Apple&model=iPad Pro 12.9 M2" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>iPad Pro 11" (M2)</td><td>R3,600</td><td>R880</td><td>R800</td><td><a href="book.html?brand=Apple&model=iPad Pro 11 M2" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>iPad Air (M2)</td><td>R3,200</td><td>R800</td><td>R800</td><td><a href="book.html?brand=Apple&model=iPad Air M2" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>iPad Air (M1)</td><td>R3,040</td><td>R720</td><td>R720</td><td><a href="book.html?brand=Apple&model=iPad Air M1" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>iPad mini (6th gen)</td><td>R2,320</td><td>R720</td><td>R720</td><td><a href="book.html?brand=Apple&model=iPad mini 6" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>iPad (10th gen)</td><td>R2,240</td><td>R720</td><td>R720</td><td><a href="book.html?brand=Apple&model=iPad 10th gen" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>iPad (9th gen)</td><td>R1,520</td><td>R720</td><td>R720</td><td><a href="book.html?brand=Apple&model=iPad 9th gen" class="btn btn-primary btn-xs">Book</a></td></tr>
+          </tbody>
+        </table>
+
+        <p class="text-center-sm mt-6">Don't see your exact model? We repair them all — <a href="https://wa.me/27781541350" class="c-accent">WhatsApp 078 154 1350</a> for an instant, exact quote.</p>
       </div>
     </div>
   </section>
