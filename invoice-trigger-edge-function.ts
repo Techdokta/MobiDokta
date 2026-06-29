@@ -1,6 +1,7 @@
 // supabase/functions/invoice-trigger/index.ts
 // MobiDokta Invoice Trigger Edge Function
 // Deploy: supabase functions deploy invoice-trigger
+// @ts-nocheck — Deno runtime; VS Code TS server does not resolve Deno module URLs
 
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 

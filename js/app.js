@@ -175,8 +175,8 @@ const MobiApp = {
     const mobileToggle = document.getElementById('theme-toggle-mobile');
     const themeIcons = document.querySelectorAll('.theme-icon, #theme-toggle .icon-sm');
 
-    // Check localStorage
-    const savedTheme = localStorage.getItem('mobidokta-theme');
+    // Dark is the default — light mode must be explicitly chosen
+    const savedTheme = localStorage.getItem('mobidokta-theme') || 'dark';
     if (savedTheme === 'dark') {
       root.classList.add('dark-theme');
       updateIcons('sun');
