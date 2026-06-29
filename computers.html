@@ -76,19 +76,23 @@
   <nav class="navbar">
     <a href="index.html" class="logo"><img src="./assets/mobidokta-logo.svg" alt="MobiDokta — Engineering Grade IT Repairs &amp; Service" class="logo-nav" loading="eager"></a>
     <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="book.html">Book</a>
-      <a href="apple.html">Apple</a>
-      <a href="computers.html" class="active">Laptops & PCs</a>
-      <a href="support.html">Support</a>
+      <div class="nav-dropdown">
+        <a href="index.html#services" class="dropdown-trigger active">Repairs</a>
+        <div class="dropdown-menu">
+          <a href="apple.html">Apple</a>
+          <a href="android.html">Android</a>
+          <a href="computers.html" class="active">Laptops &amp; PCs</a>
+        </div>
+      </div>
       <a href="shop.html">Shop</a>
       <a href="applecity.html" class="nav-ac">Appl3City</a>
+      <a href="community.html">Blog</a>
     </div>
     <div class="nav-right">
-      <button class="cart-icon-btn" aria-label="Open cart">
-        <i data-lucide="shopping-bag" class="icon-sm"></i>
-        <span class="cart-badge" hidden>0</span>
-      </button>
+      <a href="https://wa.me/27781541350" class="nav-wa-link" target="_blank" rel="noopener" title="WhatsApp us now">
+        <i data-lucide="message-circle" class="icon-sm"></i>
+      </a>
+      <a href="book.html?brand=MacBook" class="btn btn-primary btn-sm nav-btn-desktop">Book Repair</a>
       <a href="book.html?brand=MacBook" class="nav-book-mobile" aria-label="Book a repair">
         <i data-lucide="calendar-check" class="icon-sm"></i> Book
       </a>
@@ -318,6 +322,7 @@
   </section>
 
   <script src="./js/shop.js"></script>
+  <a href="https://wa.me/27781541350" target="_blank" rel="noopener" class="whatsapp-fab" title="Chat on WhatsApp"><i data-lucide="message-circle" class="icon-lg"></i></a>
   <script src="./js/app.js"></script>
   <script src="./js/cookie-consent.js"></script>
 </body>

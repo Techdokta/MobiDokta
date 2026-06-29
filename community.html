@@ -33,10 +33,33 @@
   <meta name="twitter:title" content="Device Care Hub | MobiDokta" />
   <meta name="twitter:description" content="Tips, guides and compliance info from MobiDokta, Danville, Pretoria." />
   <meta name="twitter:image" content="https://www.mobidokta.co.za/img/og-cover.png" />
+  <meta name="geo.region" content="ZA-GT" />
+  <meta name="geo.placename" content="Danville, Pretoria, Gauteng" />
+  <meta name="geo.position" content="-25.744000;28.145200" />
+  <meta name="ICBM" content="-25.744000, 28.145200" />
   <link rel="stylesheet" href="./css/global.css">
   <link rel="stylesheet" href="./css/utilities.css">
   <link rel="preconnect" href="https://unpkg.com" crossorigin />
   <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.mobidokta.co.za/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.mobidokta.co.za/community.html"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"ItemList","name":"MobiDokta Engineering Blog","itemListElement":[
+    {"@type":"ListItem","position":1,"url":"https://www.mobidokta.co.za/blog-iphone-16-repairability.html","name":"Is the iPhone 16 More Repairable? A Workshop Engineer's Take"},
+    {"@type":"ListItem","position":2,"url":"https://www.mobidokta.co.za/blog-extend-battery-life.html","name":"The 20-80 Rule: How to Double Your Phone Battery Lifespan"},
+    {"@type":"ListItem","position":3,"url":"https://www.mobidokta.co.za/blog-protect-data-before-repair.html","name":"Is Your Data Safe at a Repair Shop? Here's How to Make Sure"}
+  ]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is the difference between OEM and Eco-grade parts?","acceptedAnswer":{"@type":"Answer","text":"OEM (Original Equipment Manufacturer) parts are identical in specification and performance to the parts originally installed in your device. Eco-grade parts are high-quality aftermarket alternatives that offer excellent functionality at a lower price, though they may have slight variations in brightness or colour temperature."}},
+    {"@type":"Question","name":"Is my data safe during a repair?","acceptedAnswer":{"@type":"Answer","text":"Yes. MobiDokta operates under strict POPIA compliance. Our engineers do not access your personal files. For hardware repairs like screen or battery replacements, your data remains untouched. We always recommend performing a full backup before handing your device over."}},
+    {"@type":"Question","name":"Do you offer a courier service for repairs?","acceptedAnswer":{"@type":"Answer","text":"Yes. MobiDokta offers a fully insured, nationwide courier service via RAM and The Courier Guy. Book online, we dispatch a courier to collect your device, repair it, and courier it back packaged in premium anti-shock material. You are updated via WhatsApp at every step."}},
+    {"@type":"Question","name":"How long does a repair take?","acceptedAnswer":{"@type":"Answer","text":"Most screen and battery repairs are completed same-day, often within 30 to 60 minutes for walk-in appointments. Complex repairs such as water damage or board-level micro-soldering may take 24 to 72 hours depending on parts availability."}},
+    {"@type":"Question","name":"Do you buy or trade in broken phones?","acceptedAnswer":{"@type":"Answer","text":"Yes. MobiDokta has an instant buyback and upgrade programme. Bring in your damaged or outdated iPhone, MacBook, or Samsung. Our technicians evaluate its condition and offer you instant cash or credit towards a newer pre-owned model from Appl3City."}}
+  ]}
+  </script>
   <style>
     .community-hero { 
       padding: var(--space-32) var(--space-8) var(--space-16); 
@@ -225,7 +248,7 @@
             <span class="news-tag">Hardware</span>
             <h3>Is the iPhone 16 more repairable?</h3>
             <p class="body-sm">Our engineers dive into the modular design of Apple's latest flagship and what it means for your future screen swaps.</p>
-            <a href="#" class="btn btn-ghost btn-sm" class="summary-key">Read Analysis →</a>
+            <a href="blog-iphone-16-repairability.html" class="btn btn-ghost btn-sm">Read Analysis →</a>
           </div>
         </article>
         <article class="news-card" data-animate>
@@ -234,7 +257,7 @@
             <span class="news-tag">Battery Health</span>
             <h3>Extend your device's lifespan.</h3>
             <p class="body-sm">Learn the "20-80 Rule" for lithium-ion battery health and other technical tips to keep your mobile hardware young.</p>
-            <a href="#" class="btn btn-ghost btn-sm" class="summary-key">Get Tips →</a>
+            <a href="blog-extend-battery-life.html" class="btn btn-ghost btn-sm">Get Tips →</a>
           </div>
         </article>
         <article class="news-card" data-animate>
@@ -243,7 +266,7 @@
             <span class="news-tag">Security</span>
             <h3>Protect your data privacy.</h3>
             <p class="body-sm">MobiDokta's guide to securing your personal information and performing encrypted backups before a major hardware repair.</p>
-            <a href="#" class="btn btn-ghost btn-sm" class="summary-key">Stay Safe →</a>
+            <a href="blog-protect-data-before-repair.html" class="btn btn-ghost btn-sm">Stay Safe →</a>
           </div>
         </article>
       </div>
@@ -351,8 +374,8 @@
           <li>Your data is never sold to third parties.</li>
           <li>Physical devices are kept securely in our 24/7 monitored facility and data on the device is strictly confidential.</li>
         </ul>
-        <a href="#" class="doc-download" onclick="alert('PDF Document placeholder. Replace with actual file link.')">
-          <i data-lucide="download" class="icon"></i> Download Signed POPIA Policy (PDF)
+        <a href="legal/privacy.html" class="doc-download">
+          <i data-lucide="file-text" class="icon"></i> View POPIA Privacy Policy
         </a>
       </div>
 
@@ -366,8 +389,8 @@
         </div>
         <p class="mt-4">Prepared in accordance with Section 51 of the Promotion of Access to Information Act No. 2 of 2000 (PAIA). This manual provides an outline of the types of records and the personal information held by HyperMartX Tech (Pty) Ltd trading as MobiDokta.</p>
         <p>Requests for access to records must be made via the prescribed forms outlined in the manual. Applicable fees may apply as per the legislative framework.</p>
-        <a href="#" class="doc-download" onclick="alert('PDF Document placeholder. Replace with actual file link.')">
-          <i data-lucide="download" class="icon"></i> Download PAIA Manual (PDF)
+        <a href="legal/paia.html" class="doc-download">
+          <i data-lucide="file-text" class="icon"></i> View PAIA Manual
         </a>
       </div>
 
@@ -387,8 +410,8 @@
           <li><strong>Payment & Collection:</strong> Payment is strictly due upon completion of the repair. Devices not collected within 90 days of notification may be sold to defray costs in accordance with SA law. Nationwide courier returns require EFT clearance prior to dispatch.</li>
           <li><strong>Booking Fees:</strong> Walk-in appointments and call-outs may require a non-refundable diagnostic/booking fee, which is deducted from the final repair invoice if you proceed.</li>
         </ul>
-        <a href="#" class="doc-download" onclick="alert('PDF Document placeholder. Replace with actual file link.')">
-          <i data-lucide="download" class="icon"></i> Download Comprehensive T&Cs (PDF)
+        <a href="legal/terms.html" class="doc-download">
+          <i data-lucide="file-text" class="icon"></i> View Terms &amp; Conditions
         </a>
       </div>
 
@@ -421,6 +444,7 @@
     </div>
   </footer>
 
+  <a href="https://wa.me/27781541350" target="_blank" rel="noopener" class="whatsapp-fab" title="Chat on WhatsApp"><i data-lucide="message-circle" class="icon-lg"></i></a>
   <script src="./js/app.js"></script>
   <script>
     // Initialize Lucide icons
