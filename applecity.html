@@ -213,6 +213,11 @@
       border-radius: 50%;
       flex-shrink: 0;
     }
+    .ac-grade-new      { background: #34c759; }
+    .ac-grade-sealed   { background: #007aff; }
+    .ac-grade-preowned { background: #8e8e93; }
+    .ac-grade-special  { background: #ff9500; }
+    .ac-footer-copy    { margin-top: 8px; font-size: 11px; opacity: 0.38; }
 
     /* ── Category filter ── */
     .ac-filter-bar {
@@ -525,10 +530,10 @@
     <p class="ac-hero-cert">Certified by <span>MobiDokta</span> &nbsp;·&nbsp; Winter 2026 &nbsp;·&nbsp; All prices include VAT</p>
     <div class="ac-hero-ctas">
       <a href="https://wa.me/27781541350?text=Hi+Appl3City%21+I%27d+like+to+see+what+phones+you+have+in+stock." target="_blank" rel="noopener" class="btn-ac-wa">
-        <i data-lucide="message-circle" style="width:16px;height:16px"></i> WhatsApp Us
+        <i data-lucide="message-circle" class="icon-sm"></i> WhatsApp Us
       </a>
       <a href="#ac-devices" class="btn-ac-scroll">
-        <i data-lucide="chevrons-down" style="width:16px;height:16px"></i> Browse Devices
+        <i data-lucide="chevrons-down" class="icon-sm"></i> Browse Devices
       </a>
     </div>
   </header>
@@ -557,10 +562,10 @@
   <div class="ac-grades-bar">
     <div class="ac-grades-inner">
       <span class="ac-grades-label">Grades:</span>
-      <span class="ac-grade-pill"><span class="ac-grade-dot" style="background:#34c759"></span>Brand New — Factory sealed, 1-yr Apple warranty</span>
-      <span class="ac-grade-pill"><span class="ac-grade-dot" style="background:#007aff"></span>Sealed — New in box</span>
-      <span class="ac-grade-pill"><span class="ac-grade-dot" style="background:#8e8e93"></span>Pre-owned — IMEI-checked &amp; bench-tested</span>
-      <span class="ac-grade-pill"><span class="ac-grade-dot" style="background:#ff9500"></span>Special — Ask us for exact condition</span>
+      <span class="ac-grade-pill"><span class="ac-grade-dot ac-grade-new"></span>Brand New — Factory sealed, 1-yr Apple warranty</span>
+      <span class="ac-grade-pill"><span class="ac-grade-dot ac-grade-sealed"></span>Sealed — New in box</span>
+      <span class="ac-grade-pill"><span class="ac-grade-dot ac-grade-preowned"></span>Pre-owned — IMEI-checked &amp; bench-tested</span>
+      <span class="ac-grade-pill"><span class="ac-grade-dot ac-grade-special"></span>Special — Ask us for exact condition</span>
     </div>
   </div>
 
@@ -588,28 +593,28 @@
     <h2>The <span>Appl3City</span> Promise</h2>
     <div class="ac-promise-grid">
       <div class="ac-promise-item">
-        <div class="ac-promise-icon"><i data-lucide="shield-check" style="width:18px;height:18px"></i></div>
+        <div class="ac-promise-icon"><i data-lucide="shield-check" class="icon-md"></i></div>
         <div class="ac-promise-text">
           <strong>IMEI Checked First</strong>
           <p>We run the blacklist check in front of you, before you hand over a cent.</p>
         </div>
       </div>
       <div class="ac-promise-item">
-        <div class="ac-promise-icon"><i data-lucide="file-text" style="width:18px;height:18px"></i></div>
+        <div class="ac-promise-icon"><i data-lucide="file-text" class="icon-md"></i></div>
         <div class="ac-promise-text">
           <strong>Written Warranty</strong>
           <p>Every device comes with a written warranty backed by MobiDokta's repair bench.</p>
         </div>
       </div>
       <div class="ac-promise-item">
-        <div class="ac-promise-icon"><i data-lucide="battery" style="width:18px;height:18px"></i></div>
+        <div class="ac-promise-icon"><i data-lucide="battery" class="icon-md"></i></div>
         <div class="ac-promise-text">
           <strong>Honest Grading</strong>
           <p>Battery health and cosmetic condition disclosed upfront. No surprises.</p>
         </div>
       </div>
       <div class="ac-promise-item">
-        <div class="ac-promise-icon"><i data-lucide="building-2" style="width:18px;height:18px"></i></div>
+        <div class="ac-promise-icon"><i data-lucide="building-2" class="icon-md"></i></div>
         <div class="ac-promise-text">
           <strong>A Real Shop</strong>
           <p>A real engineer, a registered company. Shop 6, Madeira Isles, Pretoria. Not a corner deal.</p>
@@ -617,7 +622,7 @@
       </div>
     </div>
     <a href="https://wa.me/27781541350?text=Hi+Appl3City%21+I%27m+looking+for+a+phone+and+would+like+to+know+what+you+have+in+stock." target="_blank" rel="noopener" class="btn-ac-wa-lg">
-      <i data-lucide="message-circle" style="width:18px;height:18px"></i> Chat to Us on WhatsApp
+      <i data-lucide="message-circle" class="icon-md"></i> Chat to Us on WhatsApp
     </a>
   </section>
 
@@ -637,7 +642,7 @@
       <a href="tel:+27637538553">063 753 8553</a> &nbsp;&middot;&nbsp;
       <a href="mailto:infomobidokta@gmail.com">infomobidokta@gmail.com</a>
     </p>
-    <p style="margin-top:8px;font-size:11px;opacity:0.38">
+    <p class="ac-footer-copy">
       &copy; 2026 Appl3City / MobiDokta. Prices include VAT. Stock subject to availability. Valid until further notice.
     </p>
   </footer>
