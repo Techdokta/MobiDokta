@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 192"
+     role="img" aria-label="MobiDokta — Engineering Grade IT Repairs &amp; Service">
+  <title>MobiDokta</title>
+  <defs>
+    <style>
+      .mw { font-family: 'Arial Black', 'Arial Bold', Arial, sans-serif; font-weight: 900; font-size: 70px; }
+      .mt { font-family: Arial, 'Helvetica Neue', sans-serif; font-weight: 400; }
+    </style>
+  </defs>
+
+  <!-- ── Phone icon ── -->
+  <rect x="14" y="35" width="70" height="118" rx="13"
+        fill="none" stroke="#ff9500" stroke-width="5"/>
+  <!-- Earpiece -->
+  <rect x="37" y="47" width="24" height="5" rx="2.5" fill="#ff9500"/>
+  <!-- Home indicator -->
+  <rect x="44" y="141" width="10" height="3" rx="1.5" fill="#ff9500"/>
+
+  <!-- ── ECG heartbeat line ── -->
+  <polyline fill="none" stroke="#ff9500" stroke-width="4.5"
+            stroke-linecap="round" stroke-linejoin="round"
+            points="0,94 22,94 35,102 44,48 54,126 63,94 148,94"/>
+
+  <!-- ── Wordmark ── -->
+  <!-- "Mobi" uses currentColor — white in dark mode, dark in light mode -->
+  <text class="mw" x="158" y="120" fill="currentColor"
+        textLength="174" lengthAdjust="spacingAndGlyphs">Mobi</text>
+  <!-- "Dokta" always orange -->
+  <text class="mw" x="332" y="120" fill="#ff9500"
+        textLength="220" lengthAdjust="spacingAndGlyphs">Dokta</text>
+
+  <!-- ── Divider + tagline ── -->
+  <line x1="158" y1="133" x2="552" y2="133" stroke="#ff9500" stroke-width="1.5"/>
+  <text class="mt" x="158" y="155" font-size="12" letter-spacing="3.2"
+        fill="currentColor" opacity="0.72"
+        textLength="394" lengthAdjust="spacingAndGlyphs">ENGINEERING GRADE IT REPAIRS &amp; SERVICE</text>
+
+  <!-- ── Stethoscope ── -->
+  <!-- Binaural arch -->
+  <path fill="none" stroke="#ff9500" stroke-width="4.5"
+        stroke-linecap="round" stroke-linejoin="round"
+        d="M 552,100 C 554,68 562,43 572,34
+           C 582,25 596,29 600,43
+           C 604,57 596,76 585,94"/>
+  <!-- Left ear tip -->
+  <circle cx="565" cy="30" r="7" fill="#ff9500"/>
+  <!-- Right ear tip -->
+  <circle cx="600" cy="39" r="7" fill="#ff9500"/>
+  <!-- Tube to chest piece -->
+  <path fill="none" stroke="#ff9500" stroke-width="4.5" stroke-linecap="round"
+        d="M 569,57 Q 558,118 549,158"/>
+  <!-- Chest piece (diaphragm) -->
+  <circle cx="545" cy="165" r="12" fill="none" stroke="#ff9500" stroke-width="4.5"/>
+  <!-- Inner membrane -->
+  <circle cx="545" cy="165" r="4" fill="#ff9500"/>
+</svg>
