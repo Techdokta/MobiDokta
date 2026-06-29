@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#141414"/>
+    </linearGradient>
+    <linearGradient id="stripe" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ff9500" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#ff9500" stop-opacity="0"/>
+    </linearGradient>
+    <style>
+      .brand { font-family: 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Decorative orange stripe on left -->
+  <rect x="0" y="0" width="500" height="630" fill="url(#stripe)"/>
+
+  <!-- Left orange accent bar -->
+  <rect x="0" y="0" width="6" height="630" fill="#ff9500"/>
+
+  <!-- ECG / Heartbeat line (decorative, bottom area) -->
+  <polyline
+    fill="none"
+    stroke="#ff9500"
+    stroke-width="2.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-opacity="0.25"
+    points="0,530 120,530 175,530 200,480 225,570 248,530 280,530 1200,530"
+  />
+
+  <!-- Phone icon (left side) -->
+  <g transform="translate(72, 180)">
+    <rect x="0" y="0" width="52" height="88" rx="8" ry="8" fill="none" stroke="#ff9500" stroke-width="3"/>
+    <line x1="18" y1="74" x2="34" y2="74" stroke="#ff9500" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- ECG line in phone screen area -->
+  <polyline
+    fill="none"
+    stroke="#ff9500"
+    stroke-width="2.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    points="78,228 88,228 94,232 97,212 100,244 103,228 118,228"
+  />
+
+  <!-- Wordmark: MobiDokta -->
+  <text class="brand" x="148" y="270" font-size="96" font-weight="800" letter-spacing="-2" fill="#ffffff">Mobi</text>
+  <text class="brand" x="426" y="270" font-size="96" font-weight="800" letter-spacing="-2" fill="#ff9500">Dokta</text>
+
+  <!-- Tagline -->
+  <text class="brand" x="148" y="320" font-size="22" font-weight="400" fill="#ffffff" opacity="0.55" letter-spacing="0.5">Engineering Grade Repairs &amp; IT Services</text>
+
+  <!-- Divider -->
+  <line x1="148" y1="348" x2="800" y2="348" stroke="#ff9500" stroke-width="1.5" stroke-opacity="0.3"/>
+
+  <!-- Service pills -->
+  <!-- iPhone Repairs -->
+  <rect x="148" y="370" width="190" height="36" rx="18" fill="#ff9500" fill-opacity="0.12" stroke="#ff9500" stroke-opacity="0.4" stroke-width="1"/>
+  <text class="brand" x="243" y="393" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">iPhone Repairs</text>
+
+  <!-- MacBook -->
+  <rect x="352" y="370" width="180" height="36" rx="18" fill="#ff9500" fill-opacity="0.12" stroke="#ff9500" stroke-opacity="0.4" stroke-width="1"/>
+  <text class="brand" x="442" y="393" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">MacBook Repair</text>
+
+  <!-- Android -->
+  <rect x="546" y="370" width="180" height="36" rx="18" fill="#ff9500" fill-opacity="0.12" stroke="#ff9500" stroke-opacity="0.4" stroke-width="1"/>
+  <text class="brand" x="636" y="393" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">Android Repair</text>
+
+  <!-- Laptops -->
+  <rect x="740" y="370" width="175" height="36" rx="18" fill="#ff9500" fill-opacity="0.12" stroke="#ff9500" stroke-opacity="0.4" stroke-width="1"/>
+  <text class="brand" x="827" y="393" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">Laptops &amp; PCs</text>
+
+  <!-- Location + contact block -->
+  <text class="brand" x="148" y="460" font-size="18" fill="#ffffff" opacity="0.45">Madeira Isles, Danville, Pretoria · 078 154 1350</text>
+  <text class="brand" x="148" y="490" font-size="17" fill="#ff9500" opacity="0.7" font-weight="600">mobidokta.co.za</text>
+
+  <!-- Stethoscope (right decorative element) -->
+  <g transform="translate(940, 140)" opacity="0.12">
+    <circle cx="100" cy="220" r="32" fill="none" stroke="#ff9500" stroke-width="8"/>
+    <path d="M 100,188 C 100,130 130,80 155,60 C 175,44 198,50 202,68 C 206,86 196,108 182,128"
+          fill="none" stroke="#ff9500" stroke-width="8" stroke-linecap="round"/>
+    <path d="M 182,128 C 165,152 100,188 100,188"
+          fill="none" stroke="#ff9500" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="202" cy="54" r="10" fill="#ff9500"/>
+    <circle cx="220" cy="54" r="10" fill="#ff9500"/>
+  </g>
+
+  <!-- Warranty badge (bottom right) -->
+  <g transform="translate(940, 470)">
+    <rect x="0" y="0" width="200" height="60" rx="12" fill="#ff9500" fill-opacity="0.08" stroke="#ff9500" stroke-opacity="0.3" stroke-width="1.5"/>
+    <text class="brand" x="100" y="25" font-size="13" font-weight="700" fill="#ff9500" text-anchor="middle" opacity="0.9">6-MONTH WARRANTY</text>
+    <text class="brand" x="100" y="46" font-size="12" fill="#ffffff" text-anchor="middle" opacity="0.5">OEM-Grade Parts</text>
+  </g>
+</svg>
