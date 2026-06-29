@@ -10,6 +10,10 @@
 .logo-nav    { height: 54px; width: auto; display: block; }
 .logo-footer { height: 58px; width: auto; display: block; margin-bottom: 4px; }
 
+/* Light mode: swap to black-Mobi version */
+:root:not(.dark-theme) .logo-nav,
+:root:not(.dark-theme) .logo-footer { content: url('../assets/mobidokta-logo-light.svg'); }
+
 /* ── Spacing ── */
 .mt-4   { margin-top: var(--space-4); }
 .mt-6   { margin-top: var(--space-6); }
