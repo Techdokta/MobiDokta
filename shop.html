@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+
+<head>
+  <meta charset="UTF-8" />
+  <script>(function(){var t=localStorage.getItem('mobidokta-theme')||'dark';if(t==='dark')document.documentElement.classList.add('dark-theme');}());</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MobiDokta Shop — Accessories, Cases, Chargers & Screen Protection | Pretoria</title>
+  <meta name="description" content="Shop MobiDokta accessories in Pretoria — screen protectors, phone cases, fast chargers, power banks, wireless earbuds, and more. Order online, collect in-store or we WhatsApp it to you.">
+  <meta name="keywords" content="phone accessories Pretoria, screen protectors Pretoria, phone cases Pretoria, USB-C charger Pretoria, power bank Pretoria, MobiDokta shop">
+  <meta name="geo.region" content="ZA-GT" />
+  <meta name="geo.placename" content="Danville, Pretoria, Gauteng" />
+  <meta name="geo.position" content="-25.744000;28.145200" />
+  <meta name="ICBM" content="-25.744000, 28.145200" />
+  <meta property="og:title" content="MobiDokta Shop — Accessories & Essentials" />
+  <meta property="og:description" content="Cases, screen protection, chargers, cables, power banks, and audio — all vetted and stocked by MobiDokta's repair engineers." />
+  <meta property="og:url" content="https://www.mobidokta.co.za/shop.html" />
+  <meta property="og:image" content="https://www.mobidokta.co.za/img/og-cover.png" />
+  <link rel="canonical" href="https://www.mobidokta.co.za/shop.html" />
+
+  <link rel="stylesheet" href="./css/global.css">
+  <link rel="stylesheet" href="./css/utilities.css">
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+
+  <style>
+    /* ── Shop page local overrides ── */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 500;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      padding: 0 var(--space-8);
+      background: rgba(0,0,0,0.82);
+      -webkit-backdrop-filter: blur(20px) saturate(1.4);
+      backdrop-filter: blur(20px) saturate(1.4);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.78);
+      text-decoration: none;
+      font-size: var(--text-sm);
+      font-weight: 500;
+      transition: color 0.18s;
+      padding: 4px 0;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: #fff; }
+    .nav-links { display: flex; gap: var(--space-8); align-items: center; }
+    .nav-right  { display: flex; align-items: center; gap: 10px; }
+
+    /* Shop hero banner */
+    .shop-banner {
+      padding: 120px var(--space-6) 64px;
+      text-align: center;
+      background: linear-gradient(180deg, #0a0a0a 0%, #111 100%);
+      color: #fff;
+    }
+    .shop-banner-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,149,0,0.18);
+      border: 1px solid rgba(255,149,0,0.35);
+      color: #ff9500;
+      font-size: var(--text-xs);
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 999px;
+      letter-spacing: 0.04em;
+      margin-bottom: 20px;
+    }
+    .shop-banner h1 {
+      font-size: var(--text-5xl);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+      line-height: 1.1;
+    }
+    .shop-banner h1 span { color: #ff9500; }
+    .shop-banner p {
+      color: rgba(255,255,255,0.6);
+      font-size: var(--text-lg);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Side nav (same pattern as other pages) */
+    .side-nav {
+      position: fixed;
+      top: 0; right: -320px;
+      width: 300px;
+      height: 100%;
+      background: var(--bg-primary);
+      border-left: 1px solid var(--border);
+      z-index: 600;
+      padding: var(--space-6);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      transition: right 0.3s cubic-bezier(0.4,0,0.2,1);
+      overflow-y: auto;
+    }
+    .side-nav.open { right: 0; }
+    .side-nav a {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      padding: var(--space-3) var(--space-4);
+      border-radius: var(--radius-lg);
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: var(--text-sm);
+      font-weight: 500;
+      transition: background 0.18s;
+    }
+    .side-nav a:hover { background: var(--bg-hover); }
+    .side-nav a.active { background: var(--orange-subtle); color: #ff9500; font-weight: 700; }
+    .side-nav-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: var(--space-4);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: var(--space-2);
+    }
+    .nav-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 550;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    .nav-overlay.open { opacity: 1; pointer-events: all; }
+
+    /* Section spacing */
+    .shop-section { padding: var(--space-12) 0 var(--space-20); }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-6); }
+
+    /* Trust bar below hero */
+    .shop-trust {
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 0;
+    }
+    .shop-trust-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-8);
+      flex-wrap: wrap;
+    }
+    .shop-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: var(--text-xs);
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+    .shop-trust-item svg { color: #ff9500; }
+
+    /* Footer */
+    .shop-footer {
+      background: #0a0a0a;
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: var(--space-12) var(--space-6);
+      font-size: var(--text-sm);
+    }
+    .shop-footer a { color: #ff9500; text-decoration: none; }
+    .shop-footer-links {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-6);
+      margin-bottom: var(--space-4);
+      flex-wrap: wrap;
+    }
+    .shop-footer-links a { color: rgba(255,255,255,0.55); font-size: var(--text-xs); }
+    .shop-footer-links a:hover { color: #fff; }
+
+    @media (max-width: 768px) {
+      .navbar { padding: 0 var(--space-4); }
+      .nav-links { display: none; }
+      .nav-toggle { display: flex !important; }
+      .nav-book-mobile { display: flex !important; }
+      .shop-banner h1 { font-size: var(--text-4xl); }
+      .shop-trust-inner { gap: var(--space-4); }
+    }
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.mobidokta.co.za/"},{"@type":"ListItem","position":2,"name":"Shop","item":"https://www.mobidokta.co.za/shop.html"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Store","name":"MobiDokta Accessories Shop","url":"https://www.mobidokta.co.za/shop.html","provider":{"@type":"LocalBusiness","@id":"https://www.mobidokta.co.za/#business"},"areaServed":{"@type":"City","name":"Pretoria"},"description":"Phone accessories, screen protection, chargers, cables, power banks and DIY repair parts in Pretoria at MobiDokta, Danville."}
+  </script>
+</head>
+
+<body>
+
+  <!-- ── Navbar ── -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <img src="./assets/mobidokta-logo.png" alt="MobiDokta" class="logo-nav" loading="eager">
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="apple.html">Apple</a>
+      <a href="android.html">Android</a>
+      <a href="computers.html">Laptops & PCs</a>
+      <a href="shop.html" class="active">Shop</a>
+      <a href="applecity.html" class="nav-ac">Appl3City</a>
+      <a href="book.html">Book Now</a>
+    </div>
+    <div class="nav-right">
+      <button type="button" class="cart-icon-btn" aria-label="Open cart">
+        <i data-lucide="shopping-bag" class="icon-sm"></i>
+        <span class="cart-badge" hidden>0</span>
+      </button>
+      <a href="book.html" class="nav-book-mobile" aria-label="Book a repair">
+        <i data-lucide="calendar-check" class="icon-sm"></i> Book
+      </a>
+      <button type="button" class="nav-toggle" aria-label="Menu"><i data-lucide="menu" class="icon"></i></button>
+    </div>
+  </nav>
+
+  <!-- ── Hero Banner ── -->
+  <header class="shop-banner">
+    <div class="shop-banner-chip">
+      <i data-lucide="shopping-bag" class="icon-xs"></i>
+      MobiDokta Accessories
+    </div>
+    <h1>Everything your phone<br><span>actually needs.</span></h1>
+    <p>Cases, screen protection, fast chargers, power banks & audio — vetted by our repair engineers.</p>
+  </header>
+
+  <!-- ── Trust Bar ── -->
+  <div class="shop-trust">
+    <div class="shop-trust-inner">
+      <div class="shop-trust-item">
+        <i data-lucide="truck" class="icon-xs"></i>
+        Collect In-Store at Madeira Isles
+      </div>
+      <div class="shop-trust-item">
+        <i data-lucide="message-circle" class="icon-xs"></i>
+        WhatsApp Order — Confirmed Same Day
+      </div>
+      <div class="shop-trust-item">
+        <i data-lucide="shield-check" class="icon-xs"></i>
+        Engineer-Vetted Products Only
+      </div>
+      <div class="shop-trust-item">
+        <i data-lucide="refresh-cw" class="icon-xs"></i>
+        7-Day Returns
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Student Discount Banner ── -->
+  <div class="stu-discount-bar">
+    <i data-lucide="graduation-cap" class="icon-xs"></i>
+    <strong>Students save 15%</strong> — show your student card when you collect. No card needed upfront.
+    <span class="stu-price-key"><span class="stu-tag">S</span> = student price shown on each item</span>
+  </div>
+
+  <!-- ── Category Filter ── -->
+  <div class="shop-filter-bar">
+    <div class="shop-filters">
+      <button type="button" class="shop-filter active" data-cat="all">All Products</button>
+      <button type="button" class="shop-filter" data-cat="screen">Screen &amp; Cases</button>
+      <button type="button" class="shop-filter" data-cat="cables">Cables</button>
+      <button type="button" class="shop-filter" data-cat="chargers">Chargers</button>
+      <button type="button" class="shop-filter" data-cat="power">Power &amp; Audio</button>
+      <button type="button" class="shop-filter" data-cat="diy">DIY Parts</button>
+      <button type="button" class="shop-filter" data-cat="tools">Tools &amp; Kits</button>
+      <button type="button" class="shop-filter" data-cat="extras">Extras</button>
+    </div>
+  </div>
+
+  <!-- ── Product Grid ── -->
+  <section class="shop-section">
+    <div class="container">
+      <div class="product-grid" id="product-grid">
+        <!-- Rendered by shop.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Cross-links ── -->
+  <section class="also-section">
+    <div class="container">
+      <p class="also-label">Need a repair first?</p>
+      <div class="also-links">
+        <a href="apple.html" class="also-link"><i data-lucide="smartphone" class="icon-xs"></i> iPhone &amp; iPad Repair</a>
+        <a href="android.html" class="also-link"><i data-lucide="cpu" class="icon-xs"></i> Android Repair</a>
+        <a href="computers.html" class="also-link"><i data-lucide="laptop" class="icon-xs"></i> Laptops &amp; PCs</a>
+        <a href="book.html" class="also-link also-link-primary"><i data-lucide="calendar-check" class="icon-xs"></i> Book a Repair</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="shop-footer">
+    <div class="shop-footer-links">
+      <a href="index.html">Home</a>
+      <a href="apple.html">Apple Repair</a>
+      <a href="android.html">Android Repair</a>
+      <a href="computers.html">Laptops & PCs</a>
+      <a href="book.html">Book a Repair</a>
+      <a href="support.html">Support</a>
+    </div>
+    <p>
+      MobiDokta — Shop 6, Madeira Isles Shopping Complex, 262 Klitsgras St, Danville, Pretoria &nbsp;|&nbsp;
+      <a href="tel:+27781541350">+27 78 154 1350</a>
+    </p>
+    <p class="shop-footer-copy">
+      &copy; 2026 MobiDokta. All rights reserved. Prices include VAT. Stock subject to availability.
+    </p>
+  </footer>
+
+  <!-- ── Side Nav ── -->
+  <div class="nav-overlay"></div>
+  <aside class="side-nav">
+    <div class="side-nav-header">
+      <img src="./assets/mobidokta-logo.png" alt="MobiDokta" class="logo-nav" loading="eager">
+      <button type="button" class="nav-close" aria-label="Close Menu"><i data-lucide="x" class="icon"></i></button>
+    </div>
+    <a href="index.html"><i data-lucide="home" class="icon-sm"></i> Home</a>
+    <a href="apple.html"><i data-lucide="smartphone" class="icon-sm"></i> Apple Repairs</a>
+    <a href="android.html"><i data-lucide="cpu" class="icon-sm"></i> Android Repairs</a>
+    <a href="computers.html"><i data-lucide="laptop" class="icon-sm"></i> Laptops & PCs</a>
+    <a href="shop.html" class="active"><i data-lucide="shopping-bag" class="icon-sm"></i> Shop Accessories</a>
+    <a href="applecity.html"><i data-lucide="smartphone" class="icon-sm"></i> Appl3City Phones</a>
+    <a href="book.html"><i data-lucide="calendar" class="icon-sm"></i> Book a Repair</a>
+    <a href="support.html"><i data-lucide="life-buoy" class="icon-sm"></i> Support</a>
+  </aside>
+
+  <!-- WhatsApp FAB -->
+  <a href="https://wa.me/27781541350" target="_blank" rel="noopener" class="whatsapp-fab" title="Chat on WhatsApp">
+    <i data-lucide="message-circle" class="icon-lg"></i>
+  </a>
+
+  <script src="./js/shop.js"></script>
+  <script src="./js/cookie-consent.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      /* ── Render product grid ── */
+      renderShopGrid('all');
+
+      /* ── Category filters ── */
+      document.querySelectorAll('.shop-filter').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          document.querySelectorAll('.shop-filter').forEach(function (b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          renderShopGrid(btn.dataset.cat);
+        });
+      });
+
+      /* ── Side nav open/close ── */
+      var toggle  = document.querySelector('.nav-toggle');
+      var sideNav = document.querySelector('.side-nav');
+      var overlay = document.querySelector('.nav-overlay');
+      var close   = document.querySelector('.nav-close');
+
+      function openNav()  { sideNav.classList.add('open'); overlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
+      function closeNav() { sideNav.classList.remove('open'); overlay.classList.remove('open'); document.body.style.overflow = ''; }
+
+      if (toggle)  toggle.addEventListener('click', openNav);
+      if (close)   close.addEventListener('click', closeNav);
+      if (overlay) overlay.addEventListener('click', closeNav);
+
+      /* ── Lucide icons ── */
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+    });
+  </script>
+
+</body>
+</html>

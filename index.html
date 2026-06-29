@@ -2,6 +2,8 @@
 <html lang="en-ZA">
 
 <head>
+  <!-- Dark mode pre-render: applied before body paints to prevent flash of light mode -->
+  <script>(function(){var t=localStorage.getItem('mobidokta-theme')||'dark';if(t==='dark')document.documentElement.classList.add('dark-theme');}());</script>
   <!-- Google tag (gtag.js) - Consent Mode v2, analytics denied until user consents -->
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -55,7 +57,7 @@
   <link rel="stylesheet" href="./css/global.css">
   <link rel="stylesheet" href="./css/utilities.css">
   <link rel="stylesheet" href="./css/index-inline.css">
-  <link rel="preload" as="image" href="./img/hero-main.png" fetchpriority="high" />
+  <link rel="preload" as="image" href="./img/hero-main.png" />
   <link rel="preconnect" href="https://unpkg.com" crossorigin />
   <link rel="prefetch" href="./apple.html" />
   <link rel="prefetch" href="./android.html" />
@@ -67,7 +69,7 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["LocalBusiness", "ElectronicsRepair"],
     "@id": "https://www.mobidokta.co.za/#business",
     "name": "MobiDokta",
     "alternateName": ["TRi-MobiDokta", "MobiDokta Tech Repair"],
@@ -95,7 +97,15 @@
     "areaServed": [
       {"@type": "City", "name": "Pretoria"},
       {"@type": "City", "name": "Danville"},
-      {"@type": "State", "name": "Gauteng"}
+      {"@type": "City", "name": "Centurion"},
+      {"@type": "City", "name": "Sunnyside"},
+      {"@type": "City", "name": "Hatfield"},
+      {"@type": "City", "name": "Arcadia"},
+      {"@type": "City", "name": "Pretoria West"},
+      {"@type": "City", "name": "Atteridgeville"},
+      {"@type": "City", "name": "Laudium"},
+      {"@type": "City", "name": "Karenpark"},
+      {"@type": "AdministrativeArea", "name": "Gauteng"}
     ],
     "amenityFeature": [
       {"@type": "LocationFeatureSpecification", "name": "Gaming Lounge", "value": true},
@@ -119,9 +129,15 @@
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
         "opens": "09:00",
-        "closes": "19:00"
+        "closes": "15:00"
       }
     ],
     "location": [
@@ -141,9 +157,15 @@
         "openingHoursSpecification": [
           {
             "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "opens": "08:00",
+            "closes": "18:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
             "opens": "09:00",
-            "closes": "19:00"
+            "closes": "15:00"
           }
         ]
       },
@@ -162,9 +184,9 @@
         "openingHoursSpecification": [
           {
             "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-            "opens": "09:00",
-            "closes": "19:00",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "opens": "08:00",
+            "closes": "18:00",
             "description": "By appointment only"
           }
         ]
@@ -205,7 +227,22 @@
     ],
     "sameAs": [
       "https://g.page/r/CVBsFGUXU7hzEAE/review"
-    ]
+    ],
+    "potentialAction": {
+      "@type": "ReserveAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://www.mobidokta.co.za/book.html",
+        "actionPlatform": [
+          "https://schema.org/DesktopWebPlatform",
+          "https://schema.org/MobileWebPlatform"
+        ]
+      },
+      "result": {
+        "@type": "Reservation",
+        "name": "Book a Device Repair"
+      }
+    }
   }
   </script>
 
@@ -560,36 +597,58 @@
 
     /* ─── Trust Bar ─── */
     .trust-bar {
-      padding: var(--space-12) 0;
+      padding: var(--space-6) 0 var(--space-5);
       border-bottom: 1px solid var(--border);
     }
-
     .trust-row {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: var(--space-12);
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
     }
-
     .trust-item {
       display: flex;
       align-items: center;
-      gap: var(--space-3);
-      color: var(--text-tertiary);
-      font-size: var(--text-sm);
-      font-weight: 500;
-    }
-
-    .trust-item strong {
+      gap: var(--space-2);
       color: var(--text-secondary);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      white-space: nowrap;
+      padding: 0 var(--space-6);
     }
-
+    .trust-item + .trust-item {
+      border-left: 1px solid var(--border);
+    }
+    .trust-item i { color: #ff9500; flex-shrink: 0; }
+    .trust-cred {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+      margin-top: var(--space-4);
+      padding-top: var(--space-4);
+      border-top: 1px solid var(--border);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+    }
+    .trust-cred i { color: #ff9500; flex-shrink: 0; }
+    .trust-cred-dot { color: var(--border); font-size: 14px; line-height: 1; }
     .trust-number {
       font-size: var(--text-2xl);
       font-weight: 800;
       color: var(--text-primary);
       letter-spacing: -0.02em;
+    }
+    @media (max-width: 640px) {
+      .trust-row { flex-wrap: wrap; gap: var(--space-2) 0; }
+      .trust-item { padding: var(--space-2) var(--space-4); font-size: 11px; }
+      .trust-item + .trust-item { border-left: none; border-top: 1px solid var(--border); width: 100%; justify-content: center; }
+      .trust-cred { gap: var(--space-2); }
+      .trust-cred-dot { display: none; }
     }
 
     /* ─── Services ─── */
@@ -991,7 +1050,6 @@
       }
     }
     /* Trust bar divider */
-    .trust-divider { border-left: 1px solid var(--border); padding-left: var(--space-4); margin-left: var(--space-2); }
     /* Footer links bar */
     .footer-links-bar { justify-content: center; margin-top: 8px; align-items: center; }
     .border-pipe { color: var(--border-color); }
@@ -1023,11 +1081,11 @@
       align-items: flex-end;
     }
     .hero-slideshow .slide.active { opacity: 1; }
-    .slide-1 { background-image: url('./img/hero-main.png'); }
+    .slide-1 { background-image: url('./img/portfolio-iphone.png'); }
     .slide-2 { background-image: url('./img/hero-android.png'); background-position: center top; }
-    .slide-3 { background-image: url('./img/idx-port-macbook.jpg'); }
-    .slide-4 { background-image: url('./img/idx-svc-water.jpg'); }
-    .slide-5 { background-image: url('./img/idx-svc-battery.jpg'); }
+    .slide-3 { background-image: url('./img/idx-port-macbookuse.jpg'); }
+    .slide-4 { background-image: url('./img/idx-svc-water_hero_use.jpg'); }
+    .slide-5 { background-image: url('./img/idx-svc-battery_hero_use.jpg'); }
     .slide-scrim {
       position: absolute;
       inset: 0;
@@ -1052,9 +1110,9 @@
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--accent);
-      border: 1px solid rgba(255,121,40,0.45);
-      background: rgba(255,121,40,0.1);
+      color: #ff9500;
+      border: 1px solid rgba(255,149,0,0.45);
+      background: rgba(255,149,0,0.1);
       padding: 4px 12px;
       border-radius: var(--radius-full);
       margin-bottom: var(--space-4);
@@ -1090,7 +1148,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: var(--accent);
+      background: #ff9500;
       color: #fff !important;
       font-weight: 700;
       font-size: var(--text-base);
@@ -1100,7 +1158,7 @@
       transition: background 0.2s, transform 0.2s;
       white-space: nowrap;
     }
-    .btn-slide-book:hover { background: #c95e00; transform: translateY(-2px); }
+    .btn-slide-book:hover { background: #cc7700; transform: translateY(-2px); }
     .btn-slide-ghost {
       display: inline-flex;
       align-items: center;
@@ -1121,7 +1179,7 @@
       position: absolute;
       bottom: 0; left: 0;
       height: 3px; width: 0;
-      background: var(--accent);
+      background: #ff9500;
       z-index: 30;
       transition: width 5s linear;
     }
@@ -1142,7 +1200,7 @@
     .slideshow-dots button.active {
       width: 24px;
       border-radius: 4px;
-      background: var(--accent);
+      background: #ff9500;
     }
     .slide-counter {
       position: absolute;
@@ -1184,14 +1242,23 @@
       <a href="support.html">Support</a>
       <a href="service-request.html">Request Service</a>
       <a href="community.html">Community Hub</a>
+      <a href="shop.html">Shop</a>
+      <a href="applecity.html" class="nav-ac">Appl3City</a>
       <a href="book.html">Book Now</a>
     </div>
     <div class="inline-style-cea36d1f">
-      <button id="theme-toggle" class="btn btn-ghost inline-style-4ebf6539" aria-label="Toggle Dark Mode">
+      <button type="button" id="theme-toggle" class="btn btn-ghost inline-style-4ebf6539" aria-label="Toggle Dark Mode">
         <i data-lucide="moon" class="icon-sm"></i>
       </button>
       <a href="book.html" class="btn btn-primary btn-sm nav-btn-desktop">Get Started</a>
-      <button class="nav-toggle" aria-label="Menu"><i data-lucide="menu" class="icon"></i></button>
+      <button type="button" class="cart-icon-btn" aria-label="Open cart">
+        <i data-lucide="shopping-bag" class="icon-sm"></i>
+        <span class="cart-badge" hidden>0</span>
+      </button>
+      <a href="book.html" class="nav-book-mobile" aria-label="Book a repair">
+        <i data-lucide="calendar-check" class="icon-sm"></i> Book
+      </a>
+      <button type="button" class="nav-toggle" aria-label="Menu"><i data-lucide="menu" class="icon"></i></button>
     </div>
   </nav>
 
@@ -1275,35 +1342,85 @@
 
     <!-- Controls -->
     <div class="slideshow-dots" role="tablist" aria-label="Service slides">
-      <button class="active" data-slide="0" aria-label="iPhone repairs" role="tab"></button>
-      <button data-slide="1" aria-label="Android repairs" role="tab"></button>
-      <button data-slide="2" aria-label="Computer repairs" role="tab"></button>
-      <button data-slide="3" aria-label="Water damage rescue" role="tab"></button>
-      <button data-slide="4" aria-label="Battery replacement" role="tab"></button>
+      <button type="button" class="active" data-slide="0" aria-label="iPhone repairs" role="tab"></button>
+      <button type="button" data-slide="1" aria-label="Android repairs" role="tab"></button>
+      <button type="button" data-slide="2" aria-label="Computer repairs" role="tab"></button>
+      <button type="button" data-slide="3" aria-label="Water damage rescue" role="tab"></button>
+      <button type="button" data-slide="4" aria-label="Battery replacement" role="tab"></button>
     </div>
     <span class="slide-counter" id="slide-counter" aria-live="polite">1 / 5</span>
 
   </header>
 
-  <!-- ─── Partners & Certification ─── -->
+  <!-- ─── Trust Bar ─── -->
   <div class="trust-bar glass-panel inline-style-f3bea2ad">
     <div class="container">
-      <div class="trust-row inline-style-1bcf4c48">
-        <div class="trust-item inline-style-9c451b59"><i data-lucide="check-circle"
-            class="icon inline-style-b25d56ee"></i> OEM Original Grade</div>
-        <div class="trust-item inline-style-9c451b59"><i data-lucide="layers" class="icon inline-style-b25d56ee"></i>
-          Eco Grade Available</div>
-        <div class="trust-item inline-style-9c451b59"><i data-lucide="clock" class="icon inline-style-b25d56ee"></i>
-          Same-Day Service</div>
-        <div class="trust-item inline-style-9c451b59"><i data-lucide="shield" class="icon inline-style-b25d56ee"></i>
-          Full Warranty Included</div>
-        <div class="trust-item inline-style-9c451b59 trust-divider">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon inline-style-b25d56ee" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-          Apple Specialist · OEM-grade parts · Independent repair experts
+      <!-- Row 1: four operational promises -->
+      <div class="trust-row">
+        <div class="trust-item">
+          <i data-lucide="check-circle" class="icon-sm"></i>
+          OEM Original Grade
         </div>
+        <div class="trust-item">
+          <i data-lucide="layers" class="icon-sm"></i>
+          Eco Grade Available
+        </div>
+        <div class="trust-item">
+          <i data-lucide="clock" class="icon-sm"></i>
+          Same-Day Service
+        </div>
+        <div class="trust-item">
+          <i data-lucide="shield-check" class="icon-sm"></i>
+          Full Warranty Included
+        </div>
+      </div>
+      <!-- Row 2: credential claim -->
+      <div class="trust-cred">
+        <i data-lucide="award" class="icon-sm"></i>
+        <span>Apple Specialist</span>
+        <span class="trust-cred-dot">·</span>
+        <span>OEM-Grade Parts</span>
+        <span class="trust-cred-dot">·</span>
+        <span>Independent Repair Experts</span>
+        <span class="trust-cred-dot">·</span>
+        <span>Pretoria&apos;s Most Trusted</span>
       </div>
     </div>
   </div>
+
+  <!-- ─── Quick Find ─── -->
+  <section class="quick-find">
+    <div class="container">
+      <p class="qf-label">What do you need today?</p>
+      <div class="qf-grid">
+        <a href="apple.html" class="qf-card">
+          <i data-lucide="smartphone" class="icon-lg"></i>
+          <span class="qf-name">iPhone & iPad</span>
+          <span class="qf-hint">Screen · Battery · Port</span>
+        </a>
+        <a href="android.html" class="qf-card">
+          <i data-lucide="cpu" class="icon-lg"></i>
+          <span class="qf-name">Samsung & Android</span>
+          <span class="qf-hint">All brands · Same day</span>
+        </a>
+        <a href="computers.html" class="qf-card">
+          <i data-lucide="laptop" class="icon-lg"></i>
+          <span class="qf-name">Mac & Laptop</span>
+          <span class="qf-hint">Screen · Board · Battery</span>
+        </a>
+        <a href="shop.html" class="qf-card">
+          <i data-lucide="shopping-bag" class="icon-lg"></i>
+          <span class="qf-name">Shop Accessories</span>
+          <span class="qf-hint">Cases · Chargers · Protection</span>
+        </a>
+        <a href="book.html" class="qf-card qf-book">
+          <i data-lucide="calendar-check" class="icon-lg"></i>
+          <span class="qf-name">Book a Repair</span>
+          <span class="qf-hint">Pick a slot today</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
   <!-- ─── Services ─── -->
   <section id="services" class="section">
@@ -1592,7 +1709,7 @@
       .grev-time{font-size:11px;color:var(--text-tertiary);margin-top:2px;}
       .grev-g{margin-left:auto;flex-shrink:0;}
       .grev-stars{color:#FBBC05;font-size:13px;letter-spacing:1px;margin-bottom:var(--space-2);}
-      .grev-text{font-size:13px;color:var(--text-secondary);line-height:1.6;margin:0;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;}
+      .grev-text{font-size:13px;color:var(--text-secondary);line-height:1.6;margin:0;display:-webkit-box;-webkit-line-clamp:4;line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;}
       .reviews-cta-strip{display:flex;align-items:center;justify-content:center;gap:var(--space-12);flex-wrap:wrap;padding:var(--space-12) 0 var(--space-16);}
       .qr-block{display:flex;flex-direction:column;align-items:center;gap:var(--space-2);text-align:center;}
       .qr-img{width:96px;height:96px;border-radius:var(--radius-lg);border:1px solid var(--border);object-fit:contain;background:#fff;padding:4px;}
@@ -1761,10 +1878,10 @@
 
       <!-- Category Filter Tabs -->
       <div class="gallery-tabs" data-animate>
-        <button class="gallery-tab active" data-filter="all">All Photos</button>
-        <button class="gallery-tab" data-filter="repairs">Repairs in ICU</button>
-        <button class="gallery-tab" data-filter="road">On the Road</button>
-        <button class="gallery-tab" data-filter="handovers">Handovers &amp; Community</button>
+        <button type="button" class="gallery-tab active" data-filter="all">All Photos</button>
+        <button type="button" class="gallery-tab" data-filter="repairs">Repairs in ICU</button>
+        <button type="button" class="gallery-tab" data-filter="road">On the Road</button>
+        <button type="button" class="gallery-tab" data-filter="handovers">Handovers &amp; Community</button>
       </div>
 
       <!-- Gallery Grid -->
@@ -1780,7 +1897,7 @@
 
   <!-- Lightbox Modal -->
   <div class="gallery-lightbox" id="gallery-lightbox" onclick="closeLightbox()">
-    <button class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
+    <button type="button" class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
     <div class="lightbox-content" onclick="event.stopPropagation()">
       <img id="lightbox-img" src="" alt="Zoomed view">
       <div class="lightbox-caption">
@@ -2082,7 +2199,7 @@
   <aside class="side-nav">
     <div class="inline-style-662d0ca9">
       <span class="inline-style-d60ee865"><img src="./assets/mobidokta-logo.png" alt="MobiDokta — Engineering Grade IT Repairs &amp; Service" class="logo-nav" loading="eager"></span>
-      <button class="nav-close" aria-label="Close Menu"><i data-lucide="x" class="icon"></i></button>
+      <button type="button" class="nav-close" aria-label="Close Menu"><i data-lucide="x" class="icon"></i></button>
     </div>
     <a href="#services"><i data-lucide="tool" class="icon-sm"></i> Repairs</a>
     <a href="#laptop-services"><i data-lucide="laptop" class="icon-sm"></i> Laptops & PCs</a>
@@ -2093,15 +2210,18 @@
     <a href="support.html"><i data-lucide="life-buoy" class="icon-sm"></i> Support</a>
     <a href="service-request.html"><i data-lucide="file-plus" class="icon-sm"></i> Request Service</a>
     <a href="community.html"><i data-lucide="users" class="icon-sm"></i> Community Hub</a>
+    <a href="shop.html"><i data-lucide="shopping-bag" class="icon-sm"></i> Shop Accessories</a>
+    <a href="applecity.html"><i data-lucide="smartphone" class="icon-sm"></i> Appl3City Phones</a>
     <a href="book.html" class="inline-style-fd9334c1"><i data-lucide="calendar" class="icon-sm"></i> Book Now</a>
 
     <div class="inline-style-d35d2a58">
-      <button id="theme-toggle-mobile" class="btn btn-secondary btn-block inline-style-02b9305a">
+      <button type="button" id="theme-toggle-mobile" class="btn btn-secondary btn-block inline-style-02b9305a">
         <i data-lucide="moon" class="icon-sm theme-icon"></i> Toggle Dark Mode
       </button>
     </div>
   </aside>
 
+  <script src="./js/shop.js"></script>
   <script src="./js/data-store.js"></script>
   <script src="./js/app.js"></script>
   <script src="./js/content-loader.js"></script>

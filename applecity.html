@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+
+<head>
+  <meta charset="UTF-8" />
+  <script>(function(){var t=localStorage.getItem('mobidokta-theme')||'dark';if(t==='dark')document.documentElement.classList.add('dark-theme');}());</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Appl3City — Pre-owned & Sealed iPhones, Samsung & More | Certified by MobiDokta | Pretoria</title>
+  <meta name="description" content="Buy IMEI-verified, engineer-tested iPhones, Samsung Galaxy, Apple Watch & MacBook at Appl3City in Pretoria. Written warranty. Pay by cash, card, EFT or BNPL.">
+  <meta name="keywords" content="pre-owned iPhones Pretoria, sealed iPhones Pretoria, buy iPhone Pretoria, Samsung phones Pretoria, Appl3City, MobiDokta">
+  <meta name="geo.region" content="ZA-GT" />
+  <meta name="geo.placename" content="Danville, Pretoria, Gauteng" />
+  <meta name="geo.position" content="-25.744000;28.145200" />
+  <meta name="ICBM" content="-25.744000, 28.145200" />
+  <meta property="og:title" content="Appl3City — Quality Devices You Can Actually Trust" />
+  <meta property="og:description" content="IMEI-verified, engineer-tested iPhones, Samsung Galaxy, Apple Watch & MacBook. Written warranty. Backed by MobiDokta, Pretoria." />
+  <meta property="og:url" content="https://www.mobidokta.co.za/applecity.html" />
+  <meta property="og:image" content="https://www.mobidokta.co.za/img/og-cover.png" />
+  <link rel="canonical" href="https://www.mobidokta.co.za/applecity.html" />
+
+  <link rel="stylesheet" href="./css/global.css">
+  <link rel="stylesheet" href="./css/utilities.css">
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+
+  <style>
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 500;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      padding: 0 var(--space-8);
+      background: rgba(0,0,0,0.88);
+      -webkit-backdrop-filter: blur(20px) saturate(1.4);
+      backdrop-filter: blur(20px) saturate(1.4);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.78);
+      text-decoration: none;
+      font-size: var(--text-sm);
+      font-weight: 500;
+      transition: color 0.18s;
+      padding: 4px 0;
+    }
+    .nav-links a:hover { color: #fff; }
+    .nav-links a.active, .nav-links a.nav-ac { color: #ff9500; font-weight: 700; }
+    .nav-links { display: flex; gap: var(--space-8); align-items: center; }
+    .nav-right  { display: flex; align-items: center; gap: 10px; }
+
+    /* ── Hero ── */
+    .ac-hero {
+      min-height: 340px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 110px var(--space-6) 64px;
+      background: linear-gradient(160deg, #080810 0%, #0d1830 55%, #080810 100%);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .ac-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 55% 35% at 50% 65%, rgba(0,122,255,0.14) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .ac-hero-logo {
+      font-size: clamp(2.8rem, 9vw, 5.5rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .ac-hero-logo .ac3 { color: #ff9500; }
+    .ac-hero-sub {
+      font-size: var(--text-lg);
+      font-weight: 600;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 8px;
+    }
+    .ac-hero-cert {
+      font-size: var(--text-sm);
+      color: rgba(255,255,255,0.42);
+      margin-bottom: 28px;
+    }
+    .ac-hero-cert span { color: #ff9500; }
+    .ac-hero-ctas {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn-ac-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 12px 26px;
+      background: #25d366;
+      color: #fff;
+      font-size: var(--text-sm);
+      font-weight: 700;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background 0.18s, transform 0.18s;
+    }
+    .btn-ac-wa:hover { background: #1db954; transform: translateY(-2px); }
+    .btn-ac-scroll {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 12px 26px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.16);
+      color: rgba(255,255,255,0.88);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background 0.18s;
+    }
+    .btn-ac-scroll:hover { background: rgba(255,255,255,0.14); }
+
+    /* ── Trust bar ── */
+    .ac-trust-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-6);
+      flex-wrap: wrap;
+      padding: 16px var(--space-6);
+      background: #0c1a30;
+      border-bottom: 1px solid rgba(0,122,255,0.18);
+    }
+    .ac-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: var(--text-xs);
+      font-weight: 600;
+      color: rgba(255,255,255,0.72);
+      white-space: nowrap;
+    }
+    .ac-trust-item svg { color: #007aff; }
+
+    /* ── Payment bar ── */
+    .ac-pay-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      padding: 11px var(--space-6);
+      background: rgba(255,149,0,0.07);
+      border-bottom: 1px solid rgba(255,149,0,0.14);
+      font-size: var(--text-xs);
+      color: var(--text-secondary);
+    }
+    .ac-pay-bar strong { color: #ff9500; }
+    .ac-pay-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 10px;
+      background: rgba(255,149,0,0.10);
+      border: 1px solid rgba(255,149,0,0.20);
+      border-radius: 999px;
+      color: var(--text-primary);
+      font-weight: 600;
+      white-space: nowrap;
+      font-size: 11px;
+    }
+
+    /* ── Grade legend ── */
+    .ac-grades-bar {
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border);
+      padding: 12px var(--space-6);
+    }
+    .ac-grades-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: var(--space-5);
+      flex-wrap: wrap;
+    }
+    .ac-grades-label {
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      white-space: nowrap;
+    }
+    .ac-grade-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: var(--text-xs);
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+    .ac-grade-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── Category filter ── */
+    .ac-filter-bar {
+      position: sticky;
+      top: 64px;
+      z-index: 200;
+      background: var(--bg-primary);
+      border-bottom: 1px solid var(--border);
+      padding: 0 var(--space-6);
+      overflow-x: auto;
+    }
+    .ac-filter-bar::-webkit-scrollbar { display: none; }
+    .ac-filters {
+      display: flex;
+      gap: 4px;
+      padding: 10px 0;
+      max-width: 1200px;
+      margin: 0 auto;
+      white-space: nowrap;
+    }
+    .ac-filter {
+      padding: 7px 18px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--text-secondary);
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.18s;
+    }
+    .ac-filter:hover { border-color: #007aff; color: #007aff; }
+    .ac-filter.active { background: #007aff; border-color: #007aff; color: #fff; }
+
+    /* ── Listing ── */
+    .ac-section { padding: var(--space-8) 0 var(--space-20); }
+    .container   { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-6); }
+
+    .ac-cat-heading {
+      font-size: var(--text-xl);
+      font-weight: 800;
+      margin: var(--space-10) 0 var(--space-4);
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .ac-cat-heading:first-child { margin-top: var(--space-4); }
+    .ac-cat-heading::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .ac-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 10px;
+    }
+    .ac-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 13px 15px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      transition: border-color 0.18s, box-shadow 0.18s;
+    }
+    .ac-card:hover {
+      border-color: #007aff;
+      box-shadow: 0 4px 16px rgba(0,122,255,0.1);
+    }
+    .ac-card-info { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+    .ac-card-name {
+      font-size: var(--text-sm);
+      font-weight: 700;
+      color: var(--text-primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .ac-card-meta { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .ac-card-storage {
+      font-size: var(--text-xs);
+      color: var(--text-tertiary);
+      font-weight: 500;
+    }
+    .ac-cond-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 700;
+      color: #fff;
+      background: var(--cond-color, #8e8e93);
+    }
+    .ac-card-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    .ac-card-price {
+      font-size: var(--text-base);
+      font-weight: 800;
+      color: var(--text-primary);
+      white-space: nowrap;
+    }
+    .btn-ac-enquire {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 6px 12px;
+      background: #25d366;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      border-radius: 999px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .btn-ac-enquire:hover { background: #1db954; transform: scale(1.04); }
+
+    /* ── Promise section ── */
+    .ac-promise {
+      background: #0c1a30;
+      color: #fff;
+      padding: var(--space-14) var(--space-6);
+      text-align: center;
+    }
+    .ac-promise h2 {
+      font-size: var(--text-2xl);
+      font-weight: 800;
+      margin-bottom: var(--space-8);
+    }
+    .ac-promise h2 span { color: #ff9500; }
+    .ac-promise-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: var(--space-5);
+      max-width: 900px;
+      margin: 0 auto var(--space-10);
+      text-align: left;
+    }
+    .ac-promise-item { display: flex; gap: 14px; align-items: flex-start; }
+    .ac-promise-icon {
+      width: 38px; height: 38px;
+      border-radius: var(--radius-lg);
+      background: rgba(0,122,255,0.15);
+      border: 1px solid rgba(0,122,255,0.28);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: #007aff;
+    }
+    .ac-promise-text strong { display: block; font-size: var(--text-sm); font-weight: 700; margin-bottom: 3px; }
+    .ac-promise-text p { font-size: var(--text-xs); color: rgba(255,255,255,0.52); line-height: 1.55; margin: 0; }
+    .btn-ac-wa-lg {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 14px 34px;
+      background: #25d366;
+      color: #fff;
+      font-size: var(--text-base);
+      font-weight: 700;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background 0.18s, transform 0.18s;
+    }
+    .btn-ac-wa-lg:hover { background: #1db954; transform: translateY(-2px); }
+
+    /* ── Footer ── */
+    .ac-footer {
+      background: #0a0a0a;
+      color: rgba(255,255,255,0.45);
+      text-align: center;
+      padding: var(--space-10) var(--space-6);
+      font-size: var(--text-sm);
+      line-height: 1.7;
+    }
+    .ac-footer a { color: #ff9500; text-decoration: none; }
+    .ac-footer-links {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-6);
+      margin-bottom: var(--space-4);
+      flex-wrap: wrap;
+    }
+    .ac-footer-links a { color: rgba(255,255,255,0.48); font-size: var(--text-xs); }
+    .ac-footer-links a:hover { color: #fff; }
+
+    /* ── Side nav ── */
+    .side-nav {
+      position: fixed;
+      top: 0; right: -320px;
+      width: 300px;
+      height: 100%;
+      background: var(--bg-primary);
+      border-left: 1px solid var(--border);
+      z-index: 600;
+      padding: var(--space-6);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      transition: right 0.3s cubic-bezier(0.4,0,0.2,1);
+      overflow-y: auto;
+    }
+    .side-nav.open { right: 0; }
+    .side-nav a {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      padding: var(--space-3) var(--space-4);
+      border-radius: var(--radius-lg);
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: var(--text-sm);
+      font-weight: 500;
+      transition: background 0.18s;
+    }
+    .side-nav a:hover { background: var(--bg-hover); }
+    .side-nav a.active { background: var(--orange-subtle); color: #ff9500; font-weight: 700; }
+    .side-nav-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: var(--space-4);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: var(--space-2);
+    }
+    .nav-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 550;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    .nav-overlay.open { opacity: 1; pointer-events: all; }
+
+    @media (max-width: 768px) {
+      .navbar { padding: 0 var(--space-4); }
+      .nav-links { display: none; }
+      .nav-toggle { display: flex !important; }
+      .ac-hero { padding: 90px var(--space-4) 48px; }
+      .ac-trust-bar { gap: var(--space-4); }
+      .ac-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .ac-pay-pill { font-size: 10px; padding: 2px 8px; }
+      .ac-grades-inner { gap: var(--space-3); }
+    }
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.mobidokta.co.za/"},{"@type":"ListItem","position":2,"name":"Appl3City","item":"https://www.mobidokta.co.za/applecity.html"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Store","name":"Appl3City by MobiDokta","url":"https://www.mobidokta.co.za/applecity.html","provider":{"@type":"LocalBusiness","@id":"https://www.mobidokta.co.za/#business"},"areaServed":{"@type":"City","name":"Pretoria"},"description":"Pre-owned and brand new iPhones, MacBooks, Samsung Galaxy devices, Apple Watches and tablets in Pretoria — sale prices, IMEI verified, from Appl3City at MobiDokta."}
+  </script>
+</head>
+
+<body>
+
+  <!-- ── Navbar ── -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <img src="./assets/mobidokta-logo.png" alt="MobiDokta" class="logo-nav" loading="eager">
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="apple.html">Apple</a>
+      <a href="android.html">Android</a>
+      <a href="computers.html">Laptops &amp; PCs</a>
+      <a href="shop.html">Shop</a>
+      <a href="applecity.html" class="nav-ac active">Appl3City</a>
+      <a href="book.html">Book Now</a>
+    </div>
+    <div class="nav-right">
+      <button type="button" class="cart-icon-btn" aria-label="Open cart">
+        <i data-lucide="shopping-bag" class="icon-sm"></i>
+        <span class="cart-badge" hidden>0</span>
+      </button>
+      <a href="book.html" class="nav-book-mobile" aria-label="Book a repair">
+        <i data-lucide="calendar-check" class="icon-sm"></i> Book
+      </a>
+      <button type="button" class="nav-toggle" aria-label="Menu"><i data-lucide="menu" class="icon"></i></button>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <header class="ac-hero">
+    <h1 class="ac-hero-logo">APPL<span class="ac3">3</span>CITY</h1>
+    <p class="ac-hero-sub">Quality Devices You Can Actually Trust</p>
+    <p class="ac-hero-cert">Certified by <span>MobiDokta</span> &nbsp;·&nbsp; Winter 2026 &nbsp;·&nbsp; All prices include VAT</p>
+    <div class="ac-hero-ctas">
+      <a href="https://wa.me/27781541350?text=Hi+Appl3City%21+I%27d+like+to+see+what+phones+you+have+in+stock." target="_blank" rel="noopener" class="btn-ac-wa">
+        <i data-lucide="message-circle" style="width:16px;height:16px"></i> WhatsApp Us
+      </a>
+      <a href="#ac-devices" class="btn-ac-scroll">
+        <i data-lucide="chevrons-down" style="width:16px;height:16px"></i> Browse Devices
+      </a>
+    </div>
+  </header>
+
+  <!-- ── Trust bar ── -->
+  <div class="ac-trust-bar">
+    <div class="ac-trust-item"><i data-lucide="shield-check" class="icon-xs"></i> IMEI verified before you pay</div>
+    <div class="ac-trust-item"><i data-lucide="wifi-off" class="icon-xs"></i> Network &amp; blacklist guarantee</div>
+    <div class="ac-trust-item"><i data-lucide="file-check" class="icon-xs"></i> Written warranty on every device</div>
+    <div class="ac-trust-item"><i data-lucide="battery-full" class="icon-xs"></i> Honest battery-health disclosure</div>
+    <div class="ac-trust-item"><i data-lucide="wrench" class="icon-xs"></i> Engineer-tested before sale</div>
+  </div>
+
+  <!-- ── Payment bar ── -->
+  <div class="ac-pay-bar">
+    <strong>Pay your way:</strong>
+    <span class="ac-pay-pill">Cash</span>
+    <span class="ac-pay-pill">Card</span>
+    <span class="ac-pay-pill">Instant EFT</span>
+    <span class="ac-pay-pill">Buy Now, Pay Later</span>
+    <span class="ac-pay-pill">Lay-by</span>
+    <span class="ac-pay-pill">Trade-ins Welcome</span>
+  </div>
+
+  <!-- ── Grade legend ── -->
+  <div class="ac-grades-bar">
+    <div class="ac-grades-inner">
+      <span class="ac-grades-label">Grades:</span>
+      <span class="ac-grade-pill"><span class="ac-grade-dot" style="background:#34c759"></span>Brand New — Factory sealed, 1-yr Apple warranty</span>
+      <span class="ac-grade-pill"><span class="ac-grade-dot" style="background:#007aff"></span>Sealed — New in box</span>
+      <span class="ac-grade-pill"><span class="ac-grade-dot" style="background:#8e8e93"></span>Pre-owned — IMEI-checked &amp; bench-tested</span>
+      <span class="ac-grade-pill"><span class="ac-grade-dot" style="background:#ff9500"></span>Special — Ask us for exact condition</span>
+    </div>
+  </div>
+
+  <!-- ── Category filter ── -->
+  <div class="ac-filter-bar">
+    <div class="ac-filters">
+      <button type="button" class="ac-filter active" data-cat="all">All Devices</button>
+      <button type="button" class="ac-filter" data-cat="iphone">iPhones</button>
+      <button type="button" class="ac-filter" data-cat="watch">Apple Watch</button>
+      <button type="button" class="ac-filter" data-cat="macbook">MacBook</button>
+      <button type="button" class="ac-filter" data-cat="samsung">Samsung Galaxy</button>
+      <button type="button" class="ac-filter" data-cat="tablet">Samsung Tablets</button>
+    </div>
+  </div>
+
+  <!-- ── Device Listing ── -->
+  <section class="ac-section" id="ac-devices">
+    <div class="container">
+      <div id="ac-listing"></div>
+    </div>
+  </section>
+
+  <!-- ── The Promise ── -->
+  <section class="ac-promise">
+    <h2>The <span>Appl3City</span> Promise</h2>
+    <div class="ac-promise-grid">
+      <div class="ac-promise-item">
+        <div class="ac-promise-icon"><i data-lucide="shield-check" style="width:18px;height:18px"></i></div>
+        <div class="ac-promise-text">
+          <strong>IMEI Checked First</strong>
+          <p>We run the blacklist check in front of you, before you hand over a cent.</p>
+        </div>
+      </div>
+      <div class="ac-promise-item">
+        <div class="ac-promise-icon"><i data-lucide="file-text" style="width:18px;height:18px"></i></div>
+        <div class="ac-promise-text">
+          <strong>Written Warranty</strong>
+          <p>Every device comes with a written warranty backed by MobiDokta's repair bench.</p>
+        </div>
+      </div>
+      <div class="ac-promise-item">
+        <div class="ac-promise-icon"><i data-lucide="battery" style="width:18px;height:18px"></i></div>
+        <div class="ac-promise-text">
+          <strong>Honest Grading</strong>
+          <p>Battery health and cosmetic condition disclosed upfront. No surprises.</p>
+        </div>
+      </div>
+      <div class="ac-promise-item">
+        <div class="ac-promise-icon"><i data-lucide="building-2" style="width:18px;height:18px"></i></div>
+        <div class="ac-promise-text">
+          <strong>A Real Shop</strong>
+          <p>A real engineer, a registered company. Shop 6, Madeira Isles, Pretoria. Not a corner deal.</p>
+        </div>
+      </div>
+    </div>
+    <a href="https://wa.me/27781541350?text=Hi+Appl3City%21+I%27m+looking+for+a+phone+and+would+like+to+know+what+you+have+in+stock." target="_blank" rel="noopener" class="btn-ac-wa-lg">
+      <i data-lucide="message-circle" style="width:18px;height:18px"></i> Chat to Us on WhatsApp
+    </a>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="ac-footer">
+    <div class="ac-footer-links">
+      <a href="index.html">MobiDokta Home</a>
+      <a href="apple.html">Apple Repair</a>
+      <a href="android.html">Android Repair</a>
+      <a href="computers.html">Laptops &amp; PCs</a>
+      <a href="shop.html">Accessories Shop</a>
+      <a href="book.html">Book a Repair</a>
+    </div>
+    <p>
+      Appl3City by MobiDokta &mdash; Shop 6, Madeira Isles Shopping Complex, 262 Klitsgras St, Danville, Pretoria<br>
+      <a href="tel:+27781541350">078 154 1350</a> &nbsp;&middot;&nbsp;
+      <a href="tel:+27637538553">063 753 8553</a> &nbsp;&middot;&nbsp;
+      <a href="mailto:infomobidokta@gmail.com">infomobidokta@gmail.com</a>
+    </p>
+    <p style="margin-top:8px;font-size:11px;opacity:0.38">
+      &copy; 2026 Appl3City / MobiDokta. Prices include VAT. Stock subject to availability. Valid until further notice.
+    </p>
+  </footer>
+
+  <!-- ── Side Nav ── -->
+  <div class="nav-overlay"></div>
+  <aside class="side-nav">
+    <div class="side-nav-header">
+      <img src="./assets/mobidokta-logo.png" alt="MobiDokta" class="logo-nav" loading="eager">
+      <button type="button" class="nav-close" aria-label="Close Menu"><i data-lucide="x" class="icon"></i></button>
+    </div>
+    <a href="index.html"><i data-lucide="home" class="icon-sm"></i> Home</a>
+    <a href="apple.html"><i data-lucide="smartphone" class="icon-sm"></i> Apple Repairs</a>
+    <a href="android.html"><i data-lucide="cpu" class="icon-sm"></i> Android Repairs</a>
+    <a href="computers.html"><i data-lucide="laptop" class="icon-sm"></i> Laptops &amp; PCs</a>
+    <a href="shop.html"><i data-lucide="shopping-bag" class="icon-sm"></i> Shop Accessories</a>
+    <a href="applecity.html" class="active"><i data-lucide="smartphone" class="icon-sm"></i> Appl3City Phones</a>
+    <a href="book.html"><i data-lucide="calendar" class="icon-sm"></i> Book a Repair</a>
+    <a href="support.html"><i data-lucide="life-buoy" class="icon-sm"></i> Support</a>
+  </aside>
+
+  <a href="https://wa.me/27781541350" target="_blank" rel="noopener" class="whatsapp-fab" title="Chat on WhatsApp">
+    <i data-lucide="message-circle" class="icon-lg"></i>
+  </a>
+
+  <script src="./js/shop.js"></script>
+
+  <script>
+    const COND_COLOR = { 'Brand New':'#34c759', 'Sealed':'#007aff', 'Pre-owned':'#8e8e93', 'Special':'#ff9500' };
+
+    const AC_DEVICES = [
+      // ── Apple iPhone ──
+      { id:'i001', cat:'iphone', name:'iPhone 7',           storage:'32GB',   cond:'Pre-owned', price:1950  },
+      { id:'i002', cat:'iphone', name:'iPhone 7',           storage:'128GB',  cond:'Pre-owned', price:2300  },
+      { id:'i003', cat:'iphone', name:'iPhone 7 Plus',      storage:'32GB',   cond:'Special',   price:2600  },
+      { id:'i004', cat:'iphone', name:'iPhone 7 Plus',      storage:'32GB',   cond:'Sealed',    price:3100  },
+      { id:'i005', cat:'iphone', name:'iPhone 7 Plus',      storage:'128GB',  cond:'Special',   price:2850  },
+      { id:'i006', cat:'iphone', name:'iPhone 7 Plus',      storage:'128GB',  cond:'Sealed',    price:3250  },
+      { id:'i007', cat:'iphone', name:'iPhone 8',           storage:'64GB',   cond:'Special',   price:2800  },
+      { id:'i008', cat:'iphone', name:'iPhone 8',           storage:'64GB',   cond:'Sealed',    price:3250  },
+      { id:'i009', cat:'iphone', name:'iPhone SE 2020',     storage:'64GB',   cond:'Pre-owned', price:3800  },
+      { id:'i010', cat:'iphone', name:'iPhone SE 2022',     storage:'64GB',   cond:'Pre-owned', price:4300  },
+      { id:'i011', cat:'iphone', name:'iPhone SE 2022',     storage:'128GB',  cond:'Pre-owned', price:4650  },
+      { id:'i012', cat:'iphone', name:'iPhone 8 Plus',      storage:'64GB',   cond:'Pre-owned', price:3300  },
+      { id:'i013', cat:'iphone', name:'iPhone 8 Plus',      storage:'64GB',   cond:'Sealed',    price:3900  },
+      { id:'i014', cat:'iphone', name:'iPhone 8 Plus',      storage:'256GB',  cond:'Pre-owned', price:4100  },
+      { id:'i015', cat:'iphone', name:'iPhone 8 Plus',      storage:'256GB',  cond:'Sealed',    price:4500  },
+      { id:'i016', cat:'iphone', name:'iPhone X',           storage:'64GB',   cond:'Pre-owned', price:3600  },
+      { id:'i017', cat:'iphone', name:'iPhone X',           storage:'64GB',   cond:'Sealed',    price:4150  },
+      { id:'i018', cat:'iphone', name:'iPhone X',           storage:'256GB',  cond:'Pre-owned', price:4100  },
+      { id:'i019', cat:'iphone', name:'iPhone X',           storage:'256GB',  cond:'Sealed',    price:4800  },
+      { id:'i020', cat:'iphone', name:'iPhone XR',          storage:'64GB',   cond:'Pre-owned', price:3800  },
+      { id:'i021', cat:'iphone', name:'iPhone XR',          storage:'64GB',   cond:'Sealed',    price:4150  },
+      { id:'i022', cat:'iphone', name:'iPhone XR',          storage:'128GB',  cond:'Pre-owned', price:4400  },
+      { id:'i023', cat:'iphone', name:'iPhone XR',          storage:'128GB',  cond:'Sealed',    price:4850  },
+      { id:'i024', cat:'iphone', name:'iPhone XR (iOS 16)', storage:'64GB',   cond:'Sealed',    price:4150  },
+      { id:'i025', cat:'iphone', name:'iPhone XR (iOS 16)', storage:'128GB',  cond:'Sealed',    price:4850  },
+      { id:'i026', cat:'iphone', name:'iPhone XS',          storage:'64GB',   cond:'Pre-owned', price:4050  },
+      { id:'i027', cat:'iphone', name:'iPhone XS',          storage:'64GB',   cond:'Sealed',    price:4400  },
+      { id:'i028', cat:'iphone', name:'iPhone XS',          storage:'256GB',  cond:'Pre-owned', price:4650  },
+      { id:'i029', cat:'iphone', name:'iPhone XS',          storage:'256GB',  cond:'Sealed',    price:5050  },
+      { id:'i030', cat:'iphone', name:'iPhone XS Max',      storage:'64GB',   cond:'Pre-owned', price:5400  },
+      { id:'i031', cat:'iphone', name:'iPhone XS Max',      storage:'256GB',  cond:'Pre-owned', price:6050  },
+      { id:'i032', cat:'iphone', name:'iPhone XS Max',      storage:'64GB',   cond:'Sealed',    price:6050  },
+      { id:'i033', cat:'iphone', name:'iPhone XS Max',      storage:'256GB',  cond:'Sealed',    price:6700  },
+      { id:'i034', cat:'iphone', name:'iPhone 11',          storage:'64GB',   cond:'Pre-owned', price:4500  },
+      { id:'i035', cat:'iphone', name:'iPhone 11',          storage:'64GB',   cond:'Sealed',    price:4900  },
+      { id:'i036', cat:'iphone', name:'iPhone 11',          storage:'128GB',  cond:'Pre-owned', price:5250  },
+      { id:'i037', cat:'iphone', name:'iPhone 11',          storage:'128GB',  cond:'Sealed',    price:5600  },
+      { id:'i038', cat:'iphone', name:'iPhone 11 Pro',      storage:'64GB',   cond:'Pre-owned', price:5750  },
+      { id:'i039', cat:'iphone', name:'iPhone 11 Pro',      storage:'64GB',   cond:'Sealed',    price:6350  },
+      { id:'i040', cat:'iphone', name:'iPhone 11 Pro',      storage:'256GB',  cond:'Pre-owned', price:6350  },
+      { id:'i041', cat:'iphone', name:'iPhone 11 Pro',      storage:'256GB',  cond:'Sealed',    price:6950  },
+      { id:'i042', cat:'iphone', name:'iPhone 11 Pro Max',  storage:'64GB',   cond:'Pre-owned', price:6700  },
+      { id:'i043', cat:'iphone', name:'iPhone 11 Pro Max',  storage:'64GB',   cond:'Sealed',    price:7100  },
+      { id:'i044', cat:'iphone', name:'iPhone 11 Pro Max',  storage:'256GB',  cond:'Pre-owned', price:7300  },
+      { id:'i045', cat:'iphone', name:'iPhone 11 Pro Max',  storage:'256GB',  cond:'Sealed',    price:7950  },
+      { id:'i046', cat:'iphone', name:'iPhone 12',          storage:'64GB',   cond:'Pre-owned', price:5500  },
+      { id:'i047', cat:'iphone', name:'iPhone 12',          storage:'64GB',   cond:'Sealed',    price:6100  },
+      { id:'i048', cat:'iphone', name:'iPhone 12',          storage:'128GB',  cond:'Pre-owned', price:6100  },
+      { id:'i049', cat:'iphone', name:'iPhone 12',          storage:'128GB',  cond:'Sealed',    price:6700  },
+      { id:'i050', cat:'iphone', name:'iPhone 12 mini',     storage:'64GB',   cond:'Pre-owned', price:6000  },
+      { id:'i051', cat:'iphone', name:'iPhone 12 mini',     storage:'128GB',  cond:'Pre-owned', price:6700  },
+      { id:'i052', cat:'iphone', name:'iPhone 12 Pro',      storage:'128GB',  cond:'Pre-owned', price:7300  },
+      { id:'i053', cat:'iphone', name:'iPhone 12 Pro',      storage:'128GB',  cond:'Sealed',    price:7950  },
+      { id:'i054', cat:'iphone', name:'iPhone 12 Pro',      storage:'256GB',  cond:'Pre-owned', price:7950  },
+      { id:'i055', cat:'iphone', name:'iPhone 12 Pro',      storage:'256GB',  cond:'Sealed',    price:8550  },
+      { id:'i056', cat:'iphone', name:'iPhone 12 Pro Max',  storage:'128GB',  cond:'Pre-owned', price:9150  },
+      { id:'i057', cat:'iphone', name:'iPhone 12 Pro Max',  storage:'128GB',  cond:'Sealed',    price:9750  },
+      { id:'i058', cat:'iphone', name:'iPhone 12 Pro Max',  storage:'256GB',  cond:'Pre-owned', price:9750  },
+      { id:'i059', cat:'iphone', name:'iPhone 12 Pro Max',  storage:'256GB',  cond:'Sealed',    price:10350 },
+      { id:'i060', cat:'iphone', name:'iPhone 13',          storage:'128GB',  cond:'Pre-owned', price:7100  },
+      { id:'i061', cat:'iphone', name:'iPhone 13',          storage:'128GB',  cond:'Sealed',    price:7900  },
+      { id:'i062', cat:'iphone', name:'iPhone 13',          storage:'256GB',  cond:'Pre-owned', price:7650  },
+      { id:'i063', cat:'iphone', name:'iPhone 13',          storage:'256GB',  cond:'Sealed',    price:8500  },
+      { id:'i064', cat:'iphone', name:'iPhone 13 mini',     storage:'128GB',  cond:'Pre-owned', price:6850  },
+      { id:'i065', cat:'iphone', name:'iPhone 13 Pro',      storage:'128GB',  cond:'Pre-owned', price:9700  },
+      { id:'i066', cat:'iphone', name:'iPhone 13 Pro',      storage:'128GB',  cond:'Sealed',    price:10250 },
+      { id:'i067', cat:'iphone', name:'iPhone 13 Pro',      storage:'256GB',  cond:'Pre-owned', price:10250 },
+      { id:'i068', cat:'iphone', name:'iPhone 13 Pro',      storage:'256GB',  cond:'Sealed',    price:10850 },
+      { id:'i069', cat:'iphone', name:'iPhone 13 Pro Max',  storage:'128GB',  cond:'Pre-owned', price:10600 },
+      { id:'i070', cat:'iphone', name:'iPhone 13 Pro Max',  storage:'128GB',  cond:'Sealed',    price:11350 },
+      { id:'i071', cat:'iphone', name:'iPhone 13 Pro Max',  storage:'256GB',  cond:'Pre-owned', price:11200 },
+      { id:'i072', cat:'iphone', name:'iPhone 13 Pro Max',  storage:'256GB',  cond:'Sealed',    price:12400 },
+      { id:'i073', cat:'iphone', name:'iPhone 14',          storage:'128GB',  cond:'Pre-owned', price:8250  },
+      { id:'i074', cat:'iphone', name:'iPhone 14',          storage:'128GB',  cond:'Sealed',    price:8850  },
+      { id:'i075', cat:'iphone', name:'iPhone 14',          storage:'256GB',  cond:'Pre-owned', price:8850  },
+      { id:'i076', cat:'iphone', name:'iPhone 14',          storage:'256GB',  cond:'Sealed',    price:9700  },
+      { id:'i077', cat:'iphone', name:'iPhone 14 Plus',     storage:'128GB',  cond:'Pre-owned', price:8850  },
+      { id:'i078', cat:'iphone', name:'iPhone 14 Plus',     storage:'128GB',  cond:'Sealed',    price:9700  },
+      { id:'i079', cat:'iphone', name:'iPhone 14 Plus',     storage:'256GB',  cond:'Pre-owned', price:9450  },
+      { id:'i080', cat:'iphone', name:'iPhone 14 Plus',     storage:'256GB',  cond:'Sealed',    price:10250 },
+      { id:'i081', cat:'iphone', name:'iPhone 14 Pro',      storage:'128GB',  cond:'Pre-owned', price:11450 },
+      { id:'i082', cat:'iphone', name:'iPhone 14 Pro',      storage:'128GB',  cond:'Sealed',    price:12400 },
+      { id:'i083', cat:'iphone', name:'iPhone 14 Pro',      storage:'256GB',  cond:'Pre-owned', price:12050 },
+      { id:'i084', cat:'iphone', name:'iPhone 14 Pro',      storage:'256GB',  cond:'Sealed',    price:13000 },
+      { id:'i085', cat:'iphone', name:'iPhone 14 Pro Max',  storage:'128GB',  cond:'Sealed',    price:13550 },
+      { id:'i086', cat:'iphone', name:'iPhone 14 Pro Max',  storage:'256GB',  cond:'Sealed',    price:14150 },
+      { id:'i087', cat:'iphone', name:'iPhone 15',          storage:'128GB',  cond:'Sealed',    price:11300 },
+      { id:'i088', cat:'iphone', name:'iPhone 15',          storage:'256GB',  cond:'Sealed',    price:11850 },
+      { id:'i089', cat:'iphone', name:'iPhone 15 Plus',     storage:'128GB',  cond:'Sealed',    price:11850 },
+      { id:'i090', cat:'iphone', name:'iPhone 15 Plus',     storage:'256GB',  cond:'Sealed',    price:12450 },
+      { id:'i091', cat:'iphone', name:'iPhone 15 Pro',      storage:'128GB',  cond:'Sealed',    price:13550 },
+      { id:'i092', cat:'iphone', name:'iPhone 15 Pro',      storage:'256GB',  cond:'Sealed',    price:14700 },
+      { id:'i093', cat:'iphone', name:'iPhone 15 Pro Max',  storage:'256GB',  cond:'Sealed',    price:16400 },
+      { id:'i094', cat:'iphone', name:'iPhone 15 Pro Max',  storage:'512GB',  cond:'Sealed',    price:17500 },
+      { id:'i095', cat:'iphone', name:'iPhone 16',          storage:'128GB',  cond:'Sealed',    price:14100 },
+      { id:'i096', cat:'iphone', name:'iPhone 16',          storage:'256GB',  cond:'Sealed',    price:15250 },
+      { id:'i097', cat:'iphone', name:'iPhone 16 Plus',     storage:'128GB',  cond:'Sealed',    price:15250 },
+      { id:'i098', cat:'iphone', name:'iPhone 16 Plus',     storage:'256GB',  cond:'Sealed',    price:16400 },
+      { id:'i099', cat:'iphone', name:'iPhone 16 Pro',      storage:'128GB',  cond:'Sealed',    price:16400 },
+      { id:'i100', cat:'iphone', name:'iPhone 16 Pro',      storage:'256GB',  cond:'Sealed',    price:17500 },
+      { id:'i101', cat:'iphone', name:'iPhone 16 Pro Max',  storage:'256GB',  cond:'Sealed',    price:20900 },
+      { id:'i102', cat:'iphone', name:'iPhone 16 Pro Max',  storage:'512GB',  cond:'Sealed',    price:22050 },
+      { id:'i103', cat:'iphone', name:'iPhone 17',          storage:'256GB',  cond:'Brand New', price:18700 },
+      { id:'i104', cat:'iphone', name:'iPhone 17',          storage:'512GB',  cond:'Brand New', price:22550 },
+      { id:'i105', cat:'iphone', name:'iPhone 17 Pro',      storage:'256GB',  cond:'Brand New', price:27500 },
+      { id:'i106', cat:'iphone', name:'iPhone 17 Pro',      storage:'512GB',  cond:'Brand New', price:31700 },
+      { id:'i107', cat:'iphone', name:'iPhone 17 Pro Max',  storage:'256GB',  cond:'Brand New', price:29700 },
+      { id:'i108', cat:'iphone', name:'iPhone 17 Pro Max',  storage:'512GB',  cond:'Brand New', price:35200 },
+      { id:'i109', cat:'iphone', name:'iPhone 17 Pro Max',  storage:'1TB',    cond:'Brand New', price:40700 },
+
+      // ── Apple Watch ──
+      { id:'w001', cat:'watch', name:'Watch SE 2 (GPS+Cell)',     storage:'', cond:'Pre-owned', price:5700 },
+      { id:'w002', cat:'watch', name:'Watch Series 5 (GPS+Cell)', storage:'', cond:'Pre-owned', price:5100 },
+      { id:'w003', cat:'watch', name:'Watch Series 6 (GPS+Cell)', storage:'', cond:'Pre-owned', price:5450 },
+      { id:'w004', cat:'watch', name:'Watch Series 7 (GPS+Cell)', storage:'', cond:'Pre-owned', price:6350 },
+      { id:'w005', cat:'watch', name:'Watch Series 8 (GPS+Cell)', storage:'', cond:'Pre-owned', price:7000 },
+      { id:'w006', cat:'watch', name:'Watch Series 9 (GPS+Cell)', storage:'', cond:'Pre-owned', price:8250 },
+
+      // ── MacBook ──
+      { id:'m001', cat:'macbook', name:'MacBook Air 2017 (i5)', storage:'8+256GB', cond:'Pre-owned', price:6900 },
+
+      // ── Samsung Galaxy ──
+      { id:'s001', cat:'samsung', name:'Galaxy A05',        storage:'64GB',  cond:'Pre-owned', price:1800  },
+      { id:'s002', cat:'samsung', name:'Galaxy A05s',       storage:'64GB',  cond:'Pre-owned', price:2450  },
+      { id:'s003', cat:'samsung', name:'Galaxy A05s',       storage:'128GB', cond:'Pre-owned', price:2600  },
+      { id:'s004', cat:'samsung', name:'Galaxy A06',        storage:'64GB',  cond:'Pre-owned', price:2100  },
+      { id:'s005', cat:'samsung', name:'Galaxy A06',        storage:'128GB', cond:'Pre-owned', price:2400  },
+      { id:'s006', cat:'samsung', name:'Galaxy A16',        storage:'128GB', cond:'Pre-owned', price:3100  },
+      { id:'s007', cat:'samsung', name:'Galaxy A32',        storage:'128GB', cond:'Pre-owned', price:3400  },
+      { id:'s008', cat:'samsung', name:'Galaxy A26',        storage:'128GB', cond:'Pre-owned', price:4500  },
+      { id:'s009', cat:'samsung', name:'Galaxy A35',        storage:'128GB', cond:'Pre-owned', price:5900  },
+      { id:'s010', cat:'samsung', name:'Galaxy A36',        storage:'128GB', cond:'Pre-owned', price:5800  },
+      { id:'s011', cat:'samsung', name:'Galaxy A54',        storage:'128GB', cond:'Pre-owned', price:6350  },
+      { id:'s012', cat:'samsung', name:'Galaxy A55',        storage:'128GB', cond:'Pre-owned', price:6900  },
+      { id:'s013', cat:'samsung', name:'Galaxy A56',        storage:'128GB', cond:'Pre-owned', price:7300  },
+      { id:'s014', cat:'samsung', name:'Galaxy A56',        storage:'256GB', cond:'Pre-owned', price:7700  },
+      { id:'s015', cat:'samsung', name:'Galaxy S21 FE 5G',  storage:'256GB', cond:'Pre-owned', price:5750  },
+      { id:'s016', cat:'samsung', name:'Galaxy S24 Ultra',  storage:'256GB', cond:'Pre-owned', price:16250 },
+      { id:'s017', cat:'samsung', name:'Galaxy S25 Ultra',  storage:'256GB', cond:'Pre-owned', price:19050 },
+
+      // ── Samsung Tablets ──
+      { id:'t001', cat:'tablet', name:'Galaxy Tab A9',  storage:'', cond:'Pre-owned', price:2750 },
+      { id:'t002', cat:'tablet', name:'Galaxy Tab A9+', storage:'', cond:'Pre-owned', price:4400 },
+    ];
+
+    const CAT_META = {
+      iphone:  { label:'Apple iPhone',    icon:'smartphone' },
+      watch:   { label:'Apple Watch',     icon:'watch' },
+      macbook: { label:'Apple MacBook',   icon:'laptop' },
+      samsung: { label:'Samsung Galaxy',  icon:'cpu' },
+      tablet:  { label:'Samsung Tablets', icon:'tablet' },
+    };
+
+    function waLink(d) {
+      var txt = 'Hi Appl3City! I’m interested in the ' + d.name
+        + (d.storage ? ' ' + d.storage : '') + ' (' + d.cond + ') at R'
+        + d.price.toLocaleString() + '. Is it in stock?';
+      return 'https://wa.me/27781541350?text=' + encodeURIComponent(txt);
+    }
+
+    function renderCard(d) {
+      return '<div class="ac-card">'
+        + '<div class="ac-card-info">'
+        + '<span class="ac-card-name">' + d.name + '</span>'
+        + '<div class="ac-card-meta">'
+        + (d.storage ? '<span class="ac-card-storage">' + d.storage + '</span>' : '')
+        + '<span class="ac-cond-badge" style="--cond-color:' + (COND_COLOR[d.cond]||'#8e8e93') + '">' + d.cond + '</span>'
+        + '</div></div>'
+        + '<div class="ac-card-right">'
+        + '<span class="ac-card-price">R' + d.price.toLocaleString() + '</span>'
+        + '<a href="' + waLink(d) + '" target="_blank" rel="noopener" class="btn-ac-enquire">'
+        + '<i data-lucide="message-circle" style="width:12px;height:12px"></i> Enquire</a>'
+        + '</div></div>';
+    }
+
+    function renderAC(cat) {
+      var el = document.getElementById('ac-listing');
+      if (cat !== 'all') {
+        var items = AC_DEVICES.filter(function(d){ return d.cat === cat; });
+        el.innerHTML = '<div class="ac-grid">' + items.map(renderCard).join('') + '</div>';
+      } else {
+        var order = ['iphone','watch','macbook','samsung','tablet'];
+        el.innerHTML = order.map(function(c) {
+          var items = AC_DEVICES.filter(function(d){ return d.cat === c; });
+          if (!items.length) return '';
+          var m = CAT_META[c];
+          return '<h2 class="ac-cat-heading">'
+            + '<i data-lucide="' + m.icon + '" style="width:20px;height:20px;color:#ff9500"></i>'
+            + m.label + '</h2>'
+            + '<div class="ac-grid">' + items.map(renderCard).join('') + '</div>';
+        }).join('');
+      }
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      renderAC('all');
+
+      document.querySelectorAll('.ac-filter').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('.ac-filter').forEach(function(b){ b.classList.remove('active'); });
+          btn.classList.add('active');
+          renderAC(btn.dataset.cat);
+        });
+      });
+
+      var toggle  = document.querySelector('.nav-toggle');
+      var sideNav = document.querySelector('.side-nav');
+      var overlay = document.querySelector('.nav-overlay');
+      var close   = document.querySelector('.nav-close');
+      function openNav()  { sideNav.classList.add('open'); overlay.classList.add('open'); document.body.style.overflow='hidden'; }
+      function closeNav() { sideNav.classList.remove('open'); overlay.classList.remove('open'); document.body.style.overflow=''; }
+      if (toggle)  toggle.addEventListener('click', openNav);
+      if (close)   close.addEventListener('click', closeNav);
+      if (overlay) overlay.addEventListener('click', closeNav);
+
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+    });
+  </script>
+
+</body>
+</html>

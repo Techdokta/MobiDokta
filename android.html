@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en-ZA">
 <head>
+  <script>(function(){var t=localStorage.getItem('mobidokta-theme')||'dark';if(t==='dark')document.documentElement.classList.add('dark-theme');}());</script>
   <!-- Google tag (gtag.js) - Consent Mode v2, analytics denied until user consents -->
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -33,6 +34,10 @@
   <meta name="twitter:title" content="Samsung & Android Repair Pretoria | MobiDokta" />
   <meta name="twitter:description" content="Galaxy AMOLED screen repairs from R650. Same-day Android repairs in Danville, Pretoria." />
   <meta name="twitter:image" content="https://www.mobidokta.co.za/img/og-cover.png" />
+  <meta name="geo.region" content="ZA-GT" />
+  <meta name="geo.placename" content="Danville, Pretoria, Gauteng" />
+  <meta name="geo.position" content="-25.744000;28.145200" />
+  <meta name="ICBM" content="-25.744000, 28.145200" />
   <link rel="prefetch" href="./book.html" />
   <link rel="prefetch" href="./apple.html" />
   <link rel="stylesheet" href="./css/global.css">
@@ -76,8 +81,19 @@
       <a href="android.html" class="active">Android</a>
       <a href="computers.html">Laptops & PCs</a>
       <a href="support.html">Support</a>
+      <a href="shop.html">Shop</a>
+      <a href="applecity.html" class="nav-ac">Appl3City</a>
     </div>
-    <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    <div class="nav-right">
+      <button class="cart-icon-btn" aria-label="Open cart">
+        <i data-lucide="shopping-bag" class="icon-sm"></i>
+        <span class="cart-badge" hidden>0</span>
+      </button>
+      <a href="book.html?brand=Android" class="nav-book-mobile" aria-label="Book a repair">
+        <i data-lucide="calendar-check" class="icon-sm"></i> Book
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    </div>
   </nav>
 
   <header class="brand-hero">
@@ -171,6 +187,35 @@
           </tbody>
         </table>
 
+        <h3 class="my-8-4">Foldable Phone — Inner &amp; Cover Screen</h3>
+        <p class="body-sm c-tertiary mb-4">Most shops won't touch foldable inner screens. We do — with specialist tooling and a 6-month warranty on every repair.</p>
+        <table class="data-table">
+          <thead><tr><th>Model</th><th>Inner Screen</th><th>Cover Screen</th><th>Battery</th><th>Book</th></tr></thead>
+          <tbody>
+            <tr><td>Galaxy Z Fold 6</td><td>R7,200</td><td>R2,400</td><td>R1,200</td><td><a href="book.html?brand=Samsung&model=Galaxy Z Fold 6" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Galaxy Z Fold 5</td><td>R6,800</td><td>R2,160</td><td>R1,200</td><td><a href="book.html?brand=Samsung&model=Galaxy Z Fold 5" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Galaxy Z Fold 4</td><td>R5,600</td><td>R1,920</td><td>R1,040</td><td><a href="book.html?brand=Samsung&model=Galaxy Z Fold 4" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Galaxy Z Flip 6</td><td>R4,800</td><td>R1,600</td><td>R960</td><td><a href="book.html?brand=Samsung&model=Galaxy Z Flip 6" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Galaxy Z Flip 5</td><td>R4,400</td><td>R1,440</td><td>R960</td><td><a href="book.html?brand=Samsung&model=Galaxy Z Flip 5" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Motorola Razr+ (2024)</td><td>R4,000</td><td>R1,600</td><td>R880</td><td><a href="book.html?brand=Motorola&model=Razr Plus" class="btn btn-primary btn-xs">Book</a></td></tr>
+          </tbody>
+        </table>
+
+        <h3 class="my-8-4">Samsung Galaxy Watch &amp; Android Wearables</h3>
+        <p class="body-sm c-tertiary mb-4">Screen repair, battery swap &amp; charging cradle port — all carrying the 6-month warranty.</p>
+        <table class="data-table">
+          <thead><tr><th>Model</th><th>Screen</th><th>Battery</th><th>Charging Port</th><th>Book</th></tr></thead>
+          <tbody>
+            <tr><td>Galaxy Watch 7 (40 / 44mm)</td><td>R2,000</td><td>R560</td><td>R400</td><td><a href="book.html?brand=Samsung&model=Galaxy Watch 7" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Galaxy Watch 6 Classic (43 / 47mm)</td><td>R2,160</td><td>R560</td><td>R400</td><td><a href="book.html?brand=Samsung&model=Galaxy Watch 6 Classic" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Galaxy Watch 6 (40 / 44mm)</td><td>R1,760</td><td>R480</td><td>R360</td><td><a href="book.html?brand=Samsung&model=Galaxy Watch 6" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Galaxy Watch 5 Pro</td><td>R2,000</td><td>R560</td><td>R400</td><td><a href="book.html?brand=Samsung&model=Galaxy Watch 5 Pro" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Galaxy Watch 5 (40 / 44mm)</td><td>R1,600</td><td>R480</td><td>R360</td><td><a href="book.html?brand=Samsung&model=Galaxy Watch 5" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Galaxy Watch 4 (40 / 44mm)</td><td>R1,440</td><td>R400</td><td>R320</td><td><a href="book.html?brand=Samsung&model=Galaxy Watch 4" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Garmin Fenix / Forerunner</td><td>R2,400</td><td>R640</td><td>R400</td><td><a href="book.html?brand=Garmin" class="btn btn-primary btn-xs">Book</a></td></tr>
+          </tbody>
+        </table>
+
         <p class="text-center-sm mt-6">Don't see your model? We repair them all — <a href="https://wa.me/27781541350" class="c-accent">WhatsApp 078 154 1350</a> for an instant, exact quote.</p>
       </div>
     </div>
@@ -195,6 +240,20 @@
     </div>
   </footer>
 
+  <!-- ─── Cross-links ─── -->
+  <section class="also-section">
+    <div class="container">
+      <p class="also-label">Also at MobiDokta</p>
+      <div class="also-links">
+        <a href="apple.html" class="also-link"><i data-lucide="smartphone" class="icon-xs"></i> iPhone &amp; iPad Repairs</a>
+        <a href="computers.html" class="also-link"><i data-lucide="laptop" class="icon-xs"></i> Laptops &amp; PCs</a>
+        <a href="shop.html" class="also-link"><i data-lucide="shopping-bag" class="icon-xs"></i> Shop — Cases &amp; Protection</a>
+        <a href="book.html?brand=Android" class="also-link also-link-primary"><i data-lucide="calendar-check" class="icon-xs"></i> Book Android Repair</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="./js/shop.js"></script>
   <script src="./js/app.js"></script>
   <script src="./js/cookie-consent.js"></script>
 </body>

@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en-ZA">
 <head>
+  <script>(function(){var t=localStorage.getItem('mobidokta-theme')||'dark';if(t==='dark')document.documentElement.classList.add('dark-theme');}());</script>
   <!-- Google tag (gtag.js) - Consent Mode v2, analytics denied until user consents -->
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -33,6 +34,10 @@
   <meta name="twitter:title" content="MacBook, Laptop & Console Repair Pretoria | MobiDokta" />
   <meta name="twitter:description" content="MacBook screen from R1800, PS5 HDMI R1250. Expert repairs at Madeira Isles, Danville, Pretoria." />
   <meta name="twitter:image" content="https://www.mobidokta.co.za/img/og-cover.png" />
+  <meta name="geo.region" content="ZA-GT" />
+  <meta name="geo.placename" content="Danville, Pretoria, Gauteng" />
+  <meta name="geo.position" content="-25.744000;28.145200" />
+  <meta name="ICBM" content="-25.744000, 28.145200" />
   <link rel="prefetch" href="./book.html" />
   <link rel="prefetch" href="./apple.html" />
   <link rel="stylesheet" href="./css/global.css">
@@ -76,8 +81,19 @@
       <a href="apple.html">Apple</a>
       <a href="computers.html" class="active">Laptops & PCs</a>
       <a href="support.html">Support</a>
+      <a href="shop.html">Shop</a>
+      <a href="applecity.html" class="nav-ac">Appl3City</a>
     </div>
-    <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    <div class="nav-right">
+      <button class="cart-icon-btn" aria-label="Open cart">
+        <i data-lucide="shopping-bag" class="icon-sm"></i>
+        <span class="cart-badge" hidden>0</span>
+      </button>
+      <a href="book.html?brand=MacBook" class="nav-book-mobile" aria-label="Book a repair">
+        <i data-lucide="calendar-check" class="icon-sm"></i> Book
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    </div>
   </nav>
 
   <header class="brand-hero">
@@ -158,12 +174,68 @@
           </tbody>
         </table>
 
-        <h3 class="my-8-4">Consoles (PS5 / Xbox)</h3>
+        <h3 class="my-8-4">Console Hardware Repair — PS5 · Xbox · Switch · PS4</h3>
+        <p class="body-sm c-tertiary mb-4">All repairs include a free diagnostic. No-fix, no-pay on board-level faults.</p>
         <table class="data-table">
-          <thead><tr><th>Service</th><th>Price</th><th>Book</th></tr></thead>
+          <thead><tr><th>Console</th><th>Service</th><th>From</th><th>Book</th></tr></thead>
           <tbody>
-            <tr><td>HDMI Port Surgery</td><td>R1,250</td><td><a href="book.html?brand=Console&svc=HDMI Port" class="btn btn-primary btn-xs">Book</a></td></tr>
-            <tr><td>Deep Clean + Thermal Paste</td><td>R650</td><td><a href="book.html?brand=Console&svc=Deep Clean" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>PS5</td><td>HDMI port replacement</td><td>R1,600</td><td><a href="book.html?brand=PS5&svc=HDMI Port" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>PS5</td><td>Disc drive motor replacement</td><td>R1,200</td><td><a href="book.html?brand=PS5&svc=Disc Drive" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>PS5</td><td>Deep clean + thermal repaste</td><td>R850</td><td><a href="book.html?brand=PS5&svc=Deep Clean" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>PS5</td><td>No-power / board fault</td><td>R1,040</td><td><a href="book.html?brand=PS5&svc=Board Repair" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Xbox Series X/S</td><td>HDMI port replacement</td><td>R1,400</td><td><a href="book.html?brand=Xbox&svc=HDMI Port" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Xbox Series X/S</td><td>Disc drive replacement</td><td>R1,100</td><td><a href="book.html?brand=Xbox&svc=Disc Drive" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Xbox Series X/S</td><td>Deep clean + thermal repaste</td><td>R750</td><td><a href="book.html?brand=Xbox&svc=Deep Clean" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Nintendo Switch</td><td>Screen replacement</td><td>R800</td><td><a href="book.html?brand=Switch&svc=Screen" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Nintendo Switch</td><td>Charging port repair</td><td>R400</td><td><a href="book.html?brand=Switch&svc=Charging Port" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Nintendo Switch</td><td>Battery replacement</td><td>R480</td><td><a href="book.html?brand=Switch&svc=Battery" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>PS4 / Xbox One</td><td>HDMI port replacement</td><td>R960</td><td><a href="book.html?brand=PS4&svc=HDMI Port" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>PS4 / Xbox One</td><td>Deep clean + thermal repaste</td><td>R550</td><td><a href="book.html?brand=PS4&svc=Deep Clean" class="btn btn-primary btn-xs">Book</a></td></tr>
+          </tbody>
+        </table>
+
+        <h3 class="my-8-4">Controller &amp; Gamepad Repair — Stick Drift &amp; More</h3>
+        <p class="body-sm c-tertiary mb-4">Stick drift is one of the most common gaming faults — barely any SA shop repairs it. We fix it same day. All controllers carry a 3-month warranty.</p>
+        <table class="data-table">
+          <thead><tr><th>Controller</th><th>Service</th><th>From</th><th>Book</th></tr></thead>
+          <tbody>
+            <tr><td>DualSense (PS5)</td><td>Stick drift repair (per stick)</td><td>R480</td><td><a href="book.html?brand=DualSense&svc=Stick Drift" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>DualSense (PS5)</td><td>Trigger / haptic mechanism</td><td>R360</td><td><a href="book.html?brand=DualSense&svc=Trigger" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>DualSense (PS5)</td><td>USB-C charging port</td><td>R320</td><td><a href="book.html?brand=DualSense&svc=Charging Port" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>DualShock 4 (PS4)</td><td>Stick drift repair (per stick)</td><td>R320</td><td><a href="book.html?brand=DualShock4&svc=Stick Drift" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>DualShock 4 (PS4)</td><td>Micro-USB charging port</td><td>R280</td><td><a href="book.html?brand=DualShock4&svc=Charging Port" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Xbox Series controller</td><td>Stick drift repair (per stick)</td><td>R480</td><td><a href="book.html?brand=XboxController&svc=Stick Drift" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Xbox Series controller</td><td>Bumper / trigger repair</td><td>R320</td><td><a href="book.html?brand=XboxController&svc=Bumper" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Nintendo Switch Joy-Con</td><td>Stick drift repair (pair)</td><td>R280</td><td><a href="book.html?brand=JoyCon&svc=Stick Drift" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Nintendo Switch Joy-Con</td><td>Rail / connection repair</td><td>R240</td><td><a href="book.html?brand=JoyCon&svc=Rail" class="btn btn-primary btn-xs">Book</a></td></tr>
+          </tbody>
+        </table>
+
+        <h3 class="my-8-4">Micro-Soldering &amp; Board-Level Repair</h3>
+        <p class="body-sm c-tertiary mb-4">Component-level surgery — we repair the chip, not just swap the board. Most shops refuse these. Free diagnosis; no-fix, no-pay on all board faults.</p>
+        <table class="data-table">
+          <thead><tr><th>Service</th><th>Device</th><th>From</th><th>Book</th></tr></thead>
+          <tbody>
+            <tr><td>Charging IC replacement</td><td>iPhone / Android / MacBook</td><td>R640</td><td><a href="book.html?svc=Charging IC" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Power management chip</td><td>iPhone / Android</td><td>R960</td><td><a href="book.html?svc=PMIC Repair" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>WiFi / Bluetooth chip</td><td>iPhone / Android / MacBook</td><td>R800</td><td><a href="book.html?svc=WiFi Chip" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Touch / Face ID controller IC</td><td>iPhone</td><td>R800</td><td><a href="book.html?svc=Touch IC" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>MacBook liquid-damage board recovery</td><td>MacBook Air / Pro</td><td>R1,600</td><td><a href="book.html?brand=MacBook&svc=Liquid Damage Board" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>CPU / GPU reballing</td><td>MacBook / Laptop</td><td>R2,400</td><td><a href="book.html?svc=Reballing" class="btn btn-primary btn-xs">Book</a></td></tr>
+          </tbody>
+        </table>
+
+        <h3 class="my-8-4">DJI Drone Repair</h3>
+        <p class="body-sm c-tertiary mb-4">One of the very few authorised drone repair centres in Pretoria. Crash damage, gimbal faults, signal loss &amp; motor failures — all covered.</p>
+        <table class="data-table">
+          <thead><tr><th>Service</th><th>From</th><th>Book</th></tr></thead>
+          <tbody>
+            <tr><td>Gimbal repair &amp; calibration</td><td>R1,200</td><td><a href="book.html?brand=DJI&svc=Gimbal" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Motor replacement (per motor)</td><td>R640</td><td><a href="book.html?brand=DJI&svc=Motor" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Battery replacement</td><td>R800</td><td><a href="book.html?brand=DJI&svc=Battery" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Camera module repair</td><td>R1,600</td><td><a href="book.html?brand=DJI&svc=Camera" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Propeller set replacement</td><td>R280</td><td><a href="book.html?brand=DJI&svc=Propellers" class="btn btn-primary btn-xs">Book</a></td></tr>
+            <tr><td>Mainboard diagnosis &amp; repair</td><td>R2,400</td><td><a href="book.html?brand=DJI&svc=Board Repair" class="btn btn-primary btn-xs">Book</a></td></tr>
           </tbody>
         </table>
 
@@ -232,6 +304,20 @@
     </div>
   </footer>
 
+  <!-- ─── Cross-links ─── -->
+  <section class="also-section">
+    <div class="container">
+      <p class="also-label">Also at MobiDokta</p>
+      <div class="also-links">
+        <a href="apple.html" class="also-link"><i data-lucide="smartphone" class="icon-xs"></i> iPhone &amp; iPad Repairs</a>
+        <a href="android.html" class="also-link"><i data-lucide="cpu" class="icon-xs"></i> Android Repairs</a>
+        <a href="shop.html" class="also-link"><i data-lucide="shopping-bag" class="icon-xs"></i> Shop Accessories</a>
+        <a href="book.html?brand=MacBook" class="also-link also-link-primary"><i data-lucide="calendar-check" class="icon-xs"></i> Book Mac / PC Repair</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="./js/shop.js"></script>
   <script src="./js/app.js"></script>
   <script src="./js/cookie-consent.js"></script>
 </body>
