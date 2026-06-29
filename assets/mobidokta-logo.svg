@@ -22,8 +22,8 @@
             points="0,94 22,94 35,102 44,48 54,126 63,94 148,94"/>
 
   <!-- ── Wordmark ── -->
-  <!-- "Mobi" uses currentColor — white in dark mode, dark in light mode -->
-  <text class="mw" x="158" y="120" fill="currentColor"
+  <!-- "Mobi" always white — nav and footer backgrounds are always dark -->
+  <text class="mw" x="158" y="120" fill="#ffffff"
         textLength="174" lengthAdjust="spacingAndGlyphs">Mobi</text>
   <!-- "Dokta" always orange -->
   <text class="mw" x="332" y="120" fill="#ff9500"
@@ -32,7 +32,7 @@
   <!-- ── Divider + tagline ── -->
   <line x1="158" y1="133" x2="552" y2="133" stroke="#ff9500" stroke-width="1.5"/>
   <text class="mt" x="158" y="155" font-size="12" letter-spacing="3.2"
-        fill="currentColor" opacity="0.72"
+        fill="#ffffff" opacity="0.72"
         textLength="394" lengthAdjust="spacingAndGlyphs">ENGINEERING GRADE IT REPAIRS &amp; SERVICE</text>
 
   <!-- ── Stethoscope ── -->

@@ -7,8 +7,8 @@
 .btn-xs { padding: 4px 10px; font-size: 12px; }
 
 /* ── Logo images ── */
-.logo-nav    { height: 54px; width: auto; display: block; color: var(--text-primary); }
-.logo-footer { height: 58px; width: auto; display: block; margin-bottom: 4px; color: var(--text-primary); }
+.logo-nav    { height: 54px; width: auto; display: block; }
+.logo-footer { height: 58px; width: auto; display: block; margin-bottom: 4px; }
 
 /* ── Spacing ── */
 .mt-4   { margin-top: var(--space-4); }
