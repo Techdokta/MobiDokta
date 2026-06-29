@@ -9,3 +9,8 @@ BrasByMaMloo_System_Blueprint.md
 mobidokta_launch_audit.md
 # Dev/audit tooling not meant for production
 image-gallery-audit.html
+node_modules/
+package.json
+package-lock.json
+img/make-og.js
+img/og-cover-export.html
