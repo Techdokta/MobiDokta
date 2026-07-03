@@ -293,7 +293,8 @@
       border-color: #007aff;
       box-shadow: 0 4px 16px rgba(0,122,255,0.1);
     }
-    .ac-card-info { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+    .ac-card-thumb { width: 44px; height: 44px; object-fit: contain; flex-shrink: 0; border-radius: 6px; background: var(--bg-secondary); }
+    .ac-card-info { display: flex; flex-direction: column; gap: 5px; min-width: 0; flex: 1; }
     .ac-card-name {
       font-size: var(--text-sm);
       font-weight: 700;
@@ -828,6 +829,45 @@
       tablet:  { label:'Samsung Tablets', icon:'tablet' },
     };
 
+    const IPHONE_IMG = {
+      'iPhone 7 Plus':      'img/iphone-models/iPhone-7.jpg.JPG',
+      'iPhone 7':           'img/iphone-models/iPhone-7.jpg.JPG',
+      'iPhone 8 Plus':      'img/iphone-models/iphone-8-plus.jpg.JPG',
+      'iPhone 8':           'img/iphone-models/iPhone-8.jpg.JPG',
+      'iPhone SE':          'img/iphone-models/iPhone-8.jpg.JPG',
+      'iPhone X':           'img/iphone-models/iphone-X.jpg.JPG',
+      'iPhone XS Max':      'img/iphone-models/iphone-X.jpg.JPG',
+      'iPhone XS':          'img/iphone-models/iphone-X.jpg.JPG',
+      'iPhone XR':          'img/iphone-models/iphone-xr.jpg.JPG',
+      'iPhone 11 Pro Max':  'img/iphone-models/iphone-11-promax.png',
+      'iPhone 11 Pro':      'img/iphone-models/iphone-11.jpg.JPG',
+      'iPhone 11':          'img/iphone-models/iphone-11.jpg.JPG',
+      'iPhone 12 Pro Max':  'img/iphone-models/iphone-12-promax.webp',
+      'iPhone 12 Pro':      'img/iphone-models/iphone-12-pro.webp',
+      'iPhone 12 mini':     'img/iphone-models/iPhone-12.jpg.JPG',
+      'iPhone 12':          'img/iphone-models/iPhone-12.jpg.JPG',
+      'iPhone 13 Pro Max':  'img/iphone-models/iPhone-13-ProMax.jpg.JPG',
+      'iPhone 13 Pro':      'img/iphone-models/iPhone-13-pro.jpg.JPG',
+      'iPhone 13 mini':     'img/iphone-models/iphone-13.jpg.JPG',
+      'iPhone 13':          'img/iphone-models/iphone-13.jpg.JPG',
+      'iPhone 14 Pro Max':  'img/iphone-models/iphone-14-promax.jpg.JPG',
+      'iPhone 14 Pro':      'img/iphone-models/iphone-14-pro.jpeg.JPG',
+      'iPhone 14 Plus':     'img/iphone-models/iPhone-14.jpg.JPG',
+      'iPhone 14':          'img/iphone-models/iPhone-14.jpg.JPG',
+      'iPhone 15 Pro Max':  'img/iphone-models/iphone-15-promax.jpg.JPG',
+      'iPhone 15 Pro':      'img/iphone-models/iphone-15-pro.jpg.JPG',
+      'iPhone 15':          'img/iphone-models/iphone-15.jpg.JPG',
+      'iPhone 16 Pro Max':  'img/iphone-models/iphone-16-promax.jpg.JPG',
+      'iPhone 16 Pro':      'img/iphone-models/iphone-16-pro.webp',
+      'iPhone 16':          'img/iphone-models/iphone-16.webp',
+      'iPhone 17 Pro Max':  'img/iphone-models/iphone-17-promax.jpg.JPG',
+      'iPhone 17 Pro':      'img/iphone-models/iphone-17-pro.jpeg.JPG',
+    };
+    function getDeviceImg(name) {
+      var base = name.replace(/\s*\(.*\)$/, '').trim();
+      return IPHONE_IMG[base] || null;
+    }
+
     function waLink(d) {
       var txt = 'Hi Appl3City! I’m interested in the ' + d.name
         + (d.storage ? ' ' + d.storage : '') + ' (' + d.cond + ') at R'
@@ -836,7 +876,9 @@
     }
 
     function renderCard(d) {
+      var img = getDeviceImg(d.name);
       return '<div class="ac-card">'
+        + (img ? '<img src="' + img + '" alt="' + d.name + '" class="ac-card-thumb" loading="lazy">' : '')
         + '<div class="ac-card-info">'
         + '<span class="ac-card-name">' + d.name + '</span>'
         + '<div class="ac-card-meta">'
