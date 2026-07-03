@@ -1,3 +1,25 @@
+/* ─── Portfolio masonry — before/after labels & placeholder slots ─── */
+.masonry-label {
+  display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; padding: 2px 8px; border-radius: var(--radius-full);
+  margin-bottom: var(--space-1);
+}
+.masonry-label--before { background: #ff3b30; color: #fff; }
+.masonry-label--after  { background: #34c759; color: #fff; }
+.masonry-label--wip    { background: var(--accent); color: #fff; }
+.masonry-item--pending { opacity: 0.55; }
+.masonry-img-placeholder {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: var(--space-3); min-height: 220px;
+  background: var(--bg-secondary); border: 2px dashed var(--border);
+  border-radius: var(--radius-xl);
+}
+.masonry-placeholder-icon { color: var(--text-muted, var(--text-secondary)); }
+.masonry-placeholder-text {
+  font-size: var(--text-sm); color: var(--text-secondary);
+  font-style: italic; letter-spacing: 0.03em;
+}
+
 /* ─── Brand Story Section ─── */
 .brand-story-section { background: var(--bg-primary); }
 .brand-story-header { text-align: center; max-width: 720px; margin: 0 auto var(--space-10); }
