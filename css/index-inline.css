@@ -1,3 +1,32 @@
+/* ─── Enterprise / B2B Teaser ─── */
+.enterprise-teaser-section { background: var(--bg-secondary); }
+.enterprise-teaser-inner {
+  max-width: 860px; margin: 0 auto; text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: var(--space-8);
+}
+.enterprise-teaser-badge-row { display: flex; flex-wrap: wrap; gap: var(--space-2); justify-content: center; }
+.enterprise-chip {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 4px 12px; border-radius: var(--radius-full);
+  background: var(--accent); color: #fff;
+}
+.enterprise-teaser-title { font-size: var(--text-3xl); margin: 0; }
+.enterprise-teaser-body { color: var(--text-secondary); line-height: 1.8; max-width: 660px; margin: 0; }
+.enterprise-teaser-body strong { color: var(--text-primary); }
+.enterprise-teaser-services {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: var(--space-4); width: 100%;
+}
+.ent-svc {
+  display: flex; align-items: center; gap: var(--space-3);
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: var(--space-4);
+  font-size: var(--text-sm); font-weight: 500; color: var(--text-primary);
+}
+.ent-svc i { color: var(--accent); flex-shrink: 0; }
+.enterprise-teaser-cta { display: inline-flex; align-items: center; gap: var(--space-2); }
+
 /* ─── Portfolio masonry — before/after labels & placeholder slots ─── */
 .masonry-label {
   display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.08em;

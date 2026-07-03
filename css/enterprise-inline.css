@@ -1,0 +1,76 @@
+/* ─── Enterprise Page Styles ─── */
+.enterprise-chip {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 4px 12px; border-radius: var(--radius-full);
+  background: var(--accent); color: #fff;
+}
+.ent-chip-black { background: #1a1a1a; color: #fff; border: 1px solid var(--border); }
+
+/* Hero */
+.ent-hero { background: var(--bg-primary); padding-top: calc(var(--nav-height, 70px) + var(--space-16)); }
+.ent-hero-inner { max-width: 780px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; gap: var(--space-6); }
+.ent-hero-chips { display: flex; flex-wrap: wrap; gap: var(--space-2); justify-content: center; }
+.ent-hero-title { font-size: clamp(2rem, 5vw, 3.25rem); line-height: 1.2; margin: 0; }
+.ent-hero-sub { color: var(--text-secondary); line-height: 1.8; max-width: 640px; margin: 0; font-size: var(--text-lg); }
+.ent-hero-actions { display: flex; gap: var(--space-4); flex-wrap: wrap; justify-content: center; margin-top: var(--space-2); }
+.ent-hero-actions .btn { display: inline-flex; align-items: center; gap: var(--space-2); }
+
+/* Credentials */
+.ent-creds-section { background: var(--bg-secondary); }
+.ent-creds-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-6); }
+.ent-cred-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-xl);
+  padding: var(--space-8); display: flex; flex-direction: column; gap: var(--space-3);
+}
+.ent-cred-icon {
+  width: 48px; height: 48px; border-radius: var(--radius-lg);
+  display: flex; align-items: center; justify-content: center;
+}
+.ent-cred-icon--gold { background: rgba(255,149,0,0.15); color: var(--orange, #ff9500); }
+.ent-cred-icon--blue { background: rgba(66,133,244,0.15); color: #4285F4; }
+.ent-cred-icon--green { background: rgba(52,199,89,0.15); color: #34c759; }
+.ent-cred-icon--orange { background: rgba(255,59,48,0.15); color: #ff3b30; }
+.ent-cred-card h3 { font-size: var(--text-lg); margin: 0; color: var(--text-primary); }
+.ent-cred-val { font-size: var(--text-sm); font-weight: 700; color: var(--accent); margin: 0; }
+.ent-cred-desc { font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.65; margin: 0; }
+
+/* Services */
+.ent-services-section { background: var(--bg-primary); }
+.ent-svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-6); }
+.ent-svc-card {
+  background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius-xl);
+  padding: var(--space-8); display: flex; flex-direction: column; gap: var(--space-4);
+  transition: border-color 0.2s, transform 0.2s;
+}
+.ent-svc-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+.ent-svc-icon { width: 36px; height: 36px; stroke: var(--accent); stroke-width: 2px; }
+.ent-svc-card h3 { font-size: var(--text-lg); margin: 0; color: var(--text-primary); }
+.ent-svc-card > p { color: var(--text-secondary); font-size: var(--text-sm); line-height: 1.7; margin: 0; }
+.ent-svc-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+.ent-svc-list li { font-size: var(--text-sm); color: var(--text-secondary); padding-left: 16px; position: relative; }
+.ent-svc-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
+
+/* Sectors */
+.ent-sectors-section { background: var(--bg-secondary); }
+.ent-sectors-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: var(--space-4); }
+.ent-sector {
+  display: flex; flex-direction: column; align-items: center; gap: var(--space-3);
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-xl);
+  padding: var(--space-6); text-align: center;
+  font-size: var(--text-sm); font-weight: 600; color: var(--text-primary);
+}
+.ent-sector i { color: var(--accent); }
+
+/* Legal */
+.ent-legal-section { background: var(--bg-primary); }
+.ent-legal-card {
+  background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius-2xl);
+  padding: var(--space-10); max-width: 860px; margin: 0 auto;
+}
+.ent-legal-card h2 { margin-bottom: var(--space-8); }
+.ent-legal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-5); }
+.ent-legal-item { display: flex; flex-direction: column; gap: 4px; }
+.ent-legal-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-secondary); font-weight: 600; }
+.ent-legal-val { font-size: var(--text-sm); color: var(--text-primary); line-height: 1.5; }
+.ent-legal-val em { color: var(--text-secondary); font-style: normal; font-size: 11px; }
