@@ -1,3 +1,33 @@
+/* ─── Brand Story Section ─── */
+.brand-story-section { background: var(--bg-primary); }
+.brand-story-header { text-align: center; max-width: 720px; margin: 0 auto var(--space-10); }
+.brand-story-title { font-size: var(--text-4xl); margin: var(--space-4) 0; }
+.brand-story-lead { color: var(--text-secondary); }
+.brand-vision-quote {
+  border: none; margin: 0 auto var(--space-10);
+  max-width: 780px; padding: var(--space-8) var(--space-10);
+  background: var(--bg-secondary);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius-xl);
+  font-size: var(--text-xl); font-style: italic;
+  color: var(--text-primary); line-height: 1.7;
+  text-align: center; position: relative;
+}
+.bvq-mark { font-size: 2.5rem; line-height: 0; vertical-align: -0.5rem; color: var(--accent); font-style: normal; }
+.brand-story-body { max-width: 720px; margin: 0 auto var(--space-12); display: flex; flex-direction: column; gap: var(--space-4); }
+.brand-story-body p { color: var(--text-secondary); line-height: 1.8; }
+.brand-story-body strong { color: var(--text-primary); }
+.brand-credentials { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-6); margin-bottom: var(--space-10); }
+.brand-cred-card { padding: var(--space-6); border: 1px solid var(--border); background: var(--bg-secondary); display: flex; flex-direction: column; gap: var(--space-3); }
+.brand-cred-icon { color: var(--accent); }
+.brand-cred-card h4 { color: var(--text-primary); font-size: var(--text-base); font-weight: 600; margin: 0; }
+.brand-cred-card p { color: var(--text-secondary); font-size: var(--text-sm); margin: 0; line-height: 1.65; }
+.brand-asi-tag { display: flex; align-items: center; justify-content: center; gap: var(--space-2); flex-wrap: wrap; padding: var(--space-6); background: var(--bg-secondary); border-radius: var(--radius-xl); border: 1px solid var(--border); }
+.brand-asi-label { color: var(--text-secondary); font-size: var(--text-sm); }
+.brand-asi-link { display: inline-flex; align-items: center; gap: 4px; color: var(--accent); font-weight: 600; font-size: var(--text-sm); text-decoration: none; }
+.brand-asi-link:hover { text-decoration: underline; }
+.brand-asi-sub { color: var(--text-muted, var(--text-secondary)); font-size: var(--text-sm); }
+
 .inline-style-76cad585 { background: var(--glass-bg); -webkit-backdrop-filter: blur(14px) saturate(180%); backdrop-filter: blur(14px) saturate(180%); border-bottom: 1px solid var(--border); }
 .inline-style-b25d56ee { color: var(--text-primary); }
 .inline-style-63dc2591 { margin-right:4px; }
