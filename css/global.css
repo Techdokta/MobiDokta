@@ -424,18 +424,30 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-links {
   display: flex;
-  gap: var(--space-8);
+  align-items: center;
+  gap: var(--space-6);
 }
-.nav-links a {
+.nav-links a,
+.nav-links .nav-link {
   color: var(--text-secondary);
   font-weight: 500;
   font-size: var(--text-sm);
   transition: color var(--duration-fast);
+  white-space: nowrap;
 }
 .nav-links a:hover,
-.nav-links a.active {
+.nav-links a.active,
+.nav-links .nav-link:hover,
+.nav-links .nav-link.active {
   color: var(--text-primary);
 }
+.nav-chevron {
+  display: inline-block;
+  transition: transform var(--duration-fast);
+  margin-left: 2px;
+  vertical-align: middle;
+}
+.nav-dropdown:hover .nav-chevron { transform: rotate(180deg); }
 
 /* ─── Nav Dropdown ─── */
 .nav-dropdown {
@@ -451,7 +463,7 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   top: 100%;
   left: 0;
-  width: 200px;
+  width: 220px;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
@@ -491,6 +503,18 @@ h1, h2, h3, h4, h5, h6 {
 .dropdown-menu a:hover {
   background: rgba(255,255,255,0.04);
   color: var(--text-primary) !important;
+}
+.dropdown-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 4px 8px;
+}
+.dropdown-menu .dropdown-all {
+  color: var(--accent) !important;
+  font-weight: 600 !important;
+}
+.dropdown-menu .dropdown-all:hover {
+  background: rgba(10,132,255,0.08) !important;
 }
 
 /* ─── Layout Helpers ─── */
@@ -570,6 +594,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 800;
   display: flex;
   justify-content: space-between;
+}
+
+.navbar.scrolled {
+  box-shadow: 0 2px 20px rgba(0,0,0,0.4);
 }
 
 /* Appl3City nav accent — orange highlight on all pages */
@@ -895,6 +923,34 @@ a.nav-ac:hover { opacity: 0.8; }
 }
 .side-nav a:last-child {
   border-bottom: none;
+}
+.side-nav-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: var(--space-4);
+  margin-bottom: 0;
+}
+.side-nav-group-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-tertiary);
+  padding: var(--space-2) 0 var(--space-1);
+}
+.side-nav .side-nav-sub {
+  font-size: var(--text-sm) !important;
+  font-weight: 500 !important;
+  color: var(--text-secondary) !important;
+  border-bottom: none !important;
+  padding: 7px 0 7px var(--space-3) !important;
+}
+.side-nav .side-nav-sub:hover { color: var(--text-primary) !important; }
+.side-nav .side-nav-book {
+  color: var(--accent) !important;
+  font-weight: 700 !important;
 }
 
 .table-container {

@@ -1257,20 +1257,48 @@
   <!-- ─── Navbar ─── -->
   <nav class="navbar inline-style-76cad585">
     <a href="index.html" class="logo inline-style-b25d56ee"><img src="./assets/mobidokta-logo.svg" alt="MobiDokta — Engineering Grade IT Repairs &amp; Service" class="logo-nav" loading="eager"></a>
+
     <div class="nav-links">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="shop.html" class="nav-link">Shop</a>
+
+      <!-- Apple Repairs dropdown -->
       <div class="nav-dropdown">
-        <a href="#services" class="dropdown-trigger">Repairs</a>
+        <a href="apple.html" class="dropdown-trigger nav-link">
+          Apple Repairs <i data-lucide="chevron-down" class="icon-xs nav-chevron"></i>
+        </a>
         <div class="dropdown-menu">
-          <a href="apple.html">Apple</a>
-          <a href="android.html">Android</a>
-          <a href="computers.html">Laptops &amp; PCs</a>
+          <a href="collections/iphone-repairs/"><i data-lucide="smartphone" class="icon-xs"></i> iPhone Repairs</a>
+          <a href="collections/macbook-repairs/"><i data-lucide="laptop-2" class="icon-xs"></i> MacBook Repairs</a>
+          <a href="collections/imac-repairs/"><i data-lucide="monitor" class="icon-xs"></i> iMac Repairs</a>
+          <a href="collections/exclusive-gadgets/"><i data-lucide="watch" class="icon-xs"></i> iPad &amp; Apple Watch</a>
+          <div class="dropdown-divider"></div>
+          <a href="apple.html" class="dropdown-all"><i data-lucide="grid-2x2" class="icon-xs"></i> All Apple Services</a>
         </div>
       </div>
-      <a href="shop.html">Shop</a>
-      <a href="applecity.html" class="nav-ac">Appl3City</a>
-      <a href="community.html">Blog</a>
+
+      <!-- Other Repairs dropdown -->
+      <div class="nav-dropdown">
+        <a href="android.html" class="dropdown-trigger nav-link">
+          Other Repairs <i data-lucide="chevron-down" class="icon-xs nav-chevron"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="collections/samsung-repairs/"><i data-lucide="cpu" class="icon-xs"></i> Samsung Repairs</a>
+          <a href="collections/android-repairs/"><i data-lucide="smartphone" class="icon-xs"></i> Android Repairs</a>
+          <a href="collections/console-repairs/"><i data-lucide="gamepad-2" class="icon-xs"></i> Console Repairs</a>
+          <a href="collections/dji-repairs/"><i data-lucide="wind" class="icon-xs"></i> DJI Drone Repairs</a>
+          <a href="collections/exclusive-gadgets/"><i data-lucide="sparkles" class="icon-xs"></i> Exclusive Gadgets</a>
+          <div class="dropdown-divider"></div>
+          <a href="computers.html" class="dropdown-all"><i data-lucide="grid-2x2" class="icon-xs"></i> Mac &amp; Laptop Repairs</a>
+        </div>
+      </div>
+
+      <a href="collections/console-repairs/" class="nav-link">Consoles</a>
+      <a href="enterprise.html" class="nav-link">Enterprise</a>
+      <a href="campus.html" class="nav-link">Students</a>
     </div>
-    <div class="inline-style-cea36d1f">
+
+    <div class="nav-right inline-style-cea36d1f">
       <a href="https://wa.me/27781541350" class="nav-wa-link" target="_blank" rel="noopener" title="WhatsApp us now">
         <i data-lucide="message-circle" class="icon-sm"></i>
       </a>
@@ -2348,13 +2376,32 @@
       <span class="inline-style-d60ee865"><img src="./assets/mobidokta-logo.svg" alt="MobiDokta — Engineering Grade IT Repairs &amp; Service" class="logo-nav" loading="eager"></span>
       <button type="button" class="nav-close" aria-label="Close Menu"><i data-lucide="x" class="icon"></i></button>
     </div>
-    <a href="apple.html"><i data-lucide="smartphone" class="icon-sm"></i> Apple Repairs</a>
-    <a href="android.html"><i data-lucide="cpu" class="icon-sm"></i> Android Repairs</a>
-    <a href="computers.html"><i data-lucide="laptop" class="icon-sm"></i> Laptops &amp; PCs</a>
+
+    <a href="index.html"><i data-lucide="home" class="icon-sm"></i> Home</a>
     <a href="shop.html"><i data-lucide="shopping-bag" class="icon-sm"></i> Shop</a>
-    <a href="applecity.html"><i data-lucide="smartphone" class="icon-sm"></i> Appl3City</a>
+
+    <div class="side-nav-group">
+      <span class="side-nav-group-label">Apple Repairs</span>
+      <a href="collections/iphone-repairs/" class="side-nav-sub"><i data-lucide="smartphone" class="icon-xs"></i> iPhone Repairs</a>
+      <a href="collections/macbook-repairs/" class="side-nav-sub"><i data-lucide="laptop-2" class="icon-xs"></i> MacBook Repairs</a>
+      <a href="collections/imac-repairs/" class="side-nav-sub"><i data-lucide="monitor" class="icon-xs"></i> iMac Repairs</a>
+      <a href="collections/exclusive-gadgets/" class="side-nav-sub"><i data-lucide="watch" class="icon-xs"></i> iPad &amp; Apple Watch</a>
+    </div>
+
+    <div class="side-nav-group">
+      <span class="side-nav-group-label">Other Repairs</span>
+      <a href="collections/samsung-repairs/" class="side-nav-sub"><i data-lucide="cpu" class="icon-xs"></i> Samsung</a>
+      <a href="collections/android-repairs/" class="side-nav-sub"><i data-lucide="smartphone" class="icon-xs"></i> Android</a>
+      <a href="collections/console-repairs/" class="side-nav-sub"><i data-lucide="gamepad-2" class="icon-xs"></i> Console Repairs</a>
+      <a href="collections/dji-repairs/" class="side-nav-sub"><i data-lucide="wind" class="icon-xs"></i> DJI Drones</a>
+      <a href="collections/exclusive-gadgets/" class="side-nav-sub"><i data-lucide="sparkles" class="icon-xs"></i> Exclusive Gadgets</a>
+      <a href="computers.html" class="side-nav-sub"><i data-lucide="laptop" class="icon-xs"></i> Mac &amp; Laptops</a>
+    </div>
+
+    <a href="enterprise.html"><i data-lucide="briefcase" class="icon-sm"></i> Enterprise / B2B</a>
+    <a href="campus.html"><i data-lucide="graduation-cap" class="icon-sm"></i> Campus Students</a>
     <a href="community.html"><i data-lucide="book-open" class="icon-sm"></i> Blog</a>
-    <a href="book.html"><i data-lucide="calendar-check" class="icon-sm"></i> Book a Repair</a>
+    <a href="book.html" class="side-nav-book"><i data-lucide="calendar-check" class="icon-sm"></i> Book a Repair</a>
     <a href="https://wa.me/27781541350" target="_blank" rel="noopener"><i data-lucide="message-circle" class="icon-sm"></i> WhatsApp Us</a>
 
     <div class="inline-style-d35d2a58">
