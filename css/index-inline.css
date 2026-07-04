@@ -1,3 +1,25 @@
+/* ─── Campus Drop-Off Section ─── */
+.campus-teaser-section { background: var(--bg-primary); }
+.campus-teaser-inner {
+  display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-16); align-items: start;
+}
+@media (max-width: 768px) { .campus-teaser-inner { grid-template-columns: 1fr; gap: var(--space-10); } }
+.campus-teaser-title { font-size: var(--text-3xl); margin: var(--space-4) 0 var(--space-6); }
+.campus-teaser-lead { color: var(--text-secondary); line-height: 1.8; }
+.campus-teaser-lead strong { color: var(--text-primary); }
+.campus-ctas { display: flex; gap: var(--space-3); flex-wrap: wrap; margin-top: var(--space-8); }
+.campus-ctas .btn { display: inline-flex; align-items: center; gap: var(--space-2); }
+.campus-inst-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-secondary); font-weight: 700; margin-bottom: var(--space-4); }
+.campus-inst-grid { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-4); }
+.campus-inst-chip {
+  font-size: 12px; font-weight: 600; padding: 4px 12px;
+  border-radius: var(--radius-full); background: var(--bg-secondary);
+  border: 1px solid var(--border); color: var(--text-primary);
+}
+.campus-inst-more { font-size: var(--text-sm); color: var(--accent); font-weight: 600; text-decoration: none; }
+.campus-inst-more:hover { text-decoration: underline; }
+.campus-institutions { padding-top: var(--space-2); }
+
 /* ─── Enterprise / B2B Teaser ─── */
 .enterprise-teaser-section { background: var(--bg-secondary); }
 .enterprise-teaser-inner {

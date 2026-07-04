@@ -1,0 +1,75 @@
+/* ─── Campus Page Styles ─── */
+.campus-hero { background: var(--bg-primary); padding-top: calc(var(--nav-height, 70px) + var(--space-16)); }
+.campus-hero-inner { max-width: 760px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; gap: var(--space-6); }
+.campus-hero-title { font-size: clamp(1.8rem, 4.5vw, 3rem); line-height: 1.2; margin: var(--space-3) 0; }
+.campus-hero-sub { color: var(--text-secondary); line-height: 1.8; max-width: 640px; }
+.campus-hero-chips { display: flex; flex-wrap: wrap; gap: var(--space-2); justify-content: center; }
+.c-chip {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 4px 12px; border-radius: var(--radius-full);
+  background: var(--bg-secondary); border: 1px solid var(--border); color: var(--text-primary);
+}
+.campus-hero-actions { display: flex; gap: var(--space-4); flex-wrap: wrap; justify-content: center; }
+.campus-hero-actions .btn { display: inline-flex; align-items: center; gap: var(--space-2); }
+
+/* Steps */
+.campus-steps-section { background: var(--bg-secondary); }
+.campus-steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-6); }
+.campus-step {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-xl);
+  padding: var(--space-7); display: flex; flex-direction: column; gap: var(--space-3); position: relative;
+}
+.campus-step-num {
+  width: 36px; height: 36px; border-radius: var(--radius-full);
+  background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: var(--text-base); flex-shrink: 0;
+}
+.campus-step-icon { width: 28px; height: 28px; stroke: var(--accent); stroke-width: 2px; }
+.campus-step h3 { font-size: var(--text-base); font-weight: 700; margin: 0; color: var(--text-primary); }
+.campus-step p { font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.7; margin: 0; }
+.campus-step p strong { color: var(--text-primary); }
+
+/* Transport routes */
+.campus-transport-section { background: var(--bg-primary); }
+.campus-transport-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-5); }
+.campus-transport-card {
+  background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius-xl);
+  padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-2);
+}
+.campus-transport-card h3 { font-size: var(--text-base); font-weight: 700; color: var(--text-primary); margin: 0; display: flex; align-items: center; gap: var(--space-2); }
+.c-distance { font-size: 11px; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0; }
+.campus-transport-card p:not(.c-distance) { font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.7; margin: 0; }
+
+/* Partner institutions */
+.campus-partners-section { background: var(--bg-secondary); }
+.campus-partners-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-6); }
+.campus-partner-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-xl);
+  padding: var(--space-7); display: flex; flex-direction: column; gap: var(--space-4);
+}
+.campus-partner--primary { border-color: var(--accent); }
+.campus-partner-card h3 { font-size: var(--text-lg); font-weight: 700; margin: 0; color: var(--text-primary); }
+.campus-partner-card ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.campus-partner-card li { font-size: var(--text-sm); color: var(--text-secondary); padding-left: 16px; position: relative; }
+.campus-partner-card li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
+
+/* Discount */
+.campus-discount-section { background: var(--bg-primary); }
+.campus-discount-card {
+  display: flex; align-items: center; gap: var(--space-12); flex-wrap: wrap;
+  background: var(--bg-secondary); border: 2px solid var(--accent);
+  border-radius: var(--radius-2xl); padding: var(--space-12);
+}
+.campus-discount-left { flex-shrink: 0; }
+.campus-discount-icon { width: 80px; height: 80px; stroke: var(--accent); stroke-width: 1.5px; }
+.campus-discount-right { flex: 1; min-width: 280px; }
+.campus-discount-right h2 { margin-bottom: var(--space-4); }
+.campus-discount-right p { color: var(--text-secondary); line-height: 1.8; margin: 0; }
+.campus-discount-right p strong { color: var(--text-primary); }
+
+/* Rep section */
+.campus-rep-section { background: var(--bg-secondary); }
+.campus-rep-inner { max-width: 680px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; gap: var(--space-4); }
+.campus-rep-inner h2 { margin: var(--space-3) 0; }
+.campus-rep-inner p { color: var(--text-secondary); line-height: 1.8; }
