@@ -1780,7 +1780,29 @@ a.nav-ac:hover { opacity: 0.8; }
   display: flex;
   align-items: center;
   justify-content: center;
+  background: var(--bg-secondary);
 }
+/* Category-adaptive backgrounds — look good in both light and dark */
+.pci-screen   { background: linear-gradient(145deg, rgba(10,132,255,0.12), rgba(10,132,255,0.03)); }
+.pci-cables   { background: linear-gradient(145deg, rgba(255,149,0,0.14), rgba(255,149,0,0.03)); }
+.pci-chargers { background: linear-gradient(145deg, rgba(255,149,0,0.18), rgba(255,149,0,0.05)); }
+.pci-power    { background: linear-gradient(145deg, rgba(52,199,89,0.14), rgba(52,199,89,0.03)); }
+.pci-diy      { background: linear-gradient(145deg, rgba(255,59,48,0.12), rgba(255,59,48,0.03)); }
+.pci-tools    { background: linear-gradient(145deg, rgba(142,142,147,0.14), rgba(142,142,147,0.03)); }
+.pci-extras   { background: linear-gradient(145deg, rgba(175,82,222,0.12), rgba(175,82,222,0.03)); }
+.pci-icon {
+  width: 52px; height: 52px;
+  stroke-width: 1.4px;
+  color: var(--text-secondary);
+}
+/* Category icon colours */
+.pci-screen .pci-icon   { color: #0a84ff; }
+.pci-cables .pci-icon   { color: #ff9500; }
+.pci-chargers .pci-icon { color: #ff9500; }
+.pci-power .pci-icon    { color: #30d158; }
+.pci-diy .pci-icon      { color: #ff3b30; }
+.pci-tools .pci-icon    { color: #8e8e93; }
+.pci-extras .pci-icon   { color: #af52de; }
 .product-badge {
   position: absolute;
   top: 12px;
@@ -1919,6 +1941,86 @@ a.nav-ac:hover { opacity: 0.8; }
 /* ═══════════════════════════════════════════════
    QUICK FIND — "What do you need?" service strip
    ═══════════════════════════════════════════════ */
+/* ─── Device Repairs Section (iASSIST-style card row) ─── */
+.device-repairs-section {
+  padding: 48px 0 56px;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border);
+}
+.drs-heading {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-8);
+}
+.drs-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--space-4);
+}
+.drs-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  background: var(--bg-card);
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+.drs-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+}
+.drs-img {
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.drs-icon {
+  width: 48px; height: 48px;
+  stroke-width: 1.4px;
+}
+.drs-img--iphone  { background: linear-gradient(145deg, rgba(10,132,255,0.12) 0%, rgba(10,132,255,0.03) 100%); }
+.drs-img--iphone .drs-icon { color: #0a84ff; }
+.drs-img--ipad    { background: linear-gradient(145deg, rgba(52,199,89,0.12) 0%, rgba(52,199,89,0.03) 100%); }
+.drs-img--ipad .drs-icon { color: #30d158; }
+.drs-img--mac     { background: linear-gradient(145deg, rgba(142,142,147,0.14) 0%, rgba(142,142,147,0.04) 100%); }
+.drs-img--mac .drs-icon { color: #8e8e93; }
+.drs-img--android { background: linear-gradient(145deg, rgba(48,209,88,0.12) 0%, rgba(48,209,88,0.03) 100%); }
+.drs-img--android .drs-icon { color: #30d158; }
+.drs-img--console { background: linear-gradient(145deg, rgba(94,92,230,0.14) 0%, rgba(94,92,230,0.04) 100%); }
+.drs-img--console .drs-icon { color: #5e5ce6; }
+.drs-img--dji     { background: linear-gradient(145deg, rgba(255,149,0,0.14) 0%, rgba(255,149,0,0.04) 100%); }
+.drs-img--dji .drs-icon { color: #ff9500; }
+.drs-body {
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--border);
+}
+.drs-name {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.drs-arrow {
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+  transition: transform 0.2s;
+}
+.drs-card:hover .drs-arrow { transform: translateX(4px); color: var(--text-secondary); }
+
+@media (max-width: 1024px) { .drs-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 600px)  { .drs-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 380px)  { .drs-grid { grid-template-columns: repeat(1, 1fr); } }
+
+/* ─── Quick Find (legacy — hidden in favour of device-repairs) ─── */
 .quick-find {
   padding: 24px 0 32px;
   background: var(--bg-secondary);

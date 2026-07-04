@@ -293,8 +293,8 @@ function renderShopGrid(cat) {
   grid.innerHTML = list.length
     ? list.map(p => `
         <article class="product-card" data-cat="${p.cat}">
-          <div class="product-card-img" style="background:${p.color}">
-            <i data-lucide="${p.icon}" style="width:52px;height:52px;color:rgba(255,255,255,0.82);stroke-width:1.5"></i>
+          <div class="product-card-img pci-${p.cat}">
+            <i data-lucide="${p.icon}" class="pci-icon"></i>
             ${p.badge ? `<span class="product-badge">${p.badge}</span>` : ''}
           </div>
           <div class="product-card-body">

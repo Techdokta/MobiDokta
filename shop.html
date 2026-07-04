@@ -46,13 +46,13 @@
       justify-content: space-between;
       height: 64px;
       padding: 0 var(--space-8);
-      background: rgba(0,0,0,0.82);
+      background: var(--glass-bg);
       -webkit-backdrop-filter: blur(20px) saturate(1.4);
       backdrop-filter: blur(20px) saturate(1.4);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid var(--border);
     }
     .nav-links a {
-      color: rgba(255,255,255,0.78);
+      color: var(--text-secondary);
       text-decoration: none;
       font-size: var(--text-sm);
       font-weight: 500;
@@ -60,7 +60,7 @@
       padding: 4px 0;
     }
     .nav-links a:hover,
-    .nav-links a.active { color: #fff; }
+    .nav-links a.active { color: var(--text-primary); }
     .nav-links { display: flex; gap: var(--space-8); align-items: center; }
     .nav-right  { display: flex; align-items: center; gap: 10px; }
 
@@ -68,15 +68,16 @@
     .shop-banner {
       padding: 120px var(--space-6) 64px;
       text-align: center;
-      background: linear-gradient(180deg, #0a0a0a 0%, #111 100%);
-      color: #fff;
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border);
     }
+    .shop-banner h1 { color: var(--text-primary); }
     .shop-banner-chip {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(255,149,0,0.18);
-      border: 1px solid rgba(255,149,0,0.35);
+      background: rgba(255,149,0,0.12);
+      border: 1px solid rgba(255,149,0,0.3);
       color: #ff9500;
       font-size: var(--text-xs);
       font-weight: 700;
@@ -183,11 +184,12 @@
 
     /* Footer */
     .shop-footer {
-      background: #0a0a0a;
-      color: rgba(255,255,255,0.5);
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
       text-align: center;
       padding: var(--space-12) var(--space-6);
       font-size: var(--text-sm);
+      border-top: 1px solid var(--border);
     }
     .shop-footer a { color: #ff9500; text-decoration: none; }
     .shop-footer-links {
@@ -197,8 +199,8 @@
       margin-bottom: var(--space-4);
       flex-wrap: wrap;
     }
-    .shop-footer-links a { color: rgba(255,255,255,0.55); font-size: var(--text-xs); }
-    .shop-footer-links a:hover { color: #fff; }
+    .shop-footer-links a { color: var(--text-tertiary); font-size: var(--text-xs); }
+    .shop-footer-links a:hover { color: var(--text-primary); }
 
     @media (max-width: 768px) {
       .navbar { padding: 0 var(--space-4); }
@@ -225,17 +227,33 @@
       <img src="./assets/mobidokta-logo.svg" alt="MobiDokta" class="logo-nav" loading="eager">
     </a>
     <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="shop.html" class="nav-link active">Shop</a>
       <div class="nav-dropdown">
-        <a href="index.html#services" class="dropdown-trigger">Repairs</a>
+        <a href="apple.html" class="dropdown-trigger nav-link">
+          Apple Repairs <i data-lucide="chevron-down" class="icon-xs nav-chevron"></i>
+        </a>
         <div class="dropdown-menu">
-          <a href="apple.html">Apple</a>
-          <a href="android.html">Android</a>
-          <a href="computers.html">Laptops &amp; PCs</a>
+          <a href="collections/iphone-repairs/"><i data-lucide="smartphone" class="icon-xs"></i> iPhone Repairs</a>
+          <a href="collections/macbook-repairs/"><i data-lucide="laptop-2" class="icon-xs"></i> MacBook Repairs</a>
+          <a href="collections/imac-repairs/"><i data-lucide="monitor" class="icon-xs"></i> iMac Repairs</a>
+          <a href="collections/exclusive-gadgets/"><i data-lucide="watch" class="icon-xs"></i> iPad &amp; Apple Watch</a>
+          <div class="dropdown-divider"></div>
+          <a href="apple.html" class="dropdown-all"><i data-lucide="grid-2x2" class="icon-xs"></i> All Apple Services</a>
         </div>
       </div>
-      <a href="shop.html" class="active">Shop</a>
-      <a href="applecity.html" class="nav-ac">Appl3City</a>
-      <a href="community.html">Blog</a>
+      <div class="nav-dropdown">
+        <a href="android.html" class="dropdown-trigger nav-link">
+          Other Repairs <i data-lucide="chevron-down" class="icon-xs nav-chevron"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="collections/samsung-repairs/"><i data-lucide="cpu" class="icon-xs"></i> Samsung Repairs</a>
+          <a href="collections/android-repairs/"><i data-lucide="smartphone" class="icon-xs"></i> Android Repairs</a>
+          <a href="collections/console-repairs/"><i data-lucide="gamepad-2" class="icon-xs"></i> Console Repairs</a>
+          <a href="collections/dji-repairs/"><i data-lucide="wind" class="icon-xs"></i> DJI Drone Repairs</a>
+        </div>
+      </div>
+      <a href="enterprise.html" class="nav-link">Enterprise</a>
     </div>
     <div class="nav-right">
       <a href="https://wa.me/27781541350" class="nav-wa-link" target="_blank" rel="noopener" title="WhatsApp us now">
