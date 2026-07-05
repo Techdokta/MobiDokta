@@ -182,6 +182,99 @@
     }
     .shop-trust-item svg { color: #ff9500; }
 
+    /* ── Appl3City promo banner ── */
+    .shop-ac-promo {
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border);
+      padding: 32px 0;
+    }
+    .shop-ac-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: var(--space-8);
+    }
+    .shop-ac-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,149,0,0.12);
+      border: 1px solid rgba(255,149,0,0.30);
+      color: #ff9500;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 999px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .shop-ac-text h2 {
+      font-size: var(--text-xl);
+      font-weight: 800;
+      color: var(--text-primary);
+      margin: 0 0 6px;
+    }
+    .shop-ac-text p {
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      margin: 0 0 16px;
+      max-width: 460px;
+      line-height: 1.6;
+    }
+    .btn-shop-ac {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 11px 22px;
+      background: var(--accent);
+      color: var(--text-inverse);
+      font-size: var(--text-sm);
+      font-weight: 700;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: opacity 0.18s, transform 0.18s;
+      white-space: nowrap;
+    }
+    .btn-shop-ac:hover { opacity: 0.82; transform: translateY(-1px); }
+    .shop-ac-phones {
+      display: flex;
+      gap: 12px;
+      align-items: flex-end;
+    }
+    .shop-ac-phones img {
+      width: 70px;
+      height: 100px;
+      object-fit: contain;
+      object-position: bottom;
+      filter: drop-shadow(0 8px 20px rgba(0,0,0,0.18));
+      border-radius: 8px;
+      transition: transform 0.2s;
+    }
+    .shop-ac-phones img:hover { transform: translateY(-4px); }
+    .shop-ac-phones img:first-child { transform: scale(0.88); }
+    .shop-ac-phones img:last-child  { transform: scale(0.88); }
+
+    /* Category link pill (Appl3City) */
+    .shop-filter-ac {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-color: rgba(255,149,0,0.4) !important;
+      color: #ff9500 !important;
+      text-decoration: none;
+      font-weight: 700 !important;
+    }
+    .shop-filter-ac:hover {
+      background: rgba(255,149,0,0.10) !important;
+      border-color: #ff9500 !important;
+    }
+
+    @media (max-width: 768px) {
+      .shop-ac-inner { grid-template-columns: 1fr; }
+      .shop-ac-phones { justify-content: center; }
+    }
+
     /* Footer */
     .shop-footer {
       background: var(--bg-secondary);
@@ -310,6 +403,27 @@
     <span class="stu-price-key"><span class="stu-tag">S</span> = student price shown on each item</span>
   </div>
 
+  <!-- ── Appl3City Promo ── -->
+  <section class="shop-ac-promo">
+    <div class="container">
+      <div class="shop-ac-inner">
+        <div class="shop-ac-text">
+          <span class="shop-ac-badge"><i data-lucide="smartphone" style="width:11px;height:11px"></i> Appl3City</span>
+          <h2>Also looking for a phone?</h2>
+          <p>Pre-owned &amp; sealed iPhones, Samsung Galaxy, MacBook and Apple Watch — IMEI verified, engineer tested, written warranty. All prices include VAT.</p>
+          <a href="applecity.html" class="btn-shop-ac">
+            <i data-lucide="smartphone" class="icon-sm"></i> Browse Phones &amp; Devices
+          </a>
+        </div>
+        <div class="shop-ac-phones">
+          <img src="img/iphone-models/iphone-15-pro.jpg.JPG" alt="iPhone 15 Pro" loading="lazy">
+          <img src="img/iphone-models/iphone-16-pro.webp" alt="iPhone 16 Pro" loading="lazy">
+          <img src="img/iphone-models/iphone-17.webp" alt="iPhone 17" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ── Category Filter ── -->
   <div class="shop-filter-bar">
     <div class="shop-filters">
@@ -321,6 +435,9 @@
       <button type="button" class="shop-filter" data-cat="diy">DIY Parts</button>
       <button type="button" class="shop-filter" data-cat="tools">Tools &amp; Kits</button>
       <button type="button" class="shop-filter" data-cat="extras">Extras</button>
+      <a href="applecity.html" class="shop-filter shop-filter-ac">
+        <i data-lucide="smartphone" style="width:14px;height:14px;display:inline;vertical-align:middle"></i> Phones &amp; Devices →
+      </a>
     </div>
   </div>
 
