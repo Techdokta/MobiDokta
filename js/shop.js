@@ -33,11 +33,8 @@ const PRODUCTS = [
   { id:'cb-009', cat:'cables', name:'Lightning Cable — 2m (Alt)',        sub:'2m USB-A to Lightning, daily use',        price:99,   priceS:80,   icon:'cable',  color:'linear-gradient(135deg,#5c2800,#a04a00)', badge:'',        img:'img/iphone cable 2m USB to ligthning.webp' },
 
   /* ══ CHARGER HEADS ══ */
-  { id:'ch-001', cat:'chargers', name:'Charger Head 5W USB-A — Basic',   sub:'Basic wall plug',                        price:50,   priceS:40,   icon:'zap',      color:'linear-gradient(135deg,#3a1a00,#7c3a00)', badge:'' },
-  { id:'ch-002', cat:'chargers', name:'Charger Head 12W Dual USB',        sub:'Charges 2 devices simultaneously',      price:100,  priceS:80,   icon:'zap',      color:'linear-gradient(135deg,#3a1a00,#7c3a00)', badge:'' },
   { id:'ch-003', cat:'chargers', name:'Charger Head 20W USB-C PD — Fast', sub:'Rapid charge — phone in under 30 min',  price:150,  priceS:120,  icon:'plug-zap', color:'linear-gradient(135deg,#3a1a00,#7c3a00)', badge:'Popular', img:'img/Charger 20W (Apple Compatible).png' },
   { id:'ch-004', cat:'chargers', name:'Charger Head 30W USB-C PD',        sub:'Super-fast for phones & tablets',       price:250,  priceS:210,  icon:'plug-zap', color:'linear-gradient(135deg,#3a1a00,#7c3a00)', badge:'',        img:'img/Apple 30W adapter (Android Compatible).jpeg' },
-  { id:'ch-005', cat:'chargers', name:'Charger Head 35W GaN Dual-Port',   sub:'2 ports at full speed, laptop-ready',   price:300,  priceS:250,  icon:'plug-zap', color:'linear-gradient(135deg,#3a1a00,#7c3a00)', badge:'' },
 
   /* ══ POWER & AUDIO ══ */
   { id:'pa-001', cat:'power', name:'Power Bank 10,000mAh',               sub:'Compact — charges phone 2×',             price:150,  priceS:120,  icon:'battery-charging', color:'linear-gradient(135deg,#0d3320,#1a5c38)', badge:'' },
