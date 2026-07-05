@@ -9,31 +9,34 @@
 const PRODUCTS = [
 
   /* ══ SCREEN PROTECTION & CASES ══ */
-  { id:'sc-001', cat:'screen', name:'Tempered Glass — Standard',        sub:'Universal 9H hardness',                   price:50,   priceS:40,   icon:'shield',        color:'linear-gradient(135deg,#0f2044,#1a3a6e)', badge:'' },
+  { id:'sc-001', cat:'screen', name:'Tempered Glass — Standard',        sub:'Universal 9H hardness',                   price:50,   priceS:40,   icon:'shield',        color:'linear-gradient(135deg,#0f2044,#1a3a6e)', badge:'',        img:'img/Screen protector guard iphone transparent clear reinforced strong glass.jpg' },
   { id:'sc-002', cat:'screen', name:'Tempered Glass — Full-Cover 3D',   sub:'Edge-to-edge coverage',                   price:100,  priceS:80,   icon:'shield',        color:'linear-gradient(135deg,#0f2044,#1a3a6e)', badge:'Popular' },
-  { id:'sc-003', cat:'screen', name:'Tempered Glass — Privacy',         sub:'Anti-spy, blocks side views',             price:100,  priceS:80,   icon:'eye-off',       color:'linear-gradient(135deg,#0f2044,#1a3a6e)', badge:'' },
+  { id:'sc-003', cat:'screen', name:'Tempered Glass — Privacy',         sub:'Anti-spy, blocks side views',             price:100,  priceS:80,   icon:'eye-off',       color:'linear-gradient(135deg,#0f2044,#1a3a6e)', badge:'',        img:'img/Anti-Spy Privacy Screen Protector iPhone and Android.webp' },
   { id:'sc-004', cat:'screen', name:'Tempered Glass — Samsung / Other', sub:'Fits most Samsung & Android',             price:50,   priceS:40,   icon:'shield',        color:'linear-gradient(135deg,#0f2044,#1a3a6e)', badge:'' },
-  { id:'sc-005', cat:'screen', name:'Camera Lens Protector',            sub:'Tempered glass lens guard',               price:89,   priceS:70,   icon:'aperture',      color:'linear-gradient(135deg,#0f2044,#1a3a6e)', badge:'' },
-  { id:'sc-006', cat:'screen', name:'Clear Case (TPU)',                 sub:'Crystal clear, anti-yellow formula',      price:99,   priceS:80,   icon:'smartphone',    color:'linear-gradient(135deg,#1a1a2e,#2d2d4e)', badge:'' },
-  { id:'sc-007', cat:'screen', name:'Silicone Soft-Touch Case',         sub:'Smooth premium-feel finish',              price:70,   priceS:60,   icon:'smartphone',    color:'linear-gradient(135deg,#1a1a2e,#2d2d4e)', badge:'' },
+  { id:'sc-005', cat:'screen', name:'Camera Lens Protector',            sub:'Tempered glass lens guard',               price:89,   priceS:70,   icon:'aperture',      color:'linear-gradient(135deg,#0f2044,#1a3a6e)', badge:'',        img:'img/iphone Camera Lens protector.avif' },
+  { id:'sc-006', cat:'screen', name:'Clear Case (TPU)',                 sub:'Crystal clear, anti-yellow formula',      price:99,   priceS:80,   icon:'smartphone',    color:'linear-gradient(135deg,#1a1a2e,#2d2d4e)', badge:'',        img:'img/Apple Transparent Pouch.webp' },
+  { id:'sc-007', cat:'screen', name:'Silicone Soft-Touch Case',         sub:'Smooth premium-feel, Apple logo finish',  price:70,   priceS:60,   icon:'smartphone',    color:'linear-gradient(135deg,#1a1a2e,#2d2d4e)', badge:'',        img:'img/Apple watch with logo.webp' },
   { id:'sc-008', cat:'screen', name:'Rugged / Armor Case',              sub:'Military drop-test certified',            price:100,  priceS:80,   icon:'shield-check',  color:'linear-gradient(135deg,#1a1a2e,#2d2d4e)', badge:'' },
   { id:'sc-009', cat:'screen', name:'Wallet / Flip Case',               sub:'Card slots + kickstand',                  price:199,  priceS:160,  icon:'credit-card',   color:'linear-gradient(135deg,#1a1a2e,#2d2d4e)', badge:'' },
+  { id:'sc-010', cat:'screen', name:'Privacy Screen Protector — Ceramic', sub:'Ultra-hard ceramic, dual-angle anti-spy', price:129, priceS:100,  icon:'eye-off',       color:'linear-gradient(135deg,#0f2044,#1a3a6e)', badge:'Premium', img:'img/Ceramic Anti-Spy Privacy Screen Protector.webp' },
+  { id:'sc-011', cat:'screen', name:'Silicone Case — MagSafe Compatible', sub:'Liquid silicone, Apple emboss, MagSafe',  price:149, priceS:120,  icon:'smartphone',    color:'linear-gradient(135deg,#1a1a2e,#2d2d4e)', badge:'',        img:'img/Apple logo pouch Magsafe liquid silicone.avif' },
 
   /* ══ CABLES ══ */
-  { id:'cb-001', cat:'cables', name:'Lightning Cable — Basic',          sub:'Charge & sync, standard duty',            price:50,   priceS:40,   icon:'cable',  color:'linear-gradient(135deg,#5c2800,#a04a00)', badge:'' },
-  { id:'cb-002', cat:'cables', name:'Lightning Cable — Braided',        sub:'Heavy-duty, tangle-resistant',            price:100,  priceS:80,   icon:'cable',  color:'linear-gradient(135deg,#5c2800,#a04a00)', badge:'' },
+  { id:'cb-001', cat:'cables', name:'Lightning Cable — Basic',          sub:'Charge & sync, standard duty',            price:50,   priceS:40,   icon:'cable',  color:'linear-gradient(135deg,#5c2800,#a04a00)', badge:'',        img:'img/image-22.webp' },
+  { id:'cb-002', cat:'cables', name:'Lightning Cable — 2m',             sub:'Extra-long 2m reach, charge & sync',      price:100,  priceS:80,   icon:'cable',  color:'linear-gradient(135deg,#5c2800,#a04a00)', badge:'',        img:'img/iphone Cable USB to Ligthning 2m.webp' },
   { id:'cb-003', cat:'cables', name:'Lightning Cable — MFi Fast-Charge',sub:'Apple certified, rapid charging',         price:150,  priceS:120,  icon:'cable',  color:'linear-gradient(135deg,#5c2800,#a04a00)', badge:'Popular' },
-  { id:'cb-004', cat:'cables', name:'USB-C Cable (1m)',                 sub:'Standard charge & data sync',             price:99,   priceS:80,   icon:'cable',  color:'linear-gradient(135deg,#5c2800,#a04a00)', badge:'' },
+  { id:'cb-004', cat:'cables', name:'USB-C to Lightning (1m)',           sub:'Fast charge iPhone from USB-C adapter',   price:129,  priceS:100,  icon:'cable',  color:'linear-gradient(135deg,#5c2800,#a04a00)', badge:'',        img:'img/Type C to Ligthning cable iPhone.jpeg' },
   { id:'cb-005', cat:'cables', name:'USB-C Cable — Braided (2m)',       sub:'Heavy-duty, 2m reach',                    price:169,  priceS:140,  icon:'cable',  color:'linear-gradient(135deg,#5c2800,#a04a00)', badge:'' },
   { id:'cb-006', cat:'cables', name:'USB-C to USB-C 60W Cable',         sub:'Both ends USB-C, fast charge',            price:199,  priceS:160,  icon:'zap',    color:'linear-gradient(135deg,#5c2800,#a04a00)', badge:'' },
   { id:'cb-007', cat:'cables', name:'Micro-USB Cable',                  sub:'Standard charge & data, universal',       price:79,   priceS:60,   icon:'cable',  color:'linear-gradient(135deg,#5c2800,#a04a00)', badge:'' },
   { id:'cb-008', cat:'cables', name:'3-in-1 Charging Cable',            sub:'Lightning + USB-C + Micro-USB in one',    price:149,  priceS:120,  icon:'cable',  color:'linear-gradient(135deg,#5c2800,#a04a00)', badge:'Handy' },
+  { id:'cb-009', cat:'cables', name:'Lightning Cable — 2m (Alt)',        sub:'2m USB-A to Lightning, daily use',        price:99,   priceS:80,   icon:'cable',  color:'linear-gradient(135deg,#5c2800,#a04a00)', badge:'',        img:'img/iphone cable 2m USB to ligthning.webp' },
 
   /* ══ CHARGER HEADS ══ */
   { id:'ch-001', cat:'chargers', name:'Charger Head 5W USB-A — Basic',   sub:'Basic wall plug',                        price:50,   priceS:40,   icon:'zap',      color:'linear-gradient(135deg,#3a1a00,#7c3a00)', badge:'' },
   { id:'ch-002', cat:'chargers', name:'Charger Head 12W Dual USB',        sub:'Charges 2 devices simultaneously',      price:100,  priceS:80,   icon:'zap',      color:'linear-gradient(135deg,#3a1a00,#7c3a00)', badge:'' },
-  { id:'ch-003', cat:'chargers', name:'Charger Head 20W USB-C PD — Fast', sub:'Rapid charge — phone in under 30 min',  price:150,  priceS:120,  icon:'plug-zap', color:'linear-gradient(135deg,#3a1a00,#7c3a00)', badge:'Popular' },
-  { id:'ch-004', cat:'chargers', name:'Charger Head 30W USB-C PD',        sub:'Super-fast for phones & tablets',       price:250,  priceS:210,  icon:'plug-zap', color:'linear-gradient(135deg,#3a1a00,#7c3a00)', badge:'' },
+  { id:'ch-003', cat:'chargers', name:'Charger Head 20W USB-C PD — Fast', sub:'Rapid charge — phone in under 30 min',  price:150,  priceS:120,  icon:'plug-zap', color:'linear-gradient(135deg,#3a1a00,#7c3a00)', badge:'Popular', img:'img/Charger 20W (Apple Compatible).png' },
+  { id:'ch-004', cat:'chargers', name:'Charger Head 30W USB-C PD',        sub:'Super-fast for phones & tablets',       price:250,  priceS:210,  icon:'plug-zap', color:'linear-gradient(135deg,#3a1a00,#7c3a00)', badge:'',        img:'img/Apple 30W adapter (Android Compatible).jpeg' },
   { id:'ch-005', cat:'chargers', name:'Charger Head 35W GaN Dual-Port',   sub:'2 ports at full speed, laptop-ready',   price:300,  priceS:250,  icon:'plug-zap', color:'linear-gradient(135deg,#3a1a00,#7c3a00)', badge:'' },
 
   /* ══ POWER & AUDIO ══ */
@@ -41,7 +44,7 @@ const PRODUCTS = [
   { id:'pa-002', cat:'power', name:'Power Bank 20,000mAh',               sub:'High capacity — charges laptop too',     price:250,  priceS:210,  icon:'battery-full',     color:'linear-gradient(135deg,#0d3320,#1a5c38)', badge:'Popular' },
   { id:'pa-003', cat:'power', name:'Power Bank 20,000mAh Fast-Charge',   sub:'PD fast-charge + cables included',       price:300,  priceS:250,  icon:'battery-charging', color:'linear-gradient(135deg,#0d3320,#1a5c38)', badge:'' },
   { id:'pa-004', cat:'power', name:'Wired Earphones (3.5mm)',             sub:'Standard jack, in-line mic',             price:99,   priceS:80,   icon:'headphones',       color:'linear-gradient(135deg,#2d0a3a,#4e1a6e)', badge:'' },
-  { id:'pa-005', cat:'power', name:'Wired Earphones (USB-C/Lightning)',   sub:'Digital connector, hi-fi drivers',       price:124,  priceS:100,  icon:'headphones',       color:'linear-gradient(135deg,#2d0a3a,#4e1a6e)', badge:'' },
+  { id:'pa-005', cat:'power', name:'Wired Earphones (USB-C/Lightning)',   sub:'Digital connector, hi-fi drivers',       price:124,  priceS:100,  icon:'headphones',       color:'linear-gradient(135deg,#2d0a3a,#4e1a6e)', badge:'',        img:'img/Wired headsets Apple iPhone 15 (Android Compatible).jpeg' },
   { id:'pa-006', cat:'power', name:'TWS Earbuds — Entry',                 sub:'True wireless, good isolation',          price:199,  priceS:160,  icon:'headphones',       color:'linear-gradient(135deg,#2d0a3a,#4e1a6e)', badge:'' },
   { id:'pa-007', cat:'power', name:'TWS Earbuds — Premium',               sub:'ANC, 30hr battery, superior sound',      price:349,  priceS:290,  icon:'headphones',       color:'linear-gradient(135deg,#2d0a3a,#4e1a6e)', badge:'Best Sound' },
 
@@ -293,8 +296,10 @@ function renderShopGrid(cat) {
   grid.innerHTML = list.length
     ? list.map(p => `
         <article class="product-card" data-cat="${p.cat}">
-          <div class="product-card-img pci-${p.cat}">
-            <i data-lucide="${p.icon}" class="pci-icon"></i>
+          <div class="product-card-img pci-${p.cat}${p.img ? ' pci-has-photo' : ''}">
+            ${p.img
+              ? `<img src="${p.img}" alt="${p.name}" class="pci-photo" loading="lazy">`
+              : `<i data-lucide="${p.icon}" class="pci-icon"></i>`}
             ${p.badge ? `<span class="product-badge">${p.badge}</span>` : ''}
           </div>
           <div class="product-card-body">

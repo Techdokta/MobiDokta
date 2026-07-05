@@ -132,6 +132,15 @@
   object-fit: cover;
   display: block;
 }
+.coll-svc-edu-photo {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: contain;
+  max-height: 140px;
+  background: #f5f5f7;
+  display: block;
+}
+.dark-theme .coll-svc-edu-photo { background: #2c2c2e; }
 
 @media (max-width: 900px) {
   .coll-hero-wrap {
