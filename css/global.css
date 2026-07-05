@@ -1683,6 +1683,51 @@ a.nav-ac:hover { opacity: 0.8; }
 }
 .btn-cart-browse:hover { color: var(--text-primary); }
 
+/* ── Cart: Shipping panel ── */
+.cart-ship-panel {
+  padding: 10px 16px 12px;
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.cart-ship-label {
+  font-size: 10px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.07em; color: var(--text-tertiary); margin-bottom: 6px;
+}
+.cart-ship-list {
+  display: flex; flex-direction: column; gap: 4px;
+  max-height: 210px; overflow-y: auto;
+}
+.cart-ship-opt {
+  display: flex; align-items: center; gap: 8px; padding: 7px 10px;
+  border-radius: 10px; border: 1px solid var(--border);
+  cursor: pointer; transition: border-color 0.15s, background 0.15s;
+}
+.cart-ship-opt:hover { border-color: var(--accent); background: var(--bg-hover); }
+.cart-ship-opt.active { border-color: var(--accent); background: rgba(255,149,0,0.07); }
+.cart-ship-opt input[type="radio"] { display: none; }
+.cart-ship-opt-info { flex: 1; min-width: 0; }
+.cart-ship-opt-name { display: block; font-size: 12px; font-weight: 600; color: var(--text-primary); }
+.cart-ship-opt-sub  { display: block; font-size: 10px; color: var(--text-tertiary); margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cart-ship-opt-right { display: flex; flex-direction: column; align-items: flex-end; gap: 1px; flex-shrink: 0; }
+.cart-ship-cost { font-size: 12px; font-weight: 700; color: var(--text-primary); }
+.cart-ship-free { color: #34c759 !important; }
+.cart-ship-eta  { font-size: 10px; color: var(--text-tertiary); white-space: nowrap; }
+
+/* Free shipping progress bar */
+.cart-free-bar { padding: 8px 0 2px; }
+.cart-free-bar[hidden] { display: none; }
+.cart-free-bar-text { font-size: 11px; color: var(--text-secondary); margin-bottom: 5px; }
+.cart-free-bar-text strong { color: var(--accent); }
+.cart-free-bar-unlocked { font-size: 11px; color: #34c759; font-weight: 700; }
+.cart-free-bar-track { height: 3px; border-radius: 2px; background: var(--border); overflow: hidden; }
+.cart-free-bar-fill  { height: 100%; border-radius: 2px; background: var(--accent); transition: width 0.4s ease; }
+
+/* Cart totals — multi-row */
+.cart-subtotal-row { font-size: var(--text-sm) !important; opacity: 0.72; }
+.cart-ship-row     { font-size: var(--text-sm) !important; }
+.cart-grandtotal-row { border-top: 1px solid var(--border); padding-top: 8px; margin-top: 2px; }
+.cart-grandtotal-row span { font-weight: 700; }
+
 /* ═══════════════════════════════════════════════
    SHOP — Add-to-cart toast notification
    ═══════════════════════════════════════════════ */

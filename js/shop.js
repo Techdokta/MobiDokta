@@ -135,6 +135,16 @@ const PRODUCTS = [
   { id:'ex-007', cat:'extras', name:'Cable Organiser / Clips',            sub:'Velcro ties, keeps cables tidy',         price:59,   priceS:50,   icon:'package',    color:'linear-gradient(135deg,#0a2a2a,#1a4a4a)', badge:'' },
 ];
 
+/* ── Shipping options ── */
+const SHIPPING_OPTIONS = [
+  { key:'collect',    icon:'map-pin',    label:'Collect in-Store',        sub:'Shop 6, Madeira Isles, Danville',              eta:'Ready same day',      cost:0,   free700:false },
+  { key:'local_pri',  icon:'zap',        label:'Local Priority',          sub:'Pretoria area — UberSend / Bolt speed',        eta:'20 min – 1 hr',       cost:100, free700:false },
+  { key:'local_std',  icon:'truck',      label:'Local Standard',          sub:'Pretoria area delivery',                       eta:'2–4 hrs, same day',   cost:150, free700:true  },
+  { key:'uber',       icon:'navigation', label:'UberSend / Bolt Send',    sub:'You book driver — we hand over at the shop',   eta:'Real-time ETA',       cost:null,free700:false },
+  { key:'nation_std', icon:'package',    label:'Nationwide Standard',     sub:'Courier · 2–3 business days',                 eta:'2–3 business days',   cost:150, free700:true  },
+  { key:'nation_pri', icon:'rocket',     label:'Nationwide Priority',     sub:'Priority courier, arrives sooner',             eta:'1–2 business days',   cost:200, free700:false },
+];
+
 /* ── Cart Drawer HTML (injected into every page that loads shop.js) ── */
 (function injectCartDrawer() {
   if (document.querySelector('.cart-drawer')) return;
@@ -152,8 +162,21 @@ const PRODUCTS = [
         </button>
       </div>
       <div class="cart-drawer-items"></div>
+      <div class="cart-ship-panel">
+        <div class="cart-ship-label">Delivery method</div>
+        <div class="cart-ship-list" id="cart-ship-list"></div>
+      </div>
       <div class="cart-drawer-footer">
-        <div class="cart-drawer-total-row">
+        <div class="cart-free-bar" id="cart-free-bar" hidden></div>
+        <div class="cart-drawer-total-row cart-subtotal-row">
+          <span>Subtotal</span>
+          <strong class="cart-drawer-subtotal-val">R0</strong>
+        </div>
+        <div class="cart-drawer-total-row cart-ship-row">
+          <span>Shipping</span>
+          <strong class="cart-ship-cost-val">Free</strong>
+        </div>
+        <div class="cart-drawer-total-row cart-grandtotal-row">
           <span>Total</span>
           <strong class="cart-drawer-total-val">R0</strong>
         </div>
@@ -173,6 +196,7 @@ const PRODUCTS = [
 /* ── Cart Engine ── */
 const MobiCart = {
   items: [],
+  selectedShipping: 'collect',
 
   init() {
     try { this.items = JSON.parse(localStorage.getItem('md_cart') || '[]'); } catch { this.items = []; }
@@ -214,6 +238,20 @@ const MobiCart = {
   count()  { return this.items.reduce((s, i) => s + i.qty, 0); },
   save()   { localStorage.setItem('md_cart', JSON.stringify(this.items)); },
 
+  setShipping(key) {
+    this.selectedShipping = key;
+    this.renderDrawer();
+  },
+
+  shippingCost() {
+    const opt = SHIPPING_OPTIONS.find(o => o.key === this.selectedShipping);
+    if (!opt || opt.cost === null) return 0;
+    if (opt.free700 && this.total() >= 700) return 0;
+    return opt.cost;
+  },
+
+  grandTotal() { return this.total() + this.shippingCost(); },
+
   updateBadge() {
     const n = this.count();
     document.querySelectorAll('.cart-badge').forEach(b => { b.textContent = n; b.hidden = n === 0; });
@@ -232,8 +270,12 @@ const MobiCart = {
   },
 
   renderDrawer() {
-    const body   = document.querySelector('.cart-drawer-items');
-    const totalEl = document.querySelector('.cart-drawer-total-val');
+    const body        = document.querySelector('.cart-drawer-items');
+    const subtotalEl  = document.querySelector('.cart-drawer-subtotal-val');
+    const shipCostEl  = document.querySelector('.cart-ship-cost-val');
+    const totalEl     = document.querySelector('.cart-drawer-total-val');
+    const shipList    = document.getElementById('cart-ship-list');
+    const freeBar     = document.getElementById('cart-free-bar');
     if (!body) return;
 
     if (!this.items.length) {
@@ -262,14 +304,64 @@ const MobiCart = {
         </div>`).join('');
     }
 
-    if (totalEl) totalEl.textContent = 'R' + this.total().toLocaleString();
+    // Shipping options
+    if (shipList) {
+      const sub = this.total();
+      shipList.innerHTML = SHIPPING_OPTIONS.map(opt => {
+        const effective = (opt.cost === null) ? null : (opt.free700 && sub >= 700 ? 0 : opt.cost);
+        const costHtml = opt.cost === null
+          ? `<span class="cart-ship-cost">You pay driver</span>`
+          : effective === 0
+            ? `<span class="cart-ship-cost cart-ship-free">Free</span>`
+            : `<span class="cart-ship-cost">R${effective}</span>`;
+        return `<label class="cart-ship-opt${this.selectedShipping === opt.key ? ' active' : ''}">
+          <input type="radio" name="shipping" value="${opt.key}"${this.selectedShipping === opt.key ? ' checked' : ''} onchange="MobiCart.setShipping('${opt.key}')">
+          <div class="cart-ship-opt-info">
+            <span class="cart-ship-opt-name">${opt.label}</span>
+            <span class="cart-ship-opt-sub">${opt.sub}</span>
+          </div>
+          <div class="cart-ship-opt-right">${costHtml}<span class="cart-ship-eta">${opt.eta}</span></div>
+        </label>`;
+      }).join('');
+    }
+
+    // Free shipping progress bar
+    if (freeBar) {
+      const sub = this.total();
+      if (this.items.length && sub < 700) {
+        const pct = Math.min(100, Math.round((sub / 700) * 100));
+        freeBar.innerHTML = `<div class="cart-free-bar-text">Add <strong>R${(700 - sub).toLocaleString()}</strong> more for free standard shipping</div><div class="cart-free-bar-track"><div class="cart-free-bar-fill" style="width:${pct}%"></div></div>`;
+        freeBar.hidden = false;
+      } else if (this.items.length && sub >= 700) {
+        freeBar.innerHTML = `<div class="cart-free-bar-unlocked">Free standard shipping unlocked!</div>`;
+        freeBar.hidden = false;
+      } else {
+        freeBar.hidden = true;
+      }
+    }
+
+    const sub  = this.total();
+    const ship = this.shippingCost();
+    const opt  = SHIPPING_OPTIONS.find(o => o.key === this.selectedShipping);
+    if (subtotalEl) subtotalEl.textContent = 'R' + sub.toLocaleString();
+    if (shipCostEl) {
+      if (opt?.cost === null) shipCostEl.textContent = '(you arrange)';
+      else if (ship === 0)    shipCostEl.textContent = 'Free';
+      else                    shipCostEl.textContent = 'R' + ship.toLocaleString();
+    }
+    if (totalEl) totalEl.textContent = 'R' + this.grandTotal().toLocaleString();
     if (typeof lucide !== 'undefined') lucide.createIcons();
   },
 
   whatsappCheckout() {
     if (!this.items.length) return;
     const lines = this.items.map(i => `• ${i.name} ×${i.qty} — R${(i.price*i.qty).toLocaleString()}`).join('\n');
-    const msg = `Hi MobiDokta! I'd like to order:\n\n${lines}\n\nRetail Total: R${this.total().toLocaleString()}\n\n(I'll confirm if student discount applies at collection)\n\nPlease confirm stock & payment. Thank you!`;
+    const opt  = SHIPPING_OPTIONS.find(o => o.key === this.selectedShipping);
+    const ship = this.shippingCost();
+    const shipLine = opt?.cost === null
+      ? `Delivery: ${opt.label} — I'll arrange the driver (${opt.eta})`
+      : `Delivery: ${opt?.label} — ${ship === 0 ? 'Free' : 'R' + ship.toLocaleString()} (${opt?.eta})`;
+    const msg = `Hi MobiDokta! I'd like to order:\n\n${lines}\n\nSubtotal: R${this.total().toLocaleString()}\n${shipLine}\nTotal: R${this.grandTotal().toLocaleString()}\n\n(I'll confirm if student discount applies at collection)\n\nPlease confirm stock & payment. Thank you!`;
     window.open('https://wa.me/27781541350?text=' + encodeURIComponent(msg), '_blank');
   },
 
