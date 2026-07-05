@@ -32,22 +32,22 @@
       justify-content: space-between;
       height: 64px;
       padding: 0 var(--space-8);
-      background: rgba(0,0,0,0.88);
+      background: var(--glass-bg);
       -webkit-backdrop-filter: blur(20px) saturate(1.4);
       backdrop-filter: blur(20px) saturate(1.4);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid var(--border);
     }
     .nav-links a {
-      color: rgba(255,255,255,0.78);
+      color: var(--text-secondary);
       text-decoration: none;
       font-size: var(--text-sm);
       font-weight: 500;
       transition: color 0.18s;
       padding: 4px 0;
     }
-    .nav-links a:hover { color: #fff; }
+    .nav-links a:hover { color: var(--text-primary); }
     .nav-links a.active, .nav-links a.nav-ac { color: #ff9500; font-weight: 700; }
-    .nav-links { display: flex; gap: var(--space-8); align-items: center; }
+    .nav-links { display: flex; gap: var(--space-6); align-items: center; }
     .nav-right  { display: flex; align-items: center; gap: 10px; }
 
     /* ── Hero ── */
@@ -135,9 +135,9 @@
       justify-content: center;
       gap: var(--space-6);
       flex-wrap: wrap;
-      padding: 16px var(--space-6);
-      background: #0c1a30;
-      border-bottom: 1px solid rgba(0,122,255,0.18);
+      padding: 14px var(--space-6);
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border);
     }
     .ac-trust-item {
       display: flex;
@@ -145,7 +145,7 @@
       gap: 7px;
       font-size: var(--text-xs);
       font-weight: 600;
-      color: rgba(255,255,255,0.72);
+      color: var(--text-secondary);
       white-space: nowrap;
     }
     .ac-trust-item svg { color: #007aff; }
@@ -275,33 +275,64 @@
 
     .ac-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-      gap: 10px;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 16px;
     }
     .ac-card {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 13px 15px;
+      flex-direction: column;
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: var(--radius-xl);
-      transition: border-color 0.18s, box-shadow 0.18s;
+      overflow: hidden;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.18s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
     .ac-card:hover {
+      transform: translateY(-5px);
       border-color: #007aff;
-      box-shadow: 0 4px 16px rgba(0,122,255,0.1);
+      box-shadow: 0 16px 48px rgba(0,122,255,0.12);
     }
-    .ac-card-thumb { width: 44px; height: 44px; object-fit: contain; flex-shrink: 0; border-radius: 6px; background: var(--bg-secondary); }
-    .ac-card-info { display: flex; flex-direction: column; gap: 5px; min-width: 0; flex: 1; }
+
+    /* ── Photo area ── */
+    .ac-card-img {
+      position: relative;
+      height: 210px;
+      background: #f5f5f7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .dark-theme .ac-card-img { background: #1c1c1e; }
+    .ac-card-img img {
+      max-height: 180px;
+      max-width: 78%;
+      width: auto;
+      object-fit: contain;
+      padding: 12px;
+      display: block;
+      filter: drop-shadow(0 6px 18px rgba(0,0,0,0.14));
+    }
+    .ac-card-icon {
+      width: 64px; height: 64px;
+      color: var(--text-tertiary);
+      stroke-width: 1.3px;
+    }
+
+    /* ── Card body ── */
+    .ac-card-body {
+      padding: 14px 16px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
     .ac-card-name {
-      font-size: var(--text-sm);
+      font-size: var(--text-base);
       font-weight: 700;
       color: var(--text-primary);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      line-height: 1.3;
     }
     .ac-card-meta { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
     .ac-card-storage {
@@ -318,15 +349,17 @@
       color: #fff;
       background: var(--cond-color, #8e8e93);
     }
-    .ac-card-right {
+    .ac-card-footer {
       display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 6px;
-      flex-shrink: 0;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-top: auto;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
     }
     .ac-card-price {
-      font-size: var(--text-base);
+      font-size: 1.1rem;
       font-weight: 800;
       color: var(--text-primary);
       white-space: nowrap;
@@ -335,10 +368,10 @@
       display: inline-flex;
       align-items: center;
       gap: 4px;
-      padding: 6px 12px;
+      padding: 7px 14px;
       background: #25d366;
       color: #fff;
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 700;
       border-radius: 999px;
       text-decoration: none;
@@ -349,8 +382,10 @@
 
     /* ── Promise section ── */
     .ac-promise {
-      background: #0c1a30;
-      color: #fff;
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
       padding: var(--space-14) var(--space-6);
       text-align: center;
     }
@@ -358,6 +393,7 @@
       font-size: var(--text-2xl);
       font-weight: 800;
       margin-bottom: var(--space-8);
+      color: var(--text-primary);
     }
     .ac-promise h2 span { color: #ff9500; }
     .ac-promise-grid {
@@ -372,16 +408,16 @@
     .ac-promise-icon {
       width: 38px; height: 38px;
       border-radius: var(--radius-lg);
-      background: rgba(0,122,255,0.15);
-      border: 1px solid rgba(0,122,255,0.28);
+      background: rgba(0,122,255,0.10);
+      border: 1px solid rgba(0,122,255,0.20);
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
       color: #007aff;
     }
-    .ac-promise-text strong { display: block; font-size: var(--text-sm); font-weight: 700; margin-bottom: 3px; }
-    .ac-promise-text p { font-size: var(--text-xs); color: rgba(255,255,255,0.52); line-height: 1.55; margin: 0; }
+    .ac-promise-text strong { display: block; font-size: var(--text-sm); font-weight: 700; margin-bottom: 3px; color: var(--text-primary); }
+    .ac-promise-text p { font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.55; margin: 0; }
     .btn-ac-wa-lg {
       display: inline-flex;
       align-items: center;
@@ -399,12 +435,13 @@
 
     /* ── Footer ── */
     .ac-footer {
-      background: #0a0a0a;
-      color: rgba(255,255,255,0.45);
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
       text-align: center;
       padding: var(--space-10) var(--space-6);
       font-size: var(--text-sm);
       line-height: 1.7;
+      border-top: 1px solid var(--border);
     }
     .ac-footer a { color: #ff9500; text-decoration: none; }
     .ac-footer-links {
@@ -414,8 +451,8 @@
       margin-bottom: var(--space-4);
       flex-wrap: wrap;
     }
-    .ac-footer-links a { color: rgba(255,255,255,0.48); font-size: var(--text-xs); }
-    .ac-footer-links a:hover { color: #fff; }
+    .ac-footer-links a { color: var(--text-secondary); font-size: var(--text-xs); }
+    .ac-footer-links a:hover { color: var(--text-primary); }
 
     /* ── Side nav ── */
     .side-nav {
@@ -473,11 +510,16 @@
       .nav-toggle { display: flex !important; }
       .ac-hero { padding: 90px var(--space-4) 48px; }
       .ac-trust-bar { gap: var(--space-4); }
-      .ac-grid { grid-template-columns: 1fr; }
+      .ac-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
     }
     @media (max-width: 480px) {
       .ac-pay-pill { font-size: 10px; padding: 2px 8px; }
       .ac-grades-inner { gap: var(--space-3); }
+      .ac-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .ac-card-img { height: 160px; }
+      .ac-card-img img { max-height: 130px; }
+      .ac-card-name { font-size: var(--text-sm); }
+      .ac-card-price { font-size: 1rem; }
     }
   </style>
   <script type="application/ld+json">
@@ -496,26 +538,40 @@
       <img src="./assets/mobidokta-logo.svg" alt="MobiDokta" class="logo-nav" loading="eager">
     </a>
     <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="shop.html" class="nav-link">Shop</a>
       <div class="nav-dropdown">
-        <a href="index.html#services" class="dropdown-trigger">Repairs</a>
+        <a href="apple.html" class="dropdown-trigger nav-link">
+          Apple Repairs <i data-lucide="chevron-down" class="icon-xs nav-chevron"></i>
+        </a>
         <div class="dropdown-menu">
-          <a href="apple.html">Apple</a>
-          <a href="android.html">Android</a>
-          <a href="computers.html">Laptops &amp; PCs</a>
+          <a href="collections/iphone-repairs/"><i data-lucide="smartphone" class="icon-xs"></i> iPhone Repairs</a>
+          <a href="collections/macbook-repairs/"><i data-lucide="laptop-2" class="icon-xs"></i> MacBook Repairs</a>
+          <a href="collections/imac-repairs/"><i data-lucide="monitor" class="icon-xs"></i> iMac Repairs</a>
+          <a href="collections/exclusive-gadgets/"><i data-lucide="watch" class="icon-xs"></i> iPad &amp; Apple Watch</a>
+          <div class="dropdown-divider"></div>
+          <a href="apple.html" class="dropdown-all"><i data-lucide="grid-2x2" class="icon-xs"></i> All Apple Services</a>
         </div>
       </div>
-      <a href="shop.html">Shop</a>
-      <a href="applecity.html" class="nav-ac active">Appl3City</a>
-      <a href="community.html">Blog</a>
+      <div class="nav-dropdown">
+        <a href="android.html" class="dropdown-trigger nav-link">
+          Other Repairs <i data-lucide="chevron-down" class="icon-xs nav-chevron"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="collections/samsung-repairs/"><i data-lucide="cpu" class="icon-xs"></i> Samsung Repairs</a>
+          <a href="collections/android-repairs/"><i data-lucide="smartphone" class="icon-xs"></i> Android Repairs</a>
+          <a href="collections/console-repairs/"><i data-lucide="gamepad-2" class="icon-xs"></i> Console Repairs</a>
+          <a href="collections/dji-repairs/"><i data-lucide="wind" class="icon-xs"></i> DJI Drone Repairs</a>
+          <div class="dropdown-divider"></div>
+          <a href="computers.html" class="dropdown-all"><i data-lucide="grid-2x2" class="icon-xs"></i> Mac &amp; Laptop Repairs</a>
+        </div>
+      </div>
+      <a href="applecity.html" class="nav-link nav-ac active">Appl3City</a>
     </div>
     <div class="nav-right">
       <a href="https://wa.me/27781541350" class="nav-wa-link" target="_blank" rel="noopener" title="WhatsApp us now">
         <i data-lucide="message-circle" class="icon-sm"></i>
       </a>
-      <button type="button" class="cart-icon-btn" aria-label="Open cart">
-        <i data-lucide="shopping-bag" class="icon-sm"></i>
-        <span class="cart-badge" hidden>0</span>
-      </button>
       <a href="book.html" class="btn btn-primary btn-sm nav-btn-desktop">Book Repair</a>
       <a href="book.html" class="nav-book-mobile" aria-label="Book a repair">
         <i data-lucide="calendar-check" class="icon-sm"></i> Book
@@ -655,13 +711,27 @@
       <img src="./assets/mobidokta-logo.svg" alt="MobiDokta" class="logo-nav" loading="eager">
       <button type="button" class="nav-close" aria-label="Close Menu"><i data-lucide="x" class="icon"></i></button>
     </div>
-    <a href="apple.html"><i data-lucide="smartphone" class="icon-sm"></i> Apple Repairs</a>
-    <a href="android.html"><i data-lucide="cpu" class="icon-sm"></i> Android Repairs</a>
-    <a href="computers.html"><i data-lucide="laptop" class="icon-sm"></i> Laptops &amp; PCs</a>
+    <a href="index.html"><i data-lucide="home" class="icon-sm"></i> Home</a>
     <a href="shop.html"><i data-lucide="shopping-bag" class="icon-sm"></i> Shop</a>
+    <div class="side-nav-group">
+      <span class="side-nav-group-label">Apple Repairs</span>
+      <a href="collections/iphone-repairs/" class="side-nav-sub"><i data-lucide="smartphone" class="icon-sm"></i> iPhone Repairs</a>
+      <a href="collections/macbook-repairs/" class="side-nav-sub"><i data-lucide="laptop-2" class="icon-sm"></i> MacBook Repairs</a>
+      <a href="collections/imac-repairs/" class="side-nav-sub"><i data-lucide="monitor" class="icon-sm"></i> iMac Repairs</a>
+      <a href="collections/exclusive-gadgets/" class="side-nav-sub"><i data-lucide="watch" class="icon-sm"></i> iPad &amp; Apple Watch</a>
+    </div>
+    <div class="side-nav-group">
+      <span class="side-nav-group-label">Other Repairs</span>
+      <a href="collections/samsung-repairs/" class="side-nav-sub"><i data-lucide="cpu" class="icon-sm"></i> Samsung Repairs</a>
+      <a href="collections/android-repairs/" class="side-nav-sub"><i data-lucide="smartphone" class="icon-sm"></i> Android Repairs</a>
+      <a href="collections/console-repairs/" class="side-nav-sub"><i data-lucide="gamepad-2" class="icon-sm"></i> Console Repairs</a>
+      <a href="computers.html" class="side-nav-sub"><i data-lucide="laptop" class="icon-sm"></i> Mac &amp; Laptops</a>
+    </div>
     <a href="applecity.html" class="active"><i data-lucide="smartphone" class="icon-sm"></i> Appl3City</a>
+    <a href="enterprise.html"><i data-lucide="building-2" class="icon-sm"></i> Enterprise / B2B</a>
+    <a href="campus.html"><i data-lucide="graduation-cap" class="icon-sm"></i> Campus Students</a>
     <a href="community.html"><i data-lucide="book-open" class="icon-sm"></i> Blog</a>
-    <a href="book.html"><i data-lucide="calendar-check" class="icon-sm"></i> Book a Repair</a>
+    <a href="book.html" class="side-nav-book"><i data-lucide="calendar-check" class="icon-sm"></i> Book a Repair</a>
     <a href="https://wa.me/27781541350" target="_blank" rel="noopener"><i data-lucide="message-circle" class="icon-sm"></i> WhatsApp Us</a>
   </aside>
 
@@ -830,38 +900,43 @@
     };
 
     const IPHONE_IMG = {
-      'iPhone 7 Plus':      'img/iphone-models/iPhone-7.jpg.JPG',
       'iPhone 7':           'img/iphone-models/iPhone-7.jpg.JPG',
-      'iPhone 8 Plus':      'img/iphone-models/iphone-8-plus.jpg.JPG',
+      'iPhone 7 Plus':      'img/iphone-models/iPhone-7.jpg.JPG',
       'iPhone 8':           'img/iphone-models/iPhone-8.jpg.JPG',
-      'iPhone SE':          'img/iphone-models/iPhone-8.jpg.JPG',
+      'iPhone 8 Plus':      'img/iphone-models/iphone-8-plus.jpg.JPG',
+      'iPhone SE':          'img/iphone-models/iPhone-SE-2022.avif',
+      'iPhone SE 2020':     'img/iphone-models/iPhone-SE-2020.avif',
+      'iPhone SE 2022':     'img/iphone-models/iPhone-SE-2022.avif',
       'iPhone X':           'img/iphone-models/iphone-X.jpg.JPG',
-      'iPhone XS Max':      'img/iphone-models/iphone-X.jpg.JPG',
       'iPhone XS':          'img/iphone-models/iphone-X.jpg.JPG',
+      'iPhone XS Max':      'img/iphone-models/iphone-X.jpg.JPG',
       'iPhone XR':          'img/iphone-models/iphone-xr.jpg.JPG',
-      'iPhone 11 Pro Max':  'img/iphone-models/iphone-11-promax.png',
-      'iPhone 11 Pro':      'img/iphone-models/iphone-11.jpg.JPG',
       'iPhone 11':          'img/iphone-models/iphone-11.jpg.JPG',
-      'iPhone 12 Pro Max':  'img/iphone-models/iphone-12-promax.webp',
-      'iPhone 12 Pro':      'img/iphone-models/iphone-12-pro.webp',
-      'iPhone 12 mini':     'img/iphone-models/iPhone-12.jpg.JPG',
+      'iPhone 11 Pro':      'img/iphone-models/iphone-11.jpg.JPG',
+      'iPhone 11 Pro Max':  'img/iphone-models/iphone-11-promax.png',
       'iPhone 12':          'img/iphone-models/iPhone-12.jpg.JPG',
-      'iPhone 13 Pro Max':  'img/iphone-models/iPhone-13-ProMax.jpg.JPG',
-      'iPhone 13 Pro':      'img/iphone-models/iPhone-13-pro.jpg.JPG',
-      'iPhone 13 mini':     'img/iphone-models/iphone-13.jpg.JPG',
+      'iPhone 12 mini':     'img/iphone-models/iPhone-12.jpg.JPG',
+      'iPhone 12 Pro':      'img/iphone-models/iphone-12-pro.webp',
+      'iPhone 12 Pro Max':  'img/iphone-models/iphone-12-promax.webp',
       'iPhone 13':          'img/iphone-models/iphone-13.jpg.JPG',
-      'iPhone 14 Pro Max':  'img/iphone-models/iphone-14-promax.jpg.JPG',
-      'iPhone 14 Pro':      'img/iphone-models/iphone-14-pro.jpeg.JPG',
-      'iPhone 14 Plus':     'img/iphone-models/iPhone-14.jpg.JPG',
+      'iPhone 13 mini':     'img/iphone-models/iphone-13.jpg.JPG',
+      'iPhone 13 Pro':      'img/iphone-models/iPhone-13-pro.jpg.JPG',
+      'iPhone 13 Pro Max':  'img/iphone-models/iPhone-13-ProMax.jpg.JPG',
       'iPhone 14':          'img/iphone-models/iPhone-14.jpg.JPG',
-      'iPhone 15 Pro Max':  'img/iphone-models/iphone-15-promax.jpg.JPG',
-      'iPhone 15 Pro':      'img/iphone-models/iphone-15-pro.jpg.JPG',
+      'iPhone 14 Plus':     'img/iphone-models/iPhone-14.jpg.JPG',
+      'iPhone 14 Pro':      'img/iphone-models/iphone-14-pro.jpeg.JPG',
+      'iPhone 14 Pro Max':  'img/iphone-models/iphone-14-promax.jpg.JPG',
       'iPhone 15':          'img/iphone-models/iphone-15.jpg.JPG',
-      'iPhone 16 Pro Max':  'img/iphone-models/iphone-16-promax.jpg.JPG',
-      'iPhone 16 Pro':      'img/iphone-models/iphone-16-pro.webp',
+      'iPhone 15 Plus':     'img/iphone-models/iphone-15-plus.webp',
+      'iPhone 15 Pro':      'img/iphone-models/iphone-15-pro.jpg.JPG',
+      'iPhone 15 Pro Max':  'img/iphone-models/iphone-15-promax.jpg.JPG',
       'iPhone 16':          'img/iphone-models/iphone-16.webp',
-      'iPhone 17 Pro Max':  'img/iphone-models/iphone-17-promax.jpg.JPG',
+      'iPhone 16 Plus':     'img/iphone-models/iphone-16-plus.webp',
+      'iPhone 16 Pro':      'img/iphone-models/iphone-16-pro.webp',
+      'iPhone 16 Pro Max':  'img/iphone-models/iphone-16-promax.jpg.JPG',
+      'iPhone 17':          'img/iphone-models/iphone-17.webp',
       'iPhone 17 Pro':      'img/iphone-models/iphone-17-pro.jpeg.JPG',
+      'iPhone 17 Pro Max':  'img/iphone-models/iphone-17-promax.jpg.JPG',
     };
     function getDeviceImg(name) {
       var base = name.replace(/\s*\(.*\)$/, '').trim();
@@ -875,21 +950,27 @@
       return 'https://wa.me/27781541350?text=' + encodeURIComponent(txt);
     }
 
+    const CAT_ICON = { iphone:'smartphone', watch:'watch', macbook:'laptop', samsung:'cpu', tablet:'tablet' };
     function renderCard(d) {
-      var img = getDeviceImg(d.name);
+      var img = d.cat === 'iphone' ? getDeviceImg(d.name) : null;
+      var imgArea = img
+        ? '<div class="ac-card-img"><img src="' + img + '" alt="' + d.name + '" loading="lazy"></div>'
+        : '<div class="ac-card-img"><i data-lucide="' + (CAT_ICON[d.cat]||'smartphone') + '" class="ac-card-icon"></i></div>';
       return '<div class="ac-card">'
-        + (img ? '<img src="' + img + '" alt="' + d.name + '" class="ac-card-thumb" loading="lazy">' : '')
-        + '<div class="ac-card-info">'
-        + '<span class="ac-card-name">' + d.name + '</span>'
+        + imgArea
+        + '<div class="ac-card-body">'
+        + '<div class="ac-card-name">' + d.name + '</div>'
         + '<div class="ac-card-meta">'
         + (d.storage ? '<span class="ac-card-storage">' + d.storage + '</span>' : '')
         + '<span class="ac-cond-badge" style="--cond-color:' + (COND_COLOR[d.cond]||'#8e8e93') + '">' + d.cond + '</span>'
-        + '</div></div>'
-        + '<div class="ac-card-right">'
+        + '</div>'
+        + '<div class="ac-card-footer">'
         + '<span class="ac-card-price">R' + d.price.toLocaleString() + '</span>'
         + '<a href="' + waLink(d) + '" target="_blank" rel="noopener" class="btn-ac-enquire">'
         + '<i data-lucide="message-circle" style="width:12px;height:12px"></i> Enquire</a>'
-        + '</div></div>';
+        + '</div>'
+        + '</div>'
+        + '</div>';
     }
 
     function renderAC(cat) {
