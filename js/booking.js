@@ -4,43 +4,73 @@
 
 (function() {
   let currentStep = 1;
-  let booking = { brand: null, model: null, cart: [], totalPrice: 0, totalDuration: 0, date: null, time: null, location: 'Alberton Randhart Home Studio', address: '' };
+  let booking = { brand: null, model: null, cart: [], totalPrice: 0, totalDuration: 0, date: null, time: null, location: 'Danville Studio (Madeira Isles, Pretoria)', address: '' };
 
   const baseServices = [
-    // ── Apple Services ──
+    // ── Apple / iPhone Services ──
     { id: 'iphone-oem', icon: 'smartphone', name: 'Screen Transplant (OEM)', desc: 'Factory-quality OEM Original Grade', price: 6500, duration: 30, brand: 'Apple', dynType: 'oem' },
     { id: 'iphone-eco', icon: 'smartphone', name: 'Screen Transplant (Eco)', desc: 'Quality Aftermarket Eco Grade', price: 3700, duration: 30, brand: 'Apple', dynType: 'eco' },
     { id: 'iphone-battery', icon: 'battery-full', name: 'Battery Resuscitation', desc: 'Health restored to 100%', price: 1399, duration: 30, brand: 'Apple', dynType: 'batt' },
+    { id: 'iphone-port', icon: 'plug', name: 'Charging Port Repair', desc: 'Lightning or USB-C port — board-level replacement', price: 750, duration: 30, brand: 'Apple' },
+    { id: 'iphone-water', icon: 'droplets', name: 'Water Damage Recovery', desc: 'Ultrasonic board clean & component recovery', price: 1200, duration: 90, brand: 'Apple' },
+    { id: 'iphone-camera', icon: 'camera', name: 'Camera Repair', desc: 'Front, rear, autofocus or lens module swap', price: 1100, duration: 45, brand: 'Apple' },
+    { id: 'iphone-back', icon: 'layers', name: 'Back Glass & Frame', desc: 'Shattered back panel or bent frame restoration', price: 1400, duration: 60, brand: 'Apple' },
     { id: 'iphone-soft', icon: 'cpu', name: 'Software / OS Repair', desc: 'iOS recovery & firmware flash', price: 650, duration: 30, brand: 'Apple' },
 
     // ── Samsung Services ──
     { id: 'samsung-screen', icon: 'smartphone', name: 'AMOLED Specialist Screen', desc: 'AMOLED restoration surgery', price: 6500, duration: 30, brand: 'Samsung', dynType: 'oem' },
     { id: 'samsung-battery', icon: 'battery-full', name: 'Battery Resuscitation', desc: 'Health restored to 100%', price: 1499, duration: 30, brand: 'Samsung', dynType: 'batt' },
+    { id: 'samsung-port', icon: 'plug', name: 'Charging Port Repair', desc: 'USB-C port board-level replacement', price: 699, duration: 30, brand: 'Samsung' },
+    { id: 'samsung-water', icon: 'droplets', name: 'Water Damage Recovery', desc: 'Ultrasonic clean & corrosion repair', price: 1200, duration: 90, brand: 'Samsung' },
     { id: 'samsung-soft', icon: 'cpu', name: 'Software / OS Repair', desc: 'Android recovery & flash', price: 650, duration: 30, brand: 'Samsung' },
 
     // ── Huawei Services ──
     { id: 'huawei-screen', icon: 'smartphone', name: 'Screen Transplant (OEM)', desc: 'Factory-quality OEM Screen', price: 4500, duration: 30, brand: 'Huawei', dynType: 'oem' },
     { id: 'huawei-battery', icon: 'battery-full', name: 'Battery Resuscitation', desc: 'Health restored to 100%', price: 1299, duration: 30, brand: 'Huawei', dynType: 'batt' },
+    { id: 'huawei-port', icon: 'plug', name: 'Charging Port Repair', desc: 'USB-C port board-level replacement', price: 650, duration: 30, brand: 'Huawei' },
     { id: 'huawei-soft', icon: 'cpu', name: 'Software / OS Repair', desc: 'HarmonyOS/Android recovery', price: 650, duration: 30, brand: 'Huawei' },
 
-    // MacBook & Laptops
-    { id: 'laptop-screen', icon: 'laptop', name: 'Laptop Screen Fix', desc: 'LCD, IPS & OLED specialists', price: 1800, duration: 60, brand: 'Laptop' },
-    { id: 'laptop-thermal', icon: 'thermometer', name: 'Thermal ICU Service', desc: 'Paste + Fan deep clean', price: 400, duration: 45, brand: 'Laptop' },
+    // ── MacBook & Laptops ──
+    { id: 'laptop-screen', icon: 'laptop', name: 'Screen Replacement', desc: 'Retina LCD, IPS & OLED specialists', price: 1800, duration: 60, brand: 'Laptop' },
+    { id: 'laptop-battery', icon: 'battery-full', name: 'Battery Replacement', desc: 'MacBook battery health fully restored', price: 1500, duration: 45, brand: 'Laptop' },
+    { id: 'laptop-thermal', icon: 'thermometer', name: 'Thermal ICU Service', desc: 'Thermal paste refresh + fan deep clean', price: 400, duration: 45, brand: 'Laptop' },
+    { id: 'laptop-keyboard', icon: 'keyboard', name: 'Keyboard Replacement', desc: 'Sticky keys, liquid spill or dead keys', price: 1200, duration: 60, brand: 'Laptop' },
+    { id: 'laptop-water', icon: 'droplets', name: 'Liquid Damage Recovery', desc: 'Ultrasonic board clean & chip-level repair', price: 1400, duration: 90, brand: 'Laptop' },
+    { id: 'laptop-board', icon: 'cpu', name: 'Logic Board Repair', desc: 'No-power, kernel panic & micro-soldering', price: 1800, duration: 120, brand: 'Laptop' },
+    { id: 'laptop-soft', icon: 'code', name: 'macOS / OS Reinstall', desc: 'Clean reinstall, data migration, optimisation', price: 550, duration: 60, brand: 'Laptop' },
 
-    // Consoles
-    { id: 'console-hdmi', icon: 'gamepad-2', name: 'Console HDMI Surgery', desc: 'Micro-soldered 4K signal port', price: 1250, duration: 90, brand: 'Console' },
-    
-    // Specialty
-    { id: 'gsm-check', icon: 'search', name: 'GSM CheckForMe™', desc: 'Pre-purchase inspection', price: 350, duration: 20 },
+    // ── Consoles ──
+    { id: 'console-hdmi', icon: 'monitor', name: 'HDMI Port Repair', desc: 'Micro-soldered 4K signal port — PS5, Xbox, PS4', price: 1250, duration: 90, brand: 'Console' },
+    { id: 'console-heat', icon: 'thermometer', name: 'Overheating & Fan Repair', desc: 'Thermal paste + deep clean — stops shutdown', price: 550, duration: 60, brand: 'Console' },
+    { id: 'console-disc', icon: 'disc', name: 'Disc Drive Repair', desc: 'Not reading, grinding or random eject', price: 850, duration: 60, brand: 'Console' },
+    { id: 'console-drift', icon: 'joystick', name: 'Controller Stick Drift', desc: 'Hall-effect analog upgrade — the permanent fix', price: 550, duration: 45, brand: 'Console' },
+    { id: 'console-power', icon: 'zap', name: 'No Power / Won\'t Turn On', desc: 'PSU diagnosis & board-level power repair', price: 950, duration: 90, brand: 'Console' },
+    { id: 'console-usb', icon: 'usb', name: 'USB & Charging Port', desc: 'Switch USB-C, PS5 USB hub or Xbox controller port', price: 650, duration: 45, brand: 'Console' },
+
+    // ── iPad & Apple Watch / Gadgets ──
+    { id: 'gadget-screen', icon: 'tablet', name: 'Screen Replacement', desc: 'iPad, Apple Watch or tablet display', price: 1800, duration: 60, brand: 'Gadgets', dynType: 'oem' },
+    { id: 'gadget-battery', icon: 'battery-full', name: 'Battery Replacement', desc: 'Full charge health restored to 100%', price: 1000, duration: 45, brand: 'Gadgets', dynType: 'batt' },
+    { id: 'gadget-port', icon: 'plug', name: 'Charging Port Repair', desc: 'USB-C, Lightning or watch magnetic port', price: 700, duration: 30, brand: 'Gadgets' },
+    { id: 'gadget-water', icon: 'droplets', name: 'Water Damage Recovery', desc: 'Ultrasonic clean & corrosion treatment', price: 1200, duration: 90, brand: 'Gadgets' },
+    { id: 'gadget-diag', icon: 'search', name: 'Full Diagnostic', desc: 'Device assessment + written quote', price: 350, duration: 30, brand: 'Gadgets' },
+
+    // ── DJI & Drones ──
+    { id: 'dji-gimbal', icon: 'camera', name: 'Camera / Gimbal Repair', desc: 'Lens, sensor & gimbal stabilisation fault', price: 1200, duration: 60, brand: 'DJI' },
+    { id: 'dji-motor', icon: 'settings', name: 'Motor Replacement', desc: 'Dead or damaged flight motor swap', price: 750, duration: 45, brand: 'DJI' },
+    { id: 'dji-shell', icon: 'shield', name: 'Shell & Arm Repair', desc: 'Crash damage — body, arm & propeller guard', price: 850, duration: 60, brand: 'DJI' },
+    { id: 'dji-remote', icon: 'radio', name: 'Remote Controller Fix', desc: 'Joystick drift, screen or charging port', price: 650, duration: 30, brand: 'DJI' },
+    { id: 'dji-diag', icon: 'search', name: 'Full Drone Diagnostic', desc: 'Flight test, sensor & gimbal assessment', price: 450, duration: 45, brand: 'DJI' },
+
+    // ── Specialty (shown for all brands) ──
+    { id: 'gsm-check', icon: 'search', name: 'GSM CheckForMe™', desc: 'Pre-purchase inspection & report', price: 350, duration: 20 },
     { id: 'tech-at-door', icon: 'home', name: 'Request A Techie™', desc: 'On-site home repair call-out', price: 149, duration: 0 },
-    
-    // Remote / Practical
-    { id: 'teletech-consult', icon: 'video', name: 'TeleTech Consultation', desc: 'Remote video call with a senior engineer for diagnosis.', price: 199, duration: 30 },
-    { id: 'practical-solution', icon: 'life-buoy', name: 'Free Practical Solutions', desc: 'Remote advice & remote troubleshooting via WhatsApp', price: 0, duration: 15 }
+    { id: 'teletech-consult', icon: 'video', name: 'TeleTech Consultation', desc: 'Remote video call with a senior engineer', price: 199, duration: 30 },
+    { id: 'practical-solution', icon: 'life-buoy', name: 'Free Practical Solutions', desc: 'Remote advice & WhatsApp troubleshooting', price: 0, duration: 15 }
   ];
 
   const models = {
     Apple: [
+      'iPhone 17 Pro Max','iPhone 17 Pro','iPhone 17 Plus','iPhone 17',
       'iPhone 16 Pro Max','iPhone 16 Pro','iPhone 16 Plus','iPhone 16',
       'iPhone 15 Pro Max','iPhone 15 Pro','iPhone 15 Plus','iPhone 15',
       'iPhone 14 Pro Max','iPhone 14 Pro','iPhone 14 Plus','iPhone 14',
@@ -48,16 +78,77 @@
       'iPhone 12 Pro Max','iPhone 12 Pro','iPhone 12','iPhone 12 Mini',
       'iPhone 11 Pro Max','iPhone 11 Pro','iPhone 11',
       'iPhone XS Max','iPhone XS','iPhone X','iPhone XR',
-      'iPhone 8 Plus','iPhone 8','iPhone SE',
+      'iPhone 8 Plus','iPhone 8','iPhone SE (2022)','iPhone SE (2020)','iPhone SE',
       'Other (Type manually...)'
     ],
-    Samsung: ['Galaxy S24 Ultra','Galaxy S24 Series','Galaxy S23 Ultra','Galaxy S23 Series','Galaxy Z Fold 5/4','Galaxy Z Flip 5/4','Galaxy A54','Galaxy A34','Galaxy A24','Galaxy A14', 'Other (Type manually...)'],
-    Huawei: ['Pura 70 Ultra','Pura 70 Pro','Pura 70','Mate 60 Pro+','Mate 60 Pro','Mate 60','P60 Pro','P60','Mate 50 Pro','P50 Pro','Nova 12','Nova 11','Nova 10','Y9a','MatePad Pro', 'Other (Type manually...)'],
-    MacBook: ['MacBook Pro M3','MacBook Pro M2','MacBook Pro M1','MacBook Air M2','MacBook Air M1','Intel MacBook Pro','Intel MacBook Air', 'Other (Type manually...)'],
-    Console: ['PS5','PS4 Pro','PS4 Slim','Xbox Series X','Xbox Series S','Nintendo Switch', 'Other (Type manually...)']
+    Samsung: [
+      'Galaxy S25 Ultra','Galaxy S25+','Galaxy S25',
+      'Galaxy S24 Ultra','Galaxy S24+','Galaxy S24',
+      'Galaxy S23 Ultra','Galaxy S23+','Galaxy S23',
+      'Galaxy Z Fold 6','Galaxy Z Fold 5','Galaxy Z Fold 4',
+      'Galaxy Z Flip 6','Galaxy Z Flip 5','Galaxy Z Flip 4',
+      'Galaxy A55','Galaxy A54','Galaxy A35','Galaxy A34','Galaxy A25','Galaxy A24','Galaxy A15','Galaxy A14',
+      'Other (Type manually...)'
+    ],
+    Huawei: [
+      'Pura 70 Ultra','Pura 70 Pro','Pura 70',
+      'Mate 60 Pro+','Mate 60 Pro','Mate 60',
+      'P60 Pro','P60','Mate 50 Pro','P50 Pro',
+      'Nova 12 Pro','Nova 12','Nova 11 Pro','Nova 11','Nova 10',
+      'Y9a','MatePad Pro 13.2','MatePad 11',
+      'Other (Type manually...)'
+    ],
+    MacBook: [
+      'MacBook Pro M4 (16")','MacBook Pro M4 (14")','MacBook Pro M3 (16")','MacBook Pro M3 (14")',
+      'MacBook Pro M2 (16")','MacBook Pro M2 (14")','MacBook Pro M1 (16")','MacBook Pro M1 (14")',
+      'MacBook Air M3','MacBook Air M2','MacBook Air M1',
+      'Intel MacBook Pro (2019–2020)','Intel MacBook Pro (2017–2018)','Intel MacBook Air',
+      'iMac 24" M3 (2023)','iMac 24" M1 (2021)','iMac 27" Intel','iMac 21.5" Intel',
+      'Mac Mini M4','Mac Mini M2','Mac Mini M1',
+      'Other (Type manually...)'
+    ],
+    Console: [
+      'PS5 (Disc Edition)','PS5 Digital Edition',
+      'PS4 Pro','PS4 Slim','PS4',
+      'PS3 (all models)',
+      'Xbox Series X','Xbox Series S',
+      'Xbox One X','Xbox One S','Xbox One',
+      'Nintendo Switch OLED','Nintendo Switch','Nintendo Switch Lite',
+      'DualSense Controller','DualShock 4','Xbox Wireless Controller','Joy-Con (L/R)',
+      'Other (Type manually...)'
+    ],
+    Gadgets: [
+      'Apple Watch Ultra 2','Apple Watch Series 10','Apple Watch Series 9','Apple Watch Series 8','Apple Watch SE (2nd gen)','Apple Watch SE',
+      'iPad Pro 13" M4','iPad Pro 11" M4','iPad Pro 12.9" M2','iPad Pro 11" M2',
+      'iPad Air M2 13"','iPad Air M2 11"','iPad Air M1',
+      'iPad 10th Gen','iPad 9th Gen','iPad Mini 7','iPad Mini 6',
+      'Samsung Galaxy Tab S10 Ultra','Samsung Galaxy Tab S10+','Samsung Galaxy Tab S9 Ultra','Samsung Galaxy Tab S9+','Samsung Galaxy Tab S9','Samsung Galaxy Tab A9+','Samsung Galaxy Tab A9',
+      'Microsoft Surface Pro 11','Microsoft Surface Pro 10','Microsoft Surface Laptop 6','Microsoft Surface Go',
+      'AirPods Pro 2nd Gen','AirPods Max','Samsung Galaxy Buds 3 Pro','Samsung Galaxy Buds 3','Sony WH-1000XM5',
+      'GoPro Hero 13','GoPro Hero 12','GoPro Hero 11',
+      'Garmin Fenix 8','Garmin Fenix 7','Samsung Galaxy Watch 7','Samsung Galaxy Watch 6',
+      'Other (Type manually...)'
+    ],
+    DJI: [
+      'DJI Mini 4 Pro','DJI Mini 3 Pro','DJI Mini 3','DJI Mini 2 SE','DJI Mini 2',
+      'DJI Air 3S','DJI Air 3','DJI Air 2S',
+      'DJI Mavic 3 Pro','DJI Mavic 3 Classic','DJI Mavic 3',
+      'DJI Avata 2','DJI Avata','DJI FPV',
+      'DJI Osmo Action 5 Pro','DJI Osmo Action 4','DJI Osmo Action 3',
+      'DJI Osmo Pocket 3','DJI Osmo Pocket 2',
+      'DJI RC 2 Remote','DJI RC-N2 Remote','DJI RC-N1 Remote','DJI Smart Controller',
+      'Other (Type manually...)'
+    ]
   };
 
   const pricingMap = {
+    // ── iPhone 17 ──
+    'iPhone 17 Pro Max': { oem: 8500, eco: 5400, batt: 2200 },
+    'iPhone 17 Pro':     { oem: 7800, eco: 4900, batt: 2100 },
+    'iPhone 17 Plus':    { oem: 6400, eco: 3900, batt: 1999 },
+    'iPhone 17':         { oem: 5900, eco: 3500, batt: 1899 },
+
+    // ── iPhone 16 ──
     'iPhone 16 Pro Max': { oem: 6500, eco: 3700, batt: 1899 },
     'iPhone 16 Pro': { oem: 5200, eco: 3520, batt: 1799 },
     'iPhone 16 Plus': { oem: 4900, eco: 2980, batt: 1699 },
@@ -95,16 +186,51 @@
     'iPhone 8 Plus': { oem: 1299, eco: 899, batt: 649 },
     'iPhone 8': { oem: 1199, eco: 799, batt: 599 },
     'iPhone SE': { oem: 1199, eco: 799, batt: 599 },
-    'Galaxy S24 Ultra': { oem: 6500 },
-    'Galaxy S24 Series': { oem: 5000 },
-    'Galaxy S23 Ultra': { oem: 5000 },
-    'Galaxy S23 Series': { oem: 4300 },
-    'Galaxy Z Fold 5/4': { oem: 5500 },
-    'Galaxy Z Flip 5/4': { oem: 3900 },
-    'Galaxy A54': { oem: 1799 },
-    'Galaxy A34': { oem: 1799 },
-    'Galaxy A24': { oem: 1099 },
-    'Galaxy A14': { oem: 1099 }
+    // ── Samsung ──
+    'Galaxy S25 Ultra': { oem: 7500, batt: 1799 },
+    'Galaxy S25+':      { oem: 6200, batt: 1599 },
+    'Galaxy S25':       { oem: 5500, batt: 1499 },
+    'Galaxy S24 Ultra': { oem: 6500, batt: 1699 },
+    'Galaxy S24+':      { oem: 5500, batt: 1499 },
+    'Galaxy S24':       { oem: 5000, batt: 1399 },
+    'Galaxy S23 Ultra': { oem: 5000, batt: 1599 },
+    'Galaxy S23+':      { oem: 4300, batt: 1399 },
+    'Galaxy S23':       { oem: 4300, batt: 1299 },
+    'Galaxy Z Fold 6':  { oem: 7200, batt: 1999 },
+    'Galaxy Z Fold 5':  { oem: 6500, batt: 1899 },
+    'Galaxy Z Fold 4':  { oem: 5500, batt: 1799 },
+    'Galaxy Z Flip 6':  { oem: 4500, batt: 1599 },
+    'Galaxy Z Flip 5':  { oem: 3900, batt: 1499 },
+    'Galaxy Z Flip 4':  { oem: 3500, batt: 1399 },
+    'Galaxy A55':       { oem: 2200, batt: 999 },
+    'Galaxy A54':       { oem: 1799, batt: 899 },
+    'Galaxy A35':       { oem: 1799, batt: 899 },
+    'Galaxy A34':       { oem: 1799, batt: 849 },
+    'Galaxy A25':       { oem: 1200, batt: 799 },
+    'Galaxy A24':       { oem: 1099, batt: 749 },
+    'Galaxy A15':       { oem: 999,  batt: 699 },
+    'Galaxy A14':       { oem: 1099, batt: 699 },
+
+    // ── iPad ──
+    'iPad Pro 13" M4':     { oem: 6500, batt: 2000 },
+    'iPad Pro 11" M4':     { oem: 5200, batt: 1800 },
+    'iPad Pro 12.9" M2':   { oem: 5500, batt: 1900 },
+    'iPad Pro 11" M2':     { oem: 4500, batt: 1700 },
+    'iPad Air M2 13"':     { oem: 4000, batt: 1500 },
+    'iPad Air M2 11"':     { oem: 3200, batt: 1300 },
+    'iPad Air M1':         { oem: 2800, batt: 1200 },
+    'iPad 10th Gen':       { oem: 2400, batt: 1050 },
+    'iPad 9th Gen':        { oem: 1800, batt: 900 },
+    'iPad Mini 7':         { oem: 2800, batt: 1100 },
+    'iPad Mini 6':         { oem: 2400, batt: 1000 },
+
+    // ── Apple Watch ──
+    'Apple Watch Ultra 2':     { oem: 3500, batt: 1600 },
+    'Apple Watch Series 10':   { oem: 2800, batt: 1300 },
+    'Apple Watch Series 9':    { oem: 2400, batt: 1200 },
+    'Apple Watch Series 8':    { oem: 2000, batt: 1100 },
+    'Apple Watch SE (2nd gen)': { oem: 1600, batt: 950 },
+    'Apple Watch SE':           { oem: 1400, batt: 850 }
   };
 
   // Calendar state
@@ -378,7 +504,7 @@
       } else {
         clinicSelect.disabled = false;
         if (clinicSelect.value === 'Tele') {
-          clinicSelect.value = 'Alberton Randhart Home Studio'; // Revert back
+          clinicSelect.value = 'Danville Studio (Madeira Isles, Pretoria)';
         }
       }
       clinicSelect.dispatchEvent(new Event('change'));
