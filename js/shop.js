@@ -138,8 +138,8 @@ const PRODUCTS = [
 /* ── Shipping options ── */
 const SHIPPING_OPTIONS = [
   { key:'collect',    icon:'map-pin',    label:'Collect in-Store',        sub:'Shop 6, Madeira Isles, Danville',              eta:'Ready same day',      cost:0,   free700:false },
+  { key:'local_std',  icon:'truck',      label:'Local Standard',          sub:'Pretoria area delivery',                       eta:'2–4 hrs, same day',   cost:35,  free700:true  },
   { key:'local_pri',  icon:'zap',        label:'Local Priority',          sub:'Pretoria area — UberSend / Bolt speed',        eta:'20 min – 1 hr',       cost:100, free700:false },
-  { key:'local_std',  icon:'truck',      label:'Local Standard',          sub:'Pretoria area delivery',                       eta:'2–4 hrs, same day',   cost:150, free700:true  },
   { key:'uber',       icon:'navigation', label:'UberSend / Bolt Send',    sub:'You book driver — we hand over at the shop',   eta:'Real-time ETA',       cost:null,free700:false },
   { key:'nation_std', icon:'package',    label:'Nationwide Standard',     sub:'Courier · 2–3 business days',                 eta:'2–3 business days',   cost:150, free700:true  },
   { key:'nation_pri', icon:'rocket',     label:'Nationwide Priority',     sub:'Priority courier, arrives sooner',             eta:'1–2 business days',   cost:200, free700:false },
