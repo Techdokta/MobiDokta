@@ -71,6 +71,19 @@
       background: radial-gradient(ellipse 55% 35% at 50% 65%, rgba(0,122,255,0.14) 0%, transparent 70%);
       pointer-events: none;
     }
+    .ac-hero-phones {
+      position: absolute;
+      right: max(4%, calc(50% - 640px));
+      bottom: 0;
+      height: 88%;
+      object-fit: contain;
+      object-position: bottom;
+      filter: drop-shadow(0 0 48px rgba(0,122,255,0.22));
+      pointer-events: none;
+      mask-image: linear-gradient(to top, transparent 0%, white 18%);
+      -webkit-mask-image: linear-gradient(to top, transparent 0%, white 18%);
+    }
+    @media (max-width: 900px) { .ac-hero-phones { display: none; } }
     .ac-hero-logo {
       font-size: clamp(2.8rem, 9vw, 5.5rem);
       font-weight: 900;
@@ -582,6 +595,7 @@
 
   <!-- ── Hero ── -->
   <header class="ac-hero">
+    <img src="img/iphone 17 17 plus back and compare.avif" alt="iPhone 17 and iPhone 17 Plus" class="ac-hero-phones" loading="eager">
     <h1 class="ac-hero-logo">APPL<span class="ac3">3</span>CITY</h1>
     <h2 class="ac-hero-sub">Pre-Owned iPhones &amp; Samsung Phones in Pretoria — IMEI Verified</h2>
     <p class="ac-hero-cert">Certified by <span>MobiDokta</span> &nbsp;·&nbsp; Winter 2026 &nbsp;·&nbsp; All prices include VAT</p>

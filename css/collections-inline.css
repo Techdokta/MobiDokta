@@ -142,6 +142,36 @@
 }
 .dark-theme .coll-svc-edu-photo { background: #2c2c2e; }
 
+/* Past-work portfolio grid */
+.coll-portfolio-section { background: var(--bg-secondary); }
+.coll-portfolio-sub { color: var(--text-secondary); margin-bottom: var(--space-6); line-height: 1.7; }
+.coll-portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-4);
+}
+.coll-port-item {
+  border-radius: var(--radius-xl); overflow: hidden;
+  border: 1px solid var(--border); background: var(--bg-card);
+  display: flex; flex-direction: column;
+  transition: border-color 0.18s;
+}
+.coll-port-item:hover { border-color: var(--accent); }
+.coll-port-img {
+  width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;
+  transition: transform 0.25s ease;
+}
+.coll-port-item:hover .coll-port-img { transform: scale(1.04); }
+.coll-port-cap {
+  padding: 8px 12px; font-size: 11px;
+  color: var(--text-secondary); font-weight: 600;
+}
+
+/* Screen type comparison edu-photo caption */
+.coll-svc-edu-caption {
+  font-size: 11px; color: var(--text-tertiary); margin-top: 6px;
+}
+
 @media (max-width: 900px) {
   .coll-hero-wrap {
     grid-template-columns: 1fr;
