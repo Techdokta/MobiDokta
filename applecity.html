@@ -66,8 +66,8 @@
       100% { transform: translateY(0) scale(1); opacity: 1; }
     }
     @keyframes ac-3-pulse {
-      0%, 100% { text-shadow: 0 0 28px rgba(255,149,0,0.5), 0 0 70px rgba(255,149,0,0.22); }
-      50%       { text-shadow: 0 0 56px rgba(255,149,0,1), 0 0 130px rgba(255,149,0,0.5), 0 0 220px rgba(255,149,0,0.2); }
+      0%, 100% { text-shadow: 0 0 24px rgba(255,149,0,0.55), 0 0 60px rgba(255,149,0,0.25); }
+      50%       { text-shadow: 0 0 48px rgba(255,149,0,0.9), 0 0 110px rgba(255,149,0,0.45); }
     }
     @keyframes ac-line-expand {
       from { transform: scaleX(0); opacity: 0; }
@@ -81,54 +81,50 @@
       from { opacity: 0; letter-spacing: 0.32em; }
       to   { opacity: 1; letter-spacing: 0.16em; }
     }
-    @keyframes ac-grid-drift {
-      from { background-position: 0 0; }
-      to   { background-position: 64px 64px; }
-    }
 
     /* ── Hero ── */
     .ac-hero {
-      min-height: 620px;
+      min-height: 640px;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
-      text-align: center;
-      padding: 130px var(--space-6) 84px;
-      background:
-        radial-gradient(ellipse 60% 40% at 50% 70%, rgba(0,122,255,0.16) 0%, transparent 68%),
-        linear-gradient(160deg, #070710 0%, #0b1228 55%, #070710 100%);
-      color: #fff;
+      text-align: left;
+      padding: 130px max(48px, 6vw) 88px;
+      background: #fff;
+      color: #0a0a0a;
       position: relative;
       overflow: hidden;
     }
-    /* Drifting city-grid overlay */
+    /* White-to-transparent veil — keeps left text zone clean over the photo */
     .ac-hero::before {
       content: '';
       position: absolute;
-      inset: -64px;
-      background-image:
-        linear-gradient(rgba(0,122,255,0.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,122,255,0.045) 1px, transparent 1px);
-      background-size: 64px 64px;
-      animation: ac-grid-drift 18s linear infinite;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        rgba(255,255,255,1)    0%,
+        rgba(255,255,255,0.96) 25%,
+        rgba(255,255,255,0.75) 42%,
+        rgba(255,255,255,0.15) 62%,
+        rgba(255,255,255,0)    75%
+      );
+      z-index: 1;
+      pointer-events: none;
+    }
+    /* Full-bleed photo — right-anchored, zoomed into face + iPhone */
+    .ac-hero-photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: right 18%;
       pointer-events: none;
       z-index: 0;
     }
-    .ac-hero-photo {
-      position: absolute;
-      right: 0;
-      top: 0;
-      height: 100%;
-      width: auto;
-      object-fit: cover;
-      object-position: center top;
-      pointer-events: none;
-      z-index: 1;
-      mask-image: linear-gradient(to right, transparent 0%, white 32%);
-      -webkit-mask-image: linear-gradient(to right, transparent 0%, white 32%);
-    }
-    @media (max-width: 900px) { .ac-hero-photo { display: none; } }
+    @media (max-width: 900px) { .ac-hero-photo { object-position: 70% 18%; } }
+    @media (max-width: 600px) { .ac-hero-photo { display: none; } }
 
     /* Eyebrow label */
     .ac-hero-eyebrow {
@@ -136,7 +132,7 @@
       font-weight: 700;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.35);
+      color: rgba(0,0,0,0.38);
       margin-bottom: 22px;
       position: relative;
       z-index: 2;
@@ -147,7 +143,7 @@
     .ac-hero-wordmark {
       display: flex;
       align-items: baseline;
-      font-size: clamp(5rem, 17vw, 11.5rem);
+      font-size: clamp(4.5rem, 15vw, 10.5rem);
       font-weight: 900;
       letter-spacing: -0.035em;
       line-height: 0.88;
@@ -157,7 +153,7 @@
     }
     .ac-wm-appl {
       display: inline-block;
-      color: #fff;
+      color: #0a0a0a;
       animation: ac-slide-left 0.78s cubic-bezier(0.16, 1, 0.3, 1) 0.18s both;
     }
     .ac-wm-3 {
@@ -169,7 +165,7 @@
     }
     .ac-wm-city {
       display: inline-block;
-      color: #fff;
+      color: #0a0a0a;
       animation: ac-slide-right 0.78s cubic-bezier(0.16, 1, 0.3, 1) 0.32s both;
     }
 
@@ -178,9 +174,9 @@
       width: 72px;
       height: 3px;
       border-radius: 2px;
-      background: linear-gradient(90deg, transparent, #ff9500 30%, #ff9500 70%, transparent);
-      margin: 26px auto 32px;
-      transform-origin: center;
+      background: linear-gradient(90deg, #ff9500 0%, rgba(255,149,0,0.3) 100%);
+      margin: 26px 0 32px;
+      transform-origin: left;
       position: relative;
       z-index: 2;
       animation: ac-line-expand 0.65s cubic-bezier(0.16, 1, 0.3, 1) 1.05s both;
@@ -189,7 +185,7 @@
     .ac-hero-sub {
       font-size: var(--text-lg);
       font-weight: 600;
-      color: rgba(255,255,255,0.82);
+      color: rgba(0,0,0,0.72);
       margin-bottom: 8px;
       position: relative;
       z-index: 2;
@@ -197,7 +193,7 @@
     }
     .ac-hero-cert {
       font-size: var(--text-sm);
-      color: rgba(255,255,255,0.38);
+      color: rgba(0,0,0,0.4);
       margin-bottom: 34px;
       position: relative;
       z-index: 2;
@@ -208,7 +204,7 @@
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: flex-start;
       position: relative;
       z-index: 2;
       animation: ac-fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 1.45s both;
@@ -623,8 +619,8 @@
       .navbar { padding: 0 var(--space-4); }
       .nav-links { display: none; }
       .nav-toggle { display: flex !important; }
-      .ac-hero { padding: 100px var(--space-4) 56px; min-height: 440px; }
-      .ac-hero-wordmark { font-size: clamp(3.8rem, 22vw, 6rem); }
+      .ac-hero { padding: 100px var(--space-5) 60px; min-height: 420px; }
+      .ac-hero-wordmark { font-size: clamp(3.5rem, 20vw, 5.5rem); }
       .ac-trust-bar { gap: var(--space-4); }
       .ac-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
     }
