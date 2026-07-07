@@ -360,6 +360,8 @@
     }
     .ac-filter:hover { border-color: #007aff; color: #007aff; }
     .ac-filter.active { background: #007aff; border-color: #007aff; color: #fff; }
+    .ac-filter-gaming:hover { border-color: #003399 !important; color: #003399 !important; }
+    .ac-filter-gaming.active { background: #003399 !important; border-color: #003399 !important; color: #fff !important; }
 
     /* ── Listing ── */
     .ac-section { padding: var(--space-8) 0 var(--space-20); }
@@ -760,6 +762,7 @@
       <button type="button" class="ac-filter" data-cat="macbook">MacBook</button>
       <button type="button" class="ac-filter" data-cat="samsung">Samsung Galaxy</button>
       <button type="button" class="ac-filter" data-cat="tablet">Samsung Tablets</button>
+      <button type="button" class="ac-filter ac-filter-gaming" data-cat="gaming">🎮 Gaming</button>
     </div>
   </div>
 
@@ -1014,6 +1017,21 @@
       // ── Samsung Tablets ──
       { id:'t001', cat:'tablet', name:'Galaxy Tab A9',  storage:'', cond:'Pre-owned', price:2750 },
       { id:'t002', cat:'tablet', name:'Galaxy Tab A9+', storage:'', cond:'Pre-owned', price:4400 },
+
+      // ── Gaming ──
+      { id:'gm001', cat:'gaming', name:'PS5 Console — Disc Edition',           storage:'Brand New · Sealed',   cond:'Sealed',    price:12999 },
+      { id:'gm002', cat:'gaming', name:'PS5 Console — Digital Edition',         storage:'Brand New · Sealed',   cond:'Sealed',    price:11499 },
+      { id:'gm003', cat:'gaming', name:'PS5 Console — Disc Edition',            storage:'Pre-owned · Tested',   cond:'Pre-owned', price:8999  },
+      { id:'gm004', cat:'gaming', name:'DualSense Controller — White',          storage:'Brand New',            cond:'Brand New', price:1799  },
+      { id:'gm005', cat:'gaming', name:'DualSense Controller — Midnight Black', storage:'Brand New',            cond:'Brand New', price:1799  },
+      { id:'gm006', cat:'gaming', name:'DualSense Controller — Cosmic Red',     storage:'Brand New',            cond:'Brand New', price:1899  },
+      { id:'gm007', cat:'gaming', name:'DualSense Controller — Cobalt Blue',    storage:'Brand New',            cond:'Brand New', price:1899  },
+      { id:'gm008', cat:'gaming', name:'DualSense Edge Pro Controller',          storage:'Brand New',            cond:'Brand New', price:2999  },
+      { id:'gm009', cat:'gaming', name:'DualSense Controller',                  storage:'Pre-owned · Tested',   cond:'Pre-owned', price:1199  },
+      { id:'gm010', cat:'gaming', name:'DualSense Charging Station',            storage:'Charges 2 controllers', cond:'Brand New', price:699   },
+      { id:'gm011', cat:'gaming', name:'Pulse 3D Wireless Headset — White',    storage:'3D Audio · Brand New',  cond:'Brand New', price:1799  },
+      { id:'gm012', cat:'gaming', name:'Pulse 3D Wireless Headset — Black',    storage:'3D Audio · Brand New',  cond:'Brand New', price:1799  },
+      { id:'gm013', cat:'gaming', name:'PS5 Media Remote',                      storage:'Brand New',            cond:'Brand New', price:599   },
     ];
 
     const CAT_META = {
@@ -1022,6 +1040,7 @@
       macbook: { label:'Apple MacBook',   icon:'laptop' },
       samsung: { label:'Samsung Galaxy',  icon:'cpu' },
       tablet:  { label:'Samsung Tablets', icon:'tablet' },
+      gaming:  { label:'Gaming — PS5',    icon:'gamepad-2' },
     };
 
     const IPHONE_IMG = {
@@ -1104,7 +1123,7 @@
         var items = AC_DEVICES.filter(function(d){ return d.cat === cat; });
         el.innerHTML = '<div class="ac-grid">' + items.map(renderCard).join('') + '</div>';
       } else {
-        var order = ['iphone','watch','macbook','samsung','tablet'];
+        var order = ['iphone','watch','macbook','samsung','tablet','gaming'];
         el.innerHTML = order.map(function(c) {
           var items = AC_DEVICES.filter(function(d){ return d.cat === c; });
           if (!items.length) return '';
