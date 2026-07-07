@@ -218,6 +218,49 @@
       ]
     },
 
+    // ── VERIFICATION SERVICES ────────────────────────────────────────────────
+
+    {
+      id: 'checkforyou', type: 'service', icon: '🛡️',
+      title: 'CheckForYou — IMEI Verification',
+      tagline: 'Is the phone stolen, locked, or blacklisted? We find out.',
+      answer: 'MobiDokta\'s CheckForYou service verifies any iPhone or Android against GSMA blacklists, iCloud Activation Lock, Find My iPhone (FMI), network lock, and MDM enrollment. You receive a written report. From R99.',
+      tip: 'Always get an IMEI check before buying a second-hand phone. 1 in 4 informally sold iPhones in SA has a hidden problem. A R99 check is the cheapest insurance you\'ll ever buy.',
+      price: 'From R99', eta: '15–30 minutes',
+      keywords: ['imei','check','verify','stolen','blacklist','blacklisted','icloud','activation lock','fmi','find my','find my iphone','locked','lock','checkforyou','check for you','second hand','used phone','buy phone safe','is this phone stolen','imei check','network lock','mdm','verify phone'],
+      ctas: [
+        { label: 'Use IMEI Checker', href: 'checkforyou.html#imei-tool', primary: true },
+        { label: 'WhatsApp IMEI to Us', href: 'https://wa.me/27781541350?text=Hi%2C+I%27d+like+an+IMEI+check+before+buying+a+phone.+IMEI%3A+', primary: false }
+      ]
+    },
+
+    {
+      id: 'evaluateforyou', type: 'service', icon: '🔍',
+      title: 'EValuateForYou — Physical Evaluation',
+      tagline: 'Is the phone worth what the seller is asking?',
+      answer: 'Our engineers physically inspect the device — battery health (independent verification), original vs. replaced screen and parts, screen type (OLED vs incell), structural damage, water ingress, and true market value. You get a written report with negotiating power.',
+      price: 'R299 in-store', eta: '30–60 minutes',
+      keywords: ['evaluate','evaluation','valuate','evaluation','inspect','inspection','worth','market value','battery health','original parts','replaced parts','real','genuine','fake','evaluateforyou','evaluate for you','pre-purchase','pre purchase inspection','screen type','oled','incell'],
+      ctas: [
+        { label: 'Book Evaluation', href: 'checkforyou.html#evaluate', primary: true },
+        { label: 'WhatsApp to Book', href: 'https://wa.me/27781541350?text=Hi%2C+I%27d+like+an+EValuateForYou+inspection', primary: false }
+      ]
+    },
+
+    {
+      id: 'trackforyou', type: 'service', icon: '🚨', urgent: true,
+      title: 'TrackForYou — Theft Recovery',
+      tagline: 'Phone stolen? Act in the first 24 hours.',
+      answer: 'MobiDokta\'s TrackForYou service helps you act immediately after a theft — iCloud tracking guidance, IMEI reporting to all SA networks, SAPS case documentation, GSMA blacklist submission, and an insurance evidence package. Act now — every hour reduces your chances.',
+      tip: '⚠️ Do NOT reset or erase the device remotely yet — leave Find My active so tracking remains possible. WhatsApp us first and we\'ll guide you step by step.',
+      price: 'R350 per case', eta: 'Same day',
+      keywords: ['stolen','theft','track','tracking','lost phone','phone stolen','recover phone','find my iphone','icloud track','saps','police','report stolen','blacklist stolen','trackforyou','track for you','stolen iphone','recovery','imei block'],
+      ctas: [
+        { label: 'WhatsApp Us Now — Urgent', href: 'https://wa.me/27781541350?text=Hi%2C+my+phone+was+stolen+and+I+need+TrackForYou+urgent+assistance', primary: true },
+        { label: 'TrackForYou Service', href: 'checkforyou.html#track', primary: false }
+      ]
+    },
+
     // ── INFO / HELP ───────────────────────────────────────────────────────────
 
     {
@@ -334,8 +377,8 @@
 
   // Quick searches shown before typing
   var QUICK = [
-    'cracked screen', 'battery draining', 'water damage', 'price list',
-    'opening hours', 'buy iPhone', 'Samsung repair', 'get a quote'
+    'cracked screen', 'battery draining', 'water damage', 'IMEI check',
+    'phone stolen', 'opening hours', 'buy iPhone', 'Samsung repair'
   ];
 
   // ── Scoring Engine ──────────────────────────────────────────────────────────
