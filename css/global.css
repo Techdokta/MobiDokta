@@ -1727,6 +1727,8 @@ a.nav-ac:hover { opacity: 0.8; }
 .cart-ship-row     { font-size: var(--text-sm) !important; }
 .cart-grandtotal-row { border-top: 1px solid var(--border); padding-top: 8px; margin-top: 2px; }
 .cart-grandtotal-row span { font-weight: 700; }
+.footer-sub-note { font-size: 11px; margin-top: -6px; }
+.footer-sub-link { color: inherit; text-decoration: underline; }
 
 /* ═══════════════════════════════════════════════
    SHOP — Add-to-cart toast notification
