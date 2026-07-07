@@ -52,13 +52,13 @@
 
     /* ── Hero ── */
     .ac-hero {
-      min-height: 340px;
+      min-height: 560px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 110px var(--space-6) 64px;
+      padding: 120px var(--space-6) 72px;
       background: linear-gradient(160deg, #080810 0%, #0d1830 55%, #080810 100%);
       color: #fff;
       position: relative;
@@ -71,19 +71,19 @@
       background: radial-gradient(ellipse 55% 35% at 50% 65%, rgba(0,122,255,0.14) 0%, transparent 70%);
       pointer-events: none;
     }
-    .ac-hero-phones {
+    .ac-hero-photo {
       position: absolute;
-      right: max(4%, calc(50% - 640px));
-      bottom: 0;
-      height: 88%;
-      object-fit: contain;
-      object-position: bottom;
-      filter: drop-shadow(0 0 48px rgba(0,122,255,0.22));
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: auto;
+      object-fit: cover;
+      object-position: center top;
       pointer-events: none;
-      mask-image: linear-gradient(to top, transparent 0%, white 18%);
-      -webkit-mask-image: linear-gradient(to top, transparent 0%, white 18%);
+      mask-image: linear-gradient(to right, transparent 0%, white 32%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, white 32%);
     }
-    @media (max-width: 900px) { .ac-hero-phones { display: none; } }
+    @media (max-width: 900px) { .ac-hero-photo { display: none; } }
     .ac-hero-logo {
       font-size: clamp(2.8rem, 9vw, 5.5rem);
       font-weight: 900;
@@ -595,7 +595,7 @@
 
   <!-- ── Hero ── -->
   <header class="ac-hero">
-    <img src="img/iphone 17 17 plus back and compare.avif" alt="iPhone 17 and iPhone 17 Plus" class="ac-hero-phones" loading="eager">
+    <img src="img/applecity-hero.webp" alt="Pre-owned iPhones at Appl3City Pretoria — IMEI verified" class="ac-hero-photo" loading="eager">
     <h1 class="ac-hero-logo">APPL<span class="ac3">3</span>CITY</h1>
     <h2 class="ac-hero-sub">Pre-Owned iPhones &amp; Samsung Phones in Pretoria — IMEI Verified</h2>
     <p class="ac-hero-cert">Certified by <span>MobiDokta</span> &nbsp;·&nbsp; Winter 2026 &nbsp;·&nbsp; All prices include VAT</p>
