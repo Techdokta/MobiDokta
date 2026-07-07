@@ -96,7 +96,7 @@
       position: relative;
       overflow: hidden;
     }
-    /* White-to-transparent veil — keeps left text zone clean over the photo */
+    /* Solid white panel left → sharp fade → fully clear */
     .ac-hero::before {
       content: '';
       position: absolute;
@@ -104,13 +104,23 @@
       background: linear-gradient(
         to right,
         rgba(255,255,255,1)    0%,
-        rgba(255,255,255,0.97) 20%,
-        rgba(255,255,255,0.6)  32%,
-        rgba(255,255,255,0.1)  42%,
-        rgba(255,255,255,0)    50%
+        rgba(255,255,255,1)    40%,
+        rgba(255,255,255,0.12) 54%,
+        rgba(255,255,255,0)    62%
       );
       z-index: 1;
       pointer-events: none;
+    }
+
+    /* Text column — locked inside the white panel */
+    .ac-hero-text {
+      position: relative;
+      z-index: 2;
+      max-width: min(44vw, 480px);
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
     }
     /* Full-bleed photo — right-anchored, zoomed into face + iPhone */
     .ac-hero-photo {
@@ -134,21 +144,17 @@
       text-transform: uppercase;
       color: rgba(0,0,0,0.38);
       margin-bottom: 22px;
-      position: relative;
-      z-index: 2;
       animation: ac-eyebrow-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;
     }
 
-    /* Cinematic wordmark */
+    /* Cinematic wordmark — sized to fill the text column */
     .ac-hero-wordmark {
       display: flex;
       align-items: baseline;
-      font-size: clamp(4.5rem, 15vw, 10.5rem);
+      font-size: clamp(2.6rem, 5.8vw, 5.4rem);
       font-weight: 900;
       letter-spacing: -0.035em;
       line-height: 0.88;
-      position: relative;
-      z-index: 2;
       will-change: transform, opacity;
     }
     .ac-wm-appl {
@@ -177,8 +183,6 @@
       background: linear-gradient(90deg, #ff9500 0%, rgba(255,149,0,0.3) 100%);
       margin: 26px 0 32px;
       transform-origin: left;
-      position: relative;
-      z-index: 2;
       animation: ac-line-expand 0.65s cubic-bezier(0.16, 1, 0.3, 1) 1.05s both;
     }
 
@@ -187,16 +191,12 @@
       font-weight: 600;
       color: rgba(0,0,0,0.72);
       margin-bottom: 8px;
-      position: relative;
-      z-index: 2;
       animation: ac-fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 1.15s both;
     }
     .ac-hero-cert {
       font-size: var(--text-sm);
       color: rgba(0,0,0,0.4);
       margin-bottom: 34px;
-      position: relative;
-      z-index: 2;
       animation: ac-fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 1.3s both;
     }
     .ac-hero-cert span { color: #ff9500; }
@@ -205,8 +205,6 @@
       gap: 12px;
       flex-wrap: wrap;
       justify-content: flex-start;
-      position: relative;
-      z-index: 2;
       animation: ac-fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 1.45s both;
     }
     .btn-ac-wa {
@@ -228,16 +226,16 @@
       align-items: center;
       gap: 7px;
       padding: 12px 26px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.16);
-      color: rgba(255,255,255,0.88);
+      background: transparent;
+      border: 1.5px solid rgba(0,0,0,0.18);
+      color: rgba(0,0,0,0.65);
       font-size: var(--text-sm);
       font-weight: 600;
       border-radius: 999px;
       text-decoration: none;
-      transition: background 0.18s;
+      transition: border-color 0.18s, color 0.18s;
     }
-    .btn-ac-scroll:hover { background: rgba(255,255,255,0.14); }
+    .btn-ac-scroll:hover { border-color: #ff9500; color: #ff9500; }
 
     /* ── Trust bar ── */
     .ac-trust-bar {
@@ -620,6 +618,7 @@
       .nav-links { display: none; }
       .nav-toggle { display: flex !important; }
       .ac-hero { padding: 100px var(--space-5) 60px; min-height: 420px; }
+      .ac-hero-text { max-width: 100%; }
       .ac-hero-wordmark { font-size: clamp(3.5rem, 20vw, 5.5rem); }
       .ac-trust-bar { gap: var(--space-4); }
       .ac-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
@@ -699,23 +698,25 @@
   <header class="ac-hero">
     <img src="img/applecity-hero.webp" alt="Pre-owned iPhones at Appl3City Pretoria — IMEI verified" class="ac-hero-photo" loading="eager">
 
-    <p class="ac-hero-eyebrow">Danville, Pretoria &nbsp;·&nbsp; Est. 2025 &nbsp;·&nbsp; IMEI Verified</p>
+    <div class="ac-hero-text">
+      <p class="ac-hero-eyebrow">Danville, Pretoria &nbsp;·&nbsp; Est. 2025 &nbsp;·&nbsp; IMEI Verified</p>
 
-    <h1 class="ac-hero-wordmark" id="ac-wordmark" aria-label="Appl3City">
-      <span class="ac-wm-appl">APPL</span><span class="ac-wm-3">3</span><span class="ac-wm-city">CITY</span>
-    </h1>
+      <h1 class="ac-hero-wordmark" id="ac-wordmark" aria-label="Appl3City">
+        <span class="ac-wm-appl">APPL</span><span class="ac-wm-3">3</span><span class="ac-wm-city">CITY</span>
+      </h1>
 
-    <div class="ac-hero-accent" aria-hidden="true"></div>
+      <div class="ac-hero-accent" aria-hidden="true"></div>
 
-    <p class="ac-hero-sub">Pre-Owned iPhones &amp; Samsung Phones in Pretoria — IMEI Verified</p>
-    <p class="ac-hero-cert">Certified by <span>MobiDokta</span> &nbsp;·&nbsp; Winter 2026 &nbsp;·&nbsp; All prices include VAT</p>
-    <div class="ac-hero-ctas">
-      <a href="https://wa.me/27781541350?text=Hi+Appl3City%21+I%27d+like+to+see+what+phones+you+have+in+stock." target="_blank" rel="noopener" class="btn-ac-wa">
-        <i data-lucide="message-circle" class="icon-sm"></i> WhatsApp Us
-      </a>
-      <a href="#ac-devices" class="btn-ac-scroll">
-        <i data-lucide="chevrons-down" class="icon-sm"></i> Browse Devices
-      </a>
+      <p class="ac-hero-sub">Pre-Owned iPhones &amp; Samsung Phones in Pretoria — IMEI Verified</p>
+      <p class="ac-hero-cert">Certified by <span>MobiDokta</span> &nbsp;·&nbsp; Winter 2026 &nbsp;·&nbsp; All prices include VAT</p>
+      <div class="ac-hero-ctas">
+        <a href="https://wa.me/27781541350?text=Hi+Appl3City%21+I%27d+like+to+see+what+phones+you+have+in+stock." target="_blank" rel="noopener" class="btn-ac-wa">
+          <i data-lucide="message-circle" class="icon-sm"></i> WhatsApp Us
+        </a>
+        <a href="#ac-devices" class="btn-ac-scroll">
+          <i data-lucide="chevrons-down" class="icon-sm"></i> Browse Devices
+        </a>
+      </div>
     </div>
   </header>
 
