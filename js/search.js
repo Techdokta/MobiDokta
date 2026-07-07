@@ -152,6 +152,20 @@
     // ── PRODUCTS ──────────────────────────────────────────────────────────────
 
     {
+      id: 'ps5', type: 'product', icon: '🎮',
+      title: 'PS5 Consoles & Controllers',
+      tagline: 'New sealed & pre-owned — consoles, DualSense, headsets.',
+      answer: 'We stock PS5 Disc Edition and Digital Edition (new & pre-owned), DualSense controllers in all colourways including Midnight Black, Cosmic Red and Cobalt Blue, the DualSense Edge pro controller, Pulse 3D headsets, and accessories. 3-month warranty on pre-owned units.',
+      tip: 'Pre-owned PS5 consoles come tested and cleaned with a 3-month warranty — a significant saving over new retail price.',
+      price: 'Consoles from R8,999 · Controllers from R1,199',
+      keywords: ['ps5','playstation','playstation 5','dualsense','controller','console','gaming','ps5 console','ps5 controller','pulse 3d','gaming console','buy ps5','ps5 price','cosmic red','midnight black','cobalt blue','edge controller','ps5 headset','game'],
+      ctas: [
+        { label: 'Browse Gaming', href: 'shop.html', primary: true },
+        { label: 'WhatsApp for Stock', href: 'https://wa.me/27781541350?text=Hi%2C+I%27m+looking+for+a+PS5+console+or+controller', primary: false }
+      ]
+    },
+
+    {
       id: 'screen-protector', type: 'product', icon: '🛡️',
       title: 'Screen Protectors',
       tagline: 'Tempered glass & anti-spy options — fitted free.',

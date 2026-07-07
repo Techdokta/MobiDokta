@@ -125,6 +125,22 @@ const PRODUCTS = [
   { id:'tk-012', cat:'tools', name:'DIY Screen Kit — iPhone 12',         sub:'Screen + tools + adhesive in one box',   price:999,  priceS:840,  icon:'package', color:'linear-gradient(135deg,#1c1c1c,#3a3a3a)', badge:'Kit Deal' },
   { id:'tk-013', cat:'tools', name:'DIY Battery Kit — iPhone 11',        sub:'Battery + tools + adhesive in one box',  price:699,  priceS:590,  icon:'package', color:'linear-gradient(135deg,#1c1c1c,#3a3a3a)', badge:'Kit Deal' },
 
+  /* ══ GAMING — PS5 Consoles & Controllers ══ */
+  { id:'gm-001', cat:'gaming', name:'PS5 Console — Disc Edition',          sub:'Brand new, sealed · includes controller', price:12999, priceS:11049, icon:'gamepad-2', color:'linear-gradient(135deg,#00174d,#003399)', badge:'New Sealed' },
+  { id:'gm-002', cat:'gaming', name:'PS5 Console — Digital Edition',       sub:'Brand new, sealed · disc-free',          price:11499, priceS:9774,  icon:'gamepad-2', color:'linear-gradient(135deg,#00174d,#003399)', badge:'New Sealed' },
+  { id:'gm-003', cat:'gaming', name:'PS5 Console — Disc Edition (Pre-Owned)', sub:'Tested · 3-month warranty',           price:8999,  priceS:7649,  icon:'gamepad-2', color:'linear-gradient(135deg,#001133,#002266)', badge:'Pre-Owned' },
+  { id:'gm-004', cat:'gaming', name:'PS5 DualSense Controller — White',    sub:'Brand new · Haptic feedback & adaptive triggers', price:1799, priceS:1529, icon:'gamepad-2', color:'linear-gradient(135deg,#1a1a3e,#2d2d6e)', badge:'New' },
+  { id:'gm-005', cat:'gaming', name:'PS5 DualSense Controller — Midnight Black', sub:'Brand new · Haptic feedback & adaptive triggers', price:1799, priceS:1529, icon:'gamepad-2', color:'linear-gradient(135deg,#0a0a1a,#1a1a2e)', badge:'New' },
+  { id:'gm-006', cat:'gaming', name:'PS5 DualSense Controller — Cosmic Red', sub:'Brand new · Limited colourway',       price:1899, priceS:1614,  icon:'gamepad-2', color:'linear-gradient(135deg,#3a0010,#7a0020)', badge:'New' },
+  { id:'gm-007', cat:'gaming', name:'PS5 DualSense Controller — Cobalt Blue', sub:'Brand new · Limited colourway',      price:1899, priceS:1614,  icon:'gamepad-2', color:'linear-gradient(135deg,#00174d,#0033aa)', badge:'New' },
+  { id:'gm-008', cat:'gaming', name:'PS5 DualSense Controller (Pre-Owned)', sub:'Tested & cleaned · 3-month warranty',  price:1199, priceS:1019,  icon:'gamepad-2', color:'linear-gradient(135deg,#1a1a2e,#2d2d4e)', badge:'Pre-Owned' },
+  { id:'gm-009', cat:'gaming', name:'PS5 DualSense Edge Controller',        sub:'Pro controller · programmable back buttons', price:2999, priceS:2549, icon:'gamepad-2', color:'linear-gradient(135deg,#0a0a0a,#2a2a2a)', badge:'Pro' },
+  { id:'gm-010', cat:'gaming', name:'PS5 DualSense Charging Station',       sub:'Charges 2 controllers simultaneously', price:699,  priceS:594,   icon:'battery-charging', color:'linear-gradient(135deg,#1a1a3e,#2d2d6e)', badge:'' },
+  { id:'gm-011', cat:'gaming', name:'PS5 Media Remote',                     sub:'Netflix, YouTube & Spotify controls',  price:599,  priceS:509,   icon:'tv-2',      color:'linear-gradient(135deg,#1a1a3e,#2d2d6e)', badge:'' },
+  { id:'gm-012', cat:'gaming', name:'PS5 HD Camera',                        sub:'1080p · Face cam for PS5 broadcasts',  price:999,  priceS:849,   icon:'camera',    color:'linear-gradient(135deg,#1a1a3e,#2d2d6e)', badge:'' },
+  { id:'gm-013', cat:'gaming', name:'PS5 Pulse 3D Wireless Headset — White', sub:'3D audio · surround sound for PS5',   price:1799, priceS:1529,  icon:'headphones', color:'linear-gradient(135deg,#1a1a3e,#2d2d6e)', badge:'' },
+  { id:'gm-014', cat:'gaming', name:'PS5 Pulse 3D Wireless Headset — Black', sub:'3D audio · surround sound for PS5',   price:1799, priceS:1529,  icon:'headphones', color:'linear-gradient(135deg,#0a0a1a,#1a1a2e)', badge:'' },
+
   /* ══ EXTRAS ══ */
   { id:'ex-001', cat:'extras', name:'Pop Grip / Ring Holder',             sub:'Collapsible grip, doubles as stand',     price:69,   priceS:50,   icon:'circle',     color:'linear-gradient(135deg,#0a2a2a,#1a4a4a)', badge:'' },
   { id:'ex-002', cat:'extras', name:'USB Flash Drive 64GB',               sub:'Fast USB 3.0, compact design',           price:159,  priceS:130,  icon:'hard-drive', color:'linear-gradient(135deg,#0a2a2a,#1a4a4a)', badge:'' },

@@ -2246,6 +2246,10 @@ a.nav-ac:hover { opacity: 0.8; }
 }
 .btn-cart-browse:hover { color: #ff9500; }
 
+/* Gaming filter tab accent */
+.shop-filter-gaming { border-color: rgba(0,51,153,0.3) !important; }
+.shop-filter-gaming:hover, .shop-filter-gaming.active { background: #003399 !important; border-color: #003399 !important; color: #fff !important; }
+
 /* ── Empty product grid state ── */
 .shop-empty {
   grid-column: 1 / -1;
