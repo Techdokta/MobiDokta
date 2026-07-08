@@ -3493,6 +3493,8 @@ a.nav-ac:hover { opacity: 0.8; }
   gap: 9px;
   scrollbar-width: thin;
   scrollbar-color: rgba(255,149,0,.18) transparent;
+  touch-action: pan-y;
+  overscroll-behavior: contain;
 }
 .doki-messages::-webkit-scrollbar { width: 3px; }
 .doki-messages::-webkit-scrollbar-thumb { background: rgba(255,149,0,.18); border-radius: 2px; }
@@ -3550,7 +3552,7 @@ a.nav-ac:hover { opacity: 0.8; }
   border-top: 1px solid rgba(255,255,255,.05);
 }
 .doki-chip {
-  padding: 6px 12px;
+  padding: 8px 14px;
   border-radius: 20px;
   border: 1px solid rgba(255,149,0,.32);
   background: transparent;
@@ -3560,7 +3562,12 @@ a.nav-ac:hover { opacity: 0.8; }
   cursor: pointer;
   transition: background .14s, border-color .14s;
   white-space: nowrap;
-  min-height: 34px;
+  min-height: 44px;
+  min-width: 44px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(255,149,0,.15);
+  display: inline-flex;
+  align-items: center;
 }
 .doki-chip:hover { background: rgba(255,149,0,.1); border-color: var(--orange); }
 .doki-chip.green { border-color: rgba(52,199,89,.32); color: var(--green); }
