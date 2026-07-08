@@ -137,28 +137,38 @@
     /* Mobile: show image as full background with dark scrim for legibility */
     @media (max-width: 600px) {
       .ac-hero {
-        color: #fff;
-        background: #111;
-        min-height: 520px;
-        padding: 100px 20px 60px;
+        color: #fff !important;
+        background: #0a0a0a;
+        min-height: 540px;
+        padding: 100px 20px 64px;
         justify-content: flex-end;
       }
+      /* Heavier bottom-weighted scrim so text always reads clearly */
       .ac-hero::before {
         background: linear-gradient(
           to top,
-          rgba(0,0,0,0.88) 0%,
-          rgba(0,0,0,0.65) 45%,
-          rgba(0,0,0,0.18) 100%
+          rgba(0,0,0,0.93) 0%,
+          rgba(0,0,0,0.80) 35%,
+          rgba(0,0,0,0.40) 65%,
+          rgba(0,0,0,0.10) 100%
         );
       }
-      .ac-hero-photo { display: block; object-position: center 20%; }
+      .ac-hero-photo { display: block; object-position: center 15%; }
       .ac-hero-text { max-width: 100%; }
-      .ac-hero-eyebrow { color: rgba(255,255,255,0.5); }
-      .ac-wm-appl, .ac-wm-city { color: #fff; }
-      .ac-hero-sub { color: rgba(255,255,255,0.85); }
-      .ac-hero-cert { color: rgba(255,255,255,0.5); }
-      .btn-ac-scroll { border-color: rgba(255,255,255,0.35); color: rgba(255,255,255,0.75); }
-      .btn-ac-scroll:hover { border-color: #ff9500; color: #ff9500; }
+      .ac-hero-eyebrow { color: rgba(255,255,255,0.55) !important; }
+      .ac-wm-appl, .ac-wm-city { color: #fff !important; }
+      .ac-hero-sub { color: rgba(255,255,255,0.92) !important; font-weight: 700; text-shadow: 0 1px 4px rgba(0,0,0,0.6); }
+      .ac-hero-cert { color: rgba(255,255,255,0.55) !important; }
+      .ac-hero-cert span { color: #ff9500 !important; }
+      /* Browse Devices — outlined white button */
+      .btn-ac-scroll {
+        border-color: rgba(255,255,255,0.45) !important;
+        color: #fff !important;
+        background: rgba(255,255,255,0.08) !important;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+      }
+      .btn-ac-scroll:hover { border-color: #ff9500 !important; color: #ff9500 !important; background: transparent !important; }
     }
 
     /* Eyebrow label */

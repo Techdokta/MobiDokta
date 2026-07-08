@@ -1,5 +1,5 @@
 /* ─── Booking Page Styles (v2 — Apple-Quality) ─── */
-.booking-page { padding-bottom: var(--space-16); }
+.booking-page { padding-top: 80px; padding-bottom: var(--space-16); }
 
 /* Progress Bar */
 .progress-bar {

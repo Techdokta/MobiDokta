@@ -741,7 +741,7 @@ a.nav-ac:hover { opacity: 0.8; }
   justify-content: center;
   box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
   z-index: 9989;
-  transition: all var(--duration-base) var(--ease);
+  transition: opacity 0.22s, transform 0.28s cubic-bezier(0.4,0,0.2,1), box-shadow var(--duration-base) var(--ease);
   font-size: 22px;
   color: white;
 }
@@ -3292,6 +3292,7 @@ a.nav-ac:hover { opacity: 0.8; }
   flex-direction: column;
   align-items: flex-end;
   gap: 10px;
+  transition: opacity 0.22s, transform 0.28s cubic-bezier(0.4,0,0.2,1);
 }
 .doki-bubble {
   width: 54px;
@@ -3489,6 +3490,72 @@ a.nav-ac:hover { opacity: 0.8; }
   .doki-panel, .doki-bubble { transition: none; }
   .doki-typing span, .doki-status-dot { animation: none; }
 }
+
+/* ─── FAB Dismiss / Restore Tab ─── */
+/* When .fabs-hidden is on body: collapse both FABs off-screen */
+body.fabs-hidden .doki-widget,
+body.fabs-hidden .whatsapp-fab { opacity: 0; pointer-events: none; transform: translateX(80px); }
+
+/* Restore pill — visible only when FABs are hidden */
+.fab-restore {
+  position: fixed;
+  right: 0;
+  bottom: 50%;
+  transform: translateY(50%) translateX(100%);
+  z-index: 9995;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-right: none;
+  border-radius: 10px 0 0 10px;
+  padding: 10px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.28s cubic-bezier(0.34,1.56,.64,1), opacity 0.22s;
+  box-shadow: -2px 0 16px rgba(0,0,0,0.28);
+}
+body.fabs-hidden .fab-restore {
+  transform: translateY(50%) translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+.fab-restore-icon { font-size: 16px; line-height: 1; }
+.fab-restore-label {
+  writing-mode: vertical-rl;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+}
+
+/* FAB hide button — small × attached to the Doki bubble */
+.fab-hide-btn {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9991;
+  line-height: 1;
+  transition: background 0.15s, color 0.15s;
+}
+.fab-hide-btn:hover { background: var(--red); color: #fff; border-color: var(--red); }
+/* Keep relative on the bubble container */
+.doki-bubble { position: relative; }
 
 /* ─── iPhone Refurbishing Page ─── */
 

@@ -241,9 +241,26 @@
     bubble.appendChild(badge);
     bubble.addEventListener('click', togglePanel);
 
+    // Hide button on bubble (×)
+    var hideBtn = el('button', 'fab-hide-btn');
+    hideBtn.setAttribute('aria-label', 'Hide chat and WhatsApp buttons');
+    hideBtn.innerHTML = '&times;';
+    hideBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      hideFabs();
+    });
+    bubble.appendChild(hideBtn);
+
     w.appendChild(panel);
     w.appendChild(bubble);
     document.body.appendChild(w);
+
+    // Restore tab
+    var restoreTab = el('button', 'fab-restore');
+    restoreTab.setAttribute('aria-label', 'Show chat and WhatsApp buttons');
+    restoreTab.innerHTML = '<span class="fab-restore-icon">💬</span><span class="fab-restore-label">Chat</span>';
+    restoreTab.addEventListener('click', showFabs);
+    document.body.appendChild(restoreTab);
   }
 
   // ── Messages ─────────────────────────────────────────────────────────
@@ -416,6 +433,19 @@
     proactiveTimer = setTimeout(tickHint, 150000);
   }
 
+  // ── FAB Visibility ────────────────────────────────────────────────────
+
+  function hideFabs() {
+    if (isOpen) closePanel();
+    document.body.classList.add('fabs-hidden');
+    try { sessionStorage.setItem('doki-fabs-hidden', '1'); } catch (e) {}
+  }
+
+  function showFabs() {
+    document.body.classList.remove('fabs-hidden');
+    try { sessionStorage.removeItem('doki-fabs-hidden'); } catch (e) {}
+  }
+
   // ── Init ───────────────────────────────────────────────────────────────
 
   function init() {
@@ -424,6 +454,13 @@
 
     build();
     scheduleProactive();
+
+    // Restore hidden state within the same session
+    try {
+      if (sessionStorage.getItem('doki-fabs-hidden') === '1') {
+        document.body.classList.add('fabs-hidden');
+      }
+    } catch (e) {}
 
     // Keyboard: Escape closes the panel
     document.addEventListener('keydown', function (e) {
