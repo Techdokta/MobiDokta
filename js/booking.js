@@ -11,10 +11,10 @@
     { id: 'iphone-oem', icon: 'smartphone', name: 'Screen Transplant (OEM)', desc: 'Factory-quality OEM Original Grade', price: 6500, duration: 30, brand: 'Apple', dynType: 'oem' },
     { id: 'iphone-eco', icon: 'smartphone', name: 'Screen Transplant (Eco)', desc: 'Quality Aftermarket Eco Grade', price: 3700, duration: 30, brand: 'Apple', dynType: 'eco' },
     { id: 'iphone-battery', icon: 'battery-full', name: 'Battery Resuscitation', desc: 'Health restored to 100%', price: 1399, duration: 30, brand: 'Apple', dynType: 'batt' },
-    { id: 'iphone-port', icon: 'plug', name: 'Charging Port Repair', desc: 'Lightning or USB-C port — board-level replacement', price: 750, duration: 30, brand: 'Apple' },
-    { id: 'iphone-water', icon: 'droplets', name: 'Water Damage Recovery', desc: 'Ultrasonic board clean & component recovery', price: 1200, duration: 90, brand: 'Apple' },
-    { id: 'iphone-camera', icon: 'camera', name: 'Camera Repair', desc: 'Front, rear, autofocus or lens module swap', price: 1100, duration: 45, brand: 'Apple' },
-    { id: 'iphone-back', icon: 'layers', name: 'Back Glass & Frame', desc: 'Shattered back panel or bent frame restoration', price: 1400, duration: 60, brand: 'Apple' },
+    { id: 'iphone-port', icon: 'plug', name: 'Charging Port Repair', desc: 'Lightning or USB-C port — board-level replacement', price: 750, duration: 30, brand: 'Apple', dynType: 'port' },
+    { id: 'iphone-water', icon: 'droplets', name: 'Water Damage Recovery', desc: 'Ultrasonic board clean & component recovery — Free diagnosis', price: 799, duration: 90, brand: 'Apple' },
+    { id: 'iphone-camera', icon: 'camera', name: 'Camera Repair', desc: 'Front, rear, autofocus or lens module swap', price: 649, duration: 45, brand: 'Apple' },
+    { id: 'iphone-back', icon: 'layers', name: 'Back Glass & Frame', desc: 'Shattered back panel or bent frame restoration', price: 549, duration: 60, brand: 'Apple', dynType: 'back' },
     { id: 'iphone-soft', icon: 'cpu', name: 'Software / OS Repair', desc: 'iOS recovery & firmware flash', price: 650, duration: 30, brand: 'Apple' },
 
     // ── Samsung Services ──
@@ -161,55 +161,79 @@
     ]
   };
 
+  // Retail replacement cost reference (approx SA market — used for value comparison bar)
+  const retailPrices = {
+    'iPhone Air (2025) ⭐ Rare Service': 27999,
+    'iPhone 17 Pro Max': 29999, 'iPhone 17 Pro': 27499, 'iPhone 17 Plus': 22999, 'iPhone 17': 20999,
+    'iPhone 16 Pro Max': 25999, 'iPhone 16 Pro': 22999, 'iPhone 16 Plus': 19999, 'iPhone 16': 18499,
+    'iPhone 15 Pro Max': 24999, 'iPhone 15 Pro': 21999, 'iPhone 15 Plus': 18999, 'iPhone 15': 16499,
+    'iPhone 14 Pro Max': 21999, 'iPhone 14 Pro': 18999, 'iPhone 14 Plus': 15999, 'iPhone 14': 14499,
+    'iPhone 13 Pro Max': 17999, 'iPhone 13 Pro': 15999, 'iPhone 13': 12999, 'iPhone 13 Mini': 10999,
+    'iPhone 12 Pro Max': 14999, 'iPhone 12 Pro': 12999, 'iPhone 12': 10499, 'iPhone 12 Mini': 9499,
+    'iPhone 11 Pro Max': 12999, 'iPhone 11 Pro': 10999, 'iPhone 11': 8999,
+    'iPhone XS Max': 7999, 'iPhone XS': 6999, 'iPhone X': 5999, 'iPhone XR': 4999
+  };
+
   const pricingMap = {
-    // ── iPhone Air — ultra-thin chassis, specialist handling required ──
-    'iPhone Air (2025) ⭐ Rare Service': { oem: 7200, eco: 4800, batt: 2000 },
-    'iPhone 16e': { oem: 4200, eco: 2600, batt: 1499 },
+    // ── iPhone Air — ultra-thin chassis, specialist tooling required ──
+    // oem = July Sale price · wasOem = regular price · eco = quality aftermarket · port/back = per PDF
+    'iPhone Air (2025) ⭐ Rare Service': { oem: 4999, wasOem: 5999, eco: 3500, batt: 1699, wasBatt: 1999, port: 1899, back: 2999 },
+    'iPhone 16e': { oem: 2599, wasOem: 3199, eco: 1820, batt: 999, wasBatt: 1199, port: 1199, back: 1499 },
 
     // ── iPhone 17 ──
-    'iPhone 17 Pro Max': { oem: 8500, eco: 5400, batt: 2200 },
-    'iPhone 17 Pro':     { oem: 7800, eco: 4900, batt: 2100 },
-    'iPhone 17 Plus':    { oem: 6400, eco: 3900, batt: 1999 },
-    'iPhone 17':         { oem: 5900, eco: 3500, batt: 1899 },
+    'iPhone 17 Pro Max': { oem: 4699, wasOem: 5599, eco: 3300, batt: 1799, wasBatt: 2099, port: 1999, back: 2999 },
+    'iPhone 17 Pro':     { oem: 4299, wasOem: 5199, eco: 3000, batt: 1699, wasBatt: 1999, port: 1899, back: 2799 },
+    'iPhone 17 Plus':    { oem: 3799, wasOem: 4599, eco: 2650, batt: 1599, wasBatt: 1849, port: 1799, back: 2599 },
+    'iPhone 17':         { oem: 3799, wasOem: 4599, eco: 2650, batt: 1599, wasBatt: 1849, port: 1799, back: 2599 },
 
     // ── iPhone 16 ──
-    'iPhone 16 Pro Max': { oem: 6500, eco: 3700, batt: 1899 },
-    'iPhone 16 Pro': { oem: 5200, eco: 3520, batt: 1799 },
-    'iPhone 16 Plus': { oem: 4900, eco: 2980, batt: 1699 },
-    'iPhone 16': { oem: 4800, eco: 2880, batt: 1599 },
-    
-    'iPhone 15 Pro Max': { oem: 5200, eco: 3400, batt: 1549 },
-    'iPhone 15 Pro': { oem: 5200, eco: 3400, batt: 1449 },
-    'iPhone 15 Plus': { oem: 4700, eco: 2300, batt: 1399 },
-    'iPhone 15': { oem: 4600, eco: 2200, batt: 1299 },
+    'iPhone 16 Pro Max': { oem: 3499, wasOem: 4199, eco: 2450, batt: 1499, wasBatt: 1749, port: 1699, back: 2399 },
+    'iPhone 16 Pro':     { oem: 3199, wasOem: 3849, eco: 2240, batt: 1349, wasBatt: 1599, port: 1599, back: 2199 },
+    'iPhone 16 Plus':    { oem: 2799, wasOem: 3349, eco: 1960, batt: 1249, wasBatt: 1449, port: 1449, back: 1999 },
+    'iPhone 16':         { oem: 2599, wasOem: 3149, eco: 1820, batt: 1199, wasBatt: 1399, port: 1399, back: 1899 },
 
-    'iPhone 14 Pro Max': { oem: 4999, eco: 2999, batt: 1349 },
-    'iPhone 14 Pro': { oem: 4999, eco: 2999, batt: 1249 },
-    'iPhone 14 Plus': { oem: 3500, eco: 2100, batt: 1199 },
-    'iPhone 14': { oem: 3400, eco: 2000, batt: 1099 },
+    // ── iPhone 15 ──
+    'iPhone 15 Pro Max': { oem: 3199, wasOem: 3849, eco: 2240, batt: 1299, wasBatt: 1499, port: 1549, back: 2199 },
+    'iPhone 15 Pro':     { oem: 2799, wasOem: 3349, eco: 1960, batt: 1199, wasBatt: 1399, port: 1449, back: 1999 },
+    'iPhone 15 Plus':    { oem: 2499, wasOem: 2999, eco: 1750, batt: 1149, wasBatt: 1299, port: 1349, back: 1799 },
+    'iPhone 15':         { oem: 2299, wasOem: 2749, eco: 1610, batt: 1099, wasBatt: 1249, port: 1299, back: 1699 },
 
-    'iPhone 13 Pro Max': { oem: 3899, eco: 2399, batt: 1149 },
-    'iPhone 13 Pro': { oem: 3899, eco: 2399, batt: 1049 },
-    'iPhone 13': { oem: 2999, eco: 1800, batt: 949 },
-    'iPhone 13 Mini': { oem: 2899, eco: 1750, batt: 849 },
+    // ── iPhone 14 ──
+    'iPhone 14 Pro Max': { oem: 2799, wasOem: 3349, eco: 1960, batt: 1199, wasBatt: 1399, port: 1449, back: 1999 },
+    'iPhone 14 Pro':     { oem: 2499, wasOem: 2999, eco: 1750, batt: 1099, wasBatt: 1299, port: 1349, back: 1799 },
+    'iPhone 14 Plus':    { oem: 2199, wasOem: 2649, eco: 1540, batt: 1049, wasBatt: 1199, port: 1249, back: 1599 },
+    'iPhone 14':         { oem: 1999, wasOem: 2399, eco: 1400, batt: 999,  wasBatt: 1149, port: 1199, back: 1499 },
 
-    'iPhone 12 Pro Max': { oem: 3499, eco: 1899, batt: 999 },
-    'iPhone 12 Pro': { oem: 3399, eco: 1499, batt: 899 },
-    'iPhone 12': { oem: 3299, eco: 1449, batt: 849 },
-    'iPhone 12 Mini': { oem: 2999, eco: 1399, batt: 799 },
+    // ── iPhone 13 ──
+    'iPhone 13 Pro Max': { oem: 1699, wasOem: 2049, eco: 1190, batt: 849,  wasBatt: 979,  port: 1099, back: 1399 },
+    'iPhone 13 Pro':     { oem: 1499, wasOem: 1799, eco: 1050, batt: 799,  wasBatt: 919,  port: 999,  back: 1299 },
+    'iPhone 13':         { oem: 1199, wasOem: 1449, eco: 840,  batt: 749,  wasBatt: 869,  port: 899,  back: 1199 },
+    'iPhone 13 Mini':    { oem: 1099, wasOem: 1299, eco: 770,  batt: 749,  wasBatt: 869,  port: 899,  back: 1099 },
 
-    'iPhone 11 Pro Max': { oem: 2499, eco: 1499, batt: 899 },
-    'iPhone 11 Pro': { oem: 2299, eco: 1199, batt: 849 },
-    'iPhone 11': { oem: 1999, eco: 1139, batt: 799 },
+    // ── iPhone 12 ──
+    'iPhone 12 Pro Max': { oem: 1249, wasOem: 1499, eco: 875,  batt: 799,  wasBatt: 919,  port: 699,  back: 799 },
+    'iPhone 12 Pro':     { oem: 999,  wasOem: 1199, eco: 700,  batt: 699,  wasBatt: 799,  port: 649,  back: 799 },
+    'iPhone 12':         { oem: 799,  wasOem: 999,  eco: 560,  batt: 649,  wasBatt: 749,  port: 579,  back: 799 },
+    'iPhone 12 Mini':    { oem: 799,  wasOem: 999,  eco: 560,  batt: 599,  wasBatt: 699,  port: 579,  back: 799 },
 
-    'iPhone XS Max': { oem: 2199, eco: 1349, batt: 849 },
-    'iPhone XS': { oem: 1999, eco: 999, batt: 799 },
-    'iPhone X': { oem: 1899, eco: 899, batt: 749 },
-    'iPhone XR': { oem: 1699, eco: 999, batt: 799 },
+    // ── iPhone 11 ──
+    'iPhone 11 Pro Max': { oem: 1149, wasOem: 1399, eco: 805,  batt: 699,  wasBatt: 799,  port: 649,  back: 899 },
+    'iPhone 11 Pro':     { oem: 999,  wasOem: 1199, eco: 700,  batt: 649,  wasBatt: 749,  port: 599,  back: 799 },
+    'iPhone 11':         { oem: 749,  wasOem: 899,  eco: 525,  batt: 599,  wasBatt: 699,  port: 549,  back: 699 },
 
-    'iPhone 8 Plus': { oem: 1299, eco: 899, batt: 649 },
-    'iPhone 8': { oem: 1199, eco: 799, batt: 599 },
-    'iPhone SE': { oem: 1199, eco: 799, batt: 599 },
+    // ── iPhone X / XS / XR ──
+    'iPhone XS Max': { oem: 949, wasOem: 1149, eco: 665, batt: 699, wasBatt: 799, port: 599, back: 799 },
+    'iPhone XS':     { oem: 849, wasOem: 999,  eco: 595, batt: 649, wasBatt: 749, port: 549, back: 749 },
+    'iPhone X':      { oem: 799, wasOem: 949,  eco: 560, batt: 649, wasBatt: 749, port: 549, back: 699 },
+    'iPhone XR':     { oem: 699, wasOem: 849,  eco: 490, batt: 349, wasBatt: 399, port: 549, back: 699 },
+
+    // ── iPhone 8 / 7 / SE ──
+    'iPhone 8 Plus':    { oem: 699, wasOem: 849, eco: 490, batt: 399, wasBatt: 449, port: 499, back: 699 },
+    'iPhone 8':         { oem: 649, wasOem: 799, eco: 455, batt: 399, wasBatt: 449, port: 499, back: 649 },
+    'iPhone SE (2022)': { oem: 599, wasOem: 749, eco: 420, batt: 299, wasBatt: 349, port: 449, back: 549 },
+    'iPhone SE (2020)': { oem: 599, wasOem: 749, eco: 420, batt: 299, wasBatt: 349, port: 449, back: 549 },
+    'iPhone SE':        { oem: 599, wasOem: 749, eco: 420, batt: 299, wasBatt: 349, port: 449, back: 549 },
+
     // ── Samsung ──
     'Galaxy S25 Ultra': { oem: 7500, batt: 1799 },
     'Galaxy S25+':      { oem: 6200, batt: 1599 },
@@ -417,14 +441,32 @@
   function renderServices() {
     const serviceGrid = document.getElementById('service-grid');
     serviceGrid.innerHTML = '';
-    
-    // Deep clone and modify pricing if mapped
+
+    // Value-comparison bar: show repair-vs-replace context for mapped Apple models
+    const modelMap = pricingMap[booking.model] || null;
+    const retail = retailPrices[booking.model] || null;
+    if (modelMap && retail && modelMap.oem) {
+      const savingsVsReplace = retail - modelMap.oem;
+      const bar = document.createElement('div');
+      bar.className = 'value-compare-bar';
+      bar.innerHTML = `
+        <span class="vcb-repair">Screen repair <strong>R${modelMap.oem.toLocaleString()}</strong></span>
+        <span class="vcb-vs">vs</span>
+        <span class="vcb-replace">New device <strong>~R${retail.toLocaleString()}</strong></span>
+        <span class="vcb-save">Save ~R${savingsVsReplace.toLocaleString()}</span>
+      `;
+      serviceGrid.appendChild(bar);
+    }
+
+    // Deep clone and modify pricing per model map
     activeServices = baseServices.map(svc => {
       let freshSvc = { ...svc };
-      if (booking.model && pricingMap[booking.model]) {
-        if (freshSvc.dynType === 'oem' && pricingMap[booking.model].oem) freshSvc.price = pricingMap[booking.model].oem;
-        if (freshSvc.dynType === 'eco' && pricingMap[booking.model].eco) freshSvc.price = pricingMap[booking.model].eco;
-        if (freshSvc.dynType === 'batt' && pricingMap[booking.model].batt) freshSvc.price = pricingMap[booking.model].batt;
+      if (booking.model && modelMap) {
+        if (freshSvc.dynType === 'oem'  && modelMap.oem)  { freshSvc.price = modelMap.oem;  freshSvc.wasPrice = modelMap.wasOem  || null; }
+        if (freshSvc.dynType === 'eco'  && modelMap.eco)  { freshSvc.price = modelMap.eco; }
+        if (freshSvc.dynType === 'batt' && modelMap.batt) { freshSvc.price = modelMap.batt; freshSvc.wasPrice = modelMap.wasBatt || null; }
+        if (freshSvc.dynType === 'port' && modelMap.port) { freshSvc.price = modelMap.port; }
+        if (freshSvc.dynType === 'back' && modelMap.back) { freshSvc.price = modelMap.back; }
       }
       return freshSvc;
     });
@@ -432,7 +474,7 @@
     activeServices.forEach(svc => {
       // Determine expected service brand tag
       const expectedBrand = booking.brand === 'MacBook' ? 'Laptop' : booking.brand;
-      
+
       // If service has a brand tag, it MUST match the selected brand exactly
       if (svc.brand && svc.brand !== expectedBrand) {
         return;
@@ -443,10 +485,16 @@
       if (booking.cart.find(s => s.id === svc.id)) el.classList.add('selected');
 
       el.dataset.serviceId = svc.id;
+
+      const wasBadge = (svc.wasPrice && svc.wasPrice > svc.price)
+        ? `<div class="svc-was"><del>R${svc.wasPrice.toLocaleString()}</del> <span class="svc-save-badge">Save R${(svc.wasPrice - svc.price).toLocaleString()}</span></div>`
+        : '';
+
       el.innerHTML = `
         <div class="svc-icon"><i data-lucide="${svc.icon}" class="icon-lg" style="color:var(--accent)"></i></div>
         <h4>${svc.name}</h4>
         <p>${svc.desc}</p>
+        ${wasBadge}
         <div class="svc-price">${svc.price === 0 ? 'FREE' : 'R' + svc.price.toLocaleString()}</div>
         <div class="svc-duration">~${svc.duration} min</div>
       `;

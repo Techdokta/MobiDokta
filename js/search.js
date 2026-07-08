@@ -17,12 +17,11 @@
       tagline: 'Cracked, shattered, or dead display — same day.',
       answer: 'We replace iPhone and Samsung screens with Hard OLED, Incell LCD, or Soft OLED panels — we explain the difference before you decide. Touch ID and Face ID are preserved.',
       tip: 'Don\'t press on a cracked screen — pressure spreads the fracture into the LCD underneath, turning a cheaper fix into a much more expensive one.',
-      price: 'From R1,800', eta: 'Same day',
+      price: 'From R599', eta: 'Same day',
       social: '47+ screens replaced last month · 4.9★ Google rating',
       tiers: [
-        { label: 'Soft OLED', price: 'R1,800', desc: 'Best colour & brightness, True Tone preserved', popular: true },
-        { label: 'Hard OLED', price: 'R1,200', desc: 'High-grade aftermarket, great for daily use', popular: false },
-        { label: 'Incell LCD', price: 'R800', desc: 'Budget option — slightly less vibrant', popular: false }
+        { label: 'OEM Grade', price: 'From R599', desc: 'Factory-spec quality — True Tone & Face ID preserved, price depends on model', popular: true },
+        { label: 'Aftermarket Eco', price: 'Available', desc: 'Quality-verified aftermarket — great for older models', popular: false }
       ],
       keywords: ['screen','cracked','shattered','broken','display','glass','touch','lcd','oled','smashed','crack','shatter','black screen','flickering','screen damage','damaged screen','phone screen'],
       ctas: [
@@ -37,10 +36,10 @@
       tagline: 'Draining fast, swollen, or won\'t hold a charge.',
       answer: 'OEM-grade battery fitted in 45 minutes. iOS CPU throttling disappears once health is restored above 80%. We disclose the exact health percentage before and after.',
       tip: 'Replace your iPhone battery when health drops below 80%. iOS actively throttles CPU speed below that threshold — your phone isn\'t slow because it\'s old, it\'s being slowed on purpose.',
-      price: 'From R550', eta: '45 minutes',
+      price: 'From R299', eta: '45 minutes',
       social: '38 batteries swapped last month · CPU throttling eliminated',
       tiers: [
-        { label: 'OEM-grade cell', price: 'R550', desc: 'Full-rated capacity — eliminates iOS throttling', popular: true }
+        { label: 'OEM-grade cell', price: 'From R299', desc: 'Full-rated capacity — eliminates iOS throttling, exact price per model', popular: true }
       ],
       keywords: ['battery','charging','drain','draining','slow','health','swollen','percent','die','dies','shut down','not charging','charge','power','battery life','low battery','battery dead','battery health'],
       ctas: [
@@ -69,7 +68,7 @@
       title: 'Camera Repair',
       tagline: 'Blurry, autofocus failing, or cracked lens.',
       answer: 'Front and rear camera module replacement. A cracked sapphire lens causes purple haze and autofocus hunting — we can often replace just the lens instead of the full module.',
-      tip: 'A R89 camera lens protector prevents a R1,800+ camera module replacement. The iPhone lens is precision-ground sapphire glass — one drop without a protector can scratch it permanently.',
+      tip: 'A R89 camera lens protector prevents a R649+ camera module replacement. The iPhone lens is precision-ground sapphire glass — one drop without a protector can scratch it permanently.',
       price: 'From R750', eta: 'Same day',
       keywords: ['camera','blurry','lens','photo','autofocus','flash','zoom','selfie','front camera','rear camera','cracked lens','focus','purple','haze','camera not working','camera blurry','camera black','camera glass','lens glass','lens cracked','camera lens cracked','camera lens broken','cracked camera glass','shattered camera lens','lens cover','camera cover','broken lens','lens replacement','camera glass replacement'],
       ctas: [
@@ -153,7 +152,7 @@
       title: 'iPhone Repairs',
       tagline: 'All models iPhone 7 – iPhone 17 Pro Max.',
       answer: 'Screen replacement, battery swap, water damage, camera, charging port, back glass, and board-level repair for all iPhone models. OEM-grade parts. 6-month warranty.',
-      price: 'Screens from R1,800', eta: 'Same day',
+      price: 'Screens from R599 · Batteries from R299', eta: 'Same day',
       keywords: ['iphone','iphone 7','iphone 8','iphone x','iphone 11','iphone 12','iphone 13','iphone 14','iphone 15','iphone 16','iphone 17','iphone se','apple','iphone repair'],
       ctas: [
         { label: 'Book iPhone Repair', href: 'book.html', primary: true },
@@ -182,7 +181,7 @@
       title: 'Screen Protectors',
       tagline: 'Tempered glass & anti-spy options — fitted free.',
       answer: 'Reinforced tempered glass screen protectors for iPhone and Android. Anti-spy privacy protectors also available. We fit them in-store for free.',
-      tip: 'A R89–149 screen protector prevents a R1,800 screen replacement. The maths is easy.',
+      tip: 'A R89–149 screen protector prevents a R599+ screen replacement. The maths is easy.',
       price: 'From R89',
       keywords: ['screen protector','protector','tempered glass','glass protector','privacy','anti spy','protection','protect screen'],
       ctas: [
@@ -289,8 +288,8 @@
     {
       id: 'hours', type: 'info', icon: '🕐',
       title: 'Opening Hours',
-      tagline: '7 days a week, 09:00–19:00',
-      answer: 'Monday to Sunday, 09:00–19:00. Open every day including public holidays. Walk-ins welcome — no appointment needed for basic repairs.',
+      tagline: 'Mon–Sat 10:00–21:00',
+      answer: 'Monday to Saturday, 10:00–21:00. Walk-ins welcome — no appointment needed for basic repairs. Book a slot online to skip the queue.',
       keywords: ['hours','open','time','close','when','weekend','saturday','sunday','days','working hours','available','what time','public holiday'],
       ctas: [{ label: 'Book a Time Slot', href: 'book.html', primary: true }]
     },
@@ -307,10 +306,10 @@
 
     {
       id: 'pricing', type: 'info', icon: '💰',
-      title: 'July Sale — 30% OFF Repairs',
-      tagline: 'MobiDokta Re-Launch Sale · July 2026 only.',
-      answer: 'July Re-Launch Sale — all iPhone repairs 30% OFF normal price, July 2026 only. Screen from R1,800 (was R2,400) · Battery from R550 (was R799) · Back glass from R950 (was R1,299) · Camera from R750 (was R999) · Charging port from R650 (was R899). Free diagnosis. All prices include VAT.',
-      tip: 'These sale prices are only available during July 2026 — WhatsApp us to lock in your price today.',
+      title: 'July Sale — Lowest Prices of the Year',
+      tagline: 'Anchored sale prices · July 2026 only.',
+      answer: 'July Sale prices — iPhone screen from R599 (was R749) · Battery from R299 (was R379) · Back glass from R549 (was R699) · Camera from R649 (was R799) · Charging port from R449 (was R549) · Water damage from R349 · Free diagnosis on all repairs · 6-month warranty included. Prices vary by model — exact quote in 30 seconds on our booking page.',
+      tip: 'These July sale prices are anchored for the month — WhatsApp us to lock in your price today before they go back up.',
       keywords: ['price','cost','how much','fee','rand','quote','expensive','cheap','affordable','pricing','rates','charges'],
       ctas: [
         { label: 'WhatsApp for Quote', href: 'https://wa.me/27781541350?text=Hi%2C+I+need+a+repair+quote', primary: true },
@@ -391,9 +390,9 @@
       id: 'battery-drain', type: 'guide', icon: '🔋',
       title: 'Why Is My Battery Draining So Fast?',
       tagline: 'Check health first — below 80% means throttling.',
-      answer: 'iOS throttles CPU speed when battery health drops below 80%. This makes the phone slower AND causes more drain. Go to Settings → Battery → Battery Health. If it\'s under 80%, a R550 replacement at MobiDokta takes 45 minutes and completely restores performance.',
+      answer: 'iOS throttles CPU speed when battery health drops below 80%. This makes the phone slower AND causes more drain. Go to Settings → Battery → Battery Health. If it\'s under 80%, a battery replacement at MobiDokta takes 45 minutes and completely restores performance — from R299 during our July Sale.',
       tip: 'Also check Settings → Battery → Last 10 Days. Any app using more than 20% in the background is a rogue drain culprit.',
-      price: 'Battery from R550', eta: '45 minutes',
+      price: 'Battery from R299', eta: '45 minutes',
       keywords: ['battery draining','drain','draining fast','battery health','why is my battery','battery percentage','iphone slow','battery dying quickly','battery life bad','ios throttle','throttling'],
       ctas: [
         { label: 'Book Battery Replacement', href: 'book.html', primary: true },
@@ -407,7 +406,7 @@
       tagline: 'Usually lint in the port — sometimes the charging IC.',
       answer: 'First try a different official cable. If that doesn\'t work, shine a light into your charging port — compacted lint is the #1 cause. Never use metal to remove it. If the port looks clear, it\'s likely the charging IC chip on the board (R800+). Bring it in for free diagnosis.',
       tip: 'Never use a metal pin or SIM tool to clear your charging port — you will damage the pins and turn a R0 problem into a R650 repair.',
-      price: 'Port cleaning R250 · Port replacement R650 · IC from R800', eta: '1–3 hours',
+      price: 'Port cleaning R250 · Port replacement from R449 · IC from R800', eta: '1–3 hours',
       keywords: ['not charging','won\'t charge','wont charge','charging port','lightning port','usb-c','slow charging','no charging','phone not charging','charger not working','charging issue'],
       ctas: [
         { label: 'Book Charging Repair', href: 'book.html', primary: true },
@@ -420,7 +419,7 @@
       title: 'Phone Won\'t Turn On',
       tagline: 'Free diagnosis — dead battery or board fault.',
       answer: 'Try charging for 15 minutes, then hold Power + Volume Down (Samsung) or just Power (iPhone) for 10 seconds. If still no response, it\'s either a completely dead battery or a board-level fault. Free diagnosis at MobiDokta — we\'ll know within 20 minutes.',
-      price: 'Diagnosis free · Battery from R550 · Board diagnostic from R400', eta: 'Diagnosis same day',
+      price: 'Diagnosis free · Battery from R299 · Board diagnostic from R400', eta: 'Diagnosis same day',
       keywords: ['won\'t turn on','wont turn on','dead phone','phone dead','black screen','not turning on','phone off','can\'t switch on','no power','won\'t switch on','phone wont come on','not coming on','not switching on','wont switch on','phone is dead','iphone wont turn on','samsung wont turn on','android wont turn on','phone doesnt turn on'],
       ctas: [
         { label: 'Book Free Diagnosis', href: 'book.html', primary: true },
@@ -434,7 +433,7 @@
       tagline: 'Warm under load is normal — hot at idle is not.',
       answer: 'A phone getting warm during gaming or charging is normal. A phone that\'s hot while idle or in your pocket is a battery or board fault. Remove your case (cases trap heat badly), avoid direct sun, and charge at room temperature. If it overheats at idle, bring it in — likely a failing battery generating heat under all conditions.',
       tip: 'Never charge your phone in a hot car or in direct sunlight — lithium batteries permanently lose capacity when charged above 40°C.',
-      price: 'Battery from R550 · MacBook thermal treatment from R400', eta: '45 min – 2 hours',
+      price: 'Battery from R299 · MacBook thermal treatment from R400', eta: '45 min – 2 hours',
       keywords: ['overheating','hot','phone getting hot','too hot','heat','burning','overheat','phone warm','heating up','iphone hot','samsung hot','macbook hot'],
       ctas: [
         { label: 'Book Diagnostic', href: 'book.html', primary: true },
