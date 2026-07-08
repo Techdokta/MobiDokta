@@ -106,7 +106,7 @@
   }
 
   function scheduleNext() {
-    var delay = 58000 + Math.floor(Math.random() * 32000);
+    var delay = 110000 + Math.floor(Math.random() * 70000);
     setTimeout(function () {
       showToast();
       scheduleNext();
@@ -117,6 +117,6 @@
     setTimeout(function () {
       showToast();
       scheduleNext();
-    }, 3000);
+    }, 28000);
   });
 })();

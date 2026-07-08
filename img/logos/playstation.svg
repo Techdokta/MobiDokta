@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 100">
+  <!-- PlayStation P logo mark -->
+  <rect x="0" y="0" width="100" height="100" rx="16" fill="#003399"/>
+  <text x="14" y="80" font-family="'Arial Black','Helvetica Neue',sans-serif" font-weight="900" font-size="80" fill="white">P</text>
+  <!-- PlayStation text -->
+  <text x="116" y="48" font-family="'Arial','Helvetica Neue',sans-serif" font-weight="700" font-size="22" fill="#1A1A1A" letter-spacing="2">PlayStation</text>
+  <text x="116" y="78" font-family="'Arial Black','Helvetica Neue',sans-serif" font-weight="900" font-size="28" fill="#003399">PS5</text>
+</svg>

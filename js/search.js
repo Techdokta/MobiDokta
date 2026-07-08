@@ -60,7 +60,7 @@
       answer: 'Front and rear camera module replacement. A cracked sapphire lens causes purple haze and autofocus hunting — we can often replace just the lens instead of the full module.',
       tip: 'A R89 camera lens protector prevents a R1,800+ camera module replacement. The iPhone lens is precision-ground sapphire glass — one drop without a protector can scratch it permanently.',
       price: 'From R750', eta: 'Same day',
-      keywords: ['camera','blurry','lens','photo','autofocus','flash','zoom','selfie','front camera','rear camera','cracked lens','focus','purple','haze','camera not working','camera blurry','camera black'],
+      keywords: ['camera','blurry','lens','photo','autofocus','flash','zoom','selfie','front camera','rear camera','cracked lens','focus','purple','haze','camera not working','camera blurry','camera black','camera glass','lens glass','lens cracked','camera lens cracked','camera lens broken','cracked camera glass','shattered camera lens','lens cover','camera cover','broken lens','lens replacement','camera glass replacement'],
       ctas: [
         { label: 'Book Camera Repair', href: 'book.html', primary: true },
         { label: 'WhatsApp for Price', href: 'https://wa.me/27781541350?text=Hi%2C+I+need+a+camera+repair+price', primary: false }
@@ -88,7 +88,7 @@
       answer: 'Laser separation system removes shattered ceramic back glass. Frame realignment for bent titanium/aluminium. MagSafe and wireless charging fully preserved after repair.',
       tip: 'A cracked back glass compromises your phone\'s IP water resistance rating — fix it before your next poolside visit or rainy commute.',
       price: 'From R950', eta: 'Same day',
-      keywords: ['back glass','back','rear','frame','bent','titanium','magsafe','ceramic','back panel','back cracked','shattered back','broken back','back broken'],
+      keywords: ['back glass','back cover','back','rear','frame','bent','titanium','magsafe','ceramic','back panel','back cracked','shattered back','broken back','back broken','cover cracked','cover broken','back cover cracked','back cover broken','cover shattered','phone cover'],
       ctas: [
         { label: 'Book Back Glass Repair', href: 'book.html', primary: true },
         { label: 'WhatsApp for Price', href: 'https://wa.me/27781541350?text=Hi%2C+I+need+a+back+glass+replacement', primary: false }
@@ -116,7 +116,7 @@
       answer: 'Micro-soldering, component-level logic board repair, and NAND data recovery. No fix, no charge. We handle phones that have been refused by other shops.',
       tip: 'Board-level repair is the only way to recover data after severe damage — and usually the last resort before replacing the device. It\'s worth trying before giving up.',
       price: 'Diagnosis free · From R1,200', eta: '24–48 hours',
-      keywords: ['board','logic board','motherboard','micro solder','data recovery','data','not turning on','dead','bricked','bootloop','no power','wont turn on','phone dead','not powering on','wont start'],
+      keywords: ['board','logic board','motherboard','micro solder','data recovery','data','not turning on','dead','bricked','bootloop','no power','wont turn on','phone dead','not powering on','wont start','charging ic','nand','power ic','baseband','touch ic','bga','reballing','micro soldering','board repair','component repair','phone wont come on','not switching on','not coming on','phone is dead','wont switch on'],
       ctas: [
         { label: 'WhatsApp for Assessment', href: 'https://wa.me/27781541350?text=Hi%2C+I+need+board-level+repair+or+data+recovery', primary: true },
         { label: 'Book Repair', href: 'book.html', primary: false }
@@ -295,10 +295,10 @@
 
     {
       id: 'pricing', type: 'info', icon: '💰',
-      title: 'Pricing & Quotes',
-      tagline: 'Transparent pricing — free diagnosis.',
-      answer: 'Screen replacements from R1,800 · Batteries from R550 · Back glass from R950 · Camera from R750 · Charging port from R650. Free diagnosis on arrival. All prices include VAT.',
-      tip: 'WhatsApp us your device model and fault for an exact quote in minutes — no need to come in first.',
+      title: 'July Sale — 30% OFF Repairs',
+      tagline: 'MobiDokta Re-Launch Sale · July 2026 only.',
+      answer: 'July Re-Launch Sale — all iPhone repairs 30% OFF normal price, July 2026 only. Screen from R1,800 (was R2,400) · Battery from R550 (was R799) · Back glass from R950 (was R1,299) · Camera from R750 (was R999) · Charging port from R650 (was R899). Free diagnosis. All prices include VAT.',
+      tip: 'These sale prices are only available during July 2026 — WhatsApp us to lock in your price today.',
       keywords: ['price','cost','how much','fee','rand','quote','expensive','cheap','affordable','pricing','rates','charges'],
       ctas: [
         { label: 'WhatsApp for Quote', href: 'https://wa.me/27781541350?text=Hi%2C+I+need+a+repair+quote', primary: true },
@@ -371,6 +371,193 @@
       ctas: [
         { label: 'Book with Student Discount', href: 'book.html', primary: true }
       ]
+    },
+
+    // ── DIAGNOSTICS / KNOWLEDGE HUB ──────────────────────────────────────
+
+    {
+      id: 'battery-drain', type: 'guide', icon: '🔋',
+      title: 'Why Is My Battery Draining So Fast?',
+      tagline: 'Check health first — below 80% means throttling.',
+      answer: 'iOS throttles CPU speed when battery health drops below 80%. This makes the phone slower AND causes more drain. Go to Settings → Battery → Battery Health. If it\'s under 80%, a R550 replacement at MobiDokta takes 45 minutes and completely restores performance.',
+      tip: 'Also check Settings → Battery → Last 10 Days. Any app using more than 20% in the background is a rogue drain culprit.',
+      price: 'Battery from R550', eta: '45 minutes',
+      keywords: ['battery draining','drain','draining fast','battery health','why is my battery','battery percentage','iphone slow','battery dying quickly','battery life bad','ios throttle','throttling'],
+      ctas: [
+        { label: 'Book Battery Replacement', href: 'book.html', primary: true },
+        { label: 'Read Full Guide', href: 'knowledge-hub.html#faq', primary: false }
+      ]
+    },
+
+    {
+      id: 'wont-charge', type: 'guide', icon: '⚡',
+      title: 'Phone Won\'t Charge',
+      tagline: 'Usually lint in the port — sometimes the charging IC.',
+      answer: 'First try a different official cable. If that doesn\'t work, shine a light into your charging port — compacted lint is the #1 cause. Never use metal to remove it. If the port looks clear, it\'s likely the charging IC chip on the board (R800+). Bring it in for free diagnosis.',
+      tip: 'Never use a metal pin or SIM tool to clear your charging port — you will damage the pins and turn a R0 problem into a R650 repair.',
+      price: 'Port cleaning R250 · Port replacement R650 · IC from R800', eta: '1–3 hours',
+      keywords: ['not charging','won\'t charge','wont charge','charging port','lightning port','usb-c','slow charging','no charging','phone not charging','charger not working','charging issue'],
+      ctas: [
+        { label: 'Book Charging Repair', href: 'book.html', primary: true },
+        { label: 'WhatsApp for Advice', href: 'https://wa.me/27781541350?text=Hi%2C+my+phone+is+not+charging', primary: false }
+      ]
+    },
+
+    {
+      id: 'wont-turn-on', type: 'guide', icon: '🔴',
+      title: 'Phone Won\'t Turn On',
+      tagline: 'Free diagnosis — dead battery or board fault.',
+      answer: 'Try charging for 15 minutes, then hold Power + Volume Down (Samsung) or just Power (iPhone) for 10 seconds. If still no response, it\'s either a completely dead battery or a board-level fault. Free diagnosis at MobiDokta — we\'ll know within 20 minutes.',
+      price: 'Diagnosis free · Battery from R550 · Board diagnostic from R400', eta: 'Diagnosis same day',
+      keywords: ['won\'t turn on','wont turn on','dead phone','phone dead','black screen','not turning on','phone off','can\'t switch on','no power','won\'t switch on','phone wont come on','not coming on','not switching on','wont switch on','phone is dead','iphone wont turn on','samsung wont turn on','android wont turn on','phone doesnt turn on'],
+      ctas: [
+        { label: 'Book Free Diagnosis', href: 'book.html', primary: true },
+        { label: 'WhatsApp Us', href: 'https://wa.me/27781541350?text=Hi%2C+my+phone+won%27t+turn+on', primary: false }
+      ]
+    },
+
+    {
+      id: 'overheating', type: 'guide', icon: '🌡️',
+      title: 'Phone Overheating',
+      tagline: 'Warm under load is normal — hot at idle is not.',
+      answer: 'A phone getting warm during gaming or charging is normal. A phone that\'s hot while idle or in your pocket is a battery or board fault. Remove your case (cases trap heat badly), avoid direct sun, and charge at room temperature. If it overheats at idle, bring it in — likely a failing battery generating heat under all conditions.',
+      tip: 'Never charge your phone in a hot car or in direct sunlight — lithium batteries permanently lose capacity when charged above 40°C.',
+      price: 'Battery from R550 · MacBook thermal treatment from R400', eta: '45 min – 2 hours',
+      keywords: ['overheating','hot','phone getting hot','too hot','heat','burning','overheat','phone warm','heating up','iphone hot','samsung hot','macbook hot'],
+      ctas: [
+        { label: 'Book Diagnostic', href: 'book.html', primary: true },
+        { label: 'Read Overheating Guide', href: 'knowledge-hub.html#symptom-checker', primary: false }
+      ]
+    },
+
+    {
+      id: 'ifixit', type: 'guide', icon: '🔧',
+      title: 'iFixit Repair Guides & Repairability Scores',
+      tagline: 'The world\'s largest free repair manual library.',
+      answer: 'iFixit publishes free, step-by-step repair guides for every iPhone, Samsung and MacBook. They also score every device from 1–10 on repairability — a score of 10 means fully user-repairable, 1 means specialist tools required. MobiDokta references iFixit guides and scores to advise on repair complexity and cost.',
+      keywords: ['ifixit','repair guide','repairability score','ifixit score','teardown','diy repair','repair manual','how to fix','fix myself','iphone repairability'],
+      ctas: [
+        { label: 'Knowledge Hub — Resources', href: 'knowledge-hub.html#resources', primary: true }
+      ]
+    },
+
+    {
+      id: 'diagnostics', type: 'guide', icon: '🔍',
+      title: 'Free Symptom Checker',
+      tagline: 'Diagnose your device issue instantly.',
+      answer: 'Use MobiDokta\'s interactive symptom checker to identify likely causes and next steps for any device issue — battery drain, screen faults, charging problems, water damage, camera, speaker, Face ID, WiFi, and more. No sign-up, no charge, instant results.',
+      keywords: ['diagnose','diagnosis','diagnostic','symptom','what\'s wrong','problem','issue','help','troubleshoot','troubleshooting','check my phone','what is wrong'],
+      ctas: [
+        { label: 'Open Symptom Checker', href: 'knowledge-hub.html#symptom-checker', primary: true }
+      ]
+    },
+
+    {
+      id: 'device-specs', type: 'guide', icon: '📊',
+      title: 'Device Specs & Repair Costs Reference',
+      tagline: 'iPhone 14–16, Samsung S24, MacBook specs.',
+      answer: 'MobiDokta\'s Knowledge Hub includes full specs and iFixit repairability scores for iPhone 12–16 Pro Max, Samsung Galaxy S23–S25, and MacBook M1–M3 — with repair cost estimates for screens and batteries. Know what your repair should cost before you walk in.',
+      keywords: ['specs','specifications','iphone specs','samsung specs','macbook specs','repair cost','how much','iphone 16 specs','samsung s24 specs','device reference'],
+      ctas: [
+        { label: 'View Device Specs', href: 'knowledge-hub.html#device-specs', primary: true }
+      ]
+    },
+
+    {
+      id: 'wifi-bt', type: 'service', icon: '',
+      title: 'WiFi, Bluetooth & Hotspot Repair',
+      tagline: 'No WiFi, no Bluetooth, hotspot not working.',
+      answer: 'WiFi and Bluetooth are controlled by the same combo IC chip on most iPhones and Androids. If WiFi drops frequently, won\'t connect, or your personal hotspot doesn\'t appear, it\'s likely a WiFi/BT IC fault, antenna damage, or a software issue. We diagnose and repair at component level. Software reset first — if that fails, board-level IC work is required.',
+      tip: 'Before coming in: Go to Settings → General → Transfer or Reset iPhone → Reset → Reset Network Settings. This clears saved networks and often restores WiFi on software-related drops. If it comes back within an hour, it\'s a board fault.',
+      price: 'Diagnosis free · From R950', eta: 'Same day diagnosis',
+      keywords: ['wifi','wi-fi','bluetooth','bt','hotspot','personal hotspot','no wifi','wifi not working','wifi dropping','wifi keeps disconnecting','bluetooth not working','no bluetooth','cant connect wifi','hotspot not showing','hotspot not working','internet not working','no internet','wireless','wifi broken','bluetooth broken','wifi repair','bluetooth repair'],
+      ctas: [
+        { label: 'Book WiFi Repair', href: 'book.html', primary: true },
+        { label: 'WhatsApp for Diagnosis', href: 'https://wa.me/27781541350?text=Hi%2C+my+phone+has+a+WiFi+or+Bluetooth+problem', primary: false }
+      ]
+    },
+
+    {
+      id: 'camera-glass', type: 'service', icon: '',
+      title: 'Camera Glass Replacement',
+      tagline: 'Cracked or scratched lens cover — not the full module.',
+      answer: 'The camera glass is the sapphire or glass lens cover that protects the actual camera module. A crack or deep scratch on this piece causes purple haze, lens flare, and reduced sharpness — but the camera module itself is still fine. We replace just the lens glass without touching the camera module, which is significantly cheaper than a full camera replacement.',
+      tip: 'A cracked camera glass often gets mistaken for camera module damage. Bring it in — if only the glass is damaged, you\'re looking at a fraction of the cost of a full camera repair.',
+      price: 'From R450', eta: 'Same day',
+      keywords: ['camera glass','lens glass','camera lens','cracked camera','scratched lens','lens scratched','camera glass cracked','camera glass broken','lens cover','camera cover glass','shattered camera glass','camera lens cracked','camera lens broken','cracked lens','lens cover broken','lens cover cracked','haze','purple haze','lens flare from crack'],
+      ctas: [
+        { label: 'Book Camera Glass Repair', href: 'book.html', primary: true },
+        { label: 'WhatsApp for Price', href: 'https://wa.me/27781541350?text=Hi%2C+I+need+camera+glass+replacement', primary: false }
+      ]
+    },
+
+    {
+      id: 'refurbish', type: 'service', icon: '',
+      title: 'iPhone Refurbishing — Brand-New Aesthetic',
+      tagline: 'Screen, back glass, battery, frame, deep clean, QC cert.',
+      answer: 'MobiDokta professional iPhone refurbishing: four packages from a Cosmetic Refresh (R450) to Premium Pro Refurb (from R5,500). Includes OEM-grade screen replacement, back glass, battery, frame polish or replacement, 25-point QC test, and for Resale-Ready/Premium packages: a condition certificate, IMEI report, and factory reset. Legal for resale — CPA Section 41 compliant. All iPhone models 7–17 Pro Max.',
+      tip: 'A Resale-Ready refurb typically recovers R1,500–R4,000 more in resale value depending on model. The certificate gives buyers confidence and removes negotiating leverage.',
+      price: 'Cosmetic Refresh R450 · Aesthetic Refurb from R2,200 · Resale-Ready from R3,200 · Premium Pro from R5,500', eta: '1–3 days',
+      keywords: ['refurbish','refurbishing','refurb','make iphone look new','brand new iphone','resale ready','phone resale','sell iphone','iphone resale','cosmetic repair','phone looks new','iphone refresh','iphone restoration','restore iphone','iphone makeover','clean iphone','like new iphone','refurbished iphone','frame polish','back glass replacement','resale certificate','condition grade','iphone certificate'],
+      ctas: [
+        { label: 'See Refurbishing Packages', href: 'refurbish.html', primary: true },
+        { label: 'WhatsApp Your Model', href: 'https://wa.me/27781541350?text=Hi%2C+I%27d+like+to+refurbish+my+iPhone.+Model%3A+', primary: false }
+      ]
+    },
+
+    {
+      id: 'data-recovery', type: 'service', icon: '',
+      title: 'Data Recovery — Phone, MacBook, Hard Drive',
+      tagline: 'Dead device, failed drive, lost files — we recover it.',
+      answer: 'MobiDokta recovers data from dead or damaged iPhones, Android phones, MacBooks, external hard drives (HDD/SSD), USB flash drives, and SD cards. NAND chip-level extraction for phones with board faults. SSD imaging for MacBooks. Mechanical HDD recovery. Diagnosis always free — no fix, no charge. Verified ownership required before any work begins.',
+      tip: 'The single most important thing: stop using the device or drive immediately. Every additional write — new photos, new files — overwrites recoverable data. Power off and bring it in for a free assessment.',
+      price: 'Diagnosis free · Phone from R1,000 · Drive from R450 · MacBook from R1,500', eta: '24–72 hours',
+      keywords: ['data recovery','recover data','lost data','phone data','lost photos','recover photos','files deleted','formatted drive','hard drive recovery','ssd recovery','hdd recovery','flash drive recovery','sd card recovery','macbook data','lost files','data lost','deleted photos','recover files','usb recovery','recover contacts','lost contacts','clicking hard drive','dead hard drive','external hard drive not working','hard drive not recognised','data from dead phone'],
+      ctas: [
+        { label: 'WhatsApp — Describe Your Case', href: 'https://wa.me/27781541350?text=Hi%2C+I+need+data+recovery.+My+situation%3A+', primary: true },
+        { label: 'Data Recovery Page', href: 'data-recovery.html#data-recovery', primary: false }
+      ]
+    },
+
+    {
+      id: 'access-recovery', type: 'service', icon: '',
+      title: 'Device Lockout & Access Recovery',
+      tagline: 'Locked out of your own phone, MacBook, or account.',
+      answer: 'Locked out of your iPhone, Android, MacBook, or Windows laptop? Forgotten your Google, Apple ID, or Microsoft account? We restore lawful owner access using manufacturer-approved processes only — never security bypasses. Proof of ownership (government ID + proof of purchase or account access) is verified before any work starts. We do not bypass iCloud Activation Lock or Google FRP. All recovery is through official channels.',
+      tip: 'For a locked iPhone: before coming in, try signing into icloud.com on another device to confirm your Apple ID credentials. If you can sign into iCloud, you can complete the restore process. If you can\'t, Apple account recovery is the first step.',
+      price: 'Diagnosis free · Access recovery from R350 · Account guidance from R250', eta: 'Same day in most cases',
+      keywords: ['locked out','lockout','forgot password','forgotten password','phone locked','iphone disabled','iphone unavailable','phone disabled','forgot pin','forgot passcode','macbook password','macbook forgot password','android locked','samsung locked','cant get into phone','phone wont let me in','access recovery','google account locked','apple id locked','microsoft account locked','frp','factory reset protection','filevault','bitlocker','mdm','corporate device','account recovery','device locked','phone disabled connect to itunes','iphone wont open'],
+      ctas: [
+        { label: 'WhatsApp — Start Here', href: 'https://wa.me/27781541350?text=Hi%2C+I+am+locked+out+of+my+device.+My+situation%3A+', primary: true },
+        { label: 'Access Recovery Page', href: 'data-recovery.html#access-recovery', primary: false }
+      ]
+    },
+
+    {
+      id: 'studio', type: 'service', icon: '',
+      title: 'TRi-MobiDokta Studio — Tech Courses & IT Hub',
+      tagline: 'In-person and virtual tech courses · Pretoria West.',
+      answer: 'TRi-MobiDokta Studio is MobiDokta\'s immersive IT learning and gaming destination. Courses for kids (8+) and adults — Junior Tech Academy, Repair Technician, Board-Level Repair Introduction, AI Diagnostics Workshop, Coding & AI Fundamentals, Digital Literacy, and virtual online courses. Starter kits, printed guides, and video tutorials available. In-person: Danville, Pretoria West.',
+      tip: 'Studio courses include mandatory practicals — not just video content. You leave with real hands-on experience and a printed reference guide.',
+      price: 'Kids from R350/month · Adults from R650 per course', eta: 'Enrol anytime',
+      keywords: ['course','courses','studio','tech course','repair course','iphone course','learn to repair','training','classes','tuition','kids class','children tech','junior tech','coding course','ai course','digital literacy','repair training','technician course','board repair course','gaming hub','gaming lounge','it destination','workshop','tech workshop','tri-mobidokta','tri mobidokta','starter kit','tutorial','guide','practical','certification','certificate'],
+      ctas: [
+        { label: 'Browse Studio Courses', href: 'studio.html', primary: true },
+        { label: 'WhatsApp — Enquire', href: 'https://wa.me/27781541350?text=Hi%2C+I%27d+like+to+enquire+about+TRi-MobiDokta+Studio+courses', primary: false }
+      ]
+    },
+
+    {
+      id: 'software-ai', type: 'service', icon: '⚡',
+      title: 'Software & AI Engineering — ASi Imperium',
+      tagline: 'Custom software, firmware, AI systems & web platforms.',
+      answer: 'Beyond hardware repairs — ASi Imperium Technologies (the engineering studio behind MobiDokta) builds custom software platforms, firmware solutions, AI-powered systems, and high-performance web platforms. The MobiDokta website itself is a live example of this work — built entirely in-house.',
+      tip: 'If you need a software system, AI integration, web platform, or firmware solution, WhatsApp us — we build the same standard you\'re experiencing right now.',
+      keywords: ['software','ai','artificial intelligence','firmware','web development','app','platform','engineering','developer','code','programming','website','system','integration','iot','embedded','asi imperium','asi technologies','software engineering','tech solutions'],
+      ctas: [
+        { label: 'WhatsApp — Discuss a Project', href: 'https://wa.me/27781541350?text=Hi%2C+I%27d+like+to+discuss+a+software+or+AI+engineering+project+with+ASi+Imperium+Technologies', primary: true },
+        { label: 'See What We Built', href: 'index.html#asi-imperium', primary: false }
+      ]
     }
 
   ];
@@ -378,7 +565,7 @@
   // Quick searches shown before typing
   var QUICK = [
     'cracked screen', 'battery draining', 'water damage', 'IMEI check',
-    'phone stolen', 'opening hours', 'buy iPhone', 'Samsung repair'
+    'phone stolen', 'opening hours', 'software development', 'Samsung repair'
   ];
 
   // ── Scoring Engine ──────────────────────────────────────────────────────────

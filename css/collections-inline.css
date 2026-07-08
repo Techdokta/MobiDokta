@@ -172,6 +172,27 @@
   font-size: 11px; color: var(--text-tertiary); margin-top: 6px;
 }
 
+/* Price/meta note inside a service card */
+.coll-svc-note { margin-top: 8px; font-size: .82rem; color: var(--text-tertiary); }
+
+/* Link inside a service card paragraph */
+.coll-svc-link { color: var(--accent); }
+.coll-svc-link:hover { text-decoration: underline; }
+
+/* Location bar icon and meta text */
+.coll-location-icon { color: var(--accent); }
+.coll-location-meta { color: var(--text-secondary); margin-left: 8px; }
+
+/* Shared collection page footer */
+.coll-footer {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  padding: var(--space-6) 0;
+  text-align: center;
+}
+.coll-footer-text { font-size: 11px; color: var(--text-secondary); }
+.coll-footer-link { color: var(--accent); }
+
 @media (max-width: 900px) {
   .coll-hero-wrap {
     grid-template-columns: 1fr;

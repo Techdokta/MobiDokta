@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 100">
+  <!-- YouTube red badge -->
+  <rect x="0" y="10" width="108" height="76" rx="18" fill="#FF0000"/>
+  <!-- White play triangle -->
+  <polygon points="38,30 38,70 82,50" fill="white"/>
+  <!-- YouTube wordmark -->
+  <text x="120" y="72" font-family="'Arial Black','Helvetica Neue',sans-serif" font-weight="900" font-size="62" fill="#1A1A1A">YouTube</text>
+</svg>

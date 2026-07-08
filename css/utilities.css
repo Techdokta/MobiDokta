@@ -7,26 +7,15 @@
 .btn-xs { padding: 4px 10px; font-size: 12px; }
 
 /* ── Logo images ── */
-.logo-nav    { height: 54px; width: auto; display: block; }
+.logo-nav    { height: 64px; width: auto; display: block; }
 .logo-footer { height: 58px; width: auto; display: block; margin-bottom: 4px; }
 
 /* Light mode: swap to black-Mobi version */
 :root:not(.dark-theme) .logo-nav,
 :root:not(.dark-theme) .logo-footer { content: url('../assets/mobidokta-logo-light.svg'); }
 
-/* ── WhatsApp nav icon ── */
-.nav-wa-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: #25d366;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  transition: background 0.18s;
-  flex-shrink: 0;
-}
-.nav-wa-link:hover { background: rgba(37,211,102,0.12); }
+/* ── WhatsApp nav icon — hidden: covered by the WhatsApp FAB ── */
+.nav-wa-link { display: none !important; }
 
 /* ── Spacing ── */
 .mt-4   { margin-top: var(--space-4); }

@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <script>(function(){var t=localStorage.getItem('mobidokta-theme')||'dark';if(t==='dark')document.documentElement.classList.add('dark-theme');}());</script>
+  <script>if('scrollRestoration' in history)history.scrollRestoration='manual';window.scrollTo(0,0);(function(){var t=localStorage.getItem('mobidokta-theme')||'dark';if(t==='dark')document.documentElement.classList.add('dark-theme');}());</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Appl3City — Pre-owned & Sealed iPhones, Samsung & More | Certified by MobiDokta | Pretoria</title>
   <meta name="description" content="Buy IMEI-verified, engineer-tested iPhones, Samsung Galaxy, Apple Watch & MacBook at Appl3City in Pretoria. Written warranty. Pay by cash, card, EFT or BNPL.">
@@ -90,13 +90,13 @@
       align-items: flex-start;
       justify-content: center;
       text-align: left;
-      padding: 130px max(48px, 6vw) 88px;
+      padding: 130px max(24px, 6vw) 88px;
       background: #fff;
       color: #0a0a0a;
       position: relative;
       overflow: hidden;
     }
-    /* Solid white panel left → sharp fade → fully clear */
+    /* Desktop: solid white panel left → sharp fade → fully clear */
     .ac-hero::before {
       content: '';
       position: absolute;
@@ -112,17 +112,17 @@
       pointer-events: none;
     }
 
-    /* Text column — locked inside the white panel */
+    /* Text column */
     .ac-hero-text {
       position: relative;
       z-index: 2;
-      max-width: min(44vw, 480px);
+      max-width: min(52vw, 480px);
       width: 100%;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
     }
-    /* Full-bleed photo — right-anchored, zoomed into face + iPhone */
+    /* Full-bleed photo — right-anchored */
     .ac-hero-photo {
       position: absolute;
       inset: 0;
@@ -134,7 +134,32 @@
       z-index: 0;
     }
     @media (max-width: 900px) { .ac-hero-photo { object-position: 72% 40%; } }
-    @media (max-width: 600px) { .ac-hero-photo { display: none; } }
+    /* Mobile: show image as full background with dark scrim for legibility */
+    @media (max-width: 600px) {
+      .ac-hero {
+        color: #fff;
+        background: #111;
+        min-height: 520px;
+        padding: 100px 20px 60px;
+        justify-content: flex-end;
+      }
+      .ac-hero::before {
+        background: linear-gradient(
+          to top,
+          rgba(0,0,0,0.88) 0%,
+          rgba(0,0,0,0.65) 45%,
+          rgba(0,0,0,0.18) 100%
+        );
+      }
+      .ac-hero-photo { display: block; object-position: center 20%; }
+      .ac-hero-text { max-width: 100%; }
+      .ac-hero-eyebrow { color: rgba(255,255,255,0.5); }
+      .ac-wm-appl, .ac-wm-city { color: #fff; }
+      .ac-hero-sub { color: rgba(255,255,255,0.85); }
+      .ac-hero-cert { color: rgba(255,255,255,0.5); }
+      .btn-ac-scroll { border-color: rgba(255,255,255,0.35); color: rgba(255,255,255,0.75); }
+      .btn-ac-scroll:hover { border-color: #ff9500; color: #ff9500; }
+    }
 
     /* Eyebrow label */
     .ac-hero-eyebrow {
@@ -619,9 +644,8 @@
       .navbar { padding: 0 var(--space-4); }
       .nav-links { display: none; }
       .nav-toggle { display: flex !important; }
-      .ac-hero { padding: 100px var(--space-5) 60px; min-height: 420px; }
       .ac-hero-text { max-width: 100%; }
-      .ac-hero-wordmark { font-size: clamp(3.5rem, 20vw, 5.5rem); }
+      .ac-hero-wordmark { font-size: clamp(3rem, 16vw, 5rem); }
       .ac-trust-bar { gap: var(--space-4); }
       .ac-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
     }

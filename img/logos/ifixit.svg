@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 100">
+  <!-- Red background pill -->
+  <rect x="0" y="8" width="96" height="84" rx="12" fill="#E7242D"/>
+  <!-- Wrench icon white -->
+  <path d="M24 24 C20 28 20 44 28 52 L52 76 C56 80 62 80 66 76 C70 72 70 66 66 62 L42 38 C50 30 52 18 46 12 C42 8 36 6 30 8 L40 18 L38 26 L30 28 L20 18 C18 20 18 22 20 24 Z" fill="white"/>
+  <!-- iFixit text -->
+  <text x="108" y="74" font-family="'Arial Black','Helvetica Neue',Arial,sans-serif" font-weight="900" font-size="64" fill="#E7242D">iFixit</text>
+</svg>
