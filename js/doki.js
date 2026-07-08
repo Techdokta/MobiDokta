@@ -29,11 +29,11 @@
       ]
     },
     'screen-iphone': {
-      msg: 'iPhone screen repairs from R1,800 — same day, OEM-grade parts, 6-month warranty. July Sale prices end 31 July.',
+      msg: 'iPhone screen repairs from R1,800 — same day, OEM-grade parts, 6-month warranty. Have an iPhone Air or 16e? We\'re one of very few SA shops that handle those.',
       chips: [
         { label: 'Book now', href: 'book.html' },
-        { label: 'Get exact price', wa: 'Hi, I need an iPhone screen repair price. My model: ' },
-        { label: 'Back', next: 'screen-device', muted: true }
+        { label: 'iPhone Air / 16e', wa: 'Hi, I need an iPhone Air or 16e repair — my model is: ' },
+        { label: 'Get exact price', wa: 'Hi, I need an iPhone screen repair price. My model: ' }
       ]
     },
     'screen-samsung': {
@@ -109,10 +109,19 @@
     other: {
       msg: "No problem. What sounds closest?",
       chips: [
+        { label: 'Foldable / rare device', next: 'exclusive' },
         { label: 'Data recovery', next: 'data' },
         { label: 'Locked out of my phone', next: 'lockout' },
-        { label: 'IMEI check', next: 'imei' },
-        { label: 'Opening hours', next: 'hours' }
+        { label: 'IMEI check', next: 'imei' }
+      ]
+    },
+    exclusive: {
+      msg: 'We handle devices most SA shops won\'t touch — iPhone Air (2025), Huawei Mate XS2/X3/X5 foldables, Samsung Z Fold/Flip, OnePlus Open. WhatsApp your model and damage first so we can confirm parts before you travel.',
+      chips: [
+        { label: 'iPhone Air / 16e', wa: 'Hi, I need an iPhone Air or 16e repair. My model is: ', green: false },
+        { label: 'Huawei Mate XS / X3 / X5', wa: 'Hi, I need a Huawei foldable repair. My model is: ' },
+        { label: 'Samsung Z Fold / Flip', wa: 'Hi, I need a Samsung foldable repair. My model is: ' },
+        { label: 'See exclusive repairs', href: 'collections/exclusive-gadgets/' }
       ]
     },
     data: {

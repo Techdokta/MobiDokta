@@ -548,6 +548,48 @@
     },
 
     {
+      id: 'iphone-air', type: 'service', icon: '⭐',
+      title: 'iPhone Air (2025) Repair — Rare Service',
+      tagline: 'One of very few SA shops that safely repairs the thinnest iPhone ever made.',
+      answer: 'The iPhone Air is 5.65 mm thin — standard repair pry tools bend the chassis. We use adapted low-force tooling and thermal management to replace the screen (from R7,200), battery (from R2,000), and back glass without warping the frame. Also covers the iPhone 16e. WhatsApp us first to confirm parts are in stock before you travel.',
+      tip: 'Never attempt to open an iPhone Air with standard spudgers — the chassis flexes at under 3 kg of lateral force. Always use a vacuum cup and suction-based opening technique.',
+      price: 'Screen from R7,200 · Battery from R2,000', eta: 'WhatsApp first — specialist handling',
+      keywords: ['iphone air','iphone air 2025','iphone air repair','thin iphone','thinnest iphone','iphone 16e','iphone 16e repair','iphone air screen','iphone air battery','iphone air broken','iphone air cracked','rare iphone repair','iphone air pretoria','iphone air danville'],
+      ctas: [
+        { label: 'WhatsApp for iPhone Air Quote', href: 'https://wa.me/27781541350?text=Hi%2C+I+need+an+iPhone+Air+2025+repair', primary: true },
+        { label: 'See iPhone Repairs', href: 'collections/iphone-repairs/', primary: false }
+      ]
+    },
+
+    {
+      id: 'huawei-foldable', type: 'service', icon: '⭐',
+      title: 'Huawei Mate XS2, X3 & X5 Repair — Rare Service',
+      tagline: 'Huawei outward-fold screen repair. Very few SA shops attempt this.',
+      answer: 'Huawei\'s outward-folding flagships (Mate XS2, X3, X5) expose the flexible OLED on the outside — they crack more easily than inward-fold designs. We perform outer OLED assessment and replacement, hinge tension adjustment, and battery service. Parts are limited in SA — WhatsApp your model and damage description before visiting. Outer screen from R9,500.',
+      tip: 'An outward-fold crease that suddenly deepens often means the hinge spring tension has weakened — if left, the flex cable underneath will crack. Address it early.',
+      price: 'Outer screen from R9,500 · Battery from R2,800', eta: 'WhatsApp first — parts sourced on request',
+      keywords: ['huawei mate xs','huawei mate xs2','mate xs2','mate x3','huawei x3','mate x5','huawei x5','huawei foldable','huawei fold','outward fold','huawei foldable repair','foldable screen repair','flexible screen repair','fold screen cracked','huawei foldable pretoria','mate xs pretoria','huawei exclusive repair'],
+      ctas: [
+        { label: 'WhatsApp for Huawei Foldable Quote', href: 'https://wa.me/27781541350?text=Hi%2C+I+need+a+Huawei+foldable+repair.+My+model+is:', primary: true },
+        { label: 'See Exclusive Repairs', href: 'collections/exclusive-gadgets/', primary: false }
+      ]
+    },
+
+    {
+      id: 'foldable', type: 'service', icon: '📱',
+      title: 'Foldable Phone Repair — Samsung Z Fold & Z Flip',
+      tagline: 'Inner fold display, hinge rebuild, outer cover screen.',
+      answer: 'We repair Samsung Galaxy Z Fold 3–6 and Z Flip 3–6: inner fold display replacement, hinge rebuild, S Pen slot (Fold 5/6), outer cover screen, and battery. Inner fold screen from R7,200. Outer cover screen from R4,500. Also repair OnePlus Open and Google Pixel Fold — WhatsApp first for parts availability.',
+      tip: 'Don\'t ignore a deepening crease on a Z Fold — the protective layer underneath is starting to separate. Once it lifts at the edges the display begins to delaminate and the repair cost doubles.',
+      price: 'Inner fold screen from R7,200 · Outer screen from R4,500', eta: 'WhatsApp first — parts vary by model',
+      keywords: ['z fold','z flip','galaxy fold','galaxy flip','foldable samsung','samsung foldable','fold repair','flip repair','z fold screen','z flip screen','inner screen','fold crease','fold hinge','foldable phone repair','samsung foldable pretoria','oneplus open','pixel fold','foldable pretoria'],
+      ctas: [
+        { label: 'WhatsApp for Foldable Quote', href: 'https://wa.me/27781541350?text=Hi%2C+I+need+a+foldable+phone+repair.+My+device+is:', primary: true },
+        { label: 'See Exclusive Repairs', href: 'collections/exclusive-gadgets/', primary: false }
+      ]
+    },
+
+    {
       id: 'software-ai', type: 'service', icon: '⚡',
       title: 'Software & AI Engineering — ASi Imperium',
       tagline: 'Custom software, firmware, AI systems & web platforms.',

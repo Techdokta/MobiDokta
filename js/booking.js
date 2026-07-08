@@ -71,7 +71,8 @@
   const models = {
     Apple: [
       'iPhone 17 Pro Max','iPhone 17 Pro','iPhone 17 Plus','iPhone 17',
-      'iPhone 16 Pro Max','iPhone 16 Pro','iPhone 16 Plus','iPhone 16',
+      'iPhone Air (2025) ⭐ Rare Service',
+      'iPhone 16 Pro Max','iPhone 16 Pro','iPhone 16 Plus','iPhone 16','iPhone 16e',
       'iPhone 15 Pro Max','iPhone 15 Pro','iPhone 15 Plus','iPhone 15',
       'iPhone 14 Pro Max','iPhone 14 Pro','iPhone 14 Plus','iPhone 14',
       'iPhone 13 Pro Max','iPhone 13 Pro','iPhone 13','iPhone 13 Mini',
@@ -91,6 +92,7 @@
       'Other (Type manually...)'
     ],
     Huawei: [
+      'Mate XS2 ⭐ Rare Service','Mate X3 ⭐ Rare Service','Mate X5 ⭐ Rare Service',
       'Pura 70 Ultra','Pura 70 Pro','Pura 70',
       'Mate 60 Pro+','Mate 60 Pro','Mate 60',
       'P60 Pro','P60','Mate 50 Pro','P50 Pro',
@@ -129,6 +131,24 @@
       'Garmin Fenix 8','Garmin Fenix 7','Samsung Galaxy Watch 7','Samsung Galaxy Watch 6',
       'Other (Type manually...)'
     ],
+    Exclusive: [
+      '— iPhone Air Models —',
+      'iPhone Air (2025)',
+      '— Huawei Foldables —',
+      'Huawei Mate XS2 (Outward Fold)',
+      'Huawei Mate X3 (Outward Fold)',
+      'Huawei Mate X5 (Outward Fold)',
+      '— Samsung Foldables —',
+      'Galaxy Z Fold 6',
+      'Galaxy Z Fold 5',
+      'Galaxy Z Flip 6',
+      'Galaxy Z Flip 5',
+      '— Other Exclusives —',
+      'OnePlus Open',
+      'Google Pixel Fold',
+      'Motorola Razr+ (2024)',
+      'Other (Type manually...)'
+    ],
     DJI: [
       'DJI Mini 4 Pro','DJI Mini 3 Pro','DJI Mini 3','DJI Mini 2 SE','DJI Mini 2',
       'DJI Air 3S','DJI Air 3','DJI Air 2S',
@@ -142,6 +162,10 @@
   };
 
   const pricingMap = {
+    // ── iPhone Air — ultra-thin chassis, specialist handling required ──
+    'iPhone Air (2025) ⭐ Rare Service': { oem: 7200, eco: 4800, batt: 2000 },
+    'iPhone 16e': { oem: 4200, eco: 2600, batt: 1499 },
+
     // ── iPhone 17 ──
     'iPhone 17 Pro Max': { oem: 8500, eco: 5400, batt: 2200 },
     'iPhone 17 Pro':     { oem: 7800, eco: 4900, batt: 2100 },
@@ -210,6 +234,11 @@
     'Galaxy A24':       { oem: 1099, batt: 749 },
     'Galaxy A15':       { oem: 999,  batt: 699 },
     'Galaxy A14':       { oem: 1099, batt: 699 },
+
+    // ── Huawei Foldables — specialist fold-screen repair, limited SA availability ──
+    'Mate XS2 ⭐ Rare Service': { oem: 9500, batt: 2800 },
+    'Mate X3 ⭐ Rare Service':  { oem: 10500, batt: 3000 },
+    'Mate X5 ⭐ Rare Service':  { oem: 11500, batt: 3200 },
 
     // ── iPad ──
     'iPad Pro 13" M4':     { oem: 6500, batt: 2000 },
