@@ -397,8 +397,43 @@
 
   // ── Greeting ───────────────────────────────────────────────────────────
 
+  function readSearchCtx() {
+    try {
+      var raw = localStorage.getItem('doki-search-ctx');
+      if (!raw) return null;
+      var ctx = JSON.parse(raw);
+      if (!ctx || !ctx.ts) return null;
+      if (Date.now() - ctx.ts > 10 * 60 * 1000) return null;
+      return ctx;
+    } catch (ex) { return null; }
+  }
+
   function startGreeting() {
+    var ctx = readSearchCtx();
     var flow = FLOWS.greeting;
+
+    if (ctx && ctx.serviceId) {
+      var ctxMap = {
+        'screen':          'I see you were checking screen repair options. Let me help you book!',
+        'battery':         'Looks like you were checking battery pricing. A fresh battery makes your phone feel brand new.',
+        'water':           '⚡ Water damage? Every minute matters — let me guide you through the right steps.',
+        'board':           'Board-level repair is specialist work. Let me help you get the right assessment.',
+        'iphone-air':      'iPhone Air repair — you\'re in the right place. One of very few SA shops with specialist tooling for this.',
+        'huawei-foldable': 'Huawei outward-fold repair — we can help. Let me find out what you need.',
+        'foldable':        'Foldable phone repair — specialist work. Which model do you have?',
+        'checkforyou':     'IMEI check — smart move before buying second-hand. I can walk you through it.',
+        'trackforyou':     '🚨 Phone stolen? Let\'s act fast — I\'ll guide you to the right steps right now.',
+        'data-recovery':   'Data recovery — the most important thing is to stop using the device immediately.'
+      };
+      var ctxMsg = ctxMap[ctx.serviceId] || ('I see you were searching for "' + (ctx.query || ctx.serviceId) + '" — let me help!');
+      botSay(ctxMsg, 300, function () {
+        botSay(flow.msg, 700, function () {
+          showChips(flow.chips);
+        });
+      });
+      return;
+    }
+
     botSay(flow.msg, 400, function () {
       showChips(flow.chips);
     });

@@ -18,6 +18,12 @@
       answer: 'We replace iPhone and Samsung screens with Hard OLED, Incell LCD, or Soft OLED panels — we explain the difference before you decide. Touch ID and Face ID are preserved.',
       tip: 'Don\'t press on a cracked screen — pressure spreads the fracture into the LCD underneath, turning a cheaper fix into a much more expensive one.',
       price: 'From R1,800', eta: 'Same day',
+      social: '47+ screens replaced last month · 4.9★ Google rating',
+      tiers: [
+        { label: 'Soft OLED', price: 'R1,800', desc: 'Best colour & brightness, True Tone preserved', popular: true },
+        { label: 'Hard OLED', price: 'R1,200', desc: 'High-grade aftermarket, great for daily use', popular: false },
+        { label: 'Incell LCD', price: 'R800', desc: 'Budget option — slightly less vibrant', popular: false }
+      ],
       keywords: ['screen','cracked','shattered','broken','display','glass','touch','lcd','oled','smashed','crack','shatter','black screen','flickering','screen damage','damaged screen','phone screen'],
       ctas: [
         { label: 'Book Screen Repair', href: 'book.html', primary: true },
@@ -32,6 +38,10 @@
       answer: 'OEM-grade battery fitted in 45 minutes. iOS CPU throttling disappears once health is restored above 80%. We disclose the exact health percentage before and after.',
       tip: 'Replace your iPhone battery when health drops below 80%. iOS actively throttles CPU speed below that threshold — your phone isn\'t slow because it\'s old, it\'s being slowed on purpose.',
       price: 'From R550', eta: '45 minutes',
+      social: '38 batteries swapped last month · CPU throttling eliminated',
+      tiers: [
+        { label: 'OEM-grade cell', price: 'R550', desc: 'Full-rated capacity — eliminates iOS throttling', popular: true }
+      ],
       keywords: ['battery','charging','drain','draining','slow','health','swollen','percent','die','dies','shut down','not charging','charge','power','battery life','low battery','battery dead','battery health'],
       ctas: [
         { label: 'Book Battery Swap', href: 'book.html', primary: true },
@@ -46,6 +56,7 @@
       answer: 'Ultrasonic logic board cleaning + component-level corrosion removal. We\'ve recovered phones brought in 72 hours after pool drops. Free diagnosis. Data recovery also possible.',
       tip: '⚠️ Power it off immediately. Do NOT plug it in or charge it. Do NOT put it in rice — rice does nothing for moisture inside a phone. Bring it in within 24 hours. Every extra hour increases corrosion and data loss risk.',
       price: 'Diagnosis free · From R800', eta: 'Same day assessment',
+      social: '9 water recoveries last month · Free same-day diagnosis',
       keywords: ['water','wet','dropped','pool','ocean','rain','liquid','rice','submerged','toilet','sink','spilled','splash','damp','flooded','water damage','fell in water','dropped in water','water damaged'],
       ctas: [
         { label: 'WhatsApp Us Now', href: 'https://wa.me/27781541350?text=Hi%2C+my+phone+has+water+damage+and+I+need+urgent+help', primary: true },
@@ -116,6 +127,7 @@
       answer: 'Micro-soldering, component-level logic board repair, and NAND data recovery. No fix, no charge. We handle phones that have been refused by other shops.',
       tip: 'Board-level repair is the only way to recover data after severe damage — and usually the last resort before replacing the device. It\'s worth trying before giving up.',
       price: 'Diagnosis free · From R1,200', eta: '24–48 hours',
+      social: 'Board repairs others refused — No fix, no charge',
       keywords: ['board','logic board','motherboard','micro solder','data recovery','data','not turning on','dead','bricked','bootloop','no power','wont turn on','phone dead','not powering on','wont start','charging ic','nand','power ic','baseband','touch ic','bga','reballing','micro soldering','board repair','component repair','phone wont come on','not switching on','not coming on','phone is dead','wont switch on'],
       ctas: [
         { label: 'WhatsApp for Assessment', href: 'https://wa.me/27781541350?text=Hi%2C+I+need+board-level+repair+or+data+recovery', primary: true },
@@ -554,6 +566,11 @@
       answer: 'The iPhone Air is 5.65 mm thin — standard repair pry tools bend the chassis. We use adapted low-force tooling and thermal management to replace the screen (from R7,200), battery (from R2,000), and back glass without warping the frame. Also covers the iPhone 16e. WhatsApp us first to confirm parts are in stock before you travel.',
       tip: 'Never attempt to open an iPhone Air with standard spudgers — the chassis flexes at under 3 kg of lateral force. Always use a vacuum cup and suction-based opening technique.',
       price: 'Screen from R7,200 · Battery from R2,000', eta: 'WhatsApp first — specialist handling',
+      social: 'One of very few SA shops with iPhone Air specialist tooling',
+      tiers: [
+        { label: 'Screen (OEM-grade)', price: 'R7,200', desc: 'Low-force specialist tooling — only safe option', popular: true },
+        { label: 'Battery', price: 'R2,000', desc: 'Thermal-managed extraction for 5.65mm chassis', popular: false }
+      ],
       keywords: ['iphone air','iphone air 2025','iphone air repair','thin iphone','thinnest iphone','iphone 16e','iphone 16e repair','iphone air screen','iphone air battery','iphone air broken','iphone air cracked','rare iphone repair','iphone air pretoria','iphone air danville'],
       ctas: [
         { label: 'WhatsApp for iPhone Air Quote', href: 'https://wa.me/27781541350?text=Hi%2C+I+need+an+iPhone+Air+2025+repair', primary: true },
@@ -568,6 +585,11 @@
       answer: 'Huawei\'s outward-folding flagships (Mate XS2, X3, X5) expose the flexible OLED on the outside — they crack more easily than inward-fold designs. We perform outer OLED assessment and replacement, hinge tension adjustment, and battery service. Parts are limited in SA — WhatsApp your model and damage description before visiting. Outer screen from R9,500.',
       tip: 'An outward-fold crease that suddenly deepens often means the hinge spring tension has weakened — if left, the flex cable underneath will crack. Address it early.',
       price: 'Outer screen from R9,500 · Battery from R2,800', eta: 'WhatsApp first — parts sourced on request',
+      social: 'Rare SA service — Huawei outward-fold specialists',
+      tiers: [
+        { label: 'Outer OLED screen', price: 'R9,500', desc: 'Specialist outward-fold repair — parts sourced on request', popular: true },
+        { label: 'Battery', price: 'R2,800', desc: 'Safe removal — hinge tension checked', popular: false }
+      ],
       keywords: ['huawei mate xs','huawei mate xs2','mate xs2','mate x3','huawei x3','mate x5','huawei x5','huawei foldable','huawei fold','outward fold','huawei foldable repair','foldable screen repair','flexible screen repair','fold screen cracked','huawei foldable pretoria','mate xs pretoria','huawei exclusive repair'],
       ctas: [
         { label: 'WhatsApp for Huawei Foldable Quote', href: 'https://wa.me/27781541350?text=Hi%2C+I+need+a+Huawei+foldable+repair.+My+model+is:', primary: true },
@@ -582,6 +604,11 @@
       answer: 'We repair Samsung Galaxy Z Fold 3–6 and Z Flip 3–6: inner fold display replacement, hinge rebuild, S Pen slot (Fold 5/6), outer cover screen, and battery. Inner fold screen from R7,200. Outer cover screen from R4,500. Also repair OnePlus Open and Google Pixel Fold — WhatsApp first for parts availability.',
       tip: 'Don\'t ignore a deepening crease on a Z Fold — the protective layer underneath is starting to separate. Once it lifts at the edges the display begins to delaminate and the repair cost doubles.',
       price: 'Inner fold screen from R7,200 · Outer screen from R4,500', eta: 'WhatsApp first — parts vary by model',
+      social: 'Expert foldable repairs — most SA shops turn these away',
+      tiers: [
+        { label: 'Inner fold display', price: 'R7,200', desc: 'OEM-grade flexible OLED — hinge inspection included', popular: true },
+        { label: 'Outer cover screen', price: 'R4,500', desc: 'OEM-grade cover glass replacement', popular: false }
+      ],
       keywords: ['z fold','z flip','galaxy fold','galaxy flip','foldable samsung','samsung foldable','fold repair','flip repair','z fold screen','z flip screen','inner screen','fold crease','fold hinge','foldable phone repair','samsung foldable pretoria','oneplus open','pixel fold','foldable pretoria'],
       ctas: [
         { label: 'WhatsApp for Foldable Quote', href: 'https://wa.me/27781541350?text=Hi%2C+I+need+a+foldable+phone+repair.+My+device+is:', primary: true },
@@ -609,6 +636,17 @@
     'cracked screen', 'battery draining', 'water damage', 'IMEI check',
     'phone stolen', 'opening hours', 'software development', 'Samsung repair'
   ];
+
+  // Flat keyword index for autocomplete (built once from KB)
+  var _acIndex = (function () {
+    var seen = {}, list = [];
+    KB.forEach(function (item) {
+      item.keywords.forEach(function (kw) {
+        if (!seen[kw] && kw.length >= 3) { seen[kw] = true; list.push(kw); }
+      });
+    });
+    return list;
+  }());
 
   // ── Scoring Engine ──────────────────────────────────────────────────────────
 
@@ -653,11 +691,14 @@
       .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 
-  function renderCtas(ctas) {
+  function renderCtas(ctas, item) {
     if (!ctas || !ctas.length) return '';
+    var svcId = item ? esc(item.id || '') : '';
+    var price = item ? esc(item.price || '') : '';
     return '<div class="mds-ctas">' + ctas.map(function (c) {
       var ext = c.href.startsWith('http') ? ' target="_blank" rel="noopener"' : '';
-      return '<a href="' + esc(c.href) + '" class="mds-cta ' + (c.primary ? 'mds-cta--primary' : 'mds-cta--ghost') + '"' + ext + '>' + esc(c.label) + '</a>';
+      var ctx = ' data-svc="' + svcId + '" data-price="' + price + '"';
+      return '<a href="' + esc(c.href) + '" class="mds-cta ' + (c.primary ? 'mds-cta--primary' : 'mds-cta--ghost') + '"' + ext + ctx + '>' + esc(c.label) + '</a>';
     }).join('') + '</div>';
   }
 
@@ -667,9 +708,13 @@
     return '<div class="mds-chips">' + chips.map(function (c) { return '<span class="mds-chip">' + esc(c) + '</span>'; }).join('') + '</div>';
   }
 
-  function renderResult(item, idx) {
+  function renderResult(item, idx, intent) {
+    intent = (typeof intent === 'string') ? intent : 'general';
     var urgentClass = item.urgent ? ' mds-result--urgent' : '';
     var tip = item.tip ? '<p class="mds-tip"><strong>Tip:</strong> ' + esc(item.tip) + '</p>' : '';
+    var quoteCard  = (idx === 0) ? renderQuoteCard(item) : '';
+    var social     = (idx === 0) ? renderSocialProof(item) : '';
+    var objection  = (idx === 0) ? renderObjection(intent) : '';
     return [
       '<div class="mds-result' + urgentClass + '" data-idx="' + idx + '" role="option" tabindex="-1">',
       '  <div class="mds-result-row">',
@@ -682,9 +727,90 @@
       '  </div>',
       '  <p class="mds-result-answer">' + esc(item.answer) + '</p>',
       tip,
-      renderCtas(item.ctas),
+      quoteCard,
+      social,
+      objection,
+      renderCtas(item.ctas, item),
       '</div>'
     ].join('\n');
+  }
+
+  // ── Intent & Autocomplete ───────────────────────────────────────────────────
+
+  function classifyIntent(query) {
+    var q = query.toLowerCase();
+    if (q.match(/urgent|asap|emergency|now|today|water|wet|stolen|flood|drowned|spill/)) return 'urgent';
+    if (q.match(/how much|price|cost|quote|rand|r\d|expensive|cheap|afford|budget/)) return 'price';
+    if (q.match(/vs|versus|better|compare|difference|oem|eco|genuine|original/)) return 'comparison';
+    if (q.match(/iphone|samsung|huawei|pixel|oneplus|android|galaxy|ipad|macbook|s24|s23|fold|flip/)) return 'device';
+    return 'general';
+  }
+
+  function getAutocompleteSuggestions(query) {
+    var q = query.toLowerCase().trim();
+    if (q.length < 2) return [];
+    var prefix = [], contains = [];
+    for (var i = 0; i < _acIndex.length; i++) {
+      var kw = _acIndex[i];
+      if (kw === q) continue;
+      if (kw.startsWith(q)) prefix.push(kw);
+      else if (kw.indexOf(q) !== -1) contains.push(kw);
+      if (prefix.length >= 4 && contains.length >= 2) break;
+    }
+    return prefix.concat(contains).slice(0, 5);
+  }
+
+  // ── Copilot Render Helpers ──────────────────────────────────────────────────
+
+  function renderIntentBadge(intent) {
+    var map = {
+      urgent:     { icon: '⚡', label: 'Urgent', cls: 'urgent' },
+      price:      { icon: '💰', label: 'Price info', cls: 'price' },
+      comparison: { icon: '⚖️', label: 'Comparison', cls: 'comparison' },
+      device:     { icon: '📱', label: 'Device-specific', cls: 'device' }
+    };
+    var m = map[intent];
+    if (!m) return '';
+    return '<div class="mds-intent-row"><span class="mds-intent-badge mds-intent-badge--' + m.cls + '">' + m.icon + ' ' + m.label + '</span></div>';
+  }
+
+  function renderSuggestions(suggestions) {
+    if (!suggestions.length) return '';
+    return '<div class="mds-suggestions">'
+      + suggestions.map(function (s) {
+        return '<button class="mds-suggestion-item" type="button">' + esc(s) + '</button>';
+      }).join('')
+      + '</div>';
+  }
+
+  function renderQuoteCard(item) {
+    if (!item.tiers || !item.tiers.length) return '';
+    var rows = item.tiers.map(function (t) {
+      return '<div class="mds-tier' + (t.popular ? ' mds-tier--popular' : '') + '">'
+        + '<div class="mds-tier-label">' + esc(t.label)
+        + (t.popular ? '<span class="mds-tier-badge">Recommended</span>' : '')
+        + '</div>'
+        + '<div class="mds-tier-price">' + esc(t.price) + '</div>'
+        + '<div class="mds-tier-desc">' + esc(t.desc) + '</div>'
+        + '</div>';
+    }).join('');
+    return '<div class="mds-quote-card"><div class="mds-quote-label">Pricing options</div>' + rows + '</div>';
+  }
+
+  function renderSocialProof(item) {
+    if (!item.social) return '';
+    return '<div class="mds-social-proof">✓ ' + esc(item.social) + '</div>';
+  }
+
+  function renderObjection(intent) {
+    if (intent !== 'price') return '';
+    return '<details class="mds-objection">'
+      + '<summary class="mds-objection-toggle">💡 Too expensive? See options</summary>'
+      + '<div class="mds-objection-content">'
+      + '<p>Ask about our <strong>interest-free split payment</strong>, <strong>student 15% discount</strong>, or <strong>eco-grade parts</strong> — '
+      + '<a href="https://wa.me/27781541350?text=Hi%2C+I+need+a+lower-cost+repair+option" target="_blank" rel="noopener">WhatsApp us</a>.</p>'
+      + '</div>'
+      + '</details>';
   }
 
   // ── Modal HTML ──────────────────────────────────────────────────────────────
@@ -730,7 +856,7 @@
       + QUICK.map(function (q) { return '<button class="mds-quick" type="button">' + esc(q) + '</button>'; }).join('')
       + '</div>'
       + '<div class="mds-label" style="margin-top:14px">Top services</div>'
-      + KB.filter(function (k) { return k.type === 'service'; }).slice(0, 3).map(renderResult).join('');
+      + KB.filter(function (k) { return k.type === 'service'; }).slice(0, 3).map(function (item, i) { return renderResult(item, i); }).join('');
     body.innerHTML = quickHtml;
     body.querySelectorAll('.mds-quick').forEach(function (btn) {
       btn.addEventListener('click', function () {
@@ -746,8 +872,10 @@
   // ── State ───────────────────────────────────────────────────────────────────
 
   var _query = '';
+  var _intent = 'general';
   var _active = -1;
   var _results = [];
+  var _ctxListenerAdded = false;
 
   function onInput(e) {
     var q = e.target.value;
@@ -760,6 +888,8 @@
     if (!q.trim()) { showQuickSearches(); return; }
 
     _results = doSearch(q);
+    _intent = classifyIntent(q);
+    var suggestions = getAutocompleteSuggestions(q);
 
     if (!_results.length) {
       body.innerHTML = [
@@ -774,12 +904,27 @@
       return;
     }
 
-    body.innerHTML = _results.map(renderResult).join('');
+    var html = '';
+    if (_intent !== 'general') html += renderIntentBadge(_intent);
+    if (suggestions.length) html += renderSuggestions(suggestions);
+    html += _results.map(function (item, idx) { return renderResult(item, idx, _intent); }).join('');
+    body.innerHTML = html;
+
+    // Wire autocomplete suggestion clicks
+    body.querySelectorAll('.mds-suggestion-item').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var inp = document.getElementById('mds-input');
+        if (!inp) return;
+        inp.value = btn.textContent;
+        inp.dispatchEvent(new Event('input', { bubbles: true }));
+        inp.focus();
+      });
+    });
 
     // Wire result clicks
     body.querySelectorAll('.mds-result').forEach(function (el) {
-      el.addEventListener('click', function (e) {
-        if (e.target.closest('a')) return; // let link handle it
+      el.addEventListener('click', function (ev) {
+        if (ev.target.closest('a')) return;
         var item = _results[parseInt(el.dataset.idx, 10)];
         if (item && item.ctas && item.ctas[0]) {
           var href = item.ctas[0].href;
@@ -832,6 +977,27 @@
     }
     if (backdrop) backdrop.addEventListener('click', closeModal);
     if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+    // Wire CTA clicks for Doki context hand-off (once per modal build)
+    if (!_ctxListenerAdded) {
+      var resultsEl = document.getElementById('mds-results');
+      if (resultsEl) {
+        resultsEl.addEventListener('click', function (e) {
+          var cta = e.target.closest('.mds-cta');
+          if (!cta) return;
+          try {
+            localStorage.setItem('doki-search-ctx', JSON.stringify({
+              query: _query,
+              serviceId: cta.dataset.svc || '',
+              topPrice: cta.dataset.price || '',
+              intent: _intent,
+              ts: Date.now()
+            }));
+          } catch (ex) {}
+        });
+        _ctxListenerAdded = true;
+      }
+    }
 
     showQuickSearches();
   }
