@@ -2994,6 +2994,19 @@ a.nav-ac:hover { opacity: 0.8; }
   .asi-cta-primary, .asi-cta-ghost { width: 100%; justify-content: center; }
 }
 
+/* ASi compact teaser (index.html variant — overrides full-page defaults) */
+.asi-teaser { padding: 40px max(24px, 5vw); }
+.asi-teaser .asi-inner {
+  max-width: 900px;
+  display: flex; flex-wrap: wrap; gap: 28px;
+  align-items: center; justify-content: space-between;
+}
+.asi-teaser-content { flex: 1; min-width: 260px; }
+.asi-teaser .asi-eyebrow { margin-bottom: 10px; }
+.asi-teaser .asi-headline { font-size: clamp(1.3rem, 3vw, 1.8rem); margin: 0 0 10px; }
+.asi-teaser-sub { font-size: .85rem; color: rgba(245,245,247,.55); line-height: 1.6; margin: 0; }
+.asi-teaser-ctas { display: flex; flex-direction: column; gap: 10px; flex-shrink: 0; }
+
 /* ─── TRi-MobiDokta Studio ─── */
 .studio-hero {
   background: linear-gradient(155deg, #060a12 0%, #0c111f 55%, #060a12 100%);

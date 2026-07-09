@@ -918,6 +918,7 @@
       opacity: 0;
       transition: opacity .2s;
       pointer-events: none;
+      -webkit-backdrop-filter: blur(6px);
       backdrop-filter: blur(6px);
     }
     .masonry-img-wrapper:hover::after { opacity: 1; }
@@ -1762,7 +1763,7 @@
 
           <div class="process-step" data-animate>
             <div class="process-num">0</div>
-            <i data-lucide="calendar-check" class="icon-lg" style="color:var(--accent);margin-bottom:var(--space-3);"></i>
+            <i data-lucide="calendar-check" class="icon-lg process-icon"></i>
             <h3>Book Online</h3>
             <p>WhatsApp us or use the booking form. Describe your issue, pick a time slot, get an instant quote — in under 2 minutes.</p>
             <a href="book.html" class="process-cta">Book now →</a>
@@ -1770,7 +1771,7 @@
 
           <div class="process-step" data-animate>
             <div class="process-num">1</div>
-            <i data-lucide="store" class="icon-lg" style="color:var(--accent);margin-bottom:var(--space-3);"></i>
+            <i data-lucide="store" class="icon-lg process-icon"></i>
             <h3>Drop Off</h3>
             <p>Walk into Shop 6, Madeira Isles, Danville. Or send via a campus friend, your residence shuttle, or book a house call.</p>
             <a href="campus.html" class="process-cta">Campus drop-off info →</a>
@@ -1778,14 +1779,14 @@
 
           <div class="process-step" data-animate>
             <div class="process-num">2</div>
-            <i data-lucide="cpu" class="icon-lg" style="color:var(--accent);margin-bottom:var(--space-3);"></i>
+            <i data-lucide="cpu" class="icon-lg process-icon"></i>
             <h3>We Fix It</h3>
             <p>Diagnosed. Quoted in writing. Repair starts only after your approval. WhatsApp updates keep you informed throughout.</p>
           </div>
 
           <div class="process-step" data-animate>
             <div class="process-num">3</div>
-            <i data-lucide="package-check" class="icon-lg" style="color:var(--accent);margin-bottom:var(--space-3);"></i>
+            <i data-lucide="package-check" class="icon-lg process-icon"></i>
             <h3>Collect &amp; Go</h3>
             <p>Pick up in-store or get it delivered. Fully tested. Every repair is backed by our warranty before it leaves our hands.</p>
           </div>
@@ -1808,7 +1809,7 @@
             this route to drop it off for you. We fix it while you're in class — they collect on the way back.
             Zero transport cost. Zero time wasted.
           </p>
-          <p class="campus-teaser-lead" style="margin-top:var(--space-4);">
+          <p class="campus-teaser-lead">
             We partner with student communities at universities and colleges across Pretoria.
             Walk in, WhatsApp us your student card, and get your <strong>student repair discount</strong> applied automatically.
           </p>
@@ -2573,20 +2574,20 @@
   </section>
 
   <!-- ─── ASi Imperium — Compact Teaser ─── -->
-  <section class="asi-section" id="asi-imperium" style="padding:40px max(24px,5vw);">
+  <section class="asi-section asi-teaser" id="asi-imperium">
     <div class="asi-grid-bg"></div>
-    <div class="asi-inner" style="max-width:900px;display:flex;flex-wrap:wrap;gap:28px;align-items:center;justify-content:space-between;">
-      <div style="flex:1;min-width:260px;">
-        <div class="asi-eyebrow" style="margin-bottom:10px;">ASi Imperium Technologies</div>
-        <h2 class="asi-headline" style="font-size:clamp(1.3rem,3vw,1.8rem);margin:0 0 10px;">The engineering studio<br><em>behind this platform.</em></h2>
-        <p style="font-size:.85rem;color:rgba(245,245,247,.55);line-height:1.6;margin:0;">Bespoke digital platforms, process automation, firmware engineering, and AI-driven systems — built around your operation, step by step. This website is a live example of our work.</p>
+    <div class="asi-inner">
+      <div class="asi-teaser-content">
+        <div class="asi-eyebrow">ASi Imperium Technologies</div>
+        <h2 class="asi-headline">The engineering studio<br><em>behind this platform.</em></h2>
+        <p class="asi-teaser-sub">Bespoke digital platforms, process automation, firmware engineering, and AI-driven systems — built around your operation, step by step. This website is a live example of our work.</p>
       </div>
-      <div style="display:flex;flex-direction:column;gap:10px;flex-shrink:0;">
-        <a href="enterprise.html" class="asi-cta-primary" style="min-height:44px;display:inline-flex;align-items:center;gap:8px;padding:0 20px;">
+      <div class="asi-teaser-ctas">
+        <a href="enterprise.html" class="asi-cta-primary">
           See What We Build
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m7 17 10-10M7 7h10v10"/></svg>
         </a>
-        <a href="https://wa.me/27781541350?text=Hi%2C+I%27d+like+to+discuss+a+bespoke+digital+engineering+project" target="_blank" rel="noopener" class="asi-cta-ghost" style="min-height:44px;display:inline-flex;align-items:center;justify-content:center;padding:0 20px;">Discuss a Project</a>
+        <a href="https://wa.me/27781541350?text=Hi%2C+I%27d+like+to+discuss+a+bespoke+digital+engineering+project" target="_blank" rel="noopener" class="asi-cta-ghost">Discuss a Project</a>
       </div>
     </div>
   </section>

@@ -6,7 +6,10 @@
 @media (max-width: 768px) { .campus-teaser-inner { grid-template-columns: 1fr; gap: var(--space-10); } }
 .campus-teaser-title { font-size: var(--text-3xl); margin: var(--space-4) 0 var(--space-6); }
 .campus-teaser-lead { color: var(--text-secondary); line-height: 1.8; }
+.campus-teaser-lead + .campus-teaser-lead { margin-top: var(--space-4); }
 .campus-teaser-lead strong { color: var(--text-primary); }
+/* Process step icon shared style */
+.process-icon { color: var(--accent); margin-bottom: var(--space-3); }
 .campus-ctas { display: flex; gap: var(--space-3); flex-wrap: wrap; margin-top: var(--space-8); }
 .campus-ctas .btn { display: inline-flex; align-items: center; gap: var(--space-2); }
 .campus-inst-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-secondary); font-weight: 700; margin-bottom: var(--space-4); }
