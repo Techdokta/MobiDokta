@@ -54,10 +54,10 @@
   <meta name="twitter:description" content="Same-day iPhone, Samsung & MacBook repairs. Play on the TRi- gaming lounge while you wait. Madeira Isles, Danville, Pretoria." />
   <meta name="twitter:image" content="https://www.mobidokta.co.za/img/og-cover.png" />
 
+  <link rel="icon" href="./assets/mobidokta-logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./css/global.css">
   <link rel="stylesheet" href="./css/utilities.css">
   <link rel="stylesheet" href="./css/index-inline.css">
-  <link rel="preload" as="image" href="./img/hero-main.png" />
   <link rel="preconnect" href="https://unpkg.com" crossorigin />
   <link rel="prefetch" href="./apple.html" />
   <link rel="prefetch" href="./android.html" />
@@ -1338,6 +1338,7 @@
         <div class="dropdown-menu">
           <a href="refurbish.html"><i data-lucide="sparkles" class="icon-xs"></i> iPhone Refurbishing</a>
           <a href="data-recovery.html"><i data-lucide="hard-drive" class="icon-xs"></i> Data &amp; Access Recovery</a>
+          <a href="recover.html"><i data-lucide="shield-alert" class="icon-xs"></i> MobiShield — Stolen Phone</a>
           <a href="studio.html"><i data-lucide="monitor-play" class="icon-xs"></i> TRi-MobiDokta Studio</a>
           <a href="enterprise.html"><i data-lucide="building-2" class="icon-xs"></i> Enterprise &amp; B2B</a>
           <a href="campus.html"><i data-lucide="graduation-cap" class="icon-xs"></i> Student Discount</a>
@@ -1655,6 +1656,18 @@
         </div>
       </div>
 
+      <!-- Urgent walk-in strip -->
+      <div class="urgency-strip">
+        <span class="urgency-strip-label"><span class="urgency-dot"></span> Walk In Now</span>
+        <div class="urgency-chips">
+          <a href="recover.html#walk-in" class="urgency-chip"><i data-lucide="smartphone" class="icon-xs"></i> Cracked Screen</a>
+          <a href="recover.html#walk-in" class="urgency-chip"><i data-lucide="zap-off" class="icon-xs"></i> Won't Turn On</a>
+          <a href="recover.html#walk-in" class="urgency-chip"><i data-lucide="hard-drive" class="icon-xs"></i> Data Recovery</a>
+          <a href="recover.html#walk-in" class="urgency-chip"><i data-lucide="signal-zero" class="icon-xs"></i> SIM Not Found</a>
+        </div>
+        <a href="recover.html#walk-in" class="urgency-strip-cta">No booking needed →</a>
+      </div>
+
       <div class="services-grid inline-style-ebf135c6">
         <a href="book.html" class="card service-card inline-style-678049f7" data-animate>
           <img src="./img/idx-svc-screen.jpg" alt="Screen Repair" class="inline-style-ee486f44" />
@@ -1724,6 +1737,19 @@
               <span class="price-was">Was from R269</span>
               <span class="service-price inline-style-5ae5deac price-now">From R199</span>
               <span class="price-saving">Save R70</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="recover.html#sim-swap" class="card service-card inline-style-678049f7" data-animate>
+          <div class="inline-style-17ff31e7">
+            <i data-lucide="credit-card" class="inline-style-d94f61fc"></i>
+          </div>
+          <div class="inline-style-75ab1518">
+            <h3 class="inline-style-eb0fc9a0">SIM Swap &amp; Recovery</h3>
+            <p class="inline-style-15b11a67">Lost SIM, SIM not detected, or carrier assistance — we guide you back online fast. Also covers eSIM activation on iPhone 12+.</p>
+            <div class="price-anchor-wrap">
+              <span class="price-now inline-style-5ae5deac">Walk-in · Free advisory</span>
             </div>
           </div>
         </a>
@@ -1962,16 +1988,6 @@
           </div>
         </div>
 
-        <!-- 4 · Google Review -->
-        <div class="masonry-item inline-style-9843bbec" data-animate>
-          <div class="masonry-content">
-            <div class="inline-style-51dcf0f5">★★★★★</div>
-            <p class="inline-style-a7730a7f">"My Samsung screen was shattered on a Friday. Booked online, dropped off Saturday morning and collected it same day. Incredible service — they even sent WhatsApp updates."</p>
-            <h4 class="inline-style-63bdb941">Thabo M.</h4>
-            <span class="inline-style-26e58c81">Samsung Galaxy S24 Ultra · Google Review</span>
-          </div>
-        </div>
-
         <!-- 5 · Water damage board recovery -->
         <div class="masonry-item" data-animate>
           <div class="masonry-img-wrapper">
@@ -1995,16 +2011,6 @@
             <span class="masonry-label masonry-label--after">Restored</span>
             <h4 class="inline-style-bdbd7084">iPhone 14 Pro Max — Back Glass · Danville Workshop</h4>
             <p class="inline-style-a9d576c4">The titanium frame survived the drop perfectly but the ceramic back glass shattered. We separated the panel using a precision laser heating system and fitted a factory-spec replacement. <strong>Tip:</strong> MagSafe charging and wireless accessories continue working perfectly after a quality back glass replacement — don't let any technician tell you otherwise. Cheap glue-only jobs are the ones that fail.</p>
-          </div>
-        </div>
-
-        <!-- 7 · Google Review -->
-        <div class="masonry-item inline-style-9843bbec" data-animate>
-          <div class="masonry-content">
-            <div class="inline-style-51dcf0f5">★★★★★</div>
-            <p class="inline-style-a7730a7f">"Water damage on my iPhone 15 Pro. Other shops said it was gone. MobiDokta diagnosed it properly, recovered everything, and had it back to me the next day. Don't go anywhere else."</p>
-            <h4 class="inline-style-63bdb941">Naledi K.</h4>
-            <span class="inline-style-26e58c81">iPhone 15 Pro · Google Review</span>
           </div>
         </div>
 
@@ -2313,42 +2319,6 @@
               <span class="gallery-item-tag">On the Road · Enterprise</span>
               <h4 class="gallery-item-title">MacBook — On-Site House Call</h4>
               <p class="gallery-item-desc">Corporate MacBook diagnostics and repair performed on-site at client premises. No courier delay, no device left behind.</p>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="road" onclick="openLightbox(this)">
-            <img src="./img/drs-ipad.jpg" alt="MobiDokta iPad enterprise on-site service Gauteng" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-tag">On the Road · Enterprise</span>
-              <h4 class="gallery-item-title">iPad — Enterprise On-Site Repair</h4>
-              <p class="gallery-item-desc">Fleet iPad serviced at a client site in Gauteng. Screen replacement and asset tagging done without disrupting operations.</p>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="road" onclick="openLightbox(this)">
-            <img src="./img/drs-android.jpg" alt="MobiDokta Android device on-site repair corporate Pretoria" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-tag">On the Road · Enterprise</span>
-              <h4 class="gallery-item-title">Android — Corporate Fleet Visit</h4>
-              <p class="gallery-item-desc">Multi-device Android service for a corporate client. Batch diagnosis, port cleaning, and firmware updates on location.</p>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="road" onclick="openLightbox(this)">
-            <img src="./img/drs-console.jpg" alt="MobiDokta games console repair service Pretoria" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-tag">On the Road · Console</span>
-              <h4 class="gallery-item-title">Console — Collection &amp; Repair</h4>
-              <p class="gallery-item-desc">Console collected, repaired at the studio, and couriered back. HDMI, fan, and disc drive work all covered.</p>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="road" onclick="openLightbox(this)">
-            <img src="./img/drs-dji.jpg" alt="MobiDokta DJI drone repair service Pretoria Gauteng" loading="lazy">
-            <div class="gallery-item-overlay">
-              <span class="gallery-item-tag">On the Road · Specialist</span>
-              <h4 class="gallery-item-title">DJI Drone — Specialist Repair</h4>
-              <p class="gallery-item-desc">Gimbal stabiliser and signal board repaired after a hard landing. Test flight verified before return to client.</p>
             </div>
           </div>
 
@@ -2708,8 +2678,8 @@
           <p class="inline-style-0aaeeb9c">MobiDokta (Pty) Ltd · Reg 2025/627703/07</p>
           <p class="inline-style-0aaeeb9c footer-sub-note">Software &amp; AI Engineering by <a href="#asi-imperium" class="footer-sub-link">ASi Imperium Technologies</a> · B-BBEE Level 1</p>
           <div class="inline-style-5f909099">
-            <a href="#" title="Facebook" class="inline-style-1558ef53"><i data-lucide="facebook" class="icon"></i></a>
-            <a href="#" title="Instagram" class="inline-style-1558ef53"><i data-lucide="instagram" class="icon"></i></a>
+            <a href="https://www.facebook.com/mobidokta" target="_blank" rel="noopener" title="Facebook" class="inline-style-1558ef53"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="https://www.instagram.com/mobidokta" target="_blank" rel="noopener" title="Instagram" class="inline-style-1558ef53"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
             <a href="https://wa.me/27781541350" target="_blank" rel="noopener" title="WhatsApp"
               class="inline-style-1558ef53"><i data-lucide="message-circle" class="icon"></i></a>
           </div>
@@ -2866,6 +2836,12 @@
       <a href="computers.html" class="side-nav-sub"><i data-lucide="laptop" class="icon-xs"></i> Mac &amp; Laptops</a>
     </div>
 
+    <div class="side-nav-group">
+      <span class="side-nav-group-label">Recovery &amp; SIM</span>
+      <a href="recover.html" class="side-nav-sub"><i data-lucide="shield-alert" class="icon-xs"></i> MobiShield — Stolen Phone</a>
+      <a href="recover.html#sim-swap" class="side-nav-sub"><i data-lucide="credit-card" class="icon-xs"></i> SIM Swap Assistance</a>
+      <a href="checkforyou.html#track" class="side-nav-sub"><i data-lucide="map-pin" class="icon-xs"></i> TrackForYou</a>
+    </div>
     <a href="enterprise.html"><i data-lucide="briefcase" class="icon-sm"></i> Enterprise / B2B</a>
     <a href="campus.html"><i data-lucide="graduation-cap" class="icon-sm"></i> Campus Students</a>
     <a href="community.html"><i data-lucide="book-open" class="icon-sm"></i> Blog</a>

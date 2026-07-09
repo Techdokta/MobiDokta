@@ -21,7 +21,13 @@
   transition: border-color 0.2s;
 }
 .coll-service-card:hover { border-color: var(--accent); }
+.coll-card--accent { border-left: 3px solid var(--accent); }
+.coll-card--gold { border-left: 3px solid var(--gold, #ffd60a); background: rgba(255,204,0,.04); }
+.coll-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; border-radius: 999px; padding: 3px 10px; margin-bottom: 4px; }
+.coll-badge--accent { color: var(--accent); background: rgba(0,113,227,.08); border: 1px solid rgba(0,113,227,.2); }
+.coll-badge--gold { color: var(--gold, #ffd60a); background: rgba(255,204,0,.12); border: 1px solid rgba(255,204,0,.3); }
 .coll-svc-icon { color: var(--accent); }
+.coll-svc-icon--gold { color: var(--gold, #ffd60a); }
 .coll-service-card h3 { font-size: var(--text-base); font-weight: 700; margin: 0; color: var(--text-primary); }
 .coll-service-card p { font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.7; margin: 0; }
 .coll-service-card p strong { color: var(--accent); }

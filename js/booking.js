@@ -10,6 +10,7 @@
     // ── Apple / iPhone Services ──
     { id: 'iphone-oem', icon: 'smartphone', name: 'Screen Transplant (OEM)', desc: 'Factory-quality OEM Original Grade', price: 6500, duration: 30, brand: 'Apple', dynType: 'oem' },
     { id: 'iphone-eco', icon: 'smartphone', name: 'Screen Transplant (Eco)', desc: 'Quality Aftermarket Eco Grade', price: 3700, duration: 30, brand: 'Apple', dynType: 'eco' },
+    { id: 'iphone-glass-only', icon: 'layers', name: 'Screen Glass Replacement', desc: 'Top glass only — OLED/LCD stays intact. UV-cured OCA adhesive. Saves R200–R1,500 vs full swap.', price: 399, duration: 60, brand: 'Apple' },
     { id: 'iphone-battery', icon: 'battery-full', name: 'Battery Resuscitation', desc: 'Health restored to 100%', price: 1399, duration: 30, brand: 'Apple', dynType: 'batt' },
     { id: 'iphone-port', icon: 'plug', name: 'Charging Port Repair', desc: 'Lightning or USB-C port — board-level replacement', price: 750, duration: 30, brand: 'Apple', dynType: 'port' },
     { id: 'iphone-water', icon: 'droplets', name: 'Water Damage Recovery', desc: 'Ultrasonic board clean & component recovery — Free diagnosis', price: 799, duration: 90, brand: 'Apple' },

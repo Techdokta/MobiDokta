@@ -64,6 +64,20 @@
     },
 
     {
+      id: 'glass-only', type: 'service', icon: '🔬',
+      title: 'Screen Glass Replacement',
+      tagline: 'Only the top glass — your OLED stays intact.',
+      answer: 'If your screen still displays and touch still works but the front glass is cracked, we can replace just the glass layer using UV-cured OCA adhesive — no new OLED or LCD needed. This saves you R200–R1,500 compared to a full screen swap. Takes about 60 minutes. Available on most iPhone models (7 onwards).',
+      tip: 'This only works if the display under the glass still lights up properly and touch is responsive. If the screen is black, flickering, or has LCD bleed, a full screen swap is needed instead.',
+      price: 'From R399', eta: '60 minutes',
+      keywords: ['glass','glass only','front glass','top glass','glass replacement','cracked glass','broken glass','glass repair','screen glass','oca','digitizer glass','refurbish screen','screen refurbishment','glass not screen','just the glass','glass is cracked','only glass broken','screen glass cracked','glass layer'],
+      ctas: [
+        { label: 'Book Glass Replacement', href: 'book.html', primary: true },
+        { label: 'WhatsApp to Check Eligibility', href: 'https://wa.me/27781541350?text=Hi%2C+my+screen+glass+is+cracked+but+the+display+still+works.+Can+you+replace+just+the+glass%3F', primary: false }
+      ]
+    },
+
+    {
       id: 'camera', type: 'service', icon: '📷',
       title: 'Camera Repair',
       tagline: 'Blurry, autofocus failing, or cracked lens.',

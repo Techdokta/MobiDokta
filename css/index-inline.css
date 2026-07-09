@@ -1,3 +1,66 @@
+/* ─── Urgent Walk-In Emergency Strip ─── */
+.urgency-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 20px;
+  background: rgba(255,59,48,.06);
+  border: 1px solid rgba(255,59,48,.2);
+  border-radius: var(--radius-xl);
+  padding: 14px 20px;
+  margin-bottom: var(--space-10);
+}
+.urgency-strip-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--red, #ff3b30);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.urgency-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--red, #ff3b30);
+  animation: urg-pulse 1.2s ease-in-out infinite;
+  display: inline-block;
+  flex-shrink: 0;
+}
+@keyframes urg-pulse { 0%,100%{opacity:1} 50%{opacity:.35} }
+.urgency-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  flex: 1;
+}
+.urgency-chip {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: border-color .15s;
+}
+.urgency-chip:hover { border-color: var(--red, #ff3b30); }
+.urgency-strip-cta {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--red, #ff3b30);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.urgency-strip-cta:hover { text-decoration: underline; }
+
 /* ─── Campus Drop-Off Section ─── */
 .campus-teaser-section { background: var(--bg-primary); }
 .campus-teaser-inner {
@@ -121,7 +184,7 @@
 .inline-style-ebf135c6 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 .inline-style-678049f7 { padding: 0; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-sm); background: var(--bg-card); }
 .inline-style-5ae5deac { color: var(--text-primary); font-weight: 600; }
-.inline-style-0481f7b5 { background-image: url('./img/bg-process.png'); background-size: cover; background-position: center; background-attachment: fixed; position: relative; }
+.inline-style-0481f7b5 { background-image: url('../img/bg-process.png'); background-size: cover; background-position: center; background-attachment: fixed; position: relative; }
 .inline-style-c962d74f { position: relative; z-index: 2; }
 .inline-style-0ebc9d12 { max-width: 800px; margin: 0 auto; background: var(--glass-bg); }
 .inline-style-766c0d76 { margin-bottom: var(--space-8); }
@@ -157,7 +220,7 @@
 .inline-style-b131259d { display: flex; gap: 8px; align-items: center; }
 .inline-style-d8e8fe58 { font-size: var(--text-sm); color: var(--text-primary); font-weight: 600; }
 .inline-style-a0667f03 { margin:var(--space-4) 0; font-size:var(--text-4xl); }
-.inline-style-ee486f44 { width: 100%; height: 180px; object-fit: cover; border-bottom: 1px solid var(--border); }
+.inline-style-ee486f44 { display: block; width: 100%; height: 210px; object-fit: cover; object-position: center; }
 .inline-style-75ab1518 { padding: var(--space-6); }
 .inline-style-eb0fc9a0 { margin-bottom: var(--space-2); display: flex; align-items: center; gap: 8px; }
 .inline-style-15b11a67 { color: var(--text-secondary); margin-bottom: var(--space-4); }

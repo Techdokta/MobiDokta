@@ -175,11 +175,13 @@ const MobiApp = {
     const mobileToggle = document.getElementById('theme-toggle-mobile');
     const themeIcons = document.querySelectorAll('.theme-icon, #theme-toggle .icon-sm');
 
-    // Dark is the default — light mode must be explicitly chosen
-    const savedTheme = localStorage.getItem('mobidokta-theme') || 'dark';
+    // Light is the default — dark mode must be explicitly chosen
+    const savedTheme = localStorage.getItem('mobidokta-theme') || 'light';
     if (savedTheme === 'dark') {
       root.classList.add('dark-theme');
       updateIcons('sun');
+    } else {
+      updateIcons('moon');
     }
 
     function updateIcons(iconName) {
