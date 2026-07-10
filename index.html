@@ -134,15 +134,9 @@
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-        "opens": "08:00",
-        "closes": "18:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Saturday",
-        "opens": "09:00",
-        "closes": "15:00"
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "10:00",
+        "closes": "21:00"
       }
     ],
     "potentialAction": [
@@ -179,15 +173,9 @@
         "openingHoursSpecification": [
           {
             "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-            "opens": "08:00",
-            "closes": "18:00"
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": "Saturday",
-            "opens": "09:00",
-            "closes": "15:00"
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+            "opens": "10:00",
+            "closes": "21:00"
           }
         ]
       },
@@ -206,9 +194,9 @@
         "openingHoursSpecification": [
           {
             "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-            "opens": "08:00",
-            "closes": "18:00",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+            "opens": "10:00",
+            "closes": "21:00",
             "description": "By appointment only"
           }
         ]
@@ -218,7 +206,7 @@
       "@type": "OfferCatalog",
       "name": "Device Repair Services",
       "itemListElement": [
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "iPhone Screen Repair", "description": "Same-day iPhone screen replacement using OEM-grade parts"}, "priceSpecification": {"@type": "PriceSpecification", "priceCurrency": "ZAR", "price": "from 1800"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "iPhone Screen Repair", "description": "Same-day iPhone screen replacement using OEM-grade parts"}, "priceSpecification": {"@type": "PriceSpecification", "priceCurrency": "ZAR", "price": "599"}},
         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Samsung Screen Repair", "description": "AMOLED screen transplants for all Galaxy models"}, "priceSpecification": {"@type": "PriceSpecification", "priceCurrency": "ZAR", "price": "from 650"}},
         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "MacBook Repair", "description": "Board-level diagnostics, thermal treatment and screen repair for MacBooks"}, "priceSpecification": {"@type": "PriceSpecification", "priceCurrency": "ZAR", "price": "from 400"}},
         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "iPhone Buyback", "description": "Instant cash offers for damaged or broken iPhones and MacBooks"}}
@@ -325,6 +313,85 @@
     ]
   }
   </script>
+
+  <!-- JSON-LD: WebSite (enables Sitelinks Search Box) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://www.mobidokta.co.za/#website",
+    "url": "https://www.mobidokta.co.za/",
+    "name": "MobiDokta",
+    "description": "Engineering-grade same-day device repair and gaming lounge in Danville, Pretoria. iPhone, Samsung, MacBook repairs with 6-month warranty.",
+    "inLanguage": "en-ZA",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://www.mobidokta.co.za/?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: Organization (cross-links all social + web profiles for AI) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://www.mobidokta.co.za/#organization",
+    "name": "MobiDokta",
+    "legalName": "MobiDokta (Pty) Ltd",
+    "url": "https://www.mobidokta.co.za/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.mobidokta.co.za/assets/mobidokta-logo.svg",
+      "width": 200,
+      "height": 60
+    },
+    "image": "https://www.mobidokta.co.za/img/og-cover.png",
+    "description": "B-BBEE Level 1 engineering-grade device repair shop in Danville, Pretoria. iPhone, Samsung, MacBook, console and drone repairs. Home of TRi-MobiDokta gaming lounge.",
+    "foundingDate": "2025",
+    "telephone": "+27781541350",
+    "email": "techrepair@mobidokta.co.za",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Shop 6, Madeira Isles Shopping Complex, 262 Klitsgras Street",
+      "addressLocality": "Danville",
+      "addressRegion": "Pretoria, Gauteng",
+      "postalCode": "0183",
+      "addressCountry": "ZA"
+    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+27781541350",
+        "availableLanguage": ["en", "zu", "af", "xh"],
+        "contactOption": "TollFree"
+      }
+    ],
+    "areaServed": [
+      {"@type": "City", "name": "Pretoria"},
+      {"@type": "City", "name": "Centurion"},
+      {"@type": "State", "name": "Gauteng"},
+      {"@type": "Country", "name": "South Africa"}
+    ],
+    "sameAs": [
+      "https://www.facebook.com/mobidokta",
+      "https://www.instagram.com/mobidokta",
+      "https://g.page/r/CVBsFGUXU7hzEAE/review",
+      "https://wa.me/27781541350"
+    ],
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "ASI Imperium Technologies",
+      "url": "https://www.mobidokta.co.za/enterprise.html"
+    }
+  }
+  </script>
+
   <style>
     /* ─── Global Animation & Gradients ─── */
     .headline-xl,
