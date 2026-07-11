@@ -59,6 +59,7 @@
   <link rel="stylesheet" href="./css/utilities.css">
   <link rel="stylesheet" href="./css/index-inline.css">
   <link rel="preconnect" href="https://unpkg.com" crossorigin />
+  <link rel="preload" as="image" href="./img/portfolio-iphone.png" fetchpriority="high">
   <link rel="prefetch" href="./apple.html" />
   <link rel="prefetch" href="./android.html" />
   <link rel="prefetch" href="./book.html" />
@@ -81,7 +82,7 @@
     "sameAs": [
       "https://www.facebook.com/mobidokta",
       "https://www.instagram.com/mobidokta",
-      "https://g.page/r/CVBsFGUXU7hzEAE"
+      "https://g.page/r/CVBsFGUXU7hzEAE/review"
     ],
     "priceRange": "R450–R6500",
     "currenciesAccepted": "ZAR",
@@ -234,25 +235,7 @@
       {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5"},"author":{"@type":"Person","name":"Fezeka Dlakela"},"reviewBody":"Very reliable and affordable. You get what you paid for and more."},
       {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5"},"author":{"@type":"Person","name":"Tshepang Makhubedu"},"reviewBody":"The service is amazing, I'd recommend it to anyone."},
       {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5"},"author":{"@type":"Person","name":"Rethabile Maliha"},"reviewBody":"Excellent service and very reliable. I was assisted within 3 hours. I would definitely recommend."}
-    ],
-    "sameAs": [
-      "https://g.page/r/CVBsFGUXU7hzEAE/review"
-    ],
-    "potentialAction": {
-      "@type": "ReserveAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://www.mobidokta.co.za/book.html",
-        "actionPlatform": [
-          "https://schema.org/DesktopWebPlatform",
-          "https://schema.org/MobileWebPlatform"
-        ]
-      },
-      "result": {
-        "@type": "Reservation",
-        "name": "Book a Device Repair"
-      }
-    }
+    ]
   }
   </script>
 
@@ -402,13 +385,6 @@
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: shimmerText 5s linear infinite;
-    }
-
-    @keyframes shimmerText {
-      to {
-        background-position: 200% center;
-      }
     }
 
     /* ─── Hero (Parallax & Glassmorphism) ─── */
@@ -1572,7 +1548,7 @@
 
         <a href="collections/iphone-repairs/" class="drs-card">
           <div class="drs-img drs-img--iphone">
-            <img src="img/iphone-models/iphone-16-pro.webp" alt="iPhone" class="drs-photo" loading="eager">
+            <img src="img/iphone-models/iphone-16-pro.webp" alt="iPhone" class="drs-photo" loading="eager" width="99" height="132">
           </div>
           <div class="drs-body">
             <span class="drs-name">iPhone Repairs</span>
@@ -1582,7 +1558,7 @@
 
         <a href="collections/exclusive-gadgets/" class="drs-card">
           <div class="drs-img drs-img--ipad">
-            <img src="img/drs-ipad.jpg" alt="iPad lineup" class="drs-photo" loading="lazy">
+            <img src="img/drs-ipad.jpg" alt="iPad lineup" class="drs-photo" loading="lazy" width="132" height="132">
           </div>
           <div class="drs-body">
             <span class="drs-name">iPad &amp; Apple Watch</span>
@@ -1592,7 +1568,7 @@
 
         <a href="collections/macbook-repairs/" class="drs-card">
           <div class="drs-img drs-img--mac">
-            <img src="img/drs-macbook.jpg" alt="MacBook" class="drs-photo" loading="lazy">
+            <img src="img/drs-macbook.jpg" alt="MacBook" class="drs-photo" loading="lazy" width="132" height="132">
           </div>
           <div class="drs-body">
             <span class="drs-name">MacBook Repairs</span>
@@ -1602,7 +1578,7 @@
 
         <a href="collections/android-repairs/" class="drs-card">
           <div class="drs-img drs-img--android">
-            <img src="img/drs-android.jpg" alt="Samsung Android" class="drs-photo" loading="lazy">
+            <img src="img/drs-android.jpg" alt="Samsung Android" class="drs-photo" loading="lazy" width="132" height="132">
           </div>
           <div class="drs-body">
             <span class="drs-name">Android Repairs</span>
@@ -1612,7 +1588,7 @@
 
         <a href="collections/console-repairs/" class="drs-card">
           <div class="drs-img drs-img--console">
-            <img src="img/drs-console.jpg" alt="PS5 Console" class="drs-photo" loading="lazy">
+            <img src="img/drs-console.jpg" alt="PS5 Console" class="drs-photo" loading="lazy" width="105" height="132">
           </div>
           <div class="drs-body">
             <span class="drs-name">Console Repairs</span>
@@ -1622,7 +1598,7 @@
 
         <a href="collections/dji-repairs/" class="drs-card">
           <div class="drs-img drs-img--dji">
-            <img src="img/drs-dji.jpg" alt="DJI Drone" class="drs-photo" loading="lazy">
+            <img src="img/drs-dji.jpg" alt="DJI Drone" class="drs-photo" loading="lazy" width="126" height="132">
           </div>
           <div class="drs-body">
             <span class="drs-name">DJI &amp; Drones</span>
@@ -1719,7 +1695,7 @@
           </div>
         </div>
         <div data-animate>
-          <img src="./img/idx-precision-repair.jpg" class="split-image" alt="Precision Repair">
+          <img src="./img/idx-precision-repair.jpg" class="split-image" alt="Precision Repair" width="362" height="362">
         </div>
       </div>
 
@@ -1737,7 +1713,7 @@
 
       <div class="services-grid inline-style-ebf135c6">
         <a href="book.html" class="card service-card inline-style-678049f7" data-animate>
-          <img src="./img/idx-svc-screen.jpg" alt="Screen Repair" class="inline-style-ee486f44" />
+          <img src="./img/idx-svc-screen.jpg" alt="Screen Repair" class="inline-style-ee486f44" width="298" height="372" />
           <div class="inline-style-75ab1518">
             <h3 class="inline-style-eb0fc9a0">Screen Repair</h3>
             <p class="inline-style-15b11a67">Cracked or broken screen? We'll make it look brand new.</p>
@@ -1751,7 +1727,7 @@
         </a>
 
         <a href="book.html" class="card service-card inline-style-678049f7" data-animate>
-          <img src="./img/idx-svc-battery.jpg" alt="Battery Replacement" class="inline-style-ee486f44" />
+          <img src="./img/idx-svc-battery.jpg" alt="Battery Replacement" class="inline-style-ee486f44" width="298" height="298" />
           <div class="inline-style-75ab1518">
             <h3 class="inline-style-eb0fc9a0">Battery Replacement</h3>
             <p class="inline-style-15b11a67">Fast battery drain? Get long-lasting power again.</p>
@@ -1765,7 +1741,7 @@
         </a>
 
         <a href="book.html" class="card service-card inline-style-678049f7" data-animate>
-          <img src="./img/idx-svc-camera.jpg" alt="Camera Repair" class="inline-style-ee486f44" />
+          <img src="./img/idx-svc-camera.jpg" alt="Camera Repair" class="inline-style-ee486f44" width="298" height="298" />
           <div class="inline-style-75ab1518">
             <h3 class="inline-style-eb0fc9a0">Camera Repair</h3>
             <p class="inline-style-15b11a67">Blurry photos or faulty camera? We've got you covered.</p>
@@ -1779,7 +1755,7 @@
         </a>
 
         <a href="https://wa.me/27781541350?text=Hi%2C+my+phone+has+water+damage+and+I+need+urgent+help" target="_blank" rel="noopener" class="card service-card inline-style-678049f7" data-animate>
-          <img src="./img/idx-svc-water.jpg" alt="Water Damage Repair" class="inline-style-ee486f44" />
+          <img src="./img/idx-svc-water.jpg" alt="Water Damage Repair" class="inline-style-ee486f44" width="298" height="372" />
           <div class="inline-style-75ab1518">
             <h3 class="inline-style-eb0fc9a0">Water Damage</h3>
             <p class="inline-style-15b11a67">Water accident? We'll recover and restore it.</p>
