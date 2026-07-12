@@ -153,7 +153,7 @@
       title: 'Samsung Repairs',
       tagline: 'Galaxy screens, batteries, ports — same day.',
       answer: 'Screen replacements, battery swaps, charging ports, and board-level repair for Samsung Galaxy S-series, A-series, Note, and Fold devices. OEM-grade parts.',
-      price: 'Screens from R1,400', eta: 'Same day',
+      price: 'Screens from R349', eta: 'Same day',
       keywords: ['samsung','galaxy','s24','s23','s22','s21','s20','note','fold','flip','a54','a34','a14','android','samsung repair','samsung screen'],
       ctas: [
         { label: 'Book Samsung Repair', href: 'book.html', primary: true },

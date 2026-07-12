@@ -73,3 +73,36 @@
 .campus-rep-inner { max-width: 680px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; gap: var(--space-4); }
 .campus-rep-inner h2 { margin: var(--space-3) 0; }
 .campus-rep-inner p { color: var(--text-secondary); line-height: 1.8; }
+
+/* ── Campus SEO coverage section ── */
+.campus-seo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: var(--space-5);
+  margin-bottom: var(--space-8);
+}
+.campus-seo-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+}
+.campus-seo-card h3 {
+  font-size: var(--text-base);
+  margin-bottom: var(--space-3);
+  color: var(--text-primary);
+}
+.campus-seo-card p {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+.campus-seo-card p a { color: var(--accent); font-weight: 600; text-decoration: none; }
+.campus-seo-love {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-tertiary);
+  line-height: 1.9;
+  max-width: 900px;
+  margin: 0 auto;
+}
