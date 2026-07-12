@@ -157,8 +157,11 @@ const MobiStore = {
     const booked = this.getBookings()
       .filter(b => b.date === dateStr && b.status !== 'cancelled')
       .map(b => b.time);
-    const allSlots = ['09:00','09:30','10:00','10:30','11:00','11:30','12:00','13:00','13:30','14:00','14:30','15:00','15:30','16:00','16:30'];
-    return allSlots.map(t => ({ time: t, available: !booked.includes(t) }));
+    const allSlots = ['09:00','09:30','10:00','10:30','11:00','11:30','12:00','13:00','13:30','14:00','14:30','15:00','15:30','16:00','16:30','17:00','17:30','18:00','18:30','19:00','19:30','20:00'];
+    // Sunday hours are 12:00–21:00 — no morning slots
+    const isSunday = new Date(dateStr + 'T00:00:00').getDay() === 0;
+    const daySlots = isSunday ? allSlots.filter(t => t >= '12:00') : allSlots;
+    return daySlots.map(t => ({ time: t, available: !booked.includes(t) }));
   },
 
   /* ─── Seed Demo Data ─── */

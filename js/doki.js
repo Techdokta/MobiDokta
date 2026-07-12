@@ -146,7 +146,7 @@
       ]
     },
     hours: {
-      msg: 'Open 7 days, 09:00–19:00 including public holidays. Walk-ins welcome — no appointment needed for basic repairs.',
+      msg: 'Open 7 days — Mon–Sat 09:00–21:00, Sun 12:00–21:00, including public holidays. Walk-ins welcome — no appointment needed for basic repairs.',
       chips: [
         { label: 'Get directions', href: 'https://maps.google.com/?q=Shop+6+Madeira+Isles+262+Klitsgras+St+Danville+Pretoria', external: true },
         { label: 'Book a slot', href: 'book.html' }
@@ -161,7 +161,7 @@
     "Did you know your iPhone slows down when battery health drops below 80%?",
     "Selling your phone? A refurb can add R1,500–R4,000 to the price.",
     "Cracked screen? Quick answer above or WhatsApp us for an instant price.",
-    "We're open 7 days, 09:00–19:00 — including public holidays.",
+    "We're open 7 days — Mon–Sat 09:00–21:00, Sun 12:00–21:00 — including public holidays.",
     "Free diagnosis on all board-level and data recovery jobs — no fix, no charge."
   ];
   var hintIdx = 0;

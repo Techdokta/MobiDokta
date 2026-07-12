@@ -634,9 +634,8 @@
       const dateObj = new Date(calYear, calMonth, d);
       const dateStr = dateObj.toISOString().split('T')[0];
       const isPast = dateObj < new Date(today.getFullYear(), today.getMonth(), today.getDate());
-      const isSunday = dateObj.getDay() === 0;
 
-      if (isPast || isSunday) {
+      if (isPast) {
         dayEl.classList.add('disabled');
       } else {
         dayEl.classList.add('has-slots');

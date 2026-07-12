@@ -302,8 +302,8 @@
     {
       id: 'hours', type: 'info', icon: '🕐',
       title: 'Opening Hours',
-      tagline: 'Mon–Sat 10:00–21:00',
-      answer: 'Monday to Saturday, 10:00–21:00. Walk-ins welcome — no appointment needed for basic repairs. Book a slot online to skip the queue.',
+      tagline: 'Mon–Sat 09:00–21:00 · Sun 12:00–21:00',
+      answer: 'Open 7 days a week. Monday to Saturday 09:00–21:00, Sunday 12:00–21:00. Walk-ins welcome — no appointment needed for basic repairs. Book a slot online to skip the queue.',
       keywords: ['hours','open','time','close','when','weekend','saturday','sunday','days','working hours','available','what time','public holiday'],
       ctas: [{ label: 'Book a Time Slot', href: 'book.html', primary: true }]
     },
