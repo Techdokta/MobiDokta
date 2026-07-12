@@ -541,3 +541,40 @@
 /* ── Techie Modal ── */
 .modal-intro     { color: var(--text-secondary); font-size: var(--text-sm); margin-bottom: var(--space-6); }
 .bk-courier-hdr { margin: var(--space-6) 0 var(--space-3); font-size: var(--text-sm); color: var(--text-primary); }
+
+/* ── WhatsApp Fast Lane ── */
+.bk-fastlane {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  background: rgba(37, 211, 102, .07);
+  border: 1px solid rgba(37, 211, 102, .3);
+  border-radius: var(--radius-xl);
+  padding: 12px 18px;
+  margin: 0 auto var(--space-8);
+  max-width: 760px;
+  text-decoration: none;
+  transition: border-color .15s, background .15s;
+}
+.bk-fastlane:hover { border-color: rgba(37, 211, 102, .6); background: rgba(37, 211, 102, .12); }
+.bk-fastlane-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #25d366; flex-shrink: 0;
+  animation: pulse 2s infinite;
+}
+.bk-fastlane-txt { flex: 1; min-width: 200px; font-size: var(--text-sm); color: var(--text-secondary); }
+.bk-fastlane-txt strong { color: var(--text-primary); }
+.bk-fastlane-cta {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: var(--text-sm); font-weight: 700; color: #25d366;
+  white-space: nowrap;
+}
+
+/* ── No-deposit reassurance ── */
+.bk-nodeposit-note {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: var(--text-sm); font-weight: 600; color: var(--green);
+}
+#no-deposit-note { display: flex; align-items: center; gap: 6px; color: var(--green); }
+.bk-pay-logo--payflex { height: 18px; }

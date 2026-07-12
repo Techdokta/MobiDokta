@@ -6,6 +6,12 @@
   let currentStep = 1;
   let booking = { brand: null, model: null, cart: [], totalPrice: 0, totalDuration: 0, date: null, time: null, location: 'Danville Studio (Madeira Isles, Pretoria)', address: '' };
 
+  // Deposit applies only where we carry transit/travel cost — in-store, tele and meetup bookings are free to book
+  const DEPOSIT_LOCATIONS = ['House Call', 'Office Call', 'Residence Call', 'Courier Option', 'Courier Collection', 'On-Site Call-Out'];
+  function requiresDeposit() {
+    return DEPOSIT_LOCATIONS.includes(booking.location) && booking.totalPrice > 0;
+  }
+
   const baseServices = [
     // ── Apple / iPhone Services ──
     { id: 'iphone-oem', icon: 'smartphone', name: 'Screen Transplant (OEM)', desc: 'Factory-quality OEM Original Grade', price: 6500, duration: 30, brand: 'Apple', dynType: 'oem' },
@@ -736,8 +742,18 @@
     document.getElementById('sum-location').textContent = fullLocation;
     document.getElementById('sum-cost').textContent = booking.totalPrice === 0 ? 'FREE' : MobiApp.formatRand(booking.totalPrice);
     
+    // Deposit UI only for courier & call-out bookings; everyone else sees "no deposit"
+    const deposit = requiresDeposit();
     const sumDepositEl = document.getElementById('sum-deposit');
-    if (sumDepositEl) sumDepositEl.textContent = booking.totalPrice === 0 ? 'R0' : MobiApp.formatRand(booking.depositAmount);
+    if (sumDepositEl) sumDepositEl.textContent = deposit ? MobiApp.formatRand(booking.depositAmount) : 'R0';
+    const depositRow = document.getElementById('sum-deposit-row');
+    if (depositRow) depositRow.style.display = deposit ? '' : 'none';
+    const noDepositRow = document.getElementById('sum-nodeposit-row');
+    if (noDepositRow) noDepositRow.style.display = deposit ? 'none' : '';
+    const depositInfo = document.getElementById('deposit-info');
+    if (depositInfo) depositInfo.style.display = deposit ? '' : 'none';
+    const noDepositNote = document.getElementById('no-deposit-note');
+    if (noDepositNote) noDepositNote.style.display = deposit ? 'none' : '';
   }
 
   // Form validation for confirm
@@ -748,9 +764,11 @@
   const confirmBtn = document.getElementById('confirm-booking-btn');
 
   function validateConfirmForm() {
+    // Email is optional — invoice goes via WhatsApp when blank; if filled it must be valid
+    const emailOk = emailInput && (emailInput.value.trim() === '' || MobiApp.isValidEmail(emailInput.value));
     const valid = nameInput && nameInput.value.trim().length >= 2
       && phoneInput && MobiApp.isValidPhone(phoneInput.value)
-      && emailInput && MobiApp.isValidEmail(emailInput.value)
+      && emailOk
       && consentCheck && consentCheck.checked;
     if (confirmBtn) confirmBtn.disabled = !valid;
   }
@@ -863,6 +881,15 @@
     set('success-total', fmt(b.totalPrice));
     set('success-deposit', fmt(b.depositAmount));
     set('success-eft-ref', saved.id);
+
+    // Deposit + EFT instructions only apply to courier & call-out bookings
+    const deposit = requiresDeposit();
+    const successDepositRow = document.getElementById('success-deposit-row');
+    if (successDepositRow) successDepositRow.style.display = deposit ? '' : 'none';
+    const successNoDepositRow = document.getElementById('success-nodeposit-row');
+    if (successNoDepositRow) successNoDepositRow.style.display = deposit ? 'none' : '';
+    const successEftBox = document.getElementById('success-eft-box');
+    if (successEftBox) successEftBox.style.display = deposit ? '' : 'none';
 
     const successStep = document.getElementById('step-success');
     if (successStep) {

@@ -92,6 +92,13 @@
         <p>Follow the steps below to book your device in for treatment.</p>
       </div>
 
+      <!-- WhatsApp fast lane — zero-friction path for customers who won't fill forms -->
+      <a href="https://wa.me/27781541350?text=Hi%20MobiDokta%2C%20I%20need%20a%20repair.%20My%20device%3A%20...%20The%20problem%3A%20..." target="_blank" rel="noopener" class="bk-fastlane">
+        <span class="bk-fastlane-dot"></span>
+        <span class="bk-fastlane-txt"><strong>In a hurry?</strong> Skip the form — WhatsApp us your device &amp; issue and get an instant quote. No booking needed for walk-ins.</span>
+        <span class="bk-fastlane-cta"><i data-lucide="message-circle" class="icon-xs"></i> WhatsApp now</span>
+      </a>
+
       <!-- Progress Steps -->
       <div class="progress-bar">
         <div class="progress-step active" data-step="1"><span class="step-num">1</span><span class="step-label">Device</span></div>
@@ -199,11 +206,7 @@
               <span>Total</span>
               <span id="cart-total-price">R0</span>
             </div>
-            <div class="cart-total cart-deposit">
-              <span class="fs-sm-c-tertiary">40% Deposit to Secure Booking</span>
-              <span id="cart-deposit-price" class="icon-accent-16">R0</span>
-            </div>
-            <p class="bk-cart-note">*Prices are estimates based on standard parts.</p>
+            <p class="bk-cart-note">*Prices are estimates based on standard parts. No deposit needed for in-store bookings.</p>
           </div>
         </div>
 
@@ -262,7 +265,7 @@
 
       <!-- Step 4: Confirm & Pay -->
       <div class="booking-step" id="step-4">
-        <h2>Confirm & Pay</h2>
+        <h2>Confirm Your Booking</h2>
         <div class="confirm-container">
           <div class="summary-card glass">
             <h3>Booking Summary</h3>
@@ -275,9 +278,12 @@
             <div class="summary-row"><span>Time</span><span id="sum-time">—</span></div>
             <div class="summary-row"><span>Location</span><span id="sum-location">—</span></div>
             <div class="summary-row total"><span>Total Estimated Cost</span><span id="sum-cost" class="text-glow">—</span></div>
-            <div class="summary-row summary-deposit">
-              <span class="fs-sm-c-tertiary">40% Deposit Required to Secure Booking</span>
+            <div class="summary-row summary-deposit" id="sum-deposit-row">
+              <span class="fs-sm-c-tertiary" id="sum-deposit-lbl">40% Deposit (courier &amp; call-out only)</span>
               <span id="sum-deposit" class="icon-accent-16">—</span>
+            </div>
+            <div class="summary-row summary-deposit" id="sum-nodeposit-row">
+              <span class="bk-nodeposit-note"><i data-lucide="badge-check" class="icon-xs"></i> No deposit needed — pay in store after diagnosis</span>
             </div>
           </div>
           <div class="details-form glass">
@@ -309,7 +315,7 @@
               <input type="tel" class="form-input" id="cust-phone" placeholder="e.g. 071 234 5678">
             </div>
             <div class="form-group">
-              <label class="form-label">Email Address</label>
+              <label class="form-label">Email Address <span class="fs-13-c-tertiary">(Optional — invoice sent via WhatsApp if blank)</span></label>
               <input type="email" class="form-input" id="cust-email" placeholder="e.g. thabo@gmail.com">
             </div>
             <div class="form-group consent-row">
@@ -320,30 +326,33 @@
             <!-- Payment & Invoice Selection -->
             <div class="bk-pay-section">
               <h4 class="bk-pay-hdr">Confirm & Request Invoice</h4>
-              
-              <!-- Manual EFT Option -->
+
+              <!-- Deposit details — shown only for courier & call-out bookings -->
               <div id="eft-panel">
-                <h4><i data-lucide="landmark" class="icon" class="c-green"></i> Manual EFT / Bank Transfer</h4>
-                <div class="bk-bank-card">
-                  <table class="field-full">
-                    <tr><td class="field-row-val-w">Bank</td><td class="field-row-key">Capitec</td></tr>
-                    <tr><td class="field-row-val">Account Name</td><td class="field-row-key">Mobidokta</td></tr>
-                    <tr><td class="field-row-val">Account Number</td><td class="field-row-key">2523032305</td></tr>
-                    <tr><td class="field-row-val">SWIFT/BIC</td><td class="field-row-key">CABLZAJJ</td></tr>
-                    <tr><td class="field-row-val">Reference</td><td class="bk-eft-ref" id="eft-ref">Your phone number</td></tr>
-                  </table>
+                <div id="deposit-info">
+                  <h4><i data-lucide="landmark" class="icon" class="c-green"></i> Manual EFT / Bank Transfer</h4>
+                  <div class="bk-bank-card">
+                    <table class="field-full">
+                      <tr><td class="field-row-val-w">Bank</td><td class="field-row-key">Capitec</td></tr>
+                      <tr><td class="field-row-val">Account Name</td><td class="field-row-key">Mobidokta</td></tr>
+                      <tr><td class="field-row-val">Account Number</td><td class="field-row-key">2523032305</td></tr>
+                      <tr><td class="field-row-val">SWIFT/BIC</td><td class="field-row-key">CABLZAJJ</td></tr>
+                      <tr><td class="field-row-val">Reference</td><td class="bk-eft-ref" id="eft-ref">Your phone number</td></tr>
+                    </table>
+                  </div>
+                  <p class="bk-eft-note">Courier &amp; call-out bookings carry a 40% deposit to cover transit and travel. Once you submit, we will send your official invoice — pay securely via EFT using the details above.</p>
                 </div>
+                <p class="bk-eft-note" id="no-deposit-note"><i data-lucide="badge-check" class="icon-xs"></i> Nothing to pay now. Submit your booking, get instant WhatsApp confirmation, and pay in store only after your free diagnosis.</p>
                 <div class="bk-pay-logos">
                   <span class="bk-pay-logos-lbl">We accept</span>
                   <img src="img/Capitec Pay.webp"  alt="Capitec Pay"         class="bk-pay-logo">
                   <img src="img/Mastercard.png"    alt="Mastercard"           class="bk-pay-logo">
                   <img src="img/Amex.png"          alt="American Express"     class="bk-pay-logo">
                   <img src="img/Apple Pay.png"     alt="Apple Pay"            class="bk-pay-logo bk-pay-logo--tall">
-                  <img src="img/PayFlex.png"       alt="PayFlex — Pay later"  class="bk-pay-logo" style="height:18px;">
+                  <img src="img/PayFlex.png"       alt="PayFlex — Pay later"  class="bk-pay-logo bk-pay-logo--payflex">
                 </div>
-                <p class="bk-eft-note">Once you submit, we will generate and email your official invoice. You can pay the 40% deposit securely via Manual EFT using the details above.</p>
                 <button class="btn btn-secondary btn-block" id="confirm-booking-btn" disabled>
-                  <i data-lucide="file-text" class="icon-sm"></i> Submit Booking & Request Invoice
+                  <i data-lucide="check-circle-2" class="icon-sm"></i> Confirm Booking
                 </button>
               </div>
             </div>
@@ -358,7 +367,7 @@
             <i data-lucide="check-circle-2" class="icon-w40-green"></i>
           </div>
           <h2 class="mb-3">Booking Confirmed</h2>
-          <p class="success-msg">Your repair is booked. We will email your invoice shortly and message you on WhatsApp to confirm collection or drop-off.</p>
+          <p class="success-msg">Your repair is booked. We'll message you on WhatsApp to confirm and send your invoice right away.</p>
 
           <div class="success-ref-box">
             <div class="success-ref-lbl">Booking Reference</div>
@@ -371,10 +380,11 @@
             <div class="summary-row"><span>Date &amp; Time</span><span id="success-when">&mdash;</span></div>
             <div class="summary-row"><span>Location</span><span id="success-location" class="text-right-60">&mdash;</span></div>
             <div class="summary-row total"><span>Total Estimated</span><span id="success-total">&mdash;</span></div>
-            <div class="summary-row no-border-b"><span>40% Deposit Due</span><span id="success-deposit" class="success-deposit">&mdash;</span></div>
+            <div class="summary-row no-border-b" id="success-deposit-row"><span>40% Deposit Due</span><span id="success-deposit" class="success-deposit">&mdash;</span></div>
+            <div class="summary-row no-border-b" id="success-nodeposit-row"><span class="bk-nodeposit-note"><i data-lucide="badge-check" class="icon-xs"></i> No deposit — pay in store after diagnosis</span></div>
           </div>
 
-          <div class="success-eft-box">
+          <div class="success-eft-box" id="success-eft-box">
             <h4 class="success-eft-hdr"><i data-lucide="landmark" class="icon-sm" class="c-green"></i> Pay your deposit via Manual EFT</h4>
             <table class="field-full">
               <tr><td class="field-row-val-w">Bank</td><td class="field-row-key">Capitec</td></tr>
