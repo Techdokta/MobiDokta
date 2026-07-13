@@ -794,9 +794,11 @@
       <button type="button" class="ac-filter" data-cat="iphone">iPhones</button>
       <button type="button" class="ac-filter" data-cat="watch">Apple Watch</button>
       <button type="button" class="ac-filter" data-cat="macbook">MacBook</button>
+      <button type="button" class="ac-filter" data-cat="laptop">Laptops</button>
       <button type="button" class="ac-filter" data-cat="samsung">Samsung Galaxy</button>
       <button type="button" class="ac-filter" data-cat="tablet">Samsung Tablets</button>
       <button type="button" class="ac-filter ac-filter-gaming" data-cat="gaming">🎮 Gaming</button>
+      <button type="button" class="ac-filter" data-cat="camera">GoPro &amp; Cameras</button>
     </div>
   </div>
 
@@ -904,7 +906,7 @@
   <script src="./js/shop.js"></script>
 
   <script>
-    const COND_COLOR = { 'Brand New':'#34c759', 'Sealed':'#007aff', 'Pre-owned':'#8e8e93', 'Special':'#ff9500' };
+    const COND_COLOR = { 'Brand New':'#34c759', 'Sealed':'#007aff', 'Pre-owned':'#8e8e93', 'Special':'#ff9500', 'Like New':'#30d158', 'Excellent':'#64d2ff', 'Mint':'#bf5af2' };
 
     const AC_DEVICES = [
       // ── Apple iPhone ──
@@ -1019,15 +1021,12 @@
       { id:'i109', cat:'iphone', name:'iPhone 17 Pro Max',  storage:'1TB',    cond:'Brand New', price:40700 },
 
       // ── Apple Watch ──
-      { id:'w001', cat:'watch', name:'Watch SE 2 (GPS+Cell)',     storage:'', cond:'Pre-owned', price:5700 },
-      { id:'w002', cat:'watch', name:'Watch Series 5 (GPS+Cell)', storage:'', cond:'Pre-owned', price:5100 },
-      { id:'w003', cat:'watch', name:'Watch Series 6 (GPS+Cell)', storage:'', cond:'Pre-owned', price:5450 },
-      { id:'w004', cat:'watch', name:'Watch Series 7 (GPS+Cell)', storage:'', cond:'Pre-owned', price:6350 },
-      { id:'w005', cat:'watch', name:'Watch Series 8 (GPS+Cell)', storage:'', cond:'Pre-owned', price:7000 },
-      { id:'w006', cat:'watch', name:'Watch Series 9 (GPS+Cell)', storage:'', cond:'Pre-owned', price:8250 },
+      { id:'w001', cat:'watch', name:'Watch Series 7 — Nike Edition (GPS+Cell)', storage:'45mm · Silver Alu · White Nike Sport Band · 100% battery · original charger', cond:'Like New', price:5999 },
 
-      // ── MacBook ──
-      { id:'m001', cat:'macbook', name:'MacBook Air 2017 (i5)', storage:'8+256GB', cond:'Pre-owned', price:6900 },
+      // ── MacBook & Laptops ──
+      { id:'m001', cat:'macbook', name:'MacBook Air 15" — M3', storage:'16GB · 256GB SSD · Silver · Liquid Retina · Touch ID · 98% battery', cond:'Excellent', price:14500 },
+      { id:'m002', cat:'macbook', name:'MacBook Air 15" — M3', storage:'16GB · 256GB SSD · Silver · Liquid Retina · Touch ID · 98% battery', cond:'Like New', price:16000 },
+      { id:'m003', cat:'laptop',  name:'HP Pavilion 13 (13-bb1xxx)', storage:'i7-1195G7 · 16GB · 512GB NVMe · 13.3" 4K UHD · Iris Xe · B&O · Fingerprint · Backlit KB', cond:'Excellent', price:10999 },
 
       // ── Samsung Galaxy ──
       { id:'s001', cat:'samsung', name:'Galaxy A05',        storage:'64GB',  cond:'Pre-owned', price:1800  },
@@ -1053,9 +1052,12 @@
       { id:'t002', cat:'tablet', name:'Galaxy Tab A9+', storage:'', cond:'Pre-owned', price:4400 },
 
       // ── Gaming ──
-      { id:'gm001', cat:'gaming', name:'PS5 Console — Disc Edition',           storage:'Brand New · Sealed',   cond:'Sealed',    price:12999 },
-      { id:'gm002', cat:'gaming', name:'PS5 Console — Digital Edition',         storage:'Brand New · Sealed',   cond:'Sealed',    price:11499 },
-      { id:'gm003', cat:'gaming', name:'PS5 Console — Disc Edition',            storage:'Pre-owned · Tested',   cond:'Pre-owned', price:8999  },
+      { id:'gm001', cat:'gaming', name:'PS5 Slim — Disc Edition',               storage:'1TB · 1 controller · HDMI + power cables', cond:'Mint',      price:10500 },
+      { id:'gm002', cat:'gaming', name:'PS4 Slim',                              storage:'1TB · 2 controllers',                      cond:'Pre-owned', price:5499  },
+      { id:'gm003', cat:'gaming', name:'PS3 Super Slim — Garnet Red',           storage:'500GB · rare collector piece · 1x Garnet Red controller · HDMI, power + charging cables', cond:'Excellent', price:2999 },
+
+      // ── Cameras & GoPro ──
+      { id:'cam001', cat:'camera', name:'GoPro Hero 12 Black — Accessory Bundle', storage:'27MP · 5.3K60 · HyperSmooth 6.0 · 2x batteries · Handler grip · Head Strap 2.0 · case', cond:'Pre-owned', price:8500 },
       { id:'gm004', cat:'gaming', name:'DualSense Controller — White',          storage:'Brand New',            cond:'Brand New', price:1799  },
       { id:'gm005', cat:'gaming', name:'DualSense Controller — Midnight Black', storage:'Brand New',            cond:'Brand New', price:1799  },
       { id:'gm006', cat:'gaming', name:'DualSense Controller — Cosmic Red',     storage:'Brand New',            cond:'Brand New', price:1899  },
@@ -1069,12 +1071,14 @@
     ];
 
     const CAT_META = {
-      iphone:  { label:'Apple iPhone',    icon:'smartphone' },
-      watch:   { label:'Apple Watch',     icon:'watch' },
-      macbook: { label:'Apple MacBook',   icon:'laptop' },
-      samsung: { label:'Samsung Galaxy',  icon:'cpu' },
-      tablet:  { label:'Samsung Tablets', icon:'tablet' },
-      gaming:  { label:'Gaming — PS5',    icon:'gamepad-2' },
+      iphone:  { label:'Apple iPhone',        icon:'smartphone' },
+      watch:   { label:'Apple Watch',         icon:'watch' },
+      macbook: { label:'Apple MacBook',       icon:'laptop' },
+      laptop:  { label:'Laptops — Windows',   icon:'laptop-2' },
+      samsung: { label:'Samsung Galaxy',      icon:'cpu' },
+      tablet:  { label:'Samsung Tablets',     icon:'tablet' },
+      gaming:  { label:'Gaming — PlayStation', icon:'gamepad-2' },
+      camera:  { label:'Cameras & GoPro',     icon:'camera' },
     };
 
     const IPHONE_IMG = {
@@ -1128,7 +1132,7 @@
       return 'https://wa.me/27781541350?text=' + encodeURIComponent(txt);
     }
 
-    const CAT_ICON = { iphone:'smartphone', watch:'watch', macbook:'laptop', samsung:'cpu', tablet:'tablet' };
+    const CAT_ICON = { iphone:'smartphone', watch:'watch', macbook:'laptop', laptop:'laptop-2', samsung:'cpu', tablet:'tablet', gaming:'gamepad-2', camera:'camera' };
     function renderCard(d) {
       var img = d.cat === 'iphone' ? getDeviceImg(d.name) : null;
       var imgArea = img
@@ -1157,7 +1161,7 @@
         var items = AC_DEVICES.filter(function(d){ return d.cat === cat; });
         el.innerHTML = '<div class="ac-grid">' + items.map(renderCard).join('') + '</div>';
       } else {
-        var order = ['iphone','watch','macbook','samsung','tablet','gaming'];
+        var order = ['iphone','watch','macbook','laptop','samsung','tablet','gaming','camera'];
         el.innerHTML = order.map(function(c) {
           var items = AC_DEVICES.filter(function(d){ return d.cat === c; });
           if (!items.length) return '';
