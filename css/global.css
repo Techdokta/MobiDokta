@@ -618,18 +618,18 @@ a.nav-ac:hover { opacity: 0.8; }
   flex-direction: column;
   gap: 5px;
   padding: 8px 10px;
-  color: rgba(255,255,255,0.9);
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.18);
+  color: var(--text-primary);
+  background: rgba(128,128,128,0.12);
+  border: 1px solid var(--border);
   border-radius: var(--radius-md);
   cursor: pointer;
   transition: background 0.2s;
 }
-.nav-toggle:hover { background: rgba(255,255,255,0.18); }
+.nav-toggle:hover { background: rgba(128,128,128,0.22); }
 .nav-toggle span {
   width: 20px;
   height: 2px;
-  background: rgba(255,255,255,0.9);
+  background: currentColor;
   border-radius: 2px;
   transition: all var(--duration-base);
 }
@@ -640,7 +640,7 @@ a.nav-ac:hover { opacity: 0.8; }
   justify-content: center;
   width: 36px;
   height: 36px;
-  background: rgba(255,255,255,0.08);
+  background: rgba(128,128,128,0.1);
   border: 1px solid var(--border);
   border-radius: var(--radius-full);
   color: var(--text-primary);
@@ -648,7 +648,7 @@ a.nav-ac:hover { opacity: 0.8; }
   transition: background 0.2s;
   flex-shrink: 0;
 }
-.nav-close:hover { background: rgba(255,255,255,0.15); }
+.nav-close:hover { background: rgba(128,128,128,0.2); }
 /* Quick-book icon button — visible on mobile next to hamburger */
 .nav-book-mobile {
   display: none;
@@ -1431,15 +1431,15 @@ a.nav-ac:hover { opacity: 0.8; }
   justify-content: center;
   width: 36px;
   height: 36px;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(128,128,128,0.12);
+  border: 1px solid var(--border);
   border-radius: var(--radius-full);
-  color: rgba(255,255,255,0.9);
+  color: var(--text-primary);
   cursor: pointer;
   transition: background 0.2s;
   flex-shrink: 0;
 }
-.cart-icon-btn:hover { background: rgba(255,255,255,0.2); }
+.cart-icon-btn:hover { background: rgba(128,128,128,0.22); }
 
 .cart-badge {
   position: absolute;
