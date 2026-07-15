@@ -38,6 +38,15 @@ const PRODUCTS = [
   { id:'ch-003', cat:'chargers', name:'Charger Head 20W USB-C PD — Fast', sub:'Rapid charge — phone in under 30 min',  price:150,  priceS:120,  icon:'plug-zap', color:'linear-gradient(135deg,#3a1a00,#7c3a00)', badge:'Popular', img:'img/Charger 20W (Apple Compatible).png' },
   { id:'ch-004', cat:'chargers', name:'Charger Head 30W USB-C PD',        sub:'Super-fast for phones & tablets',       price:250,  priceS:210,  icon:'plug-zap', color:'linear-gradient(135deg,#3a1a00,#7c3a00)', badge:'',        img:'img/Apple 30W adapter (Android Compatible).jpeg' },
 
+  /* ══ LAPTOP CHARGERS — boxed, 2-year warranty ══ */
+  { id:'ch-005', cat:'chargers', name:'Laptop Charger 65W — Dell',        sub:'Boxed · 65W fast charge · 12–20V 2.0–3.25A · 2-year warranty', price:399, priceS:340, icon:'plug-zap', color:'linear-gradient(135deg,#3a1a00,#7c3a00)', badge:'New' },
+  { id:'ch-006', cat:'chargers', name:'Laptop Charger 65W — Lenovo',      sub:'Boxed · 65W fast charge · 12–20V 2.0–3.25A · 2-year warranty', price:399, priceS:340, icon:'plug-zap', color:'linear-gradient(135deg,#3a1a00,#7c3a00)', badge:'' },
+  { id:'ch-007', cat:'chargers', name:'Laptop Charger 65W — HP (Yellow Tip)', sub:'Boxed · 65W fast charge · 12–20V 2.0–3.25A · 2-year warranty', price:399, priceS:340, icon:'plug-zap', color:'linear-gradient(135deg,#3a1a00,#7c3a00)', badge:'Popular' },
+  { id:'ch-008', cat:'chargers', name:'Laptop Charger 65W — Acer',        sub:'Boxed · 65W fast charge · 12–20V 2.0–3.25A · 2-year warranty', price:399, priceS:340, icon:'plug-zap', color:'linear-gradient(135deg,#3a1a00,#7c3a00)', badge:'' },
+  { id:'ch-009', cat:'chargers', name:'MacBook Charger — USB-C 61/67W',   sub:'MacBook Air & Pro 2016+ · boxed · 2-year warranty',           price:799, priceS:680, icon:'plug-zap', color:'linear-gradient(135deg,#3a1a00,#7c3a00)', badge:'' },
+  { id:'ch-010', cat:'chargers', name:'MacBook Charger — MagSafe 2',      sub:'MacBook Air & Pro 2012–2017 · boxed · 2-year warranty',       price:799, priceS:680, icon:'plug-zap', color:'linear-gradient(135deg,#3a1a00,#7c3a00)', badge:'' },
+  { id:'ch-011', cat:'chargers', name:'MacBook Charger — MagSafe 1',      sub:'MacBook & Pro pre-2012 · boxed · 2-year warranty',            price:799, priceS:680, icon:'plug-zap', color:'linear-gradient(135deg,#3a1a00,#7c3a00)', badge:'' },
+
   /* ══ POWER & AUDIO ══ */
   { id:'pa-001', cat:'power', name:'Power Bank 10,000mAh',               sub:'Compact — charges phone 2×',             price:150,  priceS:120,  icon:'battery-charging', color:'linear-gradient(135deg,#0d3320,#1a5c38)', badge:'' },
   { id:'pa-002', cat:'power', name:'Power Bank 20,000mAh',               sub:'High capacity — charges laptop too',     price:250,  priceS:210,  icon:'battery-full',     color:'linear-gradient(135deg,#0d3320,#1a5c38)', badge:'Popular' },
