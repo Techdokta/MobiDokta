@@ -916,9 +916,9 @@
       if (isCourier) {
         const courierName = opt.dataset.courier;
         svc.id = 'tech-at-door-courier-' + courierName.replace(/\s+/g, '-').toLowerCase();
-        svc.name = 'Courier: ' + courierName;
-        svc.desc = 'Arranging secure transit. Pricing confirmed upon dispatch.';
-        svc.price = 0; // TBD
+        svc.name = 'Courier: Insured Door-to-Door Collection';
+        svc.desc = 'We book the courier and WhatsApp you tracking. Fully insured. Return courier free on repairs over R1,500.';
+        svc.price = parseInt(opt.dataset.price) || 199;
         
         const clinicSelect = document.getElementById('clinic-select');
         if (clinicSelect) {

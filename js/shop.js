@@ -30,7 +30,6 @@ const PRODUCTS = [
   { id:'cb-006', cat:'cables', name:'USB-C to USB-C 60W Cable',         sub:'Both ends USB-C, fast charge',            price:199,  priceS:160,  icon:'zap',    color:'linear-gradient(135deg,#5c2800,#a04a00)', badge:'' },
   { id:'cb-007', cat:'cables', name:'Micro-USB Cable',                  sub:'Standard charge & data, universal',       price:79,   priceS:60,   icon:'cable',  color:'linear-gradient(135deg,#5c2800,#a04a00)', badge:'' },
   { id:'cb-008', cat:'cables', name:'3-in-1 Charging Cable',            sub:'Lightning + USB-C + Micro-USB in one',    price:149,  priceS:120,  icon:'cable',  color:'linear-gradient(135deg,#5c2800,#a04a00)', badge:'Handy' },
-  { id:'cb-009', cat:'cables', name:'Lightning Cable — 2m (Alt)',        sub:'2m USB-A to Lightning, daily use',        price:99,   priceS:80,   icon:'cable',  color:'linear-gradient(135deg,#5c2800,#a04a00)', badge:'',        img:'img/iphone cable 2m USB to ligthning.webp' },
   { id:'cb-010', cat:'cables', name:'Right-Angle USB-C 100W — Braided',  sub:'90° elbow saves your port · 100W PD fast charge', price:249, priceS:199, icon:'zap',   color:'linear-gradient(135deg,#5c2800,#a04a00)', badge:'New' },
   { id:'cb-011', cat:'cables', name:'Right-Angle USB-C to Lightning',    sub:'90° gaming grip · braided, iPhone fast charge',   price:179, priceS:149, icon:'cable', color:'linear-gradient(135deg,#5c2800,#a04a00)', badge:'Gamer Pick' },
 
