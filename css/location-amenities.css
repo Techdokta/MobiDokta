@@ -1,0 +1,229 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   MobiDokta — Madeira Isles Complex: wayfinding, amenities & safety
+   Sits directly under the #location map section on index.html.
+
+   PHOTOS: every card degrades to a styled icon tile until its photo exists.
+   Drop the correctly-named file into img/ and the card switches to the photo
+   automatically — no code change needed. See PHOTO-GUIDE.md.
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.amen-section { background: var(--bg-secondary); }
+
+/* ── Wayfinding callout — "Shop 6, not IT World" ── */
+.amen-wayfind {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 18px;
+  align-items: start;
+  background: rgba(255, 149, 0, .07);
+  border: 1.5px solid rgba(255, 149, 0, .32);
+  border-left: 4px solid var(--orange);
+  border-radius: 0 14px 14px 0;
+  padding: 22px 26px;
+  margin: 0 0 40px;
+}
+.amen-wayfind-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: var(--orange);
+  color: #16181d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+.amen-wayfind-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 7px;
+  letter-spacing: -.015em;
+}
+.amen-wayfind-title em { font-style: normal; color: var(--orange); }
+.amen-wayfind p {
+  font-size: .87rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin: 0 0 10px;
+}
+.amen-wayfind p:last-child { margin-bottom: 0; }
+.amen-wayfind strong { color: var(--text-primary); }
+
+/* ── Amenity grid ── */
+.amen-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(238px, 1fr));
+  gap: 18px;
+  margin: 0 0 40px;
+}
+.amen-card {
+  margin: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color .2s, transform .2s, box-shadow .2s;
+}
+.amen-card:hover {
+  border-color: rgba(255, 149, 0, .45);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Media box — photo, or styled icon tile until the photo arrives */
+.amen-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(140deg, rgba(255, 149, 0, .1), rgba(175, 82, 222, .08));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.amen-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  z-index: 1;
+}
+.amen-fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  color: var(--orange);
+  opacity: .85;
+  text-align: center;
+  padding: 12px;
+}
+.amen-fallback-note {
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.amen-body { padding: 15px 17px 17px; }
+.amen-name {
+  font-size: .93rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 4px;
+  line-height: 1.35;
+}
+.amen-desc {
+  font-size: .79rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin: 0;
+}
+.amen-tag {
+  display: inline-block;
+  font-size: .63rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 5px;
+}
+
+/* ── Safety strip ── */
+.amen-safety {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 30px;
+}
+.amen-safety-head {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 6px;
+}
+.amen-safety-head i { color: var(--green); }
+.amen-safety-title {
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+  letter-spacing: -.015em;
+}
+.amen-safety-sub {
+  font-size: .85rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin: 0 0 22px;
+  max-width: 640px;
+}
+.amen-safety-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+.amen-safety-item {
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--green);
+  border-radius: 0 12px 12px 0;
+  overflow: hidden;
+  background: var(--bg-secondary);
+}
+.amen-safety-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: linear-gradient(140deg, rgba(52, 199, 89, .12), rgba(52, 199, 89, .04));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.amen-safety-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  z-index: 1;
+}
+.amen-safety-media .amen-fallback { color: var(--green); }
+.amen-safety-body { padding: 13px 15px 15px; }
+.amen-safety-name {
+  font-size: .87rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 3px;
+}
+.amen-safety-desc {
+  font-size: .77rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ── Wait-time nudge ── */
+.amen-nudge {
+  margin: 36px 0 0;
+  text-align: center;
+  font-size: .87rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+.amen-nudge strong { color: var(--text-primary); }
+.amen-nudge a { color: var(--orange); font-weight: 600; }
+
+@media (max-width: 640px) {
+  .amen-wayfind {
+    grid-template-columns: 1fr;
+    padding: 18px 18px 18px 20px;
+  }
+  .amen-safety { padding: 20px 18px; }
+  .amen-grid { grid-template-columns: repeat(auto-fill, minmax(158px, 1fr)); gap: 12px; }
+  .amen-body { padding: 12px 13px 14px; }
+}

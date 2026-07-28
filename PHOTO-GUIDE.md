@@ -278,6 +278,104 @@ More repair proof shots for the homepage gallery carousel.
 
 ---
 
+## SECTION H — LOCATION, WAYFINDING & COMPLEX AMENITIES → `img/`
+
+> **All 16 slots below are already wired into the new `#amenities` section on `index.html`.**
+> Each card currently shows a styled icon tile with a "PHOTO COMING" label. Drop the correctly-named
+> file into `img/` and that card switches to the photo automatically — no code change, no redeploy edit.
+> **This is the highest-value shoot on the list** — it is the section that converts "a repair shop"
+> into "a place I can spend an hour", and it is the only section that answers *is it safe to leave my
+> device there.*
+
+### H1 — Amenities in the complex (4:3 landscape, 800×600px, under 120KB)
+
+| File name → `img/` | Status | Subject | Shooting note |
+|---|---|---|---|
+| `amen-foodzone.jpg` | 📸 | Foodzone supermarket shopfront | Get the **name signage** clearly in frame — that's what makes it credible |
+| `amen-water-refill.jpg` | 📸 | Bottled water shop / refill station | Show the refill dispensers or stacked bottles |
+| `amen-barber.jpg` | 📸 | Barbershop | Shopfront, or interior with a chair — avoid faces without permission |
+| `amen-hair-nails.jpg` | 📸 | Hair & nail salon | Shopfront with signage |
+| `amen-doctor.jpg` | 📸 | Doctor / medical rooms | Door plate or signage is enough — **do not photograph patients** |
+| `amen-pharmacy.jpg` | 📸 | Pharmacy | Shopfront with signage |
+| `amen-atm.jpg` | 📸 | ATM | Wide enough to show it's inside the complex, **no PINs or cards in frame** |
+| `amen-cocktail-lounge.jpg` | 📸 | Olive Cocktail Lounge | The most persuasive photo here — shoot it looking inviting, seating visible |
+| `amen-liquor.jpg` | 📸 | Liquor shop | Shopfront with signage |
+| `amen-printing.jpg` | 📸 | Printing / copy shop | Shopfront with signage |
+| `amen-properties.jpg` | 📸 | Real-estate / rentals office | Shopfront with signage |
+| `amen-residence.jpg` | 📸 | Madeira Isles Residence | Shoot from the complex so the **relationship between res and shop** is obvious |
+
+### H2 — Safety & security proof (16:10 landscape, 800×500px, under 110KB)
+
+| File name → `img/` | Status | Subject | Shooting note |
+|---|---|---|---|
+| `loc-security-guard.jpg` | 📸 | Securiguard personnel on duty | **Get the guard's permission first.** Uniform and Securiguard branding visible is the whole point |
+| `loc-cctv.jpg` | 📸 | CCTV camera in the complex | Shoot upward against the building so the camera reads clearly as surveillance |
+| `loc-access-control.jpg` | 📸 | Controlled entrance / access point | Boom, gate, or managed entry — show it isn't open street frontage |
+| `loc-parking.jpg` | 📸 | On-site parking | Daytime, reasonably full — a full lot signals a busy safe centre |
+
+### H3 — Wayfinding & storefront (not yet wired — shoot these next)
+
+These are for the `#location` block and the Google Business Profile. Tell me when they exist and I'll wire them in.
+
+| File name → `img/` | Status | Subject | Why it matters |
+|---|---|---|---|
+| `loc-shop6-signage.jpg` | 📸 | **MobiDokta Shop 6 signage, number visible** | Highest priority of the three — solves the *IT World* mix-up |
+| `loc-complex-entrance.jpg` | 📸 | Complex entrance from 262 Klitsgras Street | The view a first-time customer actually sees when arriving |
+| `loc-walkway.jpg` | 📸 | Internal walkway leading to Shop 6 | Turns the map into step-by-step directions |
+| `loc-storefront.jpg` | 📸 | MobiDokta storefront, straight on | Also the Google Business Profile cover photo |
+| `loc-interior-counter.jpg` | 📸 | Front counter / reception | First impression of the inside |
+| `loc-interior-bench.jpg` | 📸 | Repair bench with tools and microscope | Proof of a real workshop, not a table |
+| `loc-tri-lounge.jpg` | 📸 | TRi-MobiDokta gaming lounge, consoles on | The differentiator nobody else in Pretoria West has |
+
+> **Shoot all of H1–H3 in one walk-around.** It's roughly 23 photos, one afternoon, one phone.
+> Golden-hour or bright overcast light. Shoot landscape, hold steady, wipe the lens first.
+> **Every one of these should also go straight onto the Google Business Profile** — location and
+> amenity photos are the single strongest ranking and conversion signal for local search.
+
+---
+
+## SECTION I — SERVICE CARDS STILL SHOWING ICONS → `img/`
+
+These cards on `index.html` display a generic icon instead of a photo. Both slots are now wired with an
+automatic icon fallback, so dropping the file in is all that's needed.
+
+| File name → `img/` | Status | Subject | Spec |
+|---|---|---|---|
+| `svc-teletech.jpg` | 📸 **WIRED** | Technician on a video call diagnosing a device — laptop or phone screen showing the call, device in hand | Portrait-ish 298×372px display, shoot 800×1000px, under 120KB |
+| `svc-simswap.jpg` | 📸 **WIRED** | SIM tray open with SIM and ejector tool, or a phone showing carrier/eSIM settings | Same spec as above |
+
+### Laptop service cards — needs a small code change first
+
+`renderLaptopServices` in `js/content-loader.js` has no image support yet. Shoot these and I'll wire it.
+
+| File name → `img/` | Subject |
+|---|---|
+| 📸 `lap-battery.jpg` | Laptop battery removed from chassis |
+| 📸 `lap-keyboard.jpg` | Laptop keyboard being replaced, keycaps or ribbon visible |
+| 📸 `lap-thermal.jpg` | Heatsink / fan cleaning, thermal paste application |
+| 📸 `lap-os.jpg` | Laptop mid OS install or recovery screen |
+
+---
+
+## SECTION J — INSURANCE ASSESSMENTS (`insurance-assessments.html`) → `img/`
+
+The new assessment page runs on layout and type only — no photos wired yet. These would strengthen it,
+in priority order. Say the word and I'll wire them in.
+
+| File name → `img/` | Subject | Why |
+|---|---|---|
+| 📸 `ins-assessment-bench.jpg` | Device on the bench under magnification with a documentation clipboard or laptop beside it | Hero image — shows an *assessment*, not a repair |
+| 📸 `ins-report-sample.jpg` | A printed assessment report fanned out, **all client details redacted or fictional** | The single most persuasive image for brokers |
+| 📸 `ins-photo-evidence.jpg` | Damaged device being photographed on a plain background with a scale reference | Shows the evidence process is methodical |
+| 📸 `ins-imei-verify.jpg` | IMEI being read off a device screen or label | Proves identity verification actually happens |
+| 📸 `ins-water-corrosion.jpg` | Corroded logic board under magnification | Cause-consistency evidence, and genuinely striking |
+
+> ⚠️ **Never publish a real client's device with identifiable data, IMEI, or claim reference.**
+> Redact or use a fictional reference on any report photo. This matters more here than anywhere else on
+> the site — the whole service rests on POPIA discipline and client confidence.
+
+---
+
 ## ORPHANED FILES — safe to delete from `img/`
 
 These exist in `img/` but nothing on the site links to them.
@@ -329,12 +427,52 @@ These exist in `img/` but nothing on the site links to them.
 
 ---
 
+## PHOTO SPECS — AMENITIES & LOCATION
+
+| Use | Dimensions | Max size | Format |
+|---|---|---|---|
+| Amenity cards (`amen-*`) | 800×600px (4:3) | 120KB | `.jpg` |
+| Safety proof (`loc-security-*`, `loc-cctv`, `loc-access-*`, `loc-parking`) | 800×500px (16:10) | 110KB | `.jpg` |
+| Wayfinding & storefront (`loc-*`) | 1200×800px | 160KB | `.jpg` |
+| Service cards (`svc-*`, `lap-*`) | 800×1000px | 120KB | `.jpg` |
+| Insurance assessment (`ins-*`) | 1200×800px | 160KB | `.jpg` |
+
+---
+
 ## RECOMMENDED SHOOT ORDER
 
-1. `og-cover.png` — broken on every page right now, highest priority
-2. Rename `iphone 15 ProMax After picture.jpg` → `port-iphone15pm-after.jpg` — already have this photo
-3. Appl3City category heroes (`ac-hero-*.jpg`) — biggest trust impact for the new page
-4. Shop product photos (`shop-*.jpg`) — conversion impact on the shop
-5. Before/after portfolio gallery — social proof for the homepage
-6. Service page photos (`svc-*.jpg`) — credibility on repair pages
-7. Team and workshop (`team-*.jpg`) — trust and personality
+**Do the complex walk-around first.** It's one afternoon, ~23 photos, and it is already wired and waiting —
+every other item on this list needs staging, sourcing or product handling.
+
+1. **SECTION H — complex walk-around (H1 + H2 + H3)** — amenities, security, wayfinding, storefront,
+   interior, TRi lounge. All of H1 and H2 are wired and will go live the moment the files land. Push the
+   same set to the Google Business Profile the same day.
+2. `loc-shop6-signage.jpg` specifically — if you shoot only one photo, shoot this one. It solves the
+   *IT World* mix-up that is actively costing walk-ins.
+3. `og-cover.png` — still broken on every page. Every shared link shows a dead thumbnail until it exists.
+4. Rename `iphone 15 ProMax After picture.jpg` → `port-iphone15pm-after.jpg` — you already have this photo.
+5. **SECTION I** — `svc-teletech.jpg` and `svc-simswap.jpg`. Both wired; two cards on the homepage are
+   showing bare icons next to cards that have photos, which reads as unfinished.
+6. **SECTION J** — insurance assessment photos, especially `ins-report-sample.jpg` (redacted). Needed
+   before approaching brokers.
+7. Appl3City category heroes (`ac-hero-*.jpg`) — biggest trust impact for the sales page.
+8. Shop product photos (`shop-*.jpg`) — direct conversion impact, but ~40 photos, so batch it.
+9. Before/after portfolio gallery — social proof for the homepage.
+10. Service page photos (`svc-apple-*`, `svc-android-*`, `svc-mac-*`) — credibility on repair pages.
+11. Laptop service cards (`lap-*.jpg`) — needs a code change first, so shoot last.
+12. Team and workshop (`team-*.jpg`) — trust and personality.
+
+---
+
+## CONSENT & PRIVACY RULES — read before shooting
+
+These apply to the complex and service photos and are not optional.
+
+- **Ask the shop owner or manager before photographing another business** in the complex. Nearly all will
+  say yes — you are sending them customers. A photo taken without asking becomes a problem later.
+- **Ask the security guard's permission** before photographing them, and explain it's for your website.
+- **No customers or patients in frame** without explicit spoken permission. Doctor's rooms: signage only.
+- **No children in frame** without a parent's permission, full stop.
+- **Never publish a real client device** with a visible IMEI, serial, lock screen, phone number, name or
+  claim reference. Redact, or stage with your own device.
+- **No PINs, cards or screens showing account details** at the ATM.

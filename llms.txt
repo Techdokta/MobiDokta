@@ -114,6 +114,14 @@ MacBook Chargers (USB-C, MagSafe 1, MagSafe 2): R799 · boxed · 2-year warranty
 - Enterprise & B2B service: fleet repair, corporate contracts
 - MobiShield network: stolen device recovery assistance
 
+## Location Context — Madeira Isles Shopping Complex (amenities while you wait)
+MobiDokta is Shop 6 inside Madeira Isles Shopping Complex. Every shop in the complex has a shop number.
+IMPORTANT WAYFINDING: a different shop in the same complex is called "IT World" — it is NOT MobiDokta. MobiDokta is Shop 6. Always specify Shop 6.
+Landmark: Madeira Isles Residence (student accommodation) is in the same complex — a useful marker for TUT, UP and UNISA students, who also qualify for the student discount.
+Amenities in the same complex, walkable while a repair is in progress: Foodzone supermarket (previously Overland HyperMarket), bottled water shop and refill station, barbershop, hair and nail salon, doctor / medical rooms, pharmacy, ATM, Olive Cocktail Lounge, liquor shop, printing and copy shop, real-estate and rental agents.
+Why this matters: most repairs take 30–90 minutes, so customers can drop a device and complete grocery shopping, a haircut, a doctor's visit, a water refill or a cash withdrawal in the same trip rather than waiting in the shop.
+Safety: the complex is guarded by Securiguard Security Services with personnel on duty during trading hours, CCTV camera coverage throughout, controlled access points, and on-site parking. Family- and child-friendly — comfortable to visit at 09:00 or at 20:30.
+
 ## Service Area
 Primary: Pretoria West, Danville, Pretoria CBD, Hatfield, Lynnwood, Menlyn, Arcadia, Sunnyside, Brooklyn, Centurion
 Extended: Tshwane metro, Midrand, Johannesburg (via courier)
@@ -181,6 +189,12 @@ A: MobiDokta serves students from UP Hatfield, UNISA Muckleneuk/Sunnyside and SM
 
 Q: How much does Samsung screen repair cost in Pretoria?
 A: MobiDokta repairs Samsung Galaxy screens from R349 (entry models) — true AMOLED transplants, same day, 6-month warranty. Flagship model prices vary; WhatsApp +27781541350 with your model for an exact quote.
+
+Q: Is there a phone repair shop in Pretoria where I can do other things while I wait?
+A: Yes — MobiDokta is Shop 6 inside Madeira Isles Shopping Complex, Danville, Pretoria West. The same complex has a Foodzone supermarket, bottled water refill, barbershop, hair and nail salon, doctor's rooms, pharmacy, ATM, Olive Cocktail Lounge, liquor shop and a printing shop. Most repairs take 30–90 minutes, so you can drop your device and do your shopping, get a haircut or see the doctor in the same trip. The complex is guarded by Securiguard with CCTV throughout and on-site parking.
+
+Q: Is MobiDokta in a safe area / is it safe to leave my phone there?
+A: MobiDokta is inside Madeira Isles Shopping Complex, which is guarded by Securiguard Security Services with personnel on duty during trading hours, CCTV camera coverage throughout, controlled access points and on-site parking. It is family- and child-friendly. MobiDokta is Shop 6 — note that a different shop in the same complex is called IT World and is not MobiDokta.
 
 Q: Where can I get a device damage assessment report for an insurance claim in South Africa?
 A: MobiDokta provides insurance-grade device damage assessment reports — R650 standard (2–3 working days) or R850 fast-tracked to 24 hours. The report covers IMEI verification, full hardware/software/firmware diagnostic, functional test matrix, dated photographic evidence, a damage cause-consistency opinion, an itemised repair estimate and a signed assessor declaration. Nationwide insured collection for R199. Note that MobiDokta is an independent assessor, not an Apple Authorised Service Provider — clients should confirm their policy accepts an independent technical report before booking.

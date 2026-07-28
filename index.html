@@ -58,6 +58,7 @@
   <link rel="stylesheet" href="./css/global.css">
   <link rel="stylesheet" href="./css/utilities.css">
   <link rel="stylesheet" href="./css/index-inline.css">
+  <link rel="stylesheet" href="./css/location-amenities.css">
   <link rel="preconnect" href="https://unpkg.com" crossorigin />
   <link rel="preload" as="image" href="./img/hero-iphone.jpg" fetchpriority="high">
   <link rel="prefetch" href="./apple.html" />
@@ -1814,7 +1815,9 @@
         </a>
 
         <a href="book.html" class="card service-card inline-style-678049f7" data-animate>
-          <div class="inline-style-17ff31e7">
+          <!-- Photo slot: drop img/svc-teletech.jpg in and it replaces the icon tile automatically -->
+          <img src="./img/svc-teletech.jpg" alt="TeleTech video consultation — MobiDokta engineer diagnosing a device over a video call" class="inline-style-ee486f44" width="298" height="210" loading="lazy" onerror="var f=this.nextElementSibling;if(f)f.style.display='';this.remove();" />
+          <div class="inline-style-17ff31e7" style="display:none">
             <i data-lucide="video" class="inline-style-d94f61fc"></i>
           </div>
           <div class="inline-style-75ab1518">
@@ -1830,7 +1833,9 @@
         </a>
 
         <a href="recover.html#sim-swap" class="card service-card inline-style-678049f7" data-animate>
-          <div class="inline-style-17ff31e7">
+          <!-- Photo slot: drop img/svc-simswap.jpg in and it replaces the icon tile automatically -->
+          <img src="./img/svc-simswap.jpg" alt="SIM swap and eSIM activation assistance at MobiDokta, Pretoria West" class="inline-style-ee486f44" width="298" height="210" loading="lazy" onerror="var f=this.nextElementSibling;if(f)f.style.display='';this.remove();" />
+          <div class="inline-style-17ff31e7" style="display:none">
             <i data-lucide="credit-card" class="inline-style-d94f61fc"></i>
           </div>
           <div class="inline-style-75ab1518">
@@ -2552,7 +2557,7 @@
               <i data-lucide="store" class="icon-lg inline-style-d6b13fc0"></i>
               <div>
                 <h4 class="inline-style-92cc2c56">Walk-Ins Welcome</h4>
-                <p class="inline-style-a9d576c4">Shop 6, Madeira Isles Shopping Complex — open Mon–Sun, 09:00–19:00.
+                <p class="inline-style-a9d576c4">Shop 6, Madeira Isles Shopping Complex — open Mon–Sat 09:00–21:00, Sun 12:00–21:00, including public holidays.
                   Walk in for a free diagnostic, a quote, or to drop off your device. No appointment needed.</p>
               </div>
             </div>
@@ -2579,6 +2584,258 @@
             width="100%" height="450" class="inline-style-e65fbc7a" allowfullscreen="" loading="lazy"></iframe>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ─── Madeira Isles Complex: wayfinding, amenities & safety ─── -->
+  <!-- Photos degrade to styled icon tiles until the files exist in img/. See PHOTO-GUIDE.md. -->
+  <section id="amenities" class="section amen-section">
+    <div class="container">
+
+      <div class="section-header" data-animate>
+        <div class="badge badge-accent">While You Wait · Madeira Isles Complex</div>
+        <h2>A repair takes 30–90 minutes. You don't have to sit and watch.</h2>
+        <p>
+          We're one shop inside Madeira Isles Shopping Complex in Danville — so you can drop your device with
+          us and go do your grocery shop, get a haircut, see the doctor, refill your water, draw cash, or just
+          have a cold drink. Come back when it's done. Most people get their errands finished before we're
+          finished with their phone.
+        </p>
+      </div>
+
+      <!-- Wayfinding — Shop 6, not the other IT shop -->
+      <div class="amen-wayfind" data-animate>
+        <div class="amen-wayfind-icon"><i data-lucide="map-pin" class="icon-lg"></i></div>
+        <div>
+          <p class="amen-wayfind-title">Look for <em>Shop 6</em> — every shop here has a number.</p>
+          <p>
+            There is another IT shop in this same complex called <strong>IT World</strong>. It is not us, and
+            people do occasionally walk into the wrong door. <strong>MobiDokta is Shop 6.</strong> If you're
+            standing in the complex and unsure, WhatsApp us and we'll walk you in.
+          </p>
+          <p>
+            <strong>Landmark:</strong> Madeira Isles Residence (the student dorm) is right here — if you're a
+            TUT, UP or UNISA student, that's your marker. Enter the complex from
+            <strong>262 Klitsgras Street</strong>, Danville, Pretoria West.
+          </p>
+        </div>
+      </div>
+
+      <!-- Amenities -->
+      <div class="amen-grid" data-animate>
+
+        <figure class="amen-card">
+          <div class="amen-media">
+            <img src="./img/amen-foodzone.jpg" alt="Foodzone supermarket inside Madeira Isles Shopping Complex, Danville, Pretoria West" loading="lazy" width="400" height="300" onerror="this.remove();">
+            <span class="amen-fallback"><i data-lucide="shopping-cart" class="icon-lg"></i><span class="amen-fallback-note">Photo coming</span></span>
+          </div>
+          <div class="amen-body">
+            <span class="amen-tag">Groceries</span>
+            <h3 class="amen-name">Foodzone Supermarket</h3>
+            <p class="amen-desc">Full grocery shop in the complex — previously Overland HyperMarket. Do the week's shopping while we work.</p>
+          </div>
+        </figure>
+
+        <figure class="amen-card">
+          <div class="amen-media">
+            <img src="./img/amen-water-refill.jpg" alt="Bottled water shop and refill station at Madeira Isles Shopping Complex" loading="lazy" width="400" height="300" onerror="this.remove();">
+            <span class="amen-fallback"><i data-lucide="droplets" class="icon-lg"></i><span class="amen-fallback-note">Photo coming</span></span>
+          </div>
+          <div class="amen-body">
+            <span class="amen-tag">Water</span>
+            <h3 class="amen-name">Bottled Water &amp; Refill</h3>
+            <p class="amen-desc">Purified water shop and bottle refill station — bring your containers and fill up before you head home.</p>
+          </div>
+        </figure>
+
+        <figure class="amen-card">
+          <div class="amen-media">
+            <img src="./img/amen-barber.jpg" alt="Barbershop at Madeira Isles Shopping Complex, Danville" loading="lazy" width="400" height="300" onerror="this.remove();">
+            <span class="amen-fallback"><i data-lucide="scissors" class="icon-lg"></i><span class="amen-fallback-note">Photo coming</span></span>
+          </div>
+          <div class="amen-body">
+            <span class="amen-tag">Barber</span>
+            <h3 class="amen-name">Barbershop</h3>
+            <p class="amen-desc">Get a cut while your screen goes on. A fade takes about as long as a battery replacement.</p>
+          </div>
+        </figure>
+
+        <figure class="amen-card">
+          <div class="amen-media">
+            <img src="./img/amen-hair-nails.jpg" alt="Hair and nail salon at Madeira Isles Shopping Complex, Danville" loading="lazy" width="400" height="300" onerror="this.remove();">
+            <span class="amen-fallback"><i data-lucide="sparkles" class="icon-lg"></i><span class="amen-fallback-note">Photo coming</span></span>
+          </div>
+          <div class="amen-body">
+            <span class="amen-tag">Salon</span>
+            <h3 class="amen-name">Hair &amp; Nails</h3>
+            <p class="amen-desc">Hair and nail services in the complex — book a set while your device is on the bench.</p>
+          </div>
+        </figure>
+
+        <figure class="amen-card">
+          <div class="amen-media">
+            <img src="./img/amen-doctor.jpg" alt="Doctor and medical rooms at Madeira Isles Shopping Complex, Danville" loading="lazy" width="400" height="300" onerror="this.remove();">
+            <span class="amen-fallback"><i data-lucide="stethoscope" class="icon-lg"></i><span class="amen-fallback-note">Photo coming</span></span>
+          </div>
+          <div class="amen-body">
+            <span class="amen-tag">Medical</span>
+            <h3 class="amen-name">Doctor / Medical Rooms</h3>
+            <p class="amen-desc">A consultation and a phone repair in the same trip — one parking spot, two things off the list.</p>
+          </div>
+        </figure>
+
+        <figure class="amen-card">
+          <div class="amen-media">
+            <img src="./img/amen-pharmacy.jpg" alt="Pharmacy at Madeira Isles Shopping Complex, Danville, Pretoria West" loading="lazy" width="400" height="300" onerror="this.remove();">
+            <span class="amen-fallback"><i data-lucide="pill" class="icon-lg"></i><span class="amen-fallback-note">Photo coming</span></span>
+          </div>
+          <div class="amen-body">
+            <span class="amen-tag">Pharmacy</span>
+            <h3 class="amen-name">Pharmacy</h3>
+            <p class="amen-desc">Collect a script or pick up the essentials without leaving the complex.</p>
+          </div>
+        </figure>
+
+        <figure class="amen-card">
+          <div class="amen-media">
+            <img src="./img/amen-atm.jpg" alt="ATM at Madeira Isles Shopping Complex, Danville" loading="lazy" width="400" height="300" onerror="this.remove();">
+            <span class="amen-fallback"><i data-lucide="banknote" class="icon-lg"></i><span class="amen-fallback-note">Photo coming</span></span>
+          </div>
+          <div class="amen-body">
+            <span class="amen-tag">Cash</span>
+            <h3 class="amen-name">ATM On Site</h3>
+            <p class="amen-desc">Draw cash right here. Though you don't have to — we take card, SnapScan, Zapper and EFT too.</p>
+          </div>
+        </figure>
+
+        <figure class="amen-card">
+          <div class="amen-media">
+            <img src="./img/amen-cocktail-lounge.jpg" alt="Olive Cocktail Lounge at Madeira Isles Shopping Complex, Danville" loading="lazy" width="400" height="300" onerror="this.remove();">
+            <span class="amen-fallback"><i data-lucide="martini" class="icon-lg"></i><span class="amen-fallback-note">Photo coming</span></span>
+          </div>
+          <div class="amen-body">
+            <span class="amen-tag">Chill</span>
+            <h3 class="amen-name">Olive Cocktail Lounge</h3>
+            <p class="amen-desc">Sit down, have something cold, and let us finish. Easily the most popular way to wait out a repair.</p>
+          </div>
+        </figure>
+
+        <figure class="amen-card">
+          <div class="amen-media">
+            <img src="./img/amen-liquor.jpg" alt="Liquor store at Madeira Isles Shopping Complex, Danville" loading="lazy" width="400" height="300" onerror="this.remove();">
+            <span class="amen-fallback"><i data-lucide="wine" class="icon-lg"></i><span class="amen-fallback-note">Photo coming</span></span>
+          </div>
+          <div class="amen-body">
+            <span class="amen-tag">Bottle Store</span>
+            <h3 class="amen-name">Liquor Shop</h3>
+            <p class="amen-desc">Stock up for the weekend on the same trip.</p>
+          </div>
+        </figure>
+
+        <figure class="amen-card">
+          <div class="amen-media">
+            <img src="./img/amen-printing.jpg" alt="Printing and copy shop at Madeira Isles Shopping Complex, Danville" loading="lazy" width="400" height="300" onerror="this.remove();">
+            <span class="amen-fallback"><i data-lucide="printer" class="icon-lg"></i><span class="amen-fallback-note">Photo coming</span></span>
+          </div>
+          <div class="amen-body">
+            <span class="amen-tag">Print &amp; Copy</span>
+            <h3 class="amen-name">Printing Shop</h3>
+            <p class="amen-desc">Printing, copies and documents — handy for students on a deadline, and for CVs and claim paperwork.</p>
+          </div>
+        </figure>
+
+        <figure class="amen-card">
+          <div class="amen-media">
+            <img src="./img/amen-properties.jpg" alt="Real estate and property office at Madeira Isles Shopping Complex, Danville" loading="lazy" width="400" height="300" onerror="this.remove();">
+            <span class="amen-fallback"><i data-lucide="building" class="icon-lg"></i><span class="amen-fallback-note">Photo coming</span></span>
+          </div>
+          <div class="amen-body">
+            <span class="amen-tag">Property</span>
+            <h3 class="amen-name">Properties &amp; Rentals</h3>
+            <p class="amen-desc">Real-estate and rental agents on site — useful if you're a student looking for a place nearby.</p>
+          </div>
+        </figure>
+
+        <figure class="amen-card">
+          <div class="amen-media">
+            <img src="./img/amen-residence.jpg" alt="Madeira Isles Residence student accommodation next to MobiDokta, Danville" loading="lazy" width="400" height="300" onerror="this.remove();">
+            <span class="amen-fallback"><i data-lucide="graduation-cap" class="icon-lg"></i><span class="amen-fallback-note">Photo coming</span></span>
+          </div>
+          <div class="amen-body">
+            <span class="amen-tag">Landmark</span>
+            <h3 class="amen-name">Madeira Isles Residence</h3>
+            <p class="amen-desc">Student accommodation right here — if you live in res, your repair shop is downstairs. Student discount applies.</p>
+          </div>
+        </figure>
+
+      </div>
+
+      <!-- Safety -->
+      <div class="amen-safety" data-animate>
+        <div class="amen-safety-head">
+          <i data-lucide="shield-check" class="icon-lg"></i>
+          <h3 class="amen-safety-title">Safe enough to bring your kids — and we can show you why.</h3>
+        </div>
+        <p class="amen-safety-sub">
+          Handing your phone or laptop to someone means trusting where you're standing. Madeira Isles is a
+          guarded, camera-covered, access-controlled complex with proper parking. Come at 09:00 or at 20:30 —
+          it's the same.
+        </p>
+        <div class="amen-safety-grid">
+
+          <div class="amen-safety-item">
+            <div class="amen-safety-media">
+              <img src="./img/loc-security-guard.jpg" alt="Securiguard security personnel on duty at Madeira Isles Shopping Complex" loading="lazy" width="320" height="200" onerror="this.remove();">
+              <span class="amen-fallback"><i data-lucide="shield" class="icon-lg"></i><span class="amen-fallback-note">Photo coming</span></span>
+            </div>
+            <div class="amen-safety-body">
+              <p class="amen-safety-name">Securiguard on site</p>
+              <p class="amen-safety-desc">Guarded by Securiguard Security Services — personnel on duty throughout trading hours.</p>
+            </div>
+          </div>
+
+          <div class="amen-safety-item">
+            <div class="amen-safety-media">
+              <img src="./img/loc-cctv.jpg" alt="CCTV camera coverage throughout Madeira Isles Shopping Complex" loading="lazy" width="320" height="200" onerror="this.remove();">
+              <span class="amen-fallback"><i data-lucide="cctv" class="icon-lg"></i><span class="amen-fallback-note">Photo coming</span></span>
+            </div>
+            <div class="amen-safety-body">
+              <p class="amen-safety-name">CCTV throughout</p>
+              <p class="amen-safety-desc">Camera coverage across the complex — walkways, entrances and parking.</p>
+            </div>
+          </div>
+
+          <div class="amen-safety-item">
+            <div class="amen-safety-media">
+              <img src="./img/loc-access-control.jpg" alt="Controlled access entrance at Madeira Isles Shopping Complex, Danville" loading="lazy" width="320" height="200" onerror="this.remove();">
+              <span class="amen-fallback"><i data-lucide="door-open" class="icon-lg"></i><span class="amen-fallback-note">Photo coming</span></span>
+            </div>
+            <div class="amen-safety-body">
+              <p class="amen-safety-name">Controlled access</p>
+              <p class="amen-safety-desc">Managed entry and exit points rather than open street frontage.</p>
+            </div>
+          </div>
+
+          <div class="amen-safety-item">
+            <div class="amen-safety-media">
+              <img src="./img/loc-parking.jpg" alt="Parking area at Madeira Isles Shopping Complex, Danville, Pretoria West" loading="lazy" width="320" height="200" onerror="this.remove();">
+              <span class="amen-fallback"><i data-lucide="car" class="icon-lg"></i><span class="amen-fallback-note">Photo coming</span></span>
+            </div>
+            <div class="amen-safety-body">
+              <p class="amen-safety-name">Parking &amp; family-friendly</p>
+              <p class="amen-safety-desc">On-site parking, and a complex that's comfortable to bring children and older family into.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <p class="amen-nudge" data-animate>
+        <strong>Not sure how long yours will take?</strong> WhatsApp us your device and fault before you drive
+        out — we'll give you a realistic time so you can plan the rest of your trip around it.
+        <a href="https://wa.me/27781541350?text=Hi%2C+how+long+will+my+repair+take%3F+Device%3A+" target="_blank" rel="noopener">Ask on WhatsApp →</a>
+      </p>
+
     </div>
   </section>
 
