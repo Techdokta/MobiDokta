@@ -49,6 +49,26 @@
     },
 
     {
+      id: 'insurance-assessment', type: 'service', icon: '📋',
+      title: 'Insurance Damage Assessment',
+      tagline: 'A report your insurer will actually accept — signed, in 24 hours.',
+      answer: 'A full documented assessment: IMEI verification, GSMA blacklist check, complete hardware and firmware diagnostic, functional test matrix, dated photographic evidence, a damage cause-consistency opinion, and an itemised repair estimate — issued as a signed PDF. R650 standard, or R850 fast-tracked to 24 hours. The fee is credited against your repair if you repair with us.',
+      tip: 'Before you pay anyone, ask your insurer one question: do they accept an independent qualified technician\'s report, or do they require a manufacturer-authorised assessor? MobiDokta is an independent assessor — not an Apple Authorised Service Provider. Most SA insurers accept independent reports, but check first so you don\'t pay for a report that gets rejected.',
+      price: 'R650 · R850 fast-track', eta: '24 hours (fast-track)',
+      social: 'Nationwide R199 insured collection · fee credited off your repair',
+      tiers: [
+        { label: 'Fast-Track', price: 'R850', desc: 'Signed report within 24 hours of device receipt — take this if your insurer set a deadline', popular: true },
+        { label: 'Standard', price: 'R650', desc: 'Full report in 2–3 working days', popular: false },
+        { label: 'Fleet / Bulk', price: 'From R450/device', desc: '5+ devices — consolidated summary plus individual reports', popular: false }
+      ],
+      keywords: ['insurance','assessment','assess','insurer','claim','claims','damage report','assessment report','insurance report','loss adjuster','broker','underwriter','write off','write-off','writeoff','total loss','policy','cover','claim reference','damage assessment','device assessment','technical report','independent assessor','warranty dispute','condition report','valuation','grading report','data erasure','destruction certificate','disposal certificate','fleet assessment','imei verification','cause of damage','insurance quote'],
+      ctas: [
+        { label: 'See the Assessment Service', href: 'insurance-assessments.html', primary: true },
+        { label: 'WhatsApp the Assessor', href: 'https://wa.me/27781541350?text=Hi%2C+I+need+an+insurance+assessment+report+for+a+damaged+device.%0A%0AInsurer%2Funderwriter%3A+%0AClaim+reference%3A+%0ADevice+%2B+model%3A+%0AWhat+happened%3A+%0ADeadline+from+insurer%3A+', primary: false }
+      ]
+    },
+
+    {
       id: 'water', type: 'service', icon: '💧', urgent: true,
       title: 'Water Damage Recovery',
       tagline: 'Act fast — every hour matters.',
