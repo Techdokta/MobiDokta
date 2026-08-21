@@ -46,6 +46,7 @@
   {"@context":"https://schema.org","@type":"HowTo","name":"How MobiDokta Repairs Your Device","description":"The step-by-step process MobiDokta uses to diagnose and repair your iPhone, Samsung, MacBook or other device at Madeira Isles, Danville, Pretoria.","totalTime":"PT2H","supply":[{"@type":"HowToSupply","name":"Your device"}],"step":[{"@type":"HowToStep","position":1,"name":"Drop-off & Check-in","text":"Bring your device to Shop 6, Madeira Isles or book a courier collection."},{"@type":"HowToStep","position":2,"name":"Diagnostic","text":"Our engineer runs a full diagnostic to pinpoint the exact fault."},{"@type":"HowToStep","position":3,"name":"Fixed Quote","text":"You receive a fixed quote via WhatsApp before any work begins. No hidden costs."},{"@type":"HowToStep","position":4,"name":"Repair","text":"We source OEM-grade parts and complete the repair — screen, battery, port, board or software."},{"@type":"HowToStep","position":5,"name":"Quality Check","text":"Every repaired device passes a 20-point quality check before handover."},{"@type":"HowToStep","position":6,"name":"Collection","text":"Collect in-store or arrange return courier."},{"@type":"HowToStep","position":7,"name":"6-Month Warranty","text":"All repairs carry a 6-month warranty on parts and labour."}]}
   </script>
   <link rel="stylesheet" href="./css/global.css">
+  <link rel="stylesheet" href="./css/minimal.css">
   <link rel="stylesheet" href="./css/utilities.css">
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
@@ -58,32 +59,48 @@
 </head>
 <body>
 
-  <nav class="navbar">
-    <a href="index.html" class="logo"><img src="./assets/mobidokta-logo.svg" alt="MobiDokta — Engineering Grade IT Repairs &amp; Service" class="logo-nav" loading="eager"></a>
-    <div class="nav-links">
-      <div class="nav-dropdown">
-        <a href="index.html#services" class="dropdown-trigger">Repairs</a>
-        <div class="dropdown-menu">
-          <a href="apple.html">Apple</a>
-          <a href="android.html">Android</a>
-          <a href="computers.html">Laptops &amp; PCs</a>
-        </div>
-      </div>
-      <a href="shop.html">Shop</a>
-      <a href="applecity.html" class="nav-ac">Appl3City</a>
-      <a href="community.html">Blog</a>
+  <nav class="w-nav" id="nav">
+  <div class="w-nav-in">
+    <a href="./index.html" class="w-nav-logo" aria-label="MobiDokta home">
+      <img src="./assets/mobidokta-logo.svg" alt="MobiDokta">
+    </a>
+    <div class="w-nav-links">
+      <a href="./apple.html" class="w-nav-link">iPhone</a>
+      <a href="./android.html" class="w-nav-link">Android</a>
+      <a href="./computers.html" class="w-nav-link">Laptops</a>
+      <a href="./insurance-assessments.html" class="w-nav-link">Insurance</a>
+      <a href="./shop.html" class="w-nav-link">Shop</a>
+      <a href="./amenities.html" class="w-nav-link">Find us</a>
     </div>
-    <div class="nav-right">
-      <a href="https://wa.me/27781541350" class="nav-wa-link" target="_blank" rel="noopener" title="WhatsApp us now">
-        <i data-lucide="message-circle" class="icon-sm"></i>
-      </a>
-      <a href="book.html" class="btn btn-primary btn-sm nav-btn-desktop">Book Repair</a>
-      <a href="book.html" class="nav-book-mobile" aria-label="Book a repair">
-        <i data-lucide="calendar-check" class="icon-sm"></i> Book
-      </a>
-      <button type="button" class="nav-toggle" aria-label="Menu"><i data-lucide="menu" class="icon"></i></button>
+    <div class="w-nav-right">
+      <button type="button" class="w-nav-btn" id="nav-search-btn" aria-label="Search" title="Search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <a href="./book.html" class="w-btn w-btn--primary w-nav-cta">Book a repair</a>
+      <button type="button" class="w-nav-btn w-nav-burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+      </button>
     </div>
-  </nav>
+  </div>
+</nav>
+
+<div class="w-drawer" id="drawer" aria-hidden="true">
+  <div class="w-drawer-top">
+    <img src="./assets/mobidokta-logo.svg" alt="MobiDokta" style="height:26px">
+    <button type="button" class="w-nav-btn" id="drawer-close" aria-label="Close menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <a href="./index.html">Home</a>
+  <a href="./apple.html">iPhone repair</a>
+  <a href="./android.html">Android repair</a>
+  <a href="./computers.html">Laptops &amp; Mac</a>
+  <a href="./insurance-assessments.html">Insurance assessments</a>
+  <a href="./shop.html">Shop</a>
+  <a href="./applecity.html">Buy a device</a>
+  <a href="./amenities.html">Find us</a>
+  <a href="./book.html" style="color:var(--w-accent-ink)">Book a repair →</a>
+</div>
 
   <header class="journey-hero">
     <div class="container-narrow">
@@ -182,6 +199,19 @@
   <a href="https://wa.me/27781541350" target="_blank" rel="noopener" class="whatsapp-fab" title="Chat on WhatsApp"><i data-lucide="message-circle" class="icon-lg"></i></a>
   <script src="./js/app.js"></script>
   <script src="./js/cookie-consent.js"></script>
+<script>
+(function(){
+  var nav=document.getElementById('nav');
+  window.addEventListener('scroll',function(){if(nav)nav.classList.toggle('is-stuck',window.scrollY>8);},{passive:true});
+  var b=document.getElementById('burger'),d=document.getElementById('drawer'),c=document.getElementById('drawer-close');
+  function set(o){if(!d)return;d.classList.toggle('is-open',o);d.setAttribute('aria-hidden',String(!o));
+    if(b)b.setAttribute('aria-expanded',String(o));document.body.style.overflow=o?'hidden':'';}
+  if(b)b.addEventListener('click',function(){set(true);});
+  if(c)c.addEventListener('click',function(){set(false);});
+  if(d)d.addEventListener('click',function(e){if(e.target.tagName==='A')set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+}());
+</script>
 </body>
 </html>
 

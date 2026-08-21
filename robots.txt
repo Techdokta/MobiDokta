@@ -3,6 +3,8 @@ Allow: /
 Disallow: /admin/
 Disallow: /api/
 Disallow: /admin-dashboard.html
+Disallow: /image-gallery-audit.html
+Disallow: /img/og-cover-export.html
 
 # AI crawlers — explicitly welcome
 User-agent: GPTBot

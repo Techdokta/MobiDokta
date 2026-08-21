@@ -25,6 +25,7 @@
   <link rel="canonical" href="https://www.mobidokta.co.za/legal/cookies.html" />
   <meta name="robots" content="noindex" />
   <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/minimal.css">
   <link rel="stylesheet" href="../css/utilities.css">
   <style>
     .legal-hero { padding: 8rem 0 3rem; text-align: center; background: var(--bg-secondary); }
@@ -41,6 +42,45 @@
   </style>
 </head>
 <body>
+<nav class="w-nav" id="nav">
+  <div class="w-nav-in">
+    <a href="../index.html" class="w-nav-logo" aria-label="MobiDokta home">
+      <img src="../assets/mobidokta-logo.svg" alt="MobiDokta">
+    </a>
+    <div class="w-nav-links">
+      <a href="../apple.html" class="w-nav-link">iPhone</a>
+      <a href="../android.html" class="w-nav-link">Android</a>
+      <a href="../computers.html" class="w-nav-link">Laptops</a>
+      <a href="../insurance-assessments.html" class="w-nav-link">Insurance</a>
+      <a href="../shop.html" class="w-nav-link">Shop</a>
+      <a href="../amenities.html" class="w-nav-link">Find us</a>
+    </div>
+    <div class="w-nav-right">
+      <a href="../book.html" class="w-btn w-btn--primary w-nav-cta">Book a repair</a>
+      <button type="button" class="w-nav-btn w-nav-burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="w-drawer" id="drawer" aria-hidden="true">
+  <div class="w-drawer-top">
+    <img src="../assets/mobidokta-logo.svg" alt="MobiDokta" style="height:26px">
+    <button type="button" class="w-nav-btn" id="drawer-close" aria-label="Close menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <a href="../index.html">Home</a>
+  <a href="../apple.html">iPhone repair</a>
+  <a href="../android.html">Android repair</a>
+  <a href="../computers.html">Laptops &amp; Mac</a>
+  <a href="../insurance-assessments.html">Insurance assessments</a>
+  <a href="../shop.html">Shop</a>
+  <a href="../amenities.html">Find us</a>
+  <a href="../book.html" style="color:var(--w-accent-ink)">Book a repair →</a>
+</div>
+
 
   <nav class="navbar">
     <a href="../index.html" class="logo"><img src="../assets/mobidokta-logo.svg" alt="MobiDokta — Engineering Grade IT Repairs &amp; Service" class="logo-nav" loading="eager"></a>
@@ -158,5 +198,18 @@
   </footer>
 
   <script src="../js/cookie-consent.js"></script>
+<script>
+(function(){
+  var nav=document.getElementById('nav');
+  window.addEventListener('scroll',function(){if(nav)nav.classList.toggle('is-stuck',window.scrollY>8);},{passive:true});
+  var b=document.getElementById('burger'),d=document.getElementById('drawer'),c=document.getElementById('drawer-close');
+  function set(o){if(!d)return;d.classList.toggle('is-open',o);d.setAttribute('aria-hidden',String(!o));
+    if(b)b.setAttribute('aria-expanded',String(o));document.body.style.overflow=o?'hidden':'';}
+  if(b)b.addEventListener('click',function(){set(true);});
+  if(c)c.addEventListener('click',function(){set(false);});
+  if(d)d.addEventListener('click',function(e){if(e.target.tagName==='A')set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+}());
+</script>
 </body>
 </html>
