@@ -566,20 +566,6 @@ body {
 /* Sale scaffolding retired — hide any anchor-price remnants that regenerate from JS */
 .price-was, .price-saving, .sale-tag, .svc-was, .svc-save-badge { display: none !important; }
 
-/* ═══ Credibility counter ═══ */
-.w-count {
-  display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
-  padding: 18px 22px; border: 1px solid var(--w-line);
-  border-radius: 16px; background: var(--w-bg-tint);
-}
-.w-count-n {
-  font-size: clamp(1.8rem, 3.4vw, 2.5rem); font-weight: 700;
-  letter-spacing: -.035em; line-height: 1; color: var(--w-ink);
-  font-variant-numeric: tabular-nums;
-}
-.w-count-l { font-size: .9rem; color: var(--w-ink-soft); line-height: 1.4; }
-.w-count-l strong { color: var(--w-ink); font-weight: 600; }
-
 /* ═══ Lounge / gaming ═══ */
 .w-lounge { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(28px,4vw,56px); align-items: center; }
 .w-lounge-media {
@@ -674,3 +660,6 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .w-hero-bg-img { animation: none !important; transition: none !important; }
 }
+
+/* Five-up stat row — the fixed-devices count leads */
+.w-stats--5 { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 24px; }
