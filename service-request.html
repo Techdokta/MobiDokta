@@ -1,9 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en-ZA">
-<head>
-  <!-- Google tag (gtag.js) - Consent Mode v2, analytics denied until user consents -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
+<head> <!-- Google tag (gtag.js) - Consent Mode v2, analytics denied until user consents --> <script> window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('consent', 'default', {
       'analytics_storage': 'denied',
@@ -12,22 +9,9 @@
       'ad_personalization': 'denied',
       'wait_for_update': 500
     });
-  </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V8T79TD3GN"></script>
-  <script>
-    gtag('js', new Date());
+  </script> <script async src="https://www.googletagmanager.com/gtag/js?id=G-V8T79TD3GN"></script> <script> gtag('js', new Date());
     gtag('config', 'G-V8T79TD3GN');
-  </script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Service Request | MobiDokta</title>
-  <meta name="description" content="Submit a free-form service request to MobiDokta. Describe your issue, upload photos, and let our engineers assess your device.">
-  <link rel="stylesheet" href="./css/global.css">
-  <link rel="stylesheet" href="./css/minimal.css">
-  <link rel="stylesheet" href="./css/utilities.css">
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <style>
-    .request-hero {
+  </script> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <title>Service Request | MobiDokta</title> <meta name="description" content="Submit a free-form service request to MobiDokta. Describe your issue, upload photos, and let our engineers assess your device."> <link rel="stylesheet" href="./css/global.css"> <link rel="stylesheet" href="./css/minimal.css"> <link rel="stylesheet" href="./css/utilities.css"> <script src="https://unpkg.com/lucide@latest"></script> <style> .request-hero {
       padding: var(--space-32) var(--space-8) var(--space-16);
       text-align: center;
       background: var(--bg-secondary);
@@ -154,160 +138,11 @@
     .success-circle { width: 80px; height: 80px; border-radius: 50%; background: var(--green-subtle); display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-6); }
     .success-note { color: var(--text-secondary); font-size: var(--text-sm); margin-bottom: var(--space-8); }  </style>
 </head>
-<body>
-
-  <!-- Navbar -->
-  <nav class="w-nav" id="nav">
-  <div class="w-nav-in">
-    <a href="./index.html" class="w-nav-logo" aria-label="MobiDokta home">
-      <img src="./assets/mobidokta-logo.svg" alt="MobiDokta">
-    </a>
-    <div class="w-nav-links">
-      <a href="./apple.html" class="w-nav-link">iPhone</a>
-      <a href="./android.html" class="w-nav-link">Android</a>
-      <a href="./computers.html" class="w-nav-link">Laptops</a>
-      <a href="./insurance-assessments.html" class="w-nav-link">Insurance</a>
-      <a href="./shop.html" class="w-nav-link">Shop</a>
-      <a href="./amenities.html" class="w-nav-link">Find us</a>
-    </div>
-    <div class="w-nav-right">
-      <button type="button" class="w-nav-btn" id="nav-search-btn" aria-label="Search" title="Search">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      </button>
-      <a href="./book.html" class="w-btn w-btn--primary w-nav-cta">Book a repair</a>
-      <button type="button" class="w-nav-btn w-nav-burger" id="burger" aria-label="Open menu" aria-expanded="false">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
-      </button>
-    </div>
-  </div>
-</nav>
-
-<div class="w-drawer" id="drawer" aria-hidden="true">
-  <div class="w-drawer-top">
-    <img src="./assets/mobidokta-logo.svg" alt="MobiDokta" style="height:26px">
-    <button type="button" class="w-nav-btn" id="drawer-close" aria-label="Close menu">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
-    </button>
-  </div>
-  <a href="./index.html">Home</a>
-  <a href="./apple.html">iPhone repair</a>
-  <a href="./android.html">Android repair</a>
-  <a href="./computers.html">Laptops &amp; Mac</a>
-  <a href="./insurance-assessments.html">Insurance assessments</a>
-  <a href="./shop.html">Shop</a>
-  <a href="./applecity.html">Buy a device</a>
-  <a href="./amenities.html">Find us</a>
-  <a href="./book.html" style="color:var(--w-accent-ink)">Book a repair →</a>
-</div>
-
-  <!-- Side Navigation & Overlay -->
-  <div class="nav-overlay"></div>
-  
-
-  <!-- Hero -->
-  <header class="request-hero">
-    <div class="container-narrow">
-      <div class="badge badge-accent">Manual Service Request</div>
-      <h1 class="headline-xl" class="mb-4">Tell Us What's Wrong.<br><span class="c-tertiary">Your Way.</span></h1>
-      <p class="body-lg">No rigid forms. No guessing. Describe your issue in your own words, attach photos or videos, and our engineers will assess and quote you directly.</p>
-    </div>
-  </header>
-
-  <!-- Request Form -->
-  <section class="section">
-    <div class="container request-form-container">
-
-      <div id="request-form-panel">
-        <!-- Section 1: What's wrong? -->
-        <div class="form-card">
-          <h3><i data-lucide="message-square-text" class="icon-lg" class="c-accent"></i> Describe the Issue</h3>
-          <div class="form-group">
-            <label class="form-label">What happened? What's broken? What do you need?</label>
-            <textarea class="form-textarea" id="req-description" placeholder="E.g. My iPhone 14 Pro screen cracked after a drop. The touch still works but there's a green line on the right side. I also think the battery has been draining fast lately..."></textarea>
-            <p class="form-hint">Be as detailed as you like — or keep it short. Whatever feels right.</p>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">What type of service are you looking for?</label>
-            <div class="service-type-grid">
-              <button class="service-type-btn" data-type="Screen Repair">Screen Repair</button>
-              <button class="service-type-btn" data-type="Battery">Battery</button>
-              <button class="service-type-btn" data-type="Water Damage">Water Damage</button>
-              <button class="service-type-btn" data-type="Camera">Camera</button>
-              <button class="service-type-btn" data-type="Charging Port">Charging Port</button>
-              <button class="service-type-btn" data-type="Software">Software</button>
-              <button class="service-type-btn" data-type="Not Sure">Not Sure</button>
-              <button class="service-type-btn" data-type="Other">Other</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Section 2: Photos & Videos -->
-        <div class="form-card">
-          <h3><i data-lucide="camera" class="icon-lg" class="c-accent"></i> Attach Photos or Videos</h3>
-          <div class="upload-zone" id="upload-zone">
-            <i data-lucide="upload-cloud" class="upload-icon"></i>
-            <p class="upload-title">Tap or click to upload</p>
-            <p class="upload-hint">Images, screenshots, or short videos of the damage. Multiple files accepted.</p>
-            <input type="file" id="req-files" multiple accept="image/*,video/*">
-          </div>
-          <div class="upload-preview" id="upload-preview"></div>
-        </div>
-
-        <!-- Section 3: Your Info -->
-        <div class="form-card">
-          <h3><i data-lucide="user" class="icon-lg" class="c-accent"></i> Your Contact Details</h3>
-          <div class="form-group">
-            <label class="form-label">Full Name</label>
-            <input type="text" class="form-input" id="req-name" placeholder="e.g. Thabo Molefe">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Phone Number</label>
-            <input type="tel" class="form-input" id="req-phone" placeholder="e.g. 078 154 1350">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Email Address <span class="lbl-optional">(Optional)</span></label>
-            <input type="email" class="form-input" id="req-email" placeholder="e.g. thabo@gmail.com">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Preferred Contact Method</label>
-            <div class="flex-gap-3-wrap">
-              <button class="service-type-btn selected" data-contact="WhatsApp">WhatsApp</button>
-              <button class="service-type-btn" data-contact="Phone Call">Phone Call</button>
-              <button class="service-type-btn" data-contact="Email">Email</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Submit -->
-        <button class="btn btn-primary btn-lg btn-block" id="submit-request" class="submit-btn-lg">
-          <i data-lucide="send" class="icon-sm"></i> Submit Service Request
-        </button>
-        <p class="submit-note">
-          We'll review your request and get back to you within 1-2 hours during business hours via your preferred contact method.
-        </p>
-      </div>
-
-      <!-- Success State -->
-      <div id="request-success" class="form-card success-panel" class="d-none">
-        <div class="success-circle">
-          <i data-lucide="check-circle" class="icon-w40-green"></i>
-        </div>
-        <h2 class="mb-4">Request Submitted!</h2>
-        <p class="body-lg" class="mb-6">Our engineering team has received your service request. We'll assess your case and contact you with a detailed quote.</p>
-        <p class="success-note">Reference: <strong id="req-ref"></strong></p>
-        <a href="index.html" class="btn btn-primary btn-lg" class="rounded-full">Back to Home</a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- WhatsApp FAB -->
-  <a href="https://wa.me/27781541350" target="_blank" class="whatsapp-fab" title="Chat on WhatsApp"><i data-lucide="message-circle" class="icon-lg"></i></a>
-
-  <script src="./js/app.js"></script>
-  <script>
-    if (typeof lucide !== 'undefined') { lucide.createIcons(); }
+<body> <!-- Navbar --> <nav class="w-nav" id="nav"> <div class="w-nav-in"> <a href="./index.html" class="w-nav-logo" aria-label="MobiDokta home"> <img src="./assets/mobidokta-logo-light.svg" alt="MobiDokta"> </a> <div class="w-nav-links"> <a href="./apple.html" class="w-nav-link">iPhone</a> <a href="./android.html" class="w-nav-link">Android</a> <a href="./computers.html" class="w-nav-link">Laptops</a> <a href="./insurance-assessments.html" class="w-nav-link">Insurance</a> <a href="./shop.html" class="w-nav-link">Shop</a> <a href="./amenities.html" class="w-nav-link">Find us</a> </div> <div class="w-nav-right"> <button type="button" class="w-nav-btn" id="nav-search-btn" aria-label="Search" title="Search"> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg> </button> <a href="./book.html" class="w-btn w-btn--primary w-nav-cta">Book a repair</a> <button type="button" class="w-nav-btn w-nav-burger" id="burger" aria-label="Open menu" aria-expanded="false"> <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 7h18M3 12h18M3 17h18"/></svg> </button> </div> </div>
+</nav> <div class="w-drawer" id="drawer" aria-hidden="true"> <div class="w-drawer-top"> <img src="./assets/mobidokta-logo-light.svg" alt="MobiDokta" style="height:26px"> <button type="button" class="w-nav-btn" id="drawer-close" aria-label="Close menu"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg> </button> </div> <a href="./index.html">Home</a> <a href="./apple.html">iPhone repair</a> <a href="./android.html">Android repair</a> <a href="./computers.html">Laptops &amp; Mac</a> <a href="./insurance-assessments.html">Insurance assessments</a> <a href="./shop.html">Shop</a> <a href="./applecity.html">Buy a device</a> <a href="./amenities.html">Find us</a> <a href="./book.html" style="color:var(--w-accent-ink)">Book a repair →</a>
+</div> <!-- Side Navigation & Overlay --> <div class="nav-overlay"></div> <!-- Hero --> <header class="request-hero"> <div class="container-narrow"> <div class="badge badge-accent">Manual Service Request</div> <h1 class="headline-xl" class="mb-4">Tell Us What's Wrong.<br><span class="c-tertiary">Your Way.</span></h1> <p class="body-lg">No rigid forms. No guessing. Describe your issue in your own words, attach photos or videos, and our engineers will assess and quote you directly.</p> </div> </header> <!-- Request Form --> <section class="section"> <div class="container request-form-container"> <div id="request-form-panel"> <!-- Section 1: What's wrong? --> <div class="form-card"> <h3><i data-lucide="message-square-text" class="icon-lg" class="c-accent"></i> Describe the Issue</h3> <div class="form-group"> <label class="form-label">What happened? What's broken? What do you need?</label> <textarea class="form-textarea" id="req-description" placeholder="E.g. My iPhone 14 Pro screen cracked after a drop. The touch still works but there's a green line on the right side. I also think the battery has been draining fast lately..."></textarea> <p class="form-hint">Be as detailed as you like — or keep it short. Whatever feels right.</p> </div> <div class="form-group"> <label class="form-label">What type of service are you looking for?</label> <div class="service-type-grid"> <button class="service-type-btn" data-type="Screen Repair">Screen Repair</button> <button class="service-type-btn" data-type="Battery">Battery</button> <button class="service-type-btn" data-type="Water Damage">Water Damage</button> <button class="service-type-btn" data-type="Camera">Camera</button> <button class="service-type-btn" data-type="Charging Port">Charging Port</button> <button class="service-type-btn" data-type="Software">Software</button> <button class="service-type-btn" data-type="Not Sure">Not Sure</button> <button class="service-type-btn" data-type="Other">Other</button> </div> </div> </div> <!-- Section 2: Photos & Videos --> <div class="form-card"> <h3><i data-lucide="camera" class="icon-lg" class="c-accent"></i> Attach Photos or Videos</h3> <div class="upload-zone" id="upload-zone"> <i data-lucide="upload-cloud" class="upload-icon"></i> <p class="upload-title">Tap or click to upload</p> <p class="upload-hint">Images, screenshots, or short videos of the damage. Multiple files accepted.</p> <input type="file" id="req-files" multiple accept="image/*,video/*"> </div> <div class="upload-preview" id="upload-preview"></div> </div> <!-- Section 3: Your Info --> <div class="form-card"> <h3><i data-lucide="user" class="icon-lg" class="c-accent"></i> Your Contact Details</h3> <div class="form-group"> <label class="form-label">Full Name</label> <input type="text" class="form-input" id="req-name" placeholder="e.g. Thabo Molefe"> </div> <div class="form-group"> <label class="form-label">Phone Number</label> <input type="tel" class="form-input" id="req-phone" placeholder="e.g. 078 154 1350"> </div> <div class="form-group"> <label class="form-label">Email Address <span class="lbl-optional">(Optional)</span></label> <input type="email" class="form-input" id="req-email" placeholder="e.g. thabo@gmail.com"> </div> <div class="form-group"> <label class="form-label">Preferred Contact Method</label> <div class="flex-gap-3-wrap"> <button class="service-type-btn selected" data-contact="WhatsApp">WhatsApp</button> <button class="service-type-btn" data-contact="Phone Call">Phone Call</button> <button class="service-type-btn" data-contact="Email">Email</button> </div> </div> </div> <!-- Submit --> <button class="btn btn-primary btn-lg btn-block" id="submit-request" class="submit-btn-lg"> <i data-lucide="send" class="icon-sm"></i> Submit Service Request
+        </button> <p class="submit-note"> We'll review your request and get back to you within 1-2 hours during business hours via your preferred contact method.
+        </p> </div> <!-- Success State --> <div id="request-success" class="form-card success-panel" class="d-none"> <div class="success-circle"> <i data-lucide="check-circle" class="icon-w40-green"></i> </div> <h2 class="mb-4">Request Submitted!</h2> <p class="body-lg" class="mb-6">Our engineering team has received your service request. We'll assess your case and contact you with a detailed quote.</p> <p class="success-note">Reference: <strong id="req-ref"></strong></p> <a href="index.html" class="btn btn-primary btn-lg" class="rounded-full">Back to Home</a> </div> </div> </section> <!-- WhatsApp FAB --> <a href="https://wa.me/27781541350" target="_blank" class="whatsapp-fab" title="Chat on WhatsApp"><i data-lucide="message-circle" class="icon-lg"></i></a> <script src="./js/app.js"></script> <script> if (typeof lucide !== 'undefined') { lucide.createIcons(); }
 
     // Service type selection (multi)
     document.querySelectorAll('.service-type-btn[data-type]').forEach(btn => {
@@ -369,8 +204,7 @@
       if (typeof MobiApp !== 'undefined') MobiApp.toast('Service request submitted! Ref: ' + ref, 'success', 5000);
       if (typeof lucide !== 'undefined') lucide.createIcons();
     });
-  </script>
-  <script src="./js/cookie-consent.js"></script>
+  </script> <script src="./js/cookie-consent.js"></script>
 <script>
 (function(){
   var nav=document.getElementById('nav');

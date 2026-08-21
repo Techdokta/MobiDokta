@@ -7,7 +7,7 @@
   let selectedNPS = null;
   let selectedTags = [];
 
-  const ratingLabels = ['', 'Terrible 😞', 'Poor 😟', 'Okay 😐', 'Good 😊', 'Excellent 🤩'];
+  const ratingLabels = ['', 'Terrible ', 'Poor ', 'Okay ', 'Good ', 'Excellent '];
 
   /* ─── Star Rating ─── */
   const stars = document.querySelectorAll('.star');
@@ -71,7 +71,7 @@
     // Mini stars
     const avgStars = document.getElementById('avg-stars');
     const fullStars = Math.round(parseFloat(avgRating) || 0);
-    avgStars.textContent = '★'.repeat(fullStars) + '☆'.repeat(5 - fullStars);
+    avgStars.textContent = ''.repeat(fullStars) + ''.repeat(5 - fullStars);
   }
   loadStats();
 

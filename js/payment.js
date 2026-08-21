@@ -58,10 +58,7 @@
     const overlay = document.createElement('div');
     overlay.className = 'processing-overlay';
     overlay.innerHTML = `
-      <div class="processing-spinner"></div>
-      <p style="color:var(--cta);font-weight:600;">Processing your ${gateway} payment...</p>
-      <p style="color:var(--text-tertiary);font-size:var(--text-sm);">Please do not close this window.</p>
-    `;
+      <div class="processing-spinner"></div> <p style="color:var(--cta);font-weight:600;">Processing your ${gateway} payment...</p> <p style="color:var(--text-tertiary);font-size:var(--text-sm);">Please do not close this window.</p> `;
     document.body.appendChild(overlay);
 
     // Simulate processing
@@ -74,8 +71,7 @@
         customerName: bookingData ? bookingData.customerName : 'Customer',
         amount: amount,
         gateway: gateway,
-        status: 'completed'
-      });
+        status: 'completed' });
 
       // Update booking status
       if (bookingId) {
@@ -146,11 +142,7 @@
     const invoiceWindow = window.open('', '_blank');
     const ref = bookingId || 'N/A';
     const invoiceHTML = `
-      <!DOCTYPE html>
-      <html>
-      <head><title>MobiDokta Invoice - ${ref}</title>
-      <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; max-width: 700px; margin: 2rem auto; padding: 2rem; color: #1a1a1a; }
+      <!DOCTYPE html> <html> <head><title>MobiDokta Invoice - ${ref}</title> <style> body { font-family: 'Segoe UI', Arial, sans-serif; max-width: 700px; margin: 2rem auto; padding: 2rem; color: #1a1a1a; }
         .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #0071e3; padding-bottom: 1rem; margin-bottom: 2rem; }
         .logo { font-size: 1.5rem; font-weight: 800; }
         .logo span { color: #2dd4bf; }
@@ -163,49 +155,7 @@
         .total-row { font-weight: 700; font-size: 1.2rem; color: #0066ff; }
         .footer { text-align: center; margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #eee; color: #999; font-size: 0.8rem; }
         @media print { body { margin: 0; } }
-      </style>
-      </head>
-      <body>
-        <div class="header">
-          <div class="logo"><span>+</span> MobiDokta</div>
-          <div class="invoice-title">INVOICE</div>
-        </div>
-        <div class="details">
-          <div class="detail-group">
-            <h4>Bill To</h4>
-            <p><strong>${bookingData ? bookingData.customerName : 'Customer'}</strong></p>
-            <p>${bookingData ? bookingData.customerPhone || '' : ''}</p>
-            <p>${bookingData ? bookingData.customerEmail || '' : ''}</p>
-          </div>
-          <div class="detail-group" style="text-align:right;">
-            <h4>Invoice Details</h4>
-            <p><strong>Ref:</strong> ${ref}</p>
-            <p><strong>Date:</strong> ${new Date().toLocaleDateString('en-ZA')}</p>
-            <p><strong>Status:</strong> PAID ✓</p>
-          </div>
-        </div>
-        <table>
-          <thead><tr><th>Services</th><th>Device</th><th>Location</th><th style="text-align:right">Amount</th></tr></thead>
-          <tbody>
-            <tr>
-              <td>${bookingData ? bookingData.services : 'Repair Service'}</td>
-              <td>${bookingData ? (bookingData.brand + ' ' + (bookingData.model || '')) : '—'}</td>
-              <td>${bookingData ? bookingData.location : '—'}</td>
-              <td style="text-align:right">R${amount.toLocaleString()}</td>
-            </tr>
-            <tr>
-              <td colspan="3" style="text-align:right;border:none;" class="total-row">Total Paid</td>
-              <td style="text-align:right;border:none;" class="total-row">R${amount.toLocaleString()}</td>
-            </tr>
-          </tbody>
-        </table>
-        <div class="footer">
-          <p>MobiDokta (Pty) Ltd · Gauteng, South Africa · techdokta@gmail.com</p>
-          <p>Premium Parts · Certified TechDoktas · Lifetime Warranty</p>
-        </div>
-        <script>window.print();<\/script>
-      </body></html>
-    `;
+      </style> </head> <body> <div class="header"> <div class="logo"><span>+</span> MobiDokta</div> <div class="invoice-title">INVOICE</div> </div> <div class="details"> <div class="detail-group"> <h4>Bill To</h4> <p><strong>${bookingData ? bookingData.customerName : 'Customer'}</strong></p> <p>${bookingData ? bookingData.customerPhone || '' : ''}</p> <p>${bookingData ? bookingData.customerEmail || '' : ''}</p> </div> <div class="detail-group" style="text-align:right;"> <h4>Invoice Details</h4> <p><strong>Ref:</strong> ${ref}</p> <p><strong>Date:</strong> ${new Date().toLocaleDateString('en-ZA')}</p> <p><strong>Status:</strong> PAID </p> </div> </div> <table> <thead><tr><th>Services</th><th>Device</th><th>Location</th><th style="text-align:right">Amount</th></tr></thead> <tbody> <tr> <td>${bookingData ? bookingData.services : 'Repair Service'}</td> <td>${bookingData ? (bookingData.brand + ' ' + (bookingData.model || '')) : '—'}</td> <td>${bookingData ? bookingData.location : '—'}</td> <td style="text-align:right">R${amount.toLocaleString()}</td> </tr> <tr> <td colspan="3" style="text-align:right;border:none;" class="total-row">Total Paid</td> <td style="text-align:right;border:none;" class="total-row">R${amount.toLocaleString()}</td> </tr> </tbody> </table> <div class="footer"> <p>MobiDokta (Pty) Ltd · Gauteng, South Africa · techdokta@gmail.com</p> <p>Premium Parts · Certified TechDoktas · Lifetime Warranty</p> </div> <script>window.print();<\/script> </body></html> `;
     invoiceWindow.document.write(invoiceHTML);
     invoiceWindow.document.close();
   });

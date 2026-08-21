@@ -1,5 +1,5 @@
 /* ─────────────────────────────────────────────────────────────────────
-   Doki — MobiDokta Chatbot Assistant
+   Mobi — MobiDokta Chatbot Assistant
    Pure JS, no dependencies, state-machine conversation flows.
    ───────────────────────────────────────────────────────────────────── */
 (function () {
@@ -12,7 +12,7 @@
 
   var FLOWS = {
     greeting: {
-      msg: "Hey! I'm Doki — your MobiDokta assistant. What brings you in today?",
+      msg: "Hi, I'm Mobi — MobiDokta's assistant. What brings you in today?",
       chips: [
         { label: 'Cracked screen', next: 'screen-device' },
         { label: 'Battery problem', next: 'battery-type' },
@@ -156,14 +156,13 @@
 
   // Proactive hints — rotate through these
   var HINTS = [
-    "July Sale: 30% off all repairs — ends 31 July.",
+    "Free diagnosis on every repair, and no charge if we cannot fix it.",
     "Most repairs are done same day. Walk-ins welcome at Danville.",
     "Did you know your iPhone slows down when battery health drops below 80%?",
     "Selling your phone? A refurb can add R1,500–R4,000 to the price.",
     "Cracked screen? Quick answer above or WhatsApp us for an instant price.",
     "We're open 7 days — Mon–Sat 09:00–21:00, Sun 12:00–21:00 — including public holidays.",
-    "Free diagnosis on all board-level and data recovery jobs — no fix, no charge."
-  ];
+    "Free diagnosis on all board-level and data recovery jobs — no fix, no charge." ];
   var hintIdx = 0;
 
   // ── State ────────────────────────────────────────────────────────────
@@ -200,7 +199,7 @@
   function build() {
     var w = el('div', 'doki-widget');
     w.setAttribute('role', 'complementary');
-    w.setAttribute('aria-label', 'Doki — MobiDokta chat assistant');
+    w.setAttribute('aria-label', 'Mobi — MobiDokta chat assistant');
 
     // Panel
     panel = el('div', 'doki-panel');
@@ -211,7 +210,7 @@
     av.textContent = 'D';
     var info = el('div', 'doki-hdr-info');
     var nm   = el('div', 'doki-name');
-    nm.textContent = 'Doki';
+    nm.textContent = 'Mobi';
     var st   = el('div', 'doki-status-line');
     var dot  = el('span', 'doki-status-dot');
     st.appendChild(dot);
@@ -242,7 +241,7 @@
 
     // Bubble
     bubble = el('button', 'doki-bubble');
-    bubble.setAttribute('aria-label', 'Chat with Doki, MobiDokta assistant');
+    bubble.setAttribute('aria-label', 'Chat with Mobi, MobiDokta assistant');
     bubble.setAttribute('aria-expanded', 'false');
     bubble.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>';
     badge = el('span', 'doki-badge');
@@ -267,7 +266,7 @@
     // Restore tab
     var restoreTab = el('button', 'fab-restore');
     restoreTab.setAttribute('aria-label', 'Show chat and WhatsApp buttons');
-    restoreTab.innerHTML = '<span class="fab-restore-icon">💬</span><span class="fab-restore-label">Chat</span>';
+    restoreTab.innerHTML = '<span class="fab-restore-icon"></span><span class="fab-restore-label">Chat</span>';
     restoreTab.addEventListener('click', showFabs);
     document.body.appendChild(restoreTab);
   }
@@ -416,15 +415,14 @@
       var ctxMap = {
         'screen':          'I see you were checking screen repair options. Let me help you book!',
         'battery':         'Looks like you were checking battery pricing. A fresh battery makes your phone feel brand new.',
-        'water':           '⚡ Water damage? Every minute matters — let me guide you through the right steps.',
+        'water':           'Water damage? Every minute matters — let me guide you through the right steps.',
         'board':           'Board-level repair is specialist work. Let me help you get the right assessment.',
         'iphone-air':      'iPhone Air repair — you\'re in the right place. One of very few SA shops with specialist tooling for this.',
         'huawei-foldable': 'Huawei outward-fold repair — we can help. Let me find out what you need.',
         'foldable':        'Foldable phone repair — specialist work. Which model do you have?',
         'checkforyou':     'IMEI check — smart move before buying second-hand. I can walk you through it.',
-        'trackforyou':     '🚨 Phone stolen? Let\'s act fast — I\'ll guide you to the right steps right now.',
-        'data-recovery':   'Data recovery — the most important thing is to stop using the device immediately.'
-      };
+        'trackforyou':     'Phone stolen? Let\'s act fast — I\'ll guide you to the right steps right now.',
+        'data-recovery':   'Data recovery — the most important thing is to stop using the device immediately.' };
       var ctxMsg = ctxMap[ctx.serviceId] || ('I see you were searching for "' + (ctx.query || ctx.serviceId) + '" — let me help!');
       botSay(ctxMsg, 300, function () {
         botSay(flow.msg, 700, function () {

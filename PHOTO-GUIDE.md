@@ -332,6 +332,24 @@ These are for the `#location` block and the Google Business Profile. Tell me whe
 
 ---
 
+### K2 — Lounge, landmark & mobile hero backdrop (all WIRED, all fall back gracefully)
+
+| File name → `img/` | Where it shows | Subject |
+|---|---|---|
+| `loc-tri-lounge.jpg` | Homepage "Play a game. On us." | The gaming area and waiting sofas — **get the seating and the consoles in one frame.** This is a conversion asset: it has to look like somewhere you'd happily spend an hour. Shoot with the screens on. |
+| `loc-residence-landmark.jpg` | Homepage Find-us + amenities | Madeira Isles Residence itself, straight on, so it is recognisable from the street |
+| `loc-residence-proximity.jpg` | Homepage Find-us + amenities | Residence **and** the shopping complex in one frame, showing how close they are — the same-management connection |
+
+**Mobile hero backdrop** reuses three photos you already have — the liquid-corrosion macro, the MacBook
+thermal shot and the recovered board — behind the headline on phones. No new photo needed, but if you
+shoot a strong wide bench shot, drop it in as `hero-primary.jpg` and it becomes the main hero everywhere.
+
+> The two AI images (`hero-iphone.jpg`, `hero-android.jpg`) are now fully out of use across the whole site.
+> The Android and Apple page heroes use the real Huawei-with-Borneo-schematics shot and the white
+> iPhone 13 Pro bench shot instead.
+
+---
+
 ## SECTION I — SERVICE CARDS STILL SHOWING ICONS → `img/`
 
 These cards on `index.html` display a generic icon instead of a photo. Both slots are now wired with an

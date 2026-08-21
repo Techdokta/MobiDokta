@@ -78,7 +78,7 @@
   const models = {
     Apple: [
       'iPhone 17 Pro Max','iPhone 17 Pro','iPhone 17 Plus','iPhone 17',
-      'iPhone Air (2025) ⭐ Rare Service',
+      'iPhone Air (2025) Rare Service',
       'iPhone 16 Pro Max','iPhone 16 Pro','iPhone 16 Plus','iPhone 16','iPhone 16e',
       'iPhone 15 Pro Max','iPhone 15 Pro','iPhone 15 Plus','iPhone 15',
       'iPhone 14 Pro Max','iPhone 14 Pro','iPhone 14 Plus','iPhone 14',
@@ -87,8 +87,7 @@
       'iPhone 11 Pro Max','iPhone 11 Pro','iPhone 11',
       'iPhone XS Max','iPhone XS','iPhone X','iPhone XR',
       'iPhone 8 Plus','iPhone 8','iPhone SE (2022)','iPhone SE (2020)','iPhone SE',
-      'Other (Type manually...)'
-    ],
+      'Other (Type manually...)' ],
     Samsung: [
       'Galaxy S25 Ultra','Galaxy S25+','Galaxy S25',
       'Galaxy S24 Ultra','Galaxy S24+','Galaxy S24',
@@ -96,17 +95,15 @@
       'Galaxy Z Fold 6','Galaxy Z Fold 5','Galaxy Z Fold 4',
       'Galaxy Z Flip 6','Galaxy Z Flip 5','Galaxy Z Flip 4',
       'Galaxy A55','Galaxy A54','Galaxy A35','Galaxy A34','Galaxy A25','Galaxy A24','Galaxy A15','Galaxy A14',
-      'Other (Type manually...)'
-    ],
+      'Other (Type manually...)' ],
     Huawei: [
-      'Mate XS2 ⭐ Rare Service','Mate X3 ⭐ Rare Service','Mate X5 ⭐ Rare Service',
+      'Mate XS2 Rare Service','Mate X3 Rare Service','Mate X5 Rare Service',
       'Pura 70 Ultra','Pura 70 Pro','Pura 70',
       'Mate 60 Pro+','Mate 60 Pro','Mate 60',
       'P60 Pro','P60','Mate 50 Pro','P50 Pro',
       'Nova 12 Pro','Nova 12','Nova 11 Pro','Nova 11','Nova 10',
       'Y9a','MatePad Pro 13.2','MatePad 11',
-      'Other (Type manually...)'
-    ],
+      'Other (Type manually...)' ],
     MacBook: [
       'MacBook Pro M4 (16")','MacBook Pro M4 (14")','MacBook Pro M3 (16")','MacBook Pro M3 (14")',
       'MacBook Pro M2 (16")','MacBook Pro M2 (14")','MacBook Pro M1 (16")','MacBook Pro M1 (14")',
@@ -114,8 +111,7 @@
       'Intel MacBook Pro (2019–2020)','Intel MacBook Pro (2017–2018)','Intel MacBook Air',
       'iMac 24" M3 (2023)','iMac 24" M1 (2021)','iMac 27" Intel','iMac 21.5" Intel',
       'Mac Mini M4','Mac Mini M2','Mac Mini M1',
-      'Other (Type manually...)'
-    ],
+      'Other (Type manually...)' ],
     Console: [
       'PS5 (Disc Edition)','PS5 Digital Edition',
       'PS4 Pro','PS4 Slim','PS4',
@@ -124,8 +120,7 @@
       'Xbox One X','Xbox One S','Xbox One',
       'Nintendo Switch OLED','Nintendo Switch','Nintendo Switch Lite',
       'DualSense Controller','DualShock 4','Xbox Wireless Controller','Joy-Con (L/R)',
-      'Other (Type manually...)'
-    ],
+      'Other (Type manually...)' ],
     Gadgets: [
       'Apple Watch Ultra 2','Apple Watch Series 10','Apple Watch Series 9','Apple Watch Series 8','Apple Watch SE (2nd gen)','Apple Watch SE',
       'iPad Pro 13" M4','iPad Pro 11" M4','iPad Pro 12.9" M2','iPad Pro 11" M2',
@@ -136,8 +131,7 @@
       'AirPods Pro 2nd Gen','AirPods Max','Samsung Galaxy Buds 3 Pro','Samsung Galaxy Buds 3','Sony WH-1000XM5',
       'GoPro Hero 13','GoPro Hero 12','GoPro Hero 11',
       'Garmin Fenix 8','Garmin Fenix 7','Samsung Galaxy Watch 7','Samsung Galaxy Watch 6',
-      'Other (Type manually...)'
-    ],
+      'Other (Type manually...)' ],
     Exclusive: [
       '— iPhone Air Models —',
       'iPhone Air (2025)',
@@ -154,8 +148,7 @@
       'OnePlus Open',
       'Google Pixel Fold',
       'Motorola Razr+ (2024)',
-      'Other (Type manually...)'
-    ],
+      'Other (Type manually...)' ],
     DJI: [
       'DJI Mini 4 Pro','DJI Mini 3 Pro','DJI Mini 3','DJI Mini 2 SE','DJI Mini 2',
       'DJI Air 3S','DJI Air 3','DJI Air 2S',
@@ -164,13 +157,12 @@
       'DJI Osmo Action 5 Pro','DJI Osmo Action 4','DJI Osmo Action 3',
       'DJI Osmo Pocket 3','DJI Osmo Pocket 2',
       'DJI RC 2 Remote','DJI RC-N2 Remote','DJI RC-N1 Remote','DJI Smart Controller',
-      'Other (Type manually...)'
-    ]
+      'Other (Type manually...)' ]
   };
 
   // Retail replacement cost reference (approx SA market — used for value comparison bar)
   const retailPrices = {
-    'iPhone Air (2025) ⭐ Rare Service': 27999,
+    'iPhone Air (2025) Rare Service': 27999,
     'iPhone 17 Pro Max': 29999, 'iPhone 17 Pro': 27499, 'iPhone 17 Plus': 22999, 'iPhone 17': 20999,
     'iPhone 16 Pro Max': 25999, 'iPhone 16 Pro': 22999, 'iPhone 16 Plus': 19999, 'iPhone 16': 18499,
     'iPhone 15 Pro Max': 24999, 'iPhone 15 Pro': 21999, 'iPhone 15 Plus': 18999, 'iPhone 15': 16499,
@@ -183,8 +175,8 @@
 
   const pricingMap = {
     // ── iPhone Air — ultra-thin chassis, specialist tooling required ──
-    // oem = July Sale price · wasOem = regular price · eco = quality aftermarket · port/back = per PDF
-    'iPhone Air (2025) ⭐ Rare Service': { oem: 4999, wasOem: 5999, eco: 3500, batt: 1699, wasBatt: 1999, port: 1899, back: 2999 },
+    // oem = OEM-grade price · wasOem = legacy anchor, unused · eco = quality aftermarket · port/back = per PDF
+    'iPhone Air (2025) Rare Service': { oem: 4999, wasOem: 5999, eco: 3500, batt: 1699, wasBatt: 1999, port: 1899, back: 2999 },
     'iPhone 16e': { oem: 2599, wasOem: 3199, eco: 1820, batt: 999, wasBatt: 1199, port: 1199, back: 1499 },
 
     // ── iPhone 17 ──
@@ -267,9 +259,9 @@
     'Galaxy A14':       { oem: 1099, batt: 699 },
 
     // ── Huawei Foldables — specialist fold-screen repair, limited SA availability ──
-    'Mate XS2 ⭐ Rare Service': { oem: 9500, batt: 2800 },
-    'Mate X3 ⭐ Rare Service':  { oem: 10500, batt: 3000 },
-    'Mate X5 ⭐ Rare Service':  { oem: 11500, batt: 3200 },
+    'Mate XS2 Rare Service': { oem: 9500, batt: 2800 },
+    'Mate X3 Rare Service':  { oem: 10500, batt: 3000 },
+    'Mate X5 Rare Service':  { oem: 11500, batt: 3200 },
 
     // ── iPad ──
     'iPad Pro 13" M4':     { oem: 6500, batt: 2000 },
@@ -457,11 +449,7 @@
       const bar = document.createElement('div');
       bar.className = 'value-compare-bar';
       bar.innerHTML = `
-        <span class="vcb-repair">Screen repair <strong>R${modelMap.oem.toLocaleString()}</strong></span>
-        <span class="vcb-vs">vs</span>
-        <span class="vcb-replace">New device <strong>~R${retail.toLocaleString()}</strong></span>
-        <span class="vcb-save">Save ~R${savingsVsReplace.toLocaleString()}</span>
-      `;
+        <span class="vcb-repair">Screen repair <strong>R${modelMap.oem.toLocaleString()}</strong></span> <span class="vcb-vs">vs</span> <span class="vcb-replace">New device <strong>~R${retail.toLocaleString()}</strong></span> <span class="vcb-save">Save ~R${savingsVsReplace.toLocaleString()}</span> `;
       serviceGrid.appendChild(bar);
     }
 
@@ -469,8 +457,8 @@
     activeServices = baseServices.map(svc => {
       let freshSvc = { ...svc };
       if (booking.model && modelMap) {
-        if (freshSvc.dynType === 'oem'  && modelMap.oem)  { freshSvc.price = modelMap.oem;  freshSvc.wasPrice = modelMap.wasOem  || null; }
-        if (freshSvc.dynType === 'eco'  && modelMap.eco)  { freshSvc.price = modelMap.eco; }
+        if (freshSvc.dynType === 'oem' && modelMap.oem)  { freshSvc.price = modelMap.oem;  freshSvc.wasPrice = modelMap.wasOem  || null; }
+        if (freshSvc.dynType === 'eco' && modelMap.eco)  { freshSvc.price = modelMap.eco; }
         if (freshSvc.dynType === 'batt' && modelMap.batt) { freshSvc.price = modelMap.batt; freshSvc.wasPrice = modelMap.wasBatt || null; }
         if (freshSvc.dynType === 'port' && modelMap.port) { freshSvc.price = modelMap.port; }
         if (freshSvc.dynType === 'back' && modelMap.back) { freshSvc.price = modelMap.back; }
@@ -498,13 +486,8 @@
         : '';
 
       el.innerHTML = `
-        <div class="svc-icon"><i data-lucide="${svc.icon}" class="icon-lg" style="color:var(--accent)"></i></div>
-        <h4>${svc.name}</h4>
-        <p>${svc.desc}</p>
-        ${wasBadge}
-        <div class="svc-price">${svc.price === 0 ? 'FREE' : 'R' + svc.price.toLocaleString()}</div>
-        <div class="svc-duration">~${svc.duration} min</div>
-      `;
+        <div class="svc-icon"><i data-lucide="${svc.icon}" class="icon-lg" style="color:var(--accent)"></i></div> <h4>${svc.name}</h4> <p>${svc.desc}</p> ${wasBadge}
+        <div class="svc-price">${svc.price === 0 ? 'FREE' : 'R' + svc.price.toLocaleString()}</div> <div class="svc-duration">~${svc.duration} min</div> `;
       el.addEventListener('click', () => {
         if (svc.id === 'tech-at-door') {
           const idx = booking.cart.findIndex(s => s.id.startsWith('tech-at-door'));
@@ -561,9 +544,7 @@
       const row = document.createElement('div');
       row.className = 'cart-item';
       row.innerHTML = `
-        <span class="cart-item-name">${item.name}</span>
-        <span class="cart-item-price">R${item.price.toLocaleString()}</span>
-      `;
+        <span class="cart-item-name">${item.name}</span> <span class="cart-item-price">R${item.price.toLocaleString()}</span> `;
       list.appendChild(row);
     });
 
@@ -741,8 +722,7 @@
     document.getElementById('sum-location').textContent = fullLocation;
     document.getElementById('sum-cost').textContent = booking.totalPrice === 0 ? 'FREE' : MobiApp.formatRand(booking.totalPrice);
     
-    // Deposit UI only for courier & call-out bookings; everyone else sees "no deposit"
-    const deposit = requiresDeposit();
+    // Deposit UI only for courier & call-out bookings; everyone else sees "no deposit" const deposit = requiresDeposit();
     const sumDepositEl = document.getElementById('sum-deposit');
     if (sumDepositEl) sumDepositEl.textContent = deposit ? MobiApp.formatRand(booking.depositAmount) : 'R0';
     const depositRow = document.getElementById('sum-deposit-row');

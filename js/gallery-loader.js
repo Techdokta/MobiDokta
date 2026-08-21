@@ -21,15 +21,7 @@ const GalleryLoader = {
     const grid = document.getElementById('gallery-grid');
     if (!grid || !items) return;
     grid.innerHTML = items.map(item => `
-      <div class="gallery-item" data-category="${item.category}" onclick="openLightbox(this)">
-        <img src="${item.src}" alt="${item.title}" loading="lazy" />
-        <div class="gallery-item-overlay">
-          <span class="gallery-item-tag">${item.tag}</span>
-          <h4 class="gallery-item-title">${item.title}</h4>
-          <p class="gallery-item-desc">${item.description || ''}</p>
-        </div>
-      </div>
-    `).join('');
+      <div class="gallery-item" data-category="${item.category}" onclick="openLightbox(this)"> <img src="${item.src}" alt="${item.title}" loading="lazy" /> <div class="gallery-item-overlay"> <span class="gallery-item-tag">${item.tag}</span> <h4 class="gallery-item-title">${item.title}</h4> <p class="gallery-item-desc">${item.description || ''}</p> </div> </div> `).join('');
   },
 
   /** Initialise filter tabs */

@@ -72,7 +72,7 @@
           '</p>',
         '</div>',
         '<div id="md-consent-btns" style="display:flex;flex-wrap:wrap;gap:8px;flex-shrink:0;">',
-          '<button id="md-accept-all" style="padding:10px 20px;background:var(--cta,#0066cc);color:#fff;border:none;border-radius:999px;font-weight:600;font-size:13px;cursor:pointer;">Yes, all good ✓</button>',
+          '<button id="md-accept-all" style="padding:10px 20px;background:var(--cta,#0066cc);color:#fff;border:none;border-radius:999px;font-weight:600;font-size:13px;cursor:pointer;">Yes, all good </button>',
           '<button id="md-essentials" style="padding:10px 20px;background:transparent;color:var(--text-primary,#1a1a1a);border:2px solid var(--border,#ddd);border-radius:999px;font-weight:600;font-size:13px;cursor:pointer;">Essentials only</button>',
           '<button id="md-choose" style="padding:10px 0;background:transparent;color:var(--text-secondary,#777);border:none;font-size:13px;cursor:pointer;text-decoration:underline;">Let me choose ›</button>',
         '</div>',
@@ -97,8 +97,7 @@
           '</label>',
         '</div>',
         '<button id="md-save-choice" style="margin-top:8px;padding:10px 24px;background:var(--cta,#0066cc);color:#fff;border:none;border-radius:999px;font-weight:600;font-size:13px;cursor:pointer;">Save my choice</button>',
-      '</div>'
-    ].join('');
+      '</div>' ].join('');
 
     banner.style.cssText = [
       'position:fixed;bottom:0;left:0;right:0;z-index:99999;',

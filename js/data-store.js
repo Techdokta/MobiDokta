@@ -200,8 +200,7 @@ const MobiStore = {
         date: dateStr,
         time: timeStr,
         location: locations[i % 3],
-        status: i < 6 ? 'confirmed' : 'pending'
-      });
+        status: i < 6 ? 'confirmed' : 'pending' });
 
       if (i < 6) {
         this.addPayment({
@@ -209,8 +208,7 @@ const MobiStore = {
           customerName: names[i],
           amount: svc.price,
           gateway: gateways[i % 3],
-          status: 'completed'
-        });
+          status: 'completed' });
       }
 
       if (i < 5) {

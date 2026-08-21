@@ -24,13 +24,7 @@
         const card = document.createElement('div');
         card.className = 'review-card glass-panel';
         card.innerHTML = `
-          <div class="review-header">
-            <img src="${review.profile_photo_url}" alt="${review.author_name}" class="review-avatar" />
-            <div class="review-author">${review.author_name}</div>
-            <div class="review-rating">${'⭐'.repeat(review.rating)}</div>
-          </div>
-          <p class="review-text">${review.text}</p>
-        `;
+          <div class="review-header"> <img src="${review.profile_photo_url}" alt="${review.author_name}" class="review-avatar" /> <div class="review-author">${review.author_name}</div> <div class="review-rating">${''.repeat(review.rating)}</div> </div> <p class="review-text">${review.text}</p> `;
         grid.appendChild(card);
       });
       container.appendChild(grid);

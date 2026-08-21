@@ -12,13 +12,13 @@
     // ── REPAIRS ──────────────────────────────────────────────────────────────
 
     {
-      id: 'screen', type: 'service', icon: '📱',
+      id: 'screen', type: 'service',
       title: 'Screen Replacement',
       tagline: 'Cracked, shattered, or dead display — same day.',
       answer: 'We replace iPhone and Samsung screens with Hard OLED, Incell LCD, or Soft OLED panels — we explain the difference before you decide. Touch ID and Face ID are preserved.',
       tip: 'Don\'t press on a cracked screen — pressure spreads the fracture into the LCD underneath, turning a cheaper fix into a much more expensive one.',
       price: 'From R599', eta: 'Same day',
-      social: '47+ screens replaced last month · 4.9★ Google rating',
+      social: '47+ screens replaced last month · 4.9Google rating',
       tiers: [
         { label: 'OEM Grade', price: 'From R599', desc: 'Factory-spec quality — True Tone & Face ID preserved, price depends on model', popular: true },
         { label: 'Aftermarket Eco', price: 'Available', desc: 'Quality-verified aftermarket — great for older models', popular: false }
@@ -31,7 +31,7 @@
     },
 
     {
-      id: 'battery', type: 'service', icon: '🔋',
+      id: 'battery', type: 'service',
       title: 'Battery Replacement',
       tagline: 'Draining fast, swollen, or won\'t hold a charge.',
       answer: 'OEM-grade battery fitted in 45 minutes. iOS CPU throttling disappears once health is restored above 80%. We disclose the exact health percentage before and after.',
@@ -49,7 +49,7 @@
     },
 
     {
-      id: 'insurance-assessment', type: 'service', icon: '📋',
+      id: 'insurance-assessment', type: 'service',
       title: 'Insurance Damage Assessment',
       tagline: 'A report your insurer will actually accept — signed, in 24 hours.',
       answer: 'A full documented assessment: IMEI verification, GSMA blacklist check, complete hardware and firmware diagnostic, functional test matrix, dated photographic evidence, a damage cause-consistency opinion, and an itemised repair estimate — issued as a signed PDF. R650 standard, or R850 fast-tracked to 24 hours. The fee is credited against your repair if you repair with us.',
@@ -69,11 +69,11 @@
     },
 
     {
-      id: 'water', type: 'service', icon: '💧', urgent: true,
+      id: 'water', type: 'service', urgent: true,
       title: 'Water Damage Recovery',
       tagline: 'Act fast — every hour matters.',
       answer: 'Ultrasonic logic board cleaning + component-level corrosion removal. We\'ve recovered phones brought in 72 hours after pool drops. Free diagnosis. Data recovery also possible.',
-      tip: '⚠️ Power it off immediately. Do NOT plug it in or charge it. Do NOT put it in rice — rice does nothing for moisture inside a phone. Bring it in within 24 hours. Every extra hour increases corrosion and data loss risk.',
+      tip: 'Power it off immediately. Do NOT plug it in or charge it. Do NOT put it in rice — rice does nothing for moisture inside a phone. Bring it in within 24 hours. Every extra hour increases corrosion and data loss risk.',
       price: 'Diagnosis free · From R800', eta: 'Same day assessment',
       social: '9 water recoveries last month · Free same-day diagnosis',
       keywords: ['water','wet','dropped','pool','ocean','rain','liquid','rice','submerged','toilet','sink','spilled','splash','damp','flooded','water damage','fell in water','dropped in water','water damaged'],
@@ -84,7 +84,7 @@
     },
 
     {
-      id: 'glass-only', type: 'service', icon: '🔬',
+      id: 'glass-only', type: 'service',
       title: 'Screen Glass Replacement',
       tagline: 'Only the top glass — your OLED stays intact.',
       answer: 'If your screen still displays and touch still works but the front glass is cracked, we can replace just the glass layer using UV-cured OCA adhesive — no new OLED or LCD needed. This saves you R200–R1,500 compared to a full screen swap. Takes about 60 minutes. Available on most iPhone models (7 onwards).',
@@ -98,7 +98,7 @@
     },
 
     {
-      id: 'camera', type: 'service', icon: '📷',
+      id: 'camera', type: 'service',
       title: 'Camera Repair',
       tagline: 'Blurry, autofocus failing, or cracked lens.',
       answer: 'Front and rear camera module replacement. A cracked sapphire lens causes purple haze and autofocus hunting — we can often replace just the lens instead of the full module.',
@@ -112,7 +112,7 @@
     },
 
     {
-      id: 'charging-port', type: 'service', icon: '🔌',
+      id: 'charging-port', type: 'service',
       title: 'Charging Port Repair',
       tagline: 'Won\'t charge, loose cable, or no connection.',
       answer: 'Lightning and USB-C port replacement at board level — not a rubber-fix. We also diagnose the charging IC and power management chips when the port alone isn\'t the cause.',
@@ -126,7 +126,7 @@
     },
 
     {
-      id: 'backglass', type: 'service', icon: '🔲',
+      id: 'backglass', type: 'service',
       title: 'Back Glass Replacement',
       tagline: 'Shattered ceramic back panel — full restoration.',
       answer: 'Laser separation system removes shattered ceramic back glass. Frame realignment for bent titanium/aluminium. MagSafe and wireless charging fully preserved after repair.',
@@ -140,7 +140,7 @@
     },
 
     {
-      id: 'speaker', type: 'service', icon: '🔊',
+      id: 'speaker', type: 'service',
       title: 'Speaker & Microphone',
       tagline: 'No sound, muffled calls, or mic not working.',
       answer: 'Earpiece, loudspeaker, and microphone replacement or cleaning. Dust-blocked grilles are the most common cause of muffled audio — often fixed without parts.',
@@ -154,7 +154,7 @@
     },
 
     {
-      id: 'board', type: 'service', icon: '🔧',
+      id: 'board', type: 'service',
       title: 'Board-Level & Data Recovery',
       tagline: 'For phones other shops said were gone.',
       answer: 'Micro-soldering, component-level logic board repair, and NAND data recovery. No fix, no charge. We handle phones that have been refused by other shops.',
@@ -169,7 +169,7 @@
     },
 
     {
-      id: 'samsung', type: 'service', icon: '📲',
+      id: 'samsung', type: 'service',
       title: 'Samsung Repairs',
       tagline: 'Galaxy screens, batteries, ports — same day.',
       answer: 'Screen replacements, battery swaps, charging ports, and board-level repair for Samsung Galaxy S-series, A-series, Note, and Fold devices. OEM-grade parts.',
@@ -182,7 +182,7 @@
     },
 
     {
-      id: 'iphone', type: 'service', icon: '🍎',
+      id: 'iphone', type: 'service',
       title: 'iPhone Repairs',
       tagline: 'All models iPhone 7 – iPhone 17 Pro Max.',
       answer: 'Screen replacement, battery swap, water damage, camera, charging port, back glass, and board-level repair for all iPhone models. OEM-grade parts. 6-month warranty.',
@@ -197,7 +197,7 @@
     // ── PRODUCTS ──────────────────────────────────────────────────────────────
 
     {
-      id: 'ps5', type: 'product', icon: '🎮',
+      id: 'ps5', type: 'product',
       title: 'PS5 Consoles & Controllers',
       tagline: 'New sealed & pre-owned — consoles, DualSense, headsets.',
       answer: 'We stock PS5 Disc Edition and Digital Edition (new & pre-owned), DualSense controllers in all colourways including Midnight Black, Cosmic Red and Cobalt Blue, the DualSense Edge pro controller, Pulse 3D headsets, and accessories. 3-month warranty on pre-owned units.',
@@ -211,7 +211,7 @@
     },
 
     {
-      id: 'screen-protector', type: 'product', icon: '🛡️',
+      id: 'screen-protector', type: 'product',
       title: 'Screen Protectors',
       tagline: 'Tempered glass & anti-spy options — fitted free.',
       answer: 'Reinforced tempered glass screen protectors for iPhone and Android. Anti-spy privacy protectors also available. We fit them in-store for free.',
@@ -225,7 +225,7 @@
     },
 
     {
-      id: 'case', type: 'product', icon: '📦',
+      id: 'case', type: 'product',
       title: 'Phone Cases',
       tagline: 'Silicone, MagSafe, and clear cases.',
       answer: 'Silicone cases with MagSafe magnets, liquid clear cases, and logo pouches for iPhone and Samsung. Drop-tested and engineer-approved.',
@@ -238,7 +238,7 @@
     },
 
     {
-      id: 'charger', type: 'product', icon: '⚡',
+      id: 'charger', type: 'product',
       title: 'Fast Chargers',
       tagline: '20W–65W GaN chargers for iPhone & Android.',
       answer: 'Apple-compatible 20W adapters, 65W GaN dual-port fast chargers, and USB-C to Lightning cables. All engineer-vetted before listing.',
@@ -251,7 +251,7 @@
     },
 
     {
-      id: 'earbuds', type: 'product', icon: '🎧',
+      id: 'earbuds', type: 'product',
       title: 'Earphones & Earbuds',
       tagline: 'TWS earbuds and wired 3.5mm options.',
       answer: 'True Wireless Stereo (TWS) earbuds with charging case and wired 3.5mm earphones compatible with iPhone and Android. Engineer-tested audio quality.',
@@ -266,7 +266,7 @@
     // ── VERIFICATION SERVICES ────────────────────────────────────────────────
 
     {
-      id: 'checkforyou', type: 'service', icon: '🛡️',
+      id: 'checkforyou', type: 'service',
       title: 'CheckForYou — IMEI Verification',
       tagline: 'Is the phone stolen, locked, or blacklisted? We find out.',
       answer: 'MobiDokta\'s CheckForYou service verifies any iPhone or Android against GSMA blacklists, iCloud Activation Lock, Find My iPhone (FMI), network lock, and MDM enrollment. You receive a written report. From R99.',
@@ -280,7 +280,7 @@
     },
 
     {
-      id: 'evaluateforyou', type: 'service', icon: '🔍',
+      id: 'evaluateforyou', type: 'service',
       title: 'EValuateForYou — Physical Evaluation',
       tagline: 'Is the phone worth what the seller is asking?',
       answer: 'Our engineers physically inspect the device — battery health (independent verification), original vs. replaced screen and parts, screen type (OLED vs incell), structural damage, water ingress, and true market value. You get a written report with negotiating power.',
@@ -293,11 +293,11 @@
     },
 
     {
-      id: 'trackforyou', type: 'service', icon: '🚨', urgent: true,
+      id: 'trackforyou', type: 'service', urgent: true,
       title: 'TrackForYou — Theft Recovery',
       tagline: 'Phone stolen? Act in the first 24 hours.',
       answer: 'MobiDokta\'s TrackForYou service helps you act immediately after a theft — iCloud tracking guidance, IMEI reporting to all SA networks, SAPS case documentation, GSMA blacklist submission, and an insurance evidence package. Act now — every hour reduces your chances.',
-      tip: '⚠️ Do NOT reset or erase the device remotely yet — leave Find My active so tracking remains possible. WhatsApp us first and we\'ll guide you step by step.',
+      tip: 'Do NOT reset or erase the device remotely yet — leave Find My active so tracking remains possible. WhatsApp us first and we\'ll guide you step by step.',
       price: 'R350 per case', eta: 'Same day',
       keywords: ['stolen','theft','track','tracking','lost phone','phone stolen','recover phone','find my iphone','icloud track','saps','police','report stolen','blacklist stolen','trackforyou','track for you','stolen iphone','recovery','imei block'],
       ctas: [
@@ -309,7 +309,7 @@
     // ── INFO / HELP ───────────────────────────────────────────────────────────
 
     {
-      id: 'location', type: 'info', icon: '📍',
+      id: 'location', type: 'info',
       title: 'Our Location',
       tagline: 'Danville, Pretoria West',
       answer: 'Shop 6, Madeira Isles Shopping Complex, 262 Klitsgras St, Danville, Pretoria 0183. Easy parking, walk-ins welcome.',
@@ -320,7 +320,7 @@
     },
 
     {
-      id: 'hours', type: 'info', icon: '🕐',
+      id: 'hours', type: 'info',
       title: 'Opening Hours',
       tagline: 'Mon–Sat 09:00–21:00 · Sun 12:00–21:00',
       answer: 'Open 7 days a week. Monday to Saturday 09:00–21:00, Sunday 12:00–21:00. Walk-ins welcome — no appointment needed for basic repairs. Book a slot online to skip the queue.',
@@ -329,7 +329,7 @@
     },
 
     {
-      id: 'warranty', type: 'info', icon: '🛡️',
+      id: 'warranty', type: 'info',
       title: '6-Month Repair Warranty',
       tagline: 'Parts and workmanship, guaranteed.',
       answer: 'Every repair carries a 6-month warranty. If the same fault returns within 6 months, we fix it at no charge. We also provide written job cards for every repair.',
@@ -339,11 +339,11 @@
     },
 
     {
-      id: 'pricing', type: 'info', icon: '💰',
-      title: 'July Sale — Lowest Prices of the Year',
-      tagline: 'Anchored sale prices · July 2026 only.',
-      answer: 'July Sale prices — iPhone screen from R599 (was R749) · Battery from R299 (was R379) · Back glass from R549 (was R699) · Camera from R649 (was R799) · Charging port from R449 (was R549) · Water damage from R349 · Free diagnosis on all repairs · 6-month warranty included. Prices vary by model — exact quote in 30 seconds on our booking page.',
-      tip: 'These July sale prices are anchored for the month — WhatsApp us to lock in your price today before they go back up.',
+      id: 'pricing', type: 'info',
+      title: 'Repair Prices',
+      tagline: 'What the common repairs actually cost.',
+      answer: 'iPhone screen from R599 · Battery from R299 · Back glass from R549 · Camera from R649 · Charging port from R449 · Water damage from R349 · Free diagnosis on all repairs · 6-month warranty included. Prices vary by model — exact quote in 30 seconds on our booking page.',
+      tip: 'Prices vary by model. WhatsApp us your exact model and we will confirm the price before you travel.',
       keywords: ['price','cost','how much','fee','rand','quote','expensive','cheap','affordable','pricing','rates','charges'],
       ctas: [
         { label: 'WhatsApp for Quote', href: 'https://wa.me/27781541350?text=Hi%2C+I+need+a+repair+quote', primary: true },
@@ -352,7 +352,7 @@
     },
 
     {
-      id: 'turnaround', type: 'info', icon: '⚡',
+      id: 'turnaround', type: 'info',
       title: 'How Long Does It Take?',
       tagline: 'Most repairs same day.',
       answer: 'Screens and batteries: under 2 hours. Charging ports and speakers: 1–3 hours. Back glass: 2–4 hours. Water damage: same day assessment, 24–48 hours full repair. Board-level: 24–72 hours.',
@@ -361,7 +361,7 @@
     },
 
     {
-      id: 'contact', type: 'info', icon: '📞',
+      id: 'contact', type: 'info',
       title: 'Contact MobiDokta',
       tagline: 'WhatsApp for fastest response.',
       answer: 'WhatsApp or call: 078 154 1350. We respond on WhatsApp within minutes during business hours. Email: techrepair@mobidokta.co.za',
@@ -373,7 +373,7 @@
     },
 
     {
-      id: 'trade-in', type: 'info', icon: '🔄',
+      id: 'trade-in', type: 'info',
       title: 'Trade-ins & Buy-Backs',
       tagline: 'Sell or trade your old device.',
       answer: 'We buy working and damaged phones. Bring it in for a same-day assessment and cash offer. Trade-in value can be applied towards a repair or an Appl3City device.',
@@ -384,7 +384,7 @@
     },
 
     {
-      id: 'house-call', type: 'info', icon: '🚗',
+      id: 'house-call', type: 'info',
       title: 'We Come to You',
       tagline: 'House calls & enterprise on-site.',
       answer: 'House calls available across Pretoria, Johannesburg, Centurion, and Sandton. Call-out from R299 for Pretoria & surrounds. Nationwide courier repair also available.',
@@ -396,7 +396,7 @@
     },
 
     {
-      id: 'pre-owned', type: 'info', icon: '📲',
+      id: 'pre-owned', type: 'info',
       title: 'Buy a Phone — Appl3City',
       tagline: 'Pre-owned & sealed iPhones, IMEI verified.',
       answer: 'Pre-owned and sealed iPhones, Samsung Galaxy, MacBook, and Apple Watch. IMEI verified, network unlocked, engineer-tested. Written warranty on every device. All prices include VAT.',
@@ -408,7 +408,7 @@
     },
 
     {
-      id: 'students', type: 'info', icon: '🎓',
+      id: 'students', type: 'info',
       title: 'Student Discount — 15% Off',
       tagline: 'Show your student card, save 15%.',
       answer: 'Students save 15% on all repairs and products. Just show your valid student card when you collect. No card needed upfront — pay normal, get refunded the 15% at handover.',
@@ -421,10 +421,10 @@
     // ── DIAGNOSTICS / KNOWLEDGE HUB ──────────────────────────────────────
 
     {
-      id: 'battery-drain', type: 'guide', icon: '🔋',
+      id: 'battery-drain', type: 'guide',
       title: 'Why Is My Battery Draining So Fast?',
       tagline: 'Check health first — below 80% means throttling.',
-      answer: 'iOS throttles CPU speed when battery health drops below 80%. This makes the phone slower AND causes more drain. Go to Settings → Battery → Battery Health. If it\'s under 80%, a battery replacement at MobiDokta takes 45 minutes and completely restores performance — from R299 during our July Sale.',
+      answer: 'iOS throttles CPU speed when battery health drops below 80%. This makes the phone slower AND causes more drain. Go to Settings → Battery → Battery Health. If it\'s under 80%, a battery replacement at MobiDokta takes 45 minutes and completely restores performance — from R299 .',
       tip: 'Also check Settings → Battery → Last 10 Days. Any app using more than 20% in the background is a rogue drain culprit.',
       price: 'Battery from R299', eta: '45 minutes',
       keywords: ['battery draining','drain','draining fast','battery health','why is my battery','battery percentage','iphone slow','battery dying quickly','battery life bad','ios throttle','throttling'],
@@ -435,7 +435,7 @@
     },
 
     {
-      id: 'wont-charge', type: 'guide', icon: '⚡',
+      id: 'wont-charge', type: 'guide',
       title: 'Phone Won\'t Charge',
       tagline: 'Usually lint in the port — sometimes the charging IC.',
       answer: 'First try a different official cable. If that doesn\'t work, shine a light into your charging port — compacted lint is the #1 cause. Never use metal to remove it. If the port looks clear, it\'s likely the charging IC chip on the board (R800+). Bring it in for free diagnosis.',
@@ -449,7 +449,7 @@
     },
 
     {
-      id: 'wont-turn-on', type: 'guide', icon: '🔴',
+      id: 'wont-turn-on', type: 'guide',
       title: 'Phone Won\'t Turn On',
       tagline: 'Free diagnosis — dead battery or board fault.',
       answer: 'Try charging for 15 minutes, then hold Power + Volume Down (Samsung) or just Power (iPhone) for 10 seconds. If still no response, it\'s either a completely dead battery or a board-level fault. Free diagnosis at MobiDokta — we\'ll know within 20 minutes.',
@@ -462,7 +462,7 @@
     },
 
     {
-      id: 'overheating', type: 'guide', icon: '🌡️',
+      id: 'overheating', type: 'guide',
       title: 'Phone Overheating',
       tagline: 'Warm under load is normal — hot at idle is not.',
       answer: 'A phone getting warm during gaming or charging is normal. A phone that\'s hot while idle or in your pocket is a battery or board fault. Remove your case (cases trap heat badly), avoid direct sun, and charge at room temperature. If it overheats at idle, bring it in — likely a failing battery generating heat under all conditions.',
@@ -476,7 +476,7 @@
     },
 
     {
-      id: 'ifixit', type: 'guide', icon: '🔧',
+      id: 'ifixit', type: 'guide',
       title: 'iFixit Repair Guides & Repairability Scores',
       tagline: 'The world\'s largest free repair manual library.',
       answer: 'iFixit publishes free, step-by-step repair guides for every iPhone, Samsung and MacBook. They also score every device from 1–10 on repairability — a score of 10 means fully user-repairable, 1 means specialist tools required. MobiDokta references iFixit guides and scores to advise on repair complexity and cost.',
@@ -487,7 +487,7 @@
     },
 
     {
-      id: 'diagnostics', type: 'guide', icon: '🔍',
+      id: 'diagnostics', type: 'guide',
       title: 'Free Symptom Checker',
       tagline: 'Diagnose your device issue instantly.',
       answer: 'Use MobiDokta\'s interactive symptom checker to identify likely causes and next steps for any device issue — battery drain, screen faults, charging problems, water damage, camera, speaker, Face ID, WiFi, and more. No sign-up, no charge, instant results.',
@@ -498,7 +498,7 @@
     },
 
     {
-      id: 'device-specs', type: 'guide', icon: '📊',
+      id: 'device-specs', type: 'guide',
       title: 'Device Specs & Repair Costs Reference',
       tagline: 'iPhone 14–16, Samsung S24, MacBook specs.',
       answer: 'MobiDokta\'s Knowledge Hub includes full specs and iFixit repairability scores for iPhone 12–16 Pro Max, Samsung Galaxy S23–S25, and MacBook M1–M3 — with repair cost estimates for screens and batteries. Know what your repair should cost before you walk in.',
@@ -509,7 +509,7 @@
     },
 
     {
-      id: 'wifi-bt', type: 'service', icon: '',
+      id: 'wifi-bt', type: 'service',
       title: 'WiFi, Bluetooth & Hotspot Repair',
       tagline: 'No WiFi, no Bluetooth, hotspot not working.',
       answer: 'WiFi and Bluetooth are controlled by the same combo IC chip on most iPhones and Androids. If WiFi drops frequently, won\'t connect, or your personal hotspot doesn\'t appear, it\'s likely a WiFi/BT IC fault, antenna damage, or a software issue. We diagnose and repair at component level. Software reset first — if that fails, board-level IC work is required.',
@@ -523,7 +523,7 @@
     },
 
     {
-      id: 'camera-glass', type: 'service', icon: '',
+      id: 'camera-glass', type: 'service',
       title: 'Camera Glass Replacement',
       tagline: 'Cracked or scratched lens cover — not the full module.',
       answer: 'The camera glass is the sapphire or glass lens cover that protects the actual camera module. A crack or deep scratch on this piece causes purple haze, lens flare, and reduced sharpness — but the camera module itself is still fine. We replace just the lens glass without touching the camera module, which is significantly cheaper than a full camera replacement.',
@@ -537,7 +537,7 @@
     },
 
     {
-      id: 'refurbish', type: 'service', icon: '',
+      id: 'refurbish', type: 'service',
       title: 'iPhone Refurbishing — Brand-New Aesthetic',
       tagline: 'Screen, back glass, battery, frame, deep clean, QC cert.',
       answer: 'MobiDokta professional iPhone refurbishing: four packages from a Cosmetic Refresh (R450) to Premium Pro Refurb (from R5,500). Includes OEM-grade screen replacement, back glass, battery, frame polish or replacement, 25-point QC test, and for Resale-Ready/Premium packages: a condition certificate, IMEI report, and factory reset. Legal for resale — CPA Section 41 compliant. All iPhone models 7–17 Pro Max.',
@@ -551,7 +551,7 @@
     },
 
     {
-      id: 'data-recovery', type: 'service', icon: '',
+      id: 'data-recovery', type: 'service',
       title: 'Data Recovery — Phone, MacBook, Hard Drive',
       tagline: 'Dead device, failed drive, lost files — we recover it.',
       answer: 'MobiDokta recovers data from dead or damaged iPhones, Android phones, MacBooks, external hard drives (HDD/SSD), USB flash drives, and SD cards. NAND chip-level extraction for phones with board faults. SSD imaging for MacBooks. Mechanical HDD recovery. Diagnosis always free — no fix, no charge. Verified ownership required before any work begins.',
@@ -565,7 +565,7 @@
     },
 
     {
-      id: 'access-recovery', type: 'service', icon: '',
+      id: 'access-recovery', type: 'service',
       title: 'Device Lockout & Access Recovery',
       tagline: 'Locked out of your own phone, MacBook, or account.',
       answer: 'Locked out of your iPhone, Android, MacBook, or Windows laptop? Forgotten your Google, Apple ID, or Microsoft account? We restore lawful owner access using manufacturer-approved processes only — never security bypasses. Proof of ownership (government ID + proof of purchase or account access) is verified before any work starts. We do not bypass iCloud Activation Lock or Google FRP. All recovery is through official channels.',
@@ -579,7 +579,7 @@
     },
 
     {
-      id: 'studio', type: 'service', icon: '',
+      id: 'studio', type: 'service',
       title: 'TRi-MobiDokta Studio — Tech Courses & IT Hub',
       tagline: 'In-person and virtual tech courses · Pretoria West.',
       answer: 'TRi-MobiDokta Studio is MobiDokta\'s immersive IT learning and gaming destination. Courses for kids (8+) and adults — Junior Tech Academy, Repair Technician, Board-Level Repair Introduction, AI Diagnostics Workshop, Coding & AI Fundamentals, Digital Literacy, and virtual online courses. Starter kits, printed guides, and video tutorials available. In-person: Danville, Pretoria West.',
@@ -593,7 +593,7 @@
     },
 
     {
-      id: 'iphone-air', type: 'service', icon: '⭐',
+      id: 'iphone-air', type: 'service',
       title: 'iPhone Air (2025) Repair — Rare Service',
       tagline: 'One of very few SA shops that safely repairs the thinnest iPhone ever made.',
       answer: 'The iPhone Air is 5.65 mm thin — standard repair pry tools bend the chassis. We use adapted low-force tooling and thermal management to replace the screen (from R7,200), battery (from R2,000), and back glass without warping the frame. Also covers the iPhone 16e. WhatsApp us first to confirm parts are in stock before you travel.',
@@ -612,7 +612,7 @@
     },
 
     {
-      id: 'huawei-foldable', type: 'service', icon: '⭐',
+      id: 'huawei-foldable', type: 'service',
       title: 'Huawei Mate XS2, X3 & X5 Repair — Rare Service',
       tagline: 'Huawei outward-fold screen repair. Very few SA shops attempt this.',
       answer: 'Huawei\'s outward-folding flagships (Mate XS2, X3, X5) expose the flexible OLED on the outside — they crack more easily than inward-fold designs. We perform outer OLED assessment and replacement, hinge tension adjustment, and battery service. Parts are limited in SA — WhatsApp your model and damage description before visiting. Outer screen from R9,500.',
@@ -631,7 +631,7 @@
     },
 
     {
-      id: 'foldable', type: 'service', icon: '📱',
+      id: 'foldable', type: 'service',
       title: 'Foldable Phone Repair — Samsung Z Fold & Z Flip',
       tagline: 'Inner fold display, hinge rebuild, outer cover screen.',
       answer: 'We repair Samsung Galaxy Z Fold 3–6 and Z Flip 3–6: inner fold display replacement, hinge rebuild, S Pen slot (Fold 5/6), outer cover screen, and battery. Inner fold screen from R7,200. Outer cover screen from R4,500. Also repair OnePlus Open and Google Pixel Fold — WhatsApp first for parts availability.',
@@ -650,7 +650,7 @@
     },
 
     {
-      id: 'software-ai', type: 'service', icon: '⚡',
+      id: 'software-ai', type: 'service',
       title: 'Software & AI Engineering — ASi Imperium',
       tagline: 'Custom software, firmware, AI systems & web platforms.',
       answer: 'Beyond hardware repairs — ASi Imperium Technologies (the engineering studio behind MobiDokta) builds custom software platforms, firmware solutions, AI-powered systems, and high-performance web platforms. The MobiDokta website itself is a live example of this work — built entirely in-house.',
@@ -667,8 +667,7 @@
   // Quick searches shown before typing
   var QUICK = [
     'cracked screen', 'battery draining', 'water damage', 'IMEI check',
-    'phone stolen', 'opening hours', 'software development', 'Samsung repair'
-  ];
+    'phone stolen', 'opening hours', 'software development', 'Samsung repair' ];
 
   // Flat keyword index for autocomplete (built once from KB)
   var _acIndex = (function () {
@@ -750,22 +749,20 @@
     var objection  = (idx === 0) ? renderObjection(intent) : '';
     return [
       '<div class="mds-result' + urgentClass + '" data-idx="' + idx + '" role="option" tabindex="-1">',
-      '  <div class="mds-result-row">',
-      '    <span class="mds-result-icon">' + esc(item.icon || '🔧') + '</span>',
-      '    <div class="mds-result-info">',
-      '      <strong class="mds-result-title">' + esc(item.title) + '</strong>',
-      item.tagline ? '      <span class="mds-result-tag">' + esc(item.tagline) + '</span>' : '',
-      '    </div>',
+      ' <div class="mds-result-row">',
+      ' <div class="mds-result-info">',
+      ' <strong class="mds-result-title">' + esc(item.title) + '</strong>',
+      item.tagline ? ' <span class="mds-result-tag">' + esc(item.tagline) + '</span>' : '',
+      ' </div>',
       renderChips(item),
-      '  </div>',
-      '  <p class="mds-result-answer">' + esc(item.answer) + '</p>',
+      ' </div>',
+      ' <p class="mds-result-answer">' + esc(item.answer) + '</p>',
       tip,
       quoteCard,
       social,
       objection,
       renderCtas(item.ctas, item),
-      '</div>'
-    ].join('\n');
+      '</div>' ].join('\n');
   }
 
   // ── Intent & Autocomplete ───────────────────────────────────────────────────
@@ -797,10 +794,10 @@
 
   function renderIntentBadge(intent) {
     var map = {
-      urgent:     { icon: '⚡', label: 'Urgent', cls: 'urgent' },
-      price:      { icon: '💰', label: 'Price info', cls: 'price' },
-      comparison: { icon: '⚖️', label: 'Comparison', cls: 'comparison' },
-      device:     { icon: '📱', label: 'Device-specific', cls: 'device' }
+      urgent:     { label: 'Urgent', cls: 'urgent' },
+      price:      { label: 'Price info', cls: 'price' },
+      comparison: { label: 'Comparison', cls: 'comparison' },
+      device:     { label: 'Device-specific', cls: 'device' }
     };
     var m = map[intent];
     if (!m) return '';
@@ -809,8 +806,7 @@
 
   function renderSuggestions(suggestions) {
     if (!suggestions.length) return '';
-    return '<div class="mds-suggestions">'
-      + suggestions.map(function (s) {
+    return '<div class="mds-suggestions">' + suggestions.map(function (s) {
         return '<button class="mds-suggestion-item" type="button">' + esc(s) + '</button>';
       }).join('')
       + '</div>';
@@ -819,31 +815,21 @@
   function renderQuoteCard(item) {
     if (!item.tiers || !item.tiers.length) return '';
     var rows = item.tiers.map(function (t) {
-      return '<div class="mds-tier' + (t.popular ? ' mds-tier--popular' : '') + '">'
-        + '<div class="mds-tier-label">' + esc(t.label)
+      return '<div class="mds-tier' + (t.popular ? ' mds-tier--popular' : '') + '">' + '<div class="mds-tier-label">' + esc(t.label)
         + (t.popular ? '<span class="mds-tier-badge">Recommended</span>' : '')
-        + '</div>'
-        + '<div class="mds-tier-price">' + esc(t.price) + '</div>'
-        + '<div class="mds-tier-desc">' + esc(t.desc) + '</div>'
-        + '</div>';
+        + '</div>' + '<div class="mds-tier-price">' + esc(t.price) + '</div>' + '<div class="mds-tier-desc">' + esc(t.desc) + '</div>' + '</div>';
     }).join('');
     return '<div class="mds-quote-card"><div class="mds-quote-label">Pricing options</div>' + rows + '</div>';
   }
 
   function renderSocialProof(item) {
     if (!item.social) return '';
-    return '<div class="mds-social-proof">✓ ' + esc(item.social) + '</div>';
+    return '<div class="mds-social-proof">' + esc(item.social) + '</div>';
   }
 
   function renderObjection(intent) {
     if (intent !== 'price') return '';
-    return '<details class="mds-objection">'
-      + '<summary class="mds-objection-toggle">💡 Too expensive? See options</summary>'
-      + '<div class="mds-objection-content">'
-      + '<p>Ask about our <strong>interest-free split payment</strong>, <strong>student 15% discount</strong>, or <strong>eco-grade parts</strong> — '
-      + '<a href="https://wa.me/27781541350?text=Hi%2C+I+need+a+lower-cost+repair+option" target="_blank" rel="noopener">WhatsApp us</a>.</p>'
-      + '</div>'
-      + '</details>';
+    return '<details class="mds-objection">' + '<summary class="mds-objection-toggle">Too expensive? See options</summary>' + '<div class="mds-objection-content">' + '<p>Ask about our <strong>interest-free split payment</strong>, <strong>student 15% discount</strong>, or <strong>eco-grade parts</strong> — ' + '<a href="https://wa.me/27781541350?text=Hi%2C+I+need+a+lower-cost+repair+option" target="_blank" rel="noopener">WhatsApp us</a>.</p>' + '</div>' + '</details>';
   }
 
   // ── Modal HTML ──────────────────────────────────────────────────────────────
@@ -859,23 +845,22 @@
     el.innerHTML = [
       '<div class="mds-backdrop" id="mds-backdrop"></div>',
       '<div class="mds-panel" role="combobox" aria-expanded="true">',
-      '  <div class="mds-input-row">',
-      '    <svg class="mds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>',
-      '    <input id="mds-input" class="mds-input" type="text" placeholder="Search repairs, prices, hours, products…" autocomplete="off" spellcheck="false" aria-autocomplete="list" aria-controls="mds-results">',
-      '    <button class="mds-esc-btn" id="mds-close" type="button" aria-label="Close search">ESC</button>',
-      '  </div>',
-      '  <div class="mds-results" id="mds-results" role="listbox"></div>',
-      '  <div class="mds-footer">',
-      '    <span class="mds-hint">↑↓ navigate</span>',
-      '    <span class="mds-hint">↵ open</span>',
-      '    <span class="mds-hint">ESC close</span>',
-      '    <a href="https://wa.me/27781541350?text=Hi%2C+I+need+some+help" target="_blank" rel="noopener" class="mds-wa-cta">',
-      '      <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>',
-      '      Still need help? Chat on WhatsApp',
-      '    </a>',
-      '  </div>',
-      '</div>'
-    ].join('\n');
+      ' <div class="mds-input-row">',
+      ' <svg class="mds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>',
+      ' <input id="mds-input" class="mds-input" type="text" placeholder="Search repairs, prices, hours, products…" autocomplete="off" spellcheck="false" aria-autocomplete="list" aria-controls="mds-results">',
+      ' <button class="mds-esc-btn" id="mds-close" type="button" aria-label="Close search">ESC</button>',
+      ' </div>',
+      ' <div class="mds-results" id="mds-results" role="listbox"></div>',
+      ' <div class="mds-footer">',
+      ' <span class="mds-hint">↑↓ navigate</span>',
+      ' <span class="mds-hint">↵ open</span>',
+      ' <span class="mds-hint">ESC close</span>',
+      ' <a href="https://wa.me/27781541350?text=Hi%2C+I+need+some+help" target="_blank" rel="noopener" class="mds-wa-cta">',
+      ' <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>',
+      ' Still need help? Chat on WhatsApp',
+      ' </a>',
+      ' </div>',
+      '</div>' ].join('\n');
     document.body.appendChild(el);
   }
 
@@ -884,12 +869,8 @@
   function showQuickSearches() {
     var body = document.getElementById('mds-results');
     if (!body) return;
-    var quickHtml = '<div class="mds-label">Try asking…</div>'
-      + '<div class="mds-quick-row">'
-      + QUICK.map(function (q) { return '<button class="mds-quick" type="button">' + esc(q) + '</button>'; }).join('')
-      + '</div>'
-      + '<div class="mds-label" style="margin-top:14px">Top services</div>'
-      + KB.filter(function (k) { return k.type === 'service'; }).slice(0, 3).map(function (item, i) { return renderResult(item, i); }).join('');
+    var quickHtml = '<div class="mds-label">Try asking…</div>' + '<div class="mds-quick-row">' + QUICK.map(function (q) { return '<button class="mds-quick" type="button">' + esc(q) + '</button>'; }).join('')
+      + '</div>' + '<div class="mds-label" style="margin-top:14px">Top services</div>' + KB.filter(function (k) { return k.type === 'service'; }).slice(0, 3).map(function (item, i) { return renderResult(item, i); }).join('');
     body.innerHTML = quickHtml;
     body.querySelectorAll('.mds-quick').forEach(function (btn) {
       btn.addEventListener('click', function () {
@@ -927,13 +908,12 @@
     if (!_results.length) {
       body.innerHTML = [
         '<div class="mds-empty">',
-        '  <p>No match for <strong>"' + esc(q) + '"</strong> — try "screen", "battery", or "price".</p>',
-        '  <a href="https://wa.me/27781541350?text=Hi%2C+I+need+help+with%3A+' + encodeURIComponent(q) + '"',
-        '     target="_blank" rel="noopener" class="mds-cta mds-cta--primary">',
-        '    Ask on WhatsApp: "' + esc(q) + '"',
-        '  </a>',
-        '</div>'
-      ].join('\n');
+        ' <p>No match for <strong>"' + esc(q) + '"</strong> — try "screen", "battery", or "price".</p>',
+        ' <a href="https://wa.me/27781541350?text=Hi%2C+I+need+help+with%3A+' + encodeURIComponent(q) + '"',
+        ' target="_blank" rel="noopener" class="mds-cta mds-cta--primary">',
+        ' Ask on WhatsApp: "' + esc(q) + '"',
+        ' </a>',
+        '</div>' ].join('\n');
       return;
     }
 

@@ -279,508 +279,42 @@ select.verdict[data-v="N/A"] { color: var(--ink-faint); }
 }
 </style>
 </head>
-<body>
-
-<!-- ══ Toolbar (screen only) ══ -->
-<div class="toolbar no-print">
-  <div class="toolbar-title">Mobi<span>Dokta</span> · Assessment Report Builder</div>
-  <span class="save-state" id="save-state">Not saved yet</span>
-  <button type="button" class="tbtn" id="btn-newref">New Ref №</button>
-  <button type="button" class="tbtn" id="btn-save">Save Draft</button>
-  <button type="button" class="tbtn" id="btn-load">Load Draft</button>
-  <button type="button" class="tbtn tbtn-danger" id="btn-clear">Clear Form</button>
-  <button type="button" class="tbtn tbtn-primary" id="btn-print">Print / Save as PDF</button>
-</div>
-
-<div class="hint no-print">
-  <strong>How to use:</strong> fill every field — an empty field on a signed report is what gets a claim queried.
+<body> <!-- ══ Toolbar (screen only) ══ -->
+<div class="toolbar no-print"> <div class="toolbar-title">Mobi<span>Dokta</span> · Assessment Report Builder</div> <span class="save-state" id="save-state">Not saved yet</span> <button type="button" class="tbtn" id="btn-newref">New Ref №</button> <button type="button" class="tbtn" id="btn-save">Save Draft</button> <button type="button" class="tbtn" id="btn-load">Load Draft</button> <button type="button" class="tbtn tbtn-danger" id="btn-clear">Clear Form</button> <button type="button" class="tbtn tbtn-primary" id="btn-print">Print / Save as PDF</button>
+</div> <div class="hint no-print"> <strong>How to use:</strong> fill every field — an empty field on a signed report is what gets a claim queried.
   Use <em>“Not applicable”</em> or <em>“Not testable — see notes”</em> rather than leaving a gap. Attach at least
   six photographs. Drafts autosave to this browser every 20 seconds; they never leave the device.
   When finished, hit <strong>Print / Save as PDF</strong> and choose “Save as PDF” as the destination — the
   toolbar and these notes do not print. Empty photo slots do not print either.
-</div>
-
-<div class="sheet" id="sheet">
-
-  <!-- ══ Letterhead ══ -->
-  <div class="letterhead">
-    <div class="lh-logo">
-      <div class="lh-mark">MD</div>
-      <div>
-        <div class="lh-name">MobiDokta</div>
-        <div class="lh-tag">Engineering-Grade Device Assessment</div>
-      </div>
-    </div>
-    <div class="lh-meta">
-      <strong>MobiDokta (Pty) Ltd</strong> · Reg 2025/627703/07<br>
-      Shop 6, Madeira Isles Shopping Complex<br>
-      262 Klitsgras St, Danville, Pretoria West, 0183<br>
-      078 154 1350 · techrepair@mobidokta.co.za<br>
-      B-BBEE Level 1 · CSD MAAA1688961
-    </div>
-  </div>
-
-  <h1 class="doc-title">Device Damage Assessment Report</h1>
-  <p class="doc-sub">
-    Independent technical assessment prepared for insurance claim purposes.
+</div> <div class="sheet" id="sheet"> <!-- ══ Letterhead ══ --> <div class="letterhead"> <div class="lh-logo"> <div class="lh-mark">MD</div> <div> <div class="lh-name">MobiDokta</div> <div class="lh-tag">Engineering-Grade Device Assessment</div> </div> </div> <div class="lh-meta"> <strong>MobiDokta (Pty) Ltd</strong> · Reg 2025/627703/07<br> Shop 6, Madeira Isles Shopping Complex<br> 262 Klitsgras St, Danville, Pretoria West, 0183<br> 078 154 1350 · techrepair@mobidokta.co.za<br> B-BBEE Level 1 · CSD MAAA1688961
+    </div> </div> <h1 class="doc-title">Device Damage Assessment Report</h1> <p class="doc-sub"> Independent technical assessment prepared for insurance claim purposes.
     Issued by an independent qualified technician — <strong>not</strong> a manufacturer-authorised assessor.
-  </p>
-  <div class="doc-ref-row">
-    <span>Assessment Ref: <b><input class="f-in" id="ref" style="width:150px;display:inline-block;border-bottom-style:dotted;" placeholder="MD-AS-0000"></b></span>
-    <span>Date of assessment: <b><input class="f-in" type="date" id="date-assess" style="width:130px;display:inline-block;border-bottom-style:dotted;"></b></span>
-    <span>Report tier: <b><select class="f-sel" id="tier" style="width:150px;display:inline-block;border-bottom-style:dotted;">
-      <option>Standard (2–3 working days)</option>
-      <option>Fast-Track (24 hours)</option>
-      <option>Fleet / Bulk</option>
-    </select></b></span>
-    <span>Page <b>1 of 1 report</b></span>
-  </div>
-
-  <!-- ══ 1. Claim & owner ══ -->
-  <section class="sec">
-    <div class="sec-head">
-      <span class="sec-num">01</span>
-      <h2 class="sec-title">Claim &amp; Policyholder Identification</h2>
-    </div>
-    <div class="fgrid">
-      <div class="f"><span class="f-label">Insurer / Underwriter</span><input class="f-in" data-k="insurer"></div>
-      <div class="f"><span class="f-label">Broker (if applicable)</span><input class="f-in" data-k="broker"></div>
-      <div class="f"><span class="f-label">Claim / Reference number</span><input class="f-in" data-k="claim-ref"></div>
-      <div class="f"><span class="f-label">Policy number</span><input class="f-in" data-k="policy"></div>
-      <div class="f"><span class="f-label">Policyholder full name</span><input class="f-in" data-k="holder"></div>
-      <div class="f"><span class="f-label">Contact number / email</span><input class="f-in" data-k="holder-contact"></div>
-      <div class="f"><span class="f-label">Date of loss / incident</span><input class="f-in" type="date" data-k="date-loss"></div>
-      <div class="f"><span class="f-label">Date device received by MobiDokta</span><input class="f-in" type="date" data-k="date-received"></div>
-      <div class="f"><span class="f-label">Claim type</span>
-        <select class="f-sel" data-k="claim-type">
-          <option>Repair claim</option>
-          <option>Replacement / write-off claim</option>
-          <option>Warranty dispute</option>
-          <option>Condition grading / valuation only</option>
-          <option>Undetermined — insurer to advise</option>
-        </select>
-      </div>
-      <div class="f"><span class="f-label">Device received via</span>
-        <select class="f-sel" data-k="received-via">
-          <option>Walk-in — Shop 6, Madeira Isles</option>
-          <option>Insured courier collection (nationwide)</option>
-          <option>On-site collection — Gauteng</option>
-          <option>Delivered by broker / insurer</option>
-          <option>Private studio drop-off</option>
-        </select>
-      </div>
-    </div>
-    <div class="f" style="margin-top:8px;">
-      <span class="f-label">Cause of loss as reported by the policyholder (recorded verbatim, not verified at this point)</span>
-      <textarea class="f-ta" data-k="reported-cause" placeholder="Record exactly what the client stated happened, in their words. This is the statement the physical evidence is later tested against in Section 8."></textarea>
-    </div>
-  </section>
-
-  <!-- ══ 2. Device identity ══ -->
-  <section class="sec">
-    <div class="sec-head">
-      <span class="sec-num">02</span>
-      <h2 class="sec-title">Device Identity &amp; IMEI / Serial Verification</h2>
-      <span class="sec-note">Read off the device, not from the client</span>
-    </div>
-    <div class="fgrid-3 fgrid">
-      <div class="f"><span class="f-label">Make</span><input class="f-in" data-k="make"></div>
-      <div class="f"><span class="f-label">Model &amp; model number</span><input class="f-in" data-k="model"></div>
-      <div class="f"><span class="f-label">Storage / configuration</span><input class="f-in" data-k="storage"></div>
-      <div class="f"><span class="f-label">Colour</span><input class="f-in" data-k="colour"></div>
-      <div class="f"><span class="f-label">IMEI 1</span><input class="f-in" data-k="imei1"></div>
-      <div class="f"><span class="f-label">IMEI 2 / MEID</span><input class="f-in" data-k="imei2"></div>
-      <div class="f"><span class="f-label">Serial number</span><input class="f-in" data-k="serial"></div>
-      <div class="f"><span class="f-label">IMEI source verified</span>
-        <select class="f-sel" data-k="imei-source">
-          <option>Read from system + physical label — match confirmed</option>
-          <option>Read from system only (label damaged / absent)</option>
-          <option>Read from physical label only (device will not power on)</option>
-          <option>Read from retail packaging only — see notes</option>
-          <option>Could not be verified — see notes</option>
-        </select>
-      </div>
-      <div class="f"><span class="f-label">Insured device match</span>
-        <select class="f-sel" data-k="device-match">
-          <option>Confirmed — matches policy schedule</option>
-          <option>Policy schedule not supplied for comparison</option>
-          <option>DISCREPANCY — see notes</option>
-        </select>
-      </div>
-    </div>
-    <div class="f" style="margin-top:8px;">
-      <span class="f-label">Identification notes</span>
-      <textarea class="f-ta" data-k="id-notes" placeholder="Any discrepancy between the device presented and the device on the policy schedule must be stated explicitly here."></textarea>
-    </div>
-  </section>
-
-  <!-- ══ 3. Blacklist & ownership ══ -->
-  <section class="sec">
-    <div class="sec-head">
-      <span class="sec-num">03</span>
-      <h2 class="sec-title">Blacklist, Lock &amp; Ownership Status</h2>
-    </div>
-    <div class="fgrid">
-      <div class="f"><span class="f-label">IMEI blacklist status (GSMA device registry)</span>
-        <select class="f-sel" data-k="blacklist">
-          <option>Clean — not reported lost or stolen</option>
-          <option>BLACKLISTED — reported lost or stolen</option>
-          <option>Blacklist check not possible — IMEI unverifiable</option>
-          <option>Pending — result outstanding at time of report</option>
-        </select>
-      </div>
-      <div class="f"><span class="f-label">Blacklist check date &amp; source</span><input class="f-in" data-k="blacklist-src" placeholder="e.g. GSMA registry, 2026-07-28"></div>
-      <div class="f"><span class="f-label">Activation / iCloud / Google lock</span>
-        <select class="f-sel" data-k="act-lock">
-          <option>No activation lock present</option>
-          <option>Activation lock present — owner account signed in</option>
-          <option>Activation lock present — owner account NOT verified</option>
-          <option>Cannot determine — device will not boot</option>
-          <option>Not applicable to this device class</option>
-        </select>
-      </div>
-      <div class="f"><span class="f-label">Carrier / network lock</span>
-        <select class="f-sel" data-k="net-lock">
-          <option>Unlocked / no carrier restriction detected</option>
-          <option>Carrier locked</option>
-          <option>Cannot determine</option>
-          <option>Not applicable</option>
-        </select>
-      </div>
-      <div class="f"><span class="f-label">Proof of ownership presented</span>
-        <select class="f-sel" data-k="ownership-proof">
-          <option>Original purchase invoice</option>
-          <option>Policy schedule listing this device</option>
-          <option>Signed-in owner account on device</option>
-          <option>Employer / fleet asset register entry</option>
-          <option>None presented</option>
-        </select>
-      </div>
-      <div class="f"><span class="f-label">MDM / corporate enrolment</span>
-        <select class="f-sel" data-k="mdm">
-          <option>Not enrolled</option>
-          <option>Enrolled — employer authorisation on file</option>
-          <option>Enrolled — no employer authorisation supplied</option>
-          <option>Cannot determine</option>
-        </select>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ 4. Physical condition ══ -->
-  <section class="sec">
-    <div class="sec-head">
-      <span class="sec-num">04</span>
-      <h2 class="sec-title">Physical Condition on Receipt</h2>
-    </div>
-    <table class="tbl">
-      <thead><tr><th style="width:26%">Area</th><th style="width:20%">Condition</th><th>Observation</th></tr></thead>
-      <tbody id="phys-body"></tbody>
-    </table>
-    <div class="f" style="margin-top:8px;">
-      <span class="f-label">Liquid ingress indicators &amp; corrosion findings</span>
-      <textarea class="f-ta" data-k="liquid" placeholder="LCI state per indicator location, corrosion extent and distribution on the board, oxidation colour and pattern. State 'no liquid ingress indicators triggered' if clean — do not leave blank."></textarea>
-    </div>
-  </section>
-
-  <!-- ══ 5. Hardware diagnostic ══ -->
-  <section class="sec page-break">
-    <div class="sec-head">
-      <span class="sec-num">05</span>
-      <h2 class="sec-title">Functional Test Matrix — Hardware</h2>
-      <span class="sec-note">Pass / Fail / Degraded / Not testable</span>
-    </div>
-    <table class="tbl">
-      <thead><tr><th style="width:32%">Subsystem</th><th style="width:16%">Result</th><th>Finding</th></tr></thead>
-      <tbody id="hw-body"></tbody>
-    </table>
-    <button type="button" class="tbtn no-print" id="btn-add-hw" style="margin-top:7px;background:#e9ebf0;color:#16181d;border-color:#c9cdd6;">+ Add subsystem row</button>
-  </section>
-
-  <!-- ══ 6. Software & firmware ══ -->
-  <section class="sec">
-    <div class="sec-head">
-      <span class="sec-num">06</span>
-      <h2 class="sec-title">Software, Firmware &amp; System Read-Up</h2>
-    </div>
-    <div class="fgrid-3 fgrid">
-      <div class="f"><span class="f-label">Operating system &amp; version</span><input class="f-in" data-k="os"></div>
-      <div class="f"><span class="f-label">Firmware / baseband</span><input class="f-in" data-k="firmware"></div>
-      <div class="f"><span class="f-label">Battery health / cycle count</span><input class="f-in" data-k="batt-health"></div>
-      <div class="f"><span class="f-label">Boots to OS?</span>
-        <select class="f-sel" data-k="boots">
-          <option>Yes — boots normally</option>
-          <option>Yes — but unstable / reboots</option>
-          <option>Recovery / DFU only</option>
-          <option>No — no power</option>
-          <option>No — powers on, no display output</option>
-        </select>
-      </div>
-      <div class="f"><span class="f-label">Non-genuine / prior-repair parts detected</span>
-        <select class="f-sel" data-k="nongenuine">
-          <option>None detected — all parts appear original</option>
-          <option>Detected — see findings</option>
-          <option>Cannot determine — device will not boot</option>
-        </select>
-      </div>
-      <div class="f"><span class="f-label">Evidence of prior board-level work</span>
-        <select class="f-sel" data-k="prior-board">
-          <option>None visible</option>
-          <option>Present — see findings</option>
-          <option>Cannot determine</option>
-        </select>
-      </div>
-    </div>
-    <div class="f" style="margin-top:8px;">
-      <span class="f-label">Diagnostic logs, panic history &amp; software findings</span>
-      <textarea class="f-ta" data-k="sw-findings" placeholder="Relevant panic logs, crash history, sensor calibration warnings, part-authentication warnings, storage health. Quote log identifiers where they support the finding."></textarea>
-    </div>
-  </section>
-
-  <!-- ══ 7. Photographic evidence ══ -->
-  <section class="sec page-break">
-    <div class="sec-head">
-      <span class="sec-num">07</span>
-      <h2 class="sec-title">Photographic Evidence</h2>
-      <span class="sec-note">Captured at assessment · unaltered</span>
-    </div>
-    <div class="photos" id="photos"></div>
-    <p style="font-size:7.8pt;color:var(--ink-faint);margin:8px 0 0;">
-      Photographs were taken by the assessor at the time of assessment and have not been edited beyond
+  </p> <div class="doc-ref-row"> <span>Assessment Ref: <b><input class="f-in" id="ref" style="width:150px;display:inline-block;border-bottom-style:dotted;" placeholder="MD-AS-0000"></b></span> <span>Date of assessment: <b><input class="f-in" type="date" id="date-assess" style="width:130px;display:inline-block;border-bottom-style:dotted;"></b></span> <span>Report tier: <b><select class="f-sel" id="tier" style="width:150px;display:inline-block;border-bottom-style:dotted;"> <option>Standard (2–3 working days)</option> <option>Fast-Track (24 hours)</option> <option>Fleet / Bulk</option> </select></b></span> <span>Page <b>1 of 1 report</b></span> </div> <!-- ══ 1. Claim & owner ══ --> <section class="sec"> <div class="sec-head"> <span class="sec-num">01</span> <h2 class="sec-title">Claim &amp; Policyholder Identification</h2> </div> <div class="fgrid"> <div class="f"><span class="f-label">Insurer / Underwriter</span><input class="f-in" data-k="insurer"></div> <div class="f"><span class="f-label">Broker (if applicable)</span><input class="f-in" data-k="broker"></div> <div class="f"><span class="f-label">Claim / Reference number</span><input class="f-in" data-k="claim-ref"></div> <div class="f"><span class="f-label">Policy number</span><input class="f-in" data-k="policy"></div> <div class="f"><span class="f-label">Policyholder full name</span><input class="f-in" data-k="holder"></div> <div class="f"><span class="f-label">Contact number / email</span><input class="f-in" data-k="holder-contact"></div> <div class="f"><span class="f-label">Date of loss / incident</span><input class="f-in" type="date" data-k="date-loss"></div> <div class="f"><span class="f-label">Date device received by MobiDokta</span><input class="f-in" type="date" data-k="date-received"></div> <div class="f"><span class="f-label">Claim type</span> <select class="f-sel" data-k="claim-type"> <option>Repair claim</option> <option>Replacement / write-off claim</option> <option>Warranty dispute</option> <option>Condition grading / valuation only</option> <option>Undetermined — insurer to advise</option> </select> </div> <div class="f"><span class="f-label">Device received via</span> <select class="f-sel" data-k="received-via"> <option>Walk-in — Shop 6, Madeira Isles</option> <option>Insured courier collection (nationwide)</option> <option>On-site collection — Gauteng</option> <option>Delivered by broker / insurer</option> <option>Private studio drop-off</option> </select> </div> </div> <div class="f" style="margin-top:8px;"> <span class="f-label">Cause of loss as reported by the policyholder (recorded verbatim, not verified at this point)</span> <textarea class="f-ta" data-k="reported-cause" placeholder="Record exactly what the client stated happened, in their words. This is the statement the physical evidence is later tested against in Section 8."></textarea> </div> </section> <!-- ══ 2. Device identity ══ --> <section class="sec"> <div class="sec-head"> <span class="sec-num">02</span> <h2 class="sec-title">Device Identity &amp; IMEI / Serial Verification</h2> <span class="sec-note">Read off the device, not from the client</span> </div> <div class="fgrid-3 fgrid"> <div class="f"><span class="f-label">Make</span><input class="f-in" data-k="make"></div> <div class="f"><span class="f-label">Model &amp; model number</span><input class="f-in" data-k="model"></div> <div class="f"><span class="f-label">Storage / configuration</span><input class="f-in" data-k="storage"></div> <div class="f"><span class="f-label">Colour</span><input class="f-in" data-k="colour"></div> <div class="f"><span class="f-label">IMEI 1</span><input class="f-in" data-k="imei1"></div> <div class="f"><span class="f-label">IMEI 2 / MEID</span><input class="f-in" data-k="imei2"></div> <div class="f"><span class="f-label">Serial number</span><input class="f-in" data-k="serial"></div> <div class="f"><span class="f-label">IMEI source verified</span> <select class="f-sel" data-k="imei-source"> <option>Read from system + physical label — match confirmed</option> <option>Read from system only (label damaged / absent)</option> <option>Read from physical label only (device will not power on)</option> <option>Read from retail packaging only — see notes</option> <option>Could not be verified — see notes</option> </select> </div> <div class="f"><span class="f-label">Insured device match</span> <select class="f-sel" data-k="device-match"> <option>Confirmed — matches policy schedule</option> <option>Policy schedule not supplied for comparison</option> <option>DISCREPANCY — see notes</option> </select> </div> </div> <div class="f" style="margin-top:8px;"> <span class="f-label">Identification notes</span> <textarea class="f-ta" data-k="id-notes" placeholder="Any discrepancy between the device presented and the device on the policy schedule must be stated explicitly here."></textarea> </div> </section> <!-- ══ 3. Blacklist & ownership ══ --> <section class="sec"> <div class="sec-head"> <span class="sec-num">03</span> <h2 class="sec-title">Blacklist, Lock &amp; Ownership Status</h2> </div> <div class="fgrid"> <div class="f"><span class="f-label">IMEI blacklist status (GSMA device registry)</span> <select class="f-sel" data-k="blacklist"> <option>Clean — not reported lost or stolen</option> <option>BLACKLISTED — reported lost or stolen</option> <option>Blacklist check not possible — IMEI unverifiable</option> <option>Pending — result outstanding at time of report</option> </select> </div> <div class="f"><span class="f-label">Blacklist check date &amp; source</span><input class="f-in" data-k="blacklist-src" placeholder="e.g. GSMA registry, 2026-07-28"></div> <div class="f"><span class="f-label">Activation / iCloud / Google lock</span> <select class="f-sel" data-k="act-lock"> <option>No activation lock present</option> <option>Activation lock present — owner account signed in</option> <option>Activation lock present — owner account NOT verified</option> <option>Cannot determine — device will not boot</option> <option>Not applicable to this device class</option> </select> </div> <div class="f"><span class="f-label">Carrier / network lock</span> <select class="f-sel" data-k="net-lock"> <option>Unlocked / no carrier restriction detected</option> <option>Carrier locked</option> <option>Cannot determine</option> <option>Not applicable</option> </select> </div> <div class="f"><span class="f-label">Proof of ownership presented</span> <select class="f-sel" data-k="ownership-proof"> <option>Original purchase invoice</option> <option>Policy schedule listing this device</option> <option>Signed-in owner account on device</option> <option>Employer / fleet asset register entry</option> <option>None presented</option> </select> </div> <div class="f"><span class="f-label">MDM / corporate enrolment</span> <select class="f-sel" data-k="mdm"> <option>Not enrolled</option> <option>Enrolled — employer authorisation on file</option> <option>Enrolled — no employer authorisation supplied</option> <option>Cannot determine</option> </select> </div> </div> </section> <!-- ══ 4. Physical condition ══ --> <section class="sec"> <div class="sec-head"> <span class="sec-num">04</span> <h2 class="sec-title">Physical Condition on Receipt</h2> </div> <table class="tbl"> <thead><tr><th style="width:26%">Area</th><th style="width:20%">Condition</th><th>Observation</th></tr></thead> <tbody id="phys-body"></tbody> </table> <div class="f" style="margin-top:8px;"> <span class="f-label">Liquid ingress indicators &amp; corrosion findings</span> <textarea class="f-ta" data-k="liquid" placeholder="LCI state per indicator location, corrosion extent and distribution on the board, oxidation colour and pattern. State 'no liquid ingress indicators triggered' if clean — do not leave blank."></textarea> </div> </section> <!-- ══ 5. Hardware diagnostic ══ --> <section class="sec page-break"> <div class="sec-head"> <span class="sec-num">05</span> <h2 class="sec-title">Functional Test Matrix — Hardware</h2> <span class="sec-note">Pass / Fail / Degraded / Not testable</span> </div> <table class="tbl"> <thead><tr><th style="width:32%">Subsystem</th><th style="width:16%">Result</th><th>Finding</th></tr></thead> <tbody id="hw-body"></tbody> </table> <button type="button" class="tbtn no-print" id="btn-add-hw" style="margin-top:7px;background:#e9ebf0;color:#16181d;border-color:#c9cdd6;">+ Add subsystem row</button> </section> <!-- ══ 6. Software & firmware ══ --> <section class="sec"> <div class="sec-head"> <span class="sec-num">06</span> <h2 class="sec-title">Software, Firmware &amp; System Read-Up</h2> </div> <div class="fgrid-3 fgrid"> <div class="f"><span class="f-label">Operating system &amp; version</span><input class="f-in" data-k="os"></div> <div class="f"><span class="f-label">Firmware / baseband</span><input class="f-in" data-k="firmware"></div> <div class="f"><span class="f-label">Battery health / cycle count</span><input class="f-in" data-k="batt-health"></div> <div class="f"><span class="f-label">Boots to OS?</span> <select class="f-sel" data-k="boots"> <option>Yes — boots normally</option> <option>Yes — but unstable / reboots</option> <option>Recovery / DFU only</option> <option>No — no power</option> <option>No — powers on, no display output</option> </select> </div> <div class="f"><span class="f-label">Non-genuine / prior-repair parts detected</span> <select class="f-sel" data-k="nongenuine"> <option>None detected — all parts appear original</option> <option>Detected — see findings</option> <option>Cannot determine — device will not boot</option> </select> </div> <div class="f"><span class="f-label">Evidence of prior board-level work</span> <select class="f-sel" data-k="prior-board"> <option>None visible</option> <option>Present — see findings</option> <option>Cannot determine</option> </select> </div> </div> <div class="f" style="margin-top:8px;"> <span class="f-label">Diagnostic logs, panic history &amp; software findings</span> <textarea class="f-ta" data-k="sw-findings" placeholder="Relevant panic logs, crash history, sensor calibration warnings, part-authentication warnings, storage health. Quote log identifiers where they support the finding."></textarea> </div> </section> <!-- ══ 7. Photographic evidence ══ --> <section class="sec page-break"> <div class="sec-head"> <span class="sec-num">07</span> <h2 class="sec-title">Photographic Evidence</h2> <span class="sec-note">Captured at assessment · unaltered</span> </div> <div class="photos" id="photos"></div> <p style="font-size:7.8pt;color:var(--ink-faint);margin:8px 0 0;"> Photographs were taken by the assessor at the time of assessment and have not been edited beyond
       resizing for inclusion in this document. Full-resolution originals are retained and available to the
       insurer on request.
-    </p>
-  </section>
-
-  <!-- ══ 8. Cause consistency ══ -->
-  <section class="sec">
-    <div class="sec-head">
-      <span class="sec-num">08</span>
-      <h2 class="sec-title">Damage Cause-Consistency Opinion</h2>
-      <span class="sec-note">Technical opinion — reasoning must be shown</span>
-    </div>
-    <div class="verdict-box">
-      <div class="verdict-pick">
-        <label><input type="radio" name="consistency" value="Consistent" data-k="consistency"> <b>Consistent</b> with reported cause</label>
-        <label><input type="radio" name="consistency" value="Partially consistent" data-k="consistency"> <b>Partially consistent</b></label>
-        <label><input type="radio" name="consistency" value="Inconsistent" data-k="consistency"> <b>Inconsistent</b> with reported cause</label>
-        <label><input type="radio" name="consistency" value="Cannot be determined" data-k="consistency"> <b>Cannot be determined</b></label>
-      </div>
-      <div class="f">
-        <span class="f-label">Reasoning — the physical evidence relied on, and why it supports the conclusion above</span>
-        <textarea class="f-ta f-ta-tall" data-k="consistency-reason" placeholder="Set out the evidence: impact witness marks and their direction, fracture propagation pattern, corrosion distribution, internal damage consistent or inconsistent with a single event, age of damage relative to the reported date of loss. State the limits of the opinion where they exist. Do not speculate beyond what the evidence shows."></textarea>
-      </div>
-      <div class="f" style="margin-top:7px;">
-        <span class="f-label">Pre-existing or unrelated damage identified (separate from the claimed event)</span>
-        <textarea class="f-ta" data-k="preexisting" placeholder="State 'none identified' if there is none. Where pre-existing damage exists, distinguish it clearly from the claimed damage so the insurer can apportion correctly."></textarea>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ 9. Repair estimate ══ -->
-  <section class="sec page-break">
-    <div class="sec-head">
-      <span class="sec-num">09</span>
-      <h2 class="sec-title">Itemised Repair Estimate</h2>
-      <span class="sec-note">Priced for approval as-is</span>
-    </div>
-    <table class="tbl">
-      <thead>
-        <tr>
-          <th style="width:36%">Item / operation</th>
-          <th style="width:17%">Part grade</th>
-          <th class="num" style="width:9%">Qty</th>
-          <th class="num" style="width:15%">Unit (excl VAT)</th>
-          <th class="num" style="width:15%">Line total</th>
-          <th style="width:5%" class="no-print"></th>
-        </tr>
-      </thead>
-      <tbody id="est-body"></tbody>
-    </table>
-    <button type="button" class="tbtn no-print" id="btn-add-est" style="margin-top:7px;background:#e9ebf0;color:#16181d;border-color:#c9cdd6;">+ Add estimate line</button>
-
-    <div class="totals">
-      <div><span class="lbl">Subtotal (excl VAT)</span><span id="t-sub">R 0.00</span></div>
-      <div><span class="lbl">VAT @ 15%</span><span id="t-vat">R 0.00</span></div>
-      <div class="grand"><span class="lbl">Total repair cost (incl VAT)</span><span id="t-tot">R 0.00</span></div>
-    </div>
-
-    <div class="fgrid" style="margin-top:9px;">
-      <div class="f"><span class="f-label">Parts lead time</span><input class="f-in" data-k="lead-time" placeholder="e.g. In stock — 24 hours"></div>
-      <div class="f"><span class="f-label">Estimated repair turnaround once approved</span><input class="f-in" data-k="repair-eta" placeholder="e.g. Same day on approval"></div>
-      <div class="f"><span class="f-label">Warranty offered on this repair</span><input class="f-in" data-k="warranty" value="6 months on parts fitted and workmanship"></div>
-      <div class="f"><span class="f-label">Estimate valid until</span><input class="f-in" type="date" data-k="quote-valid"></div>
-    </div>
-    <div class="f" style="margin-top:8px;">
-      <span class="f-label">Estimate notes, exclusions &amp; risks disclosed</span>
-      <textarea class="f-ta" data-k="est-notes" placeholder="Anything that could change the figure once the repair is under way — hidden board damage behind a failed screen, corrosion that may spread, components that can only be tested after a prior repair. Disclose it now, not in a variation later."></textarea>
-    </div>
-  </section>
-
-  <!-- ══ 10. Economic test ══ -->
-  <section class="sec">
-    <div class="sec-head">
-      <span class="sec-num">10</span>
-      <h2 class="sec-title">Economic Repair Test &amp; Recommendation</h2>
-    </div>
-    <div class="econ">
-      <div class="econ-cell">
-        <div class="econ-lbl">Pre-damage market value</div>
-        <div class="econ-val">R <input id="mkt-val" class="num" inputmode="decimal" placeholder="0.00" style="width:calc(100% - 14px);"></div>
-        <div class="econ-hint">Current SA market, same model &amp; condition</div>
-      </div>
-      <div class="econ-cell">
-        <div class="econ-lbl">Total repair cost</div>
-        <div class="econ-val" id="econ-repair">R 0.00</div>
-        <div class="econ-hint">Incl VAT, from Section 9</div>
-      </div>
-      <div class="econ-cell">
-        <div class="econ-lbl">Repair as % of value</div>
-        <div class="econ-val" id="econ-ratio">—</div>
-        <div class="econ-hint">Uneconomic above 70%</div>
-      </div>
-      <div class="econ-cell">
-        <div class="econ-lbl">Indicated outcome</div>
-        <div class="econ-val" id="econ-flag" style="font-size:10.5pt;">—</div>
-        <div class="econ-hint">Calculated guide — assessor decides below</div>
-      </div>
-    </div>
-    <div class="fgrid" style="margin-top:9px;">
-      <div class="f"><span class="f-label">Valuation source</span><input class="f-in" data-k="val-source" placeholder="e.g. Appl3City certified pre-owned market, 3 comparable listings — dated"></div>
-      <div class="f"><span class="f-label">Assessor's recommendation</span>
-        <select class="f-sel" data-k="recommendation">
-          <option>Repair — economically viable</option>
-          <option>Repair — viable, with disclosed risk (see Section 9 notes)</option>
-          <option>Uneconomic to repair — recommend replacement</option>
-          <option>Beyond economic repair — recommend write-off</option>
-          <option>Unrepairable — total loss</option>
-          <option>Insufficient information — further authority required</option>
-        </select>
-      </div>
-    </div>
-    <div class="f" style="margin-top:8px;">
-      <span class="f-label">Basis for the recommendation</span>
-      <textarea class="f-ta" data-k="rec-basis" placeholder="Why this recommendation follows from the findings. Where the calculated ratio and the recommendation differ, explain why — e.g. repair is viable on cost but the board has water-damage history that makes long-term reliability unsound."></textarea>
-    </div>
-    <div class="f" style="margin-top:8px;">
-      <span class="f-label">Salvage value if written off</span>
-      <input class="f-in" data-k="salvage" placeholder="Component salvage offer, or 'no residual value'">
-    </div>
-  </section>
-
-  <!-- ══ 11. Data handling ══ -->
-  <section class="sec">
-    <div class="sec-head">
-      <span class="sec-num">11</span>
-      <h2 class="sec-title">Data Handling Record (POPIA)</h2>
-    </div>
-    <div class="fgrid">
-      <div class="f"><span class="f-label">Device data accessed during assessment</span>
-        <select class="f-sel" data-k="data-accessed">
-          <option>No user content accessed — diagnostics and system information only</option>
-          <option>User content accessed with written client authorisation — see notes</option>
-          <option>Device not powered on — no data access possible</option>
-        </select>
-      </div>
-      <div class="f"><span class="f-label">Data retained by MobiDokta</span>
-        <select class="f-sel" data-k="data-retained">
-          <option>None — no user data copied or retained</option>
-          <option>Diagnostic logs only, retained for this claim file</option>
-          <option>Backup taken at client request — see notes</option>
-        </select>
-      </div>
-      <div class="f"><span class="f-label">Certified data erasure performed</span>
-        <select class="f-sel" data-k="erasure">
-          <option>Not requested</option>
-          <option>Performed — destruction certificate issued separately</option>
-          <option>Requested, pending insurer authority</option>
-          <option>Not possible — storage inaccessible</option>
-        </select>
-      </div>
-      <div class="f"><span class="f-label">Device disposition after assessment</span>
-        <select class="f-sel" data-k="disposition">
-          <option>Returned to policyholder</option>
-          <option>Held pending insurer instruction</option>
-          <option>Retained for repair on approval</option>
-          <option>Released to insurer / salvage</option>
-          <option>Routed to certified e-waste disposal</option>
-        </select>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ 12. Declaration ══ -->
-  <section class="sec">
-    <div class="sec-head">
-      <span class="sec-num">12</span>
-      <h2 class="sec-title">Assessor Declaration</h2>
-    </div>
-    <div class="declare">
-      <p>
-        I, the undersigned, personally carried out the assessment recorded in this report on the device
+    </p> </section> <!-- ══ 8. Cause consistency ══ --> <section class="sec"> <div class="sec-head"> <span class="sec-num">08</span> <h2 class="sec-title">Damage Cause-Consistency Opinion</h2> <span class="sec-note">Technical opinion — reasoning must be shown</span> </div> <div class="verdict-box"> <div class="verdict-pick"> <label><input type="radio" name="consistency" value="Consistent" data-k="consistency"> <b>Consistent</b> with reported cause</label> <label><input type="radio" name="consistency" value="Partially consistent" data-k="consistency"> <b>Partially consistent</b></label> <label><input type="radio" name="consistency" value="Inconsistent" data-k="consistency"> <b>Inconsistent</b> with reported cause</label> <label><input type="radio" name="consistency" value="Cannot be determined" data-k="consistency"> <b>Cannot be determined</b></label> </div> <div class="f"> <span class="f-label">Reasoning — the physical evidence relied on, and why it supports the conclusion above</span> <textarea class="f-ta f-ta-tall" data-k="consistency-reason" placeholder="Set out the evidence: impact witness marks and their direction, fracture propagation pattern, corrosion distribution, internal damage consistent or inconsistent with a single event, age of damage relative to the reported date of loss. State the limits of the opinion where they exist. Do not speculate beyond what the evidence shows."></textarea> </div> <div class="f" style="margin-top:7px;"> <span class="f-label">Pre-existing or unrelated damage identified (separate from the claimed event)</span> <textarea class="f-ta" data-k="preexisting" placeholder="State 'none identified' if there is none. Where pre-existing damage exists, distinguish it clearly from the claimed damage so the insurer can apportion correctly."></textarea> </div> </div> </section> <!-- ══ 9. Repair estimate ══ --> <section class="sec page-break"> <div class="sec-head"> <span class="sec-num">09</span> <h2 class="sec-title">Itemised Repair Estimate</h2> <span class="sec-note">Priced for approval as-is</span> </div> <table class="tbl"> <thead> <tr> <th style="width:36%">Item / operation</th> <th style="width:17%">Part grade</th> <th class="num" style="width:9%">Qty</th> <th class="num" style="width:15%">Unit (excl VAT)</th> <th class="num" style="width:15%">Line total</th> <th style="width:5%" class="no-print"></th> </tr> </thead> <tbody id="est-body"></tbody> </table> <button type="button" class="tbtn no-print" id="btn-add-est" style="margin-top:7px;background:#e9ebf0;color:#16181d;border-color:#c9cdd6;">+ Add estimate line</button> <div class="totals"> <div><span class="lbl">Subtotal (excl VAT)</span><span id="t-sub">R 0.00</span></div> <div><span class="lbl">VAT @ 15%</span><span id="t-vat">R 0.00</span></div> <div class="grand"><span class="lbl">Total repair cost (incl VAT)</span><span id="t-tot">R 0.00</span></div> </div> <div class="fgrid" style="margin-top:9px;"> <div class="f"><span class="f-label">Parts lead time</span><input class="f-in" data-k="lead-time" placeholder="e.g. In stock — 24 hours"></div> <div class="f"><span class="f-label">Estimated repair turnaround once approved</span><input class="f-in" data-k="repair-eta" placeholder="e.g. Same day on approval"></div> <div class="f"><span class="f-label">Warranty offered on this repair</span><input class="f-in" data-k="warranty" value="6 months on parts fitted and workmanship"></div> <div class="f"><span class="f-label">Estimate valid until</span><input class="f-in" type="date" data-k="quote-valid"></div> </div> <div class="f" style="margin-top:8px;"> <span class="f-label">Estimate notes, exclusions &amp; risks disclosed</span> <textarea class="f-ta" data-k="est-notes" placeholder="Anything that could change the figure once the repair is under way — hidden board damage behind a failed screen, corrosion that may spread, components that can only be tested after a prior repair. Disclose it now, not in a variation later."></textarea> </div> </section> <!-- ══ 10. Economic test ══ --> <section class="sec"> <div class="sec-head"> <span class="sec-num">10</span> <h2 class="sec-title">Economic Repair Test &amp; Recommendation</h2> </div> <div class="econ"> <div class="econ-cell"> <div class="econ-lbl">Pre-damage market value</div> <div class="econ-val">R <input id="mkt-val" class="num" inputmode="decimal" placeholder="0.00" style="width:calc(100% - 14px);"></div> <div class="econ-hint">Current SA market, same model &amp; condition</div> </div> <div class="econ-cell"> <div class="econ-lbl">Total repair cost</div> <div class="econ-val" id="econ-repair">R 0.00</div> <div class="econ-hint">Incl VAT, from Section 9</div> </div> <div class="econ-cell"> <div class="econ-lbl">Repair as % of value</div> <div class="econ-val" id="econ-ratio">—</div> <div class="econ-hint">Uneconomic above 70%</div> </div> <div class="econ-cell"> <div class="econ-lbl">Indicated outcome</div> <div class="econ-val" id="econ-flag" style="font-size:10.5pt;">—</div> <div class="econ-hint">Calculated guide — assessor decides below</div> </div> </div> <div class="fgrid" style="margin-top:9px;"> <div class="f"><span class="f-label">Valuation source</span><input class="f-in" data-k="val-source" placeholder="e.g. Appl3City certified pre-owned market, 3 comparable listings — dated"></div> <div class="f"><span class="f-label">Assessor's recommendation</span> <select class="f-sel" data-k="recommendation"> <option>Repair — economically viable</option> <option>Repair — viable, with disclosed risk (see Section 9 notes)</option> <option>Uneconomic to repair — recommend replacement</option> <option>Beyond economic repair — recommend write-off</option> <option>Unrepairable — total loss</option> <option>Insufficient information — further authority required</option> </select> </div> </div> <div class="f" style="margin-top:8px;"> <span class="f-label">Basis for the recommendation</span> <textarea class="f-ta" data-k="rec-basis" placeholder="Why this recommendation follows from the findings. Where the calculated ratio and the recommendation differ, explain why — e.g. repair is viable on cost but the board has water-damage history that makes long-term reliability unsound."></textarea> </div> <div class="f" style="margin-top:8px;"> <span class="f-label">Salvage value if written off</span> <input class="f-in" data-k="salvage" placeholder="Component salvage offer, or 'no residual value'"> </div> </section> <!-- ══ 11. Data handling ══ --> <section class="sec"> <div class="sec-head"> <span class="sec-num">11</span> <h2 class="sec-title">Data Handling Record (POPIA)</h2> </div> <div class="fgrid"> <div class="f"><span class="f-label">Device data accessed during assessment</span> <select class="f-sel" data-k="data-accessed"> <option>No user content accessed — diagnostics and system information only</option> <option>User content accessed with written client authorisation — see notes</option> <option>Device not powered on — no data access possible</option> </select> </div> <div class="f"><span class="f-label">Data retained by MobiDokta</span> <select class="f-sel" data-k="data-retained"> <option>None — no user data copied or retained</option> <option>Diagnostic logs only, retained for this claim file</option> <option>Backup taken at client request — see notes</option> </select> </div> <div class="f"><span class="f-label">Certified data erasure performed</span> <select class="f-sel" data-k="erasure"> <option>Not requested</option> <option>Performed — destruction certificate issued separately</option> <option>Requested, pending insurer authority</option> <option>Not possible — storage inaccessible</option> </select> </div> <div class="f"><span class="f-label">Device disposition after assessment</span> <select class="f-sel" data-k="disposition"> <option>Returned to policyholder</option> <option>Held pending insurer instruction</option> <option>Retained for repair on approval</option> <option>Released to insurer / salvage</option> <option>Routed to certified e-waste disposal</option> </select> </div> </div> </section> <!-- ══ 12. Declaration ══ --> <section class="sec"> <div class="sec-head"> <span class="sec-num">12</span> <h2 class="sec-title">Assessor Declaration</h2> </div> <div class="declare"> <p> I, the undersigned, personally carried out the assessment recorded in this report on the device
         identified in Section 2. The findings, test results and photographic evidence set out above are a
         true and accurate record of what I observed and measured at the time of assessment.
-      </p>
-      <p>
-        The opinion expressed in Section 8 is my own technical opinion, formed on the physical and diagnostic
+      </p> <p> The opinion expressed in Section 8 is my own technical opinion, formed on the physical and diagnostic
         evidence described, and stated within the limits of that evidence. Where a matter could not be
         determined, this report says so rather than inferring a conclusion.
-      </p>
-      <p>
-        <strong>Declaration of independence:</strong> MobiDokta has no financial interest in the outcome of
+      </p> <p> <strong>Declaration of independence:</strong> MobiDokta has no financial interest in the outcome of
         this claim. The assessment fee is the same whether the device is repaired, replaced or written off,
         and is not contingent on the claim being admitted.
-      </p>
-      <p>
-        <strong>Status disclosure:</strong> MobiDokta is an independent repair and assessment provider and is
+      </p> <p> <strong>Status disclosure:</strong> MobiDokta is an independent repair and assessment provider and is
         <strong>not</strong> a manufacturer-authorised service provider. This report is issued as the
         assessment of an independent qualified technician. It is not issued on behalf of, and does not
         represent the view of, Apple Inc., Samsung, or any other manufacturer.
-      </p>
-
-      <div class="sign-row">
-        <div>
-          <div class="sign-space"></div>
-          <div style="border-top:1px solid var(--ink);padding-top:3px;">
-            <input class="sign-in" data-k="assessor-name" placeholder="Full name">
-            <div style="font-size:7.6pt;color:var(--ink-faint);">Assessor — signature &amp; name</div>
-          </div>
-        </div>
-        <div>
-          <div class="sign-space"></div>
-          <div style="border-top:1px solid var(--ink);padding-top:3px;">
-            <input class="sign-in" data-k="assessor-qual" placeholder="Qualification / standard">
-            <div style="font-size:7.6pt;color:var(--ink-faint);">Qualification</div>
-          </div>
-        </div>
-        <div>
-          <div class="sign-space"></div>
-          <div style="border-top:1px solid var(--ink);padding-top:3px;">
-            <input class="sign-in" type="date" data-k="sign-date">
-            <div style="font-size:7.6pt;color:var(--ink-faint);">Date signed</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ Disclosure footer ══ -->
-  <div class="disclosure">
-    <strong>Scope and limitations.</strong> This report addresses the technical condition of the device
+      </p> <div class="sign-row"> <div> <div class="sign-space"></div> <div style="border-top:1px solid var(--ink);padding-top:3px;"> <input class="sign-in" data-k="assessor-name" placeholder="Full name"> <div style="font-size:7.6pt;color:var(--ink-faint);">Assessor — signature &amp; name</div> </div> </div> <div> <div class="sign-space"></div> <div style="border-top:1px solid var(--ink);padding-top:3px;"> <input class="sign-in" data-k="assessor-qual" placeholder="Qualification / standard"> <div style="font-size:7.6pt;color:var(--ink-faint);">Qualification</div> </div> </div> <div> <div class="sign-space"></div> <div style="border-top:1px solid var(--ink);padding-top:3px;"> <input class="sign-in" type="date" data-k="sign-date"> <div style="font-size:7.6pt;color:var(--ink-faint);">Date signed</div> </div> </div> </div> </div> </section> <!-- ══ Disclosure footer ══ --> <div class="disclosure"> <strong>Scope and limitations.</strong> This report addresses the technical condition of the device
     identified in Section 2 as at the date of assessment. It does not determine policy liability, cover,
     apportionment or quantum — those are decisions for the insurer. Findings are limited to what could be
     observed and tested on the device as presented; where a component could not be tested, that limitation is
     stated in the relevant section rather than resolved by assumption.
-    <br><br>
-    <strong>MobiDokta (Pty) Ltd</strong> · Reg 2025/627703/07 · Shop 6, Madeira Isles Shopping Complex,
+    <br><br> <strong>MobiDokta (Pty) Ltd</strong> · Reg 2025/627703/07 · Shop 6, Madeira Isles Shopping Complex,
     262 Klitsgras Street, Danville, Pretoria West, 0183 · 078 154 1350 · techrepair@mobidokta.co.za ·
     www.mobidokta.co.za · B-BBEE Level 1 Contributor · CSD MAAA1688961 · POPIA compliant ·
     Independent assessor — not a manufacturer-authorised service provider.
-  </div>
-
-</div><!-- /sheet -->
-
-<script>
+  </div> </div><!-- /sheet --> <script>
 (function () {
   'use strict';
 
@@ -852,8 +386,7 @@ select.verdict[data-v="N/A"] { color: var(--ink-faint); }
   var PHOTO_SLOTS = [
     'Front — full device', 'Rear — full device', 'Damage close-up 1',
     'Damage close-up 2', 'IMEI / serial plate', 'Internal — logic board',
-    'Liquid indicator / corrosion', 'Screen powered on (or no output)', 'Additional evidence'
-  ];
+    'Liquid indicator / corrosion', 'Screen powered on (or no output)', 'Additional evidence' ];
   var photos = document.getElementById('photos');
   PHOTO_SLOTS.forEach(function (cap, i) {
     var wrap = el('div', { class: 'photo', 'data-slot': i });
@@ -1004,8 +537,7 @@ select.verdict[data-v="N/A"] { color: var(--ink-faint); }
       hwBody.appendChild(hwRow(null, 'x' + (hwExtra++)));
     }
     Object.keys(data.fields || {}).forEach(function (k) {
-      var n = k.charAt(0) === '#'
-        ? document.getElementById(k.slice(1))
+      var n = k.charAt(0) === '#' ? document.getElementById(k.slice(1))
         : document.querySelector('[data-k="' + k + '"]');
       if (n && n.type !== 'radio') n.value = data.fields[k];
     });

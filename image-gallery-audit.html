@@ -1,10 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta name="robots" content="noindex,nofollow">
-  <!-- Google tag (gtag.js) - Consent Mode v2, analytics denied until user consents -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
+<head> <meta name="robots" content="noindex,nofollow"> <!-- Google tag (gtag.js) - Consent Mode v2, analytics denied until user consents --> <script> window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('consent', 'default', {
       'analytics_storage': 'denied',
@@ -13,18 +9,9 @@
       'ad_personalization': 'denied',
       'wait_for_update': 500
     });
-  </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V8T79TD3GN"></script>
-  <script>
-    gtag('js', new Date());
+  </script> <script async src="https://www.googletagmanager.com/gtag/js?id=G-V8T79TD3GN"></script> <script> gtag('js', new Date());
     gtag('config', 'G-V8T79TD3GN');
-  </script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MobiDokta Image Gallery Audit Tool</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
+  </script> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>MobiDokta Image Gallery Audit Tool</title> <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet"> <style> :root {
       --bg: #09090b;
       --panel: rgba(22, 22, 29, 0.6);
       --border: rgba(255, 255, 255, 0.08);
@@ -310,43 +297,7 @@
   .tool-note { font-size: 0.9rem; margin-bottom: 1rem; }
   </style>
 </head>
-<body>
-  <div class="container">
-    <header>
-      <div class="badge">MobiDokta Tech Hub</div>
-      <h1>Image Asset Audit & Mapper</h1>
-      <p>This utility helps you review the unnamed UUID/JPEG images in your <code>img/</code> directory, identify what they are, and generate the renaming commands to link them to your website.</p>
-    </header>
-
-    <div class="stats-bar">
-      <div class="stat-card">
-        <div class="stat-val">15</div>
-        <div class="stat-lbl">Unnamed Assets</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-val">10</div>
-        <div class="stat-lbl">Missing References</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-val">11</div>
-        <div class="stat-lbl">Valid References</div>
-      </div>
-    </div>
-
-    <h2 class="section-title">Step 1: Inspect and Map Unnamed Images</h2>
-    <div class="gallery-grid" id="unnamed-gallery">
-      <!-- Cards will be populated by JS -->
-    </div>
-
-    <div class="commands-panel">
-      <h3>Generated Rename Commands (PowerShell)</h3>
-      <p class="c-secondary tool-note">Map the images above using the dropdowns, then copy the PowerShell script below and run it in your terminal to rename all files at once.</p>
-      <textarea class="commands-textarea" id="commands-output" title="Generated Output" readonly># Map images above to see generated commands here...</textarea>
-    </div>
-  </div>
-
-  <script>
-    const images = [
+<body> <div class="container"> <header> <div class="badge">MobiDokta Tech Hub</div> <h1>Image Asset Audit & Mapper</h1> <p>This utility helps you review the unnamed UUID/JPEG images in your <code>img/</code> directory, identify what they are, and generate the renaming commands to link them to your website.</p> </header> <div class="stats-bar"> <div class="stat-card"> <div class="stat-val">15</div> <div class="stat-lbl">Unnamed Assets</div> </div> <div class="stat-card"> <div class="stat-val">10</div> <div class="stat-lbl">Missing References</div> </div> <div class="stat-card"> <div class="stat-val">11</div> <div class="stat-lbl">Valid References</div> </div> </div> <h2 class="section-title">Step 1: Inspect and Map Unnamed Images</h2> <div class="gallery-grid" id="unnamed-gallery"> <!-- Cards will be populated by JS --> </div> <div class="commands-panel"> <h3>Generated Rename Commands (PowerShell)</h3> <p class="c-secondary tool-note">Map the images above using the dropdowns, then copy the PowerShell script below and run it in your terminal to rename all files at once.</p> <textarea class="commands-textarea" id="commands-output" title="Generated Output" readonly># Map images above to see generated commands here...</textarea> </div> </div> <script> const images = [
       { name: "099c6e1f-0e37-4eb9-b174-685afd7ab0e9.jpeg", size: "1024 x 1536", bytes: "148 KB" },
       { name: "20e15cce-b6f5-4fe4-8a43-acd9b1fbaf1d.jpeg", size: "591 x 1280", bytes: "67 KB" },
       { name: "28f2db1e-601b-48d6-b3f4-c41e7768e097.jpeg", size: "1122 x 1402", bytes: "155 KB" },
@@ -389,24 +340,8 @@
       let selectOptions = targets.map(t => `<option value="${t.val}">${t.text}</option>`).join('');
 
       card.innerHTML = `
-        <div class="img-container">
-          <img src="./img/${img.name}" alt="${img.name}" onerror="this.src='https://placehold.co/400x300/18181b/a1a1aa?text=Image+Not+Found'">
-        </div>
-        <div class="info">
-          <div class="filename">${img.name}</div>
-          <div class="meta">
-            <span>Dim: ${img.size}</span>
-            <span>Size: ${img.bytes}</span>
-          </div>
-          <div class="mapping-box">
-            <span class="mapping-label">Map To Target</span>
-            <select class="mapping-select" data-filename="${img.name}">
-              ${selectOptions}
-            </select>
-            <div class="copy-cmd" id="cmd-${idx}"></div>
-          </div>
-        </div>
-      `;
+        <div class="img-container"> <img src="./img/${img.name}" alt="${img.name}" onerror="this.src='https://placehold.co/400x300/18181b/a1a1aa?text=Image+Not+Found'"> </div> <div class="info"> <div class="filename">${img.name}</div> <div class="meta"> <span>Dim: ${img.size}</span> <span>Size: ${img.bytes}</span> </div> <div class="mapping-box"> <span class="mapping-label">Map To Target</span> <select class="mapping-select" data-filename="${img.name}"> ${selectOptions}
+            </select> <div class="copy-cmd" id="cmd-${idx}"></div> </div> </div> `;
       gallery.appendChild(card);
     });
 

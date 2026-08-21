@@ -175,48 +175,9 @@ const SHIPPING_OPTIONS = [
 (function injectCartDrawer() {
   if (document.querySelector('.cart-drawer')) return;
   document.body.insertAdjacentHTML('beforeend', `
-    <div class="cart-overlay-bg" onclick="MobiCart.closeDrawer()"></div>
-    <aside class="cart-drawer" aria-label="Shopping cart">
-      <div class="cart-drawer-header">
-        <div class="cart-drawer-title">
-          <i data-lucide="shopping-bag" class="icon-sm"></i>
-          <span>Your Cart</span>
-          <span class="cart-badge" hidden>0</span>
-        </div>
-        <button type="button" class="cart-drawer-close" onclick="MobiCart.closeDrawer()" aria-label="Close cart">
-          <i data-lucide="x" class="icon-sm"></i>
-        </button>
-      </div>
-      <div class="cart-drawer-items"></div>
-      <div class="cart-ship-panel">
-        <div class="cart-ship-label">Delivery method</div>
-        <div class="cart-ship-list" id="cart-ship-list"></div>
-      </div>
-      <div class="cart-drawer-footer">
-        <div class="cart-free-bar" id="cart-free-bar" hidden></div>
-        <div class="cart-drawer-total-row cart-subtotal-row">
-          <span>Subtotal</span>
-          <strong class="cart-drawer-subtotal-val">R0</strong>
-        </div>
-        <div class="cart-drawer-total-row cart-ship-row">
-          <span>Shipping</span>
-          <strong class="cart-ship-cost-val">Free</strong>
-        </div>
-        <div class="cart-drawer-total-row cart-grandtotal-row">
-          <span>Total</span>
-          <strong class="cart-drawer-total-val">R0</strong>
-        </div>
-        <p class="cart-stu-note">Student? Mention it when you collect — 15% off automatically.</p>
-        <button type="button" onclick="MobiCart.whatsappCheckout()" class="btn-cart-wa">
-          <i data-lucide="message-circle" class="icon-sm"></i> Order via WhatsApp
-        </button>
-        <a href="./pay.html" class="btn-cart-pay">
-          <i data-lucide="credit-card" class="icon-sm"></i> Pay Online
-        </a>
-        <a href="./shop.html" class="btn-cart-browse">Browse more →</a>
-      </div>
-    </aside>
-  `);
+    <div class="cart-overlay-bg" onclick="MobiCart.closeDrawer()"></div> <aside class="cart-drawer" aria-label="Shopping cart"> <div class="cart-drawer-header"> <div class="cart-drawer-title"> <i data-lucide="shopping-bag" class="icon-sm"></i> <span>Your Cart</span> <span class="cart-badge" hidden>0</span> </div> <button type="button" class="cart-drawer-close" onclick="MobiCart.closeDrawer()" aria-label="Close cart"> <i data-lucide="x" class="icon-sm"></i> </button> </div> <div class="cart-drawer-items"></div> <div class="cart-ship-panel"> <div class="cart-ship-label">Delivery method</div> <div class="cart-ship-list" id="cart-ship-list"></div> </div> <div class="cart-drawer-footer"> <div class="cart-free-bar" id="cart-free-bar" hidden></div> <div class="cart-drawer-total-row cart-subtotal-row"> <span>Subtotal</span> <strong class="cart-drawer-subtotal-val">R0</strong> </div> <div class="cart-drawer-total-row cart-ship-row"> <span>Shipping</span> <strong class="cart-ship-cost-val">Free</strong> </div> <div class="cart-drawer-total-row cart-grandtotal-row"> <span>Total</span> <strong class="cart-drawer-total-val">R0</strong> </div> <p class="cart-stu-note">Student? Mention it when you collect — 15% off automatically.</p> <button type="button" onclick="MobiCart.whatsappCheckout()" class="btn-cart-wa"> <i data-lucide="message-circle" class="icon-sm"></i> Order via WhatsApp
+        </button> <a href="./pay.html" class="btn-cart-pay"> <i data-lucide="credit-card" class="icon-sm"></i> Pay Online
+        </a> <a href="./shop.html" class="btn-cart-browse">Browse more →</a> </div> </aside> `);
 })();
 
 /* ── Cart Engine ── */
@@ -306,28 +267,10 @@ const MobiCart = {
 
     if (!this.items.length) {
       body.innerHTML = `
-        <div class="cart-empty-state">
-          <i data-lucide="shopping-bag" style="width:48px;height:48px;opacity:0.3"></i>
-          <p>Your cart is empty</p>
-          <a href="./shop.html" class="btn btn-secondary btn-sm">Browse Shop</a>
-        </div>`;
+        <div class="cart-empty-state"> <i data-lucide="shopping-bag" style="width:48px;height:48px;opacity:0.3"></i> <p>Your cart is empty</p> <a href="./shop.html" class="btn btn-secondary btn-sm">Browse Shop</a> </div>`;
     } else {
       body.innerHTML = this.items.map(item => `
-        <div class="cart-drawer-item">
-          <div class="cdi-info">
-            <div class="cdi-name">${item.name}</div>
-            <div class="cdi-unit">R${item.price.toLocaleString()} retail &nbsp;·&nbsp; R${(item.priceS||Math.round(item.price*0.85)).toLocaleString()} student</div>
-          </div>
-          <div class="cdi-controls">
-            <button type="button" class="qty-btn" onclick="MobiCart.setQty('${item.id}',${item.qty-1})">−</button>
-            <span class="qty-val">${item.qty}</span>
-            <button type="button" class="qty-btn" onclick="MobiCart.setQty('${item.id}',${item.qty+1})">+</button>
-          </div>
-          <div class="cdi-sub">R${(item.price*item.qty).toLocaleString()}</div>
-          <button type="button" class="cdi-remove" onclick="MobiCart.remove('${item.id}')" aria-label="Remove">
-            <i data-lucide="x" style="width:12px;height:12px"></i>
-          </button>
-        </div>`).join('');
+        <div class="cart-drawer-item"> <div class="cdi-info"> <div class="cdi-name">${item.name}</div> <div class="cdi-unit">R${item.price.toLocaleString()} retail &nbsp;·&nbsp; R${(item.priceS||Math.round(item.price*0.85)).toLocaleString()} student</div> </div> <div class="cdi-controls"> <button type="button" class="qty-btn" onclick="MobiCart.setQty('${item.id}',${item.qty-1})">−</button> <span class="qty-val">${item.qty}</span> <button type="button" class="qty-btn" onclick="MobiCart.setQty('${item.id}',${item.qty+1})">+</button> </div> <div class="cdi-sub">R${(item.price*item.qty).toLocaleString()}</div> <button type="button" class="cdi-remove" onclick="MobiCart.remove('${item.id}')" aria-label="Remove"> <i data-lucide="x" style="width:12px;height:12px"></i> </button> </div>`).join('');
     }
 
     // Shipping options
@@ -340,14 +283,7 @@ const MobiCart = {
           : effective === 0
             ? `<span class="cart-ship-cost cart-ship-free">Free</span>`
             : `<span class="cart-ship-cost">R${effective}</span>`;
-        return `<label class="cart-ship-opt${this.selectedShipping === opt.key ? ' active' : ''}">
-          <input type="radio" name="shipping" value="${opt.key}"${this.selectedShipping === opt.key ? ' checked' : ''} onchange="MobiCart.setShipping('${opt.key}')">
-          <div class="cart-ship-opt-info">
-            <span class="cart-ship-opt-name">${opt.label}</span>
-            <span class="cart-ship-opt-sub">${opt.sub}</span>
-          </div>
-          <div class="cart-ship-opt-right">${costHtml}<span class="cart-ship-eta">${opt.eta}</span></div>
-        </label>`;
+        return `<label class="cart-ship-opt${this.selectedShipping === opt.key ? ' active' : ''}"> <input type="radio" name="shipping" value="${opt.key}"${this.selectedShipping === opt.key ? ' checked' : ''} onchange="MobiCart.setShipping('${opt.key}')"> <div class="cart-ship-opt-info"> <span class="cart-ship-opt-name">${opt.label}</span> <span class="cart-ship-opt-sub">${opt.sub}</span> </div> <div class="cart-ship-opt-right">${costHtml}<span class="cart-ship-eta">${opt.eta}</span></div> </label>`;
       }).join('');
     }
 
@@ -410,27 +346,12 @@ function renderShopGrid(cat) {
   const list = cat === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.cat === cat);
   grid.innerHTML = list.length
     ? list.map(p => `
-        <article class="product-card" data-cat="${p.cat}">
-          <div class="product-card-img pci-${p.cat}${p.img ? ' pci-has-photo' : ''}">
-            ${p.img
+        <article class="product-card" data-cat="${p.cat}"> <div class="product-card-img pci-${p.cat}${p.img ? ' pci-has-photo' : ''}"> ${p.img
               ? `<img src="${p.img}" alt="${p.name}" class="pci-photo" loading="lazy">`
               : `<i data-lucide="${p.icon}" class="pci-icon"></i>`}
             ${p.badge ? `<span class="product-badge">${p.badge}</span>` : ''}
-          </div>
-          <div class="product-card-body">
-            <h3 class="product-name">${p.name}</h3>
-            <p class="product-sub">${p.sub}</p>
-            <div class="product-footer">
-              <div class="product-pricing">
-                <span class="product-price">R${p.price.toLocaleString()}</span>
-                <span class="product-price-stu">R${p.priceS.toLocaleString()} <span class="stu-tag">S</span></span>
-              </div>
-              <button type="button" class="btn-add-cart" onclick="MobiCart.add('${p.id}')">
-                <i data-lucide="plus" style="width:13px;height:13px"></i> Add
-              </button>
-            </div>
-          </div>
-        </article>`).join('')
+          </div> <div class="product-card-body"> <h3 class="product-name">${p.name}</h3> <p class="product-sub">${p.sub}</p> <div class="product-footer"> <div class="product-pricing"> <span class="product-price">R${p.price.toLocaleString()}</span> <span class="product-price-stu">R${p.priceS.toLocaleString()} <span class="stu-tag">S</span></span> </div> <button type="button" class="btn-add-cart" onclick="MobiCart.add('${p.id}')"> <i data-lucide="plus" style="width:13px;height:13px"></i> Add
+              </button> </div> </div> </article>`).join('')
     : `<div class="shop-empty"><i data-lucide="package" style="width:48px;height:48px;opacity:0.25"></i><p>No products in this category yet.</p></div>`;
   if (typeof lucide !== 'undefined') lucide.createIcons();
 }

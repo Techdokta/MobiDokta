@@ -26,17 +26,7 @@ const ContentLoader = {
     if (!container || !items || items.length === 0) return;
 
     container.innerHTML = items.map(item => `
-      <div class="card service-card inline-style-678049f7" data-animate>
-        <div class="inline-style-17ff31e7">
-          <i data-lucide="${item.icon}" style="width:64px;height:64px;color:var(--green);stroke-width:1.5;"></i>
-        </div>
-        <div class="inline-style-75ab1518">
-          <h3 class="inline-style-eb0fc9a0">${item.title}</h3>
-          <p class="inline-style-15b11a67">${item.description}</p>
-          <span class="service-price inline-style-5ae5deac">${item.price}</span>
-        </div>
-      </div>
-    `).join('');
+      <div class="card service-card inline-style-678049f7" data-animate> <div class="inline-style-17ff31e7"> <i data-lucide="${item.icon}" style="width:64px;height:64px;color:var(--green);stroke-width:1.5;"></i> </div> <div class="inline-style-75ab1518"> <h3 class="inline-style-eb0fc9a0">${item.title}</h3> <p class="inline-style-15b11a67">${item.description}</p> <span class="service-price inline-style-5ae5deac">${item.price}</span> </div> </div> `).join('');
   },
 
   /* ─── FAQ Accordion ─── */
@@ -45,14 +35,7 @@ const ContentLoader = {
     if (!container || !items || items.length === 0) return;
 
     container.innerHTML = items.map((item, i) => `
-      <div class="faq-item" data-animate>
-        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-${i}">
-          <span>${item.question}</span>
-          <i data-lucide="plus" class="faq-icon"></i>
-        </button>
-        <div class="faq-answer" id="faq-answer-${i}">${item.answer}</div>
-      </div>
-    `).join('');
+      <div class="faq-item" data-animate> <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-${i}"> <span>${item.question}</span> <i data-lucide="plus" class="faq-icon"></i> </button> <div class="faq-answer" id="faq-answer-${i}">${item.answer}</div> </div> `).join('');
 
     // Attach toggle listeners
     container.querySelectorAll('.faq-question').forEach(btn => {
@@ -81,14 +64,7 @@ const ContentLoader = {
     if (!container || !items || items.length === 0) return;
 
     container.innerHTML = items.map(item => `
-      <div class="edu-card" data-animate>
-        <img src="${item.image}" alt="${item.title}" class="edu-card-img" loading="lazy" />
-        <div class="edu-card-body">
-          <h4>${item.title}</h4>
-          <p>${item.description}</p>
-        </div>
-      </div>
-    `).join('');
+      <div class="edu-card" data-animate> <img src="${item.image}" alt="${item.title}" class="edu-card-img" loading="lazy" /> <div class="edu-card-body"> <h4>${item.title}</h4> <p>${item.description}</p> </div> </div> `).join('');
   },
 
   /* ─── Init: load data and render all sections ─── */

@@ -77,20 +77,17 @@ const MobiApp = {
       success: '<i data-lucide="check-circle-2" class="icon-sm"></i>', 
       error: '<i data-lucide="alert-circle" class="icon-sm"></i>', 
       info: '<i data-lucide="info" class="icon-sm"></i>', 
-      warning: '<i data-lucide="alert-triangle" class="icon-sm"></i>' 
-    };
+      warning: '<i data-lucide="alert-triangle" class="icon-sm"></i>' };
     const colors = {
       success: 'rgba(52,211,153,0.95)',
       error: 'rgba(248,113,113,0.95)',
       info: 'rgba(45,212,191,0.95)',
-      warning: 'rgba(251,146,60,0.95)'
-    };
+      warning: 'rgba(251,146,60,0.95)' };
     const borderColors = {
       success: 'rgba(52,211,153,0.6)',
       error: 'rgba(248,113,113,0.6)',
       info: 'rgba(45,212,191,0.6)',
-      warning: 'rgba(251,146,60,0.6)'
-    };
+      warning: 'rgba(251,146,60,0.6)' };
 
     const toast = document.createElement('div');
     toast.className = 'mobi-toast';
@@ -107,8 +104,7 @@ const MobiApp = {
     if (window.lucide) {
       lucide.createIcons({
         attrs: { class: 'icon-sm' },
-        nameAttr: 'data-lucide'
-      });
+        nameAttr: 'data-lucide' });
     }
 
     setTimeout(() => {
@@ -211,7 +207,7 @@ const MobiApp = {
       if ((e.ctrlKey && e.altKey && e.key.toLowerCase() === 'a') || 
           (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'l')) {
         e.preventDefault();
-        MobiApp.toast('🔒 Accessing Staff Portal...', 'warning', 1500);
+        MobiApp.toast('Accessing Staff Portal...', 'warning', 1500);
         setTimeout(() => window.location.href = 'admin-dashboard.html', 800);
       }
     });

@@ -1,9 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<head>
-  <!-- Google tag (gtag.js) - Consent Mode v2, analytics denied until user consents -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
+<head> <!-- Google tag (gtag.js) - Consent Mode v2, analytics denied until user consents --> <script> window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('consent', 'default', {
       'analytics_storage': 'denied',
@@ -12,22 +9,9 @@
       'ad_personalization': 'denied',
       'wait_for_update': 500
     });
-  </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V8T79TD3GN"></script>
-  <script>
-    gtag('js', new Date());
+  </script> <script async src="https://www.googletagmanager.com/gtag/js?id=G-V8T79TD3GN"></script> <script> gtag('js', new Date());
     gtag('config', 'G-V8T79TD3GN');
-  </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MobiDokta Admin Dashboard</title>
-    <link rel="stylesheet" href="css/global.css">
-  <link rel="stylesheet" href="./css/utilities.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="js/config.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-    <style>
-        :root {
+  </script> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>MobiDokta Admin Dashboard</title> <link rel="stylesheet" href="css/global.css"> <link rel="stylesheet" href="./css/utilities.css"> <script src="https://unpkg.com/lucide@latest"></script> <script src="js/config.js"></script> <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script> <style> :root {
             --primary: #0088ff;
             --primary-dark: #0066cc;
             --success: #00e676;
@@ -613,139 +597,16 @@
     .adm-save-btn { margin-top: 0.5rem; }
     .adm-type-hdr { font-weight: 600; margin-bottom: 0.25rem; }    </style>
 </head>
-<body>
-
-<!-- Login Screen -->
-<div id="login-screen" class="login-container">
-    <div class="login-box">
-        <h1>MobiDokta Admin</h1>
-        <p>Sign in to manage repair bookings</p>
-        <form id="login-form">
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" required placeholder="admin@mobidokta.co.za">
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" required placeholder="••••••••">
-            </div>
-            <button type="submit" class="btn btn-primary" id="login-btn">
-                Sign In
-            </button>
-        </form>
-        <p class="adm-login-note">
-            Protected by Row Level Security • PostgreSQL RLS
-        </p>
-    </div>
-</div>
-
-<!-- Dashboard -->
-<div id="dashboard" class="dashboard">
-    <div class="topbar">
-        <h1>MobiDokta Dashboard</h1>
-        <div class="user-info">
-            <span id="user-email">Loading...</span>
-            <button class="btn btn-sm btn-danger" onclick="app.logout()">Logout</button>
-        </div>
-    </div>
-
-    <div class="main-content">
-        <!-- Stats -->
-        <div class="stats-grid">
-            <div class="stat-card">
-                <h3>Total Bookings</h3>
-                <div class="stat-value" id="stat-total">-</div>
-                <div class="stat-delta positive">All time</div>
-            </div>
-            <div class="stat-card">
-                <h3>Pending</h3>
-                <div class="stat-value" id="stat-pending">-</div>
-                <div class="stat-delta warning">Needs action</div>
-            </div>
-            <div class="stat-card">
-                <h3>Today's Revenue</h3>
-                <div class="stat-value" id="stat-revenue">-</div>
-                <div class="stat-delta positive" id="stat-revenue-delta">From deposits</div>
-            </div>
-            <div class="stat-card">
-                <h3>In Progress</h3>
-                <div class="stat-value" id="stat-inprogress">-</div>
-                <div class="stat-delta">Active repairs</div>
-            </div>
-        </div>
-
-        <!-- Filters -->
-        <div class="filters-bar">
-            <div class="search-box">
-                <input type="text" id="search-input" placeholder="Search by name, email, phone, or device...">
-            </div>
-            <select class="filter-select" id="status-filter">
-                <option value="">All Statuses</option>
-                <option value="pending">Pending</option>
-                <option value="confirmed">Confirmed</option>
-                <option value="in_progress">In Progress</option>
-                <option value="completed">Completed</option>
-                <option value="cancelled">Cancelled</option>
-            </select>
-            <select class="filter-select" id="date-filter">
-                <option value="all">All Time</option>
-                <option value="today">Today</option>
-                <option value="week">This Week</option>
-                <option value="month">This Month</option>
-            </select>
-            <button class="btn btn-primary btn-sm" onclick="app.refreshData()">Refresh</button>
-        </div>
-
-        <!-- Table -->
-        <div class="table-container">
-            <div class="table-header">
-                <h2>Repair Bookings</h2>
-                <div class="live-indicator">Live Updates</div>
-            </div>
-            <div class="adm-ov-x">
-                <table>
-                    <thead>
-                        <tr>
-                            <th onclick="app.sortBy('created_at')">Date ↕</th>
-                            <th>Customer</th>
-                            <th>Device</th>
-                            <th>Appointment</th>
-                            <th onclick="app.sortBy('total_price')">Price ↕</th>
-                            <th onclick="app.sortBy('status')">Status ↕</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody id="bookings-table">
-                        <tr>
-                            <td colspan="7" class="empty-state">
-                                <h3>Loading bookings...</h3>
-                                <p>Connecting to Supabase securely</p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Detail Modal -->
-<div id="detail-modal" class="modal-overlay">
-    <div class="modal">
-        <div class="modal-header">
-            <h3>Booking Details</h3>
-            <button class="modal-close" onclick="app.closeModal()">&times;</button>
-        </div>
-        <div class="modal-body" id="modal-content">
-            <!-- Populated by JS -->
-        </div>
-    </div>
-</div>
-
-<!-- Toast Container -->
-<div class="toast-container" id="toast-container"></div>
-
-<script>
+<body> <!-- Login Screen -->
+<div id="login-screen" class="login-container"> <div class="login-box"> <h1>MobiDokta Admin</h1> <p>Sign in to manage repair bookings</p> <form id="login-form"> <div class="form-group"> <label for="email">Email</label> <input type="email" id="email" required placeholder="admin@mobidokta.co.za"> </div> <div class="form-group"> <label for="password">Password</label> <input type="password" id="password" required placeholder="••••••••"> </div> <button type="submit" class="btn btn-primary" id="login-btn"> Sign In
+            </button> </form> <p class="adm-login-note"> Protected by Row Level Security • PostgreSQL RLS
+        </p> </div>
+</div> <!-- Dashboard -->
+<div id="dashboard" class="dashboard"> <div class="topbar"> <h1>MobiDokta Dashboard</h1> <div class="user-info"> <span id="user-email">Loading...</span> <button class="btn btn-sm btn-danger" onclick="app.logout()">Logout</button> </div> </div> <div class="main-content"> <!-- Stats --> <div class="stats-grid"> <div class="stat-card"> <h3>Total Bookings</h3> <div class="stat-value" id="stat-total">-</div> <div class="stat-delta positive">All time</div> </div> <div class="stat-card"> <h3>Pending</h3> <div class="stat-value" id="stat-pending">-</div> <div class="stat-delta warning">Needs action</div> </div> <div class="stat-card"> <h3>Today's Revenue</h3> <div class="stat-value" id="stat-revenue">-</div> <div class="stat-delta positive" id="stat-revenue-delta">From deposits</div> </div> <div class="stat-card"> <h3>In Progress</h3> <div class="stat-value" id="stat-inprogress">-</div> <div class="stat-delta">Active repairs</div> </div> </div> <!-- Filters --> <div class="filters-bar"> <div class="search-box"> <input type="text" id="search-input" placeholder="Search by name, email, phone, or device..."> </div> <select class="filter-select" id="status-filter"> <option value="">All Statuses</option> <option value="pending">Pending</option> <option value="confirmed">Confirmed</option> <option value="in_progress">In Progress</option> <option value="completed">Completed</option> <option value="cancelled">Cancelled</option> </select> <select class="filter-select" id="date-filter"> <option value="all">All Time</option> <option value="today">Today</option> <option value="week">This Week</option> <option value="month">This Month</option> </select> <button class="btn btn-primary btn-sm" onclick="app.refreshData()">Refresh</button> </div> <!-- Table --> <div class="table-container"> <div class="table-header"> <h2>Repair Bookings</h2> <div class="live-indicator">Live Updates</div> </div> <div class="adm-ov-x"> <table> <thead> <tr> <th onclick="app.sortBy('created_at')">Date ↕</th> <th>Customer</th> <th>Device</th> <th>Appointment</th> <th onclick="app.sortBy('total_price')">Price ↕</th> <th onclick="app.sortBy('status')">Status ↕</th> <th>Actions</th> </tr> </thead> <tbody id="bookings-table"> <tr> <td colspan="7" class="empty-state"> <h3>Loading bookings...</h3> <p>Connecting to Supabase securely</p> </td> </tr> </tbody> </table> </div> </div> </div>
+</div> <!-- Detail Modal -->
+<div id="detail-modal" class="modal-overlay"> <div class="modal"> <div class="modal-header"> <h3>Booking Details</h3> <button class="modal-close" onclick="app.closeModal()">&times;</button> </div> <div class="modal-body" id="modal-content"> <!-- Populated by JS --> </div> </div>
+</div> <!-- Toast Container -->
+<div class="toast-container" id="toast-container"></div> <script>
 // ==========================================
 // MOBIDOKTA ADMIN DASHBOARD
 // Production-grade admin interface with RLS
@@ -944,8 +805,7 @@ class AdminDashboard {
                 if (newRecord.status !== oldRecord.status) {
                     this.showToast(
                         `Booking #${String(newRecord.id).slice(0,8)} updated to ${newRecord.status}`,
-                        'warning'
-                    );
+                        'warning' );
                 }
             }
         } else if (eventType === 'DELETE') {
@@ -970,8 +830,7 @@ class AdminDashboard {
         // Search filter
         if (searchTerm) {
             const term = searchTerm.toLowerCase();
-            filtered = filtered.filter(b => 
-                b.customer_name?.toLowerCase().includes(term) ||
+            filtered = filtered.filter(b => b.customer_name?.toLowerCase().includes(term) ||
                 b.customer_email?.toLowerCase().includes(term) ||
                 b.customer_phone?.includes(term) ||
                 b.brand?.toLowerCase().includes(term) ||
@@ -1034,24 +893,16 @@ class AdminDashboard {
 
         if (this.filteredBookings.length === 0) {
             tbody.innerHTML = `
-                <tr>
-                    <td colspan="7" class="empty-state">
-                        <h3>No bookings found</h3>
-                        <p>Try adjusting your filters or search terms</p>
-                    </td>
-                </tr>
-            `;
+                <tr> <td colspan="7" class="empty-state"> <h3>No bookings found</h3> <p>Try adjusting your filters or search terms</p> </td> </tr> `;
             return;
         }
 
         tbody.innerHTML = this.filteredBookings.map(booking => {
             const date = new Date(booking.created_at);
             const dateStr = date.toLocaleDateString('en-ZA', { 
-                day: '2-digit', month: 'short', year: 'numeric' 
-            });
+                day: '2-digit', month: 'short', year: 'numeric' });
             const timeStr = date.toLocaleTimeString('en-ZA', { 
-                hour: '2-digit', minute: '2-digit' 
-            });
+                hour: '2-digit', minute: '2-digit' });
 
             const services = Array.isArray(booking.services) 
                 ? booking.services 
@@ -1062,45 +913,8 @@ class AdminDashboard {
                 : 'No services';
 
             return `
-                <tr data-id="${booking.id}" onclick="app.viewDetails('${booking.id}')" class="cur-pointer" title="Click to view full booking details">
-                    <td>
-                        <div class="adm-date">${dateStr}</div>
-                        <div class="adm-time">${timeStr}</div>
-                    </td>
-                    <td class="customer-cell">
-                        <div class="customer-name">${this.escapeHtml(booking.customer_name)}</div>
-                        <div class="customer-meta">${this.escapeHtml(booking.customer_email)}<br>${booking.customer_phone}</div>
-                    </td>
-                    <td class="device-cell">
-                        <div class="device-name">${this.escapeHtml(booking.brand)} ${this.escapeHtml(booking.model)}</div>
-                        <div class="device-issue">${this.escapeHtml(booking.issue || 'No issue specified')}</div>
-                    </td>
-                    <td>
-                        <div class="fs-sm">${this.escapeHtml(servicesList)}</div>
-                        <div class="adm-time-mt">${booking.date} @ ${booking.time}</div>
-                        <div class="adm-loc">${this.escapeHtml(booking.location || 'Location not set')}</div>
-                    </td>
-                    <td class="price-cell">
-                        <div>R${parseFloat(booking.total_price || 0).toFixed(2)}</div>
-                        <div class="price-deposit">Deposit: R${parseFloat(booking.deposit_amount || 0).toFixed(2)}</div>
-                    </td>
-                    <td>
-                        <span class="status-badge status-${booking.status}">
-                            ${booking.status.replace('_', ' ')}
-                        </span>
-                    </td>
-                    <td class="actions-cell" onclick="event.stopPropagation()">
-                        <button class="btn btn-sm btn-primary" onclick="app.viewDetails('${booking.id}')">View</button>
-                        <button class="btn btn-sm btn-success" onclick="app.updateStatus('${booking.id}', 'confirmed')"
-                            ${booking.status !== 'pending' ? 'disabled' : ''}>Confirm</button>
-                        <button class="btn btn-sm btn-warning" onclick="app.updateStatus('${booking.id}', 'in_progress')"
-                            ${booking.status !== 'confirmed' ? 'disabled' : ''}>Start</button>
-                        <button class="btn btn-sm adm-gray-btn"
-                            onclick="app.updateStatus('${booking.id}', 'completed')"
-                            ${booking.status !== 'in_progress' ? 'disabled' : ''}>Complete</button>
-                    </td>
-                </tr>
-            `;
+                <tr data-id="${booking.id}" onclick="app.viewDetails('${booking.id}')" class="cur-pointer" title="Click to view full booking details"> <td> <div class="adm-date">${dateStr}</div> <div class="adm-time">${timeStr}</div> </td> <td class="customer-cell"> <div class="customer-name">${this.escapeHtml(booking.customer_name)}</div> <div class="customer-meta">${this.escapeHtml(booking.customer_email)}<br>${booking.customer_phone}</div> </td> <td class="device-cell"> <div class="device-name">${this.escapeHtml(booking.brand)} ${this.escapeHtml(booking.model)}</div> <div class="device-issue">${this.escapeHtml(booking.issue || 'No issue specified')}</div> </td> <td> <div class="fs-sm">${this.escapeHtml(servicesList)}</div> <div class="adm-time-mt">${booking.date} @ ${booking.time}</div> <div class="adm-loc">${this.escapeHtml(booking.location || 'Location not set')}</div> </td> <td class="price-cell"> <div>R${parseFloat(booking.total_price || 0).toFixed(2)}</div> <div class="price-deposit">Deposit: R${parseFloat(booking.deposit_amount || 0).toFixed(2)}</div> </td> <td> <span class="status-badge status-${booking.status}"> ${booking.status.replace('_', ' ')}
+                        </span> </td> <td class="actions-cell" onclick="event.stopPropagation()"> <button class="btn btn-sm btn-primary" onclick="app.viewDetails('${booking.id}')">View</button> <button class="btn btn-sm btn-success" onclick="app.updateStatus('${booking.id}', 'confirmed')" ${booking.status !== 'pending' ? 'disabled' : ''}>Confirm</button> <button class="btn btn-sm btn-warning" onclick="app.updateStatus('${booking.id}', 'in_progress')" ${booking.status !== 'confirmed' ? 'disabled' : ''}>Start</button> <button class="btn btn-sm adm-gray-btn" onclick="app.updateStatus('${booking.id}', 'completed')" ${booking.status !== 'in_progress' ? 'disabled' : ''}>Complete</button> </td> </tr> `;
         }).join('');
     }
 
@@ -1114,79 +928,15 @@ class AdminDashboard {
 
         const modalContent = document.getElementById('modal-content');
         modalContent.innerHTML = `
-            <div class="detail-row">
-                <span class="detail-label">Booking ID</span>
-                <span class="detail-value adm-mono">${booking.id}</span>
-            </div>
-            <div class="detail-row">
-                <span class="detail-label">Status</span>
-                <span class="detail-value">
-                    <span class="status-badge status-${booking.status}">${booking.status.replace('_', ' ')}</span>
-                </span>
-            </div>
-            <div class="detail-row">
-                <span class="detail-label">Customer</span>
-                <span class="detail-value">${this.escapeHtml(booking.customer_name)}<br>${this.escapeHtml(booking.customer_email)}<br>${booking.customer_phone}</span>
-            </div>
-            <div class="detail-row">
-                <span class="detail-label">Device</span>
-                <span class="detail-value">${this.escapeHtml(booking.brand)} ${this.escapeHtml(booking.model)}</span>
-            </div>
-            <div class="detail-row">
-                <span class="detail-label">Issue</span>
-                <span class="detail-value">${this.escapeHtml(booking.issue || 'Not specified')}</span>
-            </div>
-            <div class="detail-row">
-                <span class="detail-label">Services</span>
-                <span class="detail-value">${services.map(s => this.escapeHtml(s)).join('<br>')}</span>
-            </div>
-            <div class="detail-row">
-                <span class="detail-label">Appointment</span>
-                <span class="detail-value">${booking.date} at ${booking.time}<br>${this.escapeHtml(booking.location)}</span>
-            </div>
-            <div class="detail-row">
-                <span class="detail-label">Total Price</span>
-                <span class="detail-value">R${parseFloat(booking.total_price).toFixed(2)}</span>
-            </div>
-            <div class="detail-row">
-                <span class="detail-label">Deposit Required</span>
-                <span class="detail-value">R${parseFloat(booking.deposit_amount).toFixed(2)}</span>
-            </div>
-            <div class="detail-row">
-                <span class="detail-label">Created</span>
-                <span class="detail-value">${new Date(booking.created_at).toLocaleString('en-ZA')}</span>
-            </div>
-            ${booking.admin_notes ? `
-            <div class="detail-row">
-                <span class="detail-label">Admin Notes</span>
-                <span class="detail-value">${this.escapeHtml(booking.admin_notes)}</span>
-            </div>
-            ` : ''}
-            <div class="attachments-block">
-                <span class="attachments-block-label">Customer Photos (${(booking.attachment_paths || []).length})</span>
-                ${(booking.attachment_paths || []).length === 0
-                    ? '<p class="attachments-empty">No photos attached.</p>'
-                    : `<div class="attachments-grid" id="attachments-grid">${booking.attachment_paths.map((p, i) => `<img class="attachment-thumb loading" data-path="${this.escapeHtml(p)}" alt="Attachment ${i + 1}" loading="lazy">`).join('')}</div>`
+            <div class="detail-row"> <span class="detail-label">Booking ID</span> <span class="detail-value adm-mono">${booking.id}</span> </div> <div class="detail-row"> <span class="detail-label">Status</span> <span class="detail-value"> <span class="status-badge status-${booking.status}">${booking.status.replace('_', ' ')}</span> </span> </div> <div class="detail-row"> <span class="detail-label">Customer</span> <span class="detail-value">${this.escapeHtml(booking.customer_name)}<br>${this.escapeHtml(booking.customer_email)}<br>${booking.customer_phone}</span> </div> <div class="detail-row"> <span class="detail-label">Device</span> <span class="detail-value">${this.escapeHtml(booking.brand)} ${this.escapeHtml(booking.model)}</span> </div> <div class="detail-row"> <span class="detail-label">Issue</span> <span class="detail-value">${this.escapeHtml(booking.issue || 'Not specified')}</span> </div> <div class="detail-row"> <span class="detail-label">Services</span> <span class="detail-value">${services.map(s => this.escapeHtml(s)).join('<br>')}</span> </div> <div class="detail-row"> <span class="detail-label">Appointment</span> <span class="detail-value">${booking.date} at ${booking.time}<br>${this.escapeHtml(booking.location)}</span> </div> <div class="detail-row"> <span class="detail-label">Total Price</span> <span class="detail-value">R${parseFloat(booking.total_price).toFixed(2)}</span> </div> <div class="detail-row"> <span class="detail-label">Deposit Required</span> <span class="detail-value">R${parseFloat(booking.deposit_amount).toFixed(2)}</span> </div> <div class="detail-row"> <span class="detail-label">Created</span> <span class="detail-value">${new Date(booking.created_at).toLocaleString('en-ZA')}</span> </div> ${booking.admin_notes ? `
+            <div class="detail-row"> <span class="detail-label">Admin Notes</span> <span class="detail-value">${this.escapeHtml(booking.admin_notes)}</span> </div> ` : ''}
+            <div class="attachments-block"> <span class="attachments-block-label">Customer Photos (${(booking.attachment_paths || []).length})</span> ${(booking.attachment_paths || []).length === 0
+                    ? '<p class="attachments-empty">No photos attached.</p>' : `<div class="attachments-grid" id="attachments-grid">${booking.attachment_paths.map((p, i) => `<img class="attachment-thumb loading" data-path="${this.escapeHtml(p)}" alt="Attachment ${i + 1}" loading="lazy">`).join('')}</div>`
                 }
-            </div>
-            <div class="adm-status-div">
-                <label class="field-label">Update Status</label>
-                <div class="adm-flex-gap">
-                    ${['pending','confirmed','in_progress','completed','cancelled'].map(s => `
-                        <button class="btn btn-sm ${booking.status === s ? 'btn-primary' : ''}" 
-                            style="${booking.status === s ? '' : 'background: var(--gray-100); color: var(--gray-700);'}"
-                            onclick="app.updateStatus('${booking.id}', '${s}')">
-                            ${s.replace('_', ' ')}
-                        </button>
-                    `).join('')}
-                </div>
-            </div>
-            <div class="adm-notes-wrap">
-                <label class="field-label">Admin Notes</label>
-                <textarea id="admin-notes-input" rows="3" class="adm-textarea">${this.escapeHtml(booking.admin_notes || '')}</textarea>
-                <button class="btn btn-primary btn-sm adm-save-btn" onclick="app.saveNotes('${booking.id}')">Save Notes</button>
-            </div>
-        `;
+            </div> <div class="adm-status-div"> <label class="field-label">Update Status</label> <div class="adm-flex-gap"> ${['pending','confirmed','in_progress','completed','cancelled'].map(s => `
+                        <button class="btn btn-sm ${booking.status === s ? 'btn-primary' : ''}" style="${booking.status === s ? '' : 'background: var(--gray-100); color: var(--gray-700);'}" onclick="app.updateStatus('${booking.id}', '${s}')"> ${s.replace('_', ' ')}
+                        </button> `).join('')}
+                </div> </div> <div class="adm-notes-wrap"> <label class="field-label">Admin Notes</label> <textarea id="admin-notes-input" rows="3" class="adm-textarea">${this.escapeHtml(booking.admin_notes || '')}</textarea> <button class="btn btn-primary btn-sm adm-save-btn" onclick="app.saveNotes('${booking.id}')">Save Notes</button> </div> `;
 
         document.getElementById('detail-modal').classList.add('active');
         this.loadAttachmentThumbnails(booking);
@@ -1271,9 +1021,7 @@ class AdminDashboard {
         const toast = document.createElement('div');
         toast.className = `toast ${type}`;
         toast.innerHTML = `
-            <div class="adm-type-hdr">${type.charAt(0).toUpperCase() + type.slice(1)}</div>
-            <div class="fs-sm">${message}</div>
-        `;
+            <div class="adm-type-hdr">${type.charAt(0).toUpperCase() + type.slice(1)}</div> <div class="fs-sm">${message}</div> `;
 
         container.appendChild(toast);
 
