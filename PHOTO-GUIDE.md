@@ -49,15 +49,13 @@ MOBIDOKTA WEBSITE/
 
 ## SECTION B — HOMEPAGE (`index.html`) → `img/`
 
-### Hero Slideshow — 5 full-screen backgrounds (min 1920×1080px, under 300KB)
+### Hero — REPLACED 2026-08-21
 
-| File name | Status | Subject |
-|---|---|---|
-| `portfolio-iphone.png` | ✅ | iPhone on bench — Slide 1 |
-| `hero-android.png` | ✅ | Android device — Slide 2 |
-| `idx-port-macbookuse.jpg` | ✅ | MacBook in use — Slide 3 |
-| `idx-svc-water_hero_use.jpg` | ✅ | Water damage repair in progress — Slide 4 |
-| `idx-svc-battery_hero_use.jpg` | ✅ | Battery swap in progress — Slide 5 |
+> ⚠️ The 5-slide hero slideshow is **gone**. The homepage now shows one still image.
+> See **Section K** for the single hero slot. The old slide backgrounds
+> (`hero-iphone.jpg`, `hero-android.jpg`, `idx-port-macbookuse.jpg`,
+> `idx-svc-water_hero_use.jpg`, `idx-svc-battery_hero_use.jpg`) are no longer
+> referenced by the homepage. Two of them were AI-generated and should not be reused.
 
 ### Services Grid — square thumbnails (800×600px, under 120KB)
 
@@ -373,6 +371,28 @@ in priority order. Say the word and I'll wire them in.
 > ⚠️ **Never publish a real client's device with identifiable data, IMEI, or claim reference.**
 > Redact or use a fictional reference on any report photo. This matters more here than anywhere else on
 > the site — the whole service rests on POPIA discipline and client confidence.
+
+---
+
+
+## SECTION K — HOMEPAGE HERO (highest visual priority) → `img/`
+
+The homepage was rebuilt white and minimal on 2026-08-21. The two AI-generated
+latex-glove images (`hero-iphone.jpg`, `hero-android.jpg`) were removed — the garbled
+"TEKNIKSE" logo and the impossible hand anatomy made them read as stock AI, which
+undermines every honesty claim on the site.
+
+The hero now shows **one** image. It currently falls back to a real bench photo
+(`iphone 13 Pro white backglass replacement.jpg`). Drop in the file below and it takes over.
+
+| File name → `img/` | Status | Subject | Spec |
+|---|---|---|---|
+| `hero-primary.jpg` | 📸 **WIRED** | One clean, bright, real photo. Best options, in order: (1) a repaired device in-hand against a plain light background, (2) the bench shot from directly above with tools laid out neatly, (3) the storefront with good daylight. | Portrait 4:5, 1000×1250px, under 220KB |
+
+**What makes this photo work:** bright and airy, not dark and moody. Plain uncluttered
+background. Real device, real hands or real bench — nothing staged to look "techy".
+Shoot near a window in daylight. No black latex gloves — they photograph as sinister
+and they are the single clearest AI-stock tell.
 
 ---
 

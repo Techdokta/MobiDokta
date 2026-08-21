@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en-ZA">
 <head>
-  <script>if('scrollRestoration' in history)history.scrollRestoration='manual';window.scrollTo(0,0);(function(){var t=localStorage.getItem('mobidokta-theme')||'dark';if(t==='dark')document.documentElement.classList.add('dark-theme');}());</script>
+  <script>if('scrollRestoration' in history)history.scrollRestoration='manual';window.scrollTo(0,0);</script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'analytics_storage':'denied','ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','wait_for_update':500});</script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-V8T79TD3GN"></script>
   <script>gtag('js',new Date());gtag('config','G-V8T79TD3GN');</script>
@@ -26,22 +26,12 @@
   {"@context":"https://schema.org","@type":"Service",
     "name":"Data Recovery & Device Access Recovery — Pretoria West",
     "description":"Professional data recovery from damaged phones, MacBooks, and hard drives. Device access recovery for locked or disabled iPhones, Android phones, and MacBooks. Lawful, verified-owner-only service. Pretoria West.",
-    "provider":{"@type":"LocalBusiness","name":"MobiDokta","url":"https://www.mobidokta.co.za","telephone":"+27781541350","address":{"@type":"PostalAddress","streetAddress":"Shop 6, Madeira Isles Shopping Complex, 262 Klitsgras St","addressLocality":"Danville","addressRegion":"Gauteng","postalCode":"0183","addressCountry":"ZA"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"59","bestRating":"5"}},
+    "provider":{"@type":"LocalBusiness","name":"MobiDokta","url":"https://www.mobidokta.co.za","telephone":"+27781541350","address":{"@type":"PostalAddress","streetAddress":"Shop 6, Madeira Isles Shopping Complex, 262 Klitsgras St","addressLocality":"Danville","addressRegion":"Gauteng","postalCode":"0183","addressCountry":"ZA"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"111","bestRating":"5"}},
     "areaServed":"Pretoria West, Gauteng"
   }
   </script>
 </head>
 <body>
-
-<!-- ─── Sale Banner ─── -->
-<div class="sale-banner" id="sale-banner" role="banner" aria-label="Promotional offer">
-  <strong>MobiDokta Re-Launch Sale — July 2026</strong>
-  <span class="sale-banner-sep">·</span>
-  <span>30% OFF all device repairs this month</span>
-  <a href="book.html" class="sale-banner-cta">Book Repair</a>
-  <button class="sale-banner-close" onclick="this.parentElement.style.display='none'" aria-label="Close">×</button>
-</div>
-
 <!-- ─── Navbar ─── -->
 <nav class="navbar inline-style-76cad585">
   <a href="index.html" class="logo inline-style-b25d56ee"><img src="./assets/mobidokta-logo.svg" alt="MobiDokta" class="logo-nav" loading="eager"></a>
@@ -79,7 +69,6 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
     </button>
     <a href="https://wa.me/27781541350" class="nav-wa-link" target="_blank" rel="noopener" title="WhatsApp us now"><i data-lucide="message-circle" class="icon-sm"></i></a>
-    <button type="button" id="theme-toggle" class="btn btn-ghost inline-style-4ebf6539" aria-label="Toggle Dark Mode"><i data-lucide="moon" class="icon-sm"></i></button>
     <a href="book.html" class="btn btn-primary btn-sm nav-btn-desktop">Book Repair</a>
     <button type="button" class="nav-toggle" aria-label="Menu"><i data-lucide="menu" class="icon"></i></button>
   </div>
@@ -474,8 +463,6 @@ document.addEventListener('DOMContentLoaded', function() {
   if (window.lucide) lucide.createIcons();
   var toggle = document.getElementById('theme-toggle');
   if (toggle) toggle.addEventListener('click', function() {
-    document.documentElement.classList.toggle('dark-theme');
-    localStorage.setItem('mobidokta-theme', document.documentElement.classList.contains('dark-theme') ? 'dark' : 'light');
   });
   var obs = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) { if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='none'; } });

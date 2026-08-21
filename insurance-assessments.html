@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-ZA">
 <head>
-  <script>if('scrollRestoration' in history)history.scrollRestoration='manual';window.scrollTo(0,0);(function(){var t=localStorage.getItem('mobidokta-theme')||'dark';if(t==='dark')document.documentElement.classList.add('dark-theme');}());</script>
+  <script>if('scrollRestoration' in history)history.scrollRestoration='manual';window.scrollTo(0,0);</script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'analytics_storage':'denied','ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','wait_for_update':500});</script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-V8T79TD3GN"></script>
   <script>gtag('js',new Date());gtag('config','G-V8T79TD3GN');</script>
@@ -41,7 +41,7 @@
     "name":"Insurance Device Damage Assessment — South Africa",
     "serviceType":"Insurance damage assessment and technical inspection report for mobile phones, laptops, tablets, consoles and drones",
     "description":"Independent insurance-grade device damage assessment. Full hardware, software and firmware diagnostic, IMEI and serial verification, functional testing, photographic evidence, damage cause-consistency opinion and itemised repair estimate, issued as a signed PDF report within 24 hours. Nationwide insured collection and return.",
-    "provider":{"@type":"LocalBusiness","name":"MobiDokta","url":"https://www.mobidokta.co.za","telephone":"+27781541350","email":"techrepair@mobidokta.co.za","address":{"@type":"PostalAddress","streetAddress":"Shop 6, Madeira Isles Shopping Complex, 262 Klitsgras St","addressLocality":"Danville","addressRegion":"Gauteng","postalCode":"0183","addressCountry":"ZA"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"59","bestRating":"5"}},
+    "provider":{"@type":"LocalBusiness","name":"MobiDokta","url":"https://www.mobidokta.co.za","telephone":"+27781541350","email":"techrepair@mobidokta.co.za","address":{"@type":"PostalAddress","streetAddress":"Shop 6, Madeira Isles Shopping Complex, 262 Klitsgras St","addressLocality":"Danville","addressRegion":"Gauteng","postalCode":"0183","addressCountry":"ZA"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"111","bestRating":"5"}},
     "areaServed":{"@type":"Country","name":"South Africa"},
     "offers":[
       {"@type":"Offer","name":"Standard Insurance Assessment Report","price":"650","priceCurrency":"ZAR","description":"Full documented assessment report issued within 2–3 working days. Fee credited against repair if repaired with MobiDokta."},
@@ -102,7 +102,6 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
     </button>
     <a href="https://wa.me/27781541350" class="nav-wa-link" target="_blank" rel="noopener" title="WhatsApp us now"><i data-lucide="message-circle" class="icon-sm"></i></a>
-    <button type="button" id="theme-toggle" class="btn btn-ghost inline-style-4ebf6539" aria-label="Toggle Dark Mode"><i data-lucide="moon" class="icon-sm"></i></button>
     <a href="book.html" class="btn btn-primary btn-sm nav-btn-desktop">Book Repair</a>
     <button type="button" class="nav-toggle" aria-label="Menu"><i data-lucide="menu" class="icon"></i></button>
   </div>
@@ -135,7 +134,7 @@
   <div class="ins-trust-item"><span class="ins-trust-val">R650</span><span class="ins-trust-lbl">Standard full assessment</span></div>
   <div class="ins-trust-item"><span class="ins-trust-val">Nationwide</span><span class="ins-trust-lbl">R199 insured collection</span></div>
   <div class="ins-trust-item"><span class="ins-trust-val">Credited</span><span class="ins-trust-lbl">Fee off your repair with us</span></div>
-  <div class="ins-trust-item"><span class="ins-trust-val">5.0 ★</span><span class="ins-trust-lbl">59 Google reviews</span></div>
+  <div class="ins-trust-item"><span class="ins-trust-val">5.0 ★</span><span class="ins-trust-lbl">111 Google reviews</span></div>
 </div>
 
 <!-- ─── Before you book ─── -->
@@ -723,8 +722,6 @@ document.addEventListener('DOMContentLoaded', function() {
   if (window.lucide) lucide.createIcons();
   var toggle = document.getElementById('theme-toggle');
   if (toggle) toggle.addEventListener('click', function() {
-    document.documentElement.classList.toggle('dark-theme');
-    localStorage.setItem('mobidokta-theme', document.documentElement.classList.contains('dark-theme') ? 'dark' : 'light');
   });
   var obs = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) { if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='none'; } });
