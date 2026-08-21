@@ -29,13 +29,16 @@ MOBIDOKTA WEBSITE/
 
 ---
 
-## PRIORITY 1 — BROKEN RIGHT NOW
+## PRIORITY 1 — SHOOT NEXT
 
-| File name → drop in `img/` | Why it's broken | What to create |
+| File name → drop in `img/` | Status | Why it matters |
 |---|---|---|
-| `og-cover.png` | 🔴 Referenced on **every page** for WhatsApp / Twitter / Facebook link previews | 1200×630px branded graphic — MobiDokta logo centred on dark background with orange tagline. Export from Canva. |
+| `loc-tri-lounge.jpg` | 📸 **WIRED, waiting** | The gaming lounge and waiting area. Shows as a grey "photo coming" tile on the homepage and on `amenities.html` until it lands. Highest-value shot on the list — those sections argue this is somewhere worth spending an hour in, and the photo has to carry that. Get **seating and consoles in one frame, screens on**. |
+| `loc-residence-landmark.jpg` | 📸 **WIRED, waiting** | Madeira Isles Residence, straight on. Beside the map on the homepage and amenities page. |
+| `loc-residence-proximity.jpg` | 📸 **WIRED, waiting** | Residence **and** our complex in one frame — the same-management connection. |
 
-> This single image shows whenever anyone shares a MobiDokta link. Without it every share shows a broken thumbnail.
+> ✅ `og-cover.png` is **done** — 1200×630, valid, in `img/`. Earlier versions of this guide flagged it
+> as broken; that was wrong. Link previews work.
 
 ---
 
