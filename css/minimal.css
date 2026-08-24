@@ -628,7 +628,7 @@ body {
   }
   .w-hero-bg-img {
     position: absolute;
-    inset: 0;
+    inset: -6% -6% -6% -6%;
     background-size: cover;
     background-position: center;
     opacity: 0;
@@ -643,9 +643,15 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background:
-      linear-gradient(180deg, rgba(255,255,255,.93) 0%, rgba(255,255,255,.88) 45%, rgba(255,255,255,.96) 100%),
-      linear-gradient(90deg, rgba(255,255,255,.96) 0%, rgba(255,255,255,.82) 100%);
+    /* Heavy where the type sits, then opens up so the photo actually reads.
+       Two stacked ~90% gradients washed it to near-white before. */
+    background: linear-gradient(
+      168deg,
+      rgba(255,255,255,.95) 0%,
+      rgba(255,255,255,.90) 30%,
+      rgba(255,255,255,.72) 62%,
+      rgba(255,255,255,.55) 100%
+    );
   }
 
   @keyframes wHeroDrift {

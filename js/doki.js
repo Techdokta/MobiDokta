@@ -440,29 +440,26 @@
   // ── Proactive Hints ────────────────────────────────────────────────────
 
   function scheduleProactive() {
-    // First nudge: 22 seconds after load, if not already engaged
+    // A quiet dot on the bubble after 30s. Never opens the panel by itself —
+    // an uninvited panel over the hero is the single worst thing this widget
+    // can do on a phone. Mobi waits to be asked.
     autoOpenTimer = setTimeout(function () {
       var stored = getStored();
       if (stored.engaged) return;
-      // Don't interrupt if search is open
       if (document.getElementById('md-search-modal') &&
           document.getElementById('md-search-modal').classList.contains('mds-open')) return;
-      showBadge(1);
-      // Auto-open after another 4 seconds if still not interacted
-      autoOpenTimer = setTimeout(function () {
-        if (!isOpen && !hasEngaged) openPanel();
-      }, 4000);
-    }, 22000);
+      if (!isOpen && !hasEngaged) showBadge(1);
+    }, 30000);
 
-    // Recurring hint in chat if user has opened but not fully engaged
+    // Hint inside the chat, only once the person has opened it themselves
     proactiveTimer = setTimeout(function () {
-      tickHint();
+      if (isOpen) tickHint();
     }, 90000);
   }
 
   function tickHint() {
-    if (!isOpen && !hasEngaged) {
-      showBadge(badgeCount + 1);
+    if (!isOpen) {
+      return; /* closed: stay quiet, no badge escalation */
     } else if (isOpen && !hasEngaged) {
       var hint = HINTS[hintIdx % HINTS.length];
       hintIdx++;
