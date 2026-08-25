@@ -652,7 +652,7 @@ body {
     transition: opacity 1.6s var(--w-ease);
     animation: wHeroDrift 26s ease-in-out infinite alternate;
   }
-  .w-hero-bg-img.is-on { opacity: .20; }  /* 20% strength — owner set */
+  .w-hero-bg-img.is-on { opacity: .12; }  /* 12% strength — owner set */
 
   /* No gradient scrim needed. The image layer itself sits at 20% over white,
      which keeps every headline and paragraph fully legible without washing the
