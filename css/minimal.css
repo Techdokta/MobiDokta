@@ -456,7 +456,13 @@ body {
    so js/doki.js keeps working untouched.
    ═══════════════════════════════════════════════════════════════════════════ */
 
-.doki-widget { bottom: 22px; right: 22px; z-index: 150; }
+/* z-index MUST stay at 9990. The widget creates a stacking context, so
+   whatever it is set to caps the panel inside it. Lowering this to 150 put
+   the open panel underneath .whatsapp-fab (9989), .fab-hide-btn (9991),
+   .fab-restore (9995) and the cookie banner (99999) — Mobi looked dead
+   because the panel opened behind them. Sits just above .whatsapp-fab and
+   just below the modals by design. */
+.doki-widget { bottom: 22px; right: 22px; z-index: 9990; }
 
 /* Assistant bubble — dark, matches the primary button */
 .doki-bubble {
@@ -496,7 +502,6 @@ body {
   border: 1px solid var(--w-line) !important;
   border-radius: 20px !important;
   box-shadow: var(--w-sh-lg) !important;
-  bottom: 88px !important;
 }
 .doki-header {
   background: var(--w-bg-tint) !important;
@@ -560,7 +565,7 @@ body {
 @media (max-width: 640px) {
   .doki-widget { bottom: 16px; right: 16px; }
   .whatsapp-fab { right: 16px !important; bottom: 80px !important; }
-  .doki-panel { width: calc(100vw - 24px) !important; bottom: 80px !important; }
+  .doki-panel { width: calc(100vw - 24px) !important; }
 }
 
 /* Sale scaffolding retired — hide any anchor-price remnants that regenerate from JS */
