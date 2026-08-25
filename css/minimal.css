@@ -451,7 +451,7 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   Mobi assistant + WhatsApp bubble — minimal-white restyle
+   Doki assistant + WhatsApp bubble — minimal-white restyle
    Overrides the older dark treatment in global.css. Class names stay .doki-*
    so js/doki.js keeps working untouched.
    ═══════════════════════════════════════════════════════════════════════════ */
@@ -459,7 +459,7 @@ body {
 /* z-index MUST stay at 9990. The widget creates a stacking context, so
    whatever it is set to caps the panel inside it. Lowering this to 150 put
    the open panel underneath .whatsapp-fab (9989), .fab-hide-btn (9991),
-   .fab-restore (9995) and the cookie banner (99999) — Mobi looked dead
+   .fab-restore (9995) and the cookie banner (99999) — Doki looked dead
    because the panel opened behind them. Sits just above .whatsapp-fab and
    just below the modals by design. */
 .doki-widget { bottom: 22px; right: 22px; z-index: 9990; }

@@ -1,5 +1,5 @@
 /* ─────────────────────────────────────────────────────────────────────
-   Mobi — MobiDokta Chatbot Assistant
+   Doki — MobiDokta Chatbot Assistant
    Pure JS, no dependencies, state-machine conversation flows.
    ───────────────────────────────────────────────────────────────────── */
 (function () {
@@ -12,7 +12,7 @@
 
   var FLOWS = {
     greeting: {
-      msg: "Hi, I'm Mobi — MobiDokta's assistant. What brings you in today?",
+      msg: "Hi, I'm Doki — MobiDokta's assistant. Tell me what is wrong and I will price it, book it, or hand you to a technician.",
       chips: [
         { label: 'Cracked screen', next: 'screen-device' },
         { label: 'Battery problem', next: 'battery-type' },
@@ -199,7 +199,7 @@
   function build() {
     var w = el('div', 'doki-widget');
     w.setAttribute('role', 'complementary');
-    w.setAttribute('aria-label', 'Mobi — MobiDokta chat assistant');
+    w.setAttribute('aria-label', 'Doki — MobiDokta chat assistant');
 
     // Panel
     panel = el('div', 'doki-panel');
@@ -210,7 +210,7 @@
     av.textContent = 'D';
     var info = el('div', 'doki-hdr-info');
     var nm   = el('div', 'doki-name');
-    nm.textContent = 'Mobi';
+    nm.textContent = 'Doki';
     var st   = el('div', 'doki-status-line');
     var dot  = el('span', 'doki-status-dot');
     st.appendChild(dot);
@@ -241,7 +241,7 @@
 
     // Bubble
     bubble = el('button', 'doki-bubble');
-    bubble.setAttribute('aria-label', 'Chat with Mobi, MobiDokta assistant');
+    bubble.setAttribute('aria-label', 'Chat with Doki, MobiDokta assistant');
     bubble.setAttribute('aria-expanded', 'false');
     bubble.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>';
     badge = el('span', 'doki-badge');
@@ -442,7 +442,7 @@
   function scheduleProactive() {
     // A quiet dot on the bubble after 30s. Never opens the panel by itself —
     // an uninvited panel over the hero is the single worst thing this widget
-    // can do on a phone. Mobi waits to be asked.
+    // can do on a phone. Doki waits to be asked.
     autoOpenTimer = setTimeout(function () {
       var stored = getStored();
       if (stored.engaged) return;
