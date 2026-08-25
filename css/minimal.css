@@ -636,23 +636,11 @@ body {
     transition: opacity 1.6s var(--w-ease);
     animation: wHeroDrift 26s ease-in-out infinite alternate;
   }
-  .w-hero-bg-img.is-on { opacity: 1; }
+  .w-hero-bg-img.is-on { opacity: .20; }  /* 20% strength — owner set */
 
-  /* White scrim — the type must always win */
-  .w-hero-bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    /* Heavy where the type sits, then opens up so the photo actually reads.
-       Two stacked ~90% gradients washed it to near-white before. */
-    background: linear-gradient(
-      168deg,
-      rgba(255,255,255,.95) 0%,
-      rgba(255,255,255,.90) 30%,
-      rgba(255,255,255,.72) 62%,
-      rgba(255,255,255,.55) 100%
-    );
-  }
+  /* No gradient scrim needed. The image layer itself sits at 20% over white,
+     which keeps every headline and paragraph fully legible without washing the
+     photograph out the way the old stacked 90% gradients did. */
 
   @keyframes wHeroDrift {
     from { transform: scale(1.08) translate3d(0, 0, 0); }
