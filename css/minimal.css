@@ -593,11 +593,22 @@ body {
 .w-landmark figure {
   margin:0; border:1px solid var(--w-line); border-radius:16px; overflow:hidden; background:var(--w-bg-tint);
 }
-.w-landmark .w-lm-media { position:relative; aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; }
-.w-landmark img { width:100%; height:100%; object-fit:cover; display:block; }
+.w-landmark .w-lm-media {
+  position: relative; aspect-ratio: 3/2; overflow: hidden;
+  background: linear-gradient(150deg,#f5f5f7,#ececf0);
+}
+.w-landmark .w-lm-media img {
+  position: absolute; inset: 0; z-index: 1;
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
 .w-landmark figcaption { padding:11px 14px; font-size:.8rem; color:var(--w-ink-soft); line-height:1.45; }
 .w-landmark figcaption strong { color:var(--w-ink); display:block; font-size:.86rem; margin-bottom:2px; }
-.w-lm-ph { display:flex; flex-direction:column; align-items:center; gap:7px; color:var(--w-ink-faint); }
+.w-lm-ph {
+  position: absolute; inset: 0; z-index: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 7px; color: var(--w-ink-faint);
+}
 
 @media (max-width: 900px) {
   .w-lounge { grid-template-columns: 1fr; }
@@ -657,3 +668,11 @@ body {
 
 /* Five-up stat row — the fixed-devices count leads */
 .w-stats--5 { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 24px; }
+
+
+/* An image that has loaded hides its placeholder outright — layering alone
+   leaves a transparent or short image showing the tile underneath. */
+.has-photo .w-lm-ph,
+.has-photo .w-lounge-ph,
+.has-photo .amen-fallback,
+.has-photo .w-ph { display: none !important; }

@@ -131,6 +131,20 @@
     rises.forEach(function (el) { io.observe(el); });
   }
 
+
+  /* Any image that actually loads marks its media box, which hides the
+     "photo coming" tile. Runs for images already cached at parse time too. */
+  (function () {
+    function mark(img) {
+      var box = img.closest('.w-lm-media, .w-lounge-media, .amen-media, .amen-safety-media, .w-hero-visual');
+      if (box) box.classList.add('has-photo');
+    }
+    document.querySelectorAll('img').forEach(function (img) {
+      if (img.complete && img.naturalWidth > 0) mark(img);
+      else img.addEventListener('load', function () { mark(img); }, { once: true });
+    });
+  }());
+
   var burger = document.getElementById('burger');
   var drawer = document.getElementById('drawer');
   var dclose = document.getElementById('drawer-close');
