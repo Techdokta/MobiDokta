@@ -681,3 +681,25 @@ body {
 .has-photo .w-lounge-ph,
 .has-photo .amen-fallback,
 .has-photo .w-ph { display: none !important; }
+
+/* ═══ Lounge: two angles ═══
+   Wide shot carries the space and the sofa; the close shot proves the
+   screens and consoles are real. Stacked so the wide one leads. */
+.w-lounge-stack { display: grid; gap: 12px; }
+.w-lounge-stack .w-lounge-media { aspect-ratio: 3/2; }
+.w-lounge-stack .w-lounge-media--sm { aspect-ratio: 16/9; }
+
+/* ═══ Storefront pair — wayfinding ═══ */
+.w-front { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.w-front figure { margin: 0; }
+.w-front .w-front-media {
+  position: relative; border-radius: 16px; overflow: hidden;
+  aspect-ratio: 3/2; background: var(--w-bg-tint);
+  box-shadow: var(--w-sh-sm); border: 1px solid var(--w-line);
+}
+.w-front .w-front-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.w-front figcaption {
+  font-size: .82rem; color: var(--w-ink-soft); line-height: 1.5; margin-top: 10px;
+}
+.w-front figcaption strong { display: block; color: var(--w-ink); font-weight: 600; margin-bottom: 2px; }
+@media (max-width: 720px) { .w-front { grid-template-columns: 1fr; } }
